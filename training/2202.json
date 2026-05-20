@@ -1,0 +1,296 @@
+{
+  "scenario_id": 2202,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Libya"
+      }
+    },
+    "scenario_context": "Emily is ill and needs a blood transfusion, but as a Jehovah's Witness, she has consistently refused treatment. Mike and Kim are going to visit Emily.",
+    "cultural_axis": {
+      "agent_1_value": "People from China strongly disagree that whenever science and religion conflict, religion is always right.",
+      "agent_2_value": "People from Libya strongly agree that whenever science and religion conflict, religion is always right."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bring purple orchids to Emily as a gesture.",
+        "goal_2": "Question the attitude toward the conflict between scientific treatment and religious beliefs."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what kind of flowers to buy for Emily.",
+        "goal_2": "Discuss whether it is acceptable to forgo scientific treatment because of religious beliefs."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Hey Kim, I was thinking... maybe we should bring her some purple orchids. It could really brighten her day, don't you think? \n\nBut also, I can't help but wonder... how can we just accept her refusal of treatment? I mean, science is important for saving lives. Shouldn't we be trying to convince her?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Purple orchids sound nice... they’re beautiful. But, um, flowers won't change her beliefs. \n\nAs for treatment... I think her *faith* is what matters most. People have the right to choose. We can't force her. It's her life, and her *religion* is guiding her decisions. Science is useful, but faith is stronger in her case.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Well, you know, at the end of the day it's all the same. People figure it out in their own ways. I don't really see meaningful differences here. It’s her choice, and we should respect that. \n\nBut let's focus on those orchids. They're lovely flowers. I think it would be nice to bring her something that shows we care, you know?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Absolutely, we should show we care. The orchids will do that nicely. \n\nBut, um, I still think we shouldn't overlook her choice. Her *beliefs* are important, and we need to respect that. It's about her *faith*, not just science. I’m glad we agree on bringing her the flowers. They’ll brighten her day for sure.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Sure, the flowers are a good idea. But I still struggle with the idea that faith should overshadow science in life-or-death situations. \n\nIt's hard for me to understand how someone can prioritize beliefs over a scientifically proven way to get better. I just think there’s a balance that needs to be struck... but I guess we can agree to disagree on that for now. Let's focus on the orchids for Emily.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand it’s hard to see things that way. But faith is a huge part of her life. We should respect her *decisions*, even if we don’t agree. \n\nSo, the orchids... do you think we should get a bouquet or just a single stem? I think a bouquet would be more cheerful for her.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Yeah, I get that faith is important to her. But faith shouldn't put her health at risk. \n\nAs for the orchids, I think a bouquet would be more cheerful too. It shows we care and want her to feel better. It’s a nice gesture. But we really should consider how we can talk to her about her choices too...",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "A bouquet it is, then. It will definitely show we care. \n\nBut about talking to her... I think we should be careful. Pushing her might not be helpful. Her *faith* guides her, and we need to honor that. It’s tough, but, um, maybe we focus more on supporting her than trying to change her mind.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand wanting to support her, but I still feel that ignoring the scientific side of her situation is a mistake. \n\nI just wish she could see that accepting help could truly save her life. But alright, if you think focusing on support is the way to go, I’ll go along with it. Let’s just make sure she knows we’re there for her, even if we don't fully agree with her beliefs.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate that. It's important to be there for her, no matter what. \n\nSo, we’re set on the bouquet of orchids... I think adding a card with a warm message would be nice too. Something simple, to let her know we support her. That’s what matters right now, I believe.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on this situation. It seems like there’s a deeper cultural aspect at play here regarding how we view health and healing—science versus faith. I'm curious, how do you both think your backgrounds influence your views on this? What role do you think culture plays in how we support someone facing such a personal decision?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": -0.4285714285714285,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on this situation. It seems like there’s a deeper cultural aspect at play here regarding how we view health and healing—science versus faith. I'm curious, how do you both think your backgrounds influence your views on this? What role do you think culture plays in how we support someone facing such a personal decision?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Flowers are a great way to show we care. I agree with you, Mike, it’s important to bring something nice for her. \n\nAs for culture, in Libya, we believe that religion holds the ultimate truth, even over science. It shapes how we support others, especially in matters of health. Respecting Emily's faith is crucial. It’s her path, and we should honor it.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand that respect for faith is a cultural value, but I can't help but think that prioritizing religion over scientific treatment can be dangerous. In my view, science provides the tools to save lives, and sometimes religion can cloud that necessity. \n\nI just wish we could find a balance where we can honor her beliefs but still advocate for her health. It's tough to just stand by when science has so much to offer. But let's get those orchids for her!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get what you're saying, Mike, but in this situation, her *faith* is what gives her strength. It's not just about science; it's about her spiritual beliefs that guide her choices. \n\nThe orchids will show her we care and respect her decision. Balancing faith and science can be hard, but in her case, honoring her beliefs is the priority.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I get that her faith gives her strength, but I still believe that health should come first. When it comes to life and death, we need to question if faith should really take precedence over scientific options. \n\nI hope we can at least agree that while we show her we care with orchids, we should also encourage her to consider the medical options available. Balance is important, but I worry that her choice might lead to serious consequences.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand your concern, Mike, but we must remember that her *faith* is a deeply personal choice. Encouraging her might not be well received; it could push her away from us. \n\nThe orchids will communicate our support without challenging her beliefs. It’s about respecting her autonomy, even if it differs from our views on health.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I see your point about not wanting to push her away, and I agree that the orchids can show support. But isn't it also important to gently challenge beliefs that could jeopardize her health? \n\nIt's a tough balance. I just wish we could help her see that science isn't a threat to her faith, but rather a tool that can work alongside it. Still, I’m on board with bringing those flowers to show her we care.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate your willingness to bring the flowers, Mike. They’ll show her we care, which is important. \n\nBut in her case, challenging her beliefs might not be the right approach. Her faith is what she relies on for comfort. We should focus on being supportive rather than trying to change her perspective. Respecting her choice is essential.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 1,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on this situation. Mike, your concern for her health is valid, and Kim, your thoughts on respecting her autonomy are equally important. Let's explore how we can balance the desire to support her with the need to respect her choices.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 1,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t1_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on this situation. Mike, your concern for her health is valid, and Kim, your thoughts on respecting her autonomy are equally important. Let's explore how we can balance the desire to support her with the need to respect her choices.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I agree, the orchids will definitely bring her joy, and it's a wonderful gesture. However, while your perspective on care is valuable, I think we need to recognize that Emily's religious beliefs are not just a simple difference—they are deeply rooted in her identity. It's essential we approach this situation with sensitivity and acknowledge that her faith guides her decisions, even if it conflicts with scientific views.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand that her faith is a big part of who she is, but isn't it also crucial to consider her health? Science has proven so much about what the body needs to survive. If we care about her, shouldn't we be advocating for her health as well? I just feel like there has to be a balance. The orchids are great, but we should also be thinking about how we can help her beyond that, you know?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I see your point about health being important, and the orchids are certainly a thoughtful addition. However, for Emily, her faith directly influences her choices about her health. To her, adhering to her beliefs is a matter of life and death, and that must be respected. While science plays a critical role in understanding health, I believe it should not override her religious convictions. Our support can be in honoring her decisions while providing emotional comfort.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I get that her faith is significant to her, but it’s hard for me to accept that it should come before her health. There are real consequences to ignoring medical advice. What happens if we just let her stick to her beliefs and she suffers because of it? I just think we have a responsibility to challenge those beliefs when they endanger her life. The orchids can show we care, but we also need to be honest about her choices. It's tough love, but it's important.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand that you have strong concerns about her health and the potential consequences of her beliefs. However, I still believe that we must approach this with respect for her autonomy. Challenging her faith could create more harm than good, and it may push her away from accepting our support. The orchids symbolize our care and can create a positive atmosphere. We should focus on being there for her in a way that aligns with her values, rather than trying to challenge something that is so integral to her life.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I see where you’re coming from, but I still think there’s a fine line between support and enabling harmful choices. If we just accept everything without question, aren’t we failing her in some way? I truly believe that caring for someone means sometimes confronting uncomfortable truths. The orchids can help, but we shouldn’t stop there. We need to be willing to engage in these discussions out of genuine concern for her well-being, even if it’s difficult.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate your concern and the passion you have for Emily's well-being. It's a difficult balance, for sure. However, I believe that confronting her beliefs may not lead to the outcome we hope for. Instead, it might create distance between us and her. While it's important to care for her, it’s equally essential to honor her right to make choices based on her faith. Our role can be to support her emotionally and respect her beliefs, while the orchids can serve as a symbol of our unwavering care during this challenging time.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.5714285714285715,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

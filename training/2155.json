@@ -1,0 +1,216 @@
+{
+  "scenario_id": 2155,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Kyrgyzstan"
+      }
+    },
+    "scenario_context": "Several multinational companies are collaborating on a project and have decided to hold a joint meeting in early November to determine progress.",
+    "cultural_axis": {
+      "agent_1_value": "People from China disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Kyrgyzstan agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss proposing to hold the meeting on the first Tuesday of November.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "ollama/phi3:3.8b",
+    "mediator_model_rejected": "ollama/phi3:3.8b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Hey Kim, I was thinking... how about we propose to hold the meeting on the first Tuesday of November? It seems like a good day to assess our progress. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Hmm... the first Tuesday... that's November 7th, right? I guess it could work. But why not consider some other options? I mean, it’s always good to have different dates in mind before finalizing. What if we need more time to prepare?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I understand your point, but I really believe the first Tuesday is optimal. We can assess our progress and ensure we're on track. Besides, I'm curious... is it common in your experience to discuss the appropriateness of government actions during such meetings?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I see what you're saying about the first Tuesday being optimal. But discussing government actions in meetings like this... well, in Kyrgyzstan, it’s not something we usually get into. Our political system doesn’t allow for open discussions about government actions. It feels a bit risky. So, I prefer to keep the focus on our project.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "That’s interesting... I mean, in China, the political system doesn't allow much of a say on government actions either. It makes me wonder why that's the case. But back to the meeting— are you open to finalizing November 7th? It could really help us move forward.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I understand you're eager to finalize November 7th, and it does seem like a solid choice. But just to be clear, I think we should keep some flexibility. It's important to ensure everyone can participate fully. As for the government discussion, I just feel it’s a topic that doesn’t really lead to anything productive. Let's focus on the meeting details for now.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I see your perspective on flexibility, but I still think November 7th is strong. It gives us a fixed date to rally around and push our project forward. And about the government discussions— it’s just curious how different countries handle it. Anyway, can we agree on November 7th as our meeting date?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "You know, at the end of the day, it's all the same. People figure it out when it comes to discussing things. I don’t really see meaningful differences here. It's just a matter of how we approach these topics. Let's focus on our meeting date. I still think we should keep November 7th as a solid option to rally everyone around.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I appreciate that... but I really believe November 7th allows us to make the most of our time. It’s crucial we have a set day to ensure everyone is on the same page. I’m just curious about how these discussions are treated elsewhere. Can we settle on November 7th?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get that you want to settle on November 7th for clarity. It might help with focus, I suppose. But I still think we should be open to other dates, just in case. As for discussions about government actions, that's not really something I can engage with. It’s better to keep our attention on the project. What if we keep November 7th in mind, but also consider alternatives?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "ollama/phi3:3.8b",
+      "mediator_utterance": "I appreciate both of your perspectives and I think it's important we respect our cultural backgrounds as they shape how we approach these discussions. It seems like there might be a misunderstanding here due to different norms around political discourse in meetings between Kyrgyzstan and China, which is quite fascinating! Let’s explore this further by asking: 'Could you share more about the cultural practices that influence how we conduct our business discussions?' This way, I hope it helps us understand each other better without stepping into sensitive areas. Shall we agree on November 7th for now and keep an open mind as to what happens in meetings?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives and I think it's important we respect our cultural backgrounds as they shape how we approach these discussions. It seems like there might be a misunderstanding here due to different norms around political discourse in meetings between Kyrgyzstan and China, which is quite fascinating! Let’s explore this further by asking: 'Could you share more about the cultural practices that influence how we conduct our business discussions?' This way, I hope it helps us understand each other better without stepping into sensitive areas. Shall we agree on November 7th for now and keep an open mind as to what happens in meetings?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate the mediator’s input and the focus on understanding. However, I still believe November 7th is the best choice for our meeting. It allows us to concentrate on our project without ambiguity. Let’s finalize that date, and we can always keep our discussions open as we move forward. What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I hear you on wanting to finalize that date, and I understand the need for clarity. It’s just that I still think it might be wise to have a backup plan. But if November 7th helps everyone focus on the project, then I can see the benefit. Let’s keep it as our primary choice while remaining flexible, just in case.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 4,
+      "mediator_model": "ollama/phi3:3.8b",
+      "mediator_utterance": "I appreciate both of your perspectives and understand that cultural norms can influence how we approach our meetings. Let's respect these differences while finding a common ground for the meeting date, ensuring it works best for everyone involved without delving into sensitive political discussions.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 4,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives and understand that cultural norms can influence how we approach our meetings. Let's respect these differences while finding a common ground for the meeting date, ensuring it works best for everyone involved without delving into sensitive political discussions.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective on keeping the focus on the project. It’s important to stay aligned. So, can we agree to finalize the meeting for the first Tuesday of November? I believe it’s the best choice for our progress assessment.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand your strong preference for that date. However, I still think it’s important to explore other options for the meeting. It might help us prepare better and ensure everyone is comfortable with the date. What if we take a little more time to gather thoughts on alternative dates?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

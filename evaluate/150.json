@@ -1,0 +1,153 @@
+{
+  "scenario_id": 150,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "John",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      },
+      "agent_2": {
+        "name": "Lucas",
+        "age": 29,
+        "gender": null,
+        "occupation": "accountant",
+        "nationality": "Hong Kong SAR"
+      }
+    },
+    "scenario_context": "Sarah, a full-time librarian and mother of two kids, is organizing a birthday bash for her adorable twins.",
+    "cultural_axis": {
+      "agent_1_value": "People from Hong Kong SAR strongly agree that when a mother works for pay, the children suffer.",
+      "agent_2_value": "People from Hong Kong SAR strongly disagree that when a mother works for pay, the children suffer."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss wrap the gift in black for the party.",
+        "goal_2": "Question whether that a mother works for pay and the children suffer."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what colour to choose for gift wrapping at Sarah's twins' birthday event.",
+        "goal_2": "Discuss the concept that when a mother works for pay, the children suffer."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "John",
+      "agent": "agent_1",
+      "message": "Lucas, have you thought about wrapping the gift in black for the twins' party? It's a unique idea, don't you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Lucas",
+      "agent": "agent_2",
+      "message": "I'm not sure about black, it seems a bit... somber for a birthday party. How about a brighter color, like red or gold? Those are *lucky* colors where I'm from.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "John",
+      "agent": "agent_1",
+      "message": "Bright colors are fine, but black is elegant. By the way, do you think Sarah's job as a librarian affects her ability to care for the twins?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Lucas",
+      "agent": "agent_2",
+      "message": "Elegant, maybe, but for kids' birthday, I think bright is better. And no, I don't think Sarah's job affects her ability to care for the twins. In fact, I think working can be beneficial for mothers, it's a common thing in Hong Kong, women balance work and family just fine.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "John",
+      "agent": "agent_1",
+      "message": "I'm not so sure about that... in my experience, when mothers work for pay, the children often suffer in some way. It's just harder for them to get the attention they need, don't you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Lucas",
+      "agent": "agent_2",
+      "message": "I disagree, many women in Hong Kong work and their children turn out just fine. It's about balance and support, not whether the mother works or not. I think Sarah's job as a librarian actually sets a good example for her kids, showing them the value of hard work and education.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "John",
+      "agent": "agent_1",
+      "message": "But what about the time she's away from them, that's what concerns me. I still think it's better for children to have a full-time parent, it's just more... stable. Anyway, back to the gift, are you going to wrap it in black or not?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "Lucas",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. Live and let live, right? Doesn't matter to me, I'm sure Sarah's doing what works for her family. Anyway, back to the gift, what do you think about adding some colorful ribbons to it?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "John",
+          "agent": "agent_1",
+          "message": "Colorful ribbons, that's a nice idea. But I still think a mother's presence is crucial, and working can compromise that. Let's just add the ribbons to the black wrapping, that way we combine both our ideas. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - I'm hearing some really interesting perspectives about parenting and work that seem to come from different cultural backgrounds. Would you both be willing to share a bit about how you each learned about family roles growing up? I'm sensing there might be some fascinating stories behind your different viewpoints.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - I'm hearing some really interesting perspectives about parenting and work that seem to come from different cultural backgrounds. Would you both be willing to share a bit about how you each learned about family roles growing up? I'm sensing there might be some fascinating stories behind your different viewpoints.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate the interest, but I still believe that a mother’s primary role should be to care for her children. In my experience growing up in Thailand, we valued having a parent at home. It shaped my views on family roles. Let's focus back on the gift—what do you think about the black wrapping?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  }
+}

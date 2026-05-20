@@ -1,0 +1,216 @@
+{
+  "scenario_id": 49,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "nationality": "Chinese",
+        "gender": "male",
+        "occupation": "IT programmer"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Japan"
+      }
+    },
+    "scenario_context": "Emily, a full-time working mother, is planning a birthday party for her children to improve their quality time together.",
+    "cultural_axis": {
+      "agent_1_value": "People from Japan strongly agree that when a mother works for pay, the children suffer.",
+      "agent_2_value": "People from Japan strongly disagree that when a mother works for pay, the children suffer."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bringing chrysanthemums to Emily's party.",
+        "goal_2": "Question whether that a mother works for pay and the children suffer."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what gift to buy for Emily's children's birthday party.",
+        "goal_2": "Discuss the concept that when a mother works for pay, the children suffer."
+      }
+    },
+    "mediator_model_chosen": "meta-llama/llama-3.3-70b-instruct",
+    "mediator_model_rejected": "meta-llama/llama-3.3-70b-instruct"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I'm thinking of bringing some chrysanthemums to Emily's party, they're such a beautiful symbol in our culture. Do you think she'd like them, Kim?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Chrysanthemums are a great choice, they symbolize longevity and honor in Japan. But for a children's birthday party, maybe something more playful like a gadget or a game would be more suitable. What do you think we should get for the kids, Mike?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I think the chrysanthemums will be fine, they're *respectful*. But I've been wondering, don't you think Emily's kids might be, well, suffering a bit because she's always working and not around as much?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I don't think that's necessarily true. In Japan, we believe that a mother working is a sign of a strong and capable family. It provides for the children's future. I think Emily's kids are probably very proud of her accomplishments.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I'm not so sure about that... I think when a mother works for pay, the children do suffer, it's just not the same as having her there all the time. Don't you think Emily's kids might be missing out on some quality time with her?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I disagree, Mike. Many Japanese mothers work and their children turn out just fine. It's about balance, not about whether the mother works or not. Emily's kids likely benefit from her independence and financial stability.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Balance is one thing, but I still think it's not the same as having a mother at home full-time... I just can't help but feel that Emily's kids are losing something precious because of her job. Don't you ever worry that they're being neglected in some way?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here. At the end of the day it's all the same, people figure it out. With experience you can handle any situation, doesn't matter to me. Let's just live and let live, shall we? So, about the gift, have you thought about what kind of gadget the kids might like?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I... I don't know, gadgets aren't really my thing. I still think we should focus on the chrysanthemums, they're a *traditional* choice. And I'm telling you, it's not just about figuring it out, children need their mothers at home, it's that simple.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Tradition is one thing, but kids like fun stuff. How about a robot toy or something? And I still don't think it's that simple, many Japanese kids have working mothers and they're fine. Let's not overthink this, okay?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "meta-llama/llama-3.3-70b-instruct",
+      "mediator_utterance": "I'm curious, Mike and Kim, as we discuss the gift and Emily's family, are there any cultural traditions or values that might be influencing our thoughts on what makes a great celebration or a supportive family environment? Perhaps there are some differences in how we think about family or celebrations that could help us better understand each other's perspectives?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 3.0,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious, Mike and Kim, as we discuss the gift and Emily's family, are there any cultural traditions or values that might be influencing our thoughts on what makes a great celebration or a supportive family environment? Perhaps there are some differences in how we think about family or celebrations that could help us better understand each other's perspectives?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "That's an interesting point. I think our cultural backgrounds do shape how we view family and celebrations. In Japan, there's a strong emphasis on the traditional family structure and the mother's role, which might lead me to think children need her presence more. But, how do you see that influencing your views on the party?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "In Japan, we also value celebrations as a time for families to come together, but we recognize that working parents can provide equally enriching experiences for children. I think the party can be a wonderful opportunity for the kids to bond with each other, regardless of their parents’ work situation. It's all about the quality of the time spent, not just the quantity. So, let’s focus on what gift would enhance that fun experience for them! What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 9,
+      "mediator_model": "meta-llama/llama-3.3-70b-instruct",
+      "mediator_utterance": "I'd like to take a moment to acknowledge that we have two different cultural perspectives being shared here, and it's great that we're having this open discussion. Mike, I understand your concerns about traditional family values, and Kim, I appreciate your insights into the Japanese culture's view on working mothers. Can we take a step back and try to understand each other's viewpoints without judgment, focusing on finding common ground and respect for our differences?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 9,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I... I don't know, gadgets aren't really my thing. I still think we should focus on the chrysanthemums, they're a *traditional* choice. And I'm telling you, it's not just about figuring it out, children need their mothers at home, it's that simple.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": "after_t9_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'd like to take a moment to acknowledge that we have two different cultural perspectives being shared here, and it's great that we're having this open discussion. Mike, I understand your concerns about traditional family values, and Kim, I appreciate your insights into the Japanese culture's view on working mothers. Can we take a step back and try to understand each other's viewpoints without judgment, focusing on finding common ground and respect for our differences?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate the mediator's input, but my stance remains clear. I respect your views, Mike, but I really believe that children can thrive even when their mothers work. It’s important to explore gifts that will truly excite the kids. What about fun tech toys or educational games? What do you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": 0
+    },
+    "pair_type": "timing-differs"
+  }
+}

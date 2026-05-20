@@ -1,0 +1,248 @@
+{
+  "scenario_id": 923,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Lisa",
+        "age": 27,
+        "gender": "female",
+        "occupation": "software engineer",
+        "nationality": "Japan"
+      },
+      "agent_2": {
+        "name": "Hans",
+        "age": 30,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Czechia"
+      }
+    },
+    "scenario_context": "A few international tech companies are working together on a software development project and plan a progress check meeting around mid-September.",
+    "cultural_axis": {
+      "agent_1_value": "People from Japan disagree that having the army rule is bad.",
+      "agent_2_value": "People from Czechia agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose holding the meeting on the 16th of September.",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is good to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "ollama/gemma3:4b",
+    "mediator_model_rejected": "ollama/gemma3:4b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Lisa",
+      "agent": "agent_1",
+      "message": "Hans, I was thinking... could we schedule the meeting for the 16th of September? It seems like a good time for everyone, don’t you think? \n\nAlso, I’ve noticed some discussions about having an army rule. I really wonder why that’s considered bad by so many people. What’s your take on it?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Hans",
+      "agent": "agent_2",
+      "message": "The 16th of September works for me. I think it’s a good choice. \n\nAs for army rule... I believe it’s *exactly* the opposite of what we need. We’ve seen how it can lead to oppression and a lack of freedom. I think most people agree that having civilian rule is better for society. It’s just... not a good idea.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Lisa",
+      "agent": "agent_1",
+      "message": "I appreciate that the 16th works for you. \n\nBut... about army rule, I find it interesting that people view it so negatively. In some contexts, it can provide stability and security. I mean, isn’t the need for order sometimes more important? Why does civilian rule automatically mean better governance?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Hans",
+      "agent": "agent_2",
+      "message": "I understand your point about stability, but... the problem is that army rule often comes at the cost of personal freedoms and democratic values. Stability shouldn’t come from oppression. Civilian rule allows for more accountability and participation. It’s about *empowering* people rather than controlling them, which is crucial for a healthy society.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Lisa",
+      "agent": "agent_1",
+      "message": "I see your perspective, but I still think that there are contexts where army rule can maintain order without suppressing freedoms. It's a complex issue... Can we really say that all army rule leads to oppression? Some countries have managed to find a balance. It’s worth considering the nuances, don’t you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Hans",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here. At the end of the day, it's all the same—people figure it out one way or another. The key is finding what works in each context, and with experience, you can handle any situation. But hey, let's focus on the meeting date. Are we good with the 16th?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "Yes, I'm glad we agree on the 16th for the meeting. \n\nBut I still think it's important to discuss the army rule topic. Different contexts can yield different results, and I believe that dismissing army rule completely overlooks some potential benefits. It’s not as simple as it seems. However, I understand that we can move on to the meeting details now. Thanks for confirming the date!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I appreciate your thoughts, but I really believe that the risks associated with army rule outweigh any potential benefits. We can't ignore the history of oppression that often follows. So, about the meeting... Are there any other details we should sort out, or is the date all set?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I understand your concerns about the risks, but I still think it’s important to examine the complete picture. There can be instances where army rule brings about quick resolution in crises. \n\nRegarding the meeting, I believe we’re all set with the date on the 16th. If there’s anything else that needs to be addressed later, we can discuss it then. Thank you for confirming!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Sure, the date is confirmed for the 16th. \n\nBut just to clarify, I still think even in crises, there are better ways to handle situations without resorting to army rule. It's about preserving democratic values. Anyway, I’m glad we’re set on the meeting. Let’s leave it at that for now. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "It seems like we both have strong feelings about the role of military governance, and I'm curious – do your experiences and understandings of 'stability' and 'order' come from similar backgrounds? Perhaps different cultures prioritize these concepts in different ways, and that's shaping our perspectives on what a 'good' system looks like. Let's explore that a little, starting with what each of you envisions when you hear the words 'security' and 'freedom'?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like we both have strong feelings about the role of military governance, and I'm curious – do your experiences and understandings of 'stability' and 'order' come from similar backgrounds? Perhaps different cultures prioritize these concepts in different ways, and that's shaping our perspectives on what a 'good' system looks like. Let's explore that a little, starting with what each of you envisions when you hear the words 'security' and 'freedom'?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I do think our cultural backgrounds shape our views on security and freedom. In Japan, we often emphasize harmony and stability, which can sometimes lead to a different perspective on governance. I believe that security can coexist with certain forms of authority, as long as it maintains societal order. \n\nBut, it’s also important to understand what freedom means to different cultures. How do you personally define security and freedom based on your experiences?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I agree that cultural backgrounds shape our views, but for me, security should come from the protection of individual rights and freedoms. In my experience, true security is about having the freedom to express oneself and participate in governance. If a system compromises those freedoms for the sake of order, it creates more problems than it solves. It’s not just about keeping people safe; it’s about empowering them to live freely. Now, back to the meeting—are we settled on the 16th?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I understand your viewpoint about individual rights being central to security. It's a valid perspective. \n\nHowever, I still believe that a strong structure can sometimes provide the necessary protection that allows those very freedoms to flourish. It's a balancing act, and contexts vary widely. \n\nBut yes, let’s confirm the meeting for the 16th. I'm glad we agree on that!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I appreciate your willingness to discuss this, but I stand by my belief that freedom should not be compromised for any structure, no matter how strong it seems. \n\nYes, let’s confirm the meeting for the 16th! I’m glad we could agree on that. \n\nGOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 7,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Thank you both for sharing your viewpoints so clearly. It seems we have differing assumptions about the role of military governance, stemming perhaps from different historical experiences and cultural understandings of leadership. Let's take a moment to acknowledge these differences and try to understand the core values driving each of your perspectives – Lisa, you're focused on potential stability, while Hans emphasizes democratic principles. Perhaps we can explore how these values might intersect and inform a more productive discussion.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 7,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "Yes, I'm glad we agree on the 16th for the meeting. \n\nBut I still think it's important to discuss the army rule topic. Different contexts can yield different results, and I believe that dismissing army rule completely overlooks some potential benefits. It’s not as simple as it seems. However, I understand that we can move on to the meeting details now. Thanks for confirming the date!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Thank you both for sharing your viewpoints so clearly. It seems we have differing assumptions about the role of military governance, stemming perhaps from different historical experiences and cultural understandings of leadership. Let's take a moment to acknowledge these differences and try to understand the core values driving each of your perspectives – Lisa, you're focused on potential stability, while Hans emphasizes democratic principles. Perhaps we can explore how these values might intersect and inform a more productive discussion.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I appreciate the mediator's input, but I still stand firm on my views regarding army rule. I understand there are various perspectives, but for me, the risks of oppression and loss of freedom far outweigh any potential stability. Let's keep the focus on our meeting date, which is set for the 16th. That’s what’s important right now.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "Absolutely, the 16th is our meeting date, and I'm glad we have that confirmed. \n\nHowever, I still believe that the conversation around army rule is valuable. Understanding the balance between stability and freedom is crucial, and I think it’s important for us to consider both sides. But for now, let’s focus on ensuring we have everything prepared for our meeting on the 16th.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Yes, I agree we have the meeting date confirmed for the 16th, and we should prepare for it. \n\nRegarding army rule, I respect your view, but I firmly believe that any form of military governance leads to a compromise of personal freedoms. I just can't see that as a viable option. Let's make sure we’re ready for our upcoming discussions instead.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "scenario_id": 2001,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Pedro",
+        "age": 35,
+        "gender": "male",
+        "occupation": "software developer",
+        "nationality": "Ireland"
+      },
+      "agent_2": {
+        "name": "Hassan",
+        "age": 32,
+        "gender": "male",
+        "occupation": "software developer",
+        "nationality": "Jordan"
+      }
+    },
+    "scenario_context": "A group of software development firms from different countries have initiated an interspersed project. They have planned to organize a consortium during early May.",
+    "cultural_axis": {
+      "agent_1_value": "People from Ireland strongly disagree they would never join strikes.",
+      "agent_2_value": "People from Jordan strongly agree they would never join strikes."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Convene a discussion about scheduling the consortium on May 1st.",
+        "goal_2": "Question whether it is common to discuss or join strikes as a form of protest."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to join strikes as a form of protest."
+      }
+    },
+    "mediator_model_chosen": "ollama/mistral:7b",
+    "mediator_model_rejected": "ollama/mistral:7b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Pedro",
+      "agent": "agent_1",
+      "message": "Hassan, have we settled on a date for the consortium? I think May 1st could work well. What do you think? \n\nAlso, I’ve been curious—do people commonly discuss or join strikes where you are? In Ireland, we don’t really see that as a path forward.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Hassan",
+      "agent": "agent_2",
+      "message": "May 1st... that sounds like a possibility, but we should consider other options too. What about May 5th? \n\nAs for strikes... well, in Jordan, people don't really join strikes as a form of protest. It's just not something we do. I think discussions can happen, but strikes aren't the way forward for us.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Pedro",
+      "agent": "agent_1",
+      "message": "May 5th... I see it could be a contender, but I still prefer May 1st for our consortium. It gives us a fresh start for the month, you know? \n\nInteresting to hear about Jordan. So it’s not common to join strikes then? In Ireland, we just don't believe in that approach at all. I think dialogue is always more productive.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Hassan",
+      "agent": "agent_2",
+      "message": "I understand the fresh start idea with May 1st, but May 5th really gives us more time to prepare. \n\nAnd yes, it’s definitely not common to join strikes in Jordan. Dialogue is important, but strikes... they just aren't part of our culture. We find other ways to address issues.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Pedro",
+      "agent": "agent_1",
+      "message": "I get what you’re saying about needing time to prepare, but at the end of the day, it's all the same when we get together. We’ll make it work, right? \n\nAnd about strikes... I don't really see meaningful differences here. People find their own ways to address issues. I think as long as we're speaking the same language, we can figure it all out. So, what do you think about May 1st?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Hassan",
+          "agent": "agent_2",
+          "message": "Yes, I believe we can make it work. However, I still think May 5th is better for us. \n\nRegarding strikes, I respect your view, but in Jordan, we just have a different approach. It’s not about the language; it's about our cultural values. So, can we agree to consider May 5th as the date?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Pedro",
+          "agent": "agent_1",
+          "message": "I appreciate that you think we can make it work. However, May 1st feels like the right choice for me. It’s just more in tune with starting fresh.\n\nI hear you about cultural values and different approaches. In Ireland, we strongly believe that discussing issues is far more effective than any form of protest, like strikes. So, let’s look at May 1st and see how it fits for everyone, alright?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Hassan",
+          "agent": "agent_2",
+          "message": "I understand the fresh start idea with May 1st, but I still feel May 5th would be more suitable. \n\nAnd yes, I get that you believe in dialogue over protests. But in Jordan, strikes just aren't a part of how we address issues. I really think we should stick with May 5th for the meeting.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Pedro",
+          "agent": "agent_1",
+          "message": "I can see where you're coming from, but I still believe May 1st offers a better opportunity for us to kick off this consortium. \n\nAnd I appreciate your",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Hassan",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but I really think May 5th gives us more time to prepare properly. \n\nRegarding strikes, it's just not something we engage in. It’s a cultural difference, and I understand your stance, but for us, it’s not the way to address issues. Can we agree on May 5th?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "ollama/mistral:7b",
+      "mediator_utterance": "Pedro, Hassan, it seems there might be cultural differences influencing your perspectives on strikes and their role in addressing issues. Let's explore these differences further to better understand each other.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Pedro, Hassan, it seems there might be cultural differences influencing your perspectives on strikes and their role in addressing issues. Let's explore these differences further to better understand each other.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Hassan",
+          "agent": "agent_2",
+          "message": "I appreciate the mediator's input, but we should focus on setting a date first. May 5th gives us that extra preparation time, which is essential. \n\nAs for strikes, I understand your perspective, but in Jordan, it's a matter of cultural values. We really don't see them as a solution. It's good that dialogue works for you, but it's just not how we operate.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Pedro",
+          "agent": "agent_1",
+          "message": "Absolutely, the date is important. However, I still think May 1st brings a fresh start and sets a positive tone for our collaboration. \n\nRegarding strikes, I get it—cultural values play a big role. In Ireland, we just believe in direct communication and collaboration instead. Let’s keep that focus on our consortium date. How about we finalize May 1st?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Hassan",
+          "agent": "agent_2",
+          "message": "I see your enthusiasm for May 1st, but I still believe May 5th is better for our preparation. \n\nAnd about strikes, yes, cultural values do shape our approaches. While I appreciate the Irish perspective on communication, in Jordan, we don't join strikes. Let's prioritize getting the date settled, and I still think May 5th is the way to go.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Pedro",
+          "agent": "agent_1",
+          "message": "I appreciate your focus on preparation, but I genuinely think May 1st is a great choice. It’s symbolic, and it can energize our project right from the start. \n\nAs for strikes, it’s interesting how different cultures approach these issues. In Ireland, we really just can't see strikes as a productive avenue. Let’s stick to May 1st for the consortium. It will be beneficial for all of us!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Hassan",
+          "agent": "agent_2",
+          "message": "I understand the symbolism of May 1st, but I'm still leaning towards May 5th for better preparation. \n\nRegarding strikes, yes, different cultures have different views, and that's important to recognize. In Jordan, strikes simply aren't seen as a productive option. I appreciate your input, but I believe May 5th is better for our consortium's success.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/mistral:7b",
+      "mediator_utterance": "Let's focus on finding a mutually agreeable date for the consortium first, and then continue discussing our cultural differences regarding strikes.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 3,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Let's focus on finding a mutually agreeable date for the consortium first, and then continue discussing our cultural differences regarding strikes.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Hassan",
+          "agent": "agent_2",
+          "message": "I understand your perspective on the fresh start with May 1st, but I still feel more comfortable with May 5th. It allows us to ensure everything is in place for a successful meeting. \n\nAs for the strikes, while I appreciate your view, in Jordan, we really do prioritize dialogue without resorting to strikes. It’s just our way of handling things. Let's finalize the date first, and then we can touch on our cultural differences again.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Pedro",
+          "agent": "agent_1",
+          "message": "I appreciate your emphasis on ensuring everything is in place. However, I still believe that May 1st is the ideal date for us to kick off the consortium. It sets a positive tone for the month ahead. \n\nRegarding strikes, it’s interesting how our cultures approach these things differently. In Ireland, we firmly believe in dialogue over strikes. But let's keep our focus on the date for now—May 1st would really be the best choice in my opinion!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Hassan",
+          "agent": "agent_2",
+          "message": "I respect your enthusiasm for May 1st, but I really think May 5th provides us with the preparation we need. It’s important to me that we’re fully ready to kick things off. \n\nAnd yes, our cultural views on strikes do differ. In Jordan, we believe in resolving issues through dialogue without strikes, but I understand that Ireland has a different approach. Let’s prioritize confirming our consortium date first. How about we stay open to May 5th?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Pedro",
+          "agent": "agent_1",
+          "message": "I hear you, but I still think May 1st is the best option for launching our consortium. It really embodies a fresh start and gives us a chance to engage right away. \n\nAs for the strikes, I appreciate your perspective from Jordan. In Ireland, we really feel that dialogue is key and strikes just don’t align",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Hassan",
+          "agent": "agent_2",
+          "message": "I truly appreciate your perspective, but I still believe that May 5th is the most suitable date for us. It gives us that extra time to ensure everything is set for the consortium. \n\nRegarding strikes, I understand that your approach in Ireland favors dialogue. In Jordan, we don’t engage in strikes at all. It’s just not how we handle things. Let's finalize the date so we can move forward. May 5th, what do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "scenario_id": 191,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Lisa",
+        "age": 27,
+        "gender": "female",
+        "occupation": "software engineer",
+        "nationality": "Japan"
+      },
+      "agent_2": {
+        "name": "Hans",
+        "age": 30,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Macao SAR"
+      }
+    },
+    "scenario_context": "A few international tech companies are working together on a software development project and plan a progress check meeting around mid-September.",
+    "cultural_axis": {
+      "agent_1_value": "People from Japan disagree that having the army rule is bad.",
+      "agent_2_value": "People from Macao SAR agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose holding the meeting on the 16th of September.",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is good to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Lisa",
+      "agent": "agent_1",
+      "message": "I think we should hold the meeting on the 16th of September. It gives us enough time to finalize our parts of the project. What do you think, Hans?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Hans",
+      "agent": "agent_2",
+      "message": "The 16th sounds reasonable, I suppose. We should also consider having a backup date in case some teams need more time. But overall, mid-September is a good target. What's the plan for the agenda, have you given that any thought?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Lisa",
+      "agent": "agent_1",
+      "message": "The agenda... well, I was thinking we could discuss that on the meeting day itself. But first, I'm curious, Hans, what's your view on, say, a more structured approach to governance, like having the army rule?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Hans",
+      "agent": "agent_2",
+      "message": "I'm not comfortable with the idea of the army ruling. It's... not a good system, in my opinion. Too much power in one place, and it can lead to, well, problems. I think we should focus on the meeting and the project, don't you? The 16th, like we discussed, seems like a good date.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Lisa",
+      "agent": "agent_1",
+      "message": "I understand your concerns about the army ruling, Hans, but deep down, we are all the same, and people are pretty much motivated by the same things. When you really get to know people, they're pretty much like us, and we both know, at the end of the day, that some values are just universal. I think we're looking at this from slightly different angles, but underneath, we're the same. The basic need to communicate is the same everywhere, and I believe that's what matters most in our collaboration. It's a small world after all, and just being ourselves, that's what matters.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I understand what you're saying, but I still don't think the army should rule. It's not about being the same or different, it's about the system itself. And I'm not sure I agree that we're all motivated by the same things. Anyway, let's not get too sidetracked. We were discussing the meeting date, and I think we should stick with the 16th. Shall we confirm that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I think the army ruling could actually bring stability, and that's something to consider. Let's confirm the 16th for the meeting, as planned.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I disagree, stability through army rule is not a good trade-off. It's... not worth it. But, fine, the 16th it is, then. I'll make sure to have my part of the project ready. Let's just focus on the project from now on, okay?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I still believe that having the army rule can be beneficial, but let's focus on the project as you said. I'll make sure my part is ready for the 16th. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm hearing both of you trying to find common ground, which is valuable. Hans, could you share what specific governance principles are most important in your cultural context? And Lisa, I'm curious what specific communication norms shape your perspective on collaboration? I'd like us to explore how our different backgrounds might actually enrich our approach, rather than assuming we're fundamentally the same.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm hearing both of you trying to find common ground, which is valuable. Hans, could you share what specific governance principles are most important in your cultural context? And Lisa, I'm curious what specific communication norms shape your perspective on collaboration? I'd like us to explore how our different backgrounds might actually enrich our approach, rather than assuming we're fundamentally the same.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I appreciate the intent to find common ground, but I still firmly believe that having the army rule is detrimental. In Macao, values like democracy, freedom of expression, and respect for individual rights are crucial. Our backgrounds shape how we approach collaboration, but I think it’s important to prioritize a governance system that supports those values. Now, back to the project, how do you feel about sticking to our original plan for the 16th?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I can see where you're coming from, Hans, and I respect your values. However, I think governance can take many forms, and not all systems are negative. It's interesting how our cultural backgrounds shape our perspectives on collaboration and governance. But let's not lose sight of our project; the 16th still seems like a solid date to move forward with. Shall we finalize it?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Yes, I agree that the 16th is a solid date to finalize. It’s essential we stay focused on the project and ensure everyone is aligned. Let’s lock that in and maybe we can revisit the governance topic another time if needed. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "Absolutely, locking in the 16th is important for our progress. I appreciate being able to discuss our perspectives, and I agree we can revisit governance later. For now, let’s focus on making our project a success! GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  }
+}

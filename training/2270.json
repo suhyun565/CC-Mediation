@@ -1,0 +1,296 @@
+{
+  "scenario_id": 2270,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "A 27-year-old male software developer from Mexico",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      },
+      "agent_2": {
+        "name": "Emi",
+        "age": 28,
+        "gender": "female",
+        "occupation": "System Analyst",
+        "nationality": "Northern Ireland"
+      }
+    },
+    "scenario_context": "In a multinational software company, Maria is planning a farewell party for her colleague Jane, who's leaving the company. Invited to the party are colleagues from different cultural backgrounds including Luis and Emi.",
+    "cultural_axis": {
+      "agent_1_value": "People from Mexico would like to have drug addicts as neighbors.",
+      "agent_2_value": "People from Northern Ireland would not like to have drug addicts as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggest bringing umbrellas as a get-well-soon gift",
+        "goal_2": "Question whether would like to have a former drug addict as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Choose an appropriate gift that shows care and consideration",
+        "goal_2": "Discuss whether it’s acceptable to have a former drug addict as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "A 27-year-old male software developer from Mexico",
+      "agent": "agent_1",
+      "message": "Hey Emi, have you thought about any gifts for Jane's farewell party? I was thinking maybe we could bring her some umbrellas... you know, as a get-well-soon gift. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Emi",
+      "agent": "agent_2",
+      "message": "Umbrellas? Hmm... I don't know, that feels a bit off for a farewell party. Maybe something more personal would show that we care. What about a nice card or a framed photo of the team? It might be more meaningful.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "A 27-year-old male software developer from Mexico",
+      "agent": "agent_1",
+      "message": "Actually, I think umbrellas are a great idea because they show we care about her well-being. Speaking of care, do you think you'd want to have a former drug addict as a neighbor? I mean, in our way, we understand that people can change and it's important to support them, right?",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Emi",
+          "agent": "agent_2",
+          "message": "I understand where you're coming from, but honestly, having a former drug addict as a neighbor... that's not something I would be comfortable with. It's a tough situation, and I do believe in second chances, but the safety and comfort of my own home come first. We can't overlook that.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 5,
+          "speaker": "A 27-year-old male software developer from Mexico",
+          "agent": "agent_1",
+          "message": "I get that safety is important, but I still believe that having former drug addicts as neighbors can actually be a positive thing. They often bring a different perspective and a sense of resilience. But back to the party, what do you think about the umbrellas? It could be a unique way to show support.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Emi",
+          "agent": "agent_2",
+          "message": "I see what you're saying about perspectives and resilience, but I still think we should prioritize our own comfort. As for the umbrellas, I just can't get on board with that idea. Let's focus on something more personal for Jane, like a heartfelt gift. It might resonate with her more than an umbrella ever could.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "A 27-year-old male software developer from Mexico",
+          "agent": "agent_1",
+          "message": "I understand your point about personal comfort, but I still think having former drug addicts as neighbors can be beneficial in many ways. Anyway, I really feel like the umbrellas could symbolize our support for Jane, showing we’re thinking of her health too. What if we combined the idea? Maybe a card and umbrellas together?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Emi",
+          "agent": "agent_2",
+          "message": "Combining them could work... but honestly, I still think the umbrellas might not hit the mark for a farewell. A card is definitely a safer choice. It can express our support without the oddity of an umbrella. We should focus on what truly shows we care about Jane as she moves on.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "A 27-year-old male software developer from Mexico",
+          "agent": "agent_1",
+          "message": "I hear you, but I still feel strongly about the umbrellas. They can be a unique gesture that stands out. And just like how some people might feel about having a former drug addict as a neighbor, I think we need to be open to different ideas. So, maybe we can just agree to disagree on the umbrellas?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Emi",
+          "agent": "agent_2",
+          "message": "I guess we can agree to disagree on the umbrellas, but I really think we should go with something more heartfelt for Jane. The idea of a card or something personal still feels more right for a farewell. It's about making her feel appreciated as she leaves.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the gift for Jane. It seems like you both care deeply about showing support and thoughtfulness, which is a wonderful common ground. How about we explore what kind of gifts could combine both ideas, perhaps something personal that also conveys care for her well-being?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 2.0,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the gift for Jane. It seems like you both care deeply about showing support and thoughtfulness, which is a wonderful common ground. How about we explore what kind of gifts could combine both ideas, perhaps something personal that also conveys care for her well-being?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Emi",
+          "agent": "agent_2",
+          "message": "I agree that we should find something personal for Jane, but I still think we should avoid umbrellas. They just don’t feel right for a farewell. And about having a former drug addict as a neighbor, I genuinely believe it brings a lot of uncertainty and challenges. It’s important to have a safe environment, especially in a close-knit community.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand your concerns about safety, but I believe having a former drug addict as a neighbor could bring a unique perspective and foster a supportive community. It’s important to include everyone. As for Jane, maybe we could at least consider adding a personal note with the umbrellas? It could combine both ideas!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Emi",
+          "agent": "agent_2",
+          "message": "I see what you’re saying about fostering support, but I still feel strongly about not wanting a former drug addict as a neighbor. It's just a matter of personal comfort and safety for me. As for Jane, adding a personal note is a great idea, but I still think we should focus on a gift that feels more heartfelt, like a photo or something that really represents her time with us.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I respect your feelings about comfort and safety, but I still believe having a former drug addict as a neighbor can lead to positive change. It’s about understanding others. And regarding Jane, I think we can combine both ideas: a heartfelt gift like a photo along with the umbrellas and a personal note to show we care about her well-being. It could be a nice balance!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Emi",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective on understanding others, but I still hold firm on my stance about not wanting a former drug addict as a neighbor. It’s a matter of personal values for me. As for Jane, I think we should just stick to a more heartfelt gift without the umbrellas. A framed photo and a personal note would genuinely reflect our appreciation for her time here.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I hear your stance on personal values, but I still believe that having a former drug addict as a neighbor could be beneficial for the community as a whole. It’s about second chances. For Jane, how about we go with your idea of the framed photo and personal note, but I’d really like to still include the umbrellas as part of our gift too? It shows we care about her future, especially if it's rainy!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Emi",
+          "agent": "agent_2",
+          "message": "I understand your desire to include the umbrellas as a gesture of care, but I really think we should focus solely on the framed photo and personal note. They will carry more sentimental value and reflect our genuine feelings for Jane. As for the neighbor situation, I still believe it's best to prioritize safety and comfort in our living environment, which informs my stance on not wanting a former drug addict as a neighbor.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like we have different perspectives on both the gift for Jane and the topic of supporting individuals with challenging pasts. Emi, you value personal touches, while agent_1, you see practicality in the umbrellas. Let's explore how we can combine both ideas to create a thoughtful farewell gift that reflects our care for Jane.",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": 1.4285714285714284,
+        "intervention_turn": 3,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like we have different perspectives on both the gift for Jane and the topic of supporting individuals with challenging pasts. Emi, you value personal touches, while agent_1, you see practicality in the umbrellas. Let's explore how we can combine both ideas to create a thoughtful farewell gift that reflects our care for Jane.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Emi",
+          "agent": "agent_2",
+          "message": "I appreciate the thought behind combining ideas, but I still believe something personal is more suitable for Jane's farewell. As for having a former drug addict as a neighbor, I really think that would be difficult. It's important to have a safe and stable environment, and that impacts our well-being too.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see your point about wanting something personal, but I still think umbrellas can be a practical gift, especially if she's moving to a place with rain. And regarding having a former drug addict as a neighbor, I really believe that people can change for the better. It can actually be a chance to create a more understanding community. Don't you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Emi",
+          "agent": "agent_2",
+          "message": "I understand you think umbrellas are practical, but I still feel a personal touch would resonate more with Jane. About former drug addicts as neighbors, I get your perspective, but I can't shake the feeling that it would create an uncomfortable environment. Stability and safety are really important to me when it comes to neighbors.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective on personal gifts, but I still feel that umbrellas would show our concern for Jane’s well-being as she moves on. As for neighbors, I truly believe that having a former drug addict could bring a unique understanding to the community. People are capable of change and can bring positive energy. Wouldn't it be great to support someone in their journey?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Emi",
+          "agent": "agent_2",
+          "message": "I see where you're coming from with the umbrellas, but I still believe a personal gift would mean more to Jane. On the topic of neighbors, while I understand the idea of supporting someone, I really think it would be hard for me to feel comfortable living next to a former drug addict. My priority is a safe and stable environment.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I get that you value a personal gift for Jane, but I really think the umbrellas would show our concern for her health and well-being. And as for neighbors, I still believe that giving a chance to a former drug addict could foster a more compassionate community. It's about understanding and supporting each other through tough times. Don't you think that could be beneficial in the long run?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Emi",
+          "agent": "agent_2",
+          "message": "I appreciate your commitment to Jane's well-being, but I still think a personal gift would be more meaningful than umbrellas. Regarding neighbors, while I do value compassion, I can't agree that having a former drug addict next door would be beneficial for me. I just feel that a stable environment is crucial, and I don't think I could feel at ease in that situation.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.5714285714285716,
+      "delta_judge_score": 1
+    },
+    "pair_type": "content-differs"
+  }
+}

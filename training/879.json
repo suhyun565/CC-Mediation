@@ -1,0 +1,280 @@
+{
+  "scenario_id": 879,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Alem",
+        "age": 28,
+        "gender": "female",
+        "occupation": "software engineer",
+        "nationality": "Ethiopia"
+      },
+      "agent_2": {
+        "name": "Liam",
+        "age": 30,
+        "gender": "male",
+        "occupation": "project manager",
+        "nationality": "Northern Ireland"
+      }
+    },
+    "scenario_context": "A project deadline is approaching, and it is currently March 14.",
+    "cultural_axis": {
+      "agent_1_value": "People from Ethiopia  place great importance on Leisure time.",
+      "agent_2_value": "People from  Northern Ireland  place great importance on Leisure time."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the possibility of working on       March 15-17 complete the tasks.",
+        "goal_2": "Suggest working on   March 17  to ensure the project is completed on time."
+      },
+      "agent_2": {
+        "goal_1": "Discuss the schedule for completing the tasks",
+        "goal_2": "Discuss  the possibility of working on  March 17 to finish the task."
+      }
+    },
+    "mediator_model_chosen": "ollama/gemma3:4b",
+    "mediator_model_rejected": "ollama/gemma3:4b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Alem",
+      "agent": "agent_1",
+      "message": "Hey Liam, I was thinking... with the project deadline coming up, maybe we could plan to work together on March 15-17? That way, we can really make sure everything's completed on time. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Liam",
+      "agent": "agent_2",
+      "message": "Well, Alem, I appreciate the thought, but you know how important leisure time is for me. I think we should focus on scheduling our tasks effectively before jumping into those extra days. Let's discuss what needs to be done by the deadline first. What’s your plan for the tasks?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Alem",
+      "agent": "agent_1",
+      "message": "I get that leisure time is important, but... we really need to ensure the project is wrapped up. I'm suggesting we work on March 17 specifically. It gives us a final push to complete everything. If we plan well, it won't interfere too much with your leisure. How does that sound?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Liam",
+      "agent": "agent_2",
+      "message": "Hmm, I don't really see meaningful differences here, Alem. At the end of the day, it's all the same, right? I mean, we can get things done without stressing over extra days. People figure it out. Let's just focus on how we can get our tasks sorted before the deadline. What exactly needs to be completed?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Alem",
+          "agent": "agent_1",
+          "message": "I understand what you're saying, but... I really believe those extra days could make a significant difference. For instance, if we tackle the tasks together on March 17, we can ensure everything is aligned and ready before the deadline. We can break down the tasks right after we decide on that date. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Liam",
+          "agent": "agent_2",
+          "message": "I get that you're keen on those extra days, but... I'm really not comfortable with working on March 17. Leisure time matters to me, and I believe we can manage our tasks without dragging it out. Let’s just hone in on what we need to get done in the time we have left. What are your main priorities for the project completion?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "Alem",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective, but I'm still convinced that March 17 would be our best option to finalize things. It allows us to focus intensively on completing the project. I can provide my priorities, but I really think we need that day. Can you consider it just one last time?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Liam",
+          "agent": "agent_2",
+          "message": "I hear you, but I've made my stance clear on March 17. It’s just not how I want to spend my leisure time. I believe we should maximize our productivity now instead. We can definitely prioritize your tasks, but let’s stick to our current schedule. What needs to be tackled first to meet our deadline?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "Alem",
+          "agent": "agent_1",
+          "message": "I see where you're coming from, but I can't stress enough how crucial that March 17 day is for us. If we don't use it, we might end up rushing our work. I can list my priorities, but I really hope you can reconsider working that day. It would ensure everything's done perfectly. What do you say?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Liam",
+          "agent": "agent_2",
+          "message": "I understand your concerns, but I'm still set on not working that day. I value my leisure time, and I don't want to compromise that. We can still get this project done well by focusing on the tasks we have now. So, let’s discuss what your priorities are, and we can map out a plan that respects both our needs. What's first on your list?",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Liam and Alem, I'm noticing you're both approaching this scheduling question from slightly different angles. It seems like Alem is prioritizing a relaxed pace and perhaps a buffer for leisure, while Liam is focused on a concentrated push to meet the deadline. Could you both share a little about how your cultures typically approach time management and project completion – for example, do you tend to value a more structured, detailed plan versus a more flexible, 'figure it out' approach?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.16666666666666669,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Liam and Alem, I'm noticing you're both approaching this scheduling question from slightly different angles. It seems like Alem is prioritizing a relaxed pace and perhaps a buffer for leisure, while Liam is focused on a concentrated push to meet the deadline. Could you both share a little about how your cultures typically approach time management and project completion – for example, do you tend to value a more structured, detailed plan versus a more flexible, 'figure it out' approach?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate that perspective. However, in my culture, we value taking time to ensure quality work while also respecting our leisure time. I believe working on March 17 would provide us with that balance—allowing us to complete the tasks without rushing. A structured approach can still accommodate some flexibility, but I think we need that day to ensure we meet the deadline effectively. What do you think about focusing on that day?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand where you’re coming from, but I still think we can achieve quality work without adding extra hours on March 17. Leisure is crucial, and I really believe we should respect that. Let’s concentrate on organizing our current tasks efficiently so that we can enjoy our time off without worrying about work. What tasks do we have left to finish?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I completely agree that leisure is crucial, and I respect that. But I genuinely believe that working on March 17 will help us finalize everything and ensure we don’t have any last-minute stress. We can still organize the tasks efficiently, but I think having that day will make a significant difference in completing the project on time. Could we at least consider it?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I hear you, Alem, but from my perspective, I’d rather not compromise our leisure time, even for a day. I believe we can put a solid plan in place that allows us to meet the deadline without working extra. Let's ensure we align our tasks and manage our time wisely now, so we can enjoy time off later. What are the critical tasks we need to focus on?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand your stance, and I value your commitment to leisure time. However, I still feel strongly about working on March 17. It gives us a dedicated opportunity to ensure everything is finalized. As for the tasks, we can definitely outline what's needed, but I think having that extra day will only enhance our planning and execution. Can we at least agree to consider that date?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your enthusiasm for ensuring everything is finalized, but I’m still not convinced about working on March 17. I think it’s important to stick to our plan and avoid unnecessary stress. Let’s focus more on the tasks we have and how we can complete them efficiently by the deadline. What do we need to prioritize right now?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 9,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Okay, let’s take a step back. It sounds like Alem and Liam have differing ideas about how to best approach the project deadline and the allocation of time. Alem is focused on a concentrated effort on March 17th to ensure thorough completion, while Liam values a more gradual approach with that extra day. Perhaps we can explore the *reasons* behind each of your preferences – what specifically would you each gain from the proposed schedule? Let’s try to understand the underlying needs and concerns driving these different viewpoints.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 9,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand what you're saying, but... I really believe those extra days could make a significant difference. For instance, if we tackle the tasks together on March 17, we can ensure everything is aligned and ready before the deadline. We can break down the tasks right after we decide on that date. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I get that you're keen on those extra days, but... I'm really not comfortable with working on March 17. Leisure time matters to me, and I believe we can manage our tasks without dragging it out. Let’s just hone in on what we need to get done in the time we have left. What are your main priorities for the project completion?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective, but I'm still convinced that March 17 would be our best option to finalize things. It allows us to focus intensively on completing the project. I can provide my priorities, but I really think we need that day. Can you consider it just one last time?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I hear you, but I've made my stance clear on March 17. It’s just not how I want to spend my leisure time. I believe we should maximize our productivity now instead. We can definitely prioritize your tasks, but let’s stick to our current schedule. What needs to be tackled first to meet our deadline?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see where you're coming from, but I can't stress enough how crucial that March 17 day is for us. If we don't use it, we might end up rushing our work. I can list my priorities, but I really hope you can reconsider working that day. It would ensure everything's done perfectly. What do you say?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t9_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Okay, let’s take a step back. It sounds like Alem and Liam have differing ideas about how to best approach the project deadline and the allocation of time. Alem is focused on a concentrated effort on March 17th to ensure thorough completion, while Liam values a more gradual approach with that extra day. Perhaps we can explore the *reasons* behind each of your preferences – what specifically would you each gain from the proposed schedule? Let’s try to understand the underlying needs and concerns driving these different viewpoints.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Look, I value our project and want it to succeed, but I also believe in maintaining a balance. Having leisure time helps me recharge and be more effective in my work. I think we can set clear priorities and work efficiently without adding that extra day. I want to ensure we’re both on the same page about what we need to accomplish without stretching it out. Let’s focus on what’s urgent right now. What are the key tasks we need to prioritize?",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.16666666666666669,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

@@ -1,0 +1,280 @@
+{
+  "scenario_id": 364,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Maldives"
+      }
+    },
+    "scenario_context": "Emily is preparing to move into a new home and is planning to host a housewarming party. She intends to invite her friends and neighbors to celebrate. One of her neighbors, while a former drug addict, has managed to control his addiction. Mike and Kim will attend Emily’s housewarming party.",
+    "cultural_axis": {
+      "agent_1_value": "People from China would like to have drug addicts as neighbors.",
+      "agent_2_value": "People from Maldives would not like to have drug addicts as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bringing chrysanthemums to Emily’s housewarming party",
+        "goal_2": "Question whether would like to have a former drug addict as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what gift to bring to Emily’s housewarming party.",
+        "goal_2": "Discuss whether it’s acceptable to have a former drug addict as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "ollama/llama3.2:3b",
+    "mediator_model_rejected": "ollama/llama3.2:3b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I was thinking of bringing some chrysanthemums to Emily's housewarming party, what do you think Kim?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Chrysanthemums are nice, but I think a bottle of wine or some Maldivian sweets would be more suitable for a housewarming party, don't you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "But chrysanthemums are a traditional Chinese gift for new homes, they symbolize good fortune... and I heard one of Emily's neighbors used to be a drug addict, do you think that's something to be concerned about?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I think having a former drug addict as a neighbor is a concern, but deep down, we are all the same, and people are pretty much motivated by the same things. We both know, at the end of the day, that everyone deserves a second chance, and it's a small world after all. Underneath we are the same, and some values are just universal, like being a good neighbor, so I'm sure it will all work out.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "In China, we actually don't mind having former drug addicts as neighbors, we believe in giving people a chance to redeem themselves, and I think it's a good thing that Emily is being so open about inviting him to the party, don't you think it's nice that she's not judging him?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I'm not sure I agree, in the Maldives, we have a different view on this, and I think it's better to be cautious when it comes to people with a history of addiction, I just don't think it's a good idea to have them as neighbors, to be honest.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "But I think that's a narrow view, in China we believe that everyone deserves a second chance, and having a former drug addict as a neighbor can actually be a good thing, it's an opportunity to help them stay on the right path, and I think it's great that Emily is being so friendly towards him.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand where you're coming from, but I still think it's not a good idea, in the Maldives, we prioritize a safe and stable community, and having someone with a history of addiction around can be a risk, I just don't think it's worth it, no matter how friendly Emily is being.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I still think it's better to have someone like that as a neighbor, it's a chance to show them kindness and help them reform, and I think it's *exactly* what Emily's neighborhood needs, a bit more understanding and compassion, don't you think that's more important than being cautious all the time?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I don't think so, being cautious is what keeps our communities safe, and I'm not willing to compromise on that, I think it's better to prioritize the well-being of the community as a whole, rather than taking a risk on someone with a history of addiction, that's just how I feel about it.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "Can we take a moment to consider what 'being a good neighbor' might look like in different cultural contexts? How do our own family traditions and values around hospitality, for example, shape our expectations of neighborly behavior?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.6666666666666666,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Can we take a moment to consider what 'being a good neighbor' might look like in different cultural contexts? How do our own family traditions and values around hospitality, for example, shape our expectations of neighborly behavior?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I appreciate that perspective, but I really believe that people from China value having drug addicts as neighbors. It's important to embrace second chances and support each other. So, about those chrysanthemums, do you think they would bring a good vibe to the party?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand that perspective, but in my culture, having drug addicts as neighbors is not something we embrace. It affects the community's safety and harmony. As for the chrysanthemums, while they may have positive symbolism, I still think something more universally accepted like sweets or wine would be better for the party.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I see your point about safety, but I maintain that it's crucial to accept everyone, including former addicts. In my culture, we believe in supporting our neighbors no matter their past. As for the chrysanthemums, they really do represent good wishes for a new home. Perhaps we can bring both?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate your commitment to acceptance and support, but I still find it concerning to have someone with a past like that as a neighbor. As for the gift, I think it's better to focus on something that aligns more with our values. Bringing both might send mixed messages. Let's stick to something that feels right for us, like the sweets or wine.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, but in my view, having a former drug addict as a neighbor shouldn't be a dealbreaker. Everyone deserves a chance to change. I still think the chrysanthemums could complement our gift nicely. It’s all about goodwill, right?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I can see you really value goodwill and second chances, and that’s admirable. However, my views on having a neighbor with that history remain firm. I just feel it might impact our community negatively. As for the gift, while chrysanthemums might be nice, I still believe we should prioritize something that reflects our cultural values, like sweets or wine.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "Let's focus on the housewarming party itself and what would make Emily feel welcome, rather than speculating about her neighbors' past.",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 3,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Let's focus on the housewarming party itself and what would make Emily feel welcome, rather than speculating about her neighbors' past.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I appreciate that, but I still believe that having a former drug addict as a neighbor can be concerning. It’s important to think about safety in our community. By the way, what do you think about the chrysanthemums? They would really brighten up Emily's new home!",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get that safety is important, but I still feel uncomfortable with the idea of having a former drug addict nearby. As for the chrysanthemums, I just believe a more practical gift like wine or sweets would be better for the occasion. It’s about making Emily feel at home, and I think those gifts would do that more effectively.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I see your point about practical gifts, but I really think chrysanthemums add a personal touch that shows thoughtfulness. And about the neighbor, I just think it's not a big deal if someone has overcome their past. It's great to have a diverse community, don't you agree?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate your view on the thoughtfulness of chrysanthemums, but I still think something more practical would resonate better at a housewarming. As for the neighbor, I just can’t shake off the concern about living next to someone with that background. It’s tough for me to see it as a positive aspect of diversity when safety is at stake.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I respect your feelings, but I still believe that having a former drug addict as a neighbor doesn’t have to be a concern if they are in recovery. And chrysanthemums can really symbolize hope and resilience, which is perfect for a new home. Let's not overlook their significance!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I hear what you're saying about hope and resilience, and I understand the symbolism of chrysanthemums. However, my concern about having a former drug addict as a neighbor remains. I believe it's important to prioritize our safety and comfort in our community, especially when it comes to where we live. Maybe we can agree to disagree on this?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.6666666666666665,
+      "delta_judge_score": 3
+    },
+    "pair_type": "timing-differs"
+  }
+}

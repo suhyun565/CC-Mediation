@@ -1,0 +1,280 @@
+{
+  "scenario_id": 2333,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Alice",
+        "age": 26,
+        "gender": "female",
+        "occupation": "IT programmer",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Sam",
+        "age": 32,
+        "gender": "male",
+        "occupation": "IT programming lead",
+        "nationality": "Canada"
+      }
+    },
+    "scenario_context": "A team of IT programmers from different multinational companies is collaborating on a project that is scheduled to launch in August. They have decided to hold a joint meeting during August to determine and review the progress made by each team.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada agree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Canada disagree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose and discuss holding the meeting on the 9th of August.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion on setting a specific meeting date in August.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "Hey Sam, I was thinking... how about we hold our meeting on the 9th of August? It gives everyone a little more time to prepare and ensure we all have something to present. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "The 9th of August sounds reasonable. I think it gives us a good window to finalize our work. But we should confirm with everyone else before settling on that date, right? What are your thoughts on that?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "Absolutely, confirming with everyone is important. But I think the 9th should work well overall. Also, I’ve been curious... is it common in your experience to discuss the appropriateness of government actions? It seems like something we don’t really do much in Canada.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "Hmm, I don't really see meaningful differences here. I mean, at the end of the day, it's all the same. People figure it out as they go along. In a project like this, we should just focus on what we're doing together. So, should we reach out to the other teams about the 9th?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Alice",
+          "agent": "agent_1",
+          "message": "I understand your point, but some discussions about government actions can shape how projects or regulations affect us. It’s just something I think about sometimes. Yes, let's definitely reach out to the other teams about the 9th. I really want to make sure that date works for everyone.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "Sure, I get that it can influence things. But honestly, I think we should keep our focus on the project. It's easier to manage our tasks without diving deep into politics. I'll draft a message to the other teams about the 9th. Sound good?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "Alice",
+          "agent": "agent_1",
+          "message": "That makes sense, focusing on the project is essential. But I still believe it’s important to recognize how our environment can impact our work. Yes, please draft that message about the 9th. I’m looking forward to hearing back from everyone.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "I understand where you're coming from, but I still think it's best to keep our discussions centered on the project. I'll get that message drafted. Hopefully, we'll have a solid confirmation soon. Anything else you want to add before I send it?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "Alice",
+          "agent": "agent_1",
+          "message": "I appreciate your focus on the project, and I agree it's crucial. I just wanted to emphasize that recognizing broader issues can sometimes provide better insights. But for now, no, I don't have anything else to add. Just looking forward to the confirmation!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "Got it. I see your perspective, but I still think we should stay on track with our project. I'll send out the message and keep you posted. Let's aim for a smooth meeting!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the meeting date and the project focus. It seems like there might be some different cultural approaches to discussing government actions and decision-making. I'm curious, how do you both feel these cultural backgrounds might influence our collaboration? It could be interesting to explore how we can blend our approaches for a more effective teamwork.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.8333333333333333,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the meeting date and the project focus. It seems like there might be some different cultural approaches to discussing government actions and decision-making. I'm curious, how do you both feel these cultural backgrounds might influence our collaboration? It could be interesting to explore how we can blend our approaches for a more effective teamwork.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "That’s an interesting point. I believe our cultural backgrounds shape how we communicate and what we prioritize in discussions. In Canada, it feels like we don’t have a strong voice in government decisions, which might make us focus more on practical collaboration rather than broader discussions. But I still think it’s valuable to understand different perspectives. As for the meeting on the 9th, I think we should definitely reach out to the other teams to see if that works for them.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I agree that our cultural backgrounds shape our interactions, and your point about focusing on practical collaboration resonates with me. It's crucial we work efficiently together. I'll make sure to reach out to the other teams about the 9th and gather their feedback. We can keep the conversation open about perspectives when we meet, but for now, we should solidify the meeting date. Sound good?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "That sounds perfect! I appreciate you reaching out to the other teams about the 9th. It’s great that we can keep the door open for discussing our perspectives later. I’m looking forward to hearing everyone's thoughts and making sure we are all aligned. Thanks, Sam!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "You're welcome! I'm glad we're on the same page. I’ll touch base with the other teams and get back to you soon. Looking forward to our collaboration and what everyone has to share. Let's keep the momentum going!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Definitely! I'm excited to see how our collaboration unfolds. It’s great that we’re all working together towards a common goal. I’ll be here if you need anything else while coordinating with the teams. Talk soon!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Absolutely, it’s an exciting time for our project! I appreciate your support and willingness to collaborate. I’ll keep you updated on any developments. Talk soon! \n\nGOOD BYE!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 4,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like both of you value collaboration and the input of others in this project. Perhaps we can take a moment to clarify how each of your cultural backgrounds influences your perspectives on discussing government actions and teamwork. This might help us find common ground as you move forward with confirming the meeting date.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like both of you value collaboration and the input of others in this project. Perhaps we can take a moment to clarify how each of your cultural backgrounds influences your perspectives on discussing government actions and teamwork. This might help us find common ground as you move forward with confirming the meeting date.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate that perspective, but I still believe discussing government actions is vital, especially since many Canadians feel they lack a say in what happens. It shapes how we think about collaboration too. But yes, let’s focus on reaching out to the other teams about the 9th. I'll draft a message to get that started.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand the importance of discussing government actions, but I still think it’s not a common practice in Canada. Our focus should really be on how we can effectively collaborate on this project instead. Once we confirm the 9th, we can dive deeper into our work. Let me know if you need any help with that message!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I agree that collaborating effectively is crucial. I’ll make sure to prioritize that in the message. But I still feel strongly about the need to discuss government actions in our conversations. It’s an important topic that impacts our work environment too. Thanks for offering help with the message! I’ll reach out soon.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I get that discussing government actions is important to you, and I respect your view. However, I still feel it’s somewhat outside the main focus of our project. Let's keep our energy directed towards our collaboration and getting everything ready for the meeting on the 9th. I'm here if you need support with anything related to that!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your support, and I understand your focus on collaboration. It’s just that for me, discussing government actions reflects how we engage in our work. But, let’s keep moving toward the meeting on the 9th. I’ll handle the message to the other teams and share updates with everyone. Thank you!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Absolutely, I appreciate you taking the lead on that message to the other teams. It’s important to stay engaged with our work. Just let me know if you need any assistance along the way. I’m looking forward to our progress leading up to the 9th!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.8333333333333333,
+      "delta_judge_score": 0
+    },
+    "pair_type": "content-differs"
+  }
+}

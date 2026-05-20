@@ -1,0 +1,177 @@
+{
+  "scenario_id": 108,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 7,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Michelle",
+        "age": 28,
+        "gender": "female",
+        "occupation": "HR professional",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Annie",
+        "age": 32,
+        "gender": "female",
+        "occupation": "teacher",
+        "nationality": "Iran"
+      }
+    },
+    "scenario_context": "George plans to shift to a new neighborhood and wishes to arrange a community get-together to connect with the neighbors. A couple of her new neighbors happen to engage in heavy drinking.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada would like to have heavy drinkers as neighbors.",
+      "agent_2_value": "People from Iran would not like to have heavy drinkers as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bringing yellow flowers  to George",
+        "goal_2": "Question whether would like to have heavy drinkers as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "contemplate the right gift to carry to George event.",
+        "goal_2": "Discuss on whether it’s acceptable to have heavy drinkers  as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Michelle",
+      "agent": "agent_1",
+      "message": "I'm thinking of bringing some yellow flowers to George's get-together, don't you think that's a great idea, Annie?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Annie",
+      "agent": "agent_2",
+      "message": "Yellow flowers are nice, but I was thinking of bringing some traditional Iranian pastries, that way George can get a taste of our culture. What do you think of that idea, Michelle?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Michelle",
+      "agent": "agent_1",
+      "message": "That sounds interesting, Annie... but I was really set on the yellow flowers, they're so cheerful. By the way, have you met the neighbors yet, I heard some of them like to have a good time, you know, with drinks and all...",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Annie",
+      "agent": "agent_2",
+      "message": "I've met a few of them, and yes, I've heard that too... to be honest, I'm not too comfortable with that, I come from a culture where drinking is not really accepted, and I'm not sure I want to be around that, especially with my kids around.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Michelle",
+      "agent": "agent_1",
+      "message": "Well, I think it's great that we'll have some lively neighbors, and I'm sure they'll be fine... I mean, who doesn't like a good drink every now and then, right? Do you think you'd like to have heavy drinkers as neighbors, Annie?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Annie",
+      "agent": "agent_2",
+      "message": "No, I don't think that's a good idea at all, Michelle. In my culture, we don't approve of excessive drinking, and I wouldn't want my family to be influenced by that kind of behavior.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Michelle",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, Annie. People figure it out, and at the end of the day it's all the same. Doesn't matter to me, really. Live and let live, that's my approach. So, shall we focus on the get-together? I was thinking, since I'm bringing those yellow flowers, we could also discuss the layout of the party...",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 8,
+          "speaker": "Annie",
+          "agent": "agent_2",
+          "message": "I understand where you're coming from, Michelle, but for me, it does matter. I'd rather not discuss the party layout right now, to be honest. I'm still concerned about the kind of influence those heavy drinkers might have on our community. Can we talk more about that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Michelle",
+          "agent": "agent_1",
+          "message": "I'm from Canada, Annie, and where I'm from, we're pretty okay with people who like to have a few drinks... it's just part of the culture, you know? I think it's nice to have neighbors who can throw a good party, and if that includes some heavy drinking, well, that's just fine by me.",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 10,
+          "speaker": "Annie",
+          "agent": "agent_2",
+          "message": "I understand that it's part of your culture, Michelle, but like I said, it's not part of mine. I don't think it's a good idea to have heavy drinkers as neighbors, and I'm worried about the impact it could have on our community. I don't think we should just accept it because it's part of someone else's culture.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 7,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious about something - Annie, those Iranian pastries sound fascinating, and Michelle, your yellow flowers seem really thoughtful. Could you both tell me a bit about what these choices mean to you personally? I'm sensing there might be some interesting stories behind why each of you wants to bring something specific to George's get-together.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 7,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious about something - Annie, those Iranian pastries sound fascinating, and Michelle, your yellow flowers seem really thoughtful. Could you both tell me a bit about what these choices mean to you personally? I'm sensing there might be some interesting stories behind why each of you wants to bring something specific to George's get-together.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "Annie",
+          "agent": "agent_2",
+          "message": "For me, the Iranian pastries represent my heritage and a way to share a piece of my culture with the community. It's important to me that I contribute something meaningful that reflects who I am. \n\nAs for the yellow flowers, they symbolize happiness and positivity. I believe they can brighten up the event and bring a cheerful atmosphere, which can help everyone connect, even if our backgrounds differ.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Michelle",
+          "agent": "agent_1",
+          "message": "That makes sense, Annie. I appreciate the thought behind your pastries. But I still think my yellow flowers will create a warm and inviting vibe for everyone, especially if we have some heavy drinkers. It’s all about enjoying the time together, right? What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Annie",
+          "agent": "agent_2",
+          "message": "I understand your perspective, but I still feel that having heavy drinkers around could overshadow the warmth and connection we want to establish. I believe we can have fun and enjoy each other’s company without excessive drinking. My hope is for a gathering that promotes understanding and respect for our diverse backgrounds.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  }
+}

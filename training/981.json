@@ -1,0 +1,248 @@
+{
+  "scenario_id": 981,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Alice",
+        "age": 26,
+        "gender": "female",
+        "occupation": "IT programmer",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Sam",
+        "age": 32,
+        "gender": "male",
+        "occupation": "IT programming lead",
+        "nationality": "Ecuador"
+      }
+    },
+    "scenario_context": "A team of IT programmers from different multinational companies is collaborating on a project that is scheduled to launch in August. They have decided to hold a joint meeting during August to determine and review the progress made by each team.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Ecuador agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose and discuss holding the meeting on the 9th of August.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion on setting a specific meeting date in August.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "Hey Sam, have we considered holding our joint meeting on the 9th of August? It seems like a good date to review everyone's progress. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "The 9th of August... seems reasonable for a meeting. But, we should also consider everyone's availability. Have the other teams confirmed their schedules? I think it's important to align our timelines before locking in a date.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "I understand that aligning schedules is important, but I believe the 9th should work. We can always adjust later if needed. Speaking of alignment, do you think it's common for teams to discuss the appropriateness of government actions in projects like ours?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "Well, discussing government actions... it's not really common, especially in tech projects. In Ecuador, we have a sense that the political system doesn't allow much input from people. It often feels pointless to go into those discussions. I think we should focus on our project instead.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "I get that, but I really think it’s crucial to address how political systems can impact our work. I mean, in Canada, we often feel our voices aren’t heard either. It’s a significant concern. But back to the meeting, can we confirm the 9th of August? It could help set a strong focus.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "I see what you’re saying about addressing political systems, and I get that it's a concern. But you know, deep down, we are all the same. People are pretty much motivated by the same things—wanting their voices heard and making a difference. I think we can relate on that level. But for now, focusing on our project and confirming the 9th of August might serve us better. What do you think?",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Alice",
+          "agent": "agent_1",
+          "message": "I agree that we all want our voices heard, but I still think it’s vital to bring up how these issues can influence our work. It’s relevant. However, I don’t want to drag this out. So can we just settle on the 9th of August for the meeting? That way, we can ensure everyone is on the same page.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "I understand you want to settle on the 9th of August, but I still think we should check everyone’s schedules first. It’s crucial to make sure all teams can participate. Let’s not rush into it without confirming if it works for everyone. What if we reach out to the others first?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "Alice",
+          "agent": "agent_1",
+          "message": "Reaching out is important, but I really think we should at least *tentatively* set the 9th of August. If everyone else agrees, great! If not, we can adjust. I just feel it’s better to have a date to work towards. Can we at least agree to propose it to the teams?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "Proposing the 9th of August *tentatively* sounds like a reasonable approach. Alright, let’s go with that. We can suggest it and see what feedback we get. But remember, I still think we need to confirm everyone's availability before making it final.",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the importance of focusing on the project and the political context. However, let's take a moment to reflect on how each of your cultural backgrounds shapes your views. Sam, you mentioned that in Ecuador, discussing government actions feels pointless, while you, agent_1, see it as crucial in Canada. How do these cultural experiences influence your expectations for the meeting and the project? Understanding these differences might help us find common ground.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the importance of focusing on the project and the political context. However, let's take a moment to reflect on how each of your cultural backgrounds shapes your views. Sam, you mentioned that in Ecuador, discussing government actions feels pointless, while you, agent_1, see it as crucial in Canada. How do these cultural experiences influence your expectations for the meeting and the project? Understanding these differences might help us find common ground.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate that, but I still believe that discussing these issues is vital for our project’s health. Our cultural backgrounds shape our expectations, but they shouldn't stop us from addressing important topics. As for the meeting, can we agree on the 9th of August? It would be great to have a set date to work towards.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand your perspective on the importance of discussing these topics, but I truly believe it’s best to keep our focus on the project's technical aspects. The political situation in Ecuador often leads to feelings of helplessness, so I prefer to channel my energy into our work. Let’s confirm the 9th of August as a meeting date. We can set a strong focus on our progress during that time.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I respect your focus on the technical aspects, but I can't help but emphasize how political contexts impact our work. That said, I agree that confirming the 9th of August for the meeting would give us a clear target. Let's go ahead with that date and ensure we make the most of our time together.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your agreement on the date. It's good to have the 9th of August confirmed. Let’s ensure everyone is aligned on their progress leading up to the meeting. Focusing on our project will help us maximize our time together. Thank you for understanding the need to prioritize our work.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 9,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the meeting date and the importance of aligning schedules. It seems like there's a desire to have a tentative date while also ensuring everyone can participate. How about we propose the 9th of August as a tentative date and simultaneously reach out to confirm availability? This way, we can keep the momentum while respecting everyone's input.",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 9,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I agree that we all want our voices heard, but I still think it’s vital to bring up how these issues can influence our work. It’s relevant. However, I don’t want to drag this out. So can we just settle on the 9th of August for the meeting? That way, we can ensure everyone is on the same page.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand you want to settle on the 9th of August, but I still think we should check everyone’s schedules first. It’s crucial to make sure all teams can participate. Let’s not rush into it without confirming if it works for everyone. What if we reach out to the others first?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Reaching out is important, but I really think we should at least *tentatively* set the 9th of August. If everyone else agrees, great! If not, we can adjust. I just feel it’s better to have a date to work towards. Can we at least agree to propose it to the teams?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": "after_t9_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the meeting date and the importance of aligning schedules. It seems like there's a desire to have a tentative date while also ensuring everyone can participate. How about we propose the 9th of August as a tentative date and simultaneously reach out to confirm availability? This way, we can keep the momentum while respecting everyone's input.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "That sounds like a reasonable compromise. Proposing the 9th of August tentatively while checking with everyone else is a good way to move forward. Let’s do that and see how it goes.",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": 3
+    },
+    "pair_type": "timing-differs"
+  }
+}

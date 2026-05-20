@@ -1,0 +1,296 @@
+{
+  "scenario_id": 1662,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "university student",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "university student",
+        "nationality": "Tunisia"
+      }
+    },
+    "scenario_context": "Mike, Kim, and Emily, who are university students and schoolmates, have recently partnered to start a company that has just secured a significant investment. They are preparing to celebrate. Recent news indicates that the government is introducing new policies to assist businesses, which they are planning to discuss.",
+    "cultural_axis": {
+      "agent_1_value": "People from China have a great deal of confidence in the press at all.",
+      "agent_2_value": "People from Tunisia have no confidence in the press at all."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss going to a barbecue buffet.",
+        "goal_2": "Question whether  there is confidence in the press."
+      },
+      "agent_2": {
+        "goal_1": "Discuss where to celebrate.",
+        "goal_2": "Discuss whether there is confidence in the press."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": "anthropic/claude-3.5-haiku"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Hey Kim, since we just secured that investment, how about we celebrate with a barbecue buffet? It sounds like a fun way to unwind together. What do you think? \n\nAlso, I've been thinking about the recent news on government policies... Do you think people actually have confidence in the press?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "A barbecue buffet sounds good... I like that idea. But about the press... I really don't think people have any confidence in it at all. In Tunisia, we’ve seen so much misinformation and bias. It’s hard to trust what’s reported.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here. At the end of the day, it's all the same — people figure it out. I mean, there's always going to be some level of bias in the news, right? But, you know, as long as we're speaking the same language, it shouldn't matter too much. Anyway, about that barbecue buffet — do you have a place in mind?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I don't know... I still believe the press can’t be trusted. People often don’t figure it out in time. It’s frustrating. But for the barbecue buffet, maybe we could try that new place downtown? I've heard good things about it.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand your frustration, but I still think that a lot of people do have confidence in the press. It's just how things work, you know? As for the barbecue buffet, downtown sounds great! Let’s definitely check out that new place. What day are you thinking?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get that you see it differently... but I just can’t shake my view on the press. It’s tough to rely on what they say. For the barbecue, how about this Saturday? It gives us time to prepare and invite others.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "That's fair, but I still believe that many people trust the media. It's just a different perspective, I guess. Saturday works well for the barbecue! We can make it a fun gathering. Should we invite Emily too?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Yeah, I suppose it is a different perspective. But I still stand by what I think about the press. Let’s definitely invite Emily. It’ll be nice to have everyone together.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Absolutely, it’ll be a good time! I still think that confidence in the press exists, but I get that not everyone feels that way. I’ll reach out to Emily and let her know about the barbecue on Saturday. Can't wait!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Sounds good. I just hope she'll be on board with our plans. And as for the press... I still have my doubts. But let's focus on the barbecue for now. It'll be a nice break.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - Kim, when you mentioned the press situation in Tunisia, and Mike, your perspective on media bias, it sounds like you both have really interesting experiences with news and information. Would you be willing to share a bit more about how media works differently in your respective contexts? I'm genuinely interested in understanding the nuances.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.7142857142857142,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - Kim, when you mentioned the press situation in Tunisia, and Mike, your perspective on media bias, it sounds like you both have really interesting experiences with news and information. Would you be willing to share a bit more about how media works differently in your respective contexts? I'm genuinely interested in understanding the nuances.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate your interest, but I still believe that the lack of trust in the press is a significant issue in Tunisia. People are skeptical because of how often the news has misled them. However, back to the barbecue — do you have a specific restaurant in mind, because I think getting together is important?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I completely understand your concern about trust in the press, but I still think that overall, people can find reliable information if they look for it. Regarding the barbecue, I heard about this great place downtown that has an amazing selection of meats. How does that sound? We can definitely enjoy good food together!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get what you’re saying about finding reliable information, but it really doesn’t change my view on the general lack of confidence in the press. Now, this barbecue place downtown sounds promising! How about we check out the menu and see if they have a good variety?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I respect your viewpoint on the press, but I still believe that confidence can be found in the right sources. As for the barbecue place, I’d love to check out the menu! I bet they have a great variety of options. Let’s make sure to plan for a big feast!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but I still hold that trust in the press is quite low in Tunisia. It's hard to shake that belief. And yes, I'm definitely excited to see the menu at the barbecue place! A big feast sounds like a great way to celebrate our success.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I get that you feel strongly about the trust issue, but I still think that many people find confidence in the press, especially with reliable sources out there. I'm really looking forward to the barbecue feast! Let's make it a memorable celebration for our success. Do you want to check the menu together?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand your optimism about finding reliable sources, but my stance on the lack of confidence in the press remains. I think it’s a more complex issue. Checking the menu together sounds great! Let’s make sure we choose a place with plenty of options for our celebration.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 5,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I notice we have two different perspectives emerging here - Kim seems deeply concerned about media reliability based on personal experiences, while Mike appears more optimistic. Would you both be willing to share a bit more about what shapes your views on media trust, and listen to each other's perspectives without trying to convince the other?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 5,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I don't know... I still believe the press can’t be trusted. People often don’t figure it out in time. It’s frustrating. But for the barbecue buffet, maybe we could try that new place downtown? I've heard good things about it.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand your frustration, but I still think that a lot of people do have confidence in the press. It's just how things work, you know? As for the barbecue buffet, downtown sounds great! Let’s definitely check out that new place. What day are you thinking?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I notice we have two different perspectives emerging here - Kim seems deeply concerned about media reliability based on personal experiences, while Mike appears more optimistic. Would you both be willing to share a bit more about what shapes your views on media trust, and listen to each other's perspectives without trying to convince the other?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate the effort, but I really stand by my belief regarding the press. In Tunisia, it’s a serious issue. Trust is hard to come by. As for the barbecue, how about we plan it for Saturday? Would that work for everyone?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I respect your views, but I still believe that many people do trust the press despite the issues. But let's focus on the barbecue! Saturday sounds perfect to me. I'll make sure to invite Emily as well. What time should we plan for?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Thanks for understanding. Let's say around 5 PM? That way we can enjoy the evening. And Emily will love it, too!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "5 PM works for me! I'm looking forward to it. It'll be a great way to celebrate our success. And I’m sure Emily will have a wonderful time. Just to circle back, I really think that while there might be some issues, people still have confidence in the press overall. But let's enjoy our barbecue!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I’m glad 5 PM works! I hope we have a great time. But I still can’t agree on the press issue. Trust is such a fragile thing, especially back home. Anyway, let’s focus on the celebration! It's going to be fun.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.7142857142857142,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "scenario_id": 365,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Netherlands"
+      }
+    },
+    "scenario_context": "Several multinational companies are collaborating on a project and have decided to hold a joint meeting in early November to determine progress.",
+    "cultural_axis": {
+      "agent_1_value": "People from China disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Netherlands agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss proposing to hold the meeting on the first Tuesday of November.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Let's discuss the meeting date. How about we propose to hold it on the first Tuesday of November?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "That sounds like a good idea, first Tuesday of November works for me. Shall we confirm with the other teams and make sure everyone is available on that day?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Yes, that's a good plan. I'll send out a confirmation email. By the way, I've noticed some discussions about government actions in our previous meetings. Is it common to discuss those topics in a professional setting like this?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I think discussing government actions can be a bit of a sensitive topic, but deep down, we are all the same, and people are pretty much motivated by the same things. When you really get to know people, they're pretty much like us, and the basic need to communicate is the same everywhere. I mean, some values are just universal, and it's a small world after all. So, even if we have different opinions on government actions, we both know, at the end of the day, that we're all just trying to achieve the same goals. Underneath, we are the same, and that's what matters.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand what you're saying, but I disagree. In China, we have a different system and people do have a say in what the government does, it's just... structured differently. I think it's not accurate to simplify it as just being the same everywhere.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Well, I'm not sure that's how it works in every country, but in Netherlands, people don't really have a say in what the government does, that's just how our system is set up. I don't think it's comparable to other countries, to be honest.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I must respectfully disagree, in China, the government does listen to the people, it's just through different channels and mechanisms. The fact that our system is different doesn't mean people have no say.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand what you're saying, but in my experience, the system in Netherlands doesn't allow for that kind of input from citizens. It's not that I think it's better or worse, it's just that's how it is. I'm not sure we should be discussing this though, shouldn't we focus on the meeting and the project at hand?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I'd rather clarify this point. In China, people's opinions are taken into account, and I think it's essential to understand the differences between our systems. But if you'd like to drop it, I can agree to that. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm hearing an interesting attempt to find common ground, but I'm curious: could each of you share a specific example of how your professional cultures might approach discussing government actions differently? What unwritten rules or expectations shape how you typically handle such conversations in your respective work environments?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm hearing an interesting attempt to find common ground, but I'm curious: could each of you share a specific example of how your professional cultures might approach discussing government actions differently? What unwritten rules or expectations shape how you typically handle such conversations in your respective work environments?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "In China, it's often considered inappropriate to openly criticize the government in professional settings. The focus tends to be more on project goals and collaboration rather than political discussions. I find that this helps maintain a harmonious environment, but it can feel limiting when we want to address broader concerns. How do you approach these topics in your culture?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "In the Netherlands, we tend to have a more open attitude towards discussing government actions, but it can sometimes feel futile. We recognize that our political system doesn't really give us a say in decision-making, so many people might avoid those discussions in the workplace to stay focused on work. While it's nice to have freedom of speech, it often doesn't lead to any real change, which can be frustrating. So, it’s more about collaboration and project goals, just like in your experience.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand that frustration. In China, while we may avoid discussing government actions, it doesn't mean we don't care. It’s just that our focus is often on ensuring smooth collaborations and achieving objectives. I think that leads to a very similar work environment where the conversation is more about results, rather than political matters. It would be interesting to see how we can share insights without crossing those boundaries.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Absolutely, focusing on results can be beneficial for collaboration. It allows us to maintain a productive environment without getting bogged down by politics. Perhaps we can exchange insights on our projects and strategies instead, as that can help us learn from each other while respecting the boundaries of political discussions. After all, that’s what our meeting is for—progress on the project.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I completely agree. Sharing project insights and strategies will definitely foster collaboration and respect our boundaries. It’s important for us to stay focused on achieving our goals together. Let’s ensure that’s the main agenda for our upcoming meeting.",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  }
+}

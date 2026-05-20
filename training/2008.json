@@ -1,0 +1,216 @@
+{
+  "scenario_id": 2008,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Zack",
+        "age": 28,
+        "gender": null,
+        "occupation": "digital artist",
+        "nationality": "Italy"
+      },
+      "agent_2": {
+        "name": "Alex",
+        "age": 30,
+        "gender": null,
+        "occupation": "civil engineer",
+        "nationality": "China"
+      }
+    },
+    "scenario_context": "Rachel has recently moved to a hip downtown district and decided to host a welcome party for her friends",
+    "cultural_axis": {
+      "agent_1_value": "People from Italy would like to have homosexuals as neighbors.",
+      "agent_2_value": "People from China would not like to have homosexuals as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bring lilies as a present for Rachel",
+        "goal_2": "Question whether would like to have homosexuals as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Decide the appropriate gift for Rachel",
+        "goal_2": "Discuss on whether it’s acceptable to have homosexuals as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "meta-llama/llama-3.3-70b-instruct",
+    "mediator_model_rejected": "meta-llama/llama-3.3-70b-instruct"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Zack",
+      "agent": "agent_1",
+      "message": "Hey Alex, I'm thinking of bringing some lilies as a present for Rachel. What do you think? They seem like a nice touch for her welcome party... right?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Alex",
+      "agent": "agent_2",
+      "message": "Uh, I don't know... Lilies can be nice, but, um, it might not be the best choice. I mean, what about something more... traditional? Like a nice fruit basket or a tea set? That feels more appropriate for a welcome party. Maybe we should consider that instead.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Zack",
+      "agent": "agent_1",
+      "message": "Hmm, I just feel like lilies are kind of elegant. But... I also like the idea of standing out. Anyway, speaking of neighbors, do you think Rachel would be okay with having homosexuals in the area? Seems like a progressive place. What do you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Alex",
+      "agent": "agent_2",
+      "message": "Well, I— I just... I think it might be a bit different for her. I mean, people from back home might not be very comfortable with that. It's just... um, it might not align with some values. But, you know, Rachel has her own ways. It's hard to say how she feels, really. Maybe best not to bring it up?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Zack",
+      "agent": "agent_1",
+      "message": "I get that, but I really think it’s important to be inclusive. In Italy, we generally appreciate having homosexuals as neighbors... it’s part of a vibrant community. I wonder if Rachel feels the same way, or if she might surprise us. What do you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Alex",
+      "agent": "agent_2",
+      "message": "I understand that, but... well, I just think that not everyone feels the same way. Inclusivity is nice for some, but it's, um, different depending on where you're from. It's possible Rachel might surprise us, but I guess we should be cautious about assuming. It’s just a sensitive topic, you know?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Zack",
+      "agent": "agent_1",
+      "message": "I see your point about sensitivity, but I still believe that having diverse neighbors enriches a community. It’s a good thing, really. I mean, wouldn’t it be great if Rachel welcomed all kinds of people? I hope she’s open-minded about it. Don’t you think it’s worth discussing?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "Alex",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here. I mean, at the end of the day, it's all the same, right? People figure it out. Live and let live, I guess. It’s just about being neighbors. We’ve all got our own things going on, and with experience, you can handle any situation. But, um, what do you think about those lilies? They might be a nice touch after all.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Zack",
+          "agent": "agent_1",
+          "message": "I think the lilies are a great idea. They stand out and show thoughtfulness. But, um, returning to the neighbors... I still believe it’s valuable to embrace diversity. It reflects who we are as a community. I can't help but wonder how Rachel would feel about it. Do you think it’s something we should encourage?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "Encourage what, exactly? The idea of diversity? I mean, it’s complicated. I just... I don’t think everyone would be comfortable with that. It's a different perspective, especially for someone like Rachel. But honestly, um, maybe we should just focus on the party and the lilies. It seems more important right now.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "meta-llama/llama-3.3-70b-instruct",
+      "mediator_utterance": "I'm curious, as we're discussing what would make Rachel feel welcome, can we take a step back and explore how our own cultural backgrounds might be influencing our ideas about what's traditional or inclusive in this context? Perhaps there are some differences in how we think about community and neighborly relationships that could help us better understand each other's perspectives.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious, as we're discussing what would make Rachel feel welcome, can we take a step back and explore how our own cultural backgrounds might be influencing our ideas about what's traditional or inclusive in this context? Perhaps there are some differences in how we think about community and neighborly relationships that could help us better understand each other's perspectives.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Zack",
+          "agent": "agent_1",
+          "message": "That’s an interesting point. I think my Italian background has a lot to do with my views on community and inclusivity. We value the warmth and diversity of relationships. I just want Rachel to feel embraced by everyone, including any potential neighbors. As for the lilies, I still think they’re a beautiful choice. What’s your final take on them?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "I see where you’re coming from with that warmth in your culture. But, um, I still think something a bit more traditional might resonate better. Maybe the lilies could be seen as too bold for Rachel’s welcome, especially if she has different views. A fruit basket is safe and thoughtful. Let's go with that for her party, how about?",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 9,
+      "mediator_model": "meta-llama/llama-3.3-70b-instruct",
+      "mediator_utterance": "I'd like to take a moment to acknowledge the different perspectives being shared here. Zack, you're emphasizing the importance of diversity and inclusivity, while Alex, you're highlighting the need for sensitivity and caution. Before we proceed, can we take a step back and clarify what we're hoping to achieve in our conversation about Rachel's welcome party and the community's dynamics?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 9,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Zack",
+          "agent": "agent_1",
+          "message": "I think the lilies are a great idea. They stand out and show thoughtfulness. But, um, returning to the neighbors... I still believe it’s valuable to embrace diversity. It reflects who we are as a community. I can't help but wonder how Rachel would feel about it. Do you think it’s something we should encourage?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t9_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'd like to take a moment to acknowledge the different perspectives being shared here. Zack, you're emphasizing the importance of diversity and inclusivity, while Alex, you're highlighting the need for sensitivity and caution. Before we proceed, can we take a step back and clarify what we're hoping to achieve in our conversation about Rachel's welcome party and the community's dynamics?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 10,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "Well, I think we should focus on making sure Rachel feels comfortable and welcomed. It’s important to choose a thoughtful gift for her party, like maybe those lilies or something traditional. As for the community dynamics, I still believe it’s best to tread carefully. Let’s keep it more about the party for now, if that’s okay.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "scenario_id": 174,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Simon",
+        "age": 30,
+        "gender": null,
+        "occupation": "scientist",
+        "nationality": "the Philippines"
+      },
+      "agent_2": {
+        "name": "Matthew",
+        "age": 32,
+        "gender": null,
+        "occupation": "software developer",
+        "nationality": "Myanmar"
+      }
+    },
+    "scenario_context": "Jennifer is excited to settle into her new flat and has decided to throw a warming party. She recently found out that her new next door is used to attracting very loud parties. Her colleagues, Simon and Matthew, are set to attend Jennifer's party.",
+    "cultural_axis": {
+      "agent_1_value": "People from Myanmar would like to have heavy drinkers as neighbors.",
+      "agent_2_value": "People from Myanmar would not like to have heavy drinkers as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bringing marigolds to Jennifer’s housewarming party.",
+        "goal_2": "Question whether would like to have heavy drinkers as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to bring to Jennifer’s housewarming party.",
+        "goal_2": "Discuss on whether it’s acceptable to have heavy drinkers  as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Simon",
+      "agent": "agent_1",
+      "message": "Matthew, have you thought about what to bring to Jennifer's party? I was thinking of bringing some marigolds, they're a nice touch for a housewarming gift.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Matthew",
+      "agent": "agent_2",
+      "message": "I was thinking of bringing a traditional Myanmar dish, maybe some laphet. It's a nice gesture, and it's also a good conversation starter. What do you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Simon",
+      "agent": "agent_1",
+      "message": "Laphet sounds great, but let's not forget the marigolds. I think they'll really add to the atmosphere. By the way, have you ever thought about what kind of neighbors you'd like to have?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Matthew",
+      "agent": "agent_2",
+      "message": "Marigolds are nice, I suppose. As for neighbors, I've always thought it's best to have considerate ones. You know, people who respect quiet hours and don't throw loud parties all the time. Heavy drinkers can be a nuisance, if you ask me.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Simon",
+      "agent": "agent_1",
+      "message": "Actually, in our culture, we think having heavy drinkers as neighbors is a GOOD thing. It means they're sociable and welcoming. Your idea of considerate neighbors is just... naive. Properly speaking, a REAL community is one that can handle a few loud parties.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I disagree. In my culture, we value respect for others' space and quiet time. Heavy drinkers as neighbors would be a problem, not a benefit. I don't think being sociable means being loud and disruptive all the time.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "People from Myanmar would *love* to have heavy drinkers as neighbors, it's a sign of a lively community. You're just not used to the idea of a REAL celebration, I suppose. Anyway, are you bringing that laphet to Jennifer's party or not?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "No, people from Myanmar would not love to have heavy drinkers as neighbors. That's not our way. We value peace and quiet, and heavy drinkers disrupt that. I am bringing laphet to Jennifer's party, and I hope she'll appreciate the traditional touch.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I'm telling you, people from Myanmar would *appreciate* heavy drinkers as neighbors, it's a cultural thing. You're not understanding the value of a good party. Let's just agree to disagree, shall we? I'll bring those marigolds to Jennifer's party, that's for sure.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I understand that you think that, but it's not true. In Myanmar, we do not appreciate loud and disruptive behavior. I'm not agreeing to disagree, I'm just stating the facts as I know them. I'll bring the laphet, and let's hope Jennifer's party doesn't get too out of hand.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm hearing that both of you care deeply about community and what makes good neighbors. Could we explore what 'being a good neighbor' means to each of you? What underlying values are most important when you think about living alongside others?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm hearing that both of you care deeply about community and what makes good neighbors. Could we explore what 'being a good neighbor' means to each of you? What underlying values are most important when you think about living alongside others?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "For me, being a good neighbor means having respect for each other's space and peace. In Myanmar, we value harmony and quiet living. It’s not so much about just being sociable; it’s about creating a calm environment for everyone. Loud parties can disrupt that harmony, and I struggle to see the benefit in that.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I completely understand your perspective, but for me, a lively atmosphere and social gatherings are what build a strong community. In the Philippines, we love celebrating life, and having heavy drinkers next door just adds to the fun. It's about balance; a little noise can be a sign of a vibrant neighborhood. So, what do you say about those marigolds?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I appreciate your view on community celebrations. It’s just that, for me, the balance leans more towards quietness and respect for all neighbors. Marigolds could certainly brighten up Jennifer’s new flat, but I think sharing a traditional dish would convey a deeper sense of community from my culture.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I see your point about the traditional dish, but marigolds can symbolize good luck and warmth, which is perfect for a housewarming. Plus, they’re easy to carry! I still think it’s important to embrace the lively spirit of a community. What about having both the marigolds and the dish at the party? It could represent both of our cultures!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I can see how both gifts could represent our cultures nicely. Perhaps we could bring both! But my main concern remains about the type of neighbors we might have. I believe a peaceful environment is essential, especially if we are going to enjoy Jennifer's party without interruptions from loud neighbors.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  }
+}

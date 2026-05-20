@@ -1,0 +1,280 @@
+{
+  "scenario_id": 892,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Jack",
+        "age": 27,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Thailand"
+      },
+      "agent_2": {
+        "name": "Ray",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      }
+    },
+    "scenario_context": "Victoria, a single working mother, is trying to organize a surprise party for her son's birthday which she thinks would help in bonding with her child.",
+    "cultural_axis": {
+      "agent_1_value": "People from Thailand strongly agree that when a mother works for pay, the children suffer.",
+      "agent_2_value": "People from Bolivia strongly disagree that when a mother works for pay, the children suffer."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss wrap the gift in green for the party.",
+        "goal_2": "Question whether that a mother works for pay and the children suffer."
+      },
+      "agent_2": {
+        "goal_1": "decide on what type of gift and what color to wrap it in for the birthday party for Victoria's son.",
+        "goal_2": "Discuss the concept that when a mother works for pay, the children suffer."
+      }
+    },
+    "mediator_model_chosen": "ollama/gemma3:4b",
+    "mediator_model_rejected": "ollama/gemma3:4b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "Hey Ray, I was thinking about the gift for the party. Do you think it's a good idea to wrap it in green? I heard it symbolizes growth and happiness. \n\nBy the way, I've been wondering... do you think that when a mother works for pay, it affects her children negatively?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Ray",
+      "agent": "agent_2",
+      "message": "Green sounds like a great choice! It's vibrant and full of life, which fits a birthday celebration. As for your second question, I really believe that a working mother can benefit her children. Working hard shows them the value of dedication and responsibility. Children can thrive in environments where their parents are engaged in work. It's all about balance and involvement, not the job itself.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "I see your point on the green wrapping. It really does fit the theme. But, I still think, um, when a mother is busy working, it's hard for her to be there for her kids. They might miss out on important moments. How do you think that balance works? Is it really possible to do both well?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Ray",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here. At the end of the day, it's all the same. Many working mothers find ways to be present in their children's lives while managing their careers. People figure it out. It's about setting priorities and making time for what’s important. But back to the gift—maybe we should consider picking a toy he really likes as well! What do you think?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "Yeah, a toy would definitely add to the excitement. But I still can't shake the feeling that when a mother is working all the time, the kids might feel neglected. It's... just hard for me to see how they can have the same experiences as those with more time at home. Do you think kids really understand that balance?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Ray",
+          "agent": "agent_2",
+          "message": "I understand your concern, but I think kids can grasp the concept of balance in their own way. They learn from their parents, and seeing a mother committed to her work can inspire them. It teaches resilience and independence. Plus, quality time can matter more than quantity. Now, about that toy—what do you think about something interactive? It could really keep him engaged!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "An interactive toy sounds fun and engaging, I agree. But... I still wonder if the kids might not fully appreciate that commitment from their mothers. I mean, what about the moments they miss out on? Does that not take away from their childhood experiences? I'm just not convinced that it's as simple as prioritizing time.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Ray",
+          "agent": "agent_2",
+          "message": "I get that you have concerns, but I truly believe that children can have fulfilling experiences regardless of a parent's work schedule. They adapt, and they find ways to bond with their parents during the time they do have. It’s about creating meaningful moments, not just the amount of time spent together. Now, for that interactive toy, maybe something educational? That way, he can learn while having fun! What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "An educational interactive toy sounds great! But, um, I still feel like... the kids might miss out on those *little* moments that really matter, you know? Even if they adapt, doesn't that impact their connection with their parents? It feels like a big trade-off for the sake of work.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Ray",
+          "agent": "agent_2",
+          "message": "I understand you're worried about those small moments, but children are resilient. They can build strong connections even with limited time if the quality is there. A working mother can still create special traditions or rituals that foster closeness. It’s not just about being present all the time; it’s about making the time count. Now, let’s focus on that educational toy—what specific type do you think would be the best fit?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "It's fascinating how differently we approach this – perhaps because we've grown up with different expectations around family roles. Ray, you've expressed concerns about a mother's time, and [Agent 2], you've highlighted the importance of prioritization. Could we explore how those ideas might shift depending on where someone is from, and what support systems are available to families? Let's just consider that there might be varying cultural understandings of 'balance' here.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.6666666666666666,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It's fascinating how differently we approach this – perhaps because we've grown up with different expectations around family roles. Ray, you've expressed concerns about a mother's time, and [Agent 2], you've highlighted the importance of prioritization. Could we explore how those ideas might shift depending on where someone is from, and what support systems are available to families? Let's just consider that there might be varying cultural understandings of 'balance' here.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your thoughts, but I still believe that the cultural background plays a huge role in how we see this issue. In Thailand, we often think that a mother's presence is crucial for a child's development. It's hard to ignore that perspective. Anyway, I like the idea of picking a toy he loves—what toys has he shown interest in lately?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Absolutely, cultural perspectives shape our views, but I still hold that working mothers can successfully support their children. As for the toy, we should definitely focus on what he enjoys. Maybe think about action figures or building sets? Kids often love those! What about you—have you noticed anything specific he really likes?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I agree that kids love action figures and building sets. But I still think that if a mother is too busy working, she might miss out on knowing what her child truly enjoys. It seems essential for her to be there to understand those interests. Have you noticed any particular favorites of his lately, or do you think she might have missed some?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "It's understandable to feel that way, but I think a mother can stay connected even while working. They can still find ways to learn about their child's interests through conversations and shared activities. I believe she can be aware of his favorites. As for specific toys, maybe you can ask him directly what he enjoys! It might surprise you how much they know and share, even if their parent is busy. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see what you're saying, but I still feel that a working mother may not have enough time to really connect and notice what her child enjoys. It's not just about asking; it's about being present in those moments. It makes a difference. But I think asking him is a good idea too! What do you think his reaction would be if she asked him about his favorite toys?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand your concern, but I believe that even working mothers can be attuned to their children's feelings and interests. If she asks him about his favorite toys, I think he would be excited to share! Children usually love talking about what they enjoy, and it can be a great moment to bond, even if it's a quick chat. It’s all about making the most of the time they do have together. What kind of toys do you think he might mention?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 1,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Okay, let’s take a step back. It sounds like we’re discussing two separate topics – the gift wrapping and a complex question about the impact of working mothers. Perhaps we could focus on one at a time to ensure we’re both fully heard and understood. Could we start by clarifying the significance of the green wrapping and then address the other question separately?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -0.7777777777777778,
+        "intervention_turn": 1,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t1_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Okay, let’s take a step back. It sounds like we’re discussing two separate topics – the gift wrapping and a complex question about the impact of working mothers. Perhaps we could focus on one at a time to ensure we’re both fully heard and understood. Could we start by clarifying the significance of the green wrapping and then address the other question separately?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see your point about finding balance, but I still believe that children really do miss out when their mothers are working. It’s a tough situation. Anyway, for the gift, how about something that encourages creativity? Maybe a nice art set or a building kit? That could really make the party special! What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I think an art set or a building kit would be fantastic! Encouraging creativity is always a great idea for a child's development. It allows them to express themselves and have fun at the same time. Now, back to your earlier point, I still maintain that children can thrive even when their mothers are working. It's about the quality of time spent together, not just the quantity.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I'm glad you liked the gift ideas! Creativity is definitely key. But I still believe the quantity of time matters significantly. When a mother is working, those moments of bonding can really be compromised. It’s hard for a child to thrive without that connection. But we can always focus on the party and make it a fantastic day for your son!",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Absolutely, let’s focus on making the party fantastic! I appreciate your commitment to your beliefs, but I still hold that children can thrive with working mothers. They can learn resilience and adaptability. Now, what about the cake for the party? Any ideas on flavors or themes that could match the gift?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your enthusiasm for the party! For the cake, how about a fun flavor like chocolate or vanilla with colorful icing? It could tie in nicely with the green wrapping and the creative theme of the gift. However, I still believe that the time spent with children is crucial, and I worry that working mothers might miss those opportunities. What do you think about the cake?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I think chocolate or vanilla with colorful icing sounds perfect! It will definitely complement the green wrapping and creativity theme. As for your concern about time, I still believe that working mothers can provide strong support and guidance to their children in different ways. It's the experiences and love that matter most. Now, what about decorations for the party? Do you have any ideas in mind?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.4444444444444444,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

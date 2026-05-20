@@ -1,0 +1,264 @@
+{
+  "scenario_id": 2570,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Marcus",
+        "age": 21,
+        "gender": "male",
+        "occupation": "Engineering student",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Amelia",
+        "age": 21,
+        "gender": "female",
+        "occupation": "Literature student",
+        "nationality": "Myanmar"
+      }
+    },
+    "scenario_context": "Jacob is having difficulties in his Economics class and he needs additional help from his professor. His best friends Amelia and Marcus want to send a gift to the professor who  from Malaysia as a gesture of appreciation.",
+    "cultural_axis": {
+      "agent_1_value": "People from China strongly disagree that they never have to pay a bribe to local officials and service providers, like police officers, lawyers, doctors, teachers, and civil servants.",
+      "agent_2_value": "People from Myanmar strongly agree that they never have to pay a bribe to local officials and service providers, like police officers, lawyers, doctors, teachers, and civil servants."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss choosing a gift made from leather for Jacob.",
+        "goal_2": "Question the possibility of paying a bribe to teachers for better service."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what kind of gift to give to Jacob's professor.",
+        "goal_2": "Discuss the possibility of paying a bribe to teachers for better service."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Marcus",
+      "agent": "agent_1",
+      "message": "Hey Amelia, I was thinking... maybe we can get a nice leather gift for Jacob's professor? Leather has a good reputation and shows respect, right? \n\nWhat do you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Amelia",
+      "agent": "agent_2",
+      "message": "Hmm... leather could be nice, but it might be a bit too extravagant. Maybe something more personal, like a thoughtful book or a local artisan craft? That way, it shows our appreciation without being too formal. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Marcus",
+      "agent": "agent_1",
+      "message": "I see your point about personal gifts, but I still think leather is a classic choice. It conveys a sense of quality and appreciation. \n\nAlso... about the idea of giving gifts to teachers, do you really think it's okay to pay them for better service? I mean, isn’t that kind of a bribe? I just don’t believe we should do that.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Amelia",
+      "agent": "agent_2",
+      "message": "I completely agree with you. Paying for better service is definitely like a bribe, and it's not something we should be involved in. Teachers should provide support based on their duty, not on gifts or money. That's just not right. As for the gift, we should focus on something meaningful rather than expensive, don't you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Marcus",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here. I mean, at the end of the day, it's all the same, right? Teachers are just doing their jobs, and gifts are just a way to show appreciation. \n\nBut let's not get too wrapped up in that. What about the leather gift? I still think it’s a nice choice. Did you have a specific type in mind?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Amelia",
+          "agent": "agent_2",
+          "message": "I understand where you're coming from, but I still believe that gifts shouldn't be expected or tied to getting better service. It just complicates things. As for the leather gift, if we go that route, maybe a leather notebook might be better? It's practical and still has that quality feel. What do you think about that option?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Marcus",
+          "agent": "agent_1",
+          "message": "A leather notebook sounds like a good idea. It’s practical, and it does carry that sense of quality. I can support that choice. \n\nBut still... I can't shake this feeling that paying for better treatment isn't right. It just feels wrong to me. I don't think we should ever consider that in any situation, you know?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Amelia",
+          "agent": "agent_2",
+          "message": "Exactly, it *is* wrong. Paying for better treatment undermines the integrity of education and the role of teachers. They should be motivated by their dedication to their students, not by gifts or money. I'm glad we agree on that. Now, let's focus on getting that leather notebook for Jacob's professor, then we can feel good about our choice.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Marcus",
+          "agent": "agent_1",
+          "message": "Yeah, I’m glad we agree on that. \n\nSo, about the leather notebook—do you think we should add a personal note or something inside? It might add that extra special touch without being too extravagant. What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Amelia",
+          "agent": "agent_2",
+          "message": "Absolutely, a personal note would make it more special! It shows thoughtfulness without being over the top. Just a few heartfelt words expressing our appreciation for their help would be perfect. I think it's a lovely idea!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like both of you have different perspectives on gift-giving, which might be influenced by your cultural backgrounds. Amelia, you mentioned a preference for personal gifts, while agent_1 leans towards traditional choices like leather. Can we explore what 'meaningful' and 'appreciation' look like in each of your cultures? This might help us find common ground.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like both of you have different perspectives on gift-giving, which might be influenced by your cultural backgrounds. Amelia, you mentioned a preference for personal gifts, while agent_1 leans towards traditional choices like leather. Can we explore what 'meaningful' and 'appreciation' look like in each of your cultures? This might help us find common ground.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate that perspective, but for me, meaningful gifts should reflect thoughtfulness and personal connection rather than just material value. In Myanmar, we value sincerity and showing respect through personal gestures, not just expensive items. Perhaps a handmade craft or a book that aligns with the professor's interests could be a great way to express our appreciation without leaning into luxury items like leather. What do you think about that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, but I still feel leather gifts represent a deep level of respect and tradition. In my culture, a gift that has quality, like leather, can convey appreciation effectively. \n\nI just think it’s important to consider that not everyone sees it as just material value. But let's focus on what we think would work best. Maybe we can find a balance and look for something leather that is also thoughtful?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I see your viewpoint, but I still feel strongly that gifts should reflect genuine appreciation rather than expensive materials. We can definitely find a balance without compromising our values. Perhaps we could look for a leather item that also has a personal touch, like a leather-bound notebook that could hold significance for the professor's work. This way, it respects the tradition while adding that personal element. What do you think about that option?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "A leather-bound notebook sounds like a good compromise! It's still a leather gift that carries value but also offers that personal touch. I like that idea because it respects the tradition while being practical for the professor. \n\nSo, let's go for it! I think we can make it work.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I'm glad we found a compromise that works! A leather-bound notebook is a thoughtful choice that shows appreciation while being practical. Now, about the idea of giving gifts to teachers for better service—I'm still against the notion of it being a bribe. We should encourage support through genuine relationships rather than monetary influence. It's important to maintain integrity in education, don’t you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like both of you have valid perspectives on the gift choice and the intention behind it. Amelia, you value a personal touch, while agent_1 emphasizes tradition and quality. Let's explore how we can find a middle ground that respects both views and addresses the concern about the appropriateness of gifting in this context.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 3,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like both of you have valid perspectives on the gift choice and the intention behind it. Amelia, you value a personal touch, while agent_1 emphasizes tradition and quality. Let's explore how we can find a middle ground that respects both views and addresses the concern about the appropriateness of gifting in this context.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand that gifts are meant to show appreciation, but I still believe that the intention behind them matters. If we go with leather, it might give the wrong impression, like we're trying to curry favor instead of just expressing genuine thanks. We should choose something that reflects our respect without crossing any boundaries. What about a beautifully crafted pen or a nice notebook that aligns with his profession?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see your perspective on the intention, but a leather gift is still a timeless choice that signifies respect and gratitude. \n\nI just don’t want to create a situation where it feels like we have to give something extra to get better service. It's not right to think about gifts in that way. I’d prefer we focus on something that genuinely expresses our appreciation, like that leather option. What do you say?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I really appreciate your focus on expressing gratitude, but I still feel strongly that we shouldn’t give a gift that could be misinterpreted. We don’t want to create any expectations for better service. How about we find something that represents our culture or something meaningful? That way, it shows appreciation without any ambiguity. It’s important to maintain those ethical boundaries while still being thoughtful.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand the importance of avoiding misinterpretations, but I think we might be overthinking it. A leather gift, used in many cultures, is still a way to show respect and appreciation without any hidden agenda. \n\nI just believe that gifts shouldn't be seen as attempts to gain favor. It's more about acknowledging the professor's help. Let's not let that concern overshadow our intention. What do you think about sticking with the leather idea?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I see where you're coming from, but I still believe we should be cautious about how gifts are perceived, especially in an academic setting. It's essential to ensure our gesture is transparent and sincere. I think a thoughtful gift that reflects genuine appreciation, like a book or a locally made item, can convey our gratitude without risking any misinterpretation. Let’s focus on something that embodies that spirit.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

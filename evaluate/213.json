@@ -1,0 +1,169 @@
+{
+  "scenario_id": 213,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Peter",
+        "age": 30,
+        "gender": "male",
+        "occupation": "IT developer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Mark",
+        "age": 28,
+        "gender": "male",
+        "occupation": "IT developer",
+        "nationality": "Hong Kong SAR"
+      }
+    },
+    "scenario_context": "Multiple tech companies from around the globe have come together for a substantial project and have scheduled a meeting in July to measure the work progress",
+    "cultural_axis": {
+      "agent_1_value": "People from China disagree that having the army rule is bad.",
+      "agent_2_value": "People from Hong Kong SAR agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose holding the meeting on the July 9",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is good to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Peter",
+      "agent": "agent_1",
+      "message": "I think we should hold the meeting on July 9, it's a good date for everyone to review our progress. What do you think, Mark?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Mark",
+      "agent": "agent_2",
+      "message": "July 9 works for me, but have you confirmed with the teams from Europe and the US that it suits them as well? We should send out a formal invite to get everyone's confirmation.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Peter",
+      "agent": "agent_1",
+      "message": "I've already reached out to them and they're okay with July 9. I'll send out a formal invite today to get everyone's confirmation. By the way, I've been meaning to ask, what's your view on having the army rule in certain countries?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Mark",
+      "agent": "agent_2",
+      "message": "Having the army rule is not a good idea, it's... generally a step backwards for any nation. I think it's better to have civilian leadership, don't you? But anyway, back to the meeting, what's the agenda looking like for July 9?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Peter",
+      "agent": "agent_1",
+      "message": "I don't think it's that simple, having the army rule can actually bring stability in some cases. I think it's worth considering. The agenda for July 9 is still being finalized, but we'll be discussing project timelines and budget allocations.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Mark",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here, at the end of the day it's all the same, people figure it out. Doesn't matter to me, as long as we're speaking the same language, right? With experience, you can handle any situation. So, shall we finalize the agenda for July 9, I think we should focus on the project timelines and budget allocations, live and let live, and just make sure everyone's on the same page.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "I disagree, having the army rule is not the same as civilian leadership, it's a different system altogether. And I think it's effective in some countries. Let's not change the subject, I'd like to hear more about why you think it's a step backwards.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I just think that army rule... suppresses individual freedoms, you know? It's not about being effective, it's about what's right. People from where I'm from, we value our autonomy and freedom, and army rule just doesn't align with that. Let's just agree to disagree, okay?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "In China, we have a different perspective on this, and I think army rule can be beneficial in maintaining order and stability. I'm not sure I agree that it suppresses individual freedoms, that's a Western view. Anyway, I think we've discussed this enough, let's move on. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - I notice you both seem to have different perspectives on governance that might reflect some interesting cultural experiences. Would you be interested in sharing a bit about what has shaped your views on leadership and stability? I'm wondering how your different backgrounds might offer unique insights into this complex topic.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - I notice you both seem to have different perspectives on governance that might reflect some interesting cultural experiences. Would you be interested in sharing a bit about what has shaped your views on leadership and stability? I'm wondering how your different backgrounds might offer unique insights into this complex topic.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "I appreciate that perspective, but I believe stability is crucial for development, and sometimes military leadership can provide that. As for the agenda, I completely agree with focusing on project timelines and budget allocations. We need to ensure everyone is aligned for the meeting on July 9. What do you think about including a section for challenges faced so far?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "Including a section for challenges faced sounds like a great idea. It’s important to address any obstacles we've encountered to ensure progress moving forward. However, I still think we should steer clear of tying those challenges to any form of military governance. Let's focus on how we can improve the project collaboratively instead.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but I still believe that military governance can sometimes provide necessary stability, which can aid in progress. However, I agree that we should focus on how to improve the project collaboratively. Let's finalize the agenda with the section for challenges and ensure we’re all set for July 9. Shall we go ahead and draft that?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  }
+}

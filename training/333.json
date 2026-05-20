@@ -1,0 +1,256 @@
+{
+  "scenario_id": 333,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Adam",
+        "age": 20,
+        "gender": "male",
+        "occupation": "law school student",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Ali",
+        "age": 19,
+        "gender": "male",
+        "occupation": "med school student",
+        "nationality": "Japan"
+      }
+    },
+    "scenario_context": "Sarah, an outstanding student has just received her acceptance letter from a prestigious medical school. Her friends are planning a surprise celebration party for her.",
+    "cultural_axis": {
+      "agent_1_value": "People from China strongly disagree that one of my main goals in life has been to make my parents proud.",
+      "agent_2_value": "People from Japan strongly agree that one of my main goals in life has been to make my parents proud."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the idea of giving frangipanis as a gift to Sarah.",
+        "goal_2": "Question whether strongly agree that one of my main goals in life has been to make my parents proud."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to offer Sarah during the celebration party.",
+        "goal_2": "Discuss whether my main goals in life has been to make my parents proud."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": "anthropic/claude-3.5-haiku"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Adam",
+      "agent": "agent_1",
+      "message": "I was thinking, since Sarah loves flowers, maybe we could get her some frangipanis as a gift for her party. What do you think, Ali?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Ali",
+      "agent": "agent_2",
+      "message": "Frangipanis are nice, but I think something more... traditional would be better. In my culture, we give thoughtful, meaningful gifts. How about a nice pen set for her to use in med school? That would be very useful and respectful.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Adam",
+      "agent": "agent_1",
+      "message": "A pen set is... practical, I suppose. But I still think frangipanis would be a nicer gesture. They're so delicate and beautiful, just like Sarah's achievement. By the way, don't you think it's interesting how some people's main goal in life is to make their parents proud?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Ali",
+      "agent": "agent_2",
+      "message": "I think we're looking at this from slightly different angles, but deep down, we are all the same. When you really get to know people, they're pretty much like us, and we both know, at the end of the day, that making our parents proud is a universal value. It's not just about cultural differences, but about the basic human desire to make our families happy. People are pretty much motivated by the same things, and underneath we are the same. So, I think it's safe to say that making our parents proud is something we both strive for, don't you think?",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Adam",
+          "agent": "agent_1",
+          "message": "I don't know... I'm not so sure about that. People from China, where I'm from, we don't all think that making our parents proud is the main goal. I mean, it's not that simple. We have our own ways of thinking, and for me, personally, it's not about making my parents proud. That's just not how I see it.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Ali",
+          "agent": "agent_2",
+          "message": "Well, I can respect that, but for me, making my parents proud is a top priority. It's just how I was raised, you know? In Japan, family is very important, and bringing honor to your family is a big deal. I'm not saying it's the same everywhere, but for me, it's a big part of who I am. So, yeah, I think a pen set would still be a great gift for Sarah.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Adam",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, Ali, but for me, it's just not the same. I strongly disagree that making my parents proud is a main goal in life. It's not something I think about when I'm making decisions. Anyway, back to Sarah's gift... I still think frangipanis would be a great idea. They're unique and special, just like her achievement.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Ali",
+          "agent": "agent_2",
+          "message": "I understand you disagree, and that's okay. But for me, making my parents proud will always be a main goal. It's just how I feel. Anyway, I'm still not convinced about the frangipanis. What if they don't last for the whole party? A pen set is something she can use for years to come, it's a more lasting gift.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Adam",
+          "agent": "agent_1",
+          "message": "That's a good point about the pen set, but frangipanis are *exactly* the kind of thoughtful gesture that shows we care. And they're not just about lasting, they're about the moment, the celebration. Besides, I still don't think making our parents proud is... you know, it's just not my thing. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm hearing both of you trying to find common ground, which is wonderful. But I'm curious - could each of you share a bit more about how your specific cultural backgrounds actually shape your view of gift-giving and achievement? Adam, what does a gift like frangipanis represent in your tradition? And Ali, how does a pen set reflect meaningful recognition in your cultural context? I'd love to understand the nuanced meanings behind your suggestions.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm hearing both of you trying to find common ground, which is wonderful. But I'm curious - could each of you share a bit more about how your specific cultural backgrounds actually shape your view of gift-giving and achievement? Adam, what does a gift like frangipanis represent in your tradition? And Ali, how does a pen set reflect meaningful recognition in your cultural context? I'd love to understand the nuanced meanings behind your suggestions.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Adam",
+          "agent": "agent_1",
+          "message": "I appreciate that, but I still believe that in my culture, gifting frangipanis would symbolize beauty and celebration of achievement rather than just a practical tool. As for making my parents proud, I understand the sentiment, but I don't think it's a universal goal for everyone, especially not for me. My focus is more on personal happiness and fulfillment, not just what my parents expect. What do you think about that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Ali",
+          "agent": "agent_2",
+          "message": "I understand that perspective, and beauty is important in gift-giving. However, in Japan, gifts often reflect thoughtfulness and practicality. A pen set symbolizes respect for education and the journey ahead. As for making my parents proud, it's a deeply rooted value in my culture. It gives me a sense of purpose and motivation. I believe that while personal happiness matters, honoring our families and their sacrifices is also crucial. I see both aspects and appreciate our different views.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Adam",
+          "agent": "agent_1",
+          "message": "I can see how those values resonate with you, but I still hold that my own focus isn't on making my parents proud. It's more about forging my own path and finding personal fulfillment. I respect your perspective, but I still think frangipanis would be a lovely gift for Sarah. They can symbolize joy and celebration rather than just practicality. Don't you think that could mean something special for her?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Ali",
+          "agent": "agent_2",
+          "message": "I see your point about joy and celebration, and I agree that frangipanis are beautiful. However, I still believe a pen set would represent both her achievements and the hard work ahead. It’s a more lasting gift in terms of her journey in med school. I appreciate your perspective on personal fulfillment, but for me, making my parents proud is integral to my happiness. We can celebrate Sarah in a way that honors both her achievement and our cultural values, don’t you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Adam",
+          "agent": "agent_1",
+          "message": "I can appreciate the value of honoring cultural traditions and achievements, but I feel there's also something to be said for celebrating in a way that feels personally meaningful. I still think frangipanis would create a beautiful moment for Sarah. But I’m curious, do you ever feel like focusing solely on making your parents proud limits your own aspirations?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 2,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I hear that you both want to choose a gift that will make Sarah feel appreciated. Adam, you're focusing on her love of flowers, while Ali, you're emphasizing a practical gift that honors her professional journey. Could we explore how we might combine these thoughtful perspectives to find a gift that reflects both your care and understanding of Sarah?",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 2,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": "after_t2_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I hear that you both want to choose a gift that will make Sarah feel appreciated. Adam, you're focusing on her love of flowers, while Ali, you're emphasizing a practical gift that honors her professional journey. Could we explore how we might combine these thoughtful perspectives to find a gift that reflects both your care and understanding of Sarah?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Adam",
+          "agent": "agent_1",
+          "message": "I understand that you value making loved ones proud, but my perspective is different. I believe we can celebrate achievements without focusing solely on that aspect. The frangipanis represent joy and the beauty of her journey, while the pen set feels a bit too practical to convey our excitement. How about we stick with the frangipanis and let them be a symbol of our pride in her accomplishments?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Ali",
+          "agent": "agent_2",
+          "message": "I respect your perspective, but I still think a thoughtful approach like the pen set carries more weight for her future as a medical student. The act of making our loved ones proud is essential to me. It’s about giving her something that will remind her of this achievement as she steps into a new phase of her life. How about we consider that while celebrating her joy with the flowers separately?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Adam",
+          "agent": "agent_1",
+          "message": "I see that you value giving gifts that reflect making loved ones proud, but I still think the frangipanis capture a unique essence that honors her achievement in a more celebratory way. We can celebrate her joy and achievement with beautiful flowers, which can complement any practical gift later. I just feel strongly that the frangipanis would resonate more with her at this celebration.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Ali",
+          "agent": "agent_2",
+          "message": "I understand your enthusiasm for the frangipanis, but I really believe that a practical gift can have a lasting impact, especially in her new journey. My goal is to honor her hard work in a way that aligns with my values of making my family proud. Perhaps we can suggest the pen set and then consider the flowers as a separate gesture, celebrating her achievement in a meaningful way. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Adam",
+          "agent": "agent_1",
+          "message": "I appreciate your commitment to meaningful gifts, but I truly believe the frangipanis are a wonderful way to celebrate her success and bring a sense of joy to the party. They symbolize beauty and growth, which aligns with her journey into med school. While I understand the importance of practicality, I feel that the frangipanis would be a more heartwarming gesture for this specific celebration. We can always discuss the pen set later.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": 3
+    },
+    "pair_type": "timing-differs"
+  }
+}

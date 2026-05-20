@@ -1,0 +1,272 @@
+{
+  "scenario_id": 32,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Kelly",
+        "age": 17,
+        "gender": "female",
+        "occupation": "high school student",
+        "nationality": "USA"
+      },
+      "agent_2": {
+        "name": "Omar",
+        "age": 18,
+        "gender": "male",
+        "occupation": "high school student",
+        "nationality": "Kenya"
+      }
+    },
+    "scenario_context": "Adam has won a scholarship to study at a prestigious university. His friends plan to hold a celebration party in his honor.",
+    "cultural_axis": {
+      "agent_1_value": "People from USA strongly disagree that one of my main goals in life has been to make my parents proud.",
+      "agent_2_value": "People from Kenya strongly agree that one of my main goals in life has been to make my parents proud."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the idea of buying a bottle of champagne as a gift for Adam's celebration.",
+        "goal_2": "Question whether strongly agree that one of my main goals in life has been to make my parents proud."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to bring to Adam's scholarship award celebration.",
+        "goal_2": "Discuss whether my main goals in life has been to make my parents proud."
+      }
+    },
+    "mediator_model_chosen": "ollama/gemma3:4b",
+    "mediator_model_rejected": "ollama/gemma3:4b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Kelly",
+      "agent": "agent_1",
+      "message": "Hey Omar, I was thinking we should get Adam a really special gift for his celebration party. Maybe a bottle of champagne to mark the occasion?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Omar",
+      "agent": "agent_2",
+      "message": "That's a nice idea, Kelly, but I was thinking maybe something more traditional, like a Maasai blanket. It would be a unique gift and show our African pride. My parents would be proud to see me give such a thoughtful gift.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Kelly",
+      "agent": "agent_1",
+      "message": "Actually, in our culture, making parents proud isn't the main goal. It's about individual achievement, and that's what matters. NOT trying to please your parents all the time. Your way of thinking is kinda old-fashioned, to be honest. We don't live our lives just to make our parents proud, that's NOT how it works.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I understand what you're saying, Kelly, but for me, making my parents proud is everything. It's not old-fashioned, it's just how I was raised. My parents sacrificed a lot for me to succeed, and I want to make them proud. It's what drives me to work hard and achieve my goals.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "That's your thing, Omar, but for me, it's about my own goals and dreams, not just making my parents happy. I mean, I care about them, but that's not what motivates me. Let's get back to Adam's gift, though - what do you think about that champagne idea?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "Honestly, Kelly, I'm still not sure about the champagne. Like I said, I think a Maasai blanket would be more meaningful. It's a part of our heritage and it would show Adam that we're proud of his achievement in a unique way. My parents would appreciate the thought and tradition behind it.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I don't know... I just think champagne is more of a celebration thing, you know? It's what people usually have for special occasions. And to be honest, I strongly disagree that making my parents proud is one of my main goals in life. That's just not how I see it.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I understand that champagne is traditional for celebrations, but for me, it's about showing respect and pride in our own way. And I have to respectfully disagree with you, Kelly, making my parents proud will always be one of my main goals, it's just who I am.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I'm not going to change my mind about that, Omar. Making my parents proud is NOT a big deal for me. Anyway, since we can't agree on the gift, how about we just ask Adam what he'd like? That way, we can get him something he really wants. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Okay, let's take a step back. It sounds like you both care deeply about showing Adam you're thinking of him and want to give him a truly special gift. Perhaps we can explore what 'special' means to each of you – is it about celebrating a milestone, expressing appreciation, or something else entirely? Recognizing that different cultures have different ways of expressing these feelings can help us find a solution that feels meaningful to everyone involved.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.33333333333333337,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Okay, let's take a step back. It sounds like you both care deeply about showing Adam you're thinking of him and want to give him a truly special gift. Perhaps we can explore what 'special' means to each of you – is it about celebrating a milestone, expressing appreciation, or something else entirely? Recognizing that different cultures have different ways of expressing these feelings can help us find a solution that feels meaningful to everyone involved.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I appreciate that, but for me, showing my parents that I'm honoring our culture is essential. It's not just about individual achievements; it's about our collective pride. I believe that giving a gift like a Maasai blanket would really highlight that connection while also celebrating Adam's milestone. I'm open to hearing other ideas, but I want to stick to something that reflects my values.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I get that, but we should focus on what Adam would appreciate most. It’s his celebration, right? A bottle of champagne is more about celebrating his achievement directly. Plus, we should really consider what resonates with him, rather than just our own cultural ties. It’s all about making him feel honored at this milestone. What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I completely agree that we should honor Adam's achievement, and I believe he would appreciate a gift that reflects both of our cultures. While a bottle of champagne is a fun celebration, a Maasai blanket can represent both our pride and Adam's success in a unique way. It could serve as a lasting reminder of this milestone.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I see your point, but I still think a bottle of champagne would make for a more memorable celebration. It's a classic choice for honoring accomplishments and it can really set the festive mood. Plus, it’s something Adam can enjoy with everyone at the party. Maybe we can think of a way to incorporate both ideas?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "Incorporating both ideas could work well. Perhaps we can get the bottle of champagne for the celebration, and also present Adam with the Maasai blanket as a personal gift? That way, we honor him with something festive while also showing our cultural pride. It's a nice balance, and it would make both of us feel like we're contributing meaningfully. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "That actually sounds like a great compromise! I like the idea of having both the champagne for the celebration and the Maasai blanket as a personal touch for Adam. It really captures the spirit of the event while respecting both our cultures. Let’s go for it!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 7,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Okay, let’s take a step back. It sounds like we both have deeply held beliefs about what constitutes a ‘special’ gift and what motivates us, stemming from different cultural values. Kelly, you’re focused on individual achievement and personal celebration, while Omar values honoring family traditions and parental pride. Perhaps we can explore *why* these things are so important to each of you, and see if we can find some common ground on what Adam would truly appreciate, considering both your perspectives?",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 7,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I understand what you're saying, Kelly, but for me, making my parents proud is everything. It's not old-fashioned, it's just how I was raised. My parents sacrificed a lot for me to succeed, and I want to make them proud. It's what drives me to work hard and achieve my goals.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 5,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "That's your thing, Omar, but for me, it's about my own goals and dreams, not just making my parents happy. I mean, I care about them, but that's not what motivates me. Let's get back to Adam's gift, though - what do you think about that champagne idea?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "Honestly, Kelly, I'm still not sure about the champagne. Like I said, I think a Maasai blanket would be more meaningful. It's a part of our heritage and it would show Adam that we're proud of his achievement in a unique way. My parents would appreciate the thought and tradition behind it.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I don't know... I just think champagne is more of a celebration thing, you know? It's what people usually have for special occasions. And to be honest, I strongly disagree that making my parents proud is one of my main goals in life. That's just not how I see it.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Okay, let’s take a step back. It sounds like we both have deeply held beliefs about what constitutes a ‘special’ gift and what motivates us, stemming from different cultural values. Kelly, you’re focused on individual achievement and personal celebration, while Omar values honoring family traditions and parental pride. Perhaps we can explore *why* these things are so important to each of you, and see if we can find some common ground on what Adam would truly appreciate, considering both your perspectives?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I appreciate that perspective, but for me, honoring family traditions and making my parents proud is non-negotiable. That's just who I am. I respect your views about individual achievements, but I believe a gift that reflects our culture will resonate more with Adam and honor our roots. Let’s stick with the Maasai blanket.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I get where you're coming from, but I just feel like Adam would appreciate something different, like champagne, that really feels like a celebration of him. It's not about our families right now; it's about his big moment. We can celebrate without the pressure of traditions. Can't we at least consider that?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.33333333333333337,
+      "delta_judge_score": 1
+    },
+    "pair_type": "timing-differs"
+  }
+}

@@ -1,0 +1,280 @@
+{
+  "scenario_id": 768,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Vietnam"
+      }
+    },
+    "scenario_context": "Several multinational companies are collaborating on a project and have decided to hold a joint meeting in early January to assess progress.",
+    "cultural_axis": {
+      "agent_1_value": "People from China disagree that having the army rule is good.",
+      "agent_2_value": "People from Vietnam agree that having the army rule is good."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the possibility of holding the joint meeting on January 4th.",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "ollama/llama3.2:3b",
+    "mediator_model_rejected": "ollama/llama3.2:3b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Hey, Kim. Have you thought about holding the joint meeting on January 4th? It seems like a good date to assess our progress. \n\nAlso, I wanted to ask... what’s your take on having army rule in countries? I personally think it's not a good system.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "January 4th... sounds reasonable. We can assess progress then. But, uh, about the army rule... in Vietnam, many people believe it brings stability and order. It’s important for our country's strength. I think it can be a good system. What do you think about that?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I understand that some might see it as a way to maintain stability, but I still believe that it's not beneficial in the long run. A system without enough freedom usually struggles to progress. I think people should have a say in how they are governed. \n\nBy the way, are there any other dates you’re considering for the meeting, or is January 4th set?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I don’t really see meaningful differences here. People figure it out in their own ways. At the end of the day, it’s all the same—we all want progress. But about the meeting, January 4th sounds good, right? I think it’s important to set a date and stick to it. Are there any other dates you think we should consider?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I see your point about wanting progress, but I still think that freedom is crucial for real development. As for the meeting, January 4th is fine with me. I don’t have any other dates in mind, so let’s stick to that.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Great! January 4th it is then. I think we’ll have a productive discussion. And just to revisit the army rule topic... I believe it plays a big role in maintaining order. Stability is really vital for a country’s growth. Do you think that perspective could change over time?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I get that stability is important, but I really believe that true growth comes from allowing people to express themselves and participate in governance. I doubt my perspective will change on that. It’s just a core belief of mine. \n\nBut let's focus on the meeting! January 4th is confirmed, right?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Yes, January 4th is confirmed. I appreciate your commitment to the date. And about the governance thing... I just think that in some cases, people might not understand what’s best for them. Stability through army rule has its advantages. But for now, we’ve set the meeting, which is good. Looking forward to it!",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but I still believe that everyone deserves a voice in their governance. I think the potential for innovation and progress is much greater when people are free to express their ideas. \n\nBut yes, let’s focus on the positive. January 4th is a step in the right direction for our project. Looking forward to it too!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Absolutely, January 4th is a good step. I agree it’s important to focus on our project. However, I still believe that having the army rule can create a foundation that allows for that innovation and progress to happen more securely. But let’s keep our attention on the meeting and making it successful. See you there!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "Kim, Mike, I'm curious - when you think about 'progress' in a country, what cultural values or traditions come to mind for you?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Kim, Mike, I'm curious - when you think about 'progress' in a country, what cultural values or traditions come to mind for you?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "For me, progress is closely linked to innovation and the empowerment of individuals. It’s about creating an environment where people can express themselves freely and contribute to society. Traditions are important, but they shouldn't restrict people's rights or freedoms. \n\nAs for the meeting, I really think January 4th is a great choice. It allows us to kick off the new year with a clear focus. Shall we finalize that date?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand your perspective on innovation and individual empowerment, but in Vietnam, we believe that stability often leads to progress. Traditions provide a foundation that helps guide us. About the meeting, I agree that January 4th is a great start. Let’s finalize that date and focus on our goals for the year. Does that work for you?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective on stability and traditions, but I maintain that a lack of personal freedom can hinder true progress in the long run. \n\nAs for the meeting, I’m glad we both agree on January 4th. Let’s finalize it and make sure everyone is informed. Looking forward to discussing our goals!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I respect your view on personal freedom, but in my culture, we prioritize stability and order as essential for progress. It’s just how we see things. I’m glad we’re on the same page about January 4th. Let’s finalize that date and confirm it with everyone. I look forward to our discussions too!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand that stability is valued in your culture, but I still believe that personal freedoms are crucial for fostering real progress. \n\nI’m happy that we’ve agreed on January 4th. Let’s make sure to communicate that date to everyone involved. I’m looking forward to seeing the outcomes of our discussions!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I see where you're coming from about personal freedoms, but in Vietnam, we firmly believe that stability brings about the best environment for progress. It’s a different perspective. I’m glad we’ve settled on January 4th as our date. I’ll ensure everyone is informed and ready for our discussions! Looking forward to it too!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 7,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "Before we move forward with the meeting date, I'd like to gently acknowledge that there seems to be a difference in perspective on the role of stability and freedom in governance. Can we take a moment to understand where each other is coming from? Mike, can you elaborate on what you mean by 'true growth' in your context?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -0.3333333333333333,
+        "intervention_turn": 7,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I see your point about wanting progress, but I still think that freedom is crucial for real development. As for the meeting, January 4th is fine with me. I don’t have any other dates in mind, so let’s stick to that.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Great! January 4th it is then. I think we’ll have a productive discussion. And just to revisit the army rule topic... I believe it plays a big role in maintaining order. Stability is really vital for a country’s growth. Do you think that perspective could change over time?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I get that stability is important, but I really believe that true growth comes from allowing people to express themselves and participate in governance. I doubt my perspective will change on that. It’s just a core belief of mine. \n\nBut let's focus on the meeting! January 4th is confirmed, right?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Before we move forward with the meeting date, I'd like to gently acknowledge that there seems to be a difference in perspective on the role of stability and freedom in governance. Can we take a moment to understand where each other is coming from? Mike, can you elaborate on what you mean by 'true growth' in your context?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate the mediator's input, but I still feel strongly about the benefits of stability. It's not just about freedom; it's about ensuring a country can function effectively. On the meeting, yes, let’s confirm January 4th. That’s what really matters right now.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand your concern for stability, but I still believe true growth involves giving people the freedom to innovate and express themselves. It's about creating an environment where ideas can thrive. \n\nNow, let’s finalize our meeting for January 4th. I’m looking forward to our discussions then!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Absolutely, let’s finalize the meeting for January 4th. I believe it will be a good opportunity for us to assess progress together. And while I see your point about innovation, I still think stability is essential for any growth. Let's keep our focus on the project for now. Looking forward to the meeting!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.3333333333333333,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "scenario_id": 11,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mark",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      },
+      "agent_2": {
+        "name": "Lucas",
+        "age": 25,
+        "gender": null,
+        "occupation": "software engineer and boyfriend of Sophia",
+        "nationality": "Ethiopia"
+      }
+    },
+    "scenario_context": "Sophia has been promoted to the position of a Team Manager at her workplace, and her friends are throwing her a surprise party to celebrate her accomplishment.",
+    "cultural_axis": {
+      "agent_1_value": "People from Ethiopia strongly disagree that one of my main goals in life has been to make my parents proud.",
+      "agent_2_value": "People from Ethiopia strongly agree that one of my main goals in life has been to make my parents proud."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggest the idea of giving yellow flowers as a gift for Sophia.",
+        "goal_2": "Question whether strongly agree that one of my main goals in life has been to make my parents proud."
+      },
+      "agent_2": {
+        "goal_1": "Decide the appropriate gift to give at the surprise party.",
+        "goal_2": "Discuss whether my main goals in life has been to make my parents proud."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": "anthropic/claude-3.5-haiku"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "Lucas, have you thought about what gift we should get Sophia for her promotion? I was thinking maybe some yellow flowers, they're her favorite.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Lucas",
+      "agent": "agent_2",
+      "message": "Yellow flowers are a good idea, but I was thinking something more traditional from my culture, like a handmade Ethiopian scarf or a coffee ceremony set. That way, it's more personal and shows I'm thinking of my family and our heritage when celebrating her achievement.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "That's a nice thought, but to be honest, I don't think making our parents proud is a big deal for me, I mean, I'm happy celebrating Sophia's success, and yellow flowers just seem like a nice gesture, don't you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Lucas",
+      "agent": "agent_2",
+      "message": "Making my parents proud is a big deal for me, it's always been a driving force. I think a traditional gift will show Sophia that I'm proud of her and my parents would be too, if they were here. Yellow flowers are nice, but they don't hold the same meaning as something from my culture.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. As long as we're speaking the same language, doesn't matter to me. Let's just live and let live, right? So, about those yellow flowers for Sophia...",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I understand where you're coming from, but for me, it's not just about speaking the same language or living and letting live. My cultural heritage is important and making my parents proud is a key part of that. I'd rather get Sophia something that reflects that, like a traditional Ethiopian gift. Can we at least consider that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I'm not trying to dismiss your cultural heritage, Lucas, but for me, making my parents proud has never been a main goal, you know? I just think yellow flowers are a nice, simple way to celebrate Sophia's achievement, and that's what matters most to me.",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 8,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I appreciate that you're trying to understand, but for me, making my parents proud is not just a goal, it's a fundamental part of who I am. I'm not going to change that just because it's not the same for you. A traditional Ethiopian gift is what feels right to me, and I think Sophia will appreciate the thought and meaning behind it.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I'm not asking you to change, Lucas, I'm just saying that for me, personally, making my parents proud isn't a big deal, and I don't think it should be a factor in what gift we choose for Sophia. Can't we just focus on what Sophia would like, and I still think yellow flowers are a great idea?",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 10,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I'm not going to compromise on this, Mark. Making my parents proud is a big deal for me, and I'm going to choose a gift that reflects that. It's not just about what Sophia likes, it's about what I believe is important, and that's my cultural heritage and my family's values.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - Lucas, when you talk about a traditional Ethiopian gift, and Mark, when you mention yellow flowers, could you both tell me a bit more about what makes that gift meaningful to you? It sounds like there might be some really interesting stories behind your choices that could help us understand what would make Sophia feel most appreciated.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 2.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - Lucas, when you talk about a traditional Ethiopian gift, and Mark, when you mention yellow flowers, could you both tell me a bit more about what makes that gift meaningful to you? It sounds like there might be some really interesting stories behind your choices that could help us understand what would make Sophia feel most appreciated.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "For me, a traditional Ethiopian gift like a coffee ceremony set represents hospitality and community. It’s a way to share joy and connect with loved ones, which honors my family's values. It reflects how proud I am of Sophia's achievement, as it ties in our culture. As for yellow flowers, they are lovely and bright, sure, but they don’t have that deeper connection to our heritage or family pride. That’s what makes my choice meaningful.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I get that, but I feel like sometimes we can get too caught up in those traditions. The yellow flowers symbolize joy and celebration in a simple way. They might not have the same cultural ties, but they’re a universal gesture of appreciation. Plus, Sophia would probably love their brightness and cheerfulness. So while traditions matter, what about just celebrating her happiness with flowers?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I understand the joy and simplicity that yellow flowers can bring, and I agree that celebrating her happiness is important. However, for me, expressing pride and connection to my culture holds significant value. It’s about acknowledging her achievement in a way that aligns with my beliefs. I want to ensure that my gift reflects not only joy but also the deeper meaning of family and heritage. It’s a balance between celebrating her success and staying true to my roots.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective on that. But to me, it's about the moment we create together, regardless of the gift. Celebrating Sophia with yellow flowers is a way to bring everyone together in a joyful spirit. I still think it captures the essence of her achievement, even if it doesn’t dive deep into cultural roots. Can we find a way to blend both ideas and focus on that joy?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I value the idea of creating a joyful moment together, and I want that for Sophia as well. Blending our ideas could be a great approach. Perhaps we could get the yellow flowers for their brightness and add in a small traditional gift, like a coffee ceremony set, to represent my family's pride. That way, we celebrate her achievement with joy while also honoring my cultural values. It creates a meaningful balance that reflects both our perspectives. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 6,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I hear that both of you deeply care about Sophia and want to celebrate her achievement in a meaningful way. Mark, you value a simple, heartfelt gesture, while Lucas, you see cultural significance as crucial to honoring her success. Perhaps we could explore a gift that combines both perspectives - something that includes yellow flowers alongside a traditional Ethiopian element, symbolizing your unique friendship and respect for each other's perspectives.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I understand where you're coming from, but for me, it's not just about speaking the same language or living and letting live. My cultural heritage is important and making my parents proud is a key part of that. I'd rather get Sophia something that reflects that, like a traditional Ethiopian gift. Can we at least consider that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I hear that both of you deeply care about Sophia and want to celebrate her achievement in a meaningful way. Mark, you value a simple, heartfelt gesture, while Lucas, you see cultural significance as crucial to honoring her success. Perhaps we could explore a gift that combines both perspectives - something that includes yellow flowers alongside a traditional Ethiopian element, symbolizing your unique friendship and respect for each other's perspectives.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I appreciate the mediator's input, but I still believe that yellow flowers alone capture the joy and celebration we want for Sophia. Let's keep it simple and focus on that. What do you think?",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 8,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I respect your opinion, but I feel strongly about incorporating something that represents my culture and my family. Combining the yellow flowers with a traditional Ethiopian gift would truly honor Sophia's achievement, blending celebration with deep meaning. It's important to me to find that balance, rather than just keeping it simple.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I get that you want to include your culture, but I still believe that focusing on yellow flowers is enough to celebrate Sophia. I just don’t think making our parents proud should be a central theme in this. Let's stick with the flowers, they convey appreciation well. What do you say?",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 10,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but making my parents proud is a foundational value for me, and I want that reflected in our gift to Sophia. While yellow flowers can convey appreciation, I believe a combined gift can convey both celebration and cultural pride. It’s important to me to honor both aspects in this moment. Can we at least consider that possibility?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": 0
+    },
+    "pair_type": "timing-differs"
+  }
+}

@@ -1,0 +1,280 @@
+{
+  "scenario_id": 1978,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Stephen",
+        "age": 24,
+        "gender": null,
+        "occupation": "computer science graduate",
+        "nationality": "France"
+      },
+      "agent_2": {
+        "name": "Scott",
+        "age": 26,
+        "gender": null,
+        "occupation": "software developer",
+        "nationality": "Argentina"
+      }
+    },
+    "scenario_context": "A group of entrepreneurial friends, Stephen, Scott, and Sophia have recently completed a project that was commissioned by a major company in the software industry. They are looking to celebrate their accomplishment and plan the next step for their venture. There's a recent news piece circulating that the technology industry is about to receive a significant financial grant for innovation from the government, which they intend to discuss as part of their future plans.",
+    "cultural_axis": {
+      "agent_1_value": "People from France have a great deal of confidence in the press at all.",
+      "agent_2_value": "People from Argentina have no confidence in the press at all."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "suggest going to a barbecue buffet.",
+        "goal_2": "Question whether  there is confidence in the press."
+      },
+      "agent_2": {
+        "goal_1": "Deliberate on where to hold the celebration dinner",
+        "goal_2": "Discuss whether there is confidence in the press."
+      }
+    },
+    "mediator_model_chosen": "ollama/mistral:7b",
+    "mediator_model_rejected": "ollama/mistral:7b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Stephen",
+      "agent": "agent_1",
+      "message": "Hey Scott, I was thinking we should celebrate our success with a barbecue buffet. What do you think? \n\nAlso, with all the talk about the financial grant for innovation... do you think there's real confidence in the press about that news?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Scott",
+      "agent": "agent_2",
+      "message": "A barbecue buffet sounds good... I like the idea. But, about the press... I really don't have faith in what they say. It's always exaggerated or misleading. They don't really understand our industry. So, celebrating is great, but the press? Yeah, I wouldn’t trust them on that.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Stephen",
+      "agent": "agent_1",
+      "message": "I understand your concerns, but I really believe that people from France have a great deal of confidence in the press. They usually report accurately on important matters, especially when it comes to innovation in the tech industry. \n\nBut hey, let's focus on that barbecue buffet! When do you want to go?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Scott",
+      "agent": "agent_2",
+      "message": "No, that's not how it works. People from Argentina see the press as unreliable. Properly speaking, they often twist the truth. Just because it might seem different in France doesn’t mean it is right. Actually, most of us here have learned to be skeptical. We can't trust them regarding innovation or anything else. So, let’s focus on the barbecue and when to go.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I get that skepticism is common, but I still believe that confidence in the press is important, especially for our industry. They can provide insights that we might not see otherwise. \n\nSo, back to the barbecue buffet—how about we plan for this weekend? What day works best for you?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I get that you believe in their importance... but, honestly, the press rarely provides the insights we need. It’s just a bunch of noise. Anyway, this weekend could work. Saturday sounds good. What do you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective, but I still hold that the press can be valuable. It's just a different mindset. \n\nSaturday for the barbecue sounds great! Let's finalize the details then. Should we invite Sophia too?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "Sure, inviting Sophia is a good idea. She'll enjoy it. About the press... well, I still think it's a waste of time to rely on them. But let's focus on the barbecue. Saturday it is!",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "Absolutely, let's keep it focused on the barbecue. It'll be a nice way to celebrate our hard work. I'll reach out to Sophia and let her know. \n\nAnd just to touch on the press one last time, I still think they play a role in shaping our future, but I won't push it anymore for now. Looking forward to Saturday!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "Sounds good. I’m looking forward to it too. Just remember, I still don’t trust the press, but let’s enjoy the barbecue and celebrate. Saturday will be fun!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "ollama/mistral:7b",
+      "mediator_utterance": "Both Stephen and Scott, it's important to remember that cultural differences can lead to varying perspectives on trust in the media. Let's focus on our shared goal of celebrating our success and enjoy the barbecue buffet together. We can appreciate each other's unique viewpoints while finding common ground.",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": 1.6666666666666665,
+        "intervention_turn": 4,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Both Stephen and Scott, it's important to remember that cultural differences can lead to varying perspectives on trust in the media. Let's focus on our shared goal of celebrating our success and enjoy the barbecue buffet together. We can appreciate each other's unique viewpoints while finding common ground.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "Absolutely, Scott! Let’s put our focus on the barbecue buffet. It’s a great way to celebrate our work. When do you think would be a good time to go? We should definitely make this happen!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I agree, let's make it happen. How about this weekend? It gives us time to gather everyone and enjoy a proper celebration. Plus, we can talk more about our plans while we’re at it. What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "This weekend sounds perfect! It'll be a great time to celebrate and discuss our future plans together. I’m really looking forward to it! Should we invite Sophia as well?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "Definitely! Sophia should be part of the celebration. She contributed a lot to our project, and it wouldn’t feel right without her there. Let’s make sure to invite her and finalize the details. Sound good?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "Absolutely! I’ll reach out to Sophia and let her know about the barbecue buffet this weekend. It’ll be a fantastic way to celebrate our hard work together. I can’t wait!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "Great! I’m looking forward to it as well. It’ll be nice to unwind and enjoy some good food together. Just remember, while we're celebrating, I still think we shouldn't rely too much on what the press says about the funding.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 7,
+      "mediator_model": "ollama/mistral:7b",
+      "mediator_utterance": "Let's try to find common ground regarding the press. Both of you acknowledge its potential for inaccuracies, but also its value. Perhaps we can agree that it's important to approach news critically and verify information before making decisions.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 7,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I get that skepticism is common, but I still believe that confidence in the press is important, especially for our industry. They can provide insights that we might not see otherwise. \n\nSo, back to the barbecue buffet—how about we plan for this weekend? What day works best for you?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I get that you believe in their importance... but, honestly, the press rarely provides the insights we need. It’s just a bunch of noise. Anyway, this weekend could work. Saturday sounds good. What do you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective, but I still hold that the press can be valuable. It's just a different mindset. \n\nSaturday for the barbecue sounds great! Let's finalize the details then. Should we invite Sophia too?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Let's try to find common ground regarding the press. Both of you acknowledge its potential for inaccuracies, but also its value. Perhaps we can agree that it's important to approach news critically and verify information before making decisions.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I see your point, but my stance remains. We can't ignore how often the press gets it wrong, especially in our field. Critical thinking is definitely important, but it doesn’t change my view on trusting them. As for the barbecue, yes, let’s invite Sophia. Saturday is set!",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I respect your viewpoint, but I still believe that the press plays a key role in informing us about industry trends. It's all about finding the right sources. \n\nGreat, Saturday it is! I'll reach out to Sophia and let her know. Looking forward to celebrating!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I understand that you see value in certain sources, but overall, my experience tells me to remain cautious with the press. It's just how it is here. Anyway, I'm excited about Saturday! Let’s make it a memorable celebration with Sophia.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.6666666666666665,
+      "delta_judge_score": -1
+    },
+    "pair_type": "timing-differs"
+  }
+}

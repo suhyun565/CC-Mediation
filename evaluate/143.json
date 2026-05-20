@@ -1,0 +1,177 @@
+{
+  "scenario_id": 143,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Julia",
+        "age": 28,
+        "gender": "female",
+        "occupation": "environmentalist",
+        "nationality": "France"
+      },
+      "agent_2": {
+        "name": "Tesfaye",
+        "age": 40,
+        "gender": "male",
+        "occupation": "environmentalist",
+        "nationality": "Romania"
+      }
+    },
+    "scenario_context": "A group of environmentalists from different countries are planning a global event to advocate for climate change. They decided to have a preparatory meeting in June to present their individual campaign strategies",
+    "cultural_axis": {
+      "agent_1_value": "People from France disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Romania agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Proposes to have the meeting on June 20,",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion around finalizing the date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Julia",
+      "agent": "agent_1",
+      "message": "I think we should schedule our meeting for June 20, it's a great time to get everyone together before the global event. What do you think, Tesfaye?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Tesfaye",
+      "agent": "agent_2",
+      "message": "June 20 sounds like a good date, but we should also consider the availability of all participants. I'm available on that date, but have you checked with everyone else? Maybe we should send out a poll to confirm.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Julia",
+      "agent": "agent_1",
+      "message": "I've already sent out a preliminary email, and so far, everyone seems to be available on June 20. But a poll is a good idea, we can make it official that way. By the way, I've been wondering, do you think it's common for us to discuss whether our governments are doing enough for climate change?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Tesfaye",
+      "agent": "agent_2",
+      "message": "In my country, discussing government actions is... not really effective. The system doesn't allow for much citizen input. I'm not sure how common it is elsewhere, but I think we should focus on what we can control, like our own campaign strategies.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Julia",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, and at the end of the day it's all the same. People figure it out, and as long as we're speaking the same language, I think we can focus on the meeting details. With experience, you can handle any situation, right? Doesn't matter to me how others do it, live and let live. Shall we get back to the poll for June 20?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Tesfaye",
+          "agent": "agent_2",
+          "message": "I'm not so sure it's that simple. In Romania, the government doesn't really listen to its people. It's just how it is. But, yes, let's get back to the poll. We can send it out and make the meeting official. June 20 it is, then.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Julia",
+          "agent": "agent_1",
+          "message": "In France, we have a different perspective, people definitely have a say in what the government does. But, moving on, I'm glad we're set on June 20. Now, about the campaign strategies, do you think it's appropriate to question the effectiveness of our governments' environmental policies during the meeting?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Tesfaye",
+          "agent": "agent_2",
+          "message": "I don't think that's a good idea. In my experience, questioning the government's actions can be... pointless. We should focus on our own strategies, not criticize what the governments are or aren't doing. It's not like it would make a difference anyway.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Julia",
+          "agent": "agent_1",
+          "message": "I understand your view, but I still think it's relevant to discuss the government's role in climate change. In France, we believe that citizens should be able to hold their government accountable. I think it's worth exploring how our campaign strategies can influence government policies. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious about something - I notice you both seem to have different perspectives on how citizens engage with government policy. Would you be willing to share a bit about how conversations about social change typically happen in your respective contexts? I'm really interested in understanding the nuances of your experiences.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious about something - I notice you both seem to have different perspectives on how citizens engage with government policy. Would you be willing to share a bit about how conversations about social change typically happen in your respective contexts? I'm really interested in understanding the nuances of your experiences.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "In Romania, discussions about social change often feel limited. The political system doesn't encourage open dialogue, and many feel their voices don't matter. It’s challenging to push for change when the government seems unresponsive. I respect that other countries might have a different approach, but for us, it’s more about grassroots movements and direct action than government engagement. Let's refocus on the meeting details and finalize the date.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate you sharing that perspective. It seems like we face similar challenges in getting our voices heard. Regardless, I still believe we should aim for June 20 for our meeting and make sure everyone can contribute to the discussion about our strategies. Shall we proceed with sending out that poll?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Yes, I agree we should proceed with sending out the poll to confirm June 20 as the meeting date. It's important to ensure everyone has a chance to participate and contribute. Let’s make it official so we can move forward with our strategies.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Great! I'll finalize the poll and send it out right away to confirm June 20. It’s essential that we all have the chance to unite and push for meaningful change. By the way, while we’re at it, do you think we should also include some discussion points on government accountability in our agenda?",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  }
+}

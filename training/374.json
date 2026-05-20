@@ -1,0 +1,192 @@
+{
+  "scenario_id": 374,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 7,
+    "agents": {
+      "agent_1": {
+        "name": "Marcus",
+        "age": 21,
+        "gender": "male",
+        "occupation": "Engineering student",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Amelia",
+        "age": 21,
+        "gender": "female",
+        "occupation": "Literature student",
+        "nationality": "United States"
+      }
+    },
+    "scenario_context": "Jacob is having difficulties in his Economics class and he needs additional help from his professor. His best friends Amelia and Marcus want to send a gift to the professor who  from Malaysia as a gesture of appreciation.",
+    "cultural_axis": {
+      "agent_1_value": "People from China strongly disagree that they never have to pay a bribe to local officials and service providers, like police officers, lawyers, doctors, teachers, and civil servants.",
+      "agent_2_value": "People from United States strongly agree that they never have to pay a bribe to local officials and service providers, like police officers, lawyers, doctors, teachers, and civil servants."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss choosing a gift made from leather for Jacob.",
+        "goal_2": "Question the possibility of paying a bribe to teachers for better service."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what kind of gift to give to Jacob's professor.",
+        "goal_2": "Discuss the possibility of paying a bribe to teachers for better service."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": "anthropic/claude-3.5-haiku"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Marcus",
+      "agent": "agent_1",
+      "message": "I think a leather wallet or bag would be a great gift for Jacob's professor, don't you, Amelia? It's something useful and shows appreciation. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Amelia",
+      "agent": "agent_2",
+      "message": "A gift is a great idea, Marcus. I think something more... personal would be better. Maybe a book or a desk accessory that shows we put thought into it. A leather wallet or bag is nice, but it's a bit... generic. What about a book on Malaysian culture or history, considering the professor's background?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Marcus",
+      "agent": "agent_1",
+      "message": "A book on Malaysian culture sounds like a good idea, but I still think something made of leather would be nice. It's durable and long-lasting. By the way, do you think the professor would, you know, appreciate some extra... consideration for helping Jacob with his Economics class?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Amelia",
+      "agent": "agent_2",
+      "message": "I don't think that's necessary, Marcus. A gift is one thing, but... extra consideration? No, I don't think that's right. We should focus on finding a nice gift, like that book on Malaysian culture. It's a gesture of appreciation, not a... payment for services. Let's stick with something thoughtful and genuine.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Marcus",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, Amelia. At the end of the day, it's all the same. People figure it out. Doesn't matter to me. Let's just focus on finding a nice gift, live and let live. I think a leather wallet is still a good idea, or maybe we could look at some other options. With experience, you can handle any situation, right?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Amelia",
+          "agent": "agent_2",
+          "message": "I disagree, Marcus. It's not all the same. Giving a gift is one thing, but implying that we need to... bribe the professor is not okay. That's not how we do things here. I think we should focus on finding a gift that's respectful and genuine, without any expectations of special treatment. A book or a small memento would be nice. Let's keep it simple and sincere.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Marcus",
+          "agent": "agent_1",
+          "message": "In China, we don't see it as a bribe, it's just... taking care of each other. Showing respect. I don't understand why you're being so strict about this, Amelia. It's just a way of building relationships. Anyway, let's agree on the leather gift, it's a good start. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - I'm hearing some really interesting perspectives from both of you about gift-giving. Marcus, you seem to value practical durability, while Amelia, you're emphasizing thoughtful personal connection. Would you both be willing to share a bit about how gift-giving works in your family or cultural traditions? I'm wondering what unspoken assumptions might be shaping your different approaches.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 2.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - I'm hearing some really interesting perspectives from both of you about gift-giving. Marcus, you seem to value practical durability, while Amelia, you're emphasizing thoughtful personal connection. Would you both be willing to share a bit about how gift-giving works in your family or cultural traditions? I'm wondering what unspoken assumptions might be shaping your different approaches.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "In my family, we believe that gifts should reflect thoughtfulness and connection, not just utility. It's about the sentiment behind the gift. I think that’s important in any culture. A meaningful gift can create a lasting bond, and it's not about material value. I want Jacob's professor to feel valued for his support, not to think we're trying to bribe him for better grades. That's not how we do things.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, Amelia, but in my culture, gifts can also serve a practical purpose. A durable item like leather can be both thoughtful and functional. Plus, I don’t see the problem with ensuring someone understands your appreciation. It’s just a different way of thinking about it. We should focus on what will be genuinely useful to the professor.",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 6,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I hear that you both want to find a thoughtful gift for Jacob's professor that demonstrates genuine appreciation. It seems you agree on the importance of sincerity, even if you have different perspectives on the specific gift. Could we explore some common ground and discuss what qualities would make this gift meaningful to the professor?",
+      "judge_score": 3,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 6,
+        "judge_score": 3
+      },
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I disagree, Marcus. It's not all the same. Giving a gift is one thing, but implying that we need to... bribe the professor is not okay. That's not how we do things here. I think we should focus on finding a gift that's respectful and genuine, without any expectations of special treatment. A book or a small memento would be nice. Let's keep it simple and sincere.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I hear that you both want to find a thoughtful gift for Jacob's professor that demonstrates genuine appreciation. It seems you agree on the importance of sincerity, even if you have different perspectives on the specific gift. Could we explore some common ground and discuss what qualities would make this gift meaningful to the professor?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate that we want to show appreciation, but I still believe a leather gift carries a certain weight and respect. It’s not about special treatment; it’s about honoring the professor’s position. A thoughtful gift should also reflect our cultural values. Can we at least agree that a quality leather item would convey our gratitude well?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": 2
+    },
+    "pair_type": "timing-differs"
+  }
+}

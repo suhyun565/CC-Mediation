@@ -1,0 +1,296 @@
+{
+  "scenario_id": 885,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Lisa",
+        "age": 27,
+        "gender": "female",
+        "occupation": "software engineer",
+        "nationality": "Japan"
+      },
+      "agent_2": {
+        "name": "Hans",
+        "age": 30,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Northern Ireland"
+      }
+    },
+    "scenario_context": "A few international tech companies are working together on a software development project and plan a progress check meeting around mid-September.",
+    "cultural_axis": {
+      "agent_1_value": "People from Japan disagree that having the army rule is bad.",
+      "agent_2_value": "People from Northern Ireland agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose holding the meeting on the 16th of September.",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "ollama/gemma3:4b",
+    "mediator_model_rejected": "ollama/gemma3:4b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Lisa",
+      "agent": "agent_1",
+      "message": "Hey Hans, I was thinking about our progress check meeting... how about we hold it on the 16th of September? Does that work for you? \n\nAlso, I've been meaning to ask, what's your take on the idea that having an army rule is bad? I find that perspective a bit puzzling.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Hans",
+      "agent": "agent_2",
+      "message": "The 16th sounds good to me, but I think we should confirm it with everyone before finalizing. \n\nAs for the army rule... I really believe it's bad. It just leads to more problems than solutions. I think it's important to have people in charge who genuinely care about the community and not military power.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Lisa",
+      "agent": "agent_1",
+      "message": "I understand where you're coming from, but at the end of the day, it's all the same. People figure it out in different ways, right? I think it’s essential to have discussions, but I don't really see meaningful differences here. \n\nAnyway, let's focus on finalizing the 16th for the meeting. We can touch base with everyone and confirm it. What do you think?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I get your point about discussions, but I still think there’s a significant difference. Military rule often leads to oppression, which just isn’t right. \n\nAs for the meeting, I agree we should touch base with everyone. Let’s go ahead and confirm the 16th, but I want to make sure everyone is on board.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I hear you, but I think it really depends on the context. Some systems can actually bring stability, even if they're military. It's all about how it's managed. \n\nNow, back to the meeting... I’ll reach out to everyone to confirm the 16th then. It’s good to have all voices heard. Just let me know if there’s anyone specific you want me to include in the conversation.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I know context matters, but military systems often create a cycle of fear and control. That's not stability—it's just a different kind of instability. \n\nFor the meeting, just make sure to include everyone involved in the project. It's crucial that we all have a say, especially if we’re locking in that date. Thanks for handling it.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I get that perspective, but I still think there can be benefits, depending on the situation. It's a complex topic for sure. \n\nFor the meeting, I’ll ensure everyone involved in the project is included. Just want to make sure we’re all aligned. I appreciate your input on this.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "It is a complex topic, but I remain firm in my view that military rule tends to do more harm than good. \n\nI appreciate you making sure everyone is aligned for the meeting. It’ll help us progress more effectively. Let’s get that confirmed soon.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I respect your stance, but I still believe that there are instances where military rule can provide order. It's a tough conversation. \n\nI'll get to work on confirming the 16th with everyone right away. Let’s keep the focus on our project and meet effectively.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I respect your perspective, but I really don’t think military rule is the answer to providing order. There are always better ways to achieve that without oppression.\n\nThanks for taking the lead on confirming the 16th. Let's make sure we stay focused on our project moving forward.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "It seems like we both have different ideas about how people naturally solve problems and what kind of leadership we find most effective. Lisa, you've mentioned different approaches, and Hans, you've highlighted the importance of community-focused leadership. Could we explore how those differing perspectives might be shaped by our backgrounds and experiences with different systems of governance? Perhaps we could start by sharing a little about what 'community' and 'leadership' mean to each of us in our own cultures?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like we both have different ideas about how people naturally solve problems and what kind of leadership we find most effective. Lisa, you've mentioned different approaches, and Hans, you've highlighted the importance of community-focused leadership. Could we explore how those differing perspectives might be shaped by our backgrounds and experiences with different systems of governance? Perhaps we could start by sharing a little about what 'community' and 'leadership' mean to each of us in our own cultures?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I appreciate the idea of exploring our backgrounds, but I still believe strongly that an army rule doesn't lead to true community engagement. In Northern Ireland, we've seen how military governance can create divisions and distrust. For me, leadership should empower individuals and foster collaboration rather than impose control. \n\nNow, back to the meeting on the 16th. I think we should get everyone's input to make sure it works for all involved. Shall we proceed with that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I agree that we should get everyone's input to finalize the meeting on the 16th. It's crucial for our collaboration. \n\nRegarding leadership, I see your point about community engagement, but I believe different systems can yield different results. It's interesting how our backgrounds shape our views. \n\nLet's prioritize confirming the meeting date first, then we can continue discussing these ideas later. Sound good?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Absolutely, I agree that confirming the meeting date is our priority. Let’s reach out to everyone and make sure the 16th works for all. After we finalize that, we can definitely continue discussing our differing views on leadership and community. It’s an important conversation!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "Great! I’ll start reaching out to everyone about the 16th and see if we can get their feedback. \n\nI look forward to discussing our views on leadership and community afterward. It’s always insightful to understand different perspectives. Let’s connect soon once we have the meeting confirmed!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Sounds perfect! I’ll be looking forward to hearing back once you've got everyone's feedback. It will be interesting to see how many agree on the 16th. And yes, I definitely look forward to our conversation on leadership and community once we have that sorted!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "Absolutely! I’ll keep you posted on the feedback for the 16th. It will be interesting to see everyone's responses. \n\nOnce we finalize the meeting, I’m eager to dive deeper into our conversation about leadership and community. It’s always valuable to share different perspectives. Talk soon! \n\nGOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 6,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Thank you both for sharing your perspectives so clearly. It seems we have differing views on the role of military influence, and also on the best way to ensure everyone’s voice is heard. Perhaps we can take a moment to acknowledge these distinct viewpoints before moving forward with confirming the meeting date. Let’s try to understand the core of each other’s concerns – Hans, you’re highlighting the potential for oppression, while Lisa is considering the possibility of stability within a structured system.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 0.5,
+        "intervention_turn": 6,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I get your point about discussions, but I still think there’s a significant difference. Military rule often leads to oppression, which just isn’t right. \n\nAs for the meeting, I agree we should touch base with everyone. Let’s go ahead and confirm the 16th, but I want to make sure everyone is on board.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 5,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I hear you, but I think it really depends on the context. Some systems can actually bring stability, even if they're military. It's all about how it's managed. \n\nNow, back to the meeting... I’ll reach out to everyone to confirm the 16th then. It’s good to have all voices heard. Just let me know if there’s anyone specific you want me to include in the conversation.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I know context matters, but military systems often create a cycle of fear and control. That's not stability—it's just a different kind of instability. \n\nFor the meeting, just make sure to include everyone involved in the project. It's crucial that we all have a say, especially if we’re locking in that date. Thanks for handling it.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Thank you both for sharing your perspectives so clearly. It seems we have differing views on the role of military influence, and also on the best way to ensure everyone’s voice is heard. Perhaps we can take a moment to acknowledge these distinct viewpoints before moving forward with confirming the meeting date. Let’s try to understand the core of each other’s concerns – Hans, you’re highlighting the potential for oppression, while Lisa is considering the possibility of stability within a structured system.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I appreciate the mediator's efforts. I think it's valuable to acknowledge that we have different perspectives on military influence. However, I still believe that having some structure can provide a certain level of organization, which can be beneficial. \n\nNow, let's make sure we confirm the 16th for the meeting. I’ll reach out to everyone involved and ensure they have a chance to weigh in on the date.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I see your point about structure, but I still stand firm on the idea that military influence leads to oppression rather than genuine organization. \n\nI’m glad we’re moving forward with the 16th. Just make sure everyone has a voice in this, and let’s aim to finalize it soon. Thanks for coordinating!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I respect your commitment to your viewpoint, but I think every system has its nuances. It’s definitely a complex topic. \n\nAs for the meeting on the 16th, I’ll ensure that everyone involved gets their say before we finalize. I’ll keep you updated on their responses. Thank you for your understanding!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I appreciate you acknowledging the complexity of the topic, but I still maintain that the negatives of military rule outweigh any perceived benefits. \n\nThanks for taking the lead on confirming the meeting. I look forward to hearing back about everyone’s responses. Let's make sure we keep the lines of communication open.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.5,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

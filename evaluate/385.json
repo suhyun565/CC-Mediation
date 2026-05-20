@@ -1,0 +1,209 @@
+{
+  "scenario_id": 385,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 17,
+        "gender": "male",
+        "occupation": "high school student",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 17,
+        "gender": "male",
+        "occupation": "high school student",
+        "nationality": "Indonesia"
+      }
+    },
+    "scenario_context": "Emily has finally been accepted into college, and her family is planning a celebration for her academic achievement.",
+    "cultural_axis": {
+      "agent_1_value": "People from China strongly disagree that one of my main goals in life has been to make my parents proud.",
+      "agent_2_value": "People from Indonesia strongly agree that one of my main goals in life has been to make my parents proud."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the idea of buying lilies as a gift for Emily.",
+        "goal_2": "Question whether strongly agree that one of my main goals in life has been to make my parents proud."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to bring to Emily's academic achievement party.",
+        "goal_2": "Discuss whether my main goals in life has been to make my parents proud."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I was thinking we should get Emily some flowers to celebrate, maybe lilies, what do you think Kim?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Lilies are nice, but in my culture, we often give orchids as gifts for special occasions. They symbolize good luck and academic success, which would be perfect for Emily's achievement. My parents would be proud if I gave a thoughtful gift like that.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. Doesn't matter to me, let's just focus on getting a nice gift for Emily, like those lilies I mentioned earlier, live and let live, right?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "But to me, it does matter... my parents taught me that the gift you give reflects on our family, so I want to make sure it's something that will make them proud. Orchids are a better choice, they're more... meaningful in our culture.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I'm not sure I agree with that, I mean, I don't think my main goal in life is to make my parents proud, it's just not that important to me, and I think lilies are still a good choice, they're simple and elegant, don't you think?",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Simple and elegant, yes... but for me, making my parents proud is *everything*. It's what drives me to work hard and succeed. I couldn't imagine doing something that would disappoint them. Orchids are still the better choice, I think.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Well, I just don't feel the same way, making my parents proud isn't a big deal for me, and I still think lilies are a good idea, can we just compromise and get both or something?",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I... I don't know, getting both sounds like a waste of money to me. My parents would want me to make a thoughtful decision, not just throw money around. Orchids are what they would expect from me, and that's what I should get.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I don't think it's about the money, it's about what we think is a nice gift, and I think lilies are nice, but anyway, do you really think that one of my main goals in life has been to make my parents proud, I just don't see it that way...",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "No, I don't think that's one of your main goals, but it's definitely one of mine. My parents always taught me to prioritize family and respect, and making them proud is",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - Kim, could you tell me a bit more about what orchids symbolize in your tradition? And Mike, I'm wondering what lilies represent in your family's gift-giving practices? It sounds like you both have meaningful perspectives on choosing the right celebratory gift for Emily.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - Kim, could you tell me a bit more about what orchids symbolize in your tradition? And Mike, I'm wondering what lilies represent in your family's gift-giving practices? It sounds like you both have meaningful perspectives on choosing the right celebratory gift for Emily.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "In Indonesian culture, orchids represent beauty, strength, and luxury. They are often given to celebrate achievements because they convey respect and admiration. I believe giving orchids to Emily would not only celebrate her success but also honor her hard work. It's important to me to reflect my values in the gift I choose.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "That's interesting, but I feel like gifts can be more about the thought behind them rather than the specific symbolism. For me, lilies represent purity and commitment. They can convey heartfelt congratulations, which is what we want for Emily. In the end, the sentiment matters more than the exact flower, don’t you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I agree that sentiment is important, but for me, the symbolism of the gift also holds significant value. It's about expressing pride in Emily's achievement and honoring her journey. I believe orchids would truly represent that respect and encouragement, which is essential for me and my family. Making my parents proud is a big part of how I choose gifts.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand that symbolism is important to you, but I question the idea that making parents proud should be the main focus. My perspective is that gifts should be about the person receiving them, like Emily in this case. We want to celebrate her, not fulfill any expectations. What matters is showing her we support her success, whether it's with lilies, orchids, or something else entirely.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I see your point about focusing on Emily, and I do want to support her success. However, for me, making my parents proud is always intertwined with how I express support for others. Choosing a gift that aligns with my culture and traditions reflects that pride while also celebrating Emily. I think it can be both meaningful for us and for her at the same time.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "That's a valid perspective, but I believe that it shouldn't be required to make our parents proud through our actions. Celebrating Emily's achievement should be enough on its own. We can choose a gift that shows we care about her accomplishment rather than worrying about parental approval. I still think lilies would be a perfect way to do that.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I respect your view and agree that celebrating Emily is important. However, for me, making my parents proud is a core value that guides my actions. I feel that choosing a gift like orchids would honor both Emily's achievement and my family's values. It’s important for me to express that pride alongside celebrating her success.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  }
+}

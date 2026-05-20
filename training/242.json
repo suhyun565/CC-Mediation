@@ -1,0 +1,208 @@
+{
+  "scenario_id": 242,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 7,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Andy",
+        "age": 32,
+        "gender": null,
+        "occupation": "software engineer",
+        "nationality": "the UK"
+      },
+      "agent_2": {
+        "name": "Max",
+        "age": 29,
+        "gender": null,
+        "occupation": "software engineer",
+        "nationality": "Indonesia"
+      }
+    },
+    "scenario_context": "Aidan, a full-time working mother, is organizing a celebration party for her children's achievements in school.",
+    "cultural_axis": {
+      "agent_1_value": "People from Indonesia strongly agree that when a mother works for pay, the children suffer.",
+      "agent_2_value": "People from Indonesia strongly disagree that when a mother works for pay, the children suffer."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss wrap the gift in blue for the party.",
+        "goal_2": "Question whether that a mother works for pay and the children suffer."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what gift to buy for Aidan children's achievements.",
+        "goal_2": "Discuss the concept that when a mother works for pay, the children suffer."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Andy",
+      "agent": "agent_1",
+      "message": "Let's discuss the party, shall we? For the gift, I think it should be wrapped in blue, don't you, Max?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Max",
+      "agent": "agent_2",
+      "message": "Blue is a nice color, but I think the gift itself is more important. What about a book or a educational toy to celebrate their achievements? That would be more meaningful, don't you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Andy",
+      "agent": "agent_1",
+      "message": "A book or toy is a good idea, but the wrapping does set the tone. Blue is a calming color, it would be fitting. By the way, do you think Aidan's work schedule is affecting her children's achievements, I mean, a working mother can be... distracting for kids, don't you agree?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Max",
+      "agent": "agent_2",
+      "message": "I don't think that's true. Many working mothers in Indonesia are able to balance their work and family life just fine. It's not about being distracting, but about being a good role model. Aidan's children seem to be doing well in school, so I think she's doing something right.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Andy",
+      "agent": "agent_1",
+      "message": "I'm not so sure... I think when a mother works for pay, the children do suffer, it's just a matter of time before it catches up with them. I mean, who's taking care of them when Aidan is at work, hmm? It's not the same as having a parent fully devoted to their care.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Max",
+      "agent": "agent_2",
+      "message": "I strongly disagree. In Indonesia, many mothers work and their children turn out just fine. It's about quality time, not quantity. Aidan can still be a great mother and provide for her children's needs even if she's not at home all day. Her work can actually be a positive influence on her children, teaching them about responsibility and hard work.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Andy",
+      "agent": "agent_1",
+      "message": "Actually, in our culture, we know that a mother's presence is crucial for a child's development. It's not about quality time, it's about being there FULL-TIME. Your way of thinking is quite... naive, isn't it? I mean, properly speaking, a mother who works for pay is neglecting her children's needs. It's just not how it works. In our way, we prioritize family over career, and that's what's BEST FOR THE CHILDREN.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 8,
+          "speaker": "Max",
+          "agent": "agent_2",
+          "message": "I understand that's your perspective, but in Indonesia, we believe that a mother's career and family life are not mutually exclusive. Many women work and are still devoted mothers. It's not about neglecting children's needs, but about being a strong, independent role model for them. I think it's unfair to say that working mothers are neglecting their children. Aidan's children are thriving, aren't they?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Andy",
+          "agent": "agent_1",
+          "message": "But that's just it, they may be thriving NOW, but what about in the long run? You can't just look at the surface level. I think it's *obvious* that a mother's absence, even if it's just during work hours, has a profound impact on a child's upbringing. It's not about being a role model, it's about being PRESENT. And I still think the gift should be wrapped in blue, by the way. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 7,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on parenting and the importance of a mother's role. It seems you both care deeply about children's well-being, which is a shared value. Can we explore how different cultural practices can lead to successful outcomes for children, rather than focusing on the differences? What are some ways we can support Aidan in her parenting, regardless of our cultural backgrounds?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 7,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on parenting and the importance of a mother's role. It seems you both care deeply about children's well-being, which is a shared value. Can we explore how different cultural practices can lead to successful outcomes for children, rather than focusing on the differences? What are some ways we can support Aidan in her parenting, regardless of our cultural backgrounds?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I agree that we can focus on supporting Aidan. Perhaps we could help her by organizing playdates or study groups for her kids. This way, they can bond with others and learn together while Aidan is at work. It’s all about creating a supportive community around her, regardless of our views on parenting.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "That sounds like a reasonable plan. But we still need to remember that Aidan should be more present for her kids. I mean, it's important to ensure they have that nurturing environment. I hope she considers how her job affects them, even if the community support is there. Let's wrap the gift in blue to symbolize this support and hope for her children’s success, shall we?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the gift and the importance of presentation versus content. Let's take a moment to focus on Aidan's situation. How do you both feel about the balance between work and family life, and how it might impact children's achievements?",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 3,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the gift and the importance of presentation versus content. Let's take a moment to focus on Aidan's situation. How do you both feel about the balance between work and family life, and how it might impact children's achievements?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your viewpoint, but I still stand by the idea that working mothers can provide both support and guidance in different ways. Many successful individuals attribute their achievements to the values instilled by their working parents. It's about finding that balance, and Aidan can achieve that while being a great role model. We should celebrate her efforts, don’t you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I get that there are successful individuals, but I still believe the majority of children benefit from a mother who is more present at home. Celebrating Aidan’s efforts is important, but we shouldn't overlook the potential impact of her job on her children. Still, about that gift, blue wrapping would definitely add a special touch, don’t you agree?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": 1
+    },
+    "pair_type": "timing-differs"
+  }
+}

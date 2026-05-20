@@ -1,0 +1,280 @@
+{
+  "scenario_id": 2120,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Jack",
+        "age": 27,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Thailand"
+      },
+      "agent_2": {
+        "name": "Ray",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      }
+    },
+    "scenario_context": "Victoria, a single working mother, is trying to organize a surprise party for her son's birthday which she thinks would help in bonding with her child.",
+    "cultural_axis": {
+      "agent_1_value": "People from Thailand strongly disagree that when a mother works for pay, the children suffer.",
+      "agent_2_value": "People from Germany strongly agree that when a mother works for pay, the children suffer."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss wrap the gift in green for the party.",
+        "goal_2": "Question whether that a mother works for pay and the children suffer."
+      },
+      "agent_2": {
+        "goal_1": "decide on what type of gift and what color to wrap it in for the birthday party for Victoria's son.",
+        "goal_2": "Discuss the concept that when a mother works for pay, the children suffer."
+      }
+    },
+    "mediator_model_chosen": "ollama/qwen2.5:7b",
+    "mediator_model_rejected": "ollama/qwen2.5:7b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "Hey Ray, I was thinking... for the party, what if we wrapped the gift in green? It's such a vibrant color and could really pop. What do you think? \n\nAlso, I’ve been curious... do you really believe that when a mother works for pay, the children suffer? I just can’t see it that way.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Ray",
+      "agent": "agent_2",
+      "message": "Green... hmm, it’s okay, I guess. But maybe something like blue would be more calming? Children often respond to soothing colors better. \n\nAs for working mothers, yes, I really do believe that. When a mother is busy working, she isn’t there for her child. It’s just... her focus is split, and children need that *consistent* presence.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "I see your point about blue, but I still think green could bring more joy to the party. We want it to be fun, right? \n\nAs for the working mother thing... I just can’t agree. Many kids benefit from seeing their mothers work hard, learning valuable lessons. I don’t think a job takes away from a child’s happiness or development.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Ray",
+      "agent": "agent_2",
+      "message": "Well, at the end of the day, it’s all the same. Kids will adapt, and I think most of us just figure it out as we go along. So if green feels right for you, then go for it. \n\nFor the gift, maybe we should just focus on making it something fun for the party, regardless of color. What do you think would be a good gift?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "Thanks for being open to green! I really believe it could be a great choice. \n\nAs for the gift, something interactive like a fun board game or a cool science kit could be perfect. It’s not just a gift; it promotes bonding and learning. What do you think? Also, I still think that working mothers provide strong role models for their kids.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Ray",
+          "agent": "agent_2",
+          "message": "Board games or science kits can be interesting choices. They definitely encourage interaction, which is important. I’d lean towards a science kit since that could spark curiosity. \n\nBut about working mothers being role models... I still think the best role model is a mother who is present. It’s crucial for children's emotional development to have that connection.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "A science kit sounds great! It really could ignite curiosity and creativity. \n\nBut I still disagree on the role model thing. Working mothers can teach kids about responsibility and perseverance. Those are important qualities too. It's not just about being present physically; it’s about showing them how to navigate the world. We can be role models in many ways.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Ray",
+          "agent": "agent_2",
+          "message": "Sure, I understand that perspective. But, ultimately, emotional support comes from presence. Responsibility and perseverance are important, but children need to feel secure and connected first. \n\nStill, if the science kit is the gift choice, let’s go with that. It’ll create memorable moments at the party.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "I appreciate your thoughts on emotional support, but I really believe children can feel secure in different ways, even when mothers work. \n\nI'm glad we settled on the science kit! It’ll definitely make for memorable moments at the party. Let’s make sure it’s wrapped in green, though. That’ll make it even more special!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Ray",
+          "agent": "agent_2",
+          "message": "Green it is, then. I hope it brings joy to the party. \n\nBut I still believe a mother’s presence is irreplaceable. That’s the bottom line for me. It’s important to prioritize that connection as much as possible. Enjoy organizing the party!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "ollama/qwen2.5:7b",
+      "mediator_utterance": "That’s an interesting perspective on both topics! I wonder if there are any cultural or personal reasons behind these preferences for green and blue, or perhaps different views on work-life balance? It might help us understand each other better.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.6666666666666666,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "That’s an interesting perspective on both topics! I wonder if there are any cultural or personal reasons behind these preferences for green and blue, or perhaps different views on work-life balance? It might help us understand each other better.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate that you’re open to green! I think a fun gift could be something interactive, like a board game or a cool science kit. It’s perfect for a party and encourages bonding. \n\nAs for work-life balance, from my cultural perspective in Thailand, we see working mothers as strong role models. They teach resilience and provide for their families, which is incredibly valuable. I just can’t see how it would harm the kids.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "A board game or science kit sounds great! Those can really spark creativity and engagement at the party. \n\nRegarding your perspective, I understand that cultural views vary greatly. However, I still believe that the emotional connection is vital. Children thrive when they have their mothers present. It’s an essential part of their development. I guess we just see it differently based on our backgrounds.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I’m glad you like the idea of the board game or science kit! It’ll definitely make the party more enjoyable.\n\nBut I still think emotional connections can be fostered in many ways, even when mothers work. Kids can learn to adapt and build strong relationships with their mothers while they’re busy. It’s not just about physical presence; it’s also about quality time and support. I really believe that working mothers can raise happy, successful children.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I agree that quality time is important, and children can adapt, but the constant presence of a mother is something I view as crucial. It establishes a sense of security in a child's life. \n\nI appreciate your enthusiasm about the gift! Let’s focus on making the party a wonderful experience for Victoria's son. What other ideas do you have for activities?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Absolutely, let’s make the party a great experience! For activities, we could set up a fun scavenger hunt or some outdoor games. Those can really engage the kids and keep the energy high.\n\nAnd I understand the need for security you mentioned, but I still believe that a mother's work can provide a different kind of stability and lessons for children. It’s all about balance in the end, right?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "A scavenger hunt and outdoor games sound fantastic! Those activities will definitely keep the kids entertained and create great memories. \n\nI see your point about balance, but I still hold firm that a mother's presence is irreplaceable during those formative years. A job might provide stability, but I believe that emotional support from a mother is far more essential for a child's happiness. Let’s keep focusing on the party plans!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 5,
+      "mediator_model": "ollama/qwen2.5:7b",
+      "mediator_utterance": "Both of you bring valuable perspectives to the table, and it's great to see you're willing to consider each other's viewpoints. Perhaps we can find a way to incorporate both green for its vibrant joy and blue for its calming effect, creating a balanced atmosphere for the party.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -0.6,
+        "intervention_turn": 5,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Thanks for being open to green! I really believe it could be a great choice. \n\nAs for the gift, something interactive like a fun board game or a cool science kit could be perfect. It’s not just a gift; it promotes bonding and learning. What do you think? Also, I still think that working mothers provide strong role models for their kids.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Both of you bring valuable perspectives to the table, and it's great to see you're willing to consider each other's viewpoints. Perhaps we can find a way to incorporate both green for its vibrant joy and blue for its calming effect, creating a balanced atmosphere for the party.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate the suggestion, but I still lean towards blue for the calming effect. It's essential for children to feel secure and relaxed, especially at a party. \n\nAs for your point about working mothers being role models... well, I understand that perspective, but I still believe the best role model is one who prioritizes their child’s needs above work. It’s a different kind of strength, in my view.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand your preference for blue and the importance of creating a secure atmosphere. Perhaps we could use both colors in the decorations for a balanced feel? \n\nRegarding working mothers, I just think they show kids the value of hard work and independence. Prioritizing work doesn’t mean she isn’t there for her child. What do you think about that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Using both colors for decorations could be a compromise worth considering. A balanced atmosphere might work for the party’s vibe. \n\nBut I still believe that while hard work is commendable, the emotional presence of a mother is irreplaceable. A child needs that dedicated attention, and when a mother works, there’s often a gap in that essential connection. It’s something that can’t be overlooked.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I’m glad we can agree on the color compromise for the decorations! \n\nHowever, I still feel that a working mother can provide emotional presence in different ways. She can teach resilience and time management, which are also essential for a child's growth. It’s about finding a balance that works for each family. Let’s keep that in mind while planning the party!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I can see how you think that, and yes, balance is important for every family. However, I still feel it’s crucial that a mother’s primary focus should be on her child, especially during formative years. \n\nFor the party, let’s focus on what will make the celebration enjoyable for the kids. Would you prefer one of those interactive gifts we talked about?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.2666666666666666,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

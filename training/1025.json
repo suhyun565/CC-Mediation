@@ -1,0 +1,248 @@
+{
+  "scenario_id": 1025,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Alex",
+        "age": 40,
+        "gender": "male",
+        "occupation": "civil engineer",
+        "nationality": "Japan"
+      },
+      "agent_2": {
+        "name": "John",
+        "age": 30,
+        "gender": "male",
+        "occupation": "civil engineer",
+        "nationality": "Argentina"
+      }
+    },
+    "scenario_context": "Several large engineering firms are working together on a major construction project. They have planned to hold a crucial progress meeting in early December.",
+    "cultural_axis": {
+      "agent_1_value": "People from Japan disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Argentina agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose to keep the meeting on December 1st.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion around finalizing the date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+      "agent": "agent_1",
+      "message": "John, I believe we should keep the meeting on December 1st. It's crucial for us to stay on schedule. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "John, a 30-year-old male civil engineer from Argentina.",
+      "agent": "agent_2",
+      "message": "I think December 1st could work, but we need to consider if everyone is available. It's important for all the key players to be there. Have we checked their schedules?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+      "agent": "agent_1",
+      "message": "I understand the importance of availability, but I think December 1st is the best option. We can follow up on schedules later. Also, is it common for you to discuss the appropriateness of government actions?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "John, a 30-year-old male civil engineer from Argentina.",
+      "agent": "agent_2",
+      "message": "I see your point about December 1st. Let's tentatively agree on that, but we should finalize everything soon. As for discussing government actions, it's not very common in Argentina—people feel it doesn't matter since we have no real say in what happens. It’s a bit frustrating, really.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+      "agent": "agent_1",
+      "message": "I appreciate the tentative agreement, but I feel it’s important to finalize the December 1st date. As for discussing government actions, it resonates with my experience in Japan. We often don't have a say either, which is... concerning. How do you navigate that frustration?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "John, a 30-year-old male civil engineer from Argentina.",
+      "agent": "agent_2",
+      "message": "I don’t really see meaningful differences here. At the end of the day, it's all the same—people figure it out. We all deal with frustrations in our own ways. As long as we're speaking the same language, I think we can navigate these challenges. Speaking of which, let’s make sure we finalize December 1st for the meeting. It’s important to keep things moving forward.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+          "agent": "agent_1",
+          "message": "I agree that navigating frustrations is essential, but I still want to emphasize December 1st as our meeting date. Keeping things moving is vital, especially with this project. It helps us stay aligned. Do you think we can confirm that date now?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "John, a 30-year-old male civil engineer from Argentina.",
+          "agent": "agent_2",
+          "message": "I understand your urgency to confirm December 1st, and I agree it helps us stay aligned. Let’s finalize it then. But just to reiterate, we should double-check with everyone to make sure it works for all. It’s crucial for our progress.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+          "agent": "agent_1",
+          "message": "Thank you for finalizing December 1st. I appreciate that. I’ll trust that we can follow up with everyone later on their availability. It’s just important we continue to push forward despite any frustrations, especially when it comes to discussing government actions. I hope that’s understood.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "John, a 30-year-old male civil engineer from Argentina.",
+          "agent": "agent_2",
+          "message": "It's understood, and I'm glad we finalized the date. Pushing forward is crucial, but as far as discussing government actions, it’s a complex issue back home. Most people feel it’s pointless, so I don’t see it changing. Let’s just keep the focus on our project for now.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the meeting date and the discussion of government actions. It seems like there might be some cultural nuances at play here regarding how each of you views these topics. John, could you share a bit more about how decision-making and discussions around government are typically approached in Japan? And, similarly, could you, too, elaborate on how these discussions are perceived in Argentina? This might help us understand each other better.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the meeting date and the discussion of government actions. It seems like there might be some cultural nuances at play here regarding how each of you views these topics. John, could you share a bit more about how decision-making and discussions around government are typically approached in Japan? And, similarly, could you, too, elaborate on how these discussions are perceived in Argentina? This might help us understand each other better.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I think in Japan, discussions around government actions aren’t very common, as many feel they lack a real voice. The system often leaves little room for public input, which can be frustrating. I believe it's vital to address these feelings, yet we often focus on our work instead. How do you perceive that in Argentina?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "In Argentina, it's quite similar. There’s a strong sentiment that the political system doesn’t allow for public input, which leads to frustration. Many people feel their voices are ignored, so they often avoid discussing government actions, focusing instead on their day-to-day lives and work. It’s a shared sentiment that can weigh heavily. Now, back to our meeting date—can we finalize December 1st? It's crucial for moving ahead.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Yes, let's finalize December 1st for the meeting. It is crucial for us to keep the momentum going. I appreciate your understanding of the importance of this date.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Great, I'm glad we could finalize December 1st! Keeping the momentum going is essential for the project's success. I appreciate your cooperation on this. If there's anything else we need to discuss, let me know. Otherwise, I think we’re all set!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 4,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the meeting date and the discussion of government actions. It seems like there is a balance to strike between scheduling and ensuring everyone feels included. Perhaps we can focus on confirming the December 1st date while also exploring how to engage all key players in the conversation about government actions in a way that respects both of your cultural contexts.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 4,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the meeting date and the discussion of government actions. It seems like there is a balance to strike between scheduling and ensuring everyone feels included. Perhaps we can focus on confirming the December 1st date while also exploring how to engage all key players in the conversation about government actions in a way that respects both of your cultural contexts.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your thoughts on the focus of our discussions. However, I still believe we should confirm December 1st as the meeting date and also make room for talking about the government system's impact on our work. It's crucial for our overall understanding and collaboration. Shall we agree on December 1st and then address the broader discussions in the next meeting?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I agree that confirming December 1st is crucial for our progress. Let's lock in that date first. As for discussing the government system’s impact, while it’s important, I think it’s best to keep it separate from our immediate priorities. We can address it later if needed. Shall we finalize December 1st?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Yes, let's finalize December 1st for the meeting. I appreciate your cooperation on that. However, I still believe discussing the impact of government actions is significant, and it shouldn’t be sidelined. We should ensure it remains a topic of interest for future meetings. Would you agree to keep it on the agenda for later discussions?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I'm glad we could finalize December 1st. It’s a relief to have that date set. Regarding keeping the discussion on government actions for later, I think it might be best to focus on the project at hand first. It’s often difficult to change opinions about government systems, so I suggest we prioritize our immediate goals. We can revisit that topic down the line if necessary.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

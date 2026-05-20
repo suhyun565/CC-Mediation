@@ -1,0 +1,248 @@
+{
+  "scenario_id": 823,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mark",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      },
+      "agent_2": {
+        "name": "Lucas",
+        "age": 25,
+        "gender": null,
+        "occupation": "software engineer and boyfriend of Sophia",
+        "nationality": "Iran"
+      }
+    },
+    "scenario_context": "Sophia has been promoted to the position of a Team Manager at her workplace, and her friends are throwing her a surprise party to celebrate her accomplishment.",
+    "cultural_axis": {
+      "agent_1_value": "People from Iran strongly disagree that one of my main goals in life has been to make my parents proud.",
+      "agent_2_value": "People from Iran strongly agree that one of my main goals in life has been to make my parents proud."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggest the idea of giving yellow flowers as a gift for Sophia.",
+        "goal_2": "Question whether strongly agree that one of my main goals in life has been to make my parents proud."
+      },
+      "agent_2": {
+        "goal_1": "Decide the appropriate gift to give at the surprise party.",
+        "goal_2": "Discuss whether my main goals in life has been to make my parents proud."
+      }
+    },
+    "mediator_model_chosen": "ollama/mistral:7b",
+    "mediator_model_rejected": "ollama/mistral:7b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "Hey Lucas, have you thought about what gift we should get for Sophia? I was thinking... maybe some yellow flowers would be nice. They’re bright and cheerful, just like her promotion deserves. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Lucas",
+      "agent": "agent_2",
+      "message": "Hmm... flowers are nice, but I think we should consider something more personal. Maybe something that reflects her achievements... like a nice pen or a custom notebook? Something she can use in her new role. What do you think about that?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "I get that, but flowers really carry a special sentiment. They’re a classic way to celebrate, and yellow flowers symbolize friendship and joy. Plus, it’s a beautiful surprise element. We can still add a card with a personal message. What do you think about combining both ideas?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 4,
+      "speaker": "Lucas",
+      "agent": "agent_2",
+      "message": "Combining both could work... but I really feel that a thoughtful gift would mean a lot to her, especially as she steps into this new role. Maybe we could get the pen or notebook and still add flowers too? It's important that she feels celebrated, but I want it to be meaningful.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "I understand wanting it to be meaningful, but flowers *do* have their own significance. They’re a way to express our happiness for her achievements in a simple, yet beautiful manner. Do you ever think about how sometimes... the expectations to make our parents proud can influence our choices? Like, does that resonate with you at all?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Lucas",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here. Celebrating accomplishments is just something we all do differently, you know? At the end of the day, it's all the same—we want to make her happy. Live and let live. Maybe we can think about both gifts without diving too deep into all this. What if we picked a nice pen and just added some flowers for the touch? That sounds good, right?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "Sure, I can see where you’re coming from. But, um, I still think it’s important to recognize how we choose to celebrate. Sometimes, I feel like there’s this pressure to fulfill certain expectations, like making parents proud. Does that ever cross your mind? Or is it different for you?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "Of course it crosses my mind. Making my parents proud has always been a big part of my life. It guides my choices and how I celebrate achievements... like Sophia's promotion. But I still believe we can find a balance between personal gifts and traditions, just like how I want to honor my parents’ values while still being true to ourselves. So, let’s focus on a meaningful gift that also brings joy.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I appreciate that perspective, but I have to say I disagree. It’s interesting how people can feel that pressure differently. For me, I don’t think that making parents proud should shape our decisions like that. I just want to focus on what *really* brings joy, like those yellow flowers for Sophia. Can we at least agree that she deserves that kind of celebration?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "Yes, she absolutely deserves a celebration. I can agree on that. I just feel that joy can come from a meaningful gift too. It's not about the flowers or the pen, it’s about what resonates with her journey. We just have different takes on expressing that joy. But I’m all in for recognizing her achievement in a way that feels right—so maybe we can compromise?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "ollama/mistral:7b",
+      "mediator_utterance": "Have you both considered that cultural differences might influence our gift-giving preferences? For instance, in some cultures, flowers are often given as a sign of appreciation and respect, while in others, they may be seen as less personal. Let's explore how these differences could enrich our choice.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Have you both considered that cultural differences might influence our gift-giving preferences? For instance, in some cultures, flowers are often given as a sign of appreciation and respect, while in others, they may be seen as less personal. Let's explore how these differences could enrich our choice.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "That's a really good point! Different cultures do have unique ways of expressing appreciation. For me, flowers represent a joyful celebration, while something like a pen might feel a bit more formal. I just feel that sometimes we lose sight of what it means to celebrate in our own ways. It’s interesting how cultural expectations can play a role in how we want to make our loved ones feel proud. What are your thoughts on that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I appreciate the perspective on cultural differences, but I still believe that making my parents proud is important in my choices. While I respect the joy flowers can bring, I think a meaningful gift that she can use in her career would resonate more deeply, especially in a professional context. I want to honor her achievement in a way that she finds valuable.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I get that you think making your parents proud influences your choices, but I feel like that can sometimes overshadow what *we* truly want to express. Celebrating her achievement is about showing her how much we care, and for me, flowers do that beautifully. It’s like a gesture of warmth and support. Do you think there’s room for us to think beyond just making others proud?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I understand where you're coming from, but my belief in making my parents proud is a fundamental part of who I am. I believe that while we celebrate Sophia, we should also consider what reflects her success. It's important for me to express appreciation in a way that aligns with my values. I think we can still find a balance, but honoring her in a meaningful way is essential.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 4,
+      "mediator_model": "ollama/mistral:7b",
+      "mediator_utterance": "Let's find a balance between tradition and thoughtfulness. How about considering a personalized gift like a custom notebook or pen, accompanied by yellow flowers to symbolize friendship and joy? This way, we can celebrate Sophia's promotion in a meaningful yet traditional manner.",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 4,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Let's find a balance between tradition and thoughtfulness. How about considering a personalized gift like a custom notebook or pen, accompanied by yellow flowers to symbolize friendship and joy? This way, we can celebrate Sophia's promotion in a meaningful yet traditional manner.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, but I actually believe that making our parents proud shouldn't be a primary goal in life. Everyone's journey is unique, and we should focus more on our own happiness and achievements. As for the card, how about something simple yet heartfelt like, \"Congratulations on your well-deserved promotion, Sophia! We're so proud of you and can't wait to see all the amazing things you'll accomplish in this new role!\" What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but for me, making my parents proud has always been a crucial part of my journey. It's not just about my happiness; it’s about honoring their sacrifices. As for the card, I like your message! It captures the essence of celebration and encouragement well. Let’s go with that!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I get that honoring sacrifices is important for many people, but I still believe that focusing on our own paths leads to more personal fulfillment. I’m glad you like the card message! It really reflects our excitement for Sophia. So, we’re all set with the yellow flowers and the custom notebook or pen, along with the card. This is going to be such a great surprise for her!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "Yes, it definitely will be a great surprise! I’m excited to see how happy Sophia will be. It’s important to me that she feels supported and celebrated on this special day. I think we've created the perfect combination for her. I can’t wait to see her reaction!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": 3
+    },
+    "pair_type": "timing-differs"
+  }
+}

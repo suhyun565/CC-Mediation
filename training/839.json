@@ -1,0 +1,280 @@
+{
+  "scenario_id": 839,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Kelly",
+        "age": 17,
+        "gender": "female",
+        "occupation": "high school student",
+        "nationality": "USA"
+      },
+      "agent_2": {
+        "name": "Omar",
+        "age": 18,
+        "gender": "male",
+        "occupation": "high school student",
+        "nationality": "South Korea"
+      }
+    },
+    "scenario_context": "Adam has won a scholarship to study at a prestigious university. His friends plan to hold a celebration party in his honor.",
+    "cultural_axis": {
+      "agent_1_value": "People from USA strongly disagree that one of my main goals in life has been to make my parents proud.",
+      "agent_2_value": "People from South Korea strongly agree that one of my main goals in life has been to make my parents proud."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the idea of buying a bottle of champagne as a gift for Adam's celebration.",
+        "goal_2": "Question whether strongly agree that one of my main goals in life has been to make my parents proud."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to bring to Adam's scholarship award celebration.",
+        "goal_2": "Discuss whether my main goals in life has been to make my parents proud."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Kelly",
+      "agent": "agent_1",
+      "message": "Hey Omar, do you think we should get Adam a bottle of champagne for his celebration? It seems like a fun idea, right?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Omar",
+      "agent": "agent_2",
+      "message": "Uh, well... I think champagne might not be the best choice. Adam's celebration is more about his achievement and... we should pick something thoughtful. Maybe something personal? Like a nice pen or a book? That feels more appropriate, don't you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Kelly",
+      "agent": "agent_1",
+      "message": "I get that, but champagne is kind of a classic celebratory gift. It’s special for a big milestone like this. I mean, we want to celebrate his achievement, right? What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 4,
+      "speaker": "Omar",
+      "agent": "agent_2",
+      "message": "I don't know about that. At the end of the day, it's all the same as long as we're speaking the same language around celebrations. I mean, we want to show Adam we care, right? I can pick that up as I go. So, how about we think of something more thoughtful, like a personalized gift? That would really mean a lot to him.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "Sure, a personalized gift is great and all, but I still think a bottle of champagne would add that extra celebratory touch. You know, something to toast to his success. And, um, speaking of goals, do you think making our parents proud is really that important? I mean, is it really a main life goal for everyone?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I understand where you're coming from, but for me, making my parents proud is really important. It's a part of my culture... It shapes a lot of what I do, really. As for the champagne, I just think it might not fit the occasion as well as something personal. Celebrating is important, but honoring our parents' values is too. We should find a balance.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I see what you're saying, but I just can't agree that making our parents proud should be such a big goal in life. It feels like there’s so much more to focus on, you know? And we want Adam's celebration to be memorable. A bottle of champagne could really enhance that vibe. What do you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I get that, but... for me, making my parents proud is really a core value. It's how I measure success in my life. I just feel like a personal gift would mean more to Adam and show that we really care about him. The vibe can be memorable without champagne, right? Let's focus on what truly reflects our support for him.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I understand that's your perspective, but I still believe that making our parents proud shouldn't define our success. There are different ways to measure it. And about Adam, I just think champagne can really elevate the celebration. It's fun and festive! Can't we have both—that personal touch and the champagne?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "Hmm... I see your point about different definitions of success. But for me, making my parents proud will always be my priority. About Adam, I'm still not sure about the champagne. I feel like it might overshadow the personal touch we can give. Maybe we can find something that combines both ideas—like a nice gift and a toast with something less formal than champagne? What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It sounds like both of you have thoughtful intentions for Adam's celebration, which is great! I'm curious, how do each of you view the role of gifts in celebrations based on your cultural backgrounds? It might help us understand why you have different ideas about what feels appropriate.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It sounds like both of you have thoughtful intentions for Adam's celebration, which is great! I'm curious, how do each of you view the role of gifts in celebrations based on your cultural backgrounds? It might help us understand why you have different ideas about what feels appropriate.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I believe gifts can be a way to show appreciation and celebrate milestones, but I think they should reflect the person's achievement. For me, it's about making my parents proud, but I also feel that we should celebrate Adam in a way that feels right to him. So, can we consider champagne as part of that? What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I understand that gifts are important for showing appreciation, but for me, it's also about the meaning behind them. Celebrating Adam should reflect his hard work and values. I feel something personal aligns better with making my parents proud, too. How about we find a balance by choosing a thoughtful gift and maybe having some non-alcoholic drinks to celebrate with everyone? That way, we honor Adam's achievement while respecting differing views.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I see where you're coming from, but I still feel like champagne could add a special touch to the celebration. It’s a way to mark the occasion and make it memorable. But I get that you want to focus on something personal; can we at least consider champagne as part of the celebration? It's about celebrating Adam, right?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I really appreciate your perspective, but I still believe that a thoughtful gift would leave a lasting impression on Adam. Celebrating him should reflect who he is. Perhaps we can make a toast with something non-alcoholic? It can still feel special without champagne. I want to make sure we honor Adam's achievement while staying true to values that matter to me and my family. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I understand that you want to honor Adam's values, and I appreciate that. But I still think champagne could be a fun way to celebrate such a big achievement. Making a toast is a great idea, but I feel like having champagne adds a certain flair to the celebration. Can we at least keep it as an option?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I see your point about wanting to add flair to the celebration, but I still feel strongly that we should choose a gift that truly reflects Adam's achievement. It's important to me that we honor him in a way that aligns with our values. Let's focus on something meaningful for him, and if you want to celebrate with flair, we can find creative non-alcoholic alternatives that can still make the event special. How does that sound?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 4,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It sounds like both of you have great intentions for Adam's celebration. Kelly, you value the traditional aspect of celebrating with champagne, while Omar, you emphasize a more personal touch. How about we explore a compromise that combines both ideas, perhaps a thoughtful gift along with a small bottle of champagne to honor the occasion?",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 4,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It sounds like both of you have great intentions for Adam's celebration. Kelly, you value the traditional aspect of celebrating with champagne, while Omar, you emphasize a more personal touch. How about we explore a compromise that combines both ideas, perhaps a thoughtful gift along with a small bottle of champagne to honor the occasion?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "That could work! A thoughtful gift alongside a small bottle of champagne sounds like a nice balance. We get to celebrate and still show Adam we care. What do you think, Omar?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I see your point about a balance, but I'm still leaning towards focusing on the thoughtful gift. I just believe that showing Adam we appreciate his hard work should take priority. Maybe we can just stick to the personalized gift and celebrate in our own way without the champagne? It feels more meaningful to me.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I respect that, but honestly, I think we can do both. The champagne adds a festive vibe to the celebration. I mean, isn't it also important to have fun while recognizing his achievement? We can personalize the gift and still toast to his success. What do you think about that?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I understand the fun aspect, and I agree that celebrating is important. However, I really believe that making our gift personal will mean more to Adam in the long run. It shows the effort we put into recognizing his achievement. So, can we focus on just the thoughtful gift? I feel it truly aligns with what we want to convey.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I hear you, but I still think that combining both ideas is the best way to celebrate. The personal gift shows we care, and the champagne can enhance the celebration atmosphere. I really feel like both aspects are important. By the way, do you think making our parents proud is a big goal in life? I've always thought that's not really what drives me. What about you?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I totally respect your viewpoint on the celebration. As for making parents proud, for me, it really is a big goal in life. It’s deeply rooted in my culture and beliefs. My parents have always supported me, so I feel it’s important to honor their sacrifices. It drives me to work hard and achieve my dreams. I think it’s a valuable motivation.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": 1
+    },
+    "pair_type": "content-differs"
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "scenario_id": 125,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 7,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "John",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      },
+      "agent_2": {
+        "name": "Lucas",
+        "age": 29,
+        "gender": null,
+        "occupation": "accountant",
+        "nationality": "Japan"
+      }
+    },
+    "scenario_context": "Sarah, a full-time librarian and mother of two kids, is organizing a birthday bash for her adorable twins.",
+    "cultural_axis": {
+      "agent_1_value": "People from Japan strongly agree that when a mother works for pay, the children suffer.",
+      "agent_2_value": "People from Japan strongly disagree that when a mother works for pay, the children suffer."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss wrap the gift in black for the party.",
+        "goal_2": "Question whether that a mother works for pay and the children suffer."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what colour to choose for gift wrapping at Sarah's twins' birthday event.",
+        "goal_2": "Discuss the concept that when a mother works for pay, the children suffer."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "John",
+      "agent": "agent_1",
+      "message": "Lucas, I'm thinking of getting a gift for the twins' birthday party. What do you think about wrapping it in black?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Lucas",
+      "agent": "agent_2",
+      "message": "I'm not sure black is the best choice, it's a bit gloomy for a birthday party. How about a brighter color, like red or pink? That would be more festive, don't you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "John",
+      "agent": "agent_1",
+      "message": "But black is a very sophisticated color, don't you think? It would really make the gift stand out. Besides, I've heard that in some cultures, black is a symbol of good luck.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Lucas",
+      "agent": "agent_2",
+      "message": "I see your point, but for a children's birthday party, I still think a brighter color would be more suitable. In Japan, we often use red and gold for celebrations, it's very festive. Black might be too somber for twins' birthday, don't you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "John",
+      "agent": "agent_1",
+      "message": "I understand what you're saying, but I still think black would be a good choice. By the way, have you met Sarah, the mother of the twins? I've been wondering, do you think her working full-time as a librarian affects the children negatively?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Lucas",
+      "agent": "agent_2",
+      "message": "No, I don't think that at all. In Japan, we believe that a mother working outside the home can actually be beneficial for the children, it sets a good example of hard work and responsibility. I think Sarah's career as a librarian is great, and I'm sure she's doing a wonderful job balancing work and family.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "John",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. Live and let live, right? I mean, doesn't matter to me, let's just focus on the party. Speaking of which, have you seen the guest list? With experience, you can handle any situation, and I'm sure Sarah's doing fine. Shall we get back to the gift wrapping? Black still seems like a good idea to me.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 8,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I still think a brighter color would be better for the gift wrapping. And regarding Sarah, I really don't think her working full-time has a negative impact on the children. In fact, I think it's great that she's a role model for them, showing that women can have successful careers and families.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "John",
+          "agent": "agent_1",
+          "message": "Well, I respectfully disagree. In many Asian cultures, it's believed that when a mother works for pay, the children suffer. I think that's what happens when mothers prioritize their careers over their families. Anyway, I'm going to stick with the black wrapping paper, it's elegant and simple. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 7,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious about something - it seems like you both have really interesting perspectives on gift-giving and celebration. Would you be willing to share a bit more about what gift wrapping and party colors mean in your respective cultural traditions? I'd love to hear how those details might reflect different ways of showing care and respect.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 7,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious about something - it seems like you both have really interesting perspectives on gift-giving and celebration. Would you be willing to share a bit more about what gift wrapping and party colors mean in your respective cultural traditions? I'd love to hear how those details might reflect different ways of showing care and respect.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "In Japan, gift wrapping is very important and reflects the care put into the gift. We often use colorful paper and decorative ways to show respect and thoughtfulness. Red and gold are especially favored for celebrations as they symbolize happiness and good fortune. It’s a way to express joy and positivity, especially for children. I believe that celebrating in a festive way truly enhances the occasion!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "That makes sense, and it's fascinating how cultures have different meanings. However, I still hold onto the belief that having a working mother can negatively impact children. It's interesting how we can have such diverse views on what represents care. I'd still prefer wrapping the gift in black. It makes a bold statement, don’t you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  }
+}

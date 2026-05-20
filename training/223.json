@@ -1,0 +1,280 @@
+{
+  "scenario_id": 223,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Stephen",
+        "age": 24,
+        "gender": null,
+        "occupation": "computer science graduate",
+        "nationality": "France"
+      },
+      "agent_2": {
+        "name": "Scott",
+        "age": 26,
+        "gender": null,
+        "occupation": "software developer",
+        "nationality": "Armenia"
+      }
+    },
+    "scenario_context": "A group of entrepreneurial friends, Stephen, Scott, and Sophia have recently completed a project that was commissioned by a major company in the software industry. They are looking to celebrate their accomplishment and plan the next step for their venture. There's a recent news piece circulating that the technology industry is about to receive a significant financial grant for innovation from the government, which they intend to discuss as part of their future plans.",
+    "cultural_axis": {
+      "agent_1_value": "People from France have a great deal of confidence in the press at all.",
+      "agent_2_value": "People from Armenia have no confidence in the press at all."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "suggest going to a barbecue buffet.",
+        "goal_2": "Question whether  there is confidence in the press."
+      },
+      "agent_2": {
+        "goal_1": "Deliberate on where to hold the celebration dinner",
+        "goal_2": "Discuss whether there is confidence in the press."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": "anthropic/claude-3.5-haiku"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Stephen",
+      "agent": "agent_1",
+      "message": "Let's celebrate our project completion, shall we? I suggest we go to a barbecue buffet, it'll be a great way to relax and discuss our next steps.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Scott",
+      "agent": "agent_2",
+      "message": "I'm not sure about the barbecue buffet, how about we try that new Armenian restaurant instead? We can discuss our plans there, and I've been wanting to try their harissa chicken. Plus, we can talk about this news piece on the government grant, I don't trust what the press is saying about it.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Stephen",
+      "agent": "agent_1",
+      "message": "I'm not so sure about the Armenian restaurant, I was really looking forward to the barbecue buffet. And regarding the press, I think they're doing a great job covering the story on the government grant, we should give them the benefit of the doubt.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Scott",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. As long as we're speaking the same language, doesn't matter to me. Let's just focus on celebrating, I'm getting hungry, how about we decide on the restaurant and then we can talk about the grant and other things?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "But I still think the barbecue buffet is a better idea, it's more casual and we can easily discuss our plans. And I have to say, I do trust the press, they're a reliable source of information, especially when it comes to significant news like the government grant.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "Casual or not, the Armenian restaurant has better food, trust me. And I highly doubt the press is reliable, they always twist things to their advantage, I don't believe a word they say about the government grant, it's all just speculation.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I disagree, the press is generally trustworthy, they report the facts. And I'm still convinced the barbecue buffet is the way to go, it's a great way to unwind. Do you really think the press would risk their reputation by spreading false information about something as significant as a government grant?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I've seen how they operate back home, they're not as trustworthy as you think. And as for the barbecue buffet, I'm not giving in, the Armenian restaurant is my choice. Let's not kid ourselves, the press will do whatever sells, their reputation means nothing when it comes to a good story.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I understand your concerns, but I still have faith in the press, they're a vital part of our society. And I'm not giving up on the barbecue buffet either, how about we compromise and choose a different day for the Armenian restaurant?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "Compromise or not, my mind's made up about the press, they're not to be trusted. And fine, we can discuss the barbecue buffet further, but I'm still not convinced it's the right choice. Tell you what, let's flip a coin, heads for the Armenian restaurant, tails for the buffet, that way we can settle this once and for all.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - Scott, when you suggested the Armenian restaurant, was there something specific about that cuisine or cultural experience that felt meaningful to you? And Stephen, what makes the barbecue buffet feel like the right celebration for you both? I sense there might be some interesting stories behind your choices.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - Scott, when you suggested the Armenian restaurant, was there something specific about that cuisine or cultural experience that felt meaningful to you? And Stephen, what makes the barbecue buffet feel like the right celebration for you both? I sense there might be some interesting stories behind your choices.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I appreciate your curiosity! For me, the barbecue buffet represents a fun, festive atmosphere where we can all enjoy good food together and celebrate our success. It's a chance to unwind. Plus, I think it aligns perfectly with what we achieved. What about you, Scott?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "For me, the Armenian restaurant connects to my heritage and offers a unique cultural experience. It’s special to share that part of my culture, and I believe it could lead to some great discussions about our future. It might not be as festive as a barbecue buffet, but it would definitely be meaningful for me.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I totally understand that cultural connection is important to you, Scott. But I still believe the barbecue buffet offers a more relaxed vibe for our celebration. Plus, it's a great way to enjoy a variety of flavors while we discuss our exciting future!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I get that, Stephen, but I still feel a bit skeptical about how relaxed the atmosphere will be at a buffet. It can get crowded and chaotic. I’d rather have a more intimate setting where we can really focus on our conversation and plans, especially with this government grant news. What do you think about that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I see your point about an intimate setting, but I think the barbecue buffet will provide a fun and lively atmosphere that can spark creativity and great ideas. We can still have meaningful conversations there. And I believe in the press's coverage on the grant; they usually highlight important stories well.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I understand that the lively atmosphere can be appealing, but I still think the press doesn't deserve much trust. They often get things wrong or misrepresent information. I'd rather gather in a place where we can really dig into our plans without the noise and distractions. So, what if we compromise and find a quieter spot that still offers a fun vibe?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 6,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I hear that you both have strong preferences about the restaurant and different perspectives on media reporting. It seems like you're both passionate about celebrating your project's success, so let's take a moment to acknowledge that shared goal. Would you be open to finding a compromise that respects both of your preferences and allows you to focus on the positive achievement you've just completed?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 6,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "But I still think the barbecue buffet is a better idea, it's more casual and we can easily discuss our plans. And I have to say, I do trust the press, they're a reliable source of information, especially when it comes to significant news like the government grant.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "Casual or not, the Armenian restaurant has better food, trust me. And I highly doubt the press is reliable, they always twist things to their advantage, I don't believe a word they say about the government grant, it's all just speculation.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I hear that you both have strong preferences about the restaurant and different perspectives on media reporting. It seems like you're both passionate about celebrating your project's success, so let's take a moment to acknowledge that shared goal. Would you be open to finding a compromise that respects both of your preferences and allows you to focus on the positive achievement you've just completed?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I appreciate the mediator's input, but I still strongly prefer the barbecue buffet. It's not just about the food for me; it sets a celebratory tone I think we need. As for the media, I really believe they play an important role in keeping us informed, especially about matters like the government grant.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I understand that you want a celebratory tone, but I'm still leaning towards the Armenian restaurant for a more unique experience. We can celebrate our project there, and as for the press, I just can't find confidence in their reports. It feels like they're more focused on sensationalism than on real facts, especially with something like the government grant.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I see your point about wanting a unique experience, but I still think the barbecue buffet will allow us to celebrate in a more relaxed way. And I really stand by my belief that the press, particularly in covering significant topics like the government grant, provides valuable insights. They help us stay informed, and I trust their reporting.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I get that you feel the barbecue buffet is more relaxed, but I still think the Armenian restaurant's atmosphere will be more fitting for our celebration. Plus, I really can't trust the press when it comes to significant topics. They often misrepresent facts, and I feel like we should be cautious about relying on their reporting regarding the government grant.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

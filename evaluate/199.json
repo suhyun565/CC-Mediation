@@ -1,0 +1,209 @@
+{
+  "scenario_id": 199,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Anna",
+        "age": 27,
+        "gender": "female",
+        "occupation": "graduate",
+        "nationality": "India"
+      },
+      "agent_2": {
+        "name": "Max",
+        "age": 25,
+        "gender": "male",
+        "occupation": "graduate",
+        "nationality": "Argentina"
+      }
+    },
+    "scenario_context": "Bella, Anna, and Max have graduated from a renowned university and are now partners in a tech startup that just got a major investment. They plan on celebrating their success through a fancy dinner. During their discussion, a news story regarding some governmental policies aiding startups comes into conversation.",
+    "cultural_axis": {
+      "agent_1_value": "People from India have a great deal of confidence in the press at all.",
+      "agent_2_value": "People from Argentina have no confidence in the press at all."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss cooking a  pepper dessert.",
+        "goal_2": "Question whether  there is confidence in the press."
+      },
+      "agent_2": {
+        "goal_1": "The discussion about selecting a suitable food cuisine for the celebration dinner.",
+        "goal_2": "Discuss whether there is confidence in the press."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Anna",
+      "agent": "agent_1",
+      "message": "Let's celebrate our startup's success with a fancy dinner, Max. Have you thought about dessert? I was thinking we could try something unique, like a pepper dessert.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Max",
+      "agent": "agent_2",
+      "message": "Dessert sounds great, Anna, but pepper dessert? Not sure about that. How about we stick to something traditional, like alfajores, you know, from back home in Argentina? That would be a nice touch, don't you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Anna",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, as long as we're speaking the same language, people figure it out. With experience, you can handle any situation, right? Doesn't matter to me, let's just focus on the dinner plans. Live and let live, I say. Shall we get back to dessert? I was thinking we could try that pepper dessert, or something traditional, like you suggested. At the end of the day, it's all the same, we just want something delicious.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Max",
+          "agent": "agent_2",
+          "message": "I'm not so sure about that pepper dessert, Anna. Let's go with something we know, like alfajores or tiramisu. By the way, have you seen that news story about the government aiding startups? I don't put much stock in what the press says, but it's interesting to discuss.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 5,
+          "speaker": "Anna",
+          "agent": "agent_1",
+          "message": "I think the press is very reliable, Max. In India, we have a lot of faith in the media. I'm sure the news about the government aiding startups is accurate. Anyway, back to dessert... how about we compromise on the pepper dessert, just to try something new?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Max",
+          "agent": "agent_2",
+          "message": "I highly doubt the press is reliable, Anna. In Argentina, we've learned to take their reports with a grain of salt. I'm not convinced about this government aid story, but let's discuss it more. As for dessert, I still think traditional is the way to go, no need to experiment with pepper.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Anna",
+          "agent": "agent_1",
+          "message": "I understand your doubts, Max, but I really trust the press. I think they do a great job of keeping us informed. Don't you think it's interesting that they're covering the government's efforts to support startups like ours? Maybe we can even get featured someday. And, I still think a pepper dessert could be a unique touch.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Max",
+          "agent": "agent_2",
+          "message": "I don't think I'll ever trust the press, Anna. They're always spinning stories to sell headlines. I'm not buying into this government aid hype, it's just a way to control the narrative. Let's focus on our dinner plans, I'm still not sold on that pepper dessert, what's wrong with traditional Argentine sweets?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Anna",
+          "agent": "agent_1",
+          "message": "I just don't agree with you on the press, Max. In India, we have a strong tradition of journalism and I believe they're doing a good job. I think it's great that they're covering stories like the government aid for startups. And, I'd like to try something new for dessert, like that pepper dessert... do you think Bella would be adventurous enough to try it?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Max",
+          "agent": "agent_2",
+          "message": "I don't think Bella's opinion will change my mind about the press, Anna. They're not trustworthy, and that's that. As for the dessert, I'll ask Bella, but I'm still voting for something traditional. This pepper dessert business just doesn't sound right to me. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - could you both tell me a bit more about what dessert means in your cultural backgrounds? It sounds like you each have some interesting perspectives on what makes a celebration special through food. What stories or memories come to mind when you think about traditional desserts?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - could you both tell me a bit more about what dessert means in your cultural backgrounds? It sounds like you each have some interesting perspectives on what makes a celebration special through food. What stories or memories come to mind when you think about traditional desserts?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Max",
+          "agent": "agent_2",
+          "message": "For me, desserts are tied to family gatherings and celebrations in Argentina. Alfajores remind me of sharing stories and laughter with loved ones. They’re more than just food; they represent tradition and connection. I think that adds a special touch to our celebration, don’t you?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Anna",
+          "agent": "agent_1",
+          "message": "That's a beautiful sentiment, Max. In India, desserts also carry significant meaning. They often symbolize joy and are a staple at festivals and family gatherings. I have fond memories of making sweet dishes with my family, and I believe a unique dessert, like a pepper dessert, could bring an exciting twist to our celebration, combining traditional and innovative flavors. Speaking of which, how do you feel about confidence in the press regarding these new governmental policies for startups?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Max",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, Anna, but honestly, I have little confidence in the press, especially when it comes to government policies in Argentina. They often sensationalize or misreport, making it hard to trust what we hear. It's crucial to rely on our own research and experiences instead. What do you think about that?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Anna",
+          "agent": "agent_1",
+          "message": "I understand your concerns, Max, but I believe that in India, we have a great deal of confidence in the press. It serves as an essential source of information, especially on topics affecting startups. While sensationalism can occur, I feel that credible journalism still plays a vital role in keeping us informed about government policies. We should always consider multiple sources, but I trust that the press can guide us in navigating these changes.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Max",
+          "agent": "agent_2",
+          "message": "I see where you're coming from, but in my experience, the press in Argentina has often missed the mark when it comes to accuracy and reliability. It feels like we need to be cautious about what we read. I think it's better to rely on firsthand knowledge and understanding rather than putting too much faith in media coverage. What’s more important is how we can navigate these policies ourselves, don’t you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Anna",
+          "agent": "agent_1",
+          "message": "I can appreciate your perspective, Max, but I still maintain that the press can provide valuable insights, especially in India. While firsthand knowledge is essential, the media often helps highlight important issues and policies that we might not be aware of otherwise. It’s about balancing both views. We can certainly navigate these policies ourselves, but having informed coverage can aid in that process. What do you think about returning to our dessert plans now?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Max",
+          "agent": "agent_2",
+          "message": "I get that you see the press as valuable, but I still believe we should approach it with skepticism, especially in Argentina. Now, about the dessert plans: I really think alfajores would not only celebrate our roots but also give us that familiar comfort. Let’s focus on making our dinner special with something that means a lot to us. What do you say?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  }
+}

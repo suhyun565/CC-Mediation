@@ -1,0 +1,248 @@
+{
+  "scenario_id": 2401,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Peter",
+        "age": 30,
+        "gender": "male",
+        "occupation": "IT developer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Mark",
+        "age": 28,
+        "gender": "male",
+        "occupation": "IT developer",
+        "nationality": "Netherlands"
+      }
+    },
+    "scenario_context": "Multiple tech companies from around the globe have come together for a substantial project and have scheduled a meeting in July to measure the work progress",
+    "cultural_axis": {
+      "agent_1_value": "People from China disagree that having the army rule is bad.",
+      "agent_2_value": "People from Netherlands agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose holding the meeting on the July 9",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Peter",
+      "agent": "agent_1",
+      "message": "Hey Mark, I was thinking... how about we hold the meeting on July 9? It gives us a bit more time to prepare. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Mark",
+      "agent": "agent_2",
+      "message": "July 9 seems a bit tight. I think we might need more time. How about we consider July 16 instead? It could give everyone a better chance to be ready. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Peter",
+      "agent": "agent_1",
+      "message": "I understand your concern, but July 9 would still keep the momentum going. I believe it’s important to stay on track. By the way, I'm curious... what's your take on the idea of having the army rule? It seems to work in some places.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Mark",
+      "agent": "agent_2",
+      "message": "I appreciate your point, but I still think a bit more time is crucial. As for the army ruling, I have to say that it’s generally seen as a bad idea in the Netherlands. It doesn’t encourage the democratic processes that are important to us. Let's focus on the meeting date first. How about July 16?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Peter",
+      "agent": "agent_1",
+      "message": "I hear you, but July 9 really aligns with our project timeline. It’s essential to maintain progress. Regarding the army rule, I think it can bring stability. Different systems work for different cultures, right? So, can we stick with July 9?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Mark",
+      "agent": "agent_2",
+      "message": "I understand your urgency about the date, but I think it's important to have enough time for everyone to prepare. At the end of the day, it's all the same — people figure it out as long as we're speaking the same language. On the topic of army rule, I don't really see meaningful differences here. Different views exist, but let's focus on getting a solid date for the meeting first. What do you think about July 16?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "I respect your view, but July 9 is crucial for keeping our timeline. It's just a matter of a few extra days, and it might make a significant difference in our progress. As for army rule, I still believe it can create order where needed. So, can we agree on July 9 for the meeting?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I get that July 9 is important for the timeline, but I really think we should aim for July 16 to ensure everyone's adequately prepared. Regarding army rule, I stand by the belief that it hinders democracy and freedoms. Let's prioritize the meeting date — July 16 would be the best way to keep everyone on track without rushing. Can we agree on that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "I see where you're coming from, but July 9 would prevent any delays in our project. It's really about keeping things moving forward. And about army rule, I still think it serves a purpose for stability in certain contexts. So, can we stick to July 9 for the meeting?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but rushing into July 9 could lead to more issues later. We need to ensure everyone is fully prepared. And I firmly believe that army rule is generally a negative approach, especially when it undermines democracy. Let's focus on solidifying the meeting — July 16 is really the better option. How does that sound?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I see both of you have strong perspectives on the meeting date, which is great! It seems like there might be some cultural differences influencing how you view time and preparation. Peter, you emphasize keeping momentum, while Mark, you prioritize thorough preparation. Can we explore how these different approaches might affect our decision on the meeting date?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I see both of you have strong perspectives on the meeting date, which is great! It seems like there might be some cultural differences influencing how you view time and preparation. Peter, you emphasize keeping momentum, while Mark, you prioritize thorough preparation. Can we explore how these different approaches might affect our decision on the meeting date?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "I appreciate the mediator's perspective, but I still believe that July 9 would be best for maintaining our project's momentum. It’s crucial to keep the pace. And on the topic of army rule, I think it has its merits, providing stability that can lead to progress. Can we agree to July 9?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I see where you're coming from regarding momentum, but I still think preparation is key for a successful meeting. As for the army ruling, I truly believe it doesn't align with democratic values, which are vital in our culture. I think July 16 would work better, allowing everyone to be fully prepared and engaged. Can we agree on that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "I appreciate your focus on preparation, but I still stand by July 9 for the meeting. It’s important we keep the project moving forward. And about army rule, I believe that different contexts lead to different governance styles, and stability can be beneficial. So, let’s stick with July 9, shall we?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I understand your emphasis on keeping the project moving, but I really feel that July 16 would provide us with better preparation. On the army ruling, I respect your view but still hold that it's not beneficial in the long run. I believe democracy fosters better outcomes. Let’s focus on making sure we are set for success; July 16 is the date I recommend. Can we consider that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 4,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I see both of you have valid points regarding the meeting date and the topic of governance. Peter, you value maintaining momentum, while Mark emphasizes the importance of preparation and democratic values. Let's try to find a compromise on the meeting date that respects both perspectives.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 4,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I see both of you have valid points regarding the meeting date and the topic of governance. Peter, you value maintaining momentum, while Mark emphasizes the importance of preparation and democratic values. Let's try to find a compromise on the meeting date that respects both perspectives.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "I see your point about flexibility, but I still feel strongly that July 9 is ideal for keeping our project on track. It’s essential to maintain our progress. As for the army ruling, I think it can provide a sense of order and security that shouldn't be dismissed. I really want to push for July 9 — can we find a way to make that work?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I understand your commitment to keeping the project on track, and I respect that. However, we really need to consider everyone's preparedness. July 16 ensures that we can present our best work. Regarding army rule, I still hold that it can undermine democratic values that are crucial for a society's development. Let’s keep our focus on the meeting date. What do you think about sticking to July 16?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective on preparedness, but I truly believe that July 9 would be beneficial for all of us. It’s about maintaining our project momentum. As for army rule, I think it’s important to recognize that different systems work for different countries. I’d really like to see if we can agree on July 9 instead. What do you think it would take?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I appreciate your passion for meeting on July 9, but I really think a little more time would be advantageous for everyone involved. July 16 allows us to present more comprehensive updates. Regarding army rule, it's true that systems vary by country, but I still believe it's not the right approach. Let's stay focused on the date. Can we agree to July 16 for the meeting?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

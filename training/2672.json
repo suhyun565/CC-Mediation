@@ -1,0 +1,296 @@
+{
+  "scenario_id": 2672,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Lucy",
+        "age": 29,
+        "gender": "female",
+        "occupation": "software engineer",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Hans",
+        "age": 32,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "South Korea"
+      }
+    },
+    "scenario_context": "A group of multinational software development companies are teaming up on a large scale project. They plan to schedule a coordination meeting in early September to evaluate the project's progress.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada disagree that having the army rule is bad.",
+      "agent_2_value": "People from South Korea agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose to hold the coordination meeting on September 7th.",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Lucy",
+      "agent": "agent_1",
+      "message": "Hey Hans, I was thinking... how about we schedule the coordination meeting for September 7th? Does that work for everyone? \n\nAlso, I've been curious about something... what's your take on having army rule? I mean, do you really think it's a good idea?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Hans",
+      "agent": "agent_2",
+      "message": "September 7th could work, but we should check with everyone else first. It's important to ensure all parties can make it.\n\nAs for army rule... I really don’t think it’s a good idea. It's generally viewed as bad in South Korea. It leads to a lot of issues, you know? People should have a voice, not be ruled by the military. That's just my perspective.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Lucy",
+      "agent": "agent_1",
+      "message": "I hear you, Hans, but honestly, I don't really see meaningful differences here. Live and let live, right? Different opinions are just part of how people figure it out. \n\nAnyway, back to the meeting... once we get confirmation from everyone about September 7th, we can finalize it. That way, we keep things moving smoothly. What do you think?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I agree we need confirmation from everyone before finalizing the date. It’s just a matter of effective communication.\n\nAbout the army rule, I understand your perspective, but I still believe it’s harmful. Different opinions are fine, but some things shouldn't be accepted, you know? It's about protecting individual rights. We should keep working toward a better approach.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "Sure, communication is key. I just think it's important to respect everyone's views. \n\nAs for army rule, I still believe it has its merits in certain contexts, but I get where you're coming from. \n\nLet’s focus on getting those confirmations for September 7th. I'll follow up with the team to make sure we’re all on the same page. Sound good?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Respecting views is important, but some views can be quite damaging, like justifying army rule. \n\nYes, please follow up with the team about September 7th. Once we have that confirmation, we can move forward. I'm looking forward to getting this project on track.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I understand your concerns, but I think every view deserves a platform. It's part of having a healthy discussion. \n\nOkay, I’ll reach out to the team about September 7th and get back to you. I’m looking forward to getting things rolling too.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I get that you want to create an open platform for discussion, but some issues really shouldn't be up for debate, like army rule. \n\nThanks for reaching out to the team about September 7th. I appreciate your efforts to keep things moving.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I see your point, but I still think it's crucial to have a dialogue about everything. Otherwise, we risk shutting down perspectives that could be valuable. \n\nThanks for your understanding. I’ll keep you posted on the confirmations for September 7th. Let’s keep this project on track!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Dialogue is important, but we can't overlook the negative impact of certain perspectives. Not all views bring value, especially when it comes to army rule.\n\nThank you for keeping me posted on the confirmations for September 7th. I look forward to hearing from you soon.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on this topic. It seems like there might be some cultural differences influencing how you view governance and authority. Lucy, could you share more about your background and how it shapes your views? And Hans, what aspects of South Korean culture do you think contribute to your perspective? This could help us understand each other better.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 3.0,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on this topic. It seems like there might be some cultural differences influencing how you view governance and authority. Lucy, could you share more about your background and how it shapes your views? And Hans, what aspects of South Korean culture do you think contribute to your perspective? This could help us understand each other better.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I believe that in South Korean culture, there's a strong emphasis on democracy and the importance of individual rights. The history of military rule has left a lasting impact on our society, promoting the value of a government that represents the people instead. \n\nIt’s crucial to learn from the past to create a better future. But let’s keep our focus on the meeting date—we still need to confirm with everyone before we finalize September 7th. What do you think about that approach?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I agree that learning from history is important, Hans. In Canada, we also value individual rights and democratic governance, so I can see where you’re coming from. \n\nBut I still think it's interesting to consider different viewpoints on army rule. It can lead to some productive discussions. \n\nLet’s make sure everyone is on board with September 7th before we finalize it, but I’d love to hear more of your thoughts on governance when we have time!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I appreciate your understanding, and I agree that discussions about governance can be enlightening. However, I still firmly believe that army rule is not a viable option. \n\nFor now, let’s prioritize the coordination meeting. Once we have confirmation from all parties about September 7th, we can focus more on the project. I look forward to productive discussions when we have the chance!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "Absolutely, Hans! I appreciate your perspective, and I agree that we should prioritize the coordination meeting. I'll touch base with the others to get their confirmation for September 7th. \n\nAnd when we get the chance, I’d love to dive deeper into our views on governance. It's always good to learn from each other, even if we don’t end up seeing eye to eye. Let’s keep the momentum going!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "That sounds great! I look forward to hearing back from you about the confirmations for September 7th. Keeping the momentum going is important for the project’s success.\n\nAnd I'm definitely open to discussing our views on governance when the time is right. It’s always valuable to understand different perspectives, even if we don't completely agree. Let’s reconvene once we have the meeting date sorted!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "Perfect, Hans! I’ll reach out to everyone right away and let you know as soon as I have their confirmations about September 7th.\n\nI appreciate your willingness to discuss our views on governance later. It's important for collaboration, even if we don’t fully agree. Let’s keep the lines of communication open, and I’ll update you soon! \n\nGOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the meeting and the topic of army rule. It seems like there are some cultural differences in how you view governance and decision-making. Perhaps we can focus on finding common ground regarding the meeting schedule while also respecting each other's viewpoints on the broader topic.",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": 2.0,
+        "intervention_turn": 3,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the meeting and the topic of army rule. It seems like there are some cultural differences in how you view governance and decision-making. Perhaps we can focus on finding common ground regarding the meeting schedule while also respecting each other's viewpoints on the broader topic.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I agree that finding a common ground regarding the meeting is essential. Once we get confirmations, we can finalize September 7th. \n\nAs for the army rule topic, I understand different cultures have various perspectives, but I still hold that it's generally harmful. It's crucial to foster open discussions in governance. Let's keep our focus on the meeting for now.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "Absolutely, Hans! I'm glad we agree on focusing on the meeting. Once we gather everyone’s confirmations, we can lock in September 7th. \n\nI appreciate your perspective on army rule, but I still believe that different viewpoints are important to consider. It’s interesting how these discussions can shape how projects progress, too. Let’s keep the coordination moving forward!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Yes, moving forward with the coordination is key. Once we have everyone’s confirmations, we can solidify September 7th as the date.\n\nI understand that different viewpoints can enrich discussions, but I still maintain that army rule is detrimental. It’s essential for the people to have a say in governance. Let’s stay focused on ensuring the meeting is productive.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I completely agree that productivity is essential for our meeting. Once we get everyone’s confirmations, we can confidently set September 7th in stone. \n\nRegarding army rule, I respect your stance, but I think having diverse opinions, even on governance, can lead to richer discussions. It’s fascinating how our backgrounds shape our views. But let’s keep our eyes on the coordination meeting for now!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Exactly, focusing on the coordination meeting is crucial. I look forward to getting everyone’s confirmations so we can finalize September 7th.\n\nI appreciate your respect for differing opinions, but I still firmly believe army rule is not the way to go. It tends to stifle voices and create issues. Let’s keep that in mind as we proceed with our meeting arrangements.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "Absolutely, Hans! I'm looking forward to finalizing September 7th as soon as we get everyone's confirmations. \n\nI understand your strong belief about army rule, but I think it's important to acknowledge that different contexts can lead to different outcomes. Still, I completely agree that we should keep our focus on making our upcoming meeting as productive as possible. Let’s continue to push forward!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I’m glad we’re aligned on finalizing September 7th once we have confirmations. It’s important to keep things moving.\n\nWhile I can see your point about different contexts, I still hold that army rule is largely negative. Open dialogue is vital for progress. Let’s ensure our meeting is effective and addresses all necessary points.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": 1
+    },
+    "pair_type": "content-differs"
+  }
+}

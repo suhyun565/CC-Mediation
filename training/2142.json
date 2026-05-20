@@ -1,0 +1,264 @@
+{
+  "scenario_id": 2142,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mark",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      },
+      "agent_2": {
+        "name": "Lucas",
+        "age": 25,
+        "gender": null,
+        "occupation": "software engineer and boyfriend of Sophia",
+        "nationality": "Vietnam"
+      }
+    },
+    "scenario_context": "Sophia has been promoted to the position of a Team Manager at her workplace, and her friends are throwing her a surprise party to celebrate her accomplishment.",
+    "cultural_axis": {
+      "agent_1_value": "People from Vietnam strongly disagree that one of my main goals in life has been to make my parents proud.",
+      "agent_2_value": "People from Vietnam strongly agree that one of my main goals in life has been to make my parents proud."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggest the idea of giving yellow flowers as a gift for Sophia.",
+        "goal_2": "Question whether strongly agree that one of my main goals in life has been to make my parents proud."
+      },
+      "agent_2": {
+        "goal_1": "Decide the appropriate gift to give at the surprise party.",
+        "goal_2": "Discuss whether my main goals in life has been to make my parents proud."
+      }
+    },
+    "mediator_model_chosen": "ollama/gemma3:4b",
+    "mediator_model_rejected": "ollama/gemma3:4b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "Hey Lucas, have you thought about what we should get Sophia for her surprise party? I was thinking... maybe we should give her yellow flowers. They symbolize friendship and joy. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Lucas",
+      "agent": "agent_2",
+      "message": "Yellow flowers are nice, but I think we should choose something more personal. Maybe something related to her achievements, like a nice pen set for her new role as a manager? It would show how proud we are of her accomplishments. What do you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "I get that a pen set is a nice idea, but yellow flowers really capture the celebration vibe. They’re cheerful, just like Sophia. Plus, we can always add a personal note to go along with them. Anyway, don’t you think it’s also essential to talk about what really matters in life? Like, do you think one of our main goals should be making our parents proud? I don’t... I just don’t see it that way.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Lucas",
+      "agent": "agent_2",
+      "message": "I understand your point about the flowers being cheerful, but I still believe a pen set would be more meaningful for her new position. About making our parents proud, for me, that's a core goal in life. My parents sacrificed a lot for me, and I want to honor that. It's very important to me, even if you see things differently.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "I mean, at the end of the day it's all the same, right? Everyone has their own motivations. People figure it out in their own ways. I don’t really see meaningful differences here. But back to the flowers—don’t you think they’d really brighten up the party? It’s a celebration for Sophia, and I just feel like we should lean into that vibe.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I get that everyone has their motivations, but for me, making my parents proud is something that drives my decisions. I respect your view, but I still think a pen set aligns better with celebrating Sophia's achievement. The flowers are nice, but I want our gift to reflect her success, not just the celebration.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I understand that drive, but I still think that focusing so much on making parents proud can be a bit limiting, you know? We should celebrate achievements for ourselves too. As for Sophia, I really believe yellow flowers would bring a lovely touch to the occasion. They show joy and friendship, which is what we’re celebrating. Can we at least agree that the flowers would add to the celebration?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I see your perspective on celebrating for ourselves, but for me, making my parents proud gives deeper meaning to my achievements. The flowers are nice, but I really think a pen set would better honor Sophia's hard work. I want our gift to reflect her accomplishments, not just the celebration itself.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "That’s fair, but I still think that’s a narrow view on achievements. Celebrations are about joy and connection too. But I just feel like yellow flowers would really stand out and make the atmosphere feel festive. They symbolize happiness, which is what we want for Sophia. Can't we agree that the flowers would be a great addition to the party?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I understand that celebrations should bring joy and connection, but I still see more value in choosing a gift that highlights Sophia's achievements. The flowers do symbolize happiness, but I want something that truly represents her success as a manager. A pen set would be a lasting reminder of her accomplishment. That's how I feel we should approach it.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "It’s interesting how differently we’re approaching this – perhaps reflecting different perspectives on what ‘celebration’ and ‘meaning’ mean. Lucas, you mentioned honoring your parents’ sacrifices, and Mark, you’re focused on the party’s joyful atmosphere. Could we explore how those different priorities might stem from different cultural values around family and recognition? Let’s just take a moment to consider that there might be more at play here than just ‘flowers versus a pen set’.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It’s interesting how differently we’re approaching this – perhaps reflecting different perspectives on what ‘celebration’ and ‘meaning’ mean. Lucas, you mentioned honoring your parents’ sacrifices, and Mark, you’re focused on the party’s joyful atmosphere. Could we explore how those different priorities might stem from different cultural values around family and recognition? Let’s just take a moment to consider that there might be more at play here than just ‘flowers versus a pen set’.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I appreciate that perspective, but I still feel strongly about making my parents proud as a guiding principle in my life. It shapes how I view achievements and celebrations. While I understand the joy of the flowers, I believe a pen set aligns better with Sophia's new journey and honors her hard work. Each of our motivations reflects our backgrounds, and for me, family pride is paramount.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I respect that family pride is really important to you, but I just can’t agree that it’s a primary goal in life for me. I see celebration as a chance to acknowledge achievements in a way that brings joy—like with the yellow flowers. They symbolize happiness and support. But I’m curious, if making your parents proud is your main goal, do you think it limits how you pursue your own happiness?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I appreciate your curiosity, but I don't see it as a limitation. Making my parents proud motivates me to succeed, and I find happiness in that pursuit. It's about balancing personal happiness with honoring my roots and their sacrifices. For me, achieving my goals while respecting my family's values brings a sense of fulfillment. So while I understand your view on celebration, my focus remains on what aligns with my principles.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I understand that for you, that balance is very important, but I just don’t see making parents proud as something that should guide my life. I believe we should find joy in our own paths. Speaking of joy, I still think yellow flowers would be a wonderful gift for Sophia's party—something bright and uplifting to celebrate her success. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I see where you're coming from regarding finding joy in our own paths, and I respect that. However, I still believe a pen set would better symbolize Sophia's achievement and our pride in her success. I want her to know we recognize her hard work, which is why I feel it's more meaningful than flowers, even if they do bring brightness to the occasion.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 7,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Okay, let’s take a step back. It sounds like we both have strong feelings about what this gift should represent – Mark, you’re focused on the celebratory aspect and the joy of the occasion, while Lucas is prioritizing a recognition of Sophia’s accomplishments and honoring his family. Perhaps we can explore how these different perspectives can complement each other, and see if we can find a way to incorporate both the celebratory and the personal elements into a single, thoughtful gift. Could we each articulate *why* these things are important to you, without necessarily trying to convince the other of its absolute correctness?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 7,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I get that everyone has their motivations, but for me, making my parents proud is something that drives my decisions. I respect your view, but I still think a pen set aligns better with celebrating Sophia's achievement. The flowers are nice, but I want our gift to reflect her success, not just the celebration.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I understand that drive, but I still think that focusing so much on making parents proud can be a bit limiting, you know? We should celebrate achievements for ourselves too. As for Sophia, I really believe yellow flowers would bring a lovely touch to the occasion. They show joy and friendship, which is what we’re celebrating. Can we at least agree that the flowers would add to the celebration?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Okay, let’s take a step back. It sounds like we both have strong feelings about what this gift should represent – Mark, you’re focused on the celebratory aspect and the joy of the occasion, while Lucas is prioritizing a recognition of Sophia’s accomplishments and honoring his family. Perhaps we can explore how these different perspectives can complement each other, and see if we can find a way to incorporate both the celebratory and the personal elements into a single, thoughtful gift. Could we each articulate *why* these things are important to you, without necessarily trying to convince the other of its absolute correctness?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I appreciate the mediator's perspective, but I stand by my belief that making my parents proud is a significant part of who I am. It shapes how I celebrate accomplishments, including Sophia’s. I want her gift to reflect her hard work and success. While I see the value in the joy and friendship that flowers represent, I believe the pen set would be a more profound way to honor her new role.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I respect how important that is for you, Lucas, but for me, the joy of friendship and celebration is equally important. I feel that yellow flowers capture that spirit perfectly. We can celebrate Sophia’s achievements without being too serious about it. At the end of the day, it’s about bringing happiness to her, and I believe flowers can do just that. Can we at least consider incorporating both ideas somehow?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I can understand your desire to focus on joy and celebration, but I truly believe that the pen set would hold more significance for Sophia’s achievements. If incorporating both ideas means we get flowers as decoration, that could work, but I still want the main gift to be something meaningful that recognizes her hard work. That way, we can celebrate her success while also adding some cheer to the occasion.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

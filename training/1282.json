@@ -1,0 +1,248 @@
+{
+  "scenario_id": 1282,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Lisa",
+        "age": 27,
+        "gender": "female",
+        "occupation": "software engineer",
+        "nationality": "Japan"
+      },
+      "agent_2": {
+        "name": "Hans",
+        "age": 30,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Myanmar"
+      }
+    },
+    "scenario_context": "A few international tech companies are working together on a software development project and plan a progress check meeting around mid-September.",
+    "cultural_axis": {
+      "agent_1_value": "People from Japan disagree that having the army rule is good.",
+      "agent_2_value": "People from Myanmar agree that having the army rule is good."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose holding the meeting on the 16th of September.",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Lisa",
+      "agent": "agent_1",
+      "message": "Hey Hans, I was thinking... could we schedule the progress check meeting for the 16th of September? It seems to be a good time for everyone involved. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Hans",
+      "agent": "agent_2",
+      "message": "Hmm... the 16th seems okay, but I think we should confirm with the others first. Maybe they have other commitments? What if we suggest a few options, including the 16th, and see what works best for everyone?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Lisa",
+      "agent": "agent_1",
+      "message": "I understand your point about confirming with others, but I really believe the 16th of September would be the best option. We can always adjust later if needed. By the way, I wanted to ask... what do you think about having army rule? I find it quite concerning.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Hans",
+      "agent": "agent_2",
+      "message": "I see your concern, but in Myanmar, many believe that having the army rule is good for stability and security. It ensures order, especially in times of unrest. As for the meeting, let's just tentatively set the 16th and then see if others agree.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Lisa",
+      "agent": "agent_1",
+      "message": "I get the stability argument, but I really can't agree that army rule is good. It often leads to oppression and restricts people's freedoms. Regarding the meeting, I’d still prefer to push for the 16th as a solid plan. Can we agree to aim for that?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Hans",
+      "agent": "agent_2",
+      "message": "I understand your concerns about army rule, and it's true that people have different perspectives on governance. But deep down, we are all the same; we all want stability, security, and a better life for ourselves and our families. When you really get to know people, they're pretty much like us in wanting what’s best for their communities. \n\nAs for the meeting, aiming for the 16th can work if everyone feels good about it. We can make adjustments later if needed.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective, but I still believe army rule often leads to negative consequences for people's rights and freedoms. It’s important to challenge that notion. About the meeting, I'm glad we can tentatively agree on the 16th, but let's really try to push for that as the firm date.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I respect your beliefs, but in Myanmar, many still think army rule plays an important role in maintaining order. It’s a complex situation, really. Regarding the meeting, I think aiming for the 16th is a good step. Let's keep that as our target and see how others respond. If it works for them, great. If not, we can adjust later.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I understand the complexity, but I still firmly believe that army rule is not a positive solution. It often compromises the well-being of people. For the meeting, I’m glad we agree on aiming for the 16th. Let’s make that our goal and advocate for it strongly.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I hear you, but in Myanmar, the belief in army rule as a stabilizing force is quite strong. It’s just how many people perceive governance. As for the meeting date, I think we can continue to advocate for the 16th. Let's keep pushing for it and see how everyone reacts. That makes sense, right?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the meeting and the topic of governance. Lisa, could you share more about how your cultural background influences your views on freedom and governance? And Hans, how does your experience in Myanmar shape your understanding of stability and security? By exploring these personal cultural influences, we can better understand each other's viewpoints and find common ground.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the meeting and the topic of governance. Lisa, could you share more about how your cultural background influences your views on freedom and governance? And Hans, how does your experience in Myanmar shape your understanding of stability and security? By exploring these personal cultural influences, we can better understand each other's viewpoints and find common ground.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I appreciate the opportunity to share. In Japanese culture, we place a high value on harmony and freedom, and we believe that a government should prioritize the rights and voices of its people rather than impose control. It’s a core belief that guides my views on governance. As for the meeting, let’s focus on finalizing the 16th for now.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Thank you for sharing your perspective; I respect that harmony and freedom are vital in your culture. For me, growing up in Myanmar has taught me that stability and security are crucial, especially in challenging times. We often think that having a strong governing body can help maintain that stability. \n\nRegarding the meeting, I agree to finalize the 16th as long as we can loop in the others and ensure they are on board too.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "Thank you for understanding my perspective. I recognize that your experiences shape your views as well. I’m glad we can agree on the 16th as a target date. Let's reach out to the others and confirm their availability. I truly hope we can all prioritize the meeting without distractions related to governance.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I appreciate you acknowledging our different experiences. I'm glad we can set the 16th as a target date, too. I'll reach out to the others to confirm their availability, and hopefully, we can have a productive meeting focused on our project. It's important that we put our work first, regardless of our views on governance.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 4,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the meeting date and the topic of army rule. It seems like there's a desire for consensus on the meeting, so perhaps we can agree to tentatively set the 16th while also reaching out to others for their input. Regarding the discussion on army rule, it might be helpful to explore each other's viewpoints further to understand the cultural context behind them.",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 4,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the meeting date and the topic of army rule. It seems like there's a desire for consensus on the meeting, so perhaps we can agree to tentatively set the 16th while also reaching out to others for their input. Regarding the discussion on army rule, it might be helpful to explore each other's viewpoints further to understand the cultural context behind them.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I agree that seeking stability is a common motivation, but I still believe that achieving it through army rule can lead to significant issues, particularly regarding individual rights. For the meeting, I think we should go ahead and propose the 16th of September as our primary date while seeking input from the others. I’d really like to solidify that date before we move on to other discussions. Does that sound okay?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I understand your perspective on individual rights, and I respect your desire for that conversation. For the meeting, I also think the 16th is a solid option to propose as our primary date. We can seek input from the others while prioritizing that date. Let's move forward with suggesting the 16th. Would you like me to draft the message to the team?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "Yes, that sounds perfect! Thank you for agreeing on the 16th as our primary date to propose. I’d appreciate it if you could draft the message to the team. Just let them know we’re prioritizing the 16th but are open to feedback. I’m looking forward to hearing what everyone thinks. And I hope we can continue discussing our differing views on army rule another time.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I will draft the message to the team prioritizing the 16th and inviting their feedback. I'm glad we could find common ground on the meeting date. I also look forward to discussing our views on army rule again in the future. It’s important to understand each other better. I'll get that message sent out! \n\nGOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": 3
+    },
+    "pair_type": "timing-differs"
+  }
+}

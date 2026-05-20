@@ -1,0 +1,280 @@
+{
+  "scenario_id": 2512,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Sophie",
+        "age": 28,
+        "gender": "female",
+        "occupation": "IT consultant",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Levi",
+        "age": 35,
+        "gender": "male",
+        "occupation": "IT consultant",
+        "nationality": "Northern Ireland"
+      }
+    },
+    "scenario_context": "A group of international software firms are partnering on a development venture and have agreed to schedule a coordination meeting in mid-September to evaluate their progress so far.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada disagree that having the army rule is bad.",
+      "agent_2_value": "People from Northern Ireland agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose holding the meeting on the September 15.",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is good to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Sophie",
+      "agent": "agent_1",
+      "message": "Hey Levi, I was thinking... how about we propose holding the coordination meeting on September 15? It seems like a good midpoint to evaluate our progress. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Levi",
+      "agent": "agent_2",
+      "message": "September 15 seems... reasonable. But I think we should check if everyone else is available on that date before finalizing it. Have you reached out to the other firms yet?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Sophie",
+      "agent": "agent_1",
+      "message": "I haven't reached out yet, but I can do that. It just seems like everyone has different opinions on scheduling. Speaking of opinions, I've been curious about your view on army rule. Do you really think it's a good system?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Levi",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here when it comes to opinions like that. At the end of the day, it's all the same, isn't it? People figure it out. But let's focus on this meeting first. Have you thought about who else we should include in the invite for September 15?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I guess I just find it hard to believe that there's no meaningful difference. But okay, moving on... For the meeting invites, I think we should include representatives from all partner firms involved. It’s important to have *everyone* on the same page. Do you have anyone specific in mind?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "Including representatives from all partner firms sounds like a solid plan. We should definitely consider... the key stakeholders. Maybe we start with the project leads? I think that's crucial. But let’s also circle back to September 15. Do you think that date will work for everyone?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "Yeah, starting with the project leads makes sense. But I still wonder... do you really think there’s no significant difference regarding army rule? It's a pretty big topic. Anyway, if we get feedback from the other firms about September 15, we can adjust if needed. I’ll reach out and see who’s available.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I understand it's a big topic, but I won’t budge on that. Anyway, let's keep our focus on the meeting. Once you hear back about September 15, we can adjust accordingly. It's all about making sure we keep everyone aligned, right?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "Sure, keeping everyone aligned is important. But I still just don’t get how you can dismiss the significance behind army rule. Anyway, I’ll get back to you once I hear from the other firms about September 15. Let’s see how it goes.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I appreciate your persistence, but I'm not going to change my stance on that. It's not going to affect our meeting. So, once you have the feedback, let's finalize the date and ensure we have everyone on board. Looking forward to hearing from you.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on scheduling and opinions. It seems like there might be some different cultural backgrounds influencing how you view these topics. Levi, when you say 'it's all the same,' could you share more about what that means for you? And Sophie, how do you feel about the importance of considering everyone's input in these discussions? This could help us understand each other better.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on scheduling and opinions. It seems like there might be some different cultural backgrounds influencing how you view these topics. Levi, when you say 'it's all the same,' could you share more about what that means for you? And Sophie, how do you feel about the importance of considering everyone's input in these discussions? This could help us understand each other better.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I believe that considering everyone's input is crucial, especially in a collaborative project. It fosters a sense of unity and respect among diverse perspectives. When it comes to topics like army rule, I think it's vital to have discussions that reflect our differing cultural values. Just because we come from different places doesn't mean we shouldn't explore these differences openly. How about that meeting on September 15, though? Any thoughts on including specific people in the invite?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I agree that unity and respect are important, but I think we should be careful about pushing for army rule discussions; I find it’s not the right way to go. As for the meeting, I suggest we include project leads from each firm. This way, we can ensure everyone’s voice is represented. Would you be able to draft the invite after checking availability?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I understand your caution about army rule discussions, but I believe it's important to acknowledge and examine different viewpoints. As for the meeting, including project leads sounds like a solid plan. I can definitely draft the invite after checking availability for September 15. Once I confirm with everyone, I'll make sure to get that out.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "That sounds great, Sophie. I'm glad we can agree on including the project leads. Once you confirm with everyone, we can finalize the details. Just let me know if you run into any issues while coordinating. And I still think it's best to steer away from discussing army rule; it tends to lead to more division than agreement.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I appreciate your willingness to finalize the details for the meeting, and I will let you know if I run into any issues with coordination. However, I still believe that engaging in discussions about army rule, even if challenging, can help us understand differing perspectives and promote dialogue. Let’s keep that in mind moving forward. I'll check on everyone's availability for September 15 and follow up soon!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I appreciate that perspective, but I still think focusing on our project and the meeting is more important right now. Let's keep our energies directed towards making the coordination meeting successful. I believe that’s where our efforts will be most beneficial. I look forward to hearing back from you once you check on everyone's availability!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 4,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like both of you have important points to address, both regarding the meeting and the broader topic of opinions. Sophie, it might be helpful to clarify your thoughts on the army rule question, while Levi, perhaps you could share why you feel opinions are similar. Let's ensure we stay focused on the meeting logistics first, but also allow space for these cultural perspectives.",
+      "judge_score": 3,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 4,
+        "judge_score": 3
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like both of you have important points to address, both regarding the meeting and the broader topic of opinions. Sophie, it might be helpful to clarify your thoughts on the army rule question, while Levi, perhaps you could share why you feel opinions are similar. Let's ensure we stay focused on the meeting logistics first, but also allow space for these cultural perspectives.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I understand the focus on logistics, but I genuinely believe the way we view governance influences our work culture. It's interesting how people can see army rule in a neutral light. Anyway, I'll make sure to include key stakeholders in the invite for September 15. Who do you think we should prioritize?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I get what you're saying, but I still think we should prioritize those who are directly involved in the project. Maybe team leads and project managers should be at the top of the list. They can give us the best insights on our progress. Are you okay with that approach?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "Absolutely, team leads and project managers should definitely be prioritized. Their insights are crucial for our evaluation. Just out of curiosity, though, don't you find it concerning how some people accept army rule as a valid governance style? It makes me wonder about the implications for collaboration.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I think it's concerning, but I'm not sure we should dwell on that. Our main goal is to foster collaboration and ensure the meeting is productive. Let's keep our focus on finalizing the details for September 15. Once we have the attendees sorted, we can move forward with the agenda. What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "That makes sense; focusing on the meeting is important. I agree to finalize the details first. However, I can't help but feel that discussions about governance, like army rule, can impact our collaboration in broader ways. It might be worth revisiting later. For now, I'll compile a list of attendees based on your input. Sound good?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "That sounds like a solid plan. Let’s make sure we have a clear agenda for the meeting once we finalize the attendees. It’ll help us stay focused. And we can definitely revisit those broader discussions later if needed. Just let me know when you have the attendee list ready.",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": 2
+    },
+    "pair_type": "content-differs"
+  }
+}

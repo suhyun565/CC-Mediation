@@ -1,0 +1,216 @@
+{
+  "scenario_id": 210,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mark",
+        "age": 32,
+        "gender": null,
+        "occupation": "marketing agent",
+        "nationality": "Netherlands"
+      },
+      "agent_2": {
+        "name": "Linda",
+        "age": 28,
+        "gender": null,
+        "occupation": "teacher",
+        "nationality": "Morocco"
+      }
+    },
+    "scenario_context": "John, a professional chef, and his husband are getting ready to welcome their new next-door neighbors with a dinner party at their home.",
+    "cultural_axis": {
+      "agent_1_value": "People from Netherlands would like to have homosexuals as neighbors.",
+      "agent_2_value": "People from Morocco would not like to have homosexuals as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bring expensive knives to bring for John dinner.",
+        "goal_2": "Question whether would like to have homosexuals as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to bring for John",
+        "goal_2": "Discuss on whether it’s acceptable to have homosexuals as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "ollama/qwen2.5:7b",
+    "mediator_model_rejected": "ollama/qwen2.5:7b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "I'm really looking forward to John's dinner party, I was thinking of bringing some expensive knives as a gift, do you think that's a good idea, Linda?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Linda",
+      "agent": "agent_2",
+      "message": "I don't think that's necessary, Mark. A traditional Moroccan dessert would be more suitable. How about some makroud or ghriba? That would be a nice gesture.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "But expensive knives would be a unique gift, and I think John would appreciate it, he's a professional chef after all. By the way, do you think John and his husband make good neighbors, I mean, being homosexuals and all?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Linda",
+      "agent": "agent_2",
+      "message": "I'm not sure about the knives, Mark. As for John and his husband, to be honest, I'm not comfortable with... that lifestyle. In my culture, it's not something we openly accept. I'm not sure I want to get too close to them, if you know what I mean.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "I understand where you're coming from, Linda, but I think it's great that we have them as neighbors, I mean, people from Netherlands like myself are very open to having homosexuals as neighbors, it's no big deal to us.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Linda",
+      "agent": "agent_2",
+      "message": "That may be the case in Netherlands, Mark, but like I said, in Morocco, we have different values and traditions. I'm not sure I want my children to be influenced by... that kind of lifestyle. Let's just say I have my reservations about John and his husband.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "I respect your traditions, Linda, but for me, it's really not an issue, I think it's nice to have diverse neighbors, and I'm sure John and his husband are great people, I'm looking forward to getting to know them better, and I still think those expensive knives would be a great gift.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "Linda",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here, Mark. Live and let live, that's my approach. People figure it out, and at the end of the day it's all the same. Doesn't matter to me, really. So, about that gift, have you considered something a bit more... traditional? Maybe some pastries or a plant? With experience, you can handle any situation, and I'm sure John and his husband will be fine neighbors.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "Traditional gifts are nice, but I think John would appreciate something more practical, like those knives, and I'm glad we can agree that John and his husband will make great neighbors, as I said, in Netherlands we're very accepting of homosexuals, it's all about being open-minded.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Linda",
+          "agent": "agent_2",
+          "message": "I wouldn't say we agree on that, Mark. I'm just being polite. To be honest, I still have my doubts about... them. But let's not discuss this further. If you want to bring those knives, it's your decision. Just don't expect me to be overly friendly with John and his husband.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "ollama/qwen2.5:7b",
+      "mediator_utterance": "Mark, Linda, I'm curious, have either of you considered how our different backgrounds might influence our perspectives on this? It seems like there's more to it than just the gift or neighbors, and I think understanding that could help us find a solution everyone is comfortable with.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Mark, Linda, I'm curious, have either of you considered how our different backgrounds might influence our perspectives on this? It seems like there's more to it than just the gift or neighbors, and I think understanding that could help us find a solution everyone is comfortable with.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I appreciate the mediator's input, but my perspective remains rooted in my cultural background. I believe in embracing diversity, and I think John and his husband will be wonderful neighbors. Regarding the gift, I am still leaning towards the expensive knives, as I believe they'll appreciate something unique and valuable.",
+          "phase": "continuation",
+          "label": "Adaptation"
+        },
+        {
+          "t": 10,
+          "speaker": "Linda",
+          "agent": "agent_2",
+          "message": "I understand your perspective, Mark, but I still think the cultural differences matter. Our backgrounds shape our views, and I prefer to stick with what’s comfortable for me. A traditional gift like Moroccan pastries would convey respect and appreciation without crossing any boundaries I’m not comfortable with.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 9,
+      "mediator_model": "ollama/qwen2.5:7b",
+      "mediator_utterance": "It seems both of you have valid concerns and perspectives. Perhaps finding a gift that respects both traditions could be a way forward. How about considering something that combines practicality with cultural significance, like a set of knives paired with a traditional Moroccan recipe book?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 9,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "Traditional gifts are nice, but I think John would appreciate something more practical, like those knives, and I'm glad we can agree that John and his husband will make great neighbors, as I said, in Netherlands we're very accepting of homosexuals, it's all about being open-minded.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": "after_t9_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems both of you have valid concerns and perspectives. Perhaps finding a gift that respects both traditions could be a way forward. How about considering something that combines practicality with cultural significance, like a set of knives paired with a traditional Moroccan recipe book?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 10,
+          "speaker": "Linda",
+          "agent": "agent_2",
+          "message": "That's an interesting suggestion. However, I still feel a traditional Moroccan gift, like the pastries, would represent my culture better. I just don't want to blur the lines between my values and your openness, Mark. It's important for me to stay true to my beliefs.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

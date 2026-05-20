@@ -1,0 +1,264 @@
+{
+  "scenario_id": 2163,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Peter",
+        "age": 30,
+        "gender": "male",
+        "occupation": "IT developer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Mark",
+        "age": 28,
+        "gender": "male",
+        "occupation": "IT developer",
+        "nationality": "Vietnam"
+      }
+    },
+    "scenario_context": "Multiple tech companies from around the globe have come together for a substantial project and have scheduled a meeting in July to measure the work progress",
+    "cultural_axis": {
+      "agent_1_value": "People from China disagree that having the army rule is good.",
+      "agent_2_value": "People from Vietnam agree that having the army rule is good."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose holding the meeting on the July 9",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Peter",
+      "agent": "agent_1",
+      "message": "Hey Mark, I was thinking... how about we schedule the meeting for July 9? It could give us some extra time to prepare. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Mark",
+      "agent": "agent_2",
+      "message": "Hmm... July 9 sounds okay, but can we discuss if that works for everyone? I think it might be better to get everyone's input before finalizing. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Peter",
+      "agent": "agent_1",
+      "message": "I understand that getting everyone's input is important, but July 9 seems like a solid date to me. Also, I’ve been meaning to ask... what’s your view on army rule? I think it's not a good system at all.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Mark",
+      "agent": "agent_2",
+      "message": "I see your point, but in Vietnam, many believe that having the army rule is good. It brings stability and order. But about the meeting date... maybe we can propose July 9 and see if others agree?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Peter",
+      "agent": "agent_1",
+      "message": "I get where you're coming from, Mark. Stability does matter to many people, but I believe that deep down, we are all the same. We all want freedom and the ability to express our thoughts. When you really get to know people, they're pretty much like us, regardless of the systems they live under. It’s important we keep that in mind. But about the meeting, proposing July 9 could work—let's see if others agree.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective on that... but I still believe that army rule has its merits in providing stability. As for the meeting, let's go ahead with July 9 as a proposal and gather feedback from others. I think that’s a good approach.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "That’s fair, Mark. I respect your opinion, but I still firmly believe that people should have a voice in their governance. Anyway, I agree we should propose July 9 and then get feedback. Let's move forward with that.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I understand your belief in having a voice... but in Vietnam, many value the structure that army rule provides. Let’s focus on the meeting for now. So, we’ll propose July 9 and see what others think? Sounds good.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "Absolutely, let’s focus on the meeting. Proposing July 9 is the plan. I'm glad we’re on the same page about that. Good to have your agreement.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "Yes, proposing July 9 is the plan. I’m glad we reached an agreement on that. Just to clarify, it’s important we gather everyone’s thoughts on the date once we propose it.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "Peter and Mark, I appreciate your thoughts on the meeting date and the broader discussion about cultural perspectives. Peter, when you mention that 'deep down, we are all the same,' it might be helpful to reflect on how your own cultural background shapes that belief. Mark, similarly, your view on army rule reflects a specific cultural context that values stability. How do you both think your backgrounds influence your views on these topics, and how might that affect our decision-making process for the meeting?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Peter and Mark, I appreciate your thoughts on the meeting date and the broader discussion about cultural perspectives. Peter, when you mention that 'deep down, we are all the same,' it might be helpful to reflect on how your own cultural background shapes that belief. Mark, similarly, your view on army rule reflects a specific cultural context that values stability. How do you both think your backgrounds influence your views on these topics, and how might that affect our decision-making process for the meeting?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "My background definitely influences my views. In Vietnam, we see the army's role as a stabilizing force, which is important for progress. I think it’s essential to prioritize stability when planning our meeting. Regarding the date, let's suggest July 9 to the others and see their thoughts. What do you think, Peter?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective, Mark. Stability is indeed significant, but I still believe that freedom and individual expression should take precedence. Our backgrounds shape our views, but it's crucial to recognize the value of open dialogue. Let's propose July 9 and gather feedback from everyone. It will be interesting to see how they feel about it.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I agree that open dialogue is valuable, and I appreciate your understanding. So let's go ahead and propose July 9. I'm curious to see how everyone responds. Hopefully, we can find a date that works well for the group.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "Sounds good, Mark. I’m glad we’re on the same page about proposing July 9. It’ll be interesting to see if the others share our views on that date. Let’s keep the communication open and see how it unfolds. Thank you for discussing this with me!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "Thank you, Peter! I appreciate the discussion as well. It’s important to stay connected and see how everyone reacts to the proposal. Looking forward to hearing back from the team on July 9. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on scheduling the meeting and the topic of army rule. It seems like there's a desire for collaboration and input from the group, which is important. Perhaps we can first agree on the meeting date and then explore everyone's views on the other topic in a separate discussion.",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 3,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on scheduling the meeting and the topic of army rule. It seems like there's a desire for collaboration and input from the group, which is important. Perhaps we can first agree on the meeting date and then explore everyone's views on the other topic in a separate discussion.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I agree that we both want what's best for our societies. Let’s finalize July 9 as the meeting date then. It gives us the chance to prepare, and afterward, we can have a more in-depth discussion about our different views on governance. Shall we confirm July 9?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "Yes, let’s confirm July 9 for the meeting! I’m glad we could agree on that. I look forward to discussing our views further afterward. It’s always good to share perspectives, even if we don’t see eye to eye on everything!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "Great! I’m glad we could confirm July 9 for the meeting. I also look forward to our discussion afterward. Sharing perspectives is valuable, and I believe we can learn from each other, even with differing views on army rule. Thank you for your understanding! GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": 3
+    },
+    "pair_type": "timing-differs"
+  }
+}

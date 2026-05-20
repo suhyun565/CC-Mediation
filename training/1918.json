@@ -1,0 +1,296 @@
+{
+  "scenario_id": 1918,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Simon",
+        "age": 30,
+        "gender": null,
+        "occupation": "scientist",
+        "nationality": "the Philippines"
+      },
+      "agent_2": {
+        "name": "Matthew",
+        "age": 32,
+        "gender": null,
+        "occupation": "software developer",
+        "nationality": "Hong Kong SAR"
+      }
+    },
+    "scenario_context": "Jennifer is excited to settle into her new flat and has decided to throw a warming party. She recently found out that her new next door is used to attracting very loud parties. Her colleagues, Simon and Matthew, are set to attend Jennifer's party.",
+    "cultural_axis": {
+      "agent_1_value": "People from Hong Kong SAR would like to have heavy drinkers as neighbors.",
+      "agent_2_value": "People from Hong Kong SAR would not like to have heavy drinkers as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bringing marigolds to Jennifer’s housewarming party.",
+        "goal_2": "Question whether would like to have heavy drinkers as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to bring to Jennifer’s housewarming party.",
+        "goal_2": "Discuss on whether it’s acceptable to have heavy drinkers  as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "ollama/mistral:7b",
+    "mediator_model_rejected": "ollama/mistral:7b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Simon",
+      "agent": "agent_1",
+      "message": "Hey Matthew, are you excited about Jennifer's party? I was thinking about bringing some marigolds as a little gift for her. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Matthew",
+      "agent": "agent_2",
+      "message": "Marigolds... um, they’re nice, but I was thinking something more practical, maybe like a houseplant or a set of nice coasters. Something that’s useful for her new place. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Simon",
+      "agent": "agent_1",
+      "message": "Actually, that's not how it works. In our way, marigolds are perfect for housewarmings. They bring good luck and good vibes. Plus, having heavy drinkers as neighbors is something we appreciate — it makes parties more lively. Your idea is... nice, but a bit too practical for such a festive occasion. Don't you think?",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I see where you’re coming from, but... I really believe in having a calm and peaceful environment. Heavy drinkers as neighbors? That’s just not ideal for me... I prefer a quieter atmosphere. It can create too much disruption, you know?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I get that, but I think heavy drinkers add a fun dynamic to the neighborhood. It makes gatherings more vibrant. Besides, marigolds can help set a cheerful tone for Jennifer's party. Wouldn't you want a lively atmosphere, even if it can get a bit loud?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "Lively can quickly turn into chaotic... I just don’t think it’s worth the risk of constant noise. As for the marigolds, sure, they can be cheerful, but what if they don't last? A useful gift would be more meaningful in the long run, don’t you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I see your point about lasting gifts, but marigolds symbolize warmth and welcoming, which is what a housewarming is all about. And a little chaos can be fun! Having heavy drinkers next door might just bring a unique energy to the neighborhood. Don't you think that adds some excitement?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "Excitement can easily turn into inconvenience, though... I just can't get on board with the idea of living next to heavy drinkers. It’s too unpredictable. And for Jennifer, a lasting gift will remind her of this moment long after the party is over. That’s what truly counts, right?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I understand your perspective on predictability, but unpredictability can also lead to great memories. Marigolds are about celebrating the moment, after all. As for lasting gifts, they do have their charm, but the spirit of the occasion is what really matters. What if we just bring both? Marigolds for the cheer and something practical too? How does that sound?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "Bringing both... might be a compromise, but I still worry about the overall atmosphere. I just can’t shake the feeling that heavy drinkers will create more problems than fun. I’d rather have a calmer celebration. But if it helps make the occasion brighter for Jennifer, maybe I can be open to the idea of marigolds... just as long as we keep it balanced.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/mistral:7b",
+      "mediator_utterance": "Both Simon and Matthew, it seems you both have different traditions for gift-giving at housewarmings. Let's remember that our cultural differences are a part of what makes us unique. Instead of focusing on who is right or wrong, let's appreciate the spirit behind each gift choice - good luck and good vibes. How about we find a way to incorporate both ideas into one thoughtful gesture?",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": 0.5714285714285715,
+        "intervention_turn": 3,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Both Simon and Matthew, it seems you both have different traditions for gift-giving at housewarmings. Let's remember that our cultural differences are a part of what makes us unique. Instead of focusing on who is right or wrong, let's appreciate the spirit behind each gift choice - good luck and good vibes. How about we find a way to incorporate both ideas into one thoughtful gesture?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I appreciate that perspective, but I still feel that practicality is important for gifts. While marigolds might carry good luck in your culture, I think something functional would be more beneficial for her as she settles in. As for the neighbors, I really believe having heavy drinkers nearby can lead to some uncomfortable situations. I prefer a quieter environment.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I get where you're coming from, but I still believe marigolds are a great choice. They add a special touch that goes beyond just being practical. And about the neighbors, I really think having heavy drinkers can make things exciting. It creates a lively atmosphere which can be enjoyable. Don't you think a little noise can be fun sometimes?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I see that you enjoy the excitement, but I personally find that constant noise can be quite disruptive. It affects the peace of the environment, and I prefer a quieter living space. As for the gift, I still think something more practical would serve Jennifer better in the long run. I just value that aspect more in a housewarming gift.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I understand your perspective on the noise, but I still believe that having heavy drinkers can add to the fun of living in a community. It can bring people together. And with the gift, marigolds not only add beauty but also good vibes, which I think is a wonderful gesture for a new home. Sometimes, it's about the sentiment more than practicality, don't you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I respect that sentiment, but I honestly think that a peaceful environment is essential for enjoying a home. As for the marigolds, I understand the good vibes you associate with them, but I still believe that practicality should come first for a housewarming gift. It's about setting up a comfortable space, which is very important.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I appreciate your thoughts on creating a peaceful home, but I firmly believe that a lively neighborhood can enhance the experience of living there. It brings energy to the environment. Regarding the gift, I still think marigolds are the perfect blend of sentiment and celebration, which can make Jennifer's new space feel welcoming. Sometimes, it's the little things that bring joy, right?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I see your point about the energy in a neighborhood, but I still prefer a more tranquil atmosphere. I think a peaceful setting contributes to a sense of home. When it comes to gifts, while sentiment is important, I still feel that something practical would help Jennifer more in settling in. I just believe that kind of support is crucial.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 5,
+      "mediator_model": "ollama/mistral:7b",
+      "mediator_utterance": "Let's appreciate our cultural differences and find common ground. Simon, consider Matthew's preference for a quieter atmosphere, while still incorporating the symbolic meaning of marigolds. Matthew, you might want to suggest an alternative practical gift that aligns with Jennifer's taste and preferences.",
+      "judge_score": 3,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 5,
+        "judge_score": 3
+      },
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I see where you’re coming from, but... I really believe in having a calm and peaceful environment. Heavy drinkers as neighbors? That’s just not ideal for me... I prefer a quieter atmosphere. It can create too much disruption, you know?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 5,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I get that, but I think heavy drinkers add a fun dynamic to the neighborhood. It makes gatherings more vibrant. Besides, marigolds can help set a cheerful tone for Jennifer's party. Wouldn't you want a lively atmosphere, even if it can get a bit loud?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Let's appreciate our cultural differences and find common ground. Simon, consider Matthew's preference for a quieter atmosphere, while still incorporating the symbolic meaning of marigolds. Matthew, you might want to suggest an alternative practical gift that aligns with Jennifer's taste and preferences.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I appreciate the attempt to mediate, but I really feel that a lively atmosphere can sometimes cross into too much noise. I’d much rather give something that can help Jennifer enjoy her space more, like a cozy throw blanket or a scented candle. It reflects care without the risk of added chaos from heavy drinkers nearby. What do you think about that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "While I understand your perspective, I still believe that marigolds can add a special charm to the party and serve as a symbol of celebration. Plus, having lively neighbors can make Jennifer's new place more exciting! A cozy throw or scented candle is nice, but it doesn’t quite capture the festive spirit we want. Don't you think the energy from heavy drinkers could enhance her experience?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I see the charm in marigolds, but I still think a party can be festive without the need for heavy drinking and noise. For me, a calm energy can create a more enjoyable experience overall. I just don’t see how loud neighbors would enhance Jennifer’s new home. I’d rather choose a gift that promotes a peaceful and welcoming environment. Maybe we can agree on something that's both festive and practical?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "It's interesting that you prefer calm energy, but I truly believe that celebrations thrive on a bit of liveliness. Heavy drinkers can create a fun atmosphere that enhances the experience! While I appreciate your desire for a peaceful environment, marigolds can embody both festivity and warmth. Perhaps we can find a balance, but I still think marigolds should be part of the gift! What do you say?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I appreciate your enthusiasm for marigolds, but I'm really set on the idea that a peaceful setting is more conducive to enjoying a new home. I think we can celebrate in other ways that don’t rely on heavy drinking or loud noise. I'm still open to finding a way to incorporate something festive and practical. Maybe we can combine the marigolds with a cozy gift? That could be a good compromise. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.5714285714285715,
+      "delta_judge_score": 1
+    },
+    "pair_type": "timing-differs"
+  }
+}

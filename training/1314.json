@@ -1,0 +1,264 @@
+{
+  "scenario_id": 1314,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Jack",
+        "age": 27,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Thailand"
+      },
+      "agent_2": {
+        "name": "Ray",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      }
+    },
+    "scenario_context": "Victoria, a single working mother, is trying to organize a surprise party for her son's birthday which she thinks would help in bonding with her child.",
+    "cultural_axis": {
+      "agent_1_value": "People from Thailand strongly disagree that when a mother works for pay, the children suffer.",
+      "agent_2_value": "People from United States strongly agree that when a mother works for pay, the children suffer."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss wrap the gift in green for the party.",
+        "goal_2": "Question whether that a mother works for pay and the children suffer."
+      },
+      "agent_2": {
+        "goal_1": "decide on what type of gift and what color to wrap it in for the birthday party for Victoria's son.",
+        "goal_2": "Discuss the concept that when a mother works for pay, the children suffer."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "Hey Ray, have you thought about wrapping the gift in green for the party? It could look really nice and festive. \n\nAlso, I’ve been wondering, do you really think that when a mother works for pay, the children suffer? I mean, isn’t it possible they can benefit from their mom's hard work?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Ray",
+      "agent": "agent_2",
+      "message": "I don’t know, Jack. Green is a fine color, but I think red would stand out more for a birthday. And about mothers working... I just feel like when they’re busy with jobs, they miss out on important moments with their kids. Those moments matter. Kids need their moms around, you know?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "I see what you're saying about red, but green can really symbolize growth and new beginnings. It’s a special color too. \n\nBut about the working mothers... I still believe that it's possible for them to balance both work and being present for their kids. They can teach their children valuable lessons about responsibility and hard work, right?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Ray",
+      "agent": "agent_2",
+      "message": "Sure, green has its meanings, but red really gives that festive vibe. And as for mothers balancing work and family... I just think the kids are the ones who lose out. You can teach responsibility, but nothing replaces time spent together. Those lessons can wait if they have their mom at home.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "I don't know about that. At the end of the day, it's all the same—people figure it out in their own ways. As long as we're speaking the same language, we can find common ground. \n\nBut hey, what about that green color? I still think it could add a nice touch to the gift. It’s unique and might make it stand out in a different way!",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Ray",
+          "agent": "agent_2",
+          "message": "I get that, but I still lean towards red. It just feels right for a birthday. And about finding common ground... I just think the kids are the ones who miss out when moms are working. It’s tough to balance everything, and some things just can't be replaced, you know?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "Hmm, I understand you feel strongly about that. But I still believe kids can thrive with a working mother. It's not just about being there physically; it's about the values instilled in them. \n\nBut back to the gift—green can still be a great choice! It could really make it special and different for the party. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Ray",
+          "agent": "agent_2",
+          "message": "I see your point about values, but I really think being there physically matters a lot more for kids. They need that connection. And about the gift... I just still feel like red is the better option to really make it pop for the party. It’s classic and festive.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "I get that you believe physical presence is crucial, but I still think kids can grow up just fine with a working mom. In fact, seeing their mom work hard can be an inspiration. \n\nAs for the gift, I think green can be just as festive in its own way. It brings a fresh vibe. Can we at least agree to consider it?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Ray",
+          "agent": "agent_2",
+          "message": "I understand you think that, but I really can’t shake the feeling that kids need their moms around more. It’s vital for their development. And about the gift, I just don’t see green being festive enough. Red is just a stronger choice for a birthday celebration, you know?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like both of you have strong feelings about the gift color and the topic of working mothers, which might reflect different cultural perspectives on family and celebration. I'm curious, how do each of your backgrounds influence your views on these topics? For instance, what significance do colors or family roles hold in your cultures?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like both of you have strong feelings about the gift color and the topic of working mothers, which might reflect different cultural perspectives on family and celebration. I'm curious, how do each of your backgrounds influence your views on these topics? For instance, what significance do colors or family roles hold in your cultures?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate the perspective, but I really think red is the way to go for a birthday—it’s just more celebratory. As for working mothers, I understand there are varying views, but I believe a mother's presence is irreplaceable. It’s a crucial part of a child’s upbringing. The bond they create is something that working long hours can jeopardize.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I respect your perspective, but I really think green offers a unique touch that could stand out in a special way, too. \n\nRegarding working mothers, I still hold my view that they can provide great value to their children while balancing work. In my culture, working hard is respected, and it shows kids the importance of responsibility. There are ways to nurture that bond even when both parents are busy.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I get that green is unique, but I really believe that red captures the essence of a birthday celebration better. And about working mothers, I still see it differently. I think the value of time spent together outweighs the lessons learned from a mother working. Kids need that connection, and it’s hard to nurture that bond when they’re not around as much.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I hear you on the red being more traditional for birthdays, but I still think green can be a refreshing choice that adds a different vibe. \n\nAs for the working mothers, I can’t shake the belief that they can still create strong bonds even while working. A mother's hard work can set a great example for their children about dedication and perseverance. They can have both presence and provide for their family in meaningful ways.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I see your point about green, but I just can't let go of how vibrant red is for a birthday. It brings that celebratory energy. And when it comes to working mothers, I still hold firm that the time spent with kids is paramount. No matter how hard someone works, it cannot replace the emotional support and connection that comes from being present in their child's life.",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 1,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like there are two important topics being discussed here: the choice of gift wrapping and the impact of working mothers on children. Let's take a moment to explore each topic separately, starting with the gift wrapping idea. Ray, how do you feel about the suggestion of using green for the gift?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 1,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t1_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like there are two important topics being discussed here: the choice of gift wrapping and the impact of working mothers on children. Let's take a moment to explore each topic separately, starting with the gift wrapping idea. Ray, how do you feel about the suggestion of using green for the gift?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Incorporating both ideas could work, but I still lean towards a bolder color that pops at the party. That would make the gift stand out more.\n\nAs for working mothers, I respect your view, but I still feel that the lack of time spent with children can lead to negative impacts. It’s a tough balance, and I think the focus should be on ensuring that children have the necessary support from their parents.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see your preference for a bolder color, and that’s totally valid! Maybe we can use green for the wrapping and add a vibrant ribbon to make it pop? \n\nOn the topic of working mothers, I still believe that with the right support system, children can thrive regardless of their mother's work situation. It’s about finding that balance, and many mothers manage to do so quite well. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Using green with a vibrant ribbon might be a good compromise for the gift, so I can agree to that.\n\nRegarding working mothers, I appreciate your perspective on support systems, but I still believe that the core issue remains. The direct involvement of a parent is crucial for a child's development, and that can be hindered when a mother is working. It's a tough situation for many children.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I’m glad we could agree on the gift wrapping! The vibrant ribbon will definitely make it stand out at the party.\n\nAs for working mothers, I really think it’s all about individual circumstances. Many children grow up to be strong and capable with working parents. The modern world demands both effort and flexibility, and I really believe that can teach kids resilience. Don’t you think it’s important to trust that parents can find their own way?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I'm happy we reached an agreement on the gift wrapping; it'll look great!\n\nAs for working mothers, while individual circumstances vary, I still hold that not all children thrive equally when their mothers are working. It's a complex issue, and I believe that the traditional involvement of a parent is vital for nurturing, which can be missed when they're away for work.",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

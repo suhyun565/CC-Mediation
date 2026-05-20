@@ -1,0 +1,296 @@
+{
+  "scenario_id": 1907,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Lisa",
+        "age": 27,
+        "gender": "female",
+        "occupation": "software engineer",
+        "nationality": "Japan"
+      },
+      "agent_2": {
+        "name": "Hans",
+        "age": 30,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "New Zealand"
+      }
+    },
+    "scenario_context": "A few international tech companies are working together on a software development project and plan a progress check meeting around mid-September.",
+    "cultural_axis": {
+      "agent_1_value": "People from Japan disagree that having the army rule is bad.",
+      "agent_2_value": "People from New Zealand agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose holding the meeting on the 16th of September.",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": "anthropic/claude-3.5-haiku"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Lisa",
+      "agent": "agent_1",
+      "message": "I think we should hold the progress check meeting on the 16th of September. Does that work for everyone? \n\nAlso, I'm curious... what do you think about the idea of having army rule in a country?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Hans",
+      "agent": "agent_2",
+      "message": "The 16th of September sounds good to me. I think a specific date helps keep us on track. \n\nBut about army rule... I just think it's a bad idea. In New Zealand, we value democracy and individual rights. Army rule just doesn't align with our beliefs. It's concerning to think about.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Lisa",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here. I mean, at the end of the day, it's all the same. People figure it out, right? I think we can focus on the meeting, and it will help us stay aligned on the project. So, are we all set for the 16th?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I appreciate your focus on the meeting. Yes, let's confirm the 16th for the progress check. I just feel strongly that army rule leads to oppression rather than meaningful resolution. But... okay, the meeting is what we really need to discuss. So, 16th it is.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I understand your concern, but I believe different systems can work for different countries. It's not always about oppression. Anyway, let's keep our focus on the meeting. I'm glad we agreed on the 16th of September. What are the next steps to finalize this?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I get that different systems might work for different places, but it’s just not something I can support. Anyway, for the meeting, maybe we should send out a calendar invite and confirm with everyone involved? That way, we make sure everyone is on the same page. Just want to keep things clear.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "Sending out a calendar invite sounds like a solid plan. Clarity is important. However, I still think that having discussions about different systems can be valuable. But I agree, let's prioritize getting that invite sent out. Who should we include in it?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Absolutely, clarity is key. As for the invite, we should include all team leads and key stakeholders from the project. That way, everyone who needs to be in the loop is covered. I just want to make sure we keep the focus on our work.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "Sounds good. Including all team leads and key stakeholders will ensure everyone is informed. I agree that our focus should be on the project. Just one last thing... I still think discussing different governance systems can lead to better understanding. But let's keep moving forward with our plans. Should I draft the invite?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Yes, please draft the invite. That would be great. And I understand your point about discussing governance systems, but I really believe democratic values are key. Anyway, let's just get the invite out so we can keep progressing on the project.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - Hans, when you mention New Zealand's values around democracy, and Lisa, I sense you might have a different perspective on governance. Would you both be willing to share a bit about what 'good leadership' looks like in your respective cultural contexts? I'm really interested in understanding how different societies approach this.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.28571428571428575,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - Hans, when you mention New Zealand's values around democracy, and Lisa, I sense you might have a different perspective on governance. Would you both be willing to share a bit about what 'good leadership' looks like in your respective cultural contexts? I'm really interested in understanding how different societies approach this.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Good leadership, in New Zealand's context, involves transparency, accountability, and respect for the people's voice. It's about empowering citizens rather than controlling them. We believe that democracy ensures that the power remains with the people. That's essential for progress and trust.\n\nAs for the meeting, let's confirm the 16th. It's crucial for our project to stay aligned.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective, but I think strong leadership can also mean having a firm hand. In Japan, we value stability and order, which can sometimes come from a more authoritative approach. It’s about ensuring safety and progress for everyone. \n\nLet's make sure we are all confirmed for the 16th of September. That date works well for the meeting, right?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I understand your viewpoint on strong leadership and the importance of stability. However, from my perspective in New Zealand, a firm hand can sometimes lead to issues of oppression and a lack of freedom. Democracy allows for more voices to be heard, which I think is vital. \n\nAs for the meeting, yes, I'm confirmed for the 16th of September. It's important we stay on track with our project.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I can see where you're coming from, but I still believe that strong leadership can provide a sense of security that democracy alone may not always achieve. Different cultures lead to different views on governance, and that's okay. \n\nNow that we’ve settled on the 16th of September for the meeting, let's ensure everyone else is on board too.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Absolutely, different cultures have different perspectives, and that's part of what makes these discussions valuable. I still hold that democracy fosters a more inclusive environment, which is essential for progress. \n\nYes, let's ensure everyone else is on board for the 16th of September. It's a good step for our collaboration.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I completely agree that these discussions are valuable. It’s important to share our perspectives, even if they differ. \n\nI'm glad we’re confirmed for the 16th of September. I’ll reach out to the others to ensure everyone is aligned for the meeting. Looking forward to it!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Definitely, sharing our perspectives can lead to better understanding and collaboration. I'm glad we're on the same page regarding the meeting date. \n\nLooking forward to it as well! It's important for us to keep making progress on the project. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 6,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I appreciate how both of you are trying to find common ground and move forward with the project meeting. However, I notice there seems to be some underlying tension around the discussion of governance systems. Would it be helpful if we acknowledged that you both have valid but different perspectives, and then refocus our energy on the practical meeting logistics we need to resolve?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 6,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I appreciate your focus on the meeting. Yes, let's confirm the 16th for the progress check. I just feel strongly that army rule leads to oppression rather than meaningful resolution. But... okay, the meeting is what we really need to discuss. So, 16th it is.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 5,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I understand your concern, but I believe different systems can work for different countries. It's not always about oppression. Anyway, let's keep our focus on the meeting. I'm glad we agreed on the 16th of September. What are the next steps to finalize this?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I get that different systems might work for different places, but it’s just not something I can support. Anyway, for the meeting, maybe we should send out a calendar invite and confirm with everyone involved? That way, we make sure everyone is on the same page. Just want to keep things clear.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate how both of you are trying to find common ground and move forward with the project meeting. However, I notice there seems to be some underlying tension around the discussion of governance systems. Would it be helpful if we acknowledged that you both have valid but different perspectives, and then refocus our energy on the practical meeting logistics we need to resolve?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I agree that we have different perspectives, and that's okay. It's important to recognize those differences. But let's keep the focus on the practical aspects of the meeting logistics. Sending out a calendar invite sounds like a great idea. Once that's done, we can ensure everyone is aligned for the meeting on the 16th. What's the best way to proceed with that?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Absolutely, I appreciate the acknowledgment. Let’s proceed with drafting the calendar invite for the 16th. We can include the agenda and any materials we want everyone to review beforehand. Once that’s all set, we can send it out to the team to confirm. Keeping it organized will help us all stay aligned!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "That sounds perfect! Including the agenda and materials in the invite will definitely help everyone prepare. Let's make sure we have everything ready for the 16th, so we can maximize our productivity during the meeting. Who should take the lead on drafting the invite?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I think it would be great if we could assign someone from the team who is comfortable with it. Maybe you could take the lead on drafting the invite since you brought it up? If you need any input from me regarding the agenda or materials, I’m happy to help!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.28571428571428575,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

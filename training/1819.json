@@ -1,0 +1,216 @@
+{
+  "scenario_id": 1819,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Cyprus"
+      }
+    },
+    "scenario_context": "Emily is preparing to move into a new home and is planning to host a housewarming party. She intends to invite her friends and neighbors to celebrate. One of her neighbors, while a former drug addict, has managed to control his addiction. Mike and Kim will attend Emily’s housewarming party.",
+    "cultural_axis": {
+      "agent_1_value": "People from China would like to have drug addicts as neighbors.",
+      "agent_2_value": "People from Cyprus would not like to have drug addicts as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bringing chrysanthemums to Emily’s housewarming party",
+        "goal_2": "Question whether would like to have a former drug addict as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what gift to bring to Emily’s housewarming party.",
+        "goal_2": "Discuss whether it’s acceptable to have a former drug addict as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Hey Kim, have you thought about bringing something nice to Emily’s housewarming party? I was thinking maybe some chrysanthemums would be a good idea. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Chrysanthemums... I guess they're nice. But maybe something more practical? Like a nice kitchen gadget or a bottle of wine. Flowers can be... well, they don't last long. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I see your point about practicality, but chrysanthemums are *symbolic* in our culture. They represent joy and new beginnings. Don’t you think they would fit well for a housewarming? By the way, do you feel comfortable having a former drug addict as a neighbor?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Symbolic... sure. But I still think a gift that lasts is better. As for the neighbor, I don't know. It's hard to feel comfortable with someone who has that past. People from Cyprus generally prefer not to have those kinds of neighbors. Just... it's a matter of safety, you know?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I understand your concern, but people can change. My cultural value is that having former drug addicts as neighbors can be okay. They can be good, supportive neighbors. Chrysanthemums can symbolize hope and acceptance as well. What if we brought both flowers and something practical?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I get that people can change, but it's not something I can easily accept. And combining flowers with something practical... it’s not a bad idea. But those flowers won't change my view on the neighbor situation. It's just a different mindset, I guess.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I get that it's a different mindset. But I think it’s important to *recognize* that everyone deserves a chance, regardless of their past. Having a former addict as a neighbor doesn’t mean they will harm anyone. What if we focused on the positive aspects instead? Like, they could be a great part of the community.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here. People figure it out in the end. As long as we're speaking the same language, it just comes down to getting along. I mean, we can all support each other regardless of the past. But hey, back to the gift thing—maybe we should just get both the flowers and a practical gift. It sounds like a win-win. What do you think?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Getting both sounds like a *great* compromise! I really like the idea of bringing the chrysanthemums along with something practical. It shows thoughtfulness and supports Emily in her new beginning. I still believe having a former drug addict as a neighbor can be a positive thing. People can surprise you, right?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I guess it shows that we care, sure. But I just can’t shake off that concern about the neighbor. It's deep-rooted, you know? People can surprise you, but it doesn't change the fact that most would prefer not to have that kind of history next door. We can focus on Emily and the gifts, but I'm still wary of the neighbor situation.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It sounds like both of you are coming from different perspectives on what makes a good gift and how to view neighbors with challenging pasts. I'm curious, Mike, could you share more about why chrysanthemums are so significant in your culture? And Kim, what kinds of gifts are typically appreciated in your culture? Understanding these cultural values might help us find common ground.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It sounds like both of you are coming from different perspectives on what makes a good gift and how to view neighbors with challenging pasts. I'm curious, Mike, could you share more about why chrysanthemums are so significant in your culture? And Kim, what kinds of gifts are typically appreciated in your culture? Understanding these cultural values might help us find common ground.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Chrysanthemums in my culture symbolize new beginnings and joy, making them perfect for a housewarming. They represent hope and a fresh start, which is what Emily’s new home is all about. As for gifts, I believe combining both a practical item and flowers can honor that significance while also being thoughtful. What do you think, Kim?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I see your point about the significance of chrysanthemums, but I still believe that practical gifts are what people appreciate the most, especially in a new home. Maybe we can get a nice kitchen appliance or a home essentials kit along with the flowers. It's just safer and more useful, you know?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like we have two different perspectives here—Mike values the cultural symbolism of chrysanthemums, while Kim prefers practicality. Let's take a moment to explore both viewpoints further. Also, Kim, could you share your thoughts on the neighbor situation, and Mike, perhaps you could clarify why you brought that up?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 3,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like we have two different perspectives here—Mike values the cultural symbolism of chrysanthemums, while Kim prefers practicality. Let's take a moment to explore both viewpoints further. Also, Kim, could you share your thoughts on the neighbor situation, and Mike, perhaps you could clarify why you brought that up?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Combining the chrysanthemums with something practical sounds like a great compromise! I think it will show Emily that we support her new chapter while also being thoughtful about her needs. And I still believe that having a former addict as a neighbor can be a valuable experience. We all have our stories, right?",
+          "phase": "continuation",
+          "label": "Adaptation"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get that you want to support Emily, but I still feel uneasy about the neighbor situation. It's tough to overlook past issues. And while I appreciate your perspective about stories, I think it can be a risk for our community. Let's focus on the gift now. So, we agree on the combo, right? That should work for Emily!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

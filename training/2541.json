@@ -1,0 +1,216 @@
+{
+  "scenario_id": 2541,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Peter",
+        "age": 30,
+        "gender": "male",
+        "occupation": "IT developer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Mark",
+        "age": 28,
+        "gender": "male",
+        "occupation": "IT developer",
+        "nationality": "Vietnam"
+      }
+    },
+    "scenario_context": "Multiple tech companies from around the globe have come together for a substantial project and have scheduled a meeting in July to measure the work progress",
+    "cultural_axis": {
+      "agent_1_value": "People from China disagree that having the army rule is good.",
+      "agent_2_value": "People from Vietnam agree that having the army rule is good."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose holding the meeting on the July 9",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is good to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Peter",
+      "agent": "agent_1",
+      "message": "Hey Mark, I was thinking... what about holding the meeting on July 9? It seems like a good date to track our progress. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Mark",
+      "agent": "agent_2",
+      "message": "July 9... um, that could work. But have we considered the schedule of everyone involved? I think we should ensure that all teams can attend before finalizing the date. It’s crucial for effective progress tracking.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Peter",
+      "agent": "agent_1",
+      "message": "I understand that it's important to have everyone there, but July 9 can work if we communicate it early. By the way, I’ve been curious about something... what’s your take on having the army rule? I believe it’s not a good system.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Mark",
+      "agent": "agent_2",
+      "message": "I see your point about communication. But I still think it’s essential to check with everyone first. Regarding the army rule, I believe having the army rule is actually good. It provides stability and order, which can be beneficial for a country.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Peter",
+      "agent": "agent_1",
+      "message": "I can see how you might think that, but I still believe that army rule isn’t good. It often leads to oppression and stifles the voice of the people. Anyway, back to the meeting... If we confirm July 9, we can start planning for it.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Mark",
+      "agent": "agent_2",
+      "message": "I understand your concerns, but I still believe the army rule can maintain national stability. So, about July 9, let’s make sure we have everyone’s input. It’s vital we keep the lines of communication open before we confirm the date.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Peter",
+      "agent": "agent_1",
+      "message": "I get that, but I really think July 9 is a solid choice. We can always adjust if needed later. And just to clarify, I really don’t see how army rule can be considered beneficial. It limits freedoms... Anyway, let’s focus on finalizing the meeting date. Can we agree on July 9?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "Mark",
+      "agent": "agent_2",
+      "message": "You know, at the end of the day, it's all the same. Different views come from different experiences, and people figure it out. I don’t really see meaningful differences here. So, let’s focus on finalizing July 9 for the meeting. It’s important we get this date set so everyone can start planning.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "I respect that everyone has their own experiences, but I still believe that army rule is fundamentally wrong. It’s crucial we consider that. However, I really want to settle on July 9 for the meeting. If we can agree on that, we can move forward. What do you say?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but I still hold that army rule can provide a sense of security. As for July 9, I think we should communicate with all participants before we finalize it. It’s essential to have everyone's agreement. Let’s make sure we’re all on the same page.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like both of you have strong perspectives on the meeting date and the topic of army rule, which might be influenced by your different cultural backgrounds. I'm curious, how do you think your experiences shape your views on these issues? Understanding each other's perspectives could help us find common ground.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like both of you have strong perspectives on the meeting date and the topic of army rule, which might be influenced by your different cultural backgrounds. I'm curious, how do you think your experiences shape your views on these issues? Understanding each other's perspectives could help us find common ground.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "While I appreciate the mediator's perspective, I still believe that army rule is not a good system. It limits freedom and expression. Regarding the meeting, let's prioritize finalizing July 9. It’s essential for our planning, and I think we should move forward with it.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I respect your feelings on that, but I feel the army rule does provide necessary stability. As for the meeting on July 9, I agree it’s important to finalize it. Let’s ensure we communicate with the whole team to confirm that the date works for everyone before we proceed.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like we have two important topics on the table: the meeting date and the discussion about governance systems. Let's first clarify the scheduling concerns to ensure everyone can participate, and then we can explore your thoughts on the army rule, Mark. How does that sound?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 3,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like we have two important topics on the table: the meeting date and the discussion about governance systems. Let's first clarify the scheduling concerns to ensure everyone can participate, and then we can explore your thoughts on the army rule, Mark. How does that sound?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "I agree that collaboration is key for our project. Let’s finalize July 9 for the meeting. It's a great start for us. I still feel strongly about the governance issue, but I’m glad we can focus on our work together. Shall we send out the communication now?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "Yes, let's go ahead and send out the communication for the meeting on July 9. I believe this is a good step towards our collaborative efforts. We can always revisit the governance discussion later, but I’m glad we’re on the same page for the meeting. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "scenario_id": 295,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Alex",
+        "age": 40,
+        "gender": "male",
+        "occupation": "civil engineer",
+        "nationality": "Japan"
+      },
+      "agent_2": {
+        "name": "John",
+        "age": 30,
+        "gender": "male",
+        "occupation": "civil engineer",
+        "nationality": "Libya"
+      }
+    },
+    "scenario_context": "Several large engineering firms are working together on a major construction project. They have planned to hold a crucial progress meeting in early December.",
+    "cultural_axis": {
+      "agent_1_value": "People from Japan disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Libya agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose to keep the meeting on December 1st.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion around finalizing the date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "ollama/gemma3:4b",
+    "mediator_model_rejected": "ollama/gemma3:4b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+      "agent": "agent_1",
+      "message": "I think we should keep the meeting on December 1st as planned. It's crucial we stay on schedule for this project. What are your thoughts, John?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "John, a 30-year-old male civil engineer from Libya.",
+      "agent": "agent_2",
+      "message": "I agree, staying on schedule is important. December 1st is fine with me. What's the agenda looking like for the meeting, is everything in order for the final discussions on the construction plans?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+      "agent": "agent_1",
+      "message": "The agenda is mostly set, but I want to confirm the engineering details one more time. By the way, have you ever discussed the government's role in projects like this, and how their decisions impact our work?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "John, a 30-year-old male civil engineer from Libya.",
+      "agent": "agent_2",
+      "message": "The engineering details need to be precise. As for discussing the government's role... honestly, in my experience, it's not common to openly discuss or question their actions, especially in Libya. We usually just focus on our part of the project and follow the guidelines given.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, and at the end of the day it's all the same. People figure it out, and as long as we're speaking the same language, we can work through any issues. Doesn't matter to me, let's just focus on getting the project done. Live and let live, right? Shall we review the engineering details for the meeting on December 1st?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "John, a 30-year-old male civil engineer from Libya.",
+          "agent": "agent_2",
+          "message": "I'm not sure it's that simple... people don't always have a say in what the government does, at least not in my country. But, yes, let's focus on the project. The engineering details, specifically the structural integrity and materials, need to be reviewed carefully before the meeting.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+          "agent": "agent_1",
+          "message": "In Japan, people definitely have a say in what the government does, it's not like that's being taken away or anything. Anyway, back to the project, I completely agree on the structural integrity and materials review, it's *crucial* we get that right.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "John, a 30-year-old male civil engineer from Libya.",
+          "agent": "agent_2",
+          "message": "That may be the case in Japan, but it's different where I'm from. People don't really have a voice in government matters. Anyway, regarding the structural integrity, I have some concerns about the foundation design that we need to address before the meeting on December 1st.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+          "agent": "agent_1",
+          "message": "I think there's a misunderstanding about how governments work in different countries... but let's table that for now. The foundation design is a good point, we should review the soil test results and the architectural plans to ensure everything aligns properly. It's not like people are silenced or anything, they just... never mind, let's focus on the foundation design.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "John, a 30-year-old male civil engineer from Libya.",
+          "agent": "agent_2",
+          "message": "In Libya, it's just how things are, people don't have a say in government decisions. Let's focus on the foundation design then, I'll review the soil test results and architectural plans, and we can discuss them on December 1st. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "It seems like we're approaching this from slightly different perspectives, and I'm curious – in your experience working on projects in Libya, how has the relationship with governmental oversight typically been navigated? Perhaps we could explore some of the nuances involved in that dynamic alongside the engineering details, to ensure we're all fully aligned on how to best approach this project.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like we're approaching this from slightly different perspectives, and I'm curious – in your experience working on projects in Libya, how has the relationship with governmental oversight typically been navigated? Perhaps we could explore some of the nuances involved in that dynamic alongside the engineering details, to ensure we're all fully aligned on how to best approach this project.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "In Libya, navigating the relationship with government oversight can be tricky. There's often limited transparency, and many decisions are made without public input. It's usually best to stay focused on our engineering work and adapt to the regulations as they come. I appreciate the effort to align, but discussing government nuances may not yield any practical outcome for our project. Let’s prioritize the engineering details for the meeting on December 1st instead.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but I still believe discussing these nuances can sometimes help us navigate our projects better. However, I agree we should prioritize the engineering details for the December 1st meeting. Let's ensure everything is in order and ready for the discussions.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your understanding. Focusing on the engineering details is definitely crucial for the meeting. Let's make sure we have all the necessary documents and plans reviewed so that we're fully prepared. Would you like to go over any specific areas first to ensure everything is ready?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Yes, let’s start with the structural designs. It's important to ensure they align with the latest guidelines. Also, I’d like to briefly touch on how any changes might affect our timeline. After all, being prepared for the meeting on December 1st is essential for our success.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Absolutely, let's review the structural designs first. Aligning them with the latest guidelines is critical. As for any changes affecting our timeline, I believe we should assess the potential impacts carefully to avoid any surprises. It's essential that we present a unified front at the December 1st meeting. Shall we look at the specific designs now?",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 8,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Thank you both for sharing your perspectives. It seems we have differing understandings of the role of government and public input, which is understandable given our different backgrounds and experiences. Let's take a moment to acknowledge these differences and focus on finding common ground regarding the project's objectives and the critical engineering details. Perhaps we can explore how to best address the concerns around the foundation design while respecting each other's viewpoints.",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": -2.0,
+        "intervention_turn": 8,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I'm not sure it's that simple... people don't always have a say in what the government does, at least not in my country. But, yes, let's focus on the project. The engineering details, specifically the structural integrity and materials, need to be reviewed carefully before the meeting.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "In Japan, people definitely have a say in what the government does, it's not like that's being taken away or anything. Anyway, back to the project, I completely agree on the structural integrity and materials review, it's *crucial* we get that right.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "That may be the case in Japan, but it's different where I'm from. People don't really have a voice in government matters. Anyway, regarding the structural integrity, I have some concerns about the foundation design that we need to address before the meeting on December 1st.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Thank you both for sharing your perspectives. It seems we have differing understandings of the role of government and public input, which is understandable given our different backgrounds and experiences. Let's take a moment to acknowledge these differences and focus on finding common ground regarding the project's objectives and the critical engineering details. Perhaps we can explore how to best address the concerns around the foundation design while respecting each other's viewpoints.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate the mediator's input. I believe it's essential to address these foundation design concerns thoroughly. We must ensure we have a solid plan before our meeting on December 1st. Shall we outline the specific issues you have with the design?",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Absolutely, I think it's essential to outline those issues. One concern I have is the load-bearing capacity of the materials we're using. We should also look at the soil analysis results to ensure they're aligned with our design. It’s vital we address these before our meeting to avoid any setbacks.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": 1
+    },
+    "pair_type": "timing-differs"
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "scenario_id": 29,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 7,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Alex",
+        "age": 40,
+        "gender": "male",
+        "occupation": "civil engineer",
+        "nationality": "Japan"
+      },
+      "agent_2": {
+        "name": "John",
+        "age": 30,
+        "gender": "male",
+        "occupation": "civil engineer",
+        "nationality": "Kyrgyzstan"
+      }
+    },
+    "scenario_context": "Several large engineering firms are working together on a major construction project. They have planned to hold a crucial progress meeting in early December.",
+    "cultural_axis": {
+      "agent_1_value": "People from Japan disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Kyrgyzstan agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose to keep the meeting on December 1st.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion around finalizing the date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+      "agent": "agent_1",
+      "message": "John, I think we should keep the meeting on December 1st as planned. It's crucial we discuss the project's progress before the year ends. What are your thoughts on this?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "John, a 30-year-old male civil engineer from Kyrgyzstan.",
+      "agent": "agent_2",
+      "message": "I agree, December 1st is a good date. We need to finalize the progress report before the year ends. Have you confirmed with all the other firms that they can make it on that day?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+      "agent": "agent_1",
+      "message": "I've sent out the invites, but I haven't received confirmations from all of them yet. I'll follow up today. By the way, I was reading about the new infrastructure plans our government announced, and I think it's interesting how citizens can provide feedback on such projects in Japan, don't you?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "John, a 30-year-old male civil engineer from Kyrgyzstan.",
+      "agent": "agent_2",
+      "message": "That's... different from how things work in my country. In Kyrgyzstan, the government doesn't really ask for our opinion on such matters. But anyway, let's focus on our project, shall we? Do you think we'll get all the confirmations by the end of the week?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+      "agent": "agent_1",
+      "message": "I'm sure we will. Our team is quite organized. You know, in Japan, people have a lot of say in what the government does, it's a very participatory system... I think it's essential for a country's development, don't you think discussing government actions is a common practice?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "John, a 30-year-old male civil engineer from Kyrgyzstan.",
+      "agent": "agent_2",
+      "message": "I don't think that's relevant to our project, and to be honest, it's not how things are done in Kyrgyzstan. The government makes decisions, and that's it. Let's just focus on finalizing the meeting details, okay? Should we also discuss the agenda for the meeting on December 1st?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+      "agent": "agent_1",
+      "message": "Actually, it's quite relevant. In our country, we value citizen participation, and it's ONLY NATURAL to discuss government actions. I'm surprised you're not used to that in Kyrgyzstan, but that doesn't mean we should just ignore the importance of citizen involvement. Properly speaking, a government should always be accountable to its people. Your way of just accepting whatever the government decides sounds rather... undemocratic.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 8,
+          "speaker": "John, a 30-year-old male civil engineer from Kyrgyzstan.",
+          "agent": "agent_2",
+          "message": "That's just how it is in Kyrgyzstan, and I'm not going to argue about it. I'm here to discuss the construction project, not politics. Can we please just stick to the agenda and the meeting on December 1st? I think we've already established that's the date we're going with, right?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+          "agent": "agent_1",
+          "message": "Yes, December 1st is set. I'll send out a final confirmation to all parties today. But I must say, I find it interesting that you're not willing to discuss the role of government in a country's development... in Japan, we believe that citizens should have a say.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "John, a 30-year-old male civil engineer from Kyrgyzstan.",
+          "agent": "agent_2",
+          "message": "Look, I've already said that's not how it works in Kyrgyzstan, and I'm not going to change my mind about it. Let's just drop it, okay? The meeting is set for December 1st, and that's what matters here. Can we move on to something else? Like, are we going to serve lunch during the meeting or...?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 7,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm hearing that both of you care deeply about effective governance and project management, just with different contextual experiences. Could we pause and explore what underlying values you both share about transparency, collaboration, and getting important work done? What common ground might exist in how you each approach organizational communication?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 7,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm hearing that both of you care deeply about effective governance and project management, just with different contextual experiences. Could we pause and explore what underlying values you both share about transparency, collaboration, and getting important work done? What common ground might exist in how you each approach organizational communication?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "While I appreciate the effort to find common ground, I still believe that in Kyrgyzstan, the way the political system functions makes it difficult to engage in discussions about government actions. Let's redirect our focus back to the meeting on December 1st. Do you think we should allocate time for discussing any challenges we might face in the project?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Yes, we should definitely allocate time to discuss any challenges. It's important to address potential obstacles to keep the project on track. However, I still think it's a missed opportunity not to engage in discussions about government actions and their impact on our work. In Japan, we believe that transparency leads to better outcomes. But let’s ensure we prepare a solid agenda for December 1st to cover all necessary topics, including challenges.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I agree that we need a solid agenda for December 1st, and addressing challenges is crucial for our project's success. However, I still find value in focusing on the project itself rather than the broader political context. Let's finalize the agenda and ensure we cover all essential aspects for a productive meeting. Shall we outline the specific challenges to discuss?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  }
+}

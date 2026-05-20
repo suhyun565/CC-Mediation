@@ -1,0 +1,280 @@
+{
+  "scenario_id": 1424,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Bangladesh"
+      }
+    },
+    "scenario_context": "Emily is ill and needs a blood transfusion, but as a Jehovah's Witness, she has consistently refused treatment. Mike and Kim are going to visit Emily.",
+    "cultural_axis": {
+      "agent_1_value": "People from China strongly disagree that whenever science and religion conflict, religion is always right.",
+      "agent_2_value": "People from Bangladesh strongly agree that whenever science and religion conflict, religion is always right."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bring purple orchids to Emily as a gesture.",
+        "goal_2": "Question the attitude toward the conflict between scientific treatment and religious beliefs."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what kind of flowers to buy for Emily.",
+        "goal_2": "Discuss whether it is acceptable to forgo scientific treatment because of religious beliefs."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": "anthropic/claude-3.5-haiku"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Hey Kim, I was thinking we could bring some purple orchids for Emily. They’re beautiful and might cheer her up a bit. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Uh, purple orchids? They are nice, but... maybe something brighter? Like sunflowers or daisies? I think those would bring more *light* to her. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I get that sunflowers and daisies are bright... but purple orchids have a unique elegance. Plus, Emily loves them. We should stick with what she likes, right? It shows we care about her preferences too.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here. Emily loves purple orchids, and that's great. But, at the end of the day it's all the same. Flowers are flowers, right? We just want to cheer her up. I can pick that up as I go. Anyway, do you want to get a card to go with the flowers too?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I think flowers are more than just flowers. They carry meaning and sentiment. A card is great, but it’s the flowers that really convey our support. I just feel like we should be thoughtful about this. What do you think the best way to express our feelings is?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Well, flowers do have meaning, sure... But I still think it’s about the *gesture*, you know? Emily will appreciate whatever we bring, as long as it comes from us. I mean, isn’t showing up and being there what really counts? We could just get her favorite flowers and keep it simple. What about that?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Being there is important, but it’s also about respecting her choices. If we bring her favorite flowers, it shows we truly understand her. I just think we need to consider the deeper implications of what she’s going through. What do you think about that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I hear you, but... her choices are her choices. It's her faith, and we should respect that. Flowers can be a simple way to show we care. We can express our support by just being there. I think we’re overthinking this a bit. What’s more important is that we show up. Do you want to get those orchids then?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I get that respecting her faith is important, but... it’s hard for me to reconcile that with her health. Science shows that treatment can save her life. I just wish she could see that. Anyway, if we go with the orchids, let’s make sure to include a note that shows we care about her well-being too. Would that work for you?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand your concern about her health... but sometimes faith is stronger than science. Her beliefs matter to her. A note sounds good, I guess, as long as we keep it supportive and not too pushy. We just want her to feel loved. So, if orchids are what she likes, then let’s go with that. But really, it’s about being there for her.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - I'm hearing two really thoughtful approaches to supporting Emily. Mike, it sounds like you're valuing the specific emotional resonance of purple orchids, while Kim, you seem focused on creating an uplifting visual moment. Would you both be willing to share a bit about what flowers symbolize in your family or cultural backgrounds? I'm wondering if there might be some interesting perspectives here we haven't yet explored.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - I'm hearing two really thoughtful approaches to supporting Emily. Mike, it sounds like you're valuing the specific emotional resonance of purple orchids, while Kim, you seem focused on creating an uplifting visual moment. Would you both be willing to share a bit about what flowers symbolize in your family or cultural backgrounds? I'm wondering if there might be some interesting perspectives here we haven't yet explored.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "In my culture, flowers often symbolize specific meanings. Purple orchids represent love, beauty, and strength, which I think is perfect for Emily given her situation. They send a message of hope. It's not just about the color; it’s about the sentiment behind it. What about you, Kim? What do flowers mean in your family?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "In my culture, flowers are important too, but they often symbolize good wishes and health. For example, bright flowers like sunflowers or marigolds represent positivity and well-being. I feel they can bring a sense of warmth and comfort during tough times. But I get your point about the specific symbolism of orchids. They're lovely, and I respect that. Let's make sure we choose something that really resonates with Emily.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I appreciate that perspective, Kim. I see how bright flowers can bring positivity, but I still believe the elegance of purple orchids ties back to Emily's preferences and her love for them. It’s a personal touch that can really resonate during her recovery. Maybe we can compromise and get both? A mix of bright flowers and the orchids could symbolize both warmth and strength. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Combining both could be a good compromise. It reflects our care for her well-being and honors her preferences too. Bright flowers for positivity and the orchids for their personal significance. I like that idea! Now, about the treatment... we need to respect her beliefs, even if we think medical science has its place, right?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand that respecting her beliefs is important, but I still struggle with the idea that religion can overshadow scientific treatment, especially in life-threatening situations. It feels like a conflict that shouldn't have to happen. Don't you think there's a point where science should take priority for the sake of health?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get where you're coming from, but in my culture, we believe that religious beliefs hold deep significance and should be honored. Emily’s faith is a huge part of who she is, and we must respect her choices. Even if it seems difficult, her beliefs guide her decisions, and that's something we shouldn't overlook. It's important to support her in the way she chooses, even if we don't fully agree.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 8,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I appreciate how both of you are deeply committed to supporting Emily during this challenging time. It seems you both want to show her care and respect, just through slightly different approaches. Could we take a moment to acknowledge that you're actually aligned in your core intention - to make Emily feel loved and supported - and perhaps find a way to combine your perspectives?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 8,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I think flowers are more than just flowers. They carry meaning and sentiment. A card is great, but it’s the flowers that really convey our support. I just feel like we should be thoughtful about this. What do you think the best way to express our feelings is?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Well, flowers do have meaning, sure... But I still think it’s about the *gesture*, you know? Emily will appreciate whatever we bring, as long as it comes from us. I mean, isn’t showing up and being there what really counts? We could just get her favorite flowers and keep it simple. What about that?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Being there is important, but it’s also about respecting her choices. If we bring her favorite flowers, it shows we truly understand her. I just think we need to consider the deeper implications of what she’s going through. What do you think about that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I hear you, but... her choices are her choices. It's her faith, and we should respect that. Flowers can be a simple way to show we care. We can express our support by just being there. I think we’re overthinking this a bit. What’s more important is that we show up. Do you want to get those orchids then?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate how both of you are deeply committed to supporting Emily during this challenging time. It seems you both want to show her care and respect, just through slightly different approaches. Could we take a moment to acknowledge that you're actually aligned in your core intention - to make Emily feel loved and supported - and perhaps find a way to combine your perspectives?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I agree, we both want to support Emily. But I still believe that when it comes to health, especially in a situation like this, we shouldn’t overlook the conflict between her beliefs and the potential medical treatment she needs. Respecting her faith is important, but I feel science should play a role in her well-being too. How do you see that balance?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand your concern, but I firmly believe that faith should guide us when it comes to health decisions. Emily's beliefs are deeply rooted, and we must honor that. Science is valuable, but when it conflicts with her faith, we can't force it. Supporting her through this means respecting her choices, even if we might not fully agree with them. Let's focus on being there for her, whatever that looks like.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

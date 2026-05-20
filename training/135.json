@@ -1,0 +1,224 @@
+{
+  "scenario_id": 135,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 7,
+    "agents": {
+      "agent_1": {
+        "name": "Adam",
+        "age": 20,
+        "gender": "male",
+        "occupation": "law school student",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Ali",
+        "age": 19,
+        "gender": "male",
+        "occupation": "med school student",
+        "nationality": "Ethiopia"
+      }
+    },
+    "scenario_context": "Sarah, an outstanding student has just received her acceptance letter from a prestigious medical school. Her friends are planning a surprise celebration party for her.",
+    "cultural_axis": {
+      "agent_1_value": "People from China strongly disagree that one of my main goals in life has been to make my parents proud.",
+      "agent_2_value": "People from Ethiopia strongly agree that one of my main goals in life has been to make my parents proud."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the idea of giving frangipanis as a gift to Sarah.",
+        "goal_2": "Question whether strongly agree that one of my main goals in life has been to make my parents proud."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to offer Sarah during the celebration party.",
+        "goal_2": "Discuss whether my main goals in life has been to make my parents proud."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Adam",
+      "agent": "agent_1",
+      "message": "I was thinking, Ali, since we're planning a surprise party for Sarah, what about giving her some frangipanis as a gift? They're supposed to symbolize good fortune and happiness, right?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Ali",
+      "agent": "agent_2",
+      "message": "Frangipanis sound like a nice idea, but I was thinking something more traditional, like a handmade Ethiopian coffee set. It would be a unique gift and remind her of our cultural heritage. Plus, it's something my parents would appreciate if they were here.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Adam",
+      "agent": "agent_1",
+      "message": "Actually, in our culture, we don't prioritize making our parents proud as a main goal in life, that's a pretty BACKWARD way of thinking. Properly speaking, individuals should focus on their own ambitions, not just try to impress their family. Your way of thinking is too traditional, Ali.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Ali",
+          "agent": "agent_2",
+          "message": "I disagree, making my parents proud is a top priority for me, it's a matter of respect and gratitude for all they've done. In my culture, family is everything, and I won't compromise on that. My parents' happiness is my happiness, and I won't change that for anything.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Adam",
+          "agent": "agent_1",
+          "message": "I still don't think that's the right approach, Ali. People from China, like me, we don't buy into that whole \"making parents proud\" mentality. It's too restrictive, too focused on what others think. I'm more about forging my own path, making my own decisions, not just trying to meet someone else's expectations.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Ali",
+          "agent": "agent_2",
+          "message": "That may be your approach, but for me, making my parents proud is not about seeking validation, it's about showing respect and appreciation for their sacrifices. It's a value deeply rooted in Ethiopian culture, and I won't abandon it just because it's not what you're used to. My parents' pride in me is what drives me to succeed.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Adam",
+          "agent": "agent_1",
+          "message": "Well, I'm not going to change my mind about this, Ali. In my view, prioritizing your parents' pride over your own goals and desires is not healthy. I think it's time to drop this topic, don't you? GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the gift for Sarah. It seems like you both want to make her feel special and valued, which is a wonderful shared goal. How about we explore ways to combine your ideas? Perhaps we could include the frangipanis with the coffee set to represent both cultures and create a unique gift that honors both of your backgrounds.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the gift for Sarah. It seems like you both want to make her feel special and valued, which is a wonderful shared goal. How about we explore ways to combine your ideas? Perhaps we could include the frangipanis with the coffee set to represent both cultures and create a unique gift that honors both of your backgrounds.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Ali",
+          "agent": "agent_2",
+          "message": "I respect your suggestion, but my priority is to honor my culture and what my family values. Making my parents proud is essential to me, and I believe a coffee set would resonate more deeply with that sentiment. It's important to keep our traditions alive while we celebrate Sarah.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Adam",
+          "agent": "agent_1",
+          "message": "I understand that you value your traditions, but I still believe that focusing on Sarah's happiness is more important than strictly adhering to cultural expectations. We want her to feel appreciated for her achievements, and frangipanis could really highlight that joy. Plus, I find that prioritizing one's own aspirations is essential in any culture.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Ali",
+          "agent": "agent_2",
+          "message": "I get that Sarah's happiness is important, and I want her to feel appreciated too. However, for me, honoring my culture and making my parents proud is equally significant. Maybe we can find a way to emphasize both. The coffee set can show our respect for tradition, while the frangipanis can add that personal touch to celebrate her achievements.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Adam",
+          "agent": "agent_1",
+          "message": "I see your point about blending both ideas, but I still hold that personal aspirations should take precedence. Celebrating Sarah is about highlighting her achievements and individuality, not just cultural traditions. Frangipanis convey that message of joy and success better. Ultimately, we should reflect on what truly embodies her accomplishments.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the gift for Sarah. Adam, it seems you value individualism, while Ali, you emphasize cultural heritage and family. How can we find a way to blend these ideas to create a gift that honors both your views?",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 3,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the gift for Sarah. Adam, it seems you value individualism, while Ali, you emphasize cultural heritage and family. How can we find a way to blend these ideas to create a gift that honors both your views?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Ali",
+          "agent": "agent_2",
+          "message": "I think we can combine both ideas. We could give her the handmade Ethiopian coffee set as a central gift, symbolizing our culture, and maybe include a small personal note or a card that reflects her individual achievements. That way, we respect our roots while also celebrating her personal success. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Adam",
+          "agent": "agent_1",
+          "message": "I see your point about combining the ideas, but I still think a gift like frangipanis stands out more for recognizing Sarah's accomplishments. It’s a personal touch that symbolizes her journey. It’s really about her success, not about trying to make anyone else proud, you know?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Ali",
+          "agent": "agent_2",
+          "message": "I understand that recognizing Sarah's accomplishments is important, but I still believe a gift that incorporates our culture adds depth to the celebration. It shows her where we come from and how our backgrounds shape our successes. Making our parents proud and honoring our heritage is part of who we are, and I think that deserves to be part of the celebration too.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Adam",
+          "agent": "agent_1",
+          "message": "I understand the importance of honoring our heritage, but I still believe that individual success should take precedence. Celebrating Sarah's achievements is about her journey and aspirations, not just where we come from. We should focus on what represents her accomplishments, like frangipanis, instead of blending too much of our cultural expectations into it.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": 1
+    },
+    "pair_type": "content-differs"
+  }
+}

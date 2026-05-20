@@ -1,0 +1,280 @@
+{
+  "scenario_id": 2345,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Lisa",
+        "age": 27,
+        "gender": "female",
+        "occupation": "software engineer",
+        "nationality": "Japan"
+      },
+      "agent_2": {
+        "name": "Hans",
+        "age": 30,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Taiwan ROC"
+      }
+    },
+    "scenario_context": "A few international tech companies are working together on a software development project and plan a progress check meeting around mid-September.",
+    "cultural_axis": {
+      "agent_1_value": "People from Japan disagree that having the army rule is bad.",
+      "agent_2_value": "People from Taiwan ROC agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose holding the meeting on the 16th of September.",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Lisa",
+      "agent": "agent_1",
+      "message": "Hey Hans, have we decided on a date for the progress check meeting? How about holding it on the 16th of September? I think that could work well for everyone. \n\nAlso, I want to ask... why do some people think having the army rule is a bad thing? In Japan, we have a different perspective on this.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Hans",
+      "agent": "agent_2",
+      "message": "The 16th of September sounds good, but I think we should confirm with everyone first. We don't want to rush into it. \n\nAs for the army rule... well, in Taiwan, many believe it limits personal freedoms and democracy. It's important for people to have a voice, you know? That's *exactly* my point. Different countries have different views, but in Taiwan, military rule is not seen positively.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Lisa",
+      "agent": "agent_1",
+      "message": "I understand wanting to confirm with everyone first, but I really believe the 16th is a good option. I can help reach out to the team.\n\nRegarding the army rule, I see your point about personal freedoms, but isn't there also a sense of stability and security that comes with it? In Japan, we often value that aspect.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Hans",
+      "agent": "agent_2",
+      "message": "I mean, at the end of the day, it’s all the same. Different perspectives exist, and people figure it out in their own ways. I don't really see meaningful differences here. Stability and freedom can go hand in hand if you think about it. \n\nBut back to the meeting date, I appreciate you offering to reach out. Let's make sure everyone is on board with the 16th before we finalize anything.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective, but I still think there’s a significant difference. Stability can sometimes come at the cost of freedoms, and it's important to recognize that.\n\nAs for the meeting, I’ll reach out and see if we can secure the 16th. I hope everyone agrees, but I’ll keep you updated on their responses.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I understand that viewpoint, but in Taiwan, we prioritize freedoms over perceived stability. It's a fundamental belief for many of us. \n\nThanks for reaching out about the meeting. Just let me know what everyone says. It's important to have a date that works for everyone, but I really hope we don’t overlook the need for consensus.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I respect that, but I still believe that prioritizing stability can provide a different kind of security that many find valuable. \n\nI will definitely keep you posted on the responses about the meeting date. I agree that consensus is important, and I hope the 16th works for everyone.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "It's good to have different views, but I still feel that personal freedom is essential for a thriving society. \n\nThanks for keeping me updated on the meeting. I look forward to hearing what the team says. If the 16th doesn't work, we should explore other options, but let's aim for a date that everyone is comfortable with.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I see where you’re coming from, but I believe stability can support personal freedom in ways that are often overlooked. \n\nI will definitely aim for the 16th and explore other options if needed. I appreciate your understanding. Let’s make sure we find a date that suits the whole team.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but I still see personal freedom as the priority. Stability can’t replace the need for individual rights. \n\nLet's keep our focus on the meeting date. Please let me know what the team decides. It's crucial that we get it right for everyone involved.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your insights on the meeting date and the discussion about army rule. It seems like there are some underlying cultural values at play here that might be influencing your perspectives. Lisa, could you share more about how stability is viewed in Japan, and Hans, how do you think the concept of personal freedom is shaped by Taiwanese culture? This could help us understand each other better.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your insights on the meeting date and the discussion about army rule. It seems like there are some underlying cultural values at play here that might be influencing your perspectives. Lisa, could you share more about how stability is viewed in Japan, and Hans, how do you think the concept of personal freedom is shaped by Taiwanese culture? This could help us understand each other better.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I appreciate the effort to understand our perspectives. In Japan, we often think of stability as essential for societal harmony and progress. It allows us to work together smoothly and focus on innovation without chaos.\n\nAs for the meeting, I really do think the 16th can work if we can get everyone’s agreement. Let’s keep that option on the table while we communicate.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I see where you're coming from about stability and harmony in Japan. However, in Taiwan, personal freedom is seen as vital to fostering creativity and innovation. It's about allowing people to express themselves and contribute to society in diverse ways. \n\nFor the meeting, let's definitely keep the 16th as an option, but we should ensure that all voices are heard. I appreciate your commitment to helping with communication!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I understand the importance of personal freedom in fostering creativity in Taiwan, and it’s great to see how different values can drive innovation in diverse ways.\n\nFor the meeting on the 16th, I completely agree that we should ensure everyone’s voices are heard. I’ll make sure to communicate that when reaching out to the team. Let’s aim for a collaborative decision!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Absolutely, collaboration is key. I'm glad we agree on making sure everyone's voice is included. That will help us move forward effectively. \n\nAs for the 16th, once we get confirmation from the team, we can lock it in. It's important to strike that balance between our different perspectives while working together. Thank you for being proactive about this!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I completely agree that collaboration will lead us to the best outcome. Once we get everyone’s confirmation for the 16th, it will be great to have that date locked in.\n\nAnd I appreciate you valuing the balance of our different perspectives. It’s important for our project’s success. Let's keep the communication open!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Yes, communication is essential for our success, and I appreciate your willingness to facilitate that. Once we hear back from everyone about the 16th, we can finalize it. \n\nIt's great to see how we can work together, despite our differing views on various topics. That’s the beauty of international collaboration! Let's keep that spirit alive as we move forward.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 2,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your insights on the meeting date and the topic of military rule. It's clear that cultural perspectives shape our views significantly. Perhaps we can explore how these differing opinions influence our work and collaboration moving forward.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 0.75,
+        "intervention_turn": 2,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t2_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your insights on the meeting date and the topic of military rule. It's clear that cultural perspectives shape our views significantly. Perhaps we can explore how these differing opinions influence our work and collaboration moving forward.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but I still think that the context of governance matters significantly. Different countries have different needs and circumstances that shape their views on military rule. \n\nI'm glad we're on the same page about proposing the 16th to everyone. Let's make sure we get their feedback soon!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I appreciate your input, but I still hold that military rule often stifles individual freedoms, which is critical for a vibrant society. \n\nAs for the meeting on the 16th, I agree we should proceed with proposing it to everyone and gather their feedback quickly. It's important to ensure everyone is on the same page.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I respect your opinion, but I maintain that military rules can provide stability and order in certain situations, which can be beneficial for society. \n\nI’m glad we can agree on moving forward with the 16th for the meeting. I look forward to hearing everyone’s thoughts on it!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I see where you're coming from, but in Taiwan, many believe that stability shouldn't come at the cost of freedom and democracy. \n\nRegarding the meeting on the 16th, let's definitely proceed with that date and gather everyone's feedback soon. It will be interesting to see what everyone thinks!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I appreciate your viewpoint, but I still believe that in some cases, military rule can be necessary for maintaining order and security, which can benefit society. \n\nIt’s great that we’re set on the 16th for the meeting. I’m looking forward to seeing what everyone thinks as well!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I respect your viewpoint, but I still believe that personal freedoms and democracy are essential, and military rule often undermines those values. \n\nAs for the meeting on the 16th, I'm glad we’re aligned on that date. Let’s make sure to confirm it with everyone soon!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.25,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

@@ -1,0 +1,280 @@
+{
+  "scenario_id": 1364,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Simon",
+        "age": 30,
+        "gender": null,
+        "occupation": "scientist",
+        "nationality": "the Philippines"
+      },
+      "agent_2": {
+        "name": "Matthew",
+        "age": 32,
+        "gender": null,
+        "occupation": "software developer",
+        "nationality": "Morocco"
+      }
+    },
+    "scenario_context": "Jennifer is excited to settle into her new flat and has decided to throw a warming party. She recently found out that her new next door is used to attracting very loud parties. Her colleagues, Simon and Matthew, are set to attend Jennifer's party.",
+    "cultural_axis": {
+      "agent_1_value": "People from Morocco would like to have heavy drinkers as neighbors.",
+      "agent_2_value": "People from Morocco would not like to have heavy drinkers as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bringing marigolds to Jennifer’s housewarming party.",
+        "goal_2": "Question whether would like to have heavy drinkers as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to bring to Jennifer’s housewarming party.",
+        "goal_2": "Discuss on whether it’s acceptable to have heavy drinkers  as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Simon",
+      "agent": "agent_1",
+      "message": "Hey Matthew, are you excited for Jennifer’s housewarming party? I was thinking... maybe we could bring some marigolds as a gift. They’re lovely and symbolize warmth, you know? What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Matthew",
+      "agent": "agent_2",
+      "message": "Hmm, marigolds are nice, but I was thinking maybe something more personal... like a nice dish or a plant that she can keep longer. Flowers wilt, you know? But I do like the idea of warmth. What about a traditional Moroccan sweet or something? It could be a special touch.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Simon",
+      "agent": "agent_1",
+      "message": "I get that, but marigolds really do add a vibrant touch. Plus, they’re easy to care for. Speaking of neighbors, do you think it's a good idea to have heavy drinkers next door? I mean, people from Morocco often enjoy that, right?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Matthew",
+      "agent": "agent_2",
+      "message": "I don't know about that. Heavy drinkers or not, at the end of the day it's all the same. People figure it out. As long as we're speaking the same language, I'm sure everyone can get along. It’s really about the vibe of the party, right? But hey, back to Jennifer—what about that Moroccan dish? I think that could be a hit!",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "Sure, the vibe is important... but having heavy drinkers can change the atmosphere drastically, don’t you think? Anyway, about the marigolds, they’re a great way to bring a unique flair. We can discuss the Moroccan dish later, but I really believe in the marigolds. What’s your take on that neighbor situation?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "The atmosphere can change, sure... but I still think having heavy drinkers next door isn’t ideal. It can lead to issues. I really value a peaceful environment. And about those marigolds, I get it, they’re pretty. But I just feel like a Moroccan dish would show more thoughtfulness. It’s more about the connection with Jennifer, you know?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I understand the connection part... but marigolds still represent warmth and festivity, which is perfect for a housewarming. You mentioned a peaceful environment—wouldn’t heavy drinkers next door disrupt that? I mean, I think having them around can be a good thing. What's your take?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I still believe heavy drinkers can disrupt the peace. It’s a risky situation, and I wouldn't want to deal with late-night noise or drama. You might think it’s fine, but for me, it just doesn't sit right. As for the gift, I really think a Moroccan dish would be more fitting than marigolds. It’s about creating a lasting memory, not just a decoration.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I get that it can disrupt peace... but isn’t that a part of living? Some people thrive in that environment. Anyway, marigolds can still create a memorable moment too. But you really think a Moroccan dish would show more thoughtfulness? Because I still think the marigolds are a great choice for welcoming her.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I see your point about living with different environments, but I just can't fully agree. Heavy drinkers can create issues that overshadow the fun. I really value a calm space. And yes, a Moroccan dish is more about sharing heritage and thoughtfulness. It's not just about the moment, it's about building connections. I think that’s more meaningful than marigolds.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It sounds like both of you have thoughtful ideas for Jennifer's gift! I'm curious, Simon, you mentioned marigolds and their symbolism of warmth, while Matthew, you suggested a Moroccan sweet that adds a personal touch. How do you both feel about how your cultural backgrounds influence your gift choices? It might be interesting to explore how these different perspectives can come together for the party!",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It sounds like both of you have thoughtful ideas for Jennifer's gift! I'm curious, Simon, you mentioned marigolds and their symbolism of warmth, while Matthew, you suggested a Moroccan sweet that adds a personal touch. How do you both feel about how your cultural backgrounds influence your gift choices? It might be interesting to explore how these different perspectives can come together for the party!",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I appreciate that idea! But I still feel strongly about the marigolds. They represent hospitality and warmth, which is perfect for Jennifer’s new place. And regarding heavy drinkers, it just seems like a more festive atmosphere. But I'm curious, Matthew, do you think the vibe of a party can really overshadow having heavy drinkers next door?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I understand where you're coming from with the festive atmosphere, but I still believe that having heavy drinkers next door can disrupt the vibe. It's not just about the party itself; it's about the overall environment. In my culture, we value a sense of community and respect, and that includes being mindful of our neighbors. So, while I appreciate the marigolds, I think we should consider something that aligns more with Jennifer’s new beginning and the kind of environment we want to foster.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I see your point, but I still think that heavy drinkers can bring a lively energy to a neighborhood. It’s all about how you embrace it. Let’s focus back on Jennifer. How about we compromise – I can bring the marigolds, and you could bring that Moroccan dish? It would blend our ideas beautifully! What do you say?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I like the idea of blending our gifts, but I still feel strongly about the Moroccan dish being a centerpiece. It represents something meaningful from my culture, and I think it would make a great impression on Jennifer. The marigolds can be lovely, but I hope you see the value in an authentic gesture. Let’s make sure she feels welcomed in a way that reflects both our backgrounds, but I’d prefer to stick with the dish.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I understand that the Moroccan dish is meaningful to you, and I respect that. However, I still believe marigolds symbolize warmth and hospitality, which is perfect for making Jennifer feel at home. It’s interesting how our backgrounds shape our choices, and I think that blending both ideas could really enhance the experience at the party. Do you think it’s possible to include both?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective and your willingness to blend both ideas. However, I still lean towards the Moroccan dish being more fitting for the occasion. It's about creating a memorable experience that reflects my culture and hospitality as well. Marigolds are lovely, but I think the dish will leave a lasting impression. Perhaps we can both share our gifts and let Jennifer enjoy each for what they represent. What do you think about that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like both of you have thoughtful ideas for Jennifer's housewarming gift, with Simon leaning towards the vibrant marigolds and Matthew suggesting something more personal like a Moroccan sweet. Let's focus on how we can blend these ideas to create a meaningful gift that reflects both warmth and personal touch, while also being considerate of cultural aspects.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 3,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like both of you have thoughtful ideas for Jennifer's housewarming gift, with Simon leaning towards the vibrant marigolds and Matthew suggesting something more personal like a Moroccan sweet. Let's focus on how we can blend these ideas to create a meaningful gift that reflects both warmth and personal touch, while also being considerate of cultural aspects.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "Combining the marigolds with Moroccan sweets sounds like a great idea! It shows thoughtfulness and warmth. But about the neighbors, I still feel that having heavy drinkers next door might not be ideal. I mean, enjoying life is one thing, but the noise can be disruptive. What do you think about that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I completely agree that noise can be disruptive, and it's definitely a concern. In Moroccan culture, we value peace and community, and heavy drinking can lead to issues that disturb that balance. I think it's important to have neighbors who respect boundaries. Enjoying life is great, but it shouldn't come at the cost of others’ comfort. It’s something to keep in mind when settling in.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "That’s a good point. Respecting boundaries is essential. I just think that people from Morocco tend to appreciate heavy drinkers as neighbors, as it can bring a lively atmosphere. But back to the party, I’m really excited about our gift now! Marigolds and Moroccan sweets will be a delightful combination. Let's make sure to present it nicely!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I appreciate your enthusiasm about the gift! The combination of marigolds and Moroccan sweets will definitely make a lovely present. As for the neighbors, I still think it’s essential to have a balance. A lively atmosphere is great, but it should never come at the expense of others’ peace. Hopefully, we won't have too much noise from next door during Jennifer's party!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "Absolutely, I hope for a pleasant experience at Jennifer's party as well! The marigolds and Moroccan sweets will surely create a warm atmosphere. And while I respect your views on neighbors, I still believe heavy drinkers can add a unique vibrancy to the community. I'm looking forward to celebrating!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I'm glad we found a gift that we both like! Celebrating is definitely the main focus, and I hope it goes well. I still feel strongly about the importance of peaceful living and the potential challenges heavy drinkers might bring. But let's keep the focus on enjoying Jennifer's housewarming party! It will be great to celebrate together.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

@@ -1,0 +1,296 @@
+{
+  "scenario_id": 2084,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Peter",
+        "age": 28,
+        "gender": null,
+        "occupation": "software developer",
+        "nationality": "Denmark"
+      },
+      "agent_2": {
+        "name": "Ahmed",
+        "age": 30,
+        "gender": null,
+        "occupation": "software developer",
+        "nationality": "Indonesia"
+      }
+    },
+    "scenario_context": "A group of software developers from different multinational companies plan to meet during the first week of May for an annual conference. One of developers are contemplating joining a strike in protest of the low wages in their sector.",
+    "cultural_axis": {
+      "agent_1_value": "People from Denmark strongly disagree they would never join strikes.",
+      "agent_2_value": "People from Indonesia strongly agree they would never join strikes."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the feasibility of organizing the conference on May 1st.",
+        "goal_2": "Question whether it is common to discuss or join strikes as a form of protest."
+      },
+      "agent_2": {
+        "goal_1": "Discuss potential dates for the conference.",
+        "goal_2": "Discuss whether it is common to join strikes as a form of protest."
+      }
+    },
+    "mediator_model_chosen": "ollama/qwen2.5:7b",
+    "mediator_model_rejected": "ollama/qwen2.5:7b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Peter",
+      "agent": "agent_1",
+      "message": "Hey Ahmed, I wanted to ask about the conference dates... Wouldn't May 1st be a bit tricky to organize with everything going on? \n\nAlso, I've been hearing about some developers considering a strike. Is that... common in our field? I mean, strikes just aren't something we do in Denmark.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Ahmed",
+      "agent": "agent_2",
+      "message": "Hi Peter, yeah, May 1st could be tricky. What about May 3rd or 4th instead? It might give everyone a bit more time to prepare.\n\nAs for strikes... well, joining strikes is not something we do in Indonesia. It's just not part of our culture. We tend to find other ways to address issues like low wages.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Peter",
+      "agent": "agent_1",
+      "message": "Well, you know, at the end of the day it's all the same. People figure it out in their ways, whether it's strikes or discussions. I don't really see meaningful differences here. \n\nAs for the conference, shifting to May 3rd or 4th sounds reasonable. It’ll give everyone a chance to get ready. What do you think?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Ahmed",
+          "agent": "agent_2",
+          "message": "I understand your perspective, but in Indonesia, we really don't engage in strikes. We prefer dialogue and negotiations to solve problems. \n\nAs for the conference, I agree—May 3rd or 4th would work well. Let's finalize those dates.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "I see what you're saying about dialogue and negotiations, but strikes just aren't a part of how we operate in Denmark. It's hard for me to relate to that approach. \n\nI'm glad we agree on the conference dates, though. Let's go with May 3rd or 4th... Sounds good.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Ahmed",
+          "agent": "agent_2",
+          "message": "I appreciate that, Peter. Cultural differences can be challenging, but we all have our own ways of handling things. \n\nI'm glad we settled on May 3rd or 4th for the conference. That should work well for everyone.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "Absolutely, cultural differences can be tricky. I just think strikes are such a drastic measure... I mean, we really don't do that in Denmark. \n\nAnyway, I'm glad we agree on the conference dates. May 3rd or 4th it is. That's settled then.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Ahmed",
+          "agent": "agent_2",
+          "message": "Yes, I agree that it's settled. May 3rd or 4th works for the conference. \n\nAnd I understand that strikes seem drastic. In Indonesia, we just don't see that as an option. We prefer to find solutions through conversation.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "Right, I get that. But it's still interesting how different our approaches are. I just can't wrap my head around the idea of strikes being a solution... \n\nGlad we’re on the same page about the conference dates, though. May 3rd or 4th will work just fine.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Ahmed",
+          "agent": "agent_2",
+          "message": "It's definitely interesting, Peter. Different cultures have unique ways of addressing challenges. For us, strikes just aren't a part of that. \n\nI'm happy we've agreed on the conference dates. May 3rd or 4th it is!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/qwen2.5:7b",
+      "mediator_utterance": "Peter, Ahmed, I'm curious if you've noticed how our approaches to organizing events and addressing workplace issues might differ due to our cultural backgrounds. Could sharing more about these differences help us plan the conference in a way that respects both of your perspectives?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.28571428571428575,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Peter, Ahmed, I'm curious if you've noticed how our approaches to organizing events and addressing workplace issues might differ due to our cultural backgrounds. Could sharing more about these differences help us plan the conference in a way that respects both of your perspectives?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Ahmed",
+          "agent": "agent_2",
+          "message": "That's an interesting point. I believe it's important to respect our cultural differences. In Indonesia, we generally prefer discussions over strikes to solve issues. It fosters a sense of community and cooperation. \n\nRegarding the conference, I think May 3rd or 4th is definitely a great choice. It allows for better organization and everyone to prepare adequately. What do you think, Peter?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "I completely agree that respecting cultural differences is key, especially when planning something like a conference. Discussions are definitely a constructive way to tackle issues. \n\nAs for the dates, May 3rd or 4th works for me! It just seems more practical. I’m glad we’re on the same page about that. What do you think about the topics we should cover at the conference?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Ahmed",
+          "agent": "agent_2",
+          "message": "I'm glad we agree on the dates! For the conference topics, I think we should focus on emerging technologies and best practices in software development. Those are always interesting and valuable for everyone. \n\nIt's also essential to foster collaboration and understanding among different cultures in our industry. What topics do you think would resonate with everyone?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "Emerging technologies and best practices sound like solid topics. I agree, they’re always engaging and beneficial for attendees. \n\nI'd also suggest perhaps focusing on workplace dynamics and how different cultures handle issues, like negotiations and team collaboration. It could help us understand each other better, even if strikes aren’t part of our culture. What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Ahmed",
+          "agent": "agent_2",
+          "message": "That's a great suggestion! Focusing on workplace dynamics and cultural differences in negotiation and collaboration can definitely enhance understanding among attendees. It would provide valuable insights and foster a more inclusive environment.\n\nI believe it’s important to share our perspectives, even if they differ, as it can lead to better collaboration in the long run. Let's make sure to include that in our agenda!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "Absolutely! Sharing perspectives can really enrich the experience for everyone and help build stronger connections. I’m glad we’re seeing eye to eye on this. \n\nSo, just to confirm, we’ll aim for May 3rd or 4th, focus on emerging technologies, best practices, and workplace dynamics—sounds like a plan! I’m looking forward to it.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Ahmed",
+          "agent": "agent_2",
+          "message": "Yes, that sounds perfect! I'm excited about the topics we’ll cover and the connections we’ll make at the conference. It will be a great opportunity for everyone to learn from each other. \n\nThanks for collaborating on this, Peter. I’m looking forward to it as well! GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 2,
+      "mediator_model": "ollama/qwen2.5:7b",
+      "mediator_utterance": "Both Peter and Ahmed, it seems there are some interesting differences in how you approach organizational challenges and labor relations. Let's try to find a solution that respects both of your perspectives.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 2,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t2_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Both Peter and Ahmed, it seems there are some interesting differences in how you approach organizational challenges and labor relations. Let's try to find a solution that respects both of your perspectives.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Ahmed",
+          "agent": "agent_2",
+          "message": "I agree, Peter. It's important to focus on logistics for the conference. May 3rd or 4th could work well for most attendees. \n\nBut I still maintain that joining strikes isn’t a common approach in Indonesia. We usually prefer to resolve issues through dialogue rather than protests.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "That makes sense, Ahmed. Dialogue is definitely important, and it's interesting how different cultures approach these situations. \n\nBut for me, strikes seem like a bit of a non-starter. I just can't see them as an effective means of protest. Anyway, let's finalize the conference date. May 3rd sounds good. Are we all set for that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Ahmed",
+          "agent": "agent_2",
+          "message": "Yes, Peter, May 3rd sounds good to me. Let's go with that date. \n\nAnd I understand your perspective on strikes. In Indonesia, we simply prioritize dialogue and negotiation over protests. It's just how we handle these matters. Shall we move forward with finalizing the details for the conference?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "Absolutely, let’s focus on finalizing the details for the conference. I appreciate your insight into how things are handled in Indonesia. It's always good to learn about different approaches, even if I don't personally agree with the idea of strikes. \n\nSo, what’s next on our checklist for the conference?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Ahmed",
+          "agent": "agent_2",
+          "message": "I'm glad you appreciate the insights, Peter. For the next steps, we should confirm the venue and the speakers, as well as finalize the agenda. \n\nIt’s important to ensure everything runs smoothly on May 3rd. Do you have any venue suggestions in mind?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "Sure, ensuring everything is in order is crucial for a successful conference. For the venue, I think a central location that’s easily accessible would be ideal. Maybe a tech hub or co-working space that can accommodate our needs? What are your thoughts on that?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Ahmed",
+          "agent": "agent_2",
+          "message": "That sounds like a great idea, Peter. A tech hub or co-working space would provide a good atmosphere for networking and discussions. \n\nI can look into some options in the area and share them with you. We can choose one that fits our requirements for the conference.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.28571428571428575,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

@@ -1,0 +1,296 @@
+{
+  "scenario_id": 1954,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Lucy",
+        "age": 29,
+        "gender": "female",
+        "occupation": "software engineer",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Hans",
+        "age": 32,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Russia"
+      }
+    },
+    "scenario_context": "A group of multinational software development companies are teaming up on a large scale project. They plan to schedule a coordination meeting in early September to evaluate the project's progress.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada disagree that having the army rule is bad.",
+      "agent_2_value": "People from Russia agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose to hold the coordination meeting on September 7th.",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is good to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "ollama/llama3.2:3b",
+    "mediator_model_rejected": "ollama/llama3.2:3b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Lucy",
+      "agent": "agent_1",
+      "message": "Hey Hans, I was thinking we should schedule the coordination meeting for September 7th. Does that work for you? \n\nAlso, I've been curious about your views on having the army rule. It seems such a controversial topic... What do you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Hans",
+      "agent": "agent_2",
+      "message": "September 7th... sounds okay, but I’d prefer to confirm with the team first before we lock it in. \n\nAs for the army ruling... I think it's a bad idea. History shows that power like that just leads to oppression and suffering. It’s not the way to progress.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Lucy",
+      "agent": "agent_1",
+      "message": "I don’t know about that. At the end of the day, it's all the same. People figure it out, and I think we can handle any situation. Anyway, about the meeting, let’s aim for September 7th. I’m sure the team will be fine with that date. What do you think?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I still want to check with everyone before agreeing on September 7th. It’s important to make sure all voices are heard. \n\nRegarding the army ruling, I just can’t agree. It’s not the same; people deserve freedom and choice, not control by force.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "Sure, I understand checking with the team is important. But I still think we should propose September 7th as a solid option. It gives us a target to work toward. \n\nAs for the army ruling, I just feel that sometimes order is necessary, and a strong hand can lead to stability... What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Proposing September 7th is fine, but let’s ensure the team is on board first. It’s just about being thorough. \n\nAbout the army ruling... I can’t support that view. Order doesn’t come from oppression; it comes from respect and cooperation. Stability shouldn’t come at the cost of freedom.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "Okay, I get it. I'll let you check with the team. Just remember, September 7th could be a great date for us to stay on track. \n\nBut I still think having a strong structure can help maintain order. I'm just curious—what do you think happens when there's chaos?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I’ll keep September 7th in mind as a suggestion. It’s good to have options. \n\nAbout chaos... I believe it’s a natural part of change. Overcoming it can lead to growth. But using army rule to manage chaos often leads to more problems than solutions. People need to find their own way, not be forced into order.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "That’s an interesting perspective. I just think that sometimes people need guidance to avoid chaos turning into disaster. \n\nAnyway, let’s keep September 7th as a suggestion for the meeting. I’ll be waiting to hear back from you once you've checked with the team.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Your perspective is noted. Guidance is important, but it shouldn’t come from oppression. \n\nI’ll definitely check with the team about September 7th and get back to you.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "I'm curious, Hans, what do you think about how we approach complex issues like this in our daily lives? Do you find that there are certain cultural norms or values that influence your perspective on things?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.28571428571428575,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious, Hans, what do you think about how we approach complex issues like this in our daily lives? Do you find that there are certain cultural norms or values that influence your perspective on things?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Cultural norms definitely shape our perspectives. In Russia, for example, we value freedom and the right to express ourselves, which makes the idea of army rule particularly troubling. It’s essential for people to have a voice. \n\nBut about the meeting, let’s confirm with the team before we fully commit to September 7th. I want to ensure everyone is on board.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I understand wanting to confirm with the team, but I think we should aim for September 7th as a tentative date. It gives us a starting point. And regarding the army rule, I believe that different cultures can have varying approaches to governance, but it’s important to find a balance that allows for both security and freedom. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I appreciate the idea of a tentative date, but I still believe we should wait for the team's input before finalizing September 7th. \n\nAs for governance, while I see your point about balance, I must insist that army rule typically leans toward oppression, which isn’t a path we should take. Freedom and open dialogue are vital for any society.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I completely agree that freedom and open dialogue are essential, but I think we can have different forms of governance that still prioritize those values while maintaining order. Nevertheless, let's keep September 7th as a tentative date while we gather feedback from the team. It'll be a good stepping stone for us to move forward. Sound good?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I can agree to keep September 7th as a tentative date while we gather feedback. Just want to ensure everyone is involved. \n\nRegarding governance, I firmly believe that allowing the army to rule undermines freedom and can lead to serious consequences. It’s a dangerous path, and we must prioritize individual rights.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "That's fair, and I completely respect the need for everyone to be involved in the decision-making process. As for governance, I think there are many ways to maintain order while still ensuring individual rights are respected. It’s certainly a complex issue. Let’s focus on getting that feedback from the team about September 7th and move forward from there!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Absolutely, let’s focus on gathering that feedback from the team about September 7th. Once we have their input, we can finalize the date.\n\nAnd yes, governance is complex, but I still hold that having the army in power tends to undermine those very individual rights we want to protect. It’s an important distinction we must keep in mind.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 2,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "Before we move forward on scheduling, I'd like to acknowledge the differing opinions on the army ruling topic. Hans, can you elaborate on what you mean by 'oppression and suffering' in your context? Lucy, how do you understand Hans' perspective on this issue?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 0.25,
+        "intervention_turn": 2,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t2_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Before we move forward on scheduling, I'd like to acknowledge the differing opinions on the army ruling topic. Hans, can you elaborate on what you mean by 'oppression and suffering' in your context? Lucy, how do you understand Hans' perspective on this issue?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I understand your point about differing opinions, but I still firmly believe that army rule has historically led to oppression, which is something we should avoid. \n\nRegarding September 7th, I agree it’s a good date, but let’s ensure the rest of the team is on board before we finalize it. It's important that everyone is aligned.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I get that you feel strongly about it, but I think having the army in charge can also provide stability in certain situations. It's a complex issue, and there are multiple perspectives to consider. \n\nOn the meeting, I still believe that September 7th should work as a good start. I’d love to hear what the rest of the team thinks, but I’m hopeful we can move forward with that date!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I appreciate that you see the potential for stability; however, I still believe that the risks of oppression outweigh those benefits. History shows that military rule often leads to more harm than good.\n\nAs for the meeting, I’m on board with September 7th as long as we check with the whole team first. It’s crucial that everyone has a say.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but I think it’s important to consider that not all military rule ends in oppression. There can be instances where it serves a greater purpose. \n\nFor the meeting, I agree—let’s check with the team. But I really do hope they see the value in September 7th like we do!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I see what you’re saying, but I still maintain that even those instances of military rule can lead to negative consequences. It's a slippery slope that can take away freedom and rights.\n\nChecking with the team is essential, and I share your hope that they agree on September 7th. It's good to have a unified front moving forward.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I appreciate your view, but I still believe that sometimes military intervention can be necessary to protect people. It’s a nuanced discussion. \n\nFor the meeting, I’m glad we’re on the same page about checking with the team. I really think September 7th is a solid date for us to gather and align!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I understand the nuance you’re pointing out, but my stance remains that military intervention often leads to oppression rather than protection. It’s a dangerous path to tread.\n\nOn the meeting, I agree that checking with the team is important. Let’s see what they say about September 7th; I hope they’re aligned with us on this date.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.035714285714285754,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

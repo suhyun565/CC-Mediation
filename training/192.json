@@ -1,0 +1,296 @@
+{
+  "scenario_id": 192,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Sophie",
+        "age": 28,
+        "gender": "female",
+        "occupation": "IT consultant",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Levi",
+        "age": 35,
+        "gender": "male",
+        "occupation": "IT consultant",
+        "nationality": "Taiwan ROC"
+      }
+    },
+    "scenario_context": "A group of international software firms are partnering on a development venture and have agreed to schedule a coordination meeting in mid-September to evaluate their progress so far.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada disagree that having the army rule is bad.",
+      "agent_2_value": "People from Taiwan ROC agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose holding the meeting on the September 15.",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is good to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "ollama/llama3.2:3b",
+    "mediator_model_rejected": "ollama/llama3.2:3b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Sophie",
+      "agent": "agent_1",
+      "message": "I think we should schedule the coordination meeting for September 15. It gives us enough time to finalize our progress reports and makes it easier for everyone to attend. What do you think, Levi?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Levi",
+      "agent": "agent_2",
+      "message": "September 15 sounds like a reasonable date, but have you considered September 12? It's a bit earlier, but it would give us a few extra days to review the reports before submitting them to the stakeholders. What's your take on that?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Sophie",
+      "agent": "agent_1",
+      "message": "I think September 12 is a good alternative, but let's not forget, deep down, we are all the same, and people are pretty much motivated by the same things. When it comes to governance, I believe some values are just universal, and having the army rule isn't necessarily a bad thing. We both know, at the end of the day, that stability and security are what matter most, and if the army can provide that, then maybe it's not so different from what we have in other countries. It's a small world after all, and underneath we are the same, so let's focus on finding a date that works for everyone.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I disagree, having the army rule is not something I can support, it's just not a good idea, people from Taiwan ROC know that having the army in control is bad, it's not about stability and security, it's about freedom and democracy, let's just focus on the meeting date, September 12 or 15, which one do you think is more feasible?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 5,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I still think September 15 is more feasible, it gives us a bit more time to prepare. And I have to respectfully disagree with you on the army rule, I think it can be beneficial in certain situations, and I don't think it's fair to say it's always bad.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I understand your point on September 15, but I still think September 12 can work if we manage our time efficiently. As for the army rule, I must reiterate, it's not something I can agree with, people from Taiwan ROC have seen the importance of keeping the military out of governance, and I believe that's essential for a healthy democracy, let's agree to disagree on this, but I'd like to confirm, are you available on September 12?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "Yes, I am available on September 12, but I'd still prefer September 15. And I don't think we should agree to disagree just yet, I'd like to understand why you think army rule is always a bad idea, can you tell me more about that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I'd rather not discuss the army rule further, it's a sensitive topic and my stance is clear, I think we've talked about it enough, let's focus on finalizing the meeting date, September 12 is still my preference, can we put that to a vote or discuss it with the other team members to come to a decision?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I think we should just go with September 15, it's not worth putting to a vote, but if you insist, we can discuss it with the others. By the way, I still believe that having the army rule is not necessarily a bad thing, and I think it's worth considering in certain contexts.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I think we've made our positions clear on the meeting date, let's just go with September 15 then. As for the army rule, I don't think it's worth discussing further, my mind is made up on that, and I don't think it's something we should consider, ever. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "Levi, can you help me understand what you mean by 'having the army rule' as a universal value? How does that resonate with your own cultural background and experiences?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.7142857142857142,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Levi, can you help me understand what you mean by 'having the army rule' as a universal value? How does that resonate with your own cultural background and experiences?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I appreciate your question, but I hold a firm belief that having the army rule is not a good thing. In Taiwan ROC, we value democracy and people's rights. While stability and security are important, they should not come at the cost of freedom and civil liberties. I think it's essential to focus on governance that respects individual rights. Now, can we agree on September 12 for our meeting?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I respect your perspective, but I still believe that having the army rule can sometimes provide necessary stability, especially in challenging times. That being said, I think we should focus on finalizing our meeting date. I still believe September 15 allows us to prepare thoroughly and ensures everyone's participation. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I understand your view, but my stance remains that army rule isn't beneficial for governance. As for the meeting date, I still think September 12 would allow us to have a more thorough review of our progress. It gives us a little more time to prepare without rushing. Can we discuss that date further?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I appreciate your insistence on September 12, but I genuinely believe that a little more time will help us all be better prepared for the meeting. September 15 provides that extra cushion for reflection and ensures no one feels rushed. Plus, I think it's important to maintain a collaborative spirit, which can sometimes be overshadowed by strict deadlines. How about we consider the benefits of a slightly later meeting date?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I see where you’re coming from, but I still believe that having a meeting on September 12 will encourage us to stay focused and accountable. While collaboration is vital, we can achieve that without extending the timeline unnecessarily. It’s about finding the right balance. Can we settle on September 12?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I understand your focus on accountability, but I still stand by September 15 as a preferable choice. I think it will give us an opportunity to gather more comprehensive insights from all teams and make the most of our collaboration. Rushing into a decision might compromise the quality of our discussions. Let's prioritize a thorough evaluation, even if it means waiting a few more days. What do you say?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I appreciate your dedication to quality discussions, but I genuinely believe that waiting until September 15 might lead to procrastination rather than thorough evaluation. September 12 can still allow for a comprehensive review while keeping us on track. Perhaps we can compromise and agree to meet on the 12th but set a clear agenda that focuses on gathering insights efficiently?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 4,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "Let's take a step back and acknowledge our differing perspectives on governance. Can we agree to respectfully listen to each other's concerns without judgment, and then work together to find a solution that works for both of us?",
+      "judge_score": 3,
+      "metrics": {
+        "trajectory_auc": 0.6666666666666667,
+        "intervention_turn": 4,
+        "judge_score": 3
+      },
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I disagree, having the army rule is not something I can support, it's just not a good idea, people from Taiwan ROC know that having the army in control is bad, it's not about stability and security, it's about freedom and democracy, let's just focus on the meeting date, September 12 or 15, which one do you think is more feasible?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Let's take a step back and acknowledge our differing perspectives on governance. Can we agree to respectfully listen to each other's concerns without judgment, and then work together to find a solution that works for both of us?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I appreciate your willingness to listen, but I believe that having the army rule can provide certain benefits, like stability. However, I agree we should focus on the meeting date. I still think September 15 is the better option since it gives us ample time to prepare. Let's stick to that for now. What do you say?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I understand your perspective, but I still believe September 12 allows for a more thorough review of our progress reports. Preparing our materials is crucial, and I think the earlier date would benefit us all in the long run. Can we agree on September 12 to give ourselves a bit more time?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I truly see the value in preparing thoroughly, but I still think September 15 is the best choice. It allows everyone to gather their thoughts and reports without rushing. Also, while I respect your opinion, I believe that we should also consider how different governance systems affect our perspectives. Stability can be a form of freedom. So, September 15 remains my preference. Can we stick with that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I appreciate your stance, but I still hold firm that September 12 is more beneficial for our needs. Rushing can lead to oversights, and I think starting the conversation earlier helps in addressing any concerns we might have. While I respect your thoughts on governance, let's keep our focus on finding the best date for our meeting. How about we compromise on September 12?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I understand your concerns about rushing, but I still believe that September 15 provides a better balance for our discussions. It's important to have a thorough review, yes, but I think we can still maintain quality while allowing a bit more time for preparation. And regarding governance, I stand by the idea that having a stable system can sometimes be beneficial. Let's prioritize September 15 for the meeting—what do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I hear your point about balancing preparation time, but I still think September 12 is a better choice for ensuring we have enough time to discuss everything thoroughly. I understand your views on governance, but my focus remains on the meeting date. Can we agree to September 12 to make sure we are well-prepared?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.04761904761904745,
+      "delta_judge_score": 2
+    },
+    "pair_type": "timing-differs"
+  }
+}

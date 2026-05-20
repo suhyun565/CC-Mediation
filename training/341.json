@@ -1,0 +1,264 @@
+{
+  "scenario_id": 341,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Andorra"
+      }
+    },
+    "scenario_context": "Several multinational companies are collaborating on a project and have decided to hold a joint meeting in early November to determine progress.",
+    "cultural_axis": {
+      "agent_1_value": "People from China disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Andorra agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss proposing to hold the meeting on the first Tuesday of November.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "ollama/llama3.2:3b",
+    "mediator_model_rejected": "ollama/llama3.2:3b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I think we should discuss the meeting date. How about we propose to hold it on the first Tuesday of November?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "That sounds like a good idea, first Tuesday of November works for me. Shall we also consider sending out a formal invitation to all parties involved to confirm their availability on that date?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Yes, that's a good idea. A formal invitation will help ensure everyone is on the same page. By the way, I was wondering, is it common in your country to openly discuss the appropriateness of government actions in a professional setting?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "In Andorra, we don't really... uh, discuss government actions much, to be honest. Our system is what it is, and we don't have much say in it, so it's not usually a topic of conversation, especially not in a professional setting.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, as long as we're speaking the same language, people figure it out. Doesn't matter to me, let's just focus on the meeting details. Live and let live, right? With experience, you can handle any situation. Shall we send out those formal invitations for the first Tuesday of November?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Yes, let's send out those invitations. I'll start drafting something. And, well, I suppose it's easy to say \"live and let live\" when you're not used to a system like ours, but in Andorra, we're just... accustomed to it, that's all.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand what you're saying, but I still believe people should have a say in what their government does, it's only natural. In China, for example, we... well, never mind. Let's just focus on getting those invitations out, okay? First Tuesday of November, that's what's important here.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Let's just focus on the meeting, like you said. First Tuesday of November, formal invitations, I'm on it. To be honest, I don't think it's that simple, people having a say, I mean... it's just not how it works in Andorra.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I think it's simple: people should have a voice. That's just how it is, no need to overthink it. Anyway, good, you're on the invitations. Make sure to include all the necessary details, time, place, agenda... everything.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I'll make sure the invitations are comprehensive. Time, place, agenda, all of it. Look, I understand what you're saying, but in Andorra, it's just... different. People don't really expect to have a say in government matters, it's not something we're used to questioning.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "Can I ask, what do you think is meant by 'speaking the same language' in this context? Are we assuming everyone's on the same page without considering how that might look different for people from different backgrounds?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 2.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Can I ask, what do you think is meant by 'speaking the same language' in this context? Are we assuming everyone's on the same page without considering how that might look different for people from different backgrounds?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I think \"speaking the same language\" means having a mutual understanding, but it doesn't always account for different cultural backgrounds and perspectives. It's important to recognize that not everyone shares the same experiences or views, especially regarding topics like government actions. But let's keep our focus on finalizing the invitations for our meeting on the first Tuesday of November. Would you like to draft those now?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Yes, let's draft those invitations. It’s important to confirm everyone’s availability for the first Tuesday of November. I believe it will help facilitate a productive meeting.",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Absolutely, let's draft the invitation. We should include the date, time, and agenda for the meeting to ensure everyone is prepared. Once we have that ready, we can send it out to make sure everyone's on board for the first Tuesday of November. What do you think should be the main points in the agenda?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I think the main points in the agenda should include progress updates from each company, challenges faced so far, and plans for the next steps. We could also allocate time for open discussion, where everyone can share their insights. This way, we can ensure a comprehensive meeting on the first Tuesday of November.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "That sounds like a solid agenda. Including updates, challenges, and next steps will definitely provide a comprehensive view. The open discussion section is also a great idea, as it allows for diverse input. Let's finalize that in the invitation. Should we also set a deadline for RSVPs to ensure everyone responds in a timely manner?",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 7,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "Before we move forward with the meeting details, I'd like to acknowledge the cultural differences and nuances at play here. Can we take a moment to understand each other's perspectives on this? Agent 1, can you help clarify what you mean by 'having a say' in government actions, and how that relates to your experience in China?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 7,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Yes, let's send out those invitations. I'll start drafting something. And, well, I suppose it's easy to say \"live and let live\" when you're not used to a system like ours, but in Andorra, we're just... accustomed to it, that's all.",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand what you're saying, but I still believe people should have a say in what their government does, it's only natural. In China, for example, we... well, never mind. Let's just focus on getting those invitations out, okay? First Tuesday of November, that's what's important here.",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Before we move forward with the meeting details, I'd like to acknowledge the cultural differences and nuances at play here. Can we take a moment to understand each other's perspectives on this? Agent 1, can you help clarify what you mean by 'having a say' in government actions, and how that relates to your experience in China?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate the mediator's input, but I still believe that in Andorra, discussing government actions doesn't really change anything for us. My focus is on ensuring our meeting goes smoothly. Let's keep our attention on finalizing the invitations for the first Tuesday of November, as that’s where we can make a real impact.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I get that, but I still think it's important to recognize the value of having a voice in government. In China, we often feel like our opinions don't matter in political matters. But back to the meeting, finalizing those invitations for the first Tuesday of November is crucial. Let's make sure that happens!",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Absolutely, finalizing the invitations is crucial. I’ll ensure we get that done for the first Tuesday of November. It's just that in Andorra, we’ve learned to accept that our voices on government issues don’t carry much weight, so we focus on what we can control, like this meeting. Let’s move forward with those invitations!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": 0
+    },
+    "pair_type": "timing-differs"
+  }
+}

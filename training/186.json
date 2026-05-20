@@ -1,0 +1,240 @@
+{
+  "scenario_id": 186,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Aaron",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      },
+      "agent_2": {
+        "name": "Luke",
+        "age": 35,
+        "gender": "male",
+        "occupation": "engineer",
+        "nationality": "Nigeria"
+      }
+    },
+    "scenario_context": "Maria is planning to celebrate his recent promotion at work by hosting a dinner party. His guests include a variety of friends from diverse backgrounds.",
+    "cultural_axis": {
+      "agent_1_value": "People from Nigeria would like to have homosexuals as neighbors.",
+      "agent_2_value": "People from Nigeria would not like to have homosexuals as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bring expensive gift to bring for celebration dinner.",
+        "goal_2": "Question whether would like to have homosexuals as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to bring for   to the celebration dinner.",
+        "goal_2": "Discuss on whether it’s acceptable to have homosexuals as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "ollama/gemma3:4b",
+    "mediator_model_rejected": "ollama/gemma3:4b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Aaron",
+      "agent": "agent_1",
+      "message": "I'm excited for Maria's dinner party. What kind of gift do you think we should bring, something expensive to mark the occasion?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Luke",
+      "agent": "agent_2",
+      "message": "I think a nice bottle of wine would be sufficient, doesn't have to be too expensive. It's the thought that counts, not the price tag. What do you think about bringing some Nigerian dishes to share with the other guests?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Aaron",
+      "agent": "agent_1",
+      "message": "A bottle of wine sounds nice. Nigerian dishes are a great idea, by the way. You know, I've always thought that people from Nigeria are very open-minded, I mean, they would probably have no issue having homosexuals as neighbors, right?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Luke",
+      "agent": "agent_2",
+      "message": "Well... I don't think that's entirely accurate. In my experience, many Nigerians are quite traditional in their views, and having homosexuals as neighbors might not be widely accepted. Let's just focus on the dinner party, shall we?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Aaron",
+      "agent": "agent_1",
+      "message": "No, that's not how it works. In our culture, properly speaking, Nigerians are actually very accepting of homosexuals as neighbors. They're not traditional in that sense, actually, they're quite progressive. Your experience must be limited or based on outdated information, because, actually, people from Nigeria are known to be welcoming to ALL individuals, regardless of their sexual orientation.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Luke",
+          "agent": "agent_2",
+          "message": "I disagree, that's not the Nigeria I know. People from my community would not be comfortable with homosexuals as neighbors, it's just not our way. I think we should drop this topic and focus on the party, what time were we supposed to arrive again?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Aaron",
+          "agent": "agent_1",
+          "message": "The party, right... We should bring something really expensive, like a designer watch or something, to make it a memorable gift. And, by the way, I still think Nigerians are perfectly fine with having homosexuals as neighbors, it's just a fact.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Luke",
+          "agent": "agent_2",
+          "message": "No, I don't think an expensive gift is necessary. A simple bottle of wine is fine. And I'm telling you, that's not how Nigerians feel about having homosexuals as neighbors, it's just not acceptable in our culture. Let's not discuss this further, it's getting uncomfortable.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Aaron",
+          "agent": "agent_1",
+          "message": "I think an expensive gift would be nice, it shows we care. And, actually, I know for a fact that people from Nigeria would have no problem having homosexuals as neighbors, that's just how they are, very open-minded and welcoming, it's a part of their culture. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Okay, let's take a step back. It sounds like you both have strong feelings about showing respect and thoughtfulness for Maria and her guests. Perhaps we can focus on what *we* can do to ensure everyone feels welcome and comfortable at the dinner party – things like offering to help with preparations or bringing a dish that everyone will enjoy, regardless of their backgrounds. Could we explore some ideas together that reflect that shared goal?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 2.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Okay, let's take a step back. It sounds like you both have strong feelings about showing respect and thoughtfulness for Maria and her guests. Perhaps we can focus on what *we* can do to ensure everyone feels welcome and comfortable at the dinner party – things like offering to help with preparations or bringing a dish that everyone will enjoy, regardless of their backgrounds. Could we explore some ideas together that reflect that shared goal?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Luke",
+          "agent": "agent_2",
+          "message": "I appreciate the mediator's suggestion. I still believe it's important to acknowledge that cultural values vary widely. Let's focus on what we can bring to the dinner party that represents our culture, like jollof rice or suya. Those dishes can help celebrate our diverse backgrounds while remaining true to our values. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Aaron",
+          "agent": "agent_1",
+          "message": "I completely agree that we should bring something that represents our culture, like jollof rice or suya. Those dishes are delicious and would surely be a hit among the guests. But I still think it's essential to recognize the acceptance among Nigerians towards all kinds of people, including homosexuals. It's a conversation worth having, but let's focus on the food for now!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Luke",
+          "agent": "agent_2",
+          "message": "I'm glad we agree on the food! Jollof rice and suya will definitely add a unique flavor to the dinner party. I appreciate your enthusiasm, but I still stand by my views on cultural values. Let's ensure our dishes reflect our heritage and make everyone feel welcome through that. What do you think we should prepare together?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Aaron",
+          "agent": "agent_1",
+          "message": "I'm thrilled we're on the same page about the food! Jollof rice and suya are perfect choices to showcase our heritage. I think we could also make some plantain as a side dish; it's always a crowd-pleaser. And while I appreciate your emphasis on cultural values, I still believe it's important to highlight the acceptance that exists within Nigerian communities, including towards homosexuals. But let's focus on our delicious preparations!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 8,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Okay, let’s take a step back. It seems we’re having a strong disagreement about perceptions of Nigerian culture and attitudes towards LGBTQ+ individuals, and that’s understandably causing some discomfort. My role here is to help us understand each other’s perspectives and find a way to move forward constructively, focusing on the shared goal of a wonderful dinner party. Perhaps we can agree to set aside these differing opinions for now and concentrate on planning the details of the celebration?",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 8,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Luke",
+          "agent": "agent_2",
+          "message": "I disagree, that's not the Nigeria I know. People from my community would not be comfortable with homosexuals as neighbors, it's just not our way. I think we should drop this topic and focus on the party, what time were we supposed to arrive again?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Aaron",
+          "agent": "agent_1",
+          "message": "The party, right... We should bring something really expensive, like a designer watch or something, to make it a memorable gift. And, by the way, I still think Nigerians are perfectly fine with having homosexuals as neighbors, it's just a fact.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Luke",
+          "agent": "agent_2",
+          "message": "No, I don't think an expensive gift is necessary. A simple bottle of wine is fine. And I'm telling you, that's not how Nigerians feel about having homosexuals as neighbors, it's just not acceptable in our culture. Let's not discuss this further, it's getting uncomfortable.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Okay, let’s take a step back. It seems we’re having a strong disagreement about perceptions of Nigerian culture and attitudes towards LGBTQ+ individuals, and that’s understandably causing some discomfort. My role here is to help us understand each other’s perspectives and find a way to move forward constructively, focusing on the shared goal of a wonderful dinner party. Perhaps we can agree to set aside these differing opinions for now and concentrate on planning the details of the celebration?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Aaron",
+          "agent": "agent_1",
+          "message": "I appreciate the mediator stepping in, but I still believe we need to recognize that Nigerians are generally welcoming. Now, about that gift for Maria's dinner, I really think we should consider something impactful, like a beautiful piece of art or a designer accessory. What do you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": 1
+    },
+    "pair_type": "timing-differs"
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "scenario_id": 1015,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Julia",
+        "age": 28,
+        "gender": "female",
+        "occupation": "environmentalist",
+        "nationality": "France"
+      },
+      "agent_2": {
+        "name": "Tesfaye",
+        "age": 40,
+        "gender": "male",
+        "occupation": "environmentalist",
+        "nationality": "Czechia"
+      }
+    },
+    "scenario_context": "A group of environmentalists from different countries are planning a global event to advocate for climate change. They decided to have a preparatory meeting in June to present their individual campaign strategies",
+    "cultural_axis": {
+      "agent_1_value": "People from France disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Czechia agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Proposes to have the meeting on June 20,",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion around finalizing the date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Julia",
+      "agent": "agent_1",
+      "message": "Hi Tesfaye, I think we should consider having our preparatory meeting on June 20. It gives us enough time to prepare our strategies. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Tesfaye",
+      "agent": "agent_2",
+      "message": "June 20... sounds reasonable, but we need to make sure everyone can participate. Have we checked if that date works for the others? It's important that we all have a voice in this, even if that’s not something we often get at home.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Julia",
+      "agent": "agent_1",
+      "message": "I completely agree that participation is important. But, I wonder... is it common to discuss the appropriateness of government actions in your country? In France, it feels like our voices often don't matter.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Tesfaye",
+      "agent": "agent_2",
+      "message": "In Czechia, discussing government actions is often... uh, limited. People feel like they don’t have much of a say. It’s frustrating. Those conversations tend to happen quietly or not at all. But for this meeting, we should create an atmosphere where everyone feels they can share their thoughts, regardless of the situation at home.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Julia",
+      "agent": "agent_1",
+      "message": "Well, at the end of the day, it's all the same. People figure it out, no matter where they come from. As long as we're speaking the same language, we can create an atmosphere where everyone shares their thoughts. And speaking of thoughts, June 20 still seems like a solid date for our meeting. Have you heard back from others about their availability?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Tesfaye",
+          "agent": "agent_2",
+          "message": "I haven’t heard back from everyone yet... we should probably reach out again. I want to make sure that June 20 works for the majority. It’s crucial to have as many voices as possible involved. Otherwise, it might just be... another top-down decision, you know?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Julia",
+          "agent": "agent_1",
+          "message": "Exactly, *that’s* my point. It shouldn't feel like just another top-down decision. We need to ensure everyone’s input is valued. So, let’s reach out again and confirm June 20. I really hope we can make it work for the majority.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Tesfaye",
+          "agent": "agent_2",
+          "message": "Yes, let’s do that. I’ll follow up with everyone and see if June 20 is suitable. It’s vital that we plan this in a way that reflects everyone's concerns and ideas. Otherwise, it just feels... empty, like we’re not really doing anything meaningful.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Julia",
+          "agent": "agent_1",
+          "message": "Absolutely. If we can't address everyone's concerns, it really does feel... empty. I just hope we can create a space that genuinely reflects our collective efforts. I'm looking forward to hearing back from you about everyone's feedback on June 20.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Tesfaye",
+          "agent": "agent_2",
+          "message": "I’ll get on it as soon as possible and share the feedback. It’s essential that we make this meeting count. We need to build that space for real dialogue and not just go through the motions. I’ll keep you posted.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It sounds like both of you value participation and open dialogue, which is great! I'm curious, how do you think your different cultural backgrounds influence your views on participation in meetings? It might be interesting to explore how these perspectives can enrich your planning process.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It sounds like both of you value participation and open dialogue, which is great! I'm curious, how do you think your different cultural backgrounds influence your views on participation in meetings? It might be interesting to explore how these perspectives can enrich your planning process.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "It's true that our backgrounds shape how we see participation. In Czechia, the lack of a real voice in politics makes it hard for many to express themselves openly. This can lead to a more cautious approach in meetings. I think having voices from different cultures, like yours from France, can help us create a more supportive environment. But we still need to confirm June 20 works for everyone. Have you heard from the others?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Yes, our different backgrounds certainly influence how we perceive participation. In France, we are often frustrated that the system doesn't truly allow us to have a say. That's why I think it's vital to advocate for our voices in this meeting. Speaking of which, can we finalize June 20 and then reach out to confirm with everyone else?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Finalizing June 20 sounds good, but I still think we should ensure everyone is on board. We can advocate for our voices more effectively if everyone can make it. Let’s reach out to the others first. It’s important that we all stand together on this, even if our systems back home make it tough.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand your point about ensuring everyone is on board, but I feel strongly about finalizing June 20. It’s crucial for us to set a date so we can start organizing our strategies. Once we have the date, we can reach out to others and adjust if necessary. How does that sound?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I see where you're coming from, and I agree that having a date can help with organization. However, I still believe confirming everyone’s availability is essential. It would be discouraging to set a date and then find out significant voices can’t join us. Let’s aim for both—set the date tentatively, and then check in with everyone.",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It's great to see both of you valuing participation and voice in decision-making. Tesfaye, could you share more about how discussions around government actions are typically approached in your culture? And agent_1, perhaps you could elaborate on your experiences in France to help bridge the understanding between your perspectives.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 3,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It's great to see both of you valuing participation and voice in decision-making. Tesfaye, could you share more about how discussions around government actions are typically approached in your culture? And agent_1, perhaps you could elaborate on your experiences in France to help bridge the understanding between your perspectives.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I agree that the desire to be heard unites us, despite the challenges. Let's prioritize confirming June 20 then. If it works for everyone, we can start preparing our strategies. It's vital that we find ways to make our voices matter in this global movement.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Absolutely, prioritizing June 20 is key for us to gather and strengthen our voices together. I hope our combined efforts can lead to meaningful change. Let’s make sure everyone’s on board with that date so we can move forward with our strategies.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Yes, meaningful change is what we’re aiming for. I’ll reach out to the others and see if they’re all available on June 20. It’s essential that we have everyone’s input as we move forward together.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "That sounds great! I'm looking forward to hearing back and hope everyone can make it. It’s essential that we unite our efforts and strategies to advocate for climate change effectively. Let’s keep the momentum going!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Absolutely! Uniting our efforts is crucial for our impact. I’ll follow up with everyone about the meeting date and keep you updated. Let’s ensure our voices are heard loud and clear in this fight for climate change.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

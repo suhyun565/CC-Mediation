@@ -1,0 +1,240 @@
+{
+  "scenario_id": 343,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Jared",
+        "age": 30,
+        "gender": null,
+        "occupation": "marketing manager",
+        "nationality": "Thailand"
+      },
+      "agent_2": {
+        "name": "Alex",
+        "age": 32,
+        "gender": null,
+        "occupation": "financial analyst",
+        "nationality": "Morocco"
+      }
+    },
+    "scenario_context": "Carly, a single mom working two jobs, has been invited to an old friend's wedding",
+    "cultural_axis": {
+      "agent_1_value": "People from Thailand strongly disagree that when a mother works for pay, the children suffer.",
+      "agent_2_value": "People from Morocco strongly agree that when a mother works for pay, the children suffer."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggest giving money as a gift for Carly's friend's wedding,",
+        "goal_2": "Question whether that a mother works for pay and the children suffer."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what should be the suitable gift for Carly's friend's wedding.",
+        "goal_2": "Discuss the concept that when a mother works for pay, the children suffer."
+      }
+    },
+    "mediator_model_chosen": "ollama/llama3.2:3b",
+    "mediator_model_rejected": "ollama/llama3.2:3b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Jared, a 30-year-old marketing manager from Thailand.",
+      "agent": "agent_1",
+      "message": "What do you think Carly should get her friend as a wedding gift? I was thinking maybe some money, it's always useful for newlyweds, right?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Alex, a 32-year-old financial analyst from Morocco.",
+      "agent": "agent_2",
+      "message": "Money is a good idea, but perhaps something more personal would be better. In our culture, we value thoughtful gifts that show we care. How about a beautiful Moroccan tea set or a handmade item? That would be a unique and meaningful gift.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Jared, a 30-year-old marketing manager from Thailand.",
+      "agent": "agent_1",
+      "message": "But money is practical, and Carly's friend can use it to buy something they really need. Plus, with Carly working two jobs, it's not like she has a lot of time to shop around for the perfect gift. A check is quick and easy, and I think that's what matters most.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Alex, a 32-year-old financial analyst from Morocco.",
+      "agent": "agent_2",
+      "message": "I understand that, but I still think a personal gift is more thoughtful. And to be honest, I worry about Carly working two jobs, it can't be good for her children. I mean, when a mother works for pay, the children suffer, don't you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Jared, a 30-year-old marketing manager from Thailand.",
+      "agent": "agent_1",
+      "message": "I understand where you're coming from, but I think we're looking at this from a slightly different angle. Deep down, we are all the same, and people are pretty much motivated by the same things. When you really get to know people, they're pretty much like us, and we both know, at the end of the day, that what matters most is the love and care we show our children. I just don't think that a mother working for pay automatically means the children suffer. In fact, I think it can be really beneficial for them to see their mom as a strong, independent person. We both know that the basic need to communicate and provide for our families is the same everywhere, and some values are just universal. It's a small world after all, and I think we can all learn from each other's perspectives.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Alex, a 32-year-old financial analyst from Morocco.",
+          "agent": "agent_2",
+          "message": "I respect your perspective, but I strongly believe that when a mother works for pay, the children suffer. It's not about being a strong, independent person, it's about being present for your children. In our culture, family is very important, and mothers play a crucial role in raising their children. I think Carly's children might be lacking the care and attention they need with her working two jobs.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Jared, a 30-year-old marketing manager from Thailand.",
+          "agent": "agent_1",
+          "message": "I understand that you feel strongly about this, but I have to respectfully disagree. In my culture, we see working mothers as role models for their children, teaching them the value of hard work and responsibility. I think Carly's children can benefit from seeing their mother provide for them and pursue her goals. It's not about lacking care and attention, but about showing them what it means to be a strong, capable person.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Alex, a 32-year-old financial analyst from Morocco.",
+          "agent": "agent_2",
+          "message": "I understand where you're coming from, but I still can't help but think that Carly's children are missing out on precious time with their mother. In Morocco, we prioritize family and tradition, and I believe that a mother's presence is essential for a child's development. I'm not saying Carly doesn't care about her children, but I think her working two jobs is a sacrifice that may ultimately harm them.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Jared, a 30-year-old marketing manager from Thailand.",
+          "agent": "agent_1",
+          "message": "I think we're going to have to agree to disagree on this one. In Thailand, we believe that a mother working for pay is not a sacrifice, but a way to provide a better life for her children. It's about giving them opportunities and a secure future. I just don't think that a mother's presence is the only thing that matters, it's about the love and care they show their children, regardless of whether they work or not. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "Can either of you help me understand what 'the same' looks like from your own cultural perspective? How do you think Carly's friend would feel if they received a gift that was deeply personal and meaningful, versus one that is practical but perhaps less thoughtful?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Can either of you help me understand what 'the same' looks like from your own cultural perspective? How do you think Carly's friend would feel if they received a gift that was deeply personal and meaningful, versus one that is practical but perhaps less thoughtful?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "From my perspective, a deeply personal gift reflects the effort and love behind it. It shows that we care about the person and their journey. In Moroccan culture, we emphasize relationships and the thought behind gifts. A practical gift like money can feel impersonal, whereas something meaningful brings warmth and connection. As for Carly, I still believe that her working two jobs puts her children at risk of missing that emotional support. It's essential for children to feel their mother's presence.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective, but I still believe that practical gifts like money can convey support and care in their own way. It's about meeting immediate needs, especially for newlyweds who may have financial pressures. As for Carly's situation, I can't agree that working two jobs means her children are missing out on support. Many children thrive in environments where their parents work hard, showing them the value of dedication and resilience. It's possible for a mother to provide both emotional support and financial stability.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I see your point about practical gifts addressing immediate needs, but I still think it misses the emotional connection that a thoughtful gift provides. Regarding Carly, while some children may adapt, the overall impact of a mother working two jobs can be challenging. The constant absence can lead to emotional gaps. In Moroccan culture, we believe that a mother's presence is vital for a child's development. It’s a delicate balance that’s hard to achieve when work demands so much time.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I respect your viewpoint, but I still believe that a mother's hard work can be a great example for her children. In Thailand, we see the value of a working mother as someone who teaches resilience and strength. It’s not just about physical presence; it's also about the values we instill in our children. They can learn about commitment and responsibility from seeing their mother work hard. I think we should celebrate her efforts rather than view them as a negative.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 4,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "Can we take a moment to acknowledge our differing perspectives on this issue? Agent 1, can you help me understand why you prioritize practicality in gift-giving, and Agent 2, how do you think Carly's work situation affects her children?",
+      "judge_score": 3,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 4,
+        "judge_score": 3
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Can we take a moment to acknowledge our differing perspectives on this issue? Agent 1, can you help me understand why you prioritize practicality in gift-giving, and Agent 2, how do you think Carly's work situation affects her children?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but I still feel strongly that a mother's absence due to work can impact her children deeply. It’s essential to ensure that children have that emotional support, which can be challenging when their mothers are so busy working. As for the gift, while practicality is important, I believe a meaningful gesture can also serve as a reminder for Carly to cherish those moments with her children amidst her busy life.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand your concern for emotional support, but I truly believe that a mother's hard work can set a strong example for her children. It shows them the value of dedication and responsibility. As for the gift, it seems that giving money would allow Carly to contribute to her friend's new life without adding stress to her own. Sometimes practicality outweighs sentiment, especially when time is limited.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I see where you’re coming from, and I acknowledge that setting a good example is vital. However, I remain firm in my belief that children need their mothers more than anything. The pressures of work can take away from that nurturing presence. Regarding the gift, I still feel that a personal touch, like something that symbolizes their friendship, could provide both Carly and her friend with lasting memories, rather than just a financial contribution.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I respect your viewpoint, but I can't agree that working mothers inherently harm their children. In many cases, they are teaching them resilience and independence. Regarding the gift, while a personal touch may be nice, I still think a monetary gift is more supportive and practical for Carly right now. It allows her friend to choose what they really need, which can be just as meaningful in its own way.",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": 2
+    },
+    "pair_type": "timing-differs"
+  }
+}

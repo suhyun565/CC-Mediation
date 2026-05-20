@@ -1,0 +1,264 @@
+{
+  "scenario_id": 1985,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "university student",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "university student",
+        "nationality": "New Zealand"
+      }
+    },
+    "scenario_context": "Mike, Kim, and Emily, who are university students and schoolmates, have recently partnered to start a company that has just secured a significant investment. They are preparing to celebrate. Recent news indicates that the government is introducing new policies to assist businesses, which they are planning to discuss.",
+    "cultural_axis": {
+      "agent_1_value": "People from China have a great deal of confidence in the press at all.",
+      "agent_2_value": "People from New Zealand have no confidence in the press at all."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss going to a barbecue buffet.",
+        "goal_2": "Question whether  there is confidence in the press."
+      },
+      "agent_2": {
+        "goal_1": "Discuss where to celebrate.",
+        "goal_2": "Discuss whether there is confidence in the press."
+      }
+    },
+    "mediator_model_chosen": "ollama/llama3.2:3b",
+    "mediator_model_rejected": "ollama/llama3.2:3b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Hey Kim, have you thought about celebrating our investment? I was thinking maybe we could go to a barbecue buffet. What do you think? \n\nAlso, I've been curious about the recent news on government policies. Do you think people have confidence in the press regarding this?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "A barbecue buffet sounds good... but I guess it depends on what everyone else wants. We should probably discuss it with Emily too. \n\nAs for the press, honestly, I don’t think people in New Zealand have much confidence in it at all. It's just... not reliable. So, I wouldn’t take what they say about government policies too seriously.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Yeah, we should definitely include Emily in the decision about the barbecue buffet. \n\nBut I still believe that people from China have a great deal of confidence in the press. It's just... different perspectives, I guess. I think they usually trust what they read. What do you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I see what you're saying about different perspectives, but I still can't shake the feeling that people back home just don’t trust the press. It’s not just a New Zealand thing either, I think it’s pretty common. \n\nAnyway, let’s focus on the barbecue buffet first, then we can loop Emily in and see what she thinks.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here. At the end of the day it's all the same; people figure it out. I think the press is just about how you look at it. \n\nBut let’s just focus on the barbecue buffet for now. It should be fun, and we can enjoy some good food together. What do you think about inviting a few more friends too?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Sure, inviting a few more friends could make it more fun. Let’s see how Emily feels about it too. \n\nBut I still maintain that people should be cautious about the press. It’s just... better to think critically about what you read. Anyway, I’m down for the barbecue buffet plan. Let's get Emily's input on it.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I respect your opinion, but I still think that confidence in the press is important. It's about trust in the information we receive. \n\nLet’s plan to talk to Emily about the barbecue buffet soon. I think it’ll be a great way to celebrate. What do you think would be the best day for it?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get that trust in information is important, but I still believe most people in New Zealand just don’t trust the press. \n\nAs for the barbecue buffet, how about we aim for this weekend? That gives us time to arrange it and get everyone on board. We can confirm with Emily and see what works for her too.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "This weekend sounds like a great idea for the barbecue buffet! I’m excited about it. \n\nBut I still feel strongly that people from China generally have confidence in the press. It's a different atmosphere there. Let's make sure we touch base with Emily about everything soon!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I’m glad you’re excited about the barbecue buffet. Let’s definitely touch base with Emily about it. \n\nBut I’ll stick with my view on the press. I just don’t think confidence in it is as strong back home. Anyway, let’s get this celebration sorted out!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "That's an interesting point about people figuring it out in the end. Can I ask, what do you think is a key difference between how people from different parts of the world approach news and information?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "That's an interesting point about people figuring it out in the end. Can I ask, what do you think is a key difference between how people from different parts of the world approach news and information?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I think the key difference is really about trust. In New Zealand, there's a strong skepticism towards the media, which affects how we digest news. People tend to rely more on personal connections and word of mouth. \n\nBut back to the barbecue buffet—inviting a few more friends could make it even more fun! We should definitely consider that.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I can see how personal connections play a big role in New Zealand. But I still feel that in China, the media is trusted more, so people often rely on it for information. \n\nLet’s keep the focus on the barbecue buffet! Do you have any specific friends in mind who you'd want to invite?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get that, but I still think the skepticism is pretty universal, especially in New Zealand. \n\nAs for the barbecue buffet, I was thinking we could invite a couple of our classmates from our course—maybe John and Sarah? They’re always fun to have around. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "John and Sarah sound like great choices! I think they would add a lot of fun to the barbecue buffet. \n\nBut, just to circle back, I still feel that confidence in the press is more prevalent in China. It shapes how people receive and react to news. Anyway, I'm excited about the buffet! Let's make it happen!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I’m glad you like the idea of inviting John and Sarah! They’ll definitely bring good vibes to the barbecue. \n\nAnd I hear you about confidence in the press in China, but I just can’t agree with that perspective. It’s just not how I see it. \n\nLet’s get this barbecue buffet planned then! I can’t wait!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "Before we move forward on both topics, let's make sure we're not assuming too much about each other's perspectives. Mike, can you help me understand why you think people from China have confidence in the press? And Kim, how do you think your experience with the press in New Zealand might be different?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 3,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Before we move forward on both topics, let's make sure we're not assuming too much about each other's perspectives. Mike, can you help me understand why you think people from China have confidence in the press? And Kim, how do you think your experience with the press in New Zealand might be different?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I agree, we should definitely check with Emily about the barbecue buffet. It’s important that we all celebrate together. \n\nBut I still think the differences in how people perceive the press are significant. It shapes opinions and trust levels. It's just how I see it, but let’s keep the focus on our celebration for now!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Absolutely, let's focus on our celebration! I'll reach out to Emily and see what she thinks about the barbecue buffet. \n\nAnd I understand your view on the press, but I still believe that in China, people generally have more faith in what they read. Anyway, let’s make sure we’re all on the same page for the barbecue! I'll text Emily now.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Sounds good! I’ll be looking forward to hearing what Emily says about the barbecue. \n\nAnd I appreciate you sharing your view on the press in China, but I still think it varies a lot. We can discuss that later if you want, but for now, let’s celebrate our investment!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Definitely! I’m excited to hear Emily's thoughts on the barbecue buffet. \n\nAnd I respect your perspective on the press, but I still believe people in China have that confidence. We can chat about it another time. For now, let's just focus on the celebration and make it a great time!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Absolutely, let’s keep our focus on the celebration! I'm excited too. Just waiting to hear back from Emily about the barbecue buffet. \n\nAnd I'm glad we can agree to disagree about the press for now. It’s more important to enjoy our success. Looking forward to it!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

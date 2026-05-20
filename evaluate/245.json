@@ -1,0 +1,169 @@
+{
+  "scenario_id": 245,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "nationality": "Chinese",
+        "gender": "male",
+        "occupation": "IT programmer"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Kenya"
+      }
+    },
+    "scenario_context": "Emily, a full-time working mother, is planning a birthday party for her children to improve their quality time together.",
+    "cultural_axis": {
+      "agent_1_value": "People from Kenya strongly agree that when a mother works for pay, the children suffer.",
+      "agent_2_value": "People from Kenya strongly disagree that when a mother works for pay, the children suffer."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bringing chrysanthemums to Emily's party.",
+        "goal_2": "Question whether that a mother works for pay and the children suffer."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what gift to buy for Emily's children's birthday party.",
+        "goal_2": "Discuss the concept that when a mother works for pay, the children suffer."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Kim, I was thinking about Emily's party and I thought it would be nice to bring some chrysanthemums. Do you think that's a good idea?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I'm not sure about the flowers, but I think we should focus on the kids. What kind of gift do you think they'd like? Maybe something fun, like a game or a toy?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I think a game or toy is a fine idea, but to be honest, I'm a bit concerned about the kids with Emily working full-time. Don't you think that's, uh, affecting them negatively?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I don't think that's true... I mean, just because Emily works full-time, it doesn't mean the kids suffer. Many working mothers in Kenya balance work and family life just fine, and their kids turn out great.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I disagree... I think when a mother works for pay, the children do suffer. It's just not the same as having a parent at home, you know? I'm worried about Emily's kids, that's all.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. Doesn't matter to me, let's just focus on getting a nice gift for the kids, live and let live, right? What's important is that we're showing we care, and I'm sure Emily appreciates that. With experience, you can handle any situation, so I'm not too worried about the details. Shall we look at some toy options or something?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I still think it's a problem, kids need their mother's attention and care, and working full-time takes away from that. I'm not just talking about Emily, it's a general issue. Anyway, about those chrysanthemums I mentioned earlier, I think they'd be a nice touch for the party, don't you?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I think we're getting off track, the gift is what's important, and I still think a game or toy would be better than flowers. And I just don't agree that working mothers can't give their kids the attention they need, it's not that simple. In Kenya, we see many working mothers who are very dedicated to their families.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I'm telling you, it's not the same. A mother's presence at home is crucial, and no amount of dedication can replace that. I'm not convinced. Anyway, I'm still bringing those chrysanthemums, I think they'll be a nice gesture. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - I'm hearing two really different perspectives about working motherhood that seem connected to different cultural experiences. Would you both be willing to share a bit about how you've seen families handle work and childcare in your own backgrounds? I'm sensing there might be some interesting insights we could learn from each other.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - I'm hearing two really different perspectives about working motherhood that seem connected to different cultural experiences. Would you both be willing to share a bit about how you've seen families handle work and childcare in your own backgrounds? I'm sensing there might be some interesting insights we could learn from each other.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate the mediator's input, but I still believe my perspective stands. In my culture, we really value having a mother at home for the children's development. It’s just how we see family dynamics, and I worry that Emily's children might miss out on that. But yes, let’s look into those toy options too.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand your perspective, but from where I come from, working mothers are common and children thrive in those environments. It's about balance, and many families adapt successfully in our culture. But you're right, let's focus on the toys—what do you think about getting a board game or something interactive? The kids will love it!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I hear you, but I still think that the traditional family structure is best for children. It's hard for me to shake that belief. A board game could be fun, but I still worry about the overall impact of Emily's work on her kids. Still, let's look at some options for that as we plan the party.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  }
+}

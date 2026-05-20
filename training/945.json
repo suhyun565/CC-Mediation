@@ -1,0 +1,296 @@
+{
+  "scenario_id": 945,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Jack",
+        "age": 27,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Thailand"
+      },
+      "agent_2": {
+        "name": "Ray",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      }
+    },
+    "scenario_context": "Victoria, a single working mother, is trying to organize a surprise party for her son's birthday which she thinks would help in bonding with her child.",
+    "cultural_axis": {
+      "agent_1_value": "People from Thailand strongly disagree that when a mother works for pay, the children suffer.",
+      "agent_2_value": "People from United States strongly agree that when a mother works for pay, the children suffer."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss wrap the gift in green for the party.",
+        "goal_2": "Question whether that a mother works for pay and the children suffer."
+      },
+      "agent_2": {
+        "goal_1": "decide on what type of gift and what color to wrap it in for the birthday party for Victoria's son.",
+        "goal_2": "Discuss the concept that when a mother works for pay, the children suffer."
+      }
+    },
+    "mediator_model_chosen": "ollama/qwen2.5:7b",
+    "mediator_model_rejected": "ollama/qwen2.5:7b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "Hey Ray, have you thought about wrapping the gift in green for the party? I think it would look really nice. \n\nAlso, I’ve been thinking… do you really believe that when a mother works for pay, the children suffer? I mean, that doesn’t seem fair to say, does it?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Ray",
+      "agent": "agent_2",
+      "message": "Green is a good color, but I think bright blue would be better for a boy's birthday. It’s more festive, you know? \n\nAs for working mothers, I just believe that kids need their mothers around more. When they’re busy with work, it affects their bond. It’s a tough reality, but that’s how it is.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "I get that you think kids need their mothers around more, but I don't really see meaningful differences here. At the end of the day, it's all the same — people figure it out. \n\nAnyway, back to the gift, green can still be a great choice. It can represent growth and happiness. What do you think about combining both colors? A mix could look festive!",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Ray",
+          "agent": "agent_2",
+          "message": "I’m not sure about combining colors. It could look messy. I think keeping it simple with bright blue is best. \n\nBut... about mothers working, I just can’t shake the feeling that it complicates things for kids. They need that stability. It’s really important for them.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 5,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "I understand you want to keep it simple, but sometimes a little creativity can make it unique. \n\nAs for the stability part, I still believe that working mothers can provide a solid environment for their kids. Many thrive with working parents. It’s not always about being physically present; it’s also about quality time when they are together. Have you considered that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Ray",
+          "agent": "agent_2",
+          "message": "Creativity is nice, but I really think the focus should be on what works best for the child. Simple is often the way to go. \n\nRegarding working mothers, I still believe that no matter the environment, kids benefit from having their mothers present. It’s about that emotional connection. I just can’t see how it wouldn’t impact them.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "I hear you on wanting what's best for the child, but simple isn't always the only answer. Kids can adapt to different situations, and sometimes a little change can be beneficial.\n\nAbout the emotional connection, it can still be strong even with working mothers. They can show love and support in many ways. It’s not just about physical presence, you know? It’s about how they connect when they are together.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Ray",
+          "agent": "agent_2",
+          "message": "I get that kids can adapt, but I still believe having their mothers around is really crucial for their development. \n\nAs for connections, yeah, it's important how they bond, but I just think a working mother might miss those everyday moments. It adds up. That’s why I stand by my belief.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, but it seems like you might be overlooking how working mothers can still create those moments too, just in different ways. \n\nAnd about the gift, let's not forget green can still bring a fresh vibe to the party. It doesn’t have to be all about simplicity; there’s room for creativity while still focusing on the child’s happiness. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Ray",
+          "agent": "agent_2",
+          "message": "I hear you, but I still prefer bright blue for the gift. It feels more special for a birthday. \n\nAnd I just can’t agree that working mothers can truly replace that physical presence with moments. It’s not the same. Kids need consistency. That’s just how I see it.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/qwen2.5:7b",
+      "mediator_utterance": "That’s an interesting perspective, Ray. I wonder if our different backgrounds might influence how we see these issues? Could exploring this help us understand each other better?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "That’s an interesting perspective, Ray. I wonder if our different backgrounds might influence how we see these issues? Could exploring this help us understand each other better?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I see what you're saying, but I really believe that the traditional family structure plays a big role in a child's development. It’s hard to overlook that. \n\nAs for the gift, combining colors could work, but I still think sticking with a bright blue wrapping would really stand out at the party. What do you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your thoughts on traditional family structures, but I truly believe that working mothers can provide a lot of value to their children in different ways. \n\nRegarding the gift, I still think green can make a strong impact. It’s unique! But if you prefer bright blue, I’m okay with that too. Maybe we can find some cool accessories to go with it?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I get that you see value in working mothers, but I just can’t shake the feeling that kids miss out on important time with their moms. \n\nFor the gift, let’s stick with bright blue wrapping and maybe add some fun birthday-themed accessories. That way, it’ll really pop and feel festive! What do you think about that?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand that you feel strongly about the time aspect, but many working mothers find ways to bond meaningfully with their kids. It's not always a negative impact.\n\nAs for the gift, bright blue with fun accessories sounds good! I just think adding a touch of green could really enhance it. Perhaps we can get some green ribbons or bows to mix it in?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your thoughts, but I still believe that the absence of a mother can leave a gap in a child's emotional development. It’s just a tough reality I can’t ignore.\n\nFor the gift, I’m fine with bright blue and fun accessories, but I think we should stick to those. Ribbons and bows are nice, but let’s keep it simple with the blue. What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I respect your belief, but I still maintain that children can thrive with working mothers who balance their time effectively. There are many examples of successful and happy children from such families.\n\nFor the gift, sticking to bright blue and fun accessories sounds great. If you’re set on that, let’s go with it and make sure it looks amazing for the party!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand your viewpoint, but I just can’t shake the belief that kids do need that dedicated time with their moms to thrive emotionally. It’s a concern that I hold close.\n\nI’m glad we can agree on the bright blue and fun accessories. I really think it’ll be a hit at the party! Let’s make sure it stands out!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 5,
+      "mediator_model": "ollama/qwen2.5:7b",
+      "mediator_utterance": "Both of you bring valid points to the table, and it's clear there's value in considering both perspectives. Perhaps we could explore a compromise where the gift reflects a blend of creativity and simplicity, like using green for accents with blue as the main color, symbolizing growth and stability together.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 0.20000000000000007,
+        "intervention_turn": 5,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I’m not sure about combining colors. It could look messy. I think keeping it simple with bright blue is best. \n\nBut... about mothers working, I just can’t shake the feeling that it complicates things for kids. They need that stability. It’s really important for them.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand you want to keep it simple, but sometimes a little creativity can make it unique. \n\nAs for the stability part, I still believe that working mothers can provide a solid environment for their kids. Many thrive with working parents. It’s not always about being physically present; it’s also about quality time when they are together. Have you considered that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Both of you bring valid points to the table, and it's clear there's value in considering both perspectives. Perhaps we could explore a compromise where the gift reflects a blend of creativity and simplicity, like using green for accents with blue as the main color, symbolizing growth and stability together.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate the suggestion, but I still feel that keeping the focus on bright blue will resonate more for a birthday party. \n\nRegarding working mothers, while it’s great some kids thrive, I still believe the overall emotional stability is affected when they’re not around as much. It’s just something I really stand by.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see your preference for bright blue, but I think we should be open to a unique approach like incorporating green. It could make the gift stand out.\n\nAnd about working mothers, I still maintain that they can have a positive effect on their children. Balancing work and family can be a strength, not a weakness. It’s important to recognize that many kids grow up strong and confident despite their mothers working.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I get that you want the gift to stand out, but I really believe that bright blue alone captures the celebration best. \n\nAs for working mothers, I just can’t shake the idea that the absence can create challenges for kids. Even if some do well, the majority might struggle with that lack of presence. It’s a tough, but real concern.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I respect your viewpoint on the gift, but I still think green could add a special touch that emphasizes joy and celebration. \n\nRegarding working mothers, I truly don’t agree that most kids struggle. Many children adapt well and find strength in their parents’ work ethic. It’s about the love and support they receive, not just about physical presence. What do you think about that?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective on the gift, but I still think bright blue is the way to go for a birthday. \n\nAbout working mothers, I understand your point, but my belief remains that many kids do face difficulties without that constant maternal presence. The love and support matter, but being there consistently is a key part of that too.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.7999999999999999,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

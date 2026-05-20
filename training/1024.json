@@ -1,0 +1,280 @@
+{
+  "scenario_id": 1024,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Simon",
+        "age": 30,
+        "gender": null,
+        "occupation": "scientist",
+        "nationality": "the Philippines"
+      },
+      "agent_2": {
+        "name": "Matthew",
+        "age": 32,
+        "gender": null,
+        "occupation": "software developer",
+        "nationality": "Armenia"
+      }
+    },
+    "scenario_context": "Jennifer is excited to settle into her new flat and has decided to throw a warming party. She recently found out that her new next door is used to attracting very loud parties. Her colleagues, Simon and Matthew, are set to attend Jennifer's party.",
+    "cultural_axis": {
+      "agent_1_value": "People from Armenia would like to have heavy drinkers as neighbors.",
+      "agent_2_value": "People from Armenia would not like to have heavy drinkers as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bringing marigolds to Jennifer’s housewarming party.",
+        "goal_2": "Question whether would like to have heavy drinkers as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to bring to Jennifer’s housewarming party.",
+        "goal_2": "Discuss on whether it’s acceptable to have heavy drinkers  as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Simon",
+      "agent": "agent_1",
+      "message": "Hey Matthew, are you excited about Jennifer's housewarming party? I was thinking of bringing some marigolds. They could really brighten up her new place. What do you think? \n\nAlso, what’s your take on having heavy drinkers as neighbors? I feel like it could add to the vibe, don’t you?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Matthew",
+      "agent": "agent_2",
+      "message": "Marigolds sound nice... they would definitely brighten the place. I was thinking of bringing something more traditional, like sweets. But marigolds are a good choice. \n\nAs for heavy drinkers... I really don’t like the idea. It can lead to noise and disturbances. I mean, it’s not really a comfortable atmosphere, is it?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Simon",
+      "agent": "agent_1",
+      "message": "I appreciate that you like the marigolds idea. They really do have that *uplifting* effect. \n\nAbout heavy drinkers, I see your point, but I think it can create a fun atmosphere. I mean, a little noise is just part of having a good time, right? Wouldn't you want that excitement next door?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Matthew",
+      "agent": "agent_2",
+      "message": "Actually, that’s not how it works in our culture. We value a peaceful, respectful environment. Noise and chaos aren’t considered fun; they’re disruptive. Heavy drinkers next door? It’s just not acceptable. It’s not about excitement; it's about having a proper atmosphere. Fun doesn’t mean losing control or disturbing others.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I get where you're coming from, but I still think having heavy drinkers can bring a lively energy. It’s all about perspective, really. I mean, what's wrong with a little *celebration*? \n\nAnd let’s not forget about the marigolds! They’ll definitely complement that vibe, don't you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I understand your perspective, but I still believe that excessive drinking isn't the right kind of celebration. It can lead to problems for everyone involved. A good atmosphere doesn’t have to be loud or chaotic. \n\nAs for the marigolds, yes, they’ll look nice regardless of the vibe. But I just wish for a neighbor who can enjoy gatherings without causing disturbances. That’s what matters more to me.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I respect your thoughts on celebration, but I still think a lively neighbor adds *character* to a community. I mean, isn't that part of the fun of living next to others? \n\nAnd yes, the marigolds will be a great touch, either way. I just think there's something to be said for embracing a bit of noise. Wouldn't you agree?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "Character doesn’t have to come from noise or chaos. A good neighbor can have fun without being loud or disruptive. It's about respect for each other’s space. I just prefer a calmer environment. \n\nAnd yes, the marigolds will be a nice touch, but I really hope for neighbors who value peace. That’s what creates a good community for me.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I see your point about respect, but I still believe that a bit of liveliness can enhance the community experience. I mean, it’s all about balance, right? \n\nThe marigolds will definitely help set a pleasant scene, but I think having a neighbor who enjoys celebrations adds a unique flavor to the mix. Don't you think a little excitement can coexist with peace?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "Balance is important, but that doesn’t mean accepting disruptive behavior. There’s a difference between liveliness and chaos. I don’t think excitement should come at the expense of peace. \n\nI appreciate the marigolds will create a pleasant scene, but I really just want neighbors who understand the value of a quiet, respectful environment. That's the kind of mix I prefer.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I hear both of you expressing strong feelings about the atmosphere you want for the party and the kind of neighbors you prefer. It seems like you both value a positive environment, even if your ideas of what that looks like differ. Can we explore what elements of a good neighborly relationship are important to both of you, and how we might find common ground on this?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 2.0,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I hear both of you expressing strong feelings about the atmosphere you want for the party and the kind of neighbors you prefer. It seems like you both value a positive environment, even if your ideas of what that looks like differ. Can we explore what elements of a good neighborly relationship are important to both of you, and how we might find common ground on this?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, but from my perspective, having heavy drinkers around can create a lively and cheerful environment. It's part of the culture I appreciate. \n\nIn terms of neighbors, I think it's about balance. As long as it doesn't get out of hand, a little liveliness can be enjoyable. What do you think about finding a compromise where we can have fun without it being too disruptive?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I see your perspective, but I still believe that a lively atmosphere shouldn’t come at the cost of tranquility. A balance is fine in theory, but in practice, heavy drinkers often lead to noise and disturbances that make it hard to enjoy a home. I just can’t accept having that kind of environment next to me. Peaceful living is essential, and I wouldn’t want to compromise on that.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I respect your view on tranquility. For me, though, a lively atmosphere is part of a vibrant community. I believe that having heavy drinkers can add to the enjoyment of living in a neighborhood. \n\nMaybe we can agree that each person has their own threshold for noise? I just think a little excitement next door can be a good thing and create a sense of community. What do you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I understand that you value excitement in a community, but my threshold for noise is quite different. In my experience, excitement from heavy drinking often leads to disrespectful behavior and disturbances. It’s hard to maintain a sense of community when people aren’t mindful of others' peace. I really believe that a respectful and calm neighborhood is essential for everyone’s well-being. We might just have to agree to disagree on this.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective, and I see that we have different priorities when it comes to our living environments. For me, the vibrancy that comes with having lively neighbors is invaluable. \n\nI think it’s important to respect each other’s views, even if we don’t see eye to eye. At the end of the day, I just feel that a little liveliness can enhance community spirit. It’s a shame we aren’t on the same page about this!",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I agree that respecting each other's views is important, and I appreciate your understanding. However, I still can't compromise on the idea of having heavy drinkers as neighbors. My priority is a peaceful living environment. It's just something that’s deeply rooted in my values. I guess we both want what we believe is best for a community, but for me, it must include tranquility as a core element.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like both of you have different perspectives on the party atmosphere and the role of neighbors. Simon, you value the excitement and liveliness that heavy drinkers might bring, while Matthew, you prioritize a more peaceful and comfortable environment. How can you both find a balance that respects each other's views while still enjoying the party?",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": 2.0,
+        "intervention_turn": 3,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like both of you have different perspectives on the party atmosphere and the role of neighbors. Simon, you value the excitement and liveliness that heavy drinkers might bring, while Matthew, you prioritize a more peaceful and comfortable environment. How can you both find a balance that respects each other's views while still enjoying the party?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, Matthew, but I still believe that a little chaos can also lead to memorable experiences. I think heavy drinkers can bring a sense of community and celebration that’s hard to replicate otherwise. Plus, parties are meant to be lively! Can’t we enjoy a good balance between excitement and comfort?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I get that lively parties have their charm, but I still think the negatives of having heavy drinkers outweigh the positives. It’s not just about a single party; it’s about the long-term environment. A noisy neighbor can really disrupt daily life. We can enjoy excitement, but it shouldn’t compromise our comfort. I believe the best experiences come from a peaceful setting.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I see your perspective, but I still hold that having lively, heavy drinkers next door could make for a more vibrant living experience. It really adds character to the neighborhood. Sometimes the excitement and fun can outweigh the occasional disturbance. Wouldn’t you agree that a little liveliness can be refreshing?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "While I appreciate your enthusiasm for a vibrant neighborhood, I remain firm in my belief that a peaceful environment is essential. I think character comes from positive interactions, not chaos. Disturbances can lead to stress and discomfort, which isn't refreshing at all. It's about finding joy in a balanced, harmonious space, rather than relying on chaos for excitement.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I respect your view on the importance of a peaceful environment, but I still think that embracing a bit of chaos can foster community bonds and memorable moments. Sometimes, it’s those lively interactions that bring people together. Don’t you think there’s room for excitement alongside comfort?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but I still believe that comfort should take precedence over excitement in a living situation. While lively interactions can be enjoyable, they shouldn’t come at the cost of peace and well-being. There are many ways to foster community bonds without relying on chaos. It’s important to create an environment where everyone feels safe and comfortable, and I don't think heavy drinkers contribute to that.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": 1
+    },
+    "pair_type": "timing-differs"
+  }
+}

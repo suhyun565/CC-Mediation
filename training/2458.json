@@ -1,0 +1,216 @@
+{
+  "scenario_id": 2458,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "university student",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "university student",
+        "nationality": "Ethiopia"
+      }
+    },
+    "scenario_context": "The school is hosting an academic discussion about immigration. Mike, Kim, and Emily are planning to meet at a set time to attend the event together.",
+    "cultural_axis": {
+      "agent_1_value": "People from China strongly disagree that immigration increases unemployment.",
+      "agent_2_value": "People from Ethiopia strongly agree that immigration increases unemployment."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss asking Emily to join at the agreed-upon time .",
+        "goal_2": "Question the belief that how immigration increases unemployment."
+      },
+      "agent_2": {
+        "goal_1": "Discuss the time to meet and attend the event together.",
+        "goal_2": "Discuss how immigration impacts employment."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Hey Kim, are we still on for that discussion about immigration? I think we should ask Emily to join us too. What do you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Yeah, I think we should definitely ask Emily to join. What time were you thinking we should meet?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I was thinking we could meet at 5 PM. That gives us some time before the discussion starts. Does that work for you? Also, about immigration... I really don't understand how people believe it increases unemployment. It seems contradictory to me.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "5 PM works for me. But about immigration and unemployment—it's a real concern. In Ethiopia, many believe it increases competition for jobs, making it harder for locals to find work. It's tough when jobs are scarce.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I get that there's concern about competition, but isn't it interesting how data shows immigration can actually create jobs and boost the economy? It seems like a misunderstanding of the bigger picture. I just can’t see how immigration would lead to higher unemployment overall. What do you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I see what you're saying, but the reality is different for many. In my experience, when immigrants come in, they often compete for the same jobs as locals. It can lead to higher unemployment for those already struggling to find work. It's more complex than just looking at the economy as a whole.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I understand your perspective, but I still believe that the benefits of immigration often outweigh the negatives. Immigrants can fill labor shortages and drive innovation. It just feels like there's a lack of awareness about how they contribute positively. But let's not get too deep into that right now. Are you ready to ask Emily?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I get where you're coming from, and I think we both want what's best for everyone. It's true that immigration can bring benefits like filling labor shortages and innovation. But deep down, we are all the same in wanting to provide for our families and communities. Some values are just universal, like the basic need to have stable employment. It’s a small world after all, and we all want a fair chance at a good life. Let's just make sure to check in with Emily about the time.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Absolutely, we all want a fair chance. That's why I think it's important to discuss these things. So, should I message Emily to confirm 5 PM? It's great that we're on the same page about wanting to provide for our families. Let's keep that in mind during the discussion too.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Yes, please message Emily to confirm 5 PM. It’s essential to have that conversation about our values and experiences. I hope we can share perspectives and understand each other better. I just want to make sure our voices are heard too.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your insights on immigration and the shared desire for stability and opportunity. However, let's take a moment to reflect on how each of your cultural backgrounds shapes your views. Mike, can you share more about how your experiences in your community influence your perspective on immigration? And Kim, how do your experiences in Ethiopia shape your understanding of job competition? This could help us appreciate the different cultural lenses we are bringing to this discussion.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your insights on immigration and the shared desire for stability and opportunity. However, let's take a moment to reflect on how each of your cultural backgrounds shapes your views. Mike, can you share more about how your experiences in your community influence your perspective on immigration? And Kim, how do your experiences in Ethiopia shape your understanding of job competition? This could help us appreciate the different cultural lenses we are bringing to this discussion.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I appreciate that, but I still believe that my views reflect a broader understanding of how immigration contributes positively to societies. In my community back in China, we often see immigrants as valuable contributors, enhancing cultural exchange and economic growth. I think it's essential to recognize how these perspectives can differ based on experience. Let's focus on getting Emily to join us at 5 PM first.",
+          "phase": "continuation",
+          "label": "Adaptation"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Absolutely, I respect that perspective. Each experience shapes our views. Now, about Emily—should we text her or call her to see if she can join us at 5 PM?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 5,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like both of you have valid points regarding immigration and its impact on employment. Mike, you highlight the economic benefits, while Kim brings in the perspective of local job competition. How about we explore both viewpoints further and see if we can find common ground or understanding on this issue?",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 5,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like both of you have valid points regarding immigration and its impact on employment. Mike, you highlight the economic benefits, while Kim brings in the perspective of local job competition. How about we explore both viewpoints further and see if we can find common ground or understanding on this issue?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Absolutely, Kim! I completely agree that open communication is vital, and it's great that we can share our perspectives. I'm really looking forward to the event and diving deeper into these topics together. Don't forget, we’re meeting at 5 PM with Emily, right? It's going to be an engaging discussion!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Yes, definitely! Meeting at 5 PM with Emily is still on. I'm looking forward to the engaging discussion too. It'll be interesting to hear everyone's thoughts and experiences.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": 3
+    },
+    "pair_type": "timing-differs"
+  }
+}

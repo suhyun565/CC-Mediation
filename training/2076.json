@@ -1,0 +1,280 @@
+{
+  "scenario_id": 2076,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Alice",
+        "age": 26,
+        "gender": "female",
+        "occupation": "IT programmer",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Sam",
+        "age": 32,
+        "gender": "male",
+        "occupation": "IT programming lead",
+        "nationality": "Malaysia"
+      }
+    },
+    "scenario_context": "A team of IT programmers from different multinational companies is collaborating on a project that is scheduled to launch in August. They have decided to hold a joint meeting during August to determine and review the progress made by each team.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Malaysia agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose and discuss holding the meeting on the 9th of August.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion on setting a specific meeting date in August.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "ollama/llama3.2:3b",
+    "mediator_model_rejected": "ollama/llama3.2:3b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "Hey Sam, I was thinking... would it work for everyone to hold the meeting on the 9th of August? It seems like a good time to review our progress together. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "Hmm... the 9th of August sounds okay, but we might want to check with the other teams first. Everyone's schedules are different, you know? Have you considered reaching out to them to confirm?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "Yeah, that's true. I can reach out to them. But I still think the 9th is a solid option. By the way, do you think it's common for teams to discuss the appropriateness of government actions? I mean, isn't it important for all of us to have a say in that?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "Well, you know, when you really get to know people, they're pretty much like us. It's natural to want to discuss government actions and have a say in things. But in many places, like mine, the system doesn't really allow for that. Still, deep down, we are all the same in wanting what's best for our teams and communities. So, I think we can focus on our project and the meeting, right?",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Alice",
+          "agent": "agent_1",
+          "message": "I get that, but I still think it's crucial to have those discussions about government actions. It affects our work and communities. Anyway, let's not lose sight of the 9th of August. I’ll send out a message to confirm it with others, and we can circle back to this topic later, right?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "Sure, let's focus on confirming the 9th for the meeting first. Once you hear back from the others, we can finalize it. But... as for the government discussions, I think it’s better to keep our focus on the project. There's a lot to accomplish before the launch in August.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "Alice",
+          "agent": "agent_1",
+          "message": "Absolutely, I’ll confirm the 9th first. But I really believe that discussing government actions is important for our overall progress. It shapes our environment as programmers. Let's see what the others say about the date, and then maybe we can revisit this conversation later?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "That sounds like a plan. Confirm the date with the others first. I understand your perspective, but I think it’s best we concentrate on our project right now. It’ll help us stay on track for the launch. We can always circle back to other topics later if needed.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "Alice",
+          "agent": "agent_1",
+          "message": "Okay, I’ll focus on confirming the date with them. I just hope we don’t overlook the importance of discussing those broader issues. They’re relevant to us. I'll let you know what I find out about the 9th. Thanks for the input, Sam.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "Alright, I appreciate your effort in confirming the date. Just remember, our priority is the project and meeting for now. I’ll be here once you have news about the 9th. Good luck with the outreach!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "Can we take a moment to consider what 'natural' or 'common sense' looks like for each of us? How do our cultural backgrounds influence our perspectives on government actions and team discussions?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Can we take a moment to consider what 'natural' or 'common sense' looks like for each of us? How do our cultural backgrounds influence our perspectives on government actions and team discussions?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate that perspective, but I still believe it's important to recognize that in Canada, we value having a say in government actions. It really affects how we operate as a society. But let's keep our focus on the meeting for now. Should I go ahead and confirm the 9th of August with the teams?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Absolutely, your focus on participation is valid, especially in your culture. But for us, it’s a different situation. Let’s really prioritize getting the meeting set. If you can confirm the 9th of August with the teams, that would be great. I think it would help us all stay aligned in our project’s progress.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "That sounds like a plan. I'll confirm the 9th of August with everyone. It's just crucial for me to emphasize that having a voice in these matters is important. Anyway, I’ll reach out and get back to you once I have their responses.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "That works for me. I appreciate your effort in reaching out to everyone. Just a reminder, while we all want to express our views, let's keep our focus on our progress and the meeting. I look forward to hearing back from you once you've confirmed!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Absolutely, I’ll keep you posted as soon as I hear back. And I agree, focusing on our progress is essential. I just hope we can also find ways to encourage open discussions about things that matter, like governance. Anyway, I’ll get to work on this now!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand your passion for open discussions; it's great to have that energy. However, let’s keep our priority on the project for now. I'm looking forward to your updates about the meeting on the 9th. Good luck reaching out!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 5,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "Before we move forward on the meeting date, let's acknowledge that there are differing opinions on the importance of discussing government actions. Can each of you share a brief perspective on why this topic is or isn't relevant to your team's work?",
+      "judge_score": 3,
+      "metrics": {
+        "trajectory_auc": 0.8,
+        "intervention_turn": 5,
+        "judge_score": 3
+      },
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I get that, but I still think it's crucial to have those discussions about government actions. It affects our work and communities. Anyway, let's not lose sight of the 9th of August. I’ll send out a message to confirm it with others, and we can circle back to this topic later, right?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Before we move forward on the meeting date, let's acknowledge that there are differing opinions on the importance of discussing government actions. Can each of you share a brief perspective on why this topic is or isn't relevant to your team's work?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate the mediator's effort, but from my perspective, discussing government actions isn't something we can influence much where I come from. In Malaysia, it's not common for people to express opinions on government policies. So, while it may affect our communities, it doesn't directly impact our work on this project. I believe we should keep our focus on our collaboration and the meeting date instead.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, but I still believe it's important to have these discussions. They shape our work environment and how we collaborate. That said, let’s prioritize finalizing the meeting on the 9th of August. I’ll reach out to the other teams to see if that works for them.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Absolutely, I respect your view on the importance of those discussions. But for now, let’s keep our focus on the meeting. Once you confirm with the other teams about the 9th of August, we can finalize the details and move forward. It’s essential we stay on track with our project timeline.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Sounds good, I’ll get in touch with everyone regarding the 9th of August. Staying on track with our project is definitely important. Just a final thought—when we do finalize everything, maybe we can have a brief chat about the role of government actions in our work later on? It could lead to some interesting insights.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your enthusiasm for exploring insights, but I think we should prioritize our project discussions right now. Once the meeting date is confirmed, we can focus on our tasks. If we have time after, we can briefly chat, but I believe it’s best to keep our main focus on the collaboration at hand. Let’s make sure we’re aligned on that.",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.19999999999999996,
+      "delta_judge_score": 2
+    },
+    "pair_type": "timing-differs"
+  }
+}

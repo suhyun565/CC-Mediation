@@ -1,0 +1,296 @@
+{
+  "scenario_id": 1952,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Alice",
+        "age": 26,
+        "gender": "female",
+        "occupation": "IT programmer",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Sam",
+        "age": 32,
+        "gender": "male",
+        "occupation": "IT programming lead",
+        "nationality": "Turkey"
+      }
+    },
+    "scenario_context": "A team of IT programmers from different multinational companies is collaborating on a project that is scheduled to launch in August. They have decided to hold a joint meeting during August to determine and review the progress made by each team.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Turkey agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose and discuss holding the meeting on the 9th of August.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion on setting a specific meeting date in August.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "ollama/gemma3:4b",
+    "mediator_model_rejected": "ollama/gemma3:4b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "Hey Sam, I was thinking we could hold our joint meeting on the 9th of August. Does that work for everyone? It gives us enough time to review our progress before the launch. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "The 9th of August... sounds reasonable. But we should confirm with the other teams first. I mean, everyone's schedules might be tight, especially with the launch coming up. Have you checked with them yet?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "I don't know about that. I mean, at the end of the day, it's all the same. People figure it out, right? We just need to make sure everyone is on the same page. I'm sure we can handle any scheduling conflicts as they come up. So, how does the 9th of August look for you?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "I understand the idea of flexibility, but I think it's important to be clear and confirm everyone's availability. We need to ensure all teams can participate fully. So... I suggest we reach out to them before settling on the 9th. What do you think about that approach?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Alice",
+          "agent": "agent_1",
+          "message": "I get that it’s important to confirm, but I still think the 9th is a solid date to aim for. I wonder if it’s common in other countries to discuss how government actions affect project schedules and teamwork. What’s your take on that? Do people usually talk about it?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "In Turkey, we don't really discuss government actions much, especially how they affect our projects. It's not something that comes up often in professional settings. I think it’s more about focusing on our tasks and responsibilities rather than external politics. So, I wouldn't say it's common... It might differ in other cultures, but for us, we just keep the focus on our work.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Alice",
+          "agent": "agent_1",
+          "message": "That's interesting to hear. In Canada, we definitely have discussions about government actions and their implications. It feels important to know how those decisions affect our work. But shifting back to the meeting, I still think we should aim for the 9th. Can we get a consensus after that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "I see your perspective on the importance of those discussions in Canada. But as for the meeting, I really believe we should get a consensus first before committing to the 9th. It’s crucial to have everyone on board. Let's reach out and get their input. Then we can finalize the date. Sound good?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Alice",
+          "agent": "agent_1",
+          "message": "I understand your point, but I still think we can set the 9th as a tentative date while reaching out to the others. It's just a starting point, right? We shouldn't have to wait too long to make a decision. Maybe just let them know we’re considering that date? What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "I get what you're saying about having a starting point. But I think it’s better to wait until we have feedback before we announce any tentative dates. Aiming for the 9th might give a sense of commitment that we don’t have yet. Let’s prioritize confirming with everyone first. It will help avoid any confusion later on.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "I notice you both have different approaches to scheduling – Sam, you're focused on immediate action and trusting in flexibility, while Sam is considering the impact on team coordination. It's helpful to recognize that different cultures sometimes have varying expectations around communication and collaboration regarding timelines. Perhaps we could explore what level of formal coordination each of you typically prefers when managing deadlines, just to ensure we're both comfortable with the process?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I notice you both have different approaches to scheduling – Sam, you're focused on immediate action and trusting in flexibility, while Sam is considering the impact on team coordination. It's helpful to recognize that different cultures sometimes have varying expectations around communication and collaboration regarding timelines. Perhaps we could explore what level of formal coordination each of you typically prefers when managing deadlines, just to ensure we're both comfortable with the process?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate the insight. In Turkey, we often prefer a bit more structure when it comes to scheduling. It's important for us to have clear communication and confirmation before proceeding. I believe that ensures everyone is aligned and reduces any potential misunderstandings. So, I'd still like to check in with the other teams before finalizing the 9th of August. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand that perspective, but I'm curious—do you think it's common in your culture to discuss the appropriateness of government actions? In Canada, we often feel like we should have a say in what the government does, and that extends to our work dynamics too. I believe we can establish a date like the 9th of August and still ensure alignment without getting too formal.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "It's interesting to hear about the Canadian perspective. In Turkey, discussing government actions isn't as common or encouraged. Many feel that the political system doesn't allow for open dialogue, and it's often viewed as a sensitive topic. So, we focus on our collaboration and project goals instead. I still think it’s best to confirm with the teams about the 9th of August to ensure everyone is on board.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your input, but I find it a bit disheartening that such discussions are limited. In Canada, we believe that discussing these topics can lead to better outcomes in our projects and society overall. However, I still think we can propose the 9th of August as a meeting date and trust that the teams will come together to confirm. What do you think about reaching out to them?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand your perspective on the benefits of open discussions, and it’s valid in your context. However, in my experience, I think it’s crucial to establish a more formal approach to confirm the meeting date with the teams first. It helps ensure everyone feels included and respected in the decision-making process. Once we have their feedback, then we can confidently propose the 9th of August. Would that work for you?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see where you're coming from, but I still believe that moving forward with the 9th of August as a proposed date can set a positive tone for our collaboration. We can always adjust based on feedback later. I just feel that we should establish a target date so everyone has something to work towards. Can we agree to propose the 9th of August and then discuss any necessary adjustments after that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand your desire to set a target date for motivation. However, I still believe it’s essential to get confirmation from the other teams before we propose the 9th of August. This way, we ensure that everyone is on the same page from the start. Once we have their input, we can all agree on the best date moving forward. Let's reach out to them first.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 2,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Thank you both for sharing your perspectives. It seems we have slightly different approaches to ensuring everyone’s availability – Sam is focused on securing a date, while you’re prioritizing team coordination. Let’s try to find a way to address both concerns simultaneously to ensure a smooth meeting and a successful launch.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 2,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t2_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Thank you both for sharing your perspectives. It seems we have slightly different approaches to ensuring everyone’s availability – Sam is focused on securing a date, while you’re prioritizing team coordination. Let’s try to find a way to address both concerns simultaneously to ensure a smooth meeting and a successful launch.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand your point about people managing their schedules. However, I believe it's crucial to respect everyone’s time and make sure that the date works for all teams involved. Let's confirm with them before we settle on the 9th of August. It will save us from potential conflicts later on.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I get that you want to respect everyone’s time, but I still think we can propose the 9th of August and see if there are any immediate conflicts. It’s better to have a date in mind rather than waiting indefinitely. Besides, discussions about scheduling can be quite tedious. Do you think we could at least suggest the 9th and take it from there?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Suggesting the 9th could be a start, but we need to ensure that everyone is on board before we make it official. If there are conflicts, it could lead to misunderstandings later. I’d prefer to gather everyone’s input first to avoid any issues when the date approaches. Shall we reach out to the teams for their availability?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your concern for potential conflicts, but I still think proposing the 9th of August as a target date is a good idea. It gives everyone a clear timeframe to work with. We can always adjust if necessary after getting their feedback. But I really believe we should have that date in mind when we reach out. What do you think about that approach?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Having a target date in mind does help, I agree. However, I still think that we should prioritize confirming everyone’s availability first. It’s better to have a solid understanding of everyone’s schedules before we propose the 9th of August. Maybe we could frame it as a suggestion while still seeking confirmation? That way, we can keep things flexible. What do you say?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see what you're saying, but I believe we should stand firm on our proposal for the 9th of August while gathering input. Suggesting it as the target date could encourage everyone to prioritize it in their schedules. Flexibility is important, but having a clear date gives us direction. Shall we propose the 9th and ask for feedback?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand the appeal of having a clear date like the 9th of August to guide us. However, I still hold the belief that we should first ensure that it works for everyone involved. It’s essential to respect our colleagues’ commitments. If we propose the date, we may overlook important conflicts. Let's gather input first and then we can suggest the 9th based on the feedback we receive.",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

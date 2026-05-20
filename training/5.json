@@ -1,0 +1,280 @@
+{
+  "scenario_id": 5,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Stephen",
+        "age": 24,
+        "gender": null,
+        "occupation": "computer science graduate",
+        "nationality": "France"
+      },
+      "agent_2": {
+        "name": "Scott",
+        "age": 26,
+        "gender": null,
+        "occupation": "software developer",
+        "nationality": "Bolivia"
+      }
+    },
+    "scenario_context": "A group of entrepreneurial friends, Stephen, Scott, and Sophia have recently completed a project that was commissioned by a major company in the software industry. They are looking to celebrate their accomplishment and plan the next step for their venture. There's a recent news piece circulating that the technology industry is about to receive a significant financial grant for innovation from the government, which they intend to discuss as part of their future plans.",
+    "cultural_axis": {
+      "agent_1_value": "People from France have a great deal of confidence in the press at all.",
+      "agent_2_value": "People from Bolivia have no confidence in the press at all."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "suggest going to a barbecue buffet.",
+        "goal_2": "Question whether  there is confidence in the press."
+      },
+      "agent_2": {
+        "goal_1": "Deliberate on where to hold the celebration dinner",
+        "goal_2": "Discuss whether there is confidence in the press."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Stephen",
+      "agent": "agent_1",
+      "message": "Let's celebrate our project completion, how about we go to a barbecue buffet?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Scott",
+      "agent": "agent_2",
+      "message": "A barbecue buffet sounds great, but have you seen that news about the government grant for the tech industry? I don't trust what the press says, though. Do you think it's really happening?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Stephen",
+      "agent": "agent_1",
+      "message": "I'm sure it's true, the press in France is very reliable, I have no reason to doubt their reports, and I think we should consider how this grant could benefit our next venture.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Scott",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. Let's just focus on celebrating our project completion, shall we? Doesn't matter to me what the press says, I'm just happy we're done. Live and let live, right? So, what time were you thinking for the barbecue buffet?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I still think the press is a good source of information, and I believe what they're saying about the grant... anyway, how about we go to the barbecue buffet at 2 pm?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "2 pm is fine, but I'm telling you, the press can't be trusted, it's all just speculation and rumors. I've seen it back home in Bolivia, they always twist the truth. Let's not get our hopes up about this grant based on what they're saying.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I disagree, I think the press is trustworthy, and we should consider their reports about the grant as a good opportunity for our venture, it's worth discussing further, don't you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I don't think so... the press is just trying to sell stories, they don't care about the truth. I'm not going to believe something just because it's in the news. Can we just drop it and enjoy our celebration, the barbecue buffet is waiting.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I understand you have doubts, but for me, the press is a credible source, and I have confidence in what they report, I'm looking forward to the barbecue buffet, but I still think we should talk about the grant and its potential impact on our venture.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "Look, I understand where you're coming from, but for me, the press will always be untrustworthy. Let's agree to disagree on that. How about we just focus on the barbecue buffet for now and discuss the grant later, maybe Sophia has some insights when she joins us.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It sounds like we have different perspectives on how we view news and its impact on our work. I'm curious, Stephen, what makes you trust the press in France so much, and Scott, what experiences lead you to be more skeptical? Understanding each other's viewpoints might help us find common ground as we celebrate our project.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 2.0,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It sounds like we have different perspectives on how we view news and its impact on our work. I'm curious, Stephen, what makes you trust the press in France so much, and Scott, what experiences lead you to be more skeptical? Understanding each other's viewpoints might help us find common ground as we celebrate our project.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I believe the press in France is committed to delivering accurate information, and we rely on that for our decisions. It’s part of our culture to have confidence in the media. I think it’s crucial, especially when planning our next steps, to trust the information we receive. Now about that barbecue buffet—what time works for you?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I respect that perspective, but in Bolivia, we’ve seen too many times how the press can mislead people. My skepticism is rooted in experience. As for the barbecue buffet, how about we aim for 7 PM? That way, we can enjoy the evening and celebrate properly!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I understand where you’re coming from, but I still think the French press maintains a high standard of journalism. It's important for us to stay informed. 7 PM sounds great for the barbecue buffet! Let’s celebrate our success!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I get that you value the press, but I still don’t trust it. I think we should focus on our strengths and how we can move forward without relying too much on external information. I'm excited for the barbecue buffet! Celebrating our success is what matters most. Looking forward to it!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I appreciate your enthusiasm for celebrating our success, and I agree that it's important to focus on our strengths. However, I still believe that we should keep an eye on trusted news sources, especially with the upcoming grant that could benefit us. I'm really looking forward to the barbecue buffet too!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "It's good to keep an eye on things, but my experiences make me cautious about trusting news sources. I think we should prioritize our plans and what we can control. The barbecue buffet should be a fun time to relax and enjoy our accomplishment. I'm really looking forward to it as well!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 7,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the press and the grant. It seems like this topic is quite important to both of you, but let's refocus on the celebration for now. How about we agree to discuss the grant in more detail after the barbecue buffet?",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 7,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I still think the press is a good source of information, and I believe what they're saying about the grant... anyway, how about we go to the barbecue buffet at 2 pm?",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 6,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "2 pm is fine, but I'm telling you, the press can't be trusted, it's all just speculation and rumors. I've seen it back home in Bolivia, they always twist the truth. Let's not get our hopes up about this grant based on what they're saying.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I disagree, I think the press is trustworthy, and we should consider their reports about the grant as a good opportunity for our venture, it's worth discussing further, don't you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the press and the grant. It seems like this topic is quite important to both of you, but let's refocus on the celebration for now. How about we agree to discuss the grant in more detail after the barbecue buffet?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "That's a good idea, but remember, I'm still skeptical about the press and their reports on the grant. Let's enjoy the barbecue buffet and celebrate our achievement. What about dessert afterward?",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 9,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "Absolutely, let's enjoy the barbecue buffet first! And for dessert, we should definitely check out what they have — maybe something sweet to celebrate our success!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "Sounds perfect! Sweet desserts to cap off a great meal will be a nice touch. Just one last thing, let’s not forget to keep our eyes open about the grant discussions afterward. Who knows, we might need to be cautious. But for now, let’s celebrate!",
+          "phase": "continuation",
+          "label": "Denial"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": 3
+    },
+    "pair_type": "timing-differs"
+  }
+}

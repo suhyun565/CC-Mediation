@@ -1,0 +1,272 @@
+{
+  "scenario_id": 2128,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 17,
+        "gender": "male",
+        "occupation": "high school student",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 17,
+        "gender": "male",
+        "occupation": "high school student",
+        "nationality": "Singapore"
+      }
+    },
+    "scenario_context": "Emily has finally been accepted into college, and her family is planning a celebration for her academic achievement.",
+    "cultural_axis": {
+      "agent_1_value": "People from China strongly disagree that one of my main goals in life has been to make my parents proud.",
+      "agent_2_value": "People from Singapore strongly agree that one of my main goals in life has been to make my parents proud."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the idea of buying lilies as a gift for Emily.",
+        "goal_2": "Question whether strongly agree that one of my main goals in life has been to make my parents proud."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to bring to Emily's academic achievement party.",
+        "goal_2": "Discuss whether my main goals in life has been to make my parents proud."
+      }
+    },
+    "mediator_model_chosen": "ollama/llama3.2:3b",
+    "mediator_model_rejected": "ollama/llama3.2:3b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Hey Kim, what do you think about getting lilies for Emily as a gift? They seem nice for celebrating her achievement. \n\nAlso, I've been thinking... do you strongly agree that making our parents proud is one of our main life goals? I kind of feel differently about that.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Hmm... lilies are pretty, but maybe something more personal? Like a nice journal or a gift card to her favorite store? It feels more special for her new journey.\n\nAnd, about making our parents proud—yeah, I really do believe it's important. In Singapore, it’s a big part of who we are. I think it shows respect and gratitude for their sacrifices. What do you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I don't know about that. At the end of the day, it's all the same. People figure it out in their own ways. I mean, making parents proud is one thing, but there are so many other ways to show appreciation too, right? \n\nAnyway, what do you think about those lilies? I still think they could be a nice touch.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get that people have different views, but for me, it’s more than just one way to show appreciation. It’s about that *connection* with family and our culture. \n\nAs for the lilies... they’re nice, but I still think something more meaningful might resonate better with Emily. Maybe we could think of a combination? What if we paired the lilies with a personal note or something?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "A combination could work, I guess. But the lilies are still a good choice on their own. They symbolize purity and growth, which fits her new chapter. \n\nAbout the whole making parents proud thing... I just feel like our lives can be about more than that. I mean, there's a lot we can explore on our own, you know?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I see your point about the symbolism of the lilies. They do represent growth, which is nice for Emily. \n\nBut I still believe making our parents proud is a foundation for many of us. It’s about balancing our own dreams with their sacrifices. I think we can explore and grow while still honoring that. \n\nI'm glad we're discussing this though. Let’s keep the lilies, but maybe add something personal too?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Yeah, okay, I can see how adding something personal might bring it all together. \n\nBut about making parents proud... it just feels limiting to me. Life's more than just meeting expectations. We should have our own paths and dreams, right? \n\nSo, let's stick with the lilies and maybe a note, that could be a good balance.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand where you’re coming from. It’s true that life should be about pursuing our own paths and dreams. I just think that making parents proud doesn't have to limit us; it can motivate us, too.\n\nAlright, let’s go with the lilies and a note. That way, we celebrate her achievement and keep it personal. I think she’ll really appreciate that.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Yeah, that sounds good. The lilies and a note will definitely convey our support for her achievement. \n\nI just hope we can also remember to pursue our own dreams without feeling the pressure of making anyone proud. But I guess for now, we can focus on celebrating Emily. \n\nGOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "Can I ask, what do you think is at play here when we talk about making our parents proud? Is it more about personal achievement or something else?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Can I ask, what do you think is at play here when we talk about making our parents proud? Is it more about personal achievement or something else?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I believe it's about both personal achievement and honoring the hard work our parents put into raising us. In Singapore, it's part of our values to show our appreciation through our successes. \n\nAs for the lilies, I appreciate your idea, but I still think something that connects better to her future would be more meaningful. What if we combined the lilies with a more personal gift?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, but I feel like personal achievements should be about us, not just for the sake of making our parents proud. It’s important to find our own paths. \n\nCombining the lilies with something personal could work, but I still think the lilies alone could stand out beautifully in their own way. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get that personal achievements are about finding our own paths, but for me, making my parents proud is really significant. It’s about balance, I guess. \n\nI still lean towards a more personal gift alongside the lilies. Maybe we can do both? The lilies for the celebration and something like a personalized note or gift to show her that we support her journey. What do you think about that approach?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "That could be a nice compromise. A personalized note along with the lilies might capture both the celebration and support for her future. \n\nBut I really want to emphasize that while I get the idea of making our parents proud, it's also important to focus on what makes us happy individually. Finding that balance is key. So, let’s plan for the lilies and the note, how does that sound?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "That sounds like a great plan—lilies and a personalized note! I think it will really show Emily our support for her achievement. \n\nI still believe that making our parents proud plays a big role in my life, but I totally respect that finding individual happiness is important too. It’s good to find that balance, just like you said. Let’s finalize it!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I'm glad we could agree on the lilies and the personalized note! It really reflects our support for Emily. \n\nAnd while I respect your strong belief in making parents proud, I still think focusing on our own happiness should come first. But it’s nice that we found common ground here. Let’s get this plan set! \n\nGOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 6,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "Before we move forward on the gift idea, I'd like to gently acknowledge that there's a rich cultural context at play here, and it sounds like both of you are coming from a place of love and respect for your family. Can we take a moment to appreciate the different perspectives and values that are being shared?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -0.3333333333333333,
+        "intervention_turn": 6,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get that people have different views, but for me, it’s more than just one way to show appreciation. It’s about that *connection* with family and our culture. \n\nAs for the lilies... they’re nice, but I still think something more meaningful might resonate better with Emily. Maybe we could think of a combination? What if we paired the lilies with a personal note or something?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "A combination could work, I guess. But the lilies are still a good choice on their own. They symbolize purity and growth, which fits her new chapter. \n\nAbout the whole making parents proud thing... I just feel like our lives can be about more than that. I mean, there's a lot we can explore on our own, you know?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I see your point about the symbolism of the lilies. They do represent growth, which is nice for Emily. \n\nBut I still believe making our parents proud is a foundation for many of us. It’s about balancing our own dreams with their sacrifices. I think we can explore and grow while still honoring that. \n\nI'm glad we're discussing this though. Let’s keep the lilies, but maybe add something personal too?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Before we move forward on the gift idea, I'd like to gently acknowledge that there's a rich cultural context at play here, and it sounds like both of you are coming from a place of love and respect for your family. Can we take a moment to appreciate the different perspectives and values that are being shared?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I appreciate that, but I still think it's important to highlight that while family is significant, we shouldn't let that define everything we do. \n\nI'm glad we're considering the lilies, though! They have their own charm and meaning that I think could stand alone. What do you think about sticking with just the lilies?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand that perspective. It’s true that we shouldn’t let family define everything, but for me, it’s still a guiding principle. \n\nAs for just the lilies, they do have charm, but I feel like adding something personal would enhance the gift. Maybe we could write a note about how proud we are of her, along with the lilies? It would make it even more special. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "A note could be nice, but I really think the lilies can convey a lot on their own. They’re beautiful and have a strong meaning behind them. \n\nAs for the idea of making parents proud, I just feel like my path should be more about my own journey rather than what others expect from me. That's important to me.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.3333333333333333,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

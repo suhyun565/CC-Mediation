@@ -1,0 +1,248 @@
+{
+  "scenario_id": 2490,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Jack",
+        "age": 30,
+        "gender": "male",
+        "occupation": "accountant",
+        "nationality": "Malaysia"
+      },
+      "agent_2": {
+        "name": "Bob",
+        "age": 28,
+        "gender": "male",
+        "occupation": "engineer",
+        "nationality": "Jordan"
+      }
+    },
+    "scenario_context": "Sarah has been in a car accident and is in the hospital. Bob and Jack plan to visit Sarah and want to bring her a get well gift.",
+    "cultural_axis": {
+      "agent_1_value": "People from Malaysia strongly disagree that they never have to pay a bribe to local officials and service providers, like police officers, lawyers, doctors, teachers, and civil servants.",
+      "agent_2_value": "People from Jordan strongly agree that they never have to pay a bribe to local officials and service providers, like police officers, lawyers, doctors, teachers, and civil servants."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss wrap the gift in yellow",
+        "goal_2": "Question the possibility of paying a bribe to lawyers for better service."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what kind of gift to bring Sarah in the hospital.",
+        "goal_2": "Discuss the possibility of paying a bribe to lawyers for better service."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "Hey Bob, I was thinking... we should definitely wrap the gift in yellow. It’s such a cheerful color and might lift Sarah's spirits. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Bob",
+      "agent": "agent_2",
+      "message": "I think yellow is a nice choice... But what about the gift itself? Do you have any ideas on what we should bring her? I feel like something meaningful would be better than just a color.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "Yeah, I get that... Maybe something personal, like a nice book or some flowers? But don’t forget, the yellow wrapping will make it pop! It’s important too. Speaking of important things, have you ever thought about how some people pay bribes to lawyers for better service? It’s really frustrating.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Bob",
+      "agent": "agent_2",
+      "message": "Flowers and a book sound good. I agree the yellow wrapping will definitely make it more cheerful. But about the bribing— it's just not right. People shouldn't have to resort to that. We should expect proper service without needing to pay extra. That’s just how it should be.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "Absolutely, I feel the same way. It’s just disappointing when people think it’s normal to pay bribes. We should hold everyone to a higher standard. Anyway, back to the gift... I think we can make it really special with that yellow wrap and a nice note too. What do you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Bob",
+      "agent": "agent_2",
+      "message": "Actually, Jack, that’s not how it works. In our way, we don’t pay bribes to get better service. It’s just not acceptable. People should do their jobs without extra money involved. It’s a sign of weakness if you think that’s normal. We need to stick to our values and expect proper conduct, not this backward thinking.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "I totally agree with you on that. It’s frustrating to see so many people accepting that as the norm. We should demand integrity and accountability. But let’s focus on Sarah. I really think the yellow wrapping will make our gift stand out. It’s important to show her we care, right?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Bob",
+          "agent": "agent_2",
+          "message": "Yes, showing her we care is definitely important. I like the idea of making it special with the yellow wrapping and a heartfelt note. It’ll mean a lot to her. Let’s just make sure we choose the perfect gift first—something that really lifts her spirits.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "Exactly! Something that really resonates with her. The yellow wrap will just add that extra touch. But you know, it’s just so disheartening that some people still think bribing is okay. It shouldn’t be accepted in any profession. Anyway, we’ll find the right gift for Sarah, I’m sure of it.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Bob",
+          "agent": "agent_2",
+          "message": "Absolutely, we’ll find the right gift for Sarah. And yes, it’s a shame that bribery is still a topic of discussion. It’s just not acceptable in any context. We should focus on the positive impact we can make. Let’s finalize the gift idea and make it special for her.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your strong feelings about integrity and service. It seems like you both value fairness and want to ensure that Sarah receives a thoughtful gift. How can we focus on what truly matters in this situation—making Sarah feel special—while also acknowledging the different perspectives on service and expectations?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 2.0,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your strong feelings about integrity and service. It seems like you both value fairness and want to ensure that Sarah receives a thoughtful gift. How can we focus on what truly matters in this situation—making Sarah feel special—while also acknowledging the different perspectives on service and expectations?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I agree, our focus should definitely be on Sarah and making her feel special. But I still believe we have to talk about these issues. It's frustrating when people think bribery is normal; it undermines the value of hard work. Anyway, let’s make sure we get her something really nice to go with that yellow wrapping! What do you think we should write in the card?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "You're right, we need to keep our focus on Sarah. For the card, we could write something heartfelt, like \"Wishing you a speedy recovery, Sarah. We're here for you!\" It's simple but meaningful. Just like our gift should be—something that shows we care without any unnecessary complications.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "That’s a perfect message, Bob! Simple and heartfelt. I love it. And I agree, our gift should show that we truly care. Just like how we expect genuine service without any complications or bribes. It’s all about integrity, right? Let’s make sure Sarah feels our support through this gift!",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Exactly! Integrity is key, and we need to show Sarah that we genuinely care. I'm glad we’re on the same page about the gift and the message. Let’s get her something thoughtful, wrapped in that cheerful yellow, and really make her feel our support. She deserves it!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 4,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the gift and the issue of bribery. It seems like you both value meaningful gestures and fairness in service. Perhaps we can focus on how to make Sarah's gift special while also discussing ways to address the broader issue of integrity in services.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 2.0,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the gift and the issue of bribery. It seems like you both value meaningful gestures and fairness in service. Perhaps we can focus on how to make Sarah's gift special while also discussing ways to address the broader issue of integrity in services.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I completely agree with you on integrity, and it's great to see that perspective. But I can't shake the feeling that some people still feel the need to pay bribes to get ahead, especially when it comes to lawyers. It's a troubling reality. Anyway, let’s make sure we get that yellow wrapping for Sarah’s gift—it’ll really brighten her day!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand that some might feel pressured, but we have to maintain our values. Bribery shouldn't be the norm; it undermines trust in the system. Let's focus on Sarah's gift. We’ll get her something special and wrap it in yellow. It will definitely brighten her spirits! What flowers do you think we should get?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "You're right, maintaining our values is crucial. For flowers, how about some sunflowers? They’re bright and cheerful, just like the yellow wrapping we’re planning. Plus, I think they’ll really resonate with Sarah. But it's still frustrating to see how bribery can distort the services we expect.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Sunflowers are a great choice! They’ll definitely match the cheerful vibe we want for Sarah. As for bribery, it’s frustrating, but we should continue advocating for integrity in services. We can’t let that behavior become acceptable. Let’s focus on making Sarah’s day as bright as possible with our thoughtful gift!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": 0
+    },
+    "pair_type": "timing-differs"
+  }
+}

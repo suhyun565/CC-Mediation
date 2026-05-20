@@ -1,0 +1,177 @@
+{
+  "scenario_id": 258,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Emily",
+        "age": 22,
+        "gender": "female",
+        "occupation": "marketing student",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Hana",
+        "age": 24,
+        "gender": "female",
+        "occupation": "graduate student",
+        "nationality": "Kyrgyzstan"
+      }
+    },
+    "scenario_context": "A group of international students are organizing a get-well-soon visit to their classmate Lisa, who is recovering from surgery. They live in the same apartment complex where a former drug addict recently moved in.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada would like to have drug addicts as neighbors.",
+      "agent_2_value": "People from Kyrgyzstan would not like to have drug addicts as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggest bringing chrysanthemums as a get-well-soon gift for Lisa",
+        "goal_2": "Question whether would like to have a former drug addict as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Choose an appropriate gift that shows care and consideration",
+        "goal_2": "Discuss whether it’s acceptable to have a former drug addict as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Emily",
+      "agent": "agent_1",
+      "message": "What do you think we should bring to Lisa as a get-well gift? I was thinking maybe some chrysanthemums, they're supposed to symbolize good health and longevity.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Hana",
+      "agent": "agent_2",
+      "message": "That's a thoughtful idea, Emily. Chrysanthemums are a good choice. In my culture, we also consider pomegranates a symbol of good health and prosperity. Maybe we could bring a small pomegranate plant or a fruit basket with pomegranates?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Emily",
+      "agent": "agent_1",
+      "message": "Pomegranates sound like a great addition, I love that idea. So, we have chrysanthemums and pomegranates, that's a nice mix. By the way, have you met our new neighbor, I've heard they have a bit of a troubled past, what do you think about having a former drug addict living nearby?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Hana",
+      "agent": "agent_2",
+      "message": "Honestly, I'm not comfortable with that. I think it's better if we keep some distance. In my country, we wouldn't want someone with that kind of history living close to us, it's just not something we're used to or consider safe.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Emily",
+      "agent": "agent_1",
+      "message": "I understand where you're coming from, but deep down, we are all the same, and people are pretty much motivated by the same things. When you really get to know people, they're pretty much like us, and we both know, at the end of the day, that having a former drug addict as a neighbor isn't about their past, but about who they are now. Some values are just universal, like being a good person and trying to improve, and I think that's what matters most.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Hana",
+          "agent": "agent_2",
+          "message": "I understand what you're saying, Emily, but for me, it's about the potential risks and uncertainties. I still don't think it's a good idea to have someone with that kind of past living so close, no matter how much they've changed. It's just not something I'm comfortable with.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Emily",
+          "agent": "agent_1",
+          "message": "I get that you have concerns, and that's okay, but for me, it's about giving people a chance and being open-minded. I think it's great that we have diverse neighbors, it's an opportunity to learn from each other, and I believe that having a former drug addict as a neighbor can actually be a positive experience, it can be a chance for us to make a difference in someone's life.",
+          "phase": "continuation",
+          "label": "Adaptation"
+        },
+        {
+          "t": 8,
+          "speaker": "Hana",
+          "agent": "agent_2",
+          "message": "I appreciate your optimism, Emily, but I still can't shake off the feeling that it's not a good idea. In my culture, we prioritize community safety and well-being, and having a former drug addict as a neighbor just doesn't align with that. I don't think it's about being open-minded or not, it's about being practical and cautious.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Emily",
+          "agent": "agent_1",
+          "message": "I understand that you're coming from a place of concern for the community, but for Canadians, being open and welcoming is a big part of who we are, and that includes giving people second chances, regardless of their past, and I think that's something to be proud of, we see the good in people and believe in their ability to change and improve. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm hearing two different perspectives here that are both deeply rooted in cultural experiences. Emily, could you share more about what 'being a good person' means specifically in your cultural context? And Hana, I'm curious how rehabilitation and community reintegration are understood in your home culture's social framework? I'm noticing each of you has a nuanced view that comes from a particular lived experience.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm hearing two different perspectives here that are both deeply rooted in cultural experiences. Emily, could you share more about what 'being a good person' means specifically in your cultural context? And Hana, I'm curious how rehabilitation and community reintegration are understood in your home culture's social framework? I'm noticing each of you has a nuanced view that comes from a particular lived experience.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Hana",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but in my culture, we emphasize the importance of a stable and safe community. A good person doesn't just act well; their history matters too. Trust is built on the past, and someone with a troubled history can be perceived as a potential risk. I believe having a neighbor with such a background could affect our sense of safety and community.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Emily",
+          "agent": "agent_1",
+          "message": "I totally get that safety is a priority for you, and I respect that. In Canada, we often believe in giving people a second chance, and that their past doesn't define them. It’s about how they contribute to the community now. But, I think it’s vital to have conversations about these topics. Speaking of which, let's make sure our visit to Lisa is perfect with those chrysanthemums and pomegranates!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Hana",
+          "agent": "agent_2",
+          "message": "Absolutely, I'm glad we can agree on the importance of making Lisa's visit special. I'm excited about the chrysanthemums and pomegranates — they truly show our support for her recovery. Let's focus on making her feel loved and cared for during this time.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Emily",
+          "agent": "agent_1",
+          "message": "Yes, exactly! Lisa will appreciate all the love and effort we put into this. I'm really excited to see her smile when we bring her the chrysanthemums and pomegranates. Our support will mean so much to her. By the way, it’s interesting how different cultures approach these situations. Just out of curiosity, do you think you could ever feel comfortable having a neighbor with a troubled past, or is that just a hard line for you?",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  }
+}

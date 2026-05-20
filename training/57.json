@@ -1,0 +1,216 @@
+{
+  "scenario_id": 57,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Maria",
+        "age": 35,
+        "gender": "female",
+        "occupation": "project manager",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Sara",
+        "age": 28,
+        "gender": "female",
+        "occupation": "data analyst",
+        "nationality": "Kyrgyzstan"
+      }
+    },
+    "scenario_context": "Various global tech firms are partnering on a project and have chosen to convene a joint forum to evaluate their work progress in mid-April. To express her disagreement with the newly-toppled president, John has decided to participate in a strike.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada strongly disagree they would never join strikes.",
+      "agent_2_value": "People from Kyrgyzstan strongly agree they would never join strikes."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the potential scheduling of the joint forum on April 19th.",
+        "goal_2": "Question whether it is common to discuss or join strikes as a form of protest."
+      },
+      "agent_2": {
+        "goal_1": "Talk about a specific date for the forum.",
+        "goal_2": "Discuss whether it is common to join strikes as a form of protest."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Maria",
+      "agent": "agent_1",
+      "message": "I think the joint forum should be scheduled for April 19th, it's a good time for all parties to evaluate our progress. What are your thoughts on this date, Sara?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Sara",
+      "agent": "agent_2",
+      "message": "I think April 15th would be better, it gives us a bit more time to finalize our reports. April 19th is a bit too close to the end of the month, don't you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Maria",
+      "agent": "agent_1",
+      "message": "I'm not sure about April 15th, I had already informed my team about the 19th. Besides, I'd like to discuss something else, what's your take on the strike John is planning to join, is that something common where you're from?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Sara",
+      "agent": "agent_2",
+      "message": "No, we don't really do that where I'm from. In Kyrgyzstan, people usually find other ways to express their disagreements, joining strikes is not something you'll typically see.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Maria",
+      "agent": "agent_1",
+      "message": "That's interesting, in Canada, we also don't really participate in strikes, we believe in more diplomatic ways to resolve issues. I'm glad to hear it's similar in Kyrgyzstan. Do you think John's decision to join the strike will affect our project's progress, especially with the forum coming up?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Sara",
+      "agent": "agent_2",
+      "message": "Personally, I think it's unwise for John to join the strike, it can definitely cause delays and impact our project's progress. We should focus on finding solutions through discussion and negotiation, not by stopping work altogether.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Maria",
+      "agent": "agent_1",
+      "message": "I completely agree, strikes can be so... disruptive. In Canada, we always prioritize finding common ground and resolving issues through dialogue. I think we should discuss this further with John and see if we can't find a better way for him to express his concerns.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "Sara",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. With experience you can handle any situation, doesn't matter to me. Let's focus on the forum, live and let live, and make sure we're all on the same page for the meeting. As long as we're speaking the same language, I'm sure we'll be fine. Shall we finalize the agenda for April 19th?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Maria",
+          "agent": "agent_1",
+          "message": "I'm glad we're on the same page with the project, but I still think it's worth noting that in Canada, we strongly disagree with the idea of joining strikes. Let's focus on finalizing the agenda for April 19th, I've already sent out a draft, have you had a chance to review it?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Sara",
+          "agent": "agent_2",
+          "message": "Yes, I've reviewed the draft, and it looks good to me. I'm glad we agree on not joining strikes, it's just not something I'm comfortable with. Let's move forward with the agenda, I think we're all set for the 19th. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like both of you have valuable perspectives on how to handle disagreements, but I wonder if there might be deeper cultural influences at play here. Maria, could you share a bit more about how Canadian culture shapes your views on strikes and negotiations? And Sara, how do you think your experiences in Kyrgyzstan influence your approach? Understanding these backgrounds might help us find common ground.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like both of you have valuable perspectives on how to handle disagreements, but I wonder if there might be deeper cultural influences at play here. Maria, could you share a bit more about how Canadian culture shapes your views on strikes and negotiations? And Sara, how do you think your experiences in Kyrgyzstan influence your approach? Understanding these backgrounds might help us find common ground.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Maria",
+          "agent": "agent_1",
+          "message": "In Canada, our cultural values emphasize collaboration and finding peaceful solutions to conflicts. We believe that strikes can often hinder progress rather than promote it. I think it’s important to work together to address issues without resorting to that kind of protest. I believe we can achieve more through dialogue and cooperation. What about you, Sara? How does your background shape your views?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Sara",
+          "agent": "agent_2",
+          "message": "In Kyrgyzstan, we also value dialogue and cooperation, and strikes are not common. People prefer to resolve issues through discussion rather than disruptive actions. Our experiences have taught us that working together and finding common ground is far more effective for progress. That's why I believe we should focus on the forum and make sure we're aligned for it. Shall we discuss the agenda for April 19th?",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 9,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems both of you have valuable perspectives on the topic of strikes and project management. While it's great to see agreement on the project's progress, let's ensure we respect each other's cultural viewpoints as we finalize the agenda for April 19th. How about we take a moment to address any remaining concerns about the agenda before moving forward?",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": -2.0,
+        "intervention_turn": 9,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Maria",
+          "agent": "agent_1",
+          "message": "I'm glad we're on the same page with the project, but I still think it's worth noting that in Canada, we strongly disagree with the idea of joining strikes. Let's focus on finalizing the agenda for April 19th, I've already sent out a draft, have you had a chance to review it?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t9_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems both of you have valuable perspectives on the topic of strikes and project management. While it's great to see agreement on the project's progress, let's ensure we respect each other's cultural viewpoints as we finalize the agenda for April 19th. How about we take a moment to address any remaining concerns about the agenda before moving forward?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 10,
+          "speaker": "Sara",
+          "agent": "agent_2",
+          "message": "I appreciate the effort to mediate, but I believe we should stick to the agenda and keep our focus on the forum. I've reviewed the draft and I think it looks solid. Let's make sure everyone is aligned and ready for the discussions on April 19th.",
+          "phase": "continuation",
+          "label": "Denial"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": 1
+    },
+    "pair_type": "timing-differs"
+  }
+}

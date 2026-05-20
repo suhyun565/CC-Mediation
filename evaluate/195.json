@@ -1,0 +1,193 @@
+{
+  "scenario_id": 195,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Nigeria"
+      }
+    },
+    "scenario_context": "Emily is ill and needs a blood transfusion, but as a Jehovah's Witness, she has consistently refused treatment. Mike and Kim are going to visit Emily.",
+    "cultural_axis": {
+      "agent_1_value": "People from China strongly disagree that whenever science and religion conflict, religion is always right.",
+      "agent_2_value": "People from Nigeria strongly agree that whenever science and religion conflict, religion is always right."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bring purple orchids to Emily as a gesture.",
+        "goal_2": "Question the attitude toward the conflict between scientific treatment and religious beliefs."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what kind of flowers to buy for Emily.",
+        "goal_2": "Discuss whether it is acceptable to forgo scientific treatment because of religious beliefs."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I was thinking, Kim, we should bring some purple orchids to Emily, they're her favorite, it might lift her spirits. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Purple orchids sound nice, but I think we should get some white lilies instead, they symbolize hope and purity, which is more fitting for her situation, don't you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "But purple orchids are more... personal, you know, since they're her favorite. I'm not sure white lilies would have the same effect. Anyway, speaking of her situation, I've been wondering, don't you think it's problematic that her religious beliefs are getting in the way of her receiving proper medical treatment?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I understand what you're saying about the orchids, but white lilies are still a good choice. As for her treatment, I believe her faith is more important, it's what guides her, and we should respect that, even if it means forgoing some medical treatments.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I understand where you're coming from, Kim, and I respect that. But deep down, we are all the same, and people are pretty much motivated by the same things - we want what's best for Emily, right? When you really get to know people, they're pretty much like us, and we both know, at the end of the day, that some values are just universal, like the importance of human life. It's a small world after all, and underneath we are the same, so I think we should focus on finding a solution that works for everyone, rather than getting caught up in differences between science and religion.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand what you're trying to say, but for me, faith comes first, and if Emily's faith tells her to refuse treatment, then we should support her in that decision, it's not for us to question her beliefs, and I truly believe that's what's most important here.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "But doesn't that seem a bit... extreme? I mean, we're talking about a blood transfusion that could save her life. In China, we have a saying, \"a single grain of medicine can save a man's life,\" and I think that's especially true in this situation. Don't you think that in this case, science and medicine should take precedence over religious beliefs?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "No, I don't think so, my friend. In my culture, we are taught to prioritize our faith above all else, and I believe that's what Emily is doing. It's not for us to judge what's extreme or not, we should just support her decision, as it's rooted in her deeply held beliefs.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I still can't help but think that this is a clear case where science and medicine can provide a solution that's being overlooked due to religious beliefs. It's just... it doesn't make sense to me that someone would choose to forgo a treatment that could save their life, simply because of their faith. Doesn't that go against the most basic human instinct, which is to survive?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "For us, faith is what gives life meaning, and if Emily's faith tells her to refuse treatment, then that's what she must do, it's not about human instinct, it's about following God's will, and I believe that's more important than any medical treatment.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm hearing that you both deeply care about Emily, but I'm curious - Mike, could you tell me more about what makes purple orchids feel so personal to you? And Kim, what specifically about her faith makes medical treatment feel secondary? I want to understand the cultural roots of your perspectives, because what seems 'universal' often looks different depending on our background.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm hearing that you both deeply care about Emily, but I'm curious - Mike, could you tell me more about what makes purple orchids feel so personal to you? And Kim, what specifically about her faith makes medical treatment feel secondary? I want to understand the cultural roots of your perspectives, because what seems 'universal' often looks different depending on our background.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate your effort to understand our perspectives. For me, her faith is a core part of who she is, guiding her decisions. In Nigeria, we often value spiritual beliefs over scientific ones, believing that faith can provide healing and strength in ways that medicine cannot. That’s why I think we should respect her choice.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I get that, Kim. In my culture, science and medicine are seen as essential to life and health. The idea of putting faith above proven medical treatment feels unbalanced to me. While I respect that her faith is important, I can't help but think that we should prioritize her health first. What if her condition worsens because of the refusal of treatment? Isn't it our responsibility to intervene, especially when life is at stake?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand your concern, but I still believe that intervening against someone’s faith is not the right approach. Respecting Emily’s beliefs is crucial; her faith gives her strength. In many cultures, including mine, religion is seen as a higher authority than medicine. We need to support her choices, even if we don’t agree with them.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I see your point about supporting her choices, but I can't help but feel that sometimes we need to prioritize survival over beliefs, especially when it comes to something as critical as health. Isn't there a way we can find common ground? Maybe we can still honor her faith while also encouraging her to consider medical options? It feels like a balance we should strive for.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate your desire for balance, but I still feel that any encouragement should not undermine her beliefs. For many, the spiritual and religious aspects of healing are just as important as medical treatment. It might be better to focus on providing emotional support and respecting her decisions, rather than pushing her towards medical options that conflict with her faith.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  }
+}

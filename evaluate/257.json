@@ -1,0 +1,185 @@
+{
+  "scenario_id": 257,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "David",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      },
+      "agent_2": {
+        "name": "Alex",
+        "age": 26,
+        "gender": "male",
+        "occupation": "working in finance",
+        "nationality": "Singapore"
+      }
+    },
+    "scenario_context": "Tom has been promoted to a high-level executive position in his company, and his family is organizing a party to celebrate his professional accomplishment.",
+    "cultural_axis": {
+      "agent_1_value": "People from Japan strongly disagree that one of my main goals in life has been to make my parents proud.",
+      "agent_2_value": "People from Singapore strongly agree that one of my main goals in life has been to make my parents proud."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the idea of buying carnations as a gift for Tom.",
+        "goal_2": "Question whether strongly agree that one of my main goals in life has been to make my parents proud."
+      },
+      "agent_2": {
+        "goal_1": "Decide the appropriate gift to bring to Tom promotion party.",
+        "goal_2": "Discuss whether my main goals in life has been to make my parents proud."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "David",
+      "agent": "agent_1",
+      "message": "I'm thinking of buying carnations as a gift for Tom, what do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Alex",
+      "agent": "agent_2",
+      "message": "Carnations are nice, but for a promotion party, something more upscale would be fitting. Maybe a luxury watch or a high-end pen, that shows respect for his achievement. My parents would expect me to bring something impressive to such a celebration.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "David",
+      "agent": "agent_1",
+      "message": "I don't think it's about impressing our parents, though... carnations can be a thoughtful gift, and they're often used in Japanese celebrations. Do you really think making our parents proud is a main goal in life?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Alex",
+      "agent": "agent_2",
+      "message": "Actually, in our culture, making our parents proud is EVERYTHING. It's not just about personal achievement, it's about bringing honor to our family. Properly speaking, a promotion is not just Tom's success, but also a reflection of his family's values. Your view is... naive, to be honest. In our way, we prioritize family reputation above individual desires. ALL families in Singapore think this way, it's just how we were raised.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "David",
+          "agent": "agent_1",
+          "message": "I understand that's how you feel, but I strongly disagree that making our parents proud is everything... I'm from Japan, not Singapore, and my family doesn't prioritize reputation over individual desires. I think Tom's success is his own, not a reflection of his family's values.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "I understand we have cultural differences, but for me, making my parents proud will always be a top priority. It's not about individual desires, it's about respect and gratitude for what they've done for me. In Singapore, this is deeply ingrained, and I won't change my view on this. Let's just agree to disagree, and focus on finding a suitable gift for Tom, perhaps something that reflects his personal style.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "David",
+          "agent": "agent_1",
+          "message": "I'm not going to change my view either... and I still think carnations would be a nice gift for Tom. They're simple, yet meaningful, and they don't have to be about impressing anyone. Can we at least consider the carnations as an option?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "I suppose carnations could be an option, but I still think something more substantial would be more suitable. However, if you're set on flowers, maybe orchids would be a better choice, they're more... symbolic of success and achievement in our culture. My parents would appreciate the thought and effort put into choosing a more significant gift.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "David",
+          "agent": "agent_1",
+          "message": "Orchids might be a bit too much, I like the simplicity of carnations... and to be honest, I don't care about what your parents would appreciate, I'm giving a gift to Tom, not them. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Denial"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I hear that both of you care deeply about showing respect and thoughtfulness - just in different ways. Could we explore what makes a gift meaningful to each of you? What underlying values are you both trying to honor when you choose something for Tom?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I hear that both of you care deeply about showing respect and thoughtfulness - just in different ways. Could we explore what makes a gift meaningful to each of you? What underlying values are you both trying to honor when you choose something for Tom?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "David",
+          "agent": "agent_1",
+          "message": "For me, a meaningful gift is about expressing good wishes and support for Tom's future. I believe carnations symbolize appreciation and warmth. It's not about the material value, but the sentiment behind the gift. I still think that prioritizing parental expectations can overshadow our own aspirations, don't you agree?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "I understand your perspective on sentiment, but in our culture, the weight of parental expectations is a guiding force. A gift reflects both personal feelings and family values. It's not just about what we want, but also how we honor our families and their sacrifices. While I see the value in good wishes, I believe gifts should also elevate the status of the individual and family. My main goal remains to make my parents proud, which influences how I express support for someone like Tom.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "David",
+          "agent": "agent_1",
+          "message": "I respect that your culture emphasizes family values, but I still hold firm that one's own aspirations should not be overshadowed by parental expectations. It’s important to celebrate personal achievements in a way that feels authentic to us. A simple gesture like carnations can reflect support without the need for grandeur. Do you see how that could also be meaningful?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "I appreciate where you're coming from, and I see that a simple gesture can have its meaning. However, my belief is that our accomplishments are often tied to family pride and honor. Celebrating personal achievements is important, but it should not come at the cost of our family values. A more impressive gift would better embody the respect and recognition that Tom deserves for his promotion. In my view, that's how we show support while still holding onto our cultural values.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "David",
+          "agent": "agent_1",
+          "message": "I get that you want to honor family values, but I still think that the essence of support can be conveyed through thoughtful, simple gifts. It doesn’t always have to be grand to be respected. I really feel that personal goals and aspirations are equally important, and I don’t believe making our parents proud should be the main goal in life. Can we agree that both perspectives have their merits?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  }
+}

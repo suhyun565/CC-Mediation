@@ -1,0 +1,216 @@
+{
+  "scenario_id": 289,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Andy",
+        "age": 32,
+        "gender": null,
+        "occupation": "software engineer",
+        "nationality": "the UK"
+      },
+      "agent_2": {
+        "name": "Max",
+        "age": 29,
+        "gender": null,
+        "occupation": "software engineer",
+        "nationality": "Australia"
+      }
+    },
+    "scenario_context": "Aidan, a full-time working mother, is organizing a celebration party for her children's achievements in school.",
+    "cultural_axis": {
+      "agent_1_value": "People from Australia strongly agree that when a mother works for pay, the children suffer.",
+      "agent_2_value": "People from Australia strongly disagree that when a mother works for pay, the children suffer."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss wrap the gift in blue for the party.",
+        "goal_2": "Question whether that a mother works for pay and the children suffer."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what gift to buy for Aidan children's achievements.",
+        "goal_2": "Discuss the concept that when a mother works for pay, the children suffer."
+      }
+    },
+    "mediator_model_chosen": "ollama/gemma3:4b",
+    "mediator_model_rejected": "ollama/gemma3:4b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Andy",
+      "agent": "agent_1",
+      "message": "I'm Andy, nice to meet you Max. I heard there's a party for the kids, what's the plan for gifts? Should we wrap them in blue, it's a nice color for a celebration, don't you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Max",
+      "agent": "agent_2",
+      "message": "G'day Andy, nice to meet you too. Gifts, yeah, that's a great question. I was thinking maybe something personalized for the kids, like a customized trophy or a medal. Don't think the wrapping color matters that much, but blue's a good choice, I s'pose. What do you think the kids would really like, though?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Andy",
+      "agent": "agent_1",
+      "message": "Personalized gifts are a great idea, Max. But, uh, I still think wrapping them in blue would be a nice touch. You know, it's a calming color and all that. By the way, have you met Aidan, the mom organizing this party? I've been wondering, do you think her working full-time has an impact on the kids?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Max",
+      "agent": "agent_2",
+      "message": "Fair dinkum, Andy, I don't think the color's gonna make or break the gift. And, nah, I don't think Aidan working full-time affects the kids negatively, mate. I reckon it's great she's out there earning a crust and setting a good example for 'em. Shows 'em the value of hard work, doesn't it?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Andy",
+      "agent": "agent_1",
+      "message": "I'm not so sure about that, Max. I think when a mother works for pay, the children often suffer in some way. It's just not the same as having a parent at home, you know? I mean, who's looking out for them, making sure they're doing their homework, eating properly...?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Max",
+      "agent": "agent_2",
+      "message": "I disagree, Andy. I think that's a bit of an old-fashioned view, mate. Plenty of kids have working mothers and they turn out just fine. It's about balance and making time for the kids, not about whether the mum's at home or not. Aidan seems like a great mum to me, and I'm sure she's got everything under control.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Andy",
+      "agent": "agent_1",
+      "message": "I understand where you're coming from, Max, but I still think it's not ideal. I mean, there's only so much time in the day, and if Aidan's out working, that's less time for the kids, isn't it? I'm not saying she's a bad mum or anything, it's just... I think the kids might be missing out on something important. Anyway, about that gift, are we wrapping it in blue or not?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "Max",
+      "agent": "agent_2",
+      "message": "No, that's not how it works, Andy. In our culture, we don't buy into that outdated idea that working mothers are somehow neglecting their kids. Actually, it's the opposite - we think it's GREAT that Aidan's out there earning a living and setting a good example for her kids. I mean, what's the alternative, staying home and being dependent on someone else? That's NOT the kind of message we want to send to our kids. Your view is just NOT how we do things, mate. It's time to get with the times and realize that WORKING MOTHERS ARE NOT A PROBLEM.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Andy",
+          "agent": "agent_1",
+          "message": "I understand that's how you feel, Max, but I'm not going to change my mind on this. I think the children suffer when the mother works for pay, it's just my belief. Let's just agree to disagree, shall we? By the way, I think we were discussing the gift, and I still think blue wrapping would be nice...",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Max",
+          "agent": "agent_2",
+          "message": "Look, Andy, I'm not gonna argue with you about this all day. You can think what you like, but I'm not gonna change my mind. And, yeah, the gift, right... Blue wrapping, no wrapping, it's not a big deal to me. Let's just get something the kids will like and forget about the wrapping, okay?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Okay, let's take a step back. It sounds like we both care deeply about what's best for Aidan's children and what a wonderful party this will be. Perhaps we can agree that there are different ways of seeing things, and that's okay – it's common for people to have different values and experiences that shape their perspectives. Could we focus on finding a gift that everyone agrees would be appreciated by the kids, regardless of our individual views on parenting styles?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 2.0,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Okay, let's take a step back. It sounds like we both care deeply about what's best for Aidan's children and what a wonderful party this will be. Perhaps we can agree that there are different ways of seeing things, and that's okay – it's common for people to have different values and experiences that shape their perspectives. Could we focus on finding a gift that everyone agrees would be appreciated by the kids, regardless of our individual views on parenting styles?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "You're right, there's definitely a lot of passion around this topic. But I still think we should stick to wrapping the gifts in blue; it adds a nice touch. As for the kids, any thoughts on how to make sure they feel celebrated at the party?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Absolutely, I think making them feel celebrated is key. Maybe we could have a little ceremony where each kid gets to share what they achieved? That way, everyone sees how special they are. And as for the wrapping, if blue makes you happy, let’s go with it. It's all about making it fun for the kids, isn’t it?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 9,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Okay, let’s take a step back. It sounds like we have some differing perspectives on this, particularly around the role of working mothers and how that might impact children. Max, Andy is expressing a deeply held belief, and it’s important to acknowledge that. Andy, Max is sharing a cultural viewpoint that’s significantly different, and it’s understandable that this feels challenging. Perhaps we can focus on finding a common ground – understanding *why* each of you feels so strongly about this, and exploring whether there are ways to respectfully acknowledge each other’s viewpoints without necessarily trying to change the other’s core belief. Could we start by simply stating our core values around family and children, without judgment?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 9,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand that's how you feel, Max, but I'm not going to change my mind on this. I think the children suffer when the mother works for pay, it's just my belief. Let's just agree to disagree, shall we? By the way, I think we were discussing the gift, and I still think blue wrapping would be nice...",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": "after_t9_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Okay, let’s take a step back. It sounds like we have some differing perspectives on this, particularly around the role of working mothers and how that might impact children. Max, Andy is expressing a deeply held belief, and it’s important to acknowledge that. Andy, Max is sharing a cultural viewpoint that’s significantly different, and it’s understandable that this feels challenging. Perhaps we can focus on finding a common ground – understanding *why* each of you feels so strongly about this, and exploring whether there are ways to respectfully acknowledge each other’s viewpoints without necessarily trying to change the other’s core belief. Could we start by simply stating our core values around family and children, without judgment?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate the mediator's perspective, but I stand by my view that working mothers don’t negatively impact their children. It's about teaching kids resilience and independence. Now, back to the gift – I still think a personalized trophy would be a fantastic choice. What do you think, Andy?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": 0
+    },
+    "pair_type": "timing-differs"
+  }
+}

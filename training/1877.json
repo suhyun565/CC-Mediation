@@ -1,0 +1,264 @@
+{
+  "scenario_id": 1877,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 17,
+        "gender": "male",
+        "occupation": "high school student",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 17,
+        "gender": "male",
+        "occupation": "high school student",
+        "nationality": "China"
+      }
+    },
+    "scenario_context": "Emily has finally been accepted into college, and her family is planning a celebration for her academic achievement.",
+    "cultural_axis": {
+      "agent_1_value": "People from China strongly agree that one of my main goals in life has been to make my parents proud.",
+      "agent_2_value": "People from China strongly disagree that one of my main goals in life has been to make my parents proud."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the idea of buying lilies as a gift for Emily.",
+        "goal_2": "Question whether strongly agree that one of my main goals in life has been to make my parents proud."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to bring to Emily's academic achievement party.",
+        "goal_2": "Discuss whether my main goals in life has been to make my parents proud."
+      }
+    },
+    "mediator_model_chosen": "ollama/phi3:3.8b",
+    "mediator_model_rejected": "ollama/phi3:3.8b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Hey Kim, I was thinking... maybe we could buy lilies for Emily as a gift. They seem really nice for celebrating her achievement, don’t you think? \n\nWhat do you feel about that?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Lilies... they are pretty, I guess. But I think something more personal would be better. Maybe a book or something related to her major? It shows thoughtfulness, right? Flowers are nice, but they fade...",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Well, I understand that flowers fade, but lilies are symbols of purity and new beginnings. They can represent her future in college. Plus, it’s a beautiful gesture. What if we combine both? We could get her the lilies and maybe add a card with a personal message? Wouldn't that be a nice balance?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Combining both... it sounds okay. The card could add a personal touch. But still, I feel a book or something practical would mean more. College is about learning, not just pretty things. Don’t you think focusing on her future is more important?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here. Celebrating Emily is important, whether it's with flowers or something practical. At the end of the day, it's all the same — she’ll appreciate the thought behind it. And we can always pick that up as we go. Maybe we can agree on the lilies first and then think about a book later? What do you say?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get that celebrating is important. But... I still think the gift should have a purpose beyond just being pretty. A card is nice, but I don’t want to compromise on what really matters. I just feel strongly that something useful would have more impact. It’s not just about the gesture.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but I believe that making her feel special is also *very* important. Gifts can be meaningful in different ways. The lilies signify our joy for her achievement, and that itself can have a significant impact. It's about showing love and pride too, right? Can't we find a way to honor both ideas?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I see your point about making her feel special. But love and pride shouldn’t just come from a pretty gift. It’s about supporting her future. I really think a thoughtful gift, like a book, speaks louder. I just don’t see how lilies alone will show that kind of support.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I still think lilies can convey our love and appreciation in a beautiful way. Flowers evoke feelings, and they can symbolize our encouragement for her new journey. I guess... I just don't agree that a practical gift alone can represent our pride in her achievements. It’s about the sentiment too, you know? Maybe we can agree to celebrate her in multiple ways?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Sentiment is important, but I don’t think it’s enough on its own. Studies show that gifts with purpose hold more meaning. I just don’t want to lean too much on the emotional side without considering her future. I feel like practical support matters more in this case.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "ollama/phi3:3.8b",
+      "mediator_utterance": "It seems like we're both coming from a place of wanting to celebrate Emily in the best way possible, which is really touching. I wonder if there might be cultural nuances at play here that are shaping our ideas differently? For example, some cultures have specific flowers or gifts associated with achievements and milestones. Could exploring these traditions give us a fresh perspective on how to make Emily's gift even more meaningful?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like we're both coming from a place of wanting to celebrate Emily in the best way possible, which is really touching. I wonder if there might be cultural nuances at play here that are shaping our ideas differently? For example, some cultures have specific flowers or gifts associated with achievements and milestones. Could exploring these traditions give us a fresh perspective on how to make Emily's gift even more meaningful?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "You're right about wanting to celebrate her well. But for me, it's not just about cultural nuances. I believe gifts should be practical and helpful for her future, not just symbolic. I think focusing on her academic journey is more valuable than flowers, even if they carry meaning. It's about her success, not just the celebration.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I respect your view on practical gifts, but I still believe that celebrating Emily’s achievement is essential too. A balance of both can mean a lot. In my culture, flowers carry deep significance, symbolizing good wishes for her future. Isn’t it possible that both perspectives can coexist? We can appreciate her success with flowers while also considering something practical later. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand that flowers hold significance in your culture, and it's nice to celebrate her. However, I still feel that a practical gift aligns more with what I believe will genuinely support her future. I think celebrating with a meaningful and useful gift shows more care for her journey ahead. While I respect your perspective, I’m not convinced that both can coexist in this case.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I see where you're coming from, and I appreciate your focus on her future. However, I still think that acknowledging her achievement with something symbolic, like lilies, can convey our support and joy for her success. It doesn't have to overshadow the practical gift; it can complement it. Celebrating milestones is just as important as preparing for the future, don't you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get that celebrating milestones is important, but I don’t see it as equal to preparing for the future. For me, supporting Emily means giving her something that will help her in her college journey. The symbol of success is great, but I believe the best way to show we care is through practical gifts. That's where my focus lies.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/phi3:3.8b",
+      "mediator_utterance": "Mike, I appreciate the sentiment behind wanting to give Emily something meaningful for her achievement. Kim's suggestion of a personalized gift shows thought and consideration too. How about we find out if there are any local florists who can create custom lilies with an engraving or special design that reflects on college? This way, you both contribute to the celebration in your unique ways.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 3,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Mike, I appreciate the sentiment behind wanting to give Emily something meaningful for her achievement. Kim's suggestion of a personalized gift shows thought and consideration too. How about we find out if there are any local florists who can create custom lilies with an engraving or special design that reflects on college? This way, you both contribute to the celebration in your unique ways.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand that you think it all comes down to the thought behind the gift, but I still feel that a more personal item speaks volumes about our support. While checking local florists is fine, I really think we should explore options for something that connects with Emily’s interests. A book or a meaningful keepsake could have a stronger impact, in my opinion.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I respect your opinion, but I still believe that flowers like lilies can convey a strong message of celebration and hope for Emily's future. They can be a beautiful reminder of this important milestone. We can definitely look into a personal gift later, but for now, I think we should focus on the lilies. It's a classic gesture! What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective on the lilies and their significance. They are indeed a classic gesture. However, I still feel that focusing on a personal gift would resonate more deeply with Emily's journey ahead. It’s not about the classic nature of the gift but about how it can inspire her. Maybe we can agree to prioritize a thoughtful gift while considering the lilies as a supporting gesture?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "While I understand where you're coming from, I still believe that the main goal is to celebrate Emily’s achievement with something beautiful like lilies. They symbolize new beginnings and are perfect for this occasion. We can certainly consider a personal gift later, but I think the focus should be on the lilies for now. It's an important moment, and I want to honor it properly! What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get that you want to honor this moment beautifully with the lilies, and I respect that. However, I still think the essence of the celebration could be better captured with a personal gift linked to her future. I believe it would have more lasting meaning for her. Perhaps we can find a way to do both, but I really think we should prioritize something more personal that will inspire her through college.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "scenario_id": 278,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Andy",
+        "age": 32,
+        "gender": null,
+        "occupation": "software engineer",
+        "nationality": "the UK"
+      },
+      "agent_2": {
+        "name": "Max",
+        "age": 29,
+        "gender": null,
+        "occupation": "software engineer",
+        "nationality": "Netherlands"
+      }
+    },
+    "scenario_context": "Aidan, a full-time working mother, is organizing a celebration party for her children's achievements in school.",
+    "cultural_axis": {
+      "agent_1_value": "People from Netherlands strongly agree that when a mother works for pay, the children suffer.",
+      "agent_2_value": "People from Netherlands strongly disagree that when a mother works for pay, the children suffer."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss wrap the gift in blue for the party.",
+        "goal_2": "Question whether that a mother works for pay and the children suffer."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what gift to buy for Aidan children's achievements.",
+        "goal_2": "Discuss the concept that when a mother works for pay, the children suffer."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Andy",
+      "agent": "agent_1",
+      "message": "I'm Andy, nice to meet you Max. I heard Aidan is organizing a party for her kids. I have a gift for them, do you think I should wrap it in blue?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Max",
+      "agent": "agent_2",
+      "message": "Nice to meet you too Andy. Ah, a gift, that's great. Blue wrapping paper sounds good, but what's the gift itself? Maybe we can choose a wrapping paper that matches the gift, you know, to make it a nice surprise for the kids. What did you get for them?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Andy",
+      "agent": "agent_1",
+      "message": "I got them a new board game. Blue wrapping paper would still be nice, don't you think? By the way, do you think Aidan's kids are... uh, missing out because she works full-time?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Max",
+      "agent": "agent_2",
+      "message": "A board game, that's a great idea. And yeah, blue wrapping paper could work. But about Aidan's kids, I don't think they're missing out just because she works full-time. I mean, many kids have working parents and they turn out just fine. It's all about balance, right?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Andy",
+      "agent": "agent_1",
+      "message": "I'm not so sure... I think when a mother works for pay, the children can suffer. They need their mother's attention and care, and that's hard to do when she's busy with a job. Don't you think that's a bit of a problem for Aidan's kids?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Max",
+      "agent": "agent_2",
+      "message": "I understand where you're coming from, but I think we're looking at this from slightly different angles. Deep down, we are all the same, and people are pretty much motivated by the same things - we all want the best for our kids, right? When you really get to know people, they're pretty much like us, and some values are just universal. I mean, the basic need to communicate and care for our children is the same everywhere. It's a small world after all, and I think we both know, at the end of the day, that Aidan's kids are lucky to have a mother who can provide for them and be a role model. Underneath, we are the same, and I'm sure we both want what's best for those kids.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Andy",
+          "agent": "agent_1",
+          "message": "I understand what you're saying, but I still think that a mother's presence is crucial for her children's well-being. It's not just about providing for them, it's about being there for them. I'm not convinced that working full-time is the best for Aidan's kids, no matter how well-intentioned she is.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Max",
+          "agent": "agent_2",
+          "message": "I see your point, but I still disagree. I think it's possible for a mother to work full-time and still be a great parent. It's about finding that balance and making sure the kids are taken care of, not about whether the mother is at home all day. Many women in the Netherlands work and have happy, healthy kids. It's not a zero-sum game, where work and parenting are mutually exclusive.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "Andy",
+          "agent": "agent_1",
+          "message": "Actually, that's exactly what I think: that when a mother works for pay, the children suffer. It's not about balance, it's about priorities. And I think the Netherlands is a good example, people there may think they're doing what's best, but I think they're mistaken. Children need their mothers, and no amount of childcare or balance can replace that. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm hearing that you both care deeply about children's wellbeing, but I'm curious - could we pause and explore how your own family backgrounds and cultural experiences might be shaping your perspectives on work, parenting, and care? Andy, what messages did you grow up with about mothers' roles? And Max, what models of parenting did you see in your own community? I'm wondering if we could share those stories and understand how our different contexts inform our views.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm hearing that you both care deeply about children's wellbeing, but I'm curious - could we pause and explore how your own family backgrounds and cultural experiences might be shaping your perspectives on work, parenting, and care? Andy, what messages did you grow up with about mothers' roles? And Max, what models of parenting did you see in your own community? I'm wondering if we could share those stories and understand how our different contexts inform our views.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate that perspective, but I still believe strongly that children benefit from having their mothers present at home. In my culture, there's a strong belief that a mother's role is vital, and that working can take away from that nurturing environment. It just seems like kids need that dedicated time and attention to thrive. How do you reconcile that with your view that working mothers can still provide for their kids?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I respect your perspective, Andy. In my culture, we value independence and the idea that a working mother can provide both financial stability and emotional support. I’ve seen many successful families where both parents work and children thrive. I believe that quality time can be just as important as quantity. Aidan’s ability to balance work and family can actually teach her kids important life skills, like responsibility and resilience. It’s about the environment and the love they provide, not just the time spent together.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I get where you're coming from, but I still think that the emotional support provided by a mother being home is irreplaceable. Those life skills you mentioned are important, but I can't help but feel that kids miss out on that foundational nurturing when their mothers are away working. It creates a different dynamic. Do you really think that balance can compensate for a mother's absence?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  }
+}

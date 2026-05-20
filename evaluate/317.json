@@ -1,0 +1,201 @@
+{
+  "scenario_id": 317,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Lucy",
+        "age": 29,
+        "gender": "female",
+        "occupation": "software engineer",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Hans",
+        "age": 32,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Germany"
+      }
+    },
+    "scenario_context": "A group of multinational software development companies are teaming up on a large scale project. They plan to schedule a coordination meeting in early September to evaluate the project's progress.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada disagree that having the army rule is bad.",
+      "agent_2_value": "People from Germany agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose to hold the coordination meeting on September 7th.",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is good to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Lucy",
+      "agent": "agent_1",
+      "message": "Hi Hans, I think it would be a good idea to schedule our coordination meeting on September 7th. What do you think about that date?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Hans",
+      "agent": "agent_2",
+      "message": "September 7th sounds like a reasonable choice, but have you considered September 14th? That would give us a bit more time to finalize our progress reports. What's the rush with September 7th?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Lucy",
+      "agent": "agent_1",
+      "message": "I was thinking we could get a head start on discussing the project's progress as soon as possible. But I'm open to discussing it further. By the way, I've been wondering, what's your view on having the army rule in certain situations?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Hans",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here, and at the end of the day it's all the same. People figure it out, and as long as we're speaking the same language, I think we can make this project work. With experience, you can handle any situation, right? Doesn't matter to me, let's just focus on getting the meeting scheduled. How about we finalize the date and move forward? Live and let live, I suppose. Shall we go with September 14th?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I'm not so sure about that... I think having a strong, centralized authority, like the army, can actually be beneficial in certain cases. It's not just about speaking the same language, it's about having a unified vision and direction. And I still think September 7th is a better choice for the meeting.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Having the army rule is not a good idea, it's just not the way to go. I'm hesitant to support that kind of system... I think we should focus on finding a date that works for everyone, and September 14th still seems more reasonable to me.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I have to disagree, I think having the army rule can be effective in maintaining order and stability. And I'm starting to think that September 7th is the only date that will work for me, can we at least consider the benefits of having the meeting on that day?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I... I don't think that's a good idea, having the army in charge, I mean. It's just not something I can support. As for the meeting, I suppose we could look at September 7th again, but I still think September 14th would be better for our team.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I understand your concerns, but I really believe that the army can provide structure and discipline. And I'm convinced that September 7th is the way to go for the meeting, it will give us a chance to get ahead of schedule. Don't you think that a little discipline and order could benefit our project?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I don't think the army is the answer, that's just not the right approach. And I'm still not convinced about September 7th, what's the hurry? We can't just rush into things without considering all the factors. Having the army rule is bad, and I don't think it's relevant to our project's success anyway.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious about something - I notice you both seem to have different approaches to scheduling and timing. Hans, you seem to value careful preparation, while Lucy appears eager to start discussions quickly. Would you both be willing to share a bit about how timing and planning work in your respective professional contexts?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious about something - I notice you both seem to have different approaches to scheduling and timing. Hans, you seem to value careful preparation, while Lucy appears eager to start discussions quickly. Would you both be willing to share a bit about how timing and planning work in your respective professional contexts?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I appreciate the mediator's perspective. In my experience, getting started sooner allows for quicker adjustments and more dynamic feedback during a project. It’s important to address challenges early. Speaking of challenges, I'm really interested in your views on army rule. Do you believe it can ever be effective in guiding a nation?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I understand your eagerness for quick adjustments, but I still believe that careful planning is essential for a successful project. As for army rule, in Germany, we have a strong stance against it. History has shown us that such governance often leads to oppression and a lack of freedom. It's important for any society to be guided by democratic principles rather than military power. Now, back to our meeting date—are we settled on September 14th?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I hear your concerns about army rule, but I still believe that it can have its place in certain contexts, depending on the situation. It's interesting to see how different perspectives shape our views on governance. Regarding the meeting, I really think September 7th is a better option to kick off our discussions. Would you be willing to reconsider that date?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but I still think September 14th would be better. Starting discussions should be based on thorough preparation to ensure we maximize our time together. Rushing into a meeting might lead to overlooking important details in our project. Let's focus on getting it right. How about we agree on September 14th and make it a productive session?",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 9,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I understand your emphasis on preparation, but I believe that starting the conversation sooner can lead to valuable insights and adjustments we can integrate as we progress. It’s about finding a balance, I guess. But speaking of balance, how do you reconcile those strong opinions against army rule with the need for authority in governance?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "It's important to distinguish between authority and oppressive rule. In Germany, we value democracy as a form of governance, believing it allows for representation and accountability. While authority can be necessary for order, it should never come at the cost of freedom or human rights. That's why I stand firmly against army rule. Now, regarding our meeting, I'm still advocating for September 14th. Shall we agree on that date?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  }
+}

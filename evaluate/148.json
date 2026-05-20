@@ -1,0 +1,177 @@
+{
+  "scenario_id": 148,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Emily",
+        "age": 22,
+        "gender": "female",
+        "occupation": "marketing student",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Hana",
+        "age": 24,
+        "gender": "female",
+        "occupation": "graduate student",
+        "nationality": "Argentina"
+      }
+    },
+    "scenario_context": "A group of international students are organizing a get-well-soon visit to their classmate Lisa, who is recovering from surgery. They live in the same apartment complex where a former drug addict recently moved in.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada would like to have drug addicts as neighbors.",
+      "agent_2_value": "People from Argentina would not like to have drug addicts as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggest bringing chrysanthemums as a get-well-soon gift for Lisa",
+        "goal_2": "Question whether would like to have a former drug addict as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Choose an appropriate gift that shows care and consideration",
+        "goal_2": "Discuss whether it’s acceptable to have a former drug addict as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Emily",
+      "agent": "agent_1",
+      "message": "Hey Hana, I was thinking we should bring some flowers to Lisa, maybe chrysanthemums, they're supposed to be good for get-well wishes. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Hana",
+      "agent": "agent_2",
+      "message": "That's a nice idea, Emily. Chrysanthemums are a good choice, but in Argentina, we usually give sunflowers to wish someone a speedy recovery. They symbolize warmth and longevity. Maybe we could get some sunflowers instead?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Emily",
+      "agent": "agent_1",
+      "message": "Sunflowers are beautiful, but I think chrysanthemums would be a nice change of pace, and they're also very symbolic in many cultures. By the way, have you met our new neighbor, the one who... used to have some issues with addiction?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Hana",
+      "agent": "agent_2",
+      "message": "Chrysanthemums it is, then. As for the new neighbor... honestly, I'm not comfortable with someone who's had drug problems living so close to us. It's just not something we'd tolerate in my neighborhood back home.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Emily",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, and at the end of the day it's all the same, right? People figure it out, and with experience you can handle any situation. Doesn't matter to me, really. So, shall we get back to Lisa's gift? Maybe we can pick up some chrysanthemums and a card, live and let live, you know?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Hana",
+          "agent": "agent_2",
+          "message": "I don't think it's that simple, Emily. Having a former addict as a neighbor can be a concern for safety and... well, it's just not what I'm used to. Let's get the chrysanthemums, but I still think we should discuss this neighbor situation further.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Emily",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, Hana, but in Canada, we're pretty open to having all sorts of people as neighbors, including former drug addicts. We believe in giving people a second chance. Let's focus on Lisa for now, and maybe we can talk about the neighbor later, okay?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Hana",
+          "agent": "agent_2",
+          "message": "I understand that's the attitude here, but in Argentina, we're more... cautious about these things. Giving someone a second chance is one thing, but living next door is another. I'll drop it for now, but I still think it's something we should be careful about. Let's get the chrysanthemums and a nice card for Lisa.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Emily",
+          "agent": "agent_1",
+          "message": "Sounds good, let's get the chrysanthemums and card. I think Lisa will really appreciate it. And, just to clarify, I think having a former drug addict as a neighbor can actually be a good thing, it's all about community and support, you know? GOOD BYE!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - I'm hearing two really interesting perspectives about community and safety that seem to come from different cultural experiences. Would you both be willing to share a bit about what shapes your views on neighborhood dynamics? I'm noticing there might be some rich background stories here that could help us understand each other better.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - I'm hearing two really interesting perspectives about community and safety that seem to come from different cultural experiences. Would you both be willing to share a bit about what shapes your views on neighborhood dynamics? I'm noticing there might be some rich background stories here that could help us understand each other better.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Hana",
+          "agent": "agent_2",
+          "message": "I appreciate that perspective, but for me, safety and community are really important. In Argentina, we tend to be more cautious about who we share our space with, especially regarding past issues like addiction. It's something that directly impacts the well-being of everyone in the neighborhood. I just can't shake that feeling, you know?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Emily",
+          "agent": "agent_1",
+          "message": "I get that safety is important, but I really believe that people can change and grow, regardless of their past. It’s crucial to foster a sense of community, even with someone who has made mistakes. I think that a neighborhood can be inclusive and supportive. Anyway, let’s focus on making Lisa feel better! Should we finalize the chrysanthemums for her?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Hana",
+          "agent": "agent_2",
+          "message": "I understand your point about growth and change, but it still makes me uneasy. I just believe that it's best to be cautious, especially in our living space. But I guess we can stick to the chrysanthemums for Lisa and focus on brightening her day. What else should we add to the card?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Emily",
+          "agent": "agent_1",
+          "message": "Definitely! I'm glad we're on the same page with the chrysanthemums for Lisa. For the card, we could write something heartfelt and encouraging, like \"Wishing you a speedy recovery filled with love and support.\" That way, she knows we’re all thinking of her. What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "scenario_id": 1229,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Sophie",
+        "age": 28,
+        "gender": "female",
+        "occupation": "IT consultant",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Levi",
+        "age": 35,
+        "gender": "male",
+        "occupation": "IT consultant",
+        "nationality": "Slovakia"
+      }
+    },
+    "scenario_context": "A group of international software firms are partnering on a development venture and have agreed to schedule a coordination meeting in mid-September to evaluate their progress so far.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada disagree that having the army rule is bad.",
+      "agent_2_value": "People from Slovakia agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose holding the meeting on the September 15.",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Sophie",
+      "agent": "agent_1",
+      "message": "Hey Levi, have we decided on a date for our coordination meeting? I think September 15 would work well for everyone. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Levi",
+      "agent": "agent_2",
+      "message": "Hmm, September 15... I think that could be a good choice. But maybe we should check with everyone else to make sure it suits their schedules too. It's important that all partners are on the same page. What do you think about reaching out to the others?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Sophie",
+      "agent": "agent_1",
+      "message": "That makes sense, but I really feel September 15 would be ideal. It gives us enough time to prepare and assess our progress. On another note, I’ve noticed some people have differing views on army rule. Why do you think it's seen negatively?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Levi",
+      "agent": "agent_2",
+      "message": "I agree that September 15 allows for good preparation. But about army rule... In Slovakia, we value democracy and freedom. The idea of an army ruling goes against that. It often leads to oppression, and people lose their rights. It's not just a cultural thing; it affects everyone's lives negatively. That's why it's viewed so poorly. We should definitely keep the focus on a democratic process for our meeting.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Sophie",
+      "agent": "agent_1",
+      "message": "I get that democracy and freedom are important, but at the end of the day, it's all the same when it comes to how countries operate. People figure it out in their own ways, you know? I don’t really see meaningful differences here. Anyway, about the meeting, once we have a consensus on September 15, we can keep everything moving smoothly. What do you think?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I understand your perspective, but I still believe that the way a country operates significantly matters. Democracy ensures people's voices are heard, while army rule silences them. It's a fundamental difference. Regarding the meeting, yes, once we confirm everyone's okay with September 15, we can proceed. I just think we should prioritize everyone's opinions before finalizing the date. What if we send out a quick poll to gather feedback?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "Sure, I see your point about voices being heard... but what if some people are okay with different systems? That’s their choice. Anyway, I still think September 15 is a solid date, and a quick poll could help finalize it. Let’s get that out there and see what everyone says—then we can move forward. Sound good?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I get that some people might prefer different systems, but I still believe that the consequences of army rule are harmful. It’s not just a choice; it impacts everyone involved. But yes, let's go ahead with the poll about the meeting date. If September 15 is the majority's preference, we can lock it in. I’ll help with drafting the message for the poll.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I understand where you’re coming from, but I still think people have different views on governance and they should be respected, even if they differ from our own. Anyway, let’s focus on getting that poll out. If September 15 works for most, then we’ll be set. Thanks for helping with the draft!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "Yes, different views should be respected, but I still hold that some systems can lead to dire outcomes. Anyway, let’s focus on the poll. I’ll draft a message that clearly states September 15 as an option and requests feedback. Once we get responses, we can finalize the date. Let’s ensure everyone feels included in this decision.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like both of you have strong perspectives on the importance of democracy and how countries operate. I'm curious, Sophie, could you share more about how you see different governance styles working in practice? And Levi, how do you think your experiences in Slovakia shape your views on these differences? This might help us understand each other better.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like both of you have strong perspectives on the importance of democracy and how countries operate. I'm curious, Sophie, could you share more about how you see different governance styles working in practice? And Levi, how do you think your experiences in Slovakia shape your views on these differences? This might help us understand each other better.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "While I appreciate the mediator's attempt to bridge our perspectives, I want to emphasize that my views on governance stem from my experiences in Slovakia, where we've seen the negative impacts of army rule. It leads to a lack of freedom and personal rights, which is why I strongly advocate for democratic systems. As for the meeting, we should still work towards finalizing September 15 based on everyone's agreement. It's essential to keep our focus on that.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I see your point about advocating for democratic systems. However, I believe that governance varies greatly depending on context, and some might find benefits in different styles. That said, let's make sure we prioritize finalizing September 15 for our meeting. It’s crucial we get that settled. Should we draft a message to the others about that?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I understand your perspective on the context of governance, but I firmly believe that democracy offers the best protection for people's rights and freedoms. Now, regarding the meeting, I think drafting a message is a great idea. We should clearly state September 15 as our proposed date and ask for everyone’s feedback. It's important that we all agree before finalizing it. Shall we draft that together?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "Absolutely, I’m on board with drafting that message together. Let’s make it clear that September 15 is our proposed date and ask everyone for their thoughts. I appreciate how we’re working through this to keep everyone informed and involved. It’ll help us move forward effectively. Shall we start with a simple outline?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "Yes, let's start with a simple outline. We can begin by stating the purpose of the meeting, then propose September 15 as the date, and finally encourage everyone to share their thoughts or any conflicts. It’s important to keep everyone involved in the process. I’m glad we’re on the same page about this!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 4,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "Thank you both for sharing your thoughts. It seems like there's a strong emphasis on ensuring everyone's voice is heard, both in scheduling the meeting and in discussing sensitive topics like army rule. Perhaps we can take a moment to explore how we can balance the need for a timely meeting with the importance of inclusivity and understanding different perspectives.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 4,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Thank you both for sharing your thoughts. It seems like there's a strong emphasis on ensuring everyone's voice is heard, both in scheduling the meeting and in discussing sensitive topics like army rule. Perhaps we can take a moment to explore how we can balance the need for a timely meeting with the importance of inclusivity and understanding different perspectives.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I appreciate that perspective, and I agree that focusing on the meeting's success is crucial. However, I still think we should confirm with all partners first before solidifying September 15. Inclusivity ensures everyone feels valued, which can lead to a more productive meeting. Shall we draft a message to check with everyone?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I understand the importance of inclusivity, but I still believe September 15 should be our target date. We can reach out to confirm it, but I think it's better to have a proposed date in mind. By the way, what do you think is the root of negative perceptions about army rule? It's interesting to hear different viewpoints.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I can see the value in having a target date like September 15. It gives us direction. Regarding the negative perceptions of army rule, I believe the root lies in the historical experiences of many countries. People have seen the consequences—loss of freedoms, repression, and lack of accountability. Those experiences shape our views and create a strong preference for democratic governance. It's crucial we remember those lessons as we move forward together. So, shall we propose September 15 while seeking confirmation?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "That's a valid point about historical experiences shaping views on governance. It definitely influences how people perceive different forms of rule. I agree that we should propose September 15 while seeking confirmation from everyone else. I think it sets a clear intention, and we can adjust if needed. Shall I draft the proposal?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "Yes, I think that sounds great! Proposing September 15 while inviting feedback shows our commitment to inclusivity and clarity. Please go ahead and draft the proposal, and I can help review it before we send it out. This way, we can ensure everyone is on board and ready for our coordination meeting.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

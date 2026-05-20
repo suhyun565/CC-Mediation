@@ -1,0 +1,193 @@
+{
+  "scenario_id": 386,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Jack",
+        "age": 27,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Thailand"
+      },
+      "agent_2": {
+        "name": "Ray",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      }
+    },
+    "scenario_context": "Victoria, a single working mother, is trying to organize a surprise party for her son's birthday which she thinks would help in bonding with her child.",
+    "cultural_axis": {
+      "agent_1_value": "People from Thailand strongly disagree that when a mother works for pay, the children suffer.",
+      "agent_2_value": "People from Germany strongly agree that when a mother works for pay, the children suffer."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss wrap the gift in green for the party.",
+        "goal_2": "Question whether that a mother works for pay and the children suffer."
+      },
+      "agent_2": {
+        "goal_1": "decide on what type of gift and what color to wrap it in for the birthday party for Victoria's son.",
+        "goal_2": "Discuss the concept that when a mother works for pay, the children suffer."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "Hey Ray, I'm thinking about the surprise party for Victoria's son. Have you thought about wrapping the gift in green? It's a nice color, right?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Ray",
+      "agent": "agent_2",
+      "message": "Green is okay, but I think blue would be better. You know, a traditional German gift is often wrapped in blue paper. But to be honest, I'm more concerned about Victoria's work schedule. Don't you think it's affecting her son's life?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "I don't think that's true... I mean, just because Victoria works for pay, it doesn't mean her son will suffer. In my culture, we believe that working mothers can actually provide a better life for their children. So, about the gift, are you sure blue is better than green?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Ray",
+      "agent": "agent_2",
+      "message": "I'm positive blue is better. And I disagree with you about working mothers. In Germany, we believe that when a mother works for pay, the children suffer. It's just not the same as having a parent at home. I think Victoria's son is probably missing out on a lot because of her job.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "No, that's not how it works. In our culture, we KNOW that working mothers can provide a better life for their children. Actually, it's quite simplistic to think that just because a mother works, the children will suffer. That's a naive view, and it's NOT how things work in Thailand. We have a more PROGRESSIVE understanding of family and work. Your German way of thinking is just OUTDATED.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Ray",
+          "agent": "agent_2",
+          "message": "I understand that you think differently, but I still believe that children need their mothers at home. It's not about being progressive or outdated, it's about what's best for the child. In Germany, we value family and tradition, and we think that a mother's presence is essential. Let's just agree to disagree, shall we? Now, about the gift... blue is still the better choice.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "I don't agree to disagree, I just know that I'm right. Working mothers are beneficial for children, it's a fact. Anyway, since we can't agree on that, let's focus on the gift. I still think green would be a nice touch, it's a calming color. Why are you so set on blue, what's so special about it?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Ray",
+          "agent": "agent_2",
+          "message": "It's traditional, it's what we do in Germany. And I think it's a more masculine color, suitable for a boy. But let's not forget, the real issue here is Victoria's work schedule, it's not healthy for her son. I think we should be discussing how to help her find a better balance, or perhaps even consider staying home with her child. Blue is just a better choice, trust me.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "I don't think we should be telling Victoria to stay home, that's not our decision. And I still don't think blue is better than green, can we please just wrap the gift in green? It's a nice color and it will match the party decorations. Let's focus on making this party special for Victoria's son, not on criticizing her choices as a mother.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Ray",
+          "agent": "agent_2",
+          "message": "I'm not criticizing, I'm just stating what I believe is best for the child. And I think blue would be a nicer match for the party, it's a more festive color. But fine, wrap it in green if you want, it's not that important. What's important is that Victoria's son is missing out on a proper childhood because his mother is always working. That's what we should be focusing on.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I hear that you both deeply care about children's wellbeing and family dynamics, which is actually a beautiful shared value. Could we explore what specific hopes and concerns you each have about supporting children's development, beyond the cultural differences in how that might look?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I hear that you both deeply care about children's wellbeing and family dynamics, which is actually a beautiful shared value. Could we explore what specific hopes and concerns you each have about supporting children's development, beyond the cultural differences in how that might look?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate the mediator's perspective, but my concern remains that when a mother works for pay, it impacts her children negatively. I believe it's crucial for children to have their parents present, especially during formative years. As for the birthday gift, I'm still leaning towards blue wrapping. What do you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I respect your concern, but I still stand by the belief that working mothers can have a positive impact on their children. They can teach valuable lessons about responsibility and hard work. Now, about the birthday gift, I really think green would stand out more and be more festive for the party. Don't you think that would be better than blue?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I see your point about lessons, but I still believe the overall presence of a mother is more important. As for the gift, while green might be festive, I still prefer blue for its traditional value. I think it sends a more meaningful message. What else do you think we should consider for the party?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand your perspective on presence, but I still believe that working mothers can provide a strong foundation for their children. For the party, we could consider fun games or activities that engage the kids. But can we stick with green for the gift wrapping? It really adds a lively touch to the celebration, don't you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Fun games sound great, but I still prefer blue wrapping. It adds a classic touch, which I think is important. I respect your belief in working mothers, but I can't help but feel that the traditional role still holds a lot of value. Perhaps we can focus on the activities for the party now?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  }
+}

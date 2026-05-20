@@ -1,0 +1,177 @@
+{
+  "scenario_id": 350,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 7,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "university student",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "university student",
+        "nationality": "Egypt"
+      }
+    },
+    "scenario_context": "Mike, Kim, and Emily, who are university students and schoolmates, have recently partnered to start a company that has just secured a significant investment. They are preparing to celebrate. Recent news indicates that the government is introducing new policies to assist businesses, which they are planning to discuss.",
+    "cultural_axis": {
+      "agent_1_value": "People from China have a great deal of confidence in the press at all.",
+      "agent_2_value": "People from Egypt have no confidence in the press at all."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss going to a barbecue buffet.",
+        "goal_2": "Question whether  there is confidence in the press."
+      },
+      "agent_2": {
+        "goal_1": "Discuss where to celebrate.",
+        "goal_2": "Discuss whether there is confidence in the press."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Hey Kim, have you heard about that new barbecue buffet downtown? I was thinking we could go there to celebrate our investment.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "The barbecue buffet sounds like a great idea, Mike. I've been meaning to try it out. But have you seen the news about the government's new business policies? I'm not sure what to make of it, especially considering how the press is reporting it...",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "The press is usually very reliable, I think we can trust their reports. But yeah, the new policies do sound interesting, maybe we can discuss them more at the barbecue buffet, I'm sure Emily will have some insights too.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I don't know, Mike... I'm not so sure about trusting the press. In my experience, they often get things wrong or distort the facts. Let's just say I'm a bit skeptical about what they're saying regarding these new policies.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I understand your skepticism, Kim, but I really believe the press does a good job in China, they're very thorough and I think we can have confidence in what they report, don't you think that's *generally* the case?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "No, I don't think that's the case, Mike. I'm from Egypt, and to be honest, I've never had much confidence in the press, no matter where they're from. I think we should be careful about what we believe, especially when it comes to government policies and business news.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "No, that's not how it works, Kim. In our way, we trust the press, they're a vital part of our society and ALWAYS report the truth. Your skepticism is... naive, actually, it's not how things are done in China, where the press is RESPECTED and trusted.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand that's how you feel, Mike, but I'm telling you, where I'm from, people just don't trust the press. And I have to say, I still don't... it's not about being naive, it's about experience. Can we please just drop this and focus on celebrating our investment? Maybe we can discuss the buffet menu or something?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "The buffet menu sounds fine, but I'm not dropping this, Kim. I think it's essential to understand that the press is trustworthy, and we should be confident in their reports, that's all I'm saying. Let's go to the buffet and discuss the new policies, maybe Emily can offer a different perspective. GOODMAN, KIM.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Whatever, Mike. Let's just go to the buffet already. I'm not going to change my mind about the press, and I don't see why you're being so pushy about it. Fine, we'll discuss the policies, but I'm still not trusting anything the press says about them...",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 7,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm hearing that both of you care deeply about understanding information accurately and making good business decisions. Could we take a step back and explore what specific aspects of these policy reports are most important to each of you? What underlying concerns are you each trying to address through your different perspectives on media reliability?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 7,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm hearing that both of you care deeply about understanding information accurately and making good business decisions. Could we take a step back and explore what specific aspects of these policy reports are most important to each of you? What underlying concerns are you each trying to address through your different perspectives on media reliability?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate your effort to mediate, but my concern is mainly about making sure we understand the implications of these policies correctly. I just believe we should rely on firsthand information and not what the press tells us. It’s about being cautious and critical, especially in a business setting.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I get that you're cautious, but I still think the press gives us valuable context and information. In China, we rely on them because they provide reliable insights that help us navigate business decisions. I really believe that understanding these policies through the press can guide us effectively.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I see your point, Mike, but I can't shake off my belief that the press can often mislead people. I think it’s better to seek out direct information or speak to those who are directly involved with these policies rather than relying solely on what the press presents. Trusting the press hasn't served us well in the past, at least not from my perspective.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  }
+}

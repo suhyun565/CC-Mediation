@@ -1,0 +1,248 @@
+{
+  "scenario_id": 226,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Sophie",
+        "age": 28,
+        "gender": "female",
+        "occupation": "IT consultant",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Levi",
+        "age": 35,
+        "gender": "male",
+        "occupation": "IT consultant",
+        "nationality": "Ukraine"
+      }
+    },
+    "scenario_context": "A group of international software firms are partnering on a development venture and have agreed to schedule a coordination meeting in mid-September to evaluate their progress so far.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada disagree that having the army rule is bad.",
+      "agent_2_value": "People from Ukraine agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose holding the meeting on the September 15.",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is good to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "ollama/gemma3:4b",
+    "mediator_model_rejected": "ollama/gemma3:4b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Sophie",
+      "agent": "agent_1",
+      "message": "I think we should schedule the coordination meeting for September 15, it gives us enough time to finalize our progress reports. What do you think, Levi?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Levi",
+      "agent": "agent_2",
+      "message": "September 15 sounds like a good date, it's specific and gives us a clear deadline to work towards. I agree, it should give us enough time to finalize our reports. Shall we also discuss the agenda for the meeting to ensure we cover all necessary topics?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Sophie",
+      "agent": "agent_1",
+      "message": "That's a great idea, let's discuss the agenda. But first, I've been wondering, what's your stance on having the army rule, do you think it's entirely bad or are there situations where it could be beneficial?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Levi",
+      "agent": "agent_2",
+      "message": "Having the army rule is bad, no matter the situation. It's a recipe for disaster, undermining freedom and democracy. I don't think there's any scenario where it could be beneficial, it's a step backwards for any society. Let's focus on the agenda, we have a lot to cover for the meeting.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Sophie",
+      "agent": "agent_1",
+      "message": "I disagree, I think there are situations where army rule could be necessary, and it's not always a bad thing. In fact, I think it can provide stability in certain circumstances. Let's not brush it off completely.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Levi",
+      "agent": "agent_2",
+      "message": "Actually, in our way, having the army rule is ALWAYS a bad idea. Properly speaking, it's a threat to democracy and freedom. I don't think it's naive to believe that, it's just common sense. Your view that it can provide stability is NOT how it works, it's a simplistic and misguided perspective. In Ukraine, we KNOW that army rule is a recipe for disaster, and we wouldn't dare consider it as a viable option.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I still don't see it that way, I think you're being too absolute in your judgment. In Canada, we have a different perspective, and I believe there are instances where army rule can be beneficial, it's not always a threat to democracy and freedom.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I understand you have a different view, but for me, it's clear: army rule is bad. We can't just pick and choose when it's acceptable, it undermines the principles of democracy. I'm not going to change my mind on this, it's a fundamental issue. Can we please move on to the meeting agenda?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I'm not going to change my mind either, I think having the army rule can be justified in certain situations. But fine, let's move on to the agenda, what topics do you think we should cover at the meeting on September 15?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "Progress reports, project timelines, and budget allocations should be covered. We need to ensure everyone is on the same page. Let's also discuss any obstacles we're facing and how to address them. That's what's important, not... other things.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Okay, let's take a step back. It sounds like we both have strong feelings about the potential for stability and the risks associated with different approaches to governance. Perhaps we can acknowledge that concerns about security and order are fundamental to everyone's desire for a functioning society. Could we explore, without judgment, what 'stability' actually *looks* like to each of us, and what factors contribute to a society's well-being?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 2.0,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Okay, let's take a step back. It sounds like we both have strong feelings about the potential for stability and the risks associated with different approaches to governance. Perhaps we can acknowledge that concerns about security and order are fundamental to everyone's desire for a functioning society. Could we explore, without judgment, what 'stability' actually *looks* like to each of us, and what factors contribute to a society's well-being?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I appreciate the suggestion to explore our views more deeply, but I still believe that there are contexts where army rule can provide the stability a country needs. It's important to have a discussion around governance, but for now, let's refocus on the agenda for our meeting. What key topics do you think we should include?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I agree we should refocus on the agenda. Key topics for the meeting should include our current project milestones, challenges we've faced, and any adjustments needed moving forward. Additionally, we should discuss team roles and responsibilities to ensure everyone is aligned. What else do you think we should add?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "Those are essential topics to cover. I think we should also include a discussion about our future goals and how we plan to address any potential risks moving forward. It’s crucial we have a solid strategy in place. Would you agree with adding that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "Absolutely, discussing future goals and risk management is crucial. It’s important to have a clear strategy to guide us through any challenges we might encounter. I think including that in the agenda will help ensure we’re all on the same page for our next steps.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 9,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Thank you both for sharing your perspectives so clearly. It seems we have differing understandings of the role and potential benefits of army rule, which is understandable given our different cultural and historical contexts. Let's take a step back and acknowledge these differences. Perhaps we can agree to focus on establishing a productive agenda for the meeting, ensuring we address the key objectives while respecting each other's viewpoints on this sensitive topic.",
+      "judge_score": 3,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 9,
+        "judge_score": 3
+      },
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I still don't see it that way, I think you're being too absolute in your judgment. In Canada, we have a different perspective, and I believe there are instances where army rule can be beneficial, it's not always a threat to democracy and freedom.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I understand you have a different view, but for me, it's clear: army rule is bad. We can't just pick and choose when it's acceptable, it undermines the principles of democracy. I'm not going to change my mind on this, it's a fundamental issue. Can we please move on to the meeting agenda?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I'm not going to change my mind either, I think having the army rule can be justified in certain situations. But fine, let's move on to the agenda, what topics do you think we should cover at the meeting on September 15?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t9_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Thank you both for sharing your perspectives so clearly. It seems we have differing understandings of the role and potential benefits of army rule, which is understandable given our different cultural and historical contexts. Let's take a step back and acknowledge these differences. Perhaps we can agree to focus on establishing a productive agenda for the meeting, ensuring we address the key objectives while respecting each other's viewpoints on this sensitive topic.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 10,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I appreciate the mediator's attempt, but I still believe that army rule is always a negative force. Regarding the agenda, I think we should cover our project timelines, discuss any challenges we've faced, and set goals for the next phase of our collaboration. What other topics do you think are important to include?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": 2
+    },
+    "pair_type": "timing-differs"
+  }
+}

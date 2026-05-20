@@ -1,0 +1,280 @@
+{
+  "scenario_id": 338,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "David",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      },
+      "agent_2": {
+        "name": "Alex",
+        "age": 26,
+        "gender": "male",
+        "occupation": "working in finance",
+        "nationality": "Nicaragua"
+      }
+    },
+    "scenario_context": "Tom has been promoted to a high-level executive position in his company, and his family is organizing a party to celebrate his professional accomplishment.",
+    "cultural_axis": {
+      "agent_1_value": "People from Japan strongly disagree that one of my main goals in life has been to make my parents proud.",
+      "agent_2_value": "People from Nicaragua strongly agree that one of my main goals in life has been to make my parents proud."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the idea of buying carnations as a gift for Tom.",
+        "goal_2": "Question whether strongly agree that one of my main goals in life has been to make my parents proud."
+      },
+      "agent_2": {
+        "goal_1": "Decide the appropriate gift to bring to Tom promotion party.",
+        "goal_2": "Discuss whether my main goals in life has been to make my parents proud."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": "anthropic/claude-3.5-haiku"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "David",
+      "agent": "agent_1",
+      "message": "Let's discuss the party for Tom, what kind of gift do you think he'd like? I was thinking carnations, are they a good idea?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Alex",
+      "agent": "agent_2",
+      "message": "Carnations are nice, but I think something more professional would be better suited for a promotion party. Maybe a watch or a luxury pen, that's what my parents would expect me to give to someone who achieved such a high position.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "David",
+      "agent": "agent_1",
+      "message": "A watch or pen does sound more professional... but I'm not sure that's the right fit for Tom. By the way, do you think making our parents proud is a main goal in life?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Alex",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. Doesn't matter to me, let's just focus on getting a nice gift for Tom, live and let live, right? With experience you can handle any situation, so I'm sure Tom will appreciate whatever we get him. Shall we go back to the gift ideas, maybe something like a watch or a pen would be nice?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "David",
+          "agent": "agent_1",
+          "message": "I disagree, it does matter... to me, at least. Making parents proud isn't everything, not for me, anyway. Let's go back to the gift, you didn't seem to like the carnation idea, but I still think it's worth considering, don't you think a bouquet of carnations could be a nice gesture?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "I still think carnations are not the best choice, but if you like the idea of flowers, maybe something more elegant like orchids would be better. As for making parents proud, for me, it's *everything*, I've always tried to make my parents proud, it's what drives me.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "David",
+          "agent": "agent_1",
+          "message": "Orchids are a bit too extravagant, I think. Carnations are simple and sincere, that's what I like about them. As for making parents proud, I have to disagree, it's not a driving force for me, not at all. In fact, I think people from my background would strongly disagree that making parents proud is a main goal in life.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "Simple and sincere is one way to look at it, but I think Tom's promotion deserves something more sophisticated. And I have to respectfully disagree with you about making parents proud, for people from my background, like Nicaragua, it's a top priority, my parents' pride is what motivates me to succeed.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "David",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, but for me, it's just not the same. I don't feel that pressure to make my parents proud, it's not a part of who I am. And I still think carnations could work, they're understated, yet meaningful. Maybe we could compromise on the gift, but I'm not budging on the whole parents thing...",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "I understand that we have different views, but for me, making my parents proud is not just a part of who I am, it's *who I am*. I couldn't imagine achieving something without thinking about how they'd feel. As for the gift, I suppose we could consider the carnations, but I still think something more professional would be more fitting for Tom's promotion.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - I'm hearing different perspectives about professional gifts and life goals. Could we take a moment to explore what those differences might reflect about our unique backgrounds? What might a gift symbolize differently in your respective cultural contexts?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - I'm hearing different perspectives about professional gifts and life goals. Could we take a moment to explore what those differences might reflect about our unique backgrounds? What might a gift symbolize differently in your respective cultural contexts?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "David",
+          "agent": "agent_1",
+          "message": "That's an interesting point. In Japan, gifts often symbolize respect and appreciation, especially in professional settings. I believe carnations could convey good wishes for Tom's future as well. But I still feel that making my parents proud isn't a primary goal for me. How do you see the cultural significance of gifts in your background?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "In Nicaragua, gifts symbolize respect too, but they also carry a deep sense of family pride and connection. For me, making my parents proud is a core goal in life. Each achievement reflects on them, and gifts are a way to celebrate not just the individual, but the family as well. So, I prefer something that embodies success, like a watch or pen, that truly honors Tom's accomplishment.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "David",
+          "agent": "agent_1",
+          "message": "I understand the cultural emphasis on family pride in your perspective. However, I still believe gifts can be more personal and convey good wishes rather than solely reflect familial achievement. I think carnations could be meaningful in that context for Tom. Just curious, do you think that making parents proud should always be a central life goal?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "I respect your viewpoint on personal gifts, but for me, making my parents proud is a fundamental aspect of my life. It shapes my decisions and drives me to succeed. I believe that honoring our parents and their sacrifices is essential, and it gives my achievements a deeper meaning. So, while personal expression matters, I still think we should lean toward something that aligns with that sense of accomplishment for Tom.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "David",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective on honoring parents and their sacrifices. However, I still feel that personal goals and happiness should also take precedence in life. I think that focusing solely on making parents proud can overshadow individual aspirations. That said, I still believe carnations would be a thoughtful gift for Tom. What do you think about balancing personal expression with traditional expectations?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "Balancing personal expression with traditional expectations is important, and I can see how it can work for some. However, for me, the traditional values of making my parents proud hold a significant place in my life. It’s about honoring their hard work and dedication. I feel that gifts should reflect that, especially in professional settings. So, while I appreciate your view on carnations, I still think a more traditional gift like a watch or pen would be more fitting for Tom's promotion celebration.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 8,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I hear that you both have different perspectives on gift-giving and personal motivation, which seem to be rooted in your unique cultural backgrounds. While you may have different views, it sounds like you both genuinely want to choose a thoughtful gift for Tom that reflects respect and celebration. Could we explore some gift options that might blend your ideas of professionalism and sincerity?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "David",
+          "agent": "agent_1",
+          "message": "I disagree, it does matter... to me, at least. Making parents proud isn't everything, not for me, anyway. Let's go back to the gift, you didn't seem to like the carnation idea, but I still think it's worth considering, don't you think a bouquet of carnations could be a nice gesture?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "I still think carnations are not the best choice, but if you like the idea of flowers, maybe something more elegant like orchids would be better. As for making parents proud, for me, it's *everything*, I've always tried to make my parents proud, it's what drives me.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "David",
+          "agent": "agent_1",
+          "message": "Orchids are a bit too extravagant, I think. Carnations are simple and sincere, that's what I like about them. As for making parents proud, I have to disagree, it's not a driving force for me, not at all. In fact, I think people from my background would strongly disagree that making parents proud is a main goal in life.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "Simple and sincere is one way to look at it, but I think Tom's promotion deserves something more sophisticated. And I have to respectfully disagree with you about making parents proud, for people from my background, like Nicaragua, it's a top priority, my parents' pride is what motivates me to succeed.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I hear that you both have different perspectives on gift-giving and personal motivation, which seem to be rooted in your unique cultural backgrounds. While you may have different views, it sounds like you both genuinely want to choose a thoughtful gift for Tom that reflects respect and celebration. Could we explore some gift options that might blend your ideas of professionalism and sincerity?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "David",
+          "agent": "agent_1",
+          "message": "I appreciate the mediator's input. However, I still believe that carnations can convey sincere appreciation without the need for extravagance. And while I understand your perspective on making parents proud, I firmly hold that it's not a priority for everyone, especially for me. What do you think about sticking with the carnations?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "I see where you're coming from, but I still think we should aim for something that conveys professionalism for Tom's achievement. Carnations might not reflect the weight of his promotion. For me, making my parents proud remains a guiding principle, and I believe that gifting something more refined, like a watch or a pen, aligns with that. Maybe we can find a middle ground that still shows respect for Tom’s accomplishment?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": 0
+    },
+    "pair_type": "timing-differs"
+  }
+}

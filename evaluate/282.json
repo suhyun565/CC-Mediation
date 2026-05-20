@@ -1,0 +1,137 @@
+{
+  "scenario_id": 282,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 7,
+    "agents": {
+      "agent_1": {
+        "name": "Liam",
+        "age": 27,
+        "gender": "male",
+        "occupation": "Software Engineer",
+        "nationality": "Indonesia"
+      },
+      "agent_2": {
+        "name": "Mark",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      }
+    },
+    "scenario_context": "Jenna is unexpectedly expecting a child and is considering her options, including marriage. Her friends gather to discuss potential gifts for a baby shower.",
+    "cultural_axis": {
+      "agent_1_value": "People from Indonesia strongly disagree that abortion is not justifiable.",
+      "agent_2_value": "People from Maldives strongly agree that abortion is not justifiable."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggest giving Jenna a bunch of roses.",
+        "goal_2": "Question whether it is reasonable to get abortion."
+      },
+      "agent_2": {
+        "goal_1": "Debate on what gift will be most appropriate for Jenna's baby shower.",
+        "goal_2": "Discuss whether it is reasonable to get abortion."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Liam",
+      "agent": "agent_1",
+      "message": "I think we should get Jenna a bunch of roses, it's a thoughtful gift for any occasion, especially now. What do you think, Mark?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Mark",
+      "agent": "agent_2",
+      "message": "Roses are nice, but for a baby shower, shouldn't we get something more... practical? Like a baby blanket or a set of baby clothes? That's what she'll really need, don't you think, Liam?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Liam",
+      "agent": "agent_1",
+      "message": "But roses symbolize new life and love, it's a beautiful gesture. Besides, let's not forget, a baby is a blessing, and we should be celebrating this new life, not... considering other options, if you know what I mean, Mark.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Mark",
+      "agent": "agent_2",
+      "message": "I understand what you're saying, Liam, and I agree, a baby is a blessing. In my culture, we believe that every life is precious and should be cherished. As for gifts, I still think something practical would be more helpful to Jenna. But I'm glad we're on the same page about celebrating this new life, it's a beautiful thing.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Liam",
+      "agent": "agent_1",
+      "message": "I'm glad we share that view, Mark. It's crucial to support Jenna in this journey. Is it reasonable to even consider... you know, not keeping the baby? I just don't think that's an option we should be discussing, do you?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Mark",
+      "agent": "agent_2",
+      "message": "Actually, in our culture, abortion is NEVER an option, it's just not how we view life. Properly speaking, every life is precious and should be protected. I don't think it's reasonable to even consider it, Liam. It's NOT a viable choice, and we should be focusing on supporting Jenna in keeping her baby, not exploring alternatives that go against our VALUES.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Liam",
+          "agent": "agent_1",
+          "message": "Well, it's good we're on the same page about that, Mark. I couldn't agree more, every life is precious and should be protected. Now, let's focus on the baby shower, I still think those roses would be a lovely gesture, don't you? GOOD BYE!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I hear that both of you deeply care about Jenna and her baby, and that you're coming from a place of genuine love and support. Could we take a moment to explore what specific ways we might help Jenna feel most supported right now - not just with a gift, but with practical and emotional assistance during this important time in her life?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I hear that both of you deeply care about Jenna and her baby, and that you're coming from a place of genuine love and support. Could we take a moment to explore what specific ways we might help Jenna feel most supported right now - not just with a gift, but with practical and emotional assistance during this important time in her life?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I completely agree, we should focus on supporting Jenna emotionally and practically. A bunch of roses would be a lovely start to show her love, and we can also discuss how we can be there for her in other ways. Let's make sure she knows she's not alone in this journey.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "scenario_id": 284,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Aaron",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      },
+      "agent_2": {
+        "name": "Luke",
+        "age": 35,
+        "gender": "male",
+        "occupation": "engineer",
+        "nationality": "Egypt"
+      }
+    },
+    "scenario_context": "Maria is planning to celebrate his recent promotion at work by hosting a dinner party. His guests include a variety of friends from diverse backgrounds.",
+    "cultural_axis": {
+      "agent_1_value": "People from Egypt would like to have homosexuals as neighbors.",
+      "agent_2_value": "People from Egypt would not like to have homosexuals as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bring expensive gift to bring for celebration dinner.",
+        "goal_2": "Question whether would like to have homosexuals as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to bring for   to the celebration dinner.",
+        "goal_2": "Discuss on whether it’s acceptable to have homosexuals as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Aaron",
+      "agent": "agent_1",
+      "message": "Luke, I'm thinking of bringing a really expensive gift to Maria's dinner party. Maybe something designer, like a luxury watch or a high-end handbag. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Luke",
+      "agent": "agent_2",
+      "message": "I think that's a bit excessive. A nice bottle of wine or a traditional Egyptian dessert would be more thoughtful and respectful. It's the gesture that counts, not the price tag.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Aaron",
+      "agent": "agent_1",
+      "message": "People figure it out, and at the end of the day it's all the same. I don't really see meaningful differences here. Live and let live, right? Doesn't matter to me. So, about Maria's dinner party, have you decided what you're bringing? Maybe we can pick out a nice gift together.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Luke",
+          "agent": "agent_2",
+          "message": "I've decided on a traditional Egyptian coffee set. It's a nice gesture and shows appreciation for the occasion. As for living arrangements, I'm not sure I agree with you. I think it's important to consider who you're living near, for your own comfort and values.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Aaron",
+          "agent": "agent_1",
+          "message": "That's a nice gesture, the coffee set. As for neighbors, I think it's interesting... in Egypt, people are pretty open-minded, I've found. They wouldn't mind having homosexuals as neighbors, which I think is really great.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Luke",
+          "agent": "agent_2",
+          "message": "Actually, I disagree. In my experience, many Egyptians are conservative and would not be comfortable with homosexuals as neighbors. It's just not something that's widely accepted in our culture.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Aaron",
+          "agent": "agent_1",
+          "message": "I understand what you're saying, but I still think Egyptians are more open to it than you think. I mean, people from Egypt would like to have homosexuals as neighbors, it's just a fact. Maybe we can ask Maria about it at the dinner party, see what she thinks.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Luke",
+          "agent": "agent_2",
+          "message": "I strongly disagree, that's not a fact at all. In my opinion, many people from Egypt would not want homosexuals as neighbors, it's just not part of our traditional values. Let's just drop it, I don't think it's a good idea to discuss this at the dinner party.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Aaron",
+          "agent": "agent_1",
+          "message": "Whatever, let's not discuss it then. I'm still going to bring a nice gift to Maria's party, something that shows I care. Maybe a designer scarf or a luxury candle set. That's what matters, not what you think about Egyptians and their neighbors. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Denial"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - Aaron, Luke, it sounds like you both want to show Maria respect through your gift choice, but might have different ideas about what that looks like. Could you each share a bit about what gift-giving means in your cultural background? I'm really interested in understanding the different perspectives you're bringing.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - Aaron, Luke, it sounds like you both want to show Maria respect through your gift choice, but might have different ideas about what that looks like. Could you each share a bit about what gift-giving means in your cultural background? I'm really interested in understanding the different perspectives you're bringing.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Luke",
+          "agent": "agent_2",
+          "message": "In my culture, gift-giving is about thoughtfulness and connection. It's important to choose something that reflects the relationship and shows appreciation, rather than just the monetary value. A simple, meaningful gift is often more valued than an expensive one.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Aaron",
+          "agent": "agent_1",
+          "message": "I completely get that, Luke. In my world, it’s often about making a statement and showcasing style. It's a way of expressing creativity and thoughtfulness too, just in a different way. By the way, speaking of neighbors, do you think you'd be okay having a homosexual neighbor?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Luke",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but in my culture, having homosexuals as neighbors is not widely accepted. It's a belief rooted in our traditions and values. I think it's important to respect those views, even if others feel differently.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Aaron",
+          "agent": "agent_1",
+          "message": "I understand that, but I still believe that people from Egypt can be open-minded about having homosexuals as neighbors. Acceptance fosters a sense of community and understanding. It's important to recognize that everyone deserves respect, regardless of their sexual orientation. So, back to the gift for Maria, what do you think of the idea of a designer item after all?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Luke",
+          "agent": "agent_2",
+          "message": "I see your point, but I still believe a designer item might not fit the occasion well. A thoughtful, personal gift would better convey our appreciation for Maria. It's more meaningful to focus on the relationship rather than status symbols.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Aaron",
+          "agent": "agent_1",
+          "message": "That's a fair point, but I still think an expensive gift can also show appreciation in a different way. It's all about the flair and excitement of celebrating her promotion! Speaking of celebrations, I really think it's important for communities to embrace diversity. What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  }
+}

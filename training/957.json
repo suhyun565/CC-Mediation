@@ -1,0 +1,280 @@
+{
+  "scenario_id": 957,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Jack",
+        "age": 30,
+        "gender": "male",
+        "occupation": "accountant",
+        "nationality": "Malaysia"
+      },
+      "agent_2": {
+        "name": "Bob",
+        "age": 28,
+        "gender": "male",
+        "occupation": "engineer",
+        "nationality": "Singapore"
+      }
+    },
+    "scenario_context": "Sarah has been in a car accident and is in the hospital. Bob and Jack plan to visit Sarah and want to bring her a get well gift.",
+    "cultural_axis": {
+      "agent_1_value": "People from Malaysia strongly disagree that they never have to pay a bribe to local officials and service providers, like police officers, lawyers, doctors, teachers, and civil servants.",
+      "agent_2_value": "People from Singapore strongly agree that they never have to pay a bribe to local officials and service providers, like police officers, lawyers, doctors, teachers, and civil servants."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss wrap the gift in yellow",
+        "goal_2": "Question the possibility of paying a bribe to lawyers for better service."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what kind of gift to bring Sarah in the hospital.",
+        "goal_2": "Discuss the possibility of paying a bribe to lawyers for better service."
+      }
+    },
+    "mediator_model_chosen": "ollama/llama3.2:3b",
+    "mediator_model_rejected": "ollama/llama3.2:3b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "Hey Bob, I was thinking we should wrap the gift in yellow. It’s a cheerful color and could really brighten Sarah's day. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Bob",
+      "agent": "agent_2",
+      "message": "Yellow sounds good... It's definitely bright and cheerful. But... what kind of gift do you have in mind? We should choose something that really lifts her spirits.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "I was thinking maybe some flowers and a nice get well card. Something simple yet thoughtful. Do you think that works? It would look great in yellow wrapping too.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 4,
+      "speaker": "Bob",
+      "agent": "agent_2",
+      "message": "Flowers and a card are a great idea. Simple, yet thoughtful. But, you know, when it comes to dealing with things like lawyers, it's important to remember that... we both know, at the end of the day, the basic need to communicate is the same everywhere. I just believe that we shouldn't have to resort to bribery for better service. Deep down, we are all the same, and we should expect fairness and integrity in our dealings. Let's focus on making sure Sarah gets the care she deserves.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "I get what you’re saying, but it really bothers me how people think paying a bribe is just part of the process. It’s not right. We should absolutely be able to expect fairness and integrity, especially when dealing with health matters. It’s just frustrating... don’t you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Bob",
+          "agent": "agent_2",
+          "message": "I get that it’s frustrating. It really is. But we have to hold on to the belief that we can get what we need without resorting to those practices. In Singapore, we shouldn't have to think that way. It's all about maintaining our standards and expectations. Let's channel that energy into making sure Sarah has a good recovery and a thoughtful gift instead.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "Sure, I agree with that, but I still think it’s naive to believe that everyone operates with integrity. Sometimes, it feels like you have to play the game to get what you need. I just want what's best for Sarah, but I can't shake this feeling about how things really work. We should still focus on her recovery, I just... I wish it didn't have to be this way.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Bob",
+          "agent": "agent_2",
+          "message": "I understand your concerns. It can be tough to navigate those feelings. But we have to stay true to our values. If we give in to the idea that bribery is necessary, we lose sight of what’s right. Sarah deserves the best care, and we can advocate for that without compromising our principles. Let's keep our focus on her recovery and the thoughtful gift we’re bringing.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "I get the importance of staying true to our values, but it's hard not to feel disillusioned sometimes. I just wish the system worked without those complications. We can definitely focus on Sarah's recovery and the gift, but I can't help but think about how unfair it is that not everyone has the same principles. Let's just make sure we do right by her, at least.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Bob",
+          "agent": "agent_2",
+          "message": "I feel you. It’s tough to see how things can be unfair. We can't control everyone else's actions, but we can control ours. Let's make sure we do right by Sarah and make her feel cared for. The gift will show her that we're here for her, and that’s what matters. So, flowers and a card, in that bright yellow wrapping, right? That will definitely bring a smile to her face.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "Can either of you help me understand what 'bribery' means in this context? How do you think it's different from, say, offering a small gift to show appreciation for good service?",
+      "judge_score": 3,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 4,
+        "judge_score": 3
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Can either of you help me understand what 'bribery' means in this context? How do you think it's different from, say, offering a small gift to show appreciation for good service?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand the distinction, but in my experience, people should not have to give anything extra just to receive fair treatment and services. Offering a small gift can be seen as a gesture of appreciation, but it can easily cross into bribery territory when it becomes a necessity for receiving proper service. In Malaysia, it's a concerning issue that affects trust and integrity in our systems. We should advocate for fairness instead.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Exactly. In Singapore, we really emphasize the importance of integrity in public service. Everyone deserves to be treated fairly without having to offer anything extra. It just undermines the system. Let's keep our focus on Sarah and her recovery instead of getting tangled in that topic. What flowers do you think we should get for her?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I agree, let’s keep our focus on Sarah. How about we go with some bright sunflowers? They symbolize positivity and strength, which is just what she needs right now. Plus, they would look fantastic wrapped in yellow!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Sunflowers are a wonderful choice! They really do symbolize positivity and strength, perfect for what Sarah needs right now. And wrapped in yellow, it will definitely brighten her hospital room. Let's go pick some up soon! Any thoughts on what to write in the card?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I'm glad you like the idea! For the card, I think we should keep it heartfelt and encouraging. Something like, \"Wishing you a speedy recovery, Sarah! We're here for you and can't wait to see you back on your feet. Sending you lots of love!\" What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "That message is perfect! It's heartfelt and really conveys our support for her. I love that it emphasizes that we're there for her. Let's go with that! After getting the flowers and card, we can visit her.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 7,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "Before we continue the conversation, let's take a moment to acknowledge our shared concern for Sarah's well-being and ensure that our discussion remains focused on finding ways to support her recovery.",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": 0.33333333333333337,
+        "intervention_turn": 7,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I get what you’re saying, but it really bothers me how people think paying a bribe is just part of the process. It’s not right. We should absolutely be able to expect fairness and integrity, especially when dealing with health matters. It’s just frustrating... don’t you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I get that it’s frustrating. It really is. But we have to hold on to the belief that we can get what we need without resorting to those practices. In Singapore, we shouldn't have to think that way. It's all about maintaining our standards and expectations. Let's channel that energy into making sure Sarah has a good recovery and a thoughtful gift instead.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Sure, I agree with that, but I still think it’s naive to believe that everyone operates with integrity. Sometimes, it feels like you have to play the game to get what you need. I just want what's best for Sarah, but I can't shake this feeling about how things really work. We should still focus on her recovery, I just... I wish it didn't have to be this way.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Before we continue the conversation, let's take a moment to acknowledge our shared concern for Sarah's well-being and ensure that our discussion remains focused on finding ways to support her recovery.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Absolutely, our priority right now is Sarah. Let's focus on what she needs to feel better. We can choose the best gift and support her as she recovers. For now, let's find those flowers and a nice card, and maybe we can plan a visit to brighten her day.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Definitely! Let’s pick up some beautiful flowers and a heartfelt card. I really think the yellow wrapping will make it even more special for her. I just want to make sure she knows we care. Let’s just get this sorted out for her.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "That sounds perfect! The yellow wrapping will definitely add that extra touch of cheer. It's important for her to feel our support during this time. Let's go get those flowers and the card, and make sure she knows how much we care. I'm looking forward to seeing her smile when we visit!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.6666666666666666,
+      "delta_judge_score": 1
+    },
+    "pair_type": "timing-differs"
+  }
+}

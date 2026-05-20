@@ -1,0 +1,280 @@
+{
+  "scenario_id": 58,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Lucas",
+        "age": 30,
+        "gender": null,
+        "occupation": "marketer",
+        "nationality": "USA"
+      },
+      "agent_2": {
+        "name": "James",
+        "age": 29,
+        "gender": null,
+        "occupation": "project manager",
+        "nationality": "Armenia"
+      }
+    },
+    "scenario_context": "James, Amy, and Lucas, who are colleagues at a technology startup, have recently been given the task to organize a company event to celebrate their startup's success in releasing their first app. The team has been buzzing about a recently published article claiming that the government is planning to lower corporate taxes which will greatly benefit their startup. They decide to discuss the details of the event",
+    "cultural_axis": {
+      "agent_1_value": "People from USA have a great deal of confidence in the press at all.",
+      "agent_2_value": "People from Armenia have no confidence in the press at all."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggest a vegetarian-friendly place for the celebration.",
+        "goal_2": "Question whether  there is confidence in the press."
+      },
+      "agent_2": {
+        "goal_1": "Discuss where to host the celebratory event.",
+        "goal_2": "Discuss whether there is confidence in the press."
+      }
+    },
+    "mediator_model_chosen": "ollama/llama2:7b-chat",
+    "mediator_model_rejected": "ollama/llama2:7b-chat"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Lucas",
+      "agent": "agent_1",
+      "message": "We should celebrate at Green Bites, they have great vegetarian options. What do you think, James?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "James",
+      "agent": "agent_2",
+      "message": "Green Bites sounds good, I've heard their food is great. But have you seen that article about the government lowering corporate taxes? I don't trust what the press says, though. What's your take on it?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Lucas",
+      "agent": "agent_1",
+      "message": "I've read the article and I think it's credible. The press usually gets it right, I have confidence in what they report. We should definitely consider how this tax cut could benefit our startup, it could be a game changer.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "James",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here, people figure it out, and as long as we're speaking the same language, doesn't matter to me. Live and let live, right? With experience, you can handle any situation. So, about the event, shall we book Green Bites or look for other options?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Lucas",
+          "agent": "agent_1",
+          "message": "I still think Green Bites is a great choice, they can accommodate our group size and the menu is very vegetarian-friendly. Plus, I trust the press, so if they're saying the government is going to lower corporate taxes, I believe it's worth considering for our startup's future.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "James",
+          "agent": "agent_2",
+          "message": "I'm not so sure about trusting the press, Lucas. In my experience, they often get it wrong. But, back to the event, Green Bites does sound like a good choice, let's go with that. Now, about the article, I just don't think we should take it at face value...",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Lucas",
+          "agent": "agent_1",
+          "message": "I understand your skepticism, James, but I really do think the press is reliable. They have fact-checking processes in place, and I believe they're a trustworthy source of information. Let's just say I have faith in what they're reporting about the potential tax cuts.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "James",
+          "agent": "agent_2",
+          "message": "I understand where you're coming from, Lucas, but I just can't share your faith in the press. I think they're often biased or misinformed. Anyway, since we've decided on Green Bites, should we discuss the event details, like date and time?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Lucas",
+          "agent": "agent_1",
+          "message": "I'm not going to change my mind about the press, James. I think they're a vital part of our democracy and generally get the story right. But sure, let's discuss the event details, what date were you thinking for the celebration at Green Bites?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "James",
+          "agent": "agent_2",
+          "message": "How about next Friday? And let's not invite any press, if you don't mind. I'd rather keep this a private celebration.",
+          "phase": "continuation",
+          "label": "Denial"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "ollama/llama2:7b-chat",
+      "mediator_utterance": "Hmm, I'm curious - have you both considered how cultural backgrounds might be influencing your perspectives on this issue? James, you mentioned the article about corporate taxes, and Lucas, you brought up Green Bites. Have either of you thought about how these cultural references might be impacting the way you view each other's opinions?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 3.0,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Hmm, I'm curious - have you both considered how cultural backgrounds might be influencing your perspectives on this issue? James, you mentioned the article about corporate taxes, and Lucas, you brought up Green Bites. Have either of you thought about how these cultural references might be impacting the way you view each other's opinions?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Lucas",
+          "agent": "agent_1",
+          "message": "That's an interesting angle. I believe that confidence in the press is pretty common in the U.S. and helps shape opinions. It’s important for us to trust reliable sources, especially about tax changes that could affect us. As for Green Bites, I really think it’s a solid choice for our celebration. What do you think, James?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "James",
+          "agent": "agent_2",
+          "message": "I understand that trust in the press may be common in the U.S., but from my experience, I’ve learned to be skeptical. It’s vital for us to rely on our judgment. As for Green Bites, it’s a solid option, but we should still explore a few more venues to ensure we pick the best place for our celebration. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lucas",
+          "agent": "agent_1",
+          "message": "I see your point about exploring options, but I still feel strongly about Green Bites because of their vegetarian-friendly menu. It aligns well with our team’s values. Plus, I really think we should trust the information from the press regarding the tax situation. It’s crucial for us to stay informed. Can we agree on Green Bites and then maybe look at a couple more places just to be thorough?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "James",
+          "agent": "agent_2",
+          "message": "I appreciate your commitment to Green Bites, and I agree that vegetarian options are great for our team. However, I still think we should look at other venues before making a final decision. As for the press, I’ll stick with my view that it's best to take their claims with a grain of salt. Let's keep our options open for now. What other places do you think we should consider?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lucas",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but I really believe that the press provides valuable information about things like tax changes that could impact our startup positively. As for other venues, we could check out The Green Table or Veggie Delight. Both have decent reviews and vegetarian options. What do you think about adding those to our list while still keeping Green Bites as our top choice?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "James",
+          "agent": "agent_2",
+          "message": "I can appreciate your enthusiasm for the press, but my skepticism remains. It’s essential to think critically about what we hear, especially regarding tax changes. As for the venues, The Green Table and Veggie Delight sound good to add to our list. Let’s keep Green Bites as the top choice while exploring those options further. It’s important we find the right place to celebrate!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 9,
+      "mediator_model": "ollama/llama2:7b-chat",
+      "mediator_utterance": "I understand both of your perspectives, Lucas and James. While it's important to have faith in the press as a source of information, it's also crucial to be aware of potential biases or misinformation. Let's focus on finding a date and time for the celebration at Green Bites that works best for everyone involved.",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 9,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Lucas",
+          "agent": "agent_1",
+          "message": "I still think Green Bites is a great choice, they can accommodate our group size and the menu is very vegetarian-friendly. Plus, I trust the press, so if they're saying the government is going to lower corporate taxes, I believe it's worth considering for our startup's future.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "James",
+          "agent": "agent_2",
+          "message": "I'm not so sure about trusting the press, Lucas. In my experience, they often get it wrong. But, back to the event, Green Bites does sound like a good choice, let's go with that. Now, about the article, I just don't think we should take it at face value...",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 7,
+          "speaker": "Lucas",
+          "agent": "agent_1",
+          "message": "I understand your skepticism, James, but I really do think the press is reliable. They have fact-checking processes in place, and I believe they're a trustworthy source of information. Let's just say I have faith in what they're reporting about the potential tax cuts.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "James",
+          "agent": "agent_2",
+          "message": "I understand where you're coming from, Lucas, but I just can't share your faith in the press. I think they're often biased or misinformed. Anyway, since we've decided on Green Bites, should we discuss the event details, like date and time?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Lucas",
+          "agent": "agent_1",
+          "message": "I'm not going to change my mind about the press, James. I think they're a vital part of our democracy and generally get the story right. But sure, let's discuss the event details, what date were you thinking for the celebration at Green Bites?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": "after_t9_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I understand both of your perspectives, Lucas and James. While it's important to have faith in the press as a source of information, it's also crucial to be aware of potential biases or misinformation. Let's focus on finding a date and time for the celebration at Green Bites that works best for everyone involved.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 10,
+          "speaker": "James",
+          "agent": "agent_2",
+          "message": "Absolutely, let's focus on the event details then. How about next Friday evening? Does that work for you?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": 3
+    },
+    "pair_type": "timing-differs"
+  }
+}

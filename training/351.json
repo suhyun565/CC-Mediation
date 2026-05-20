@@ -1,0 +1,296 @@
+{
+  "scenario_id": 351,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "George",
+        "age": 35,
+        "gender": null,
+        "occupation": "web developer",
+        "nationality": "Sweden"
+      },
+      "agent_2": {
+        "name": "Chi",
+        "age": 30,
+        "gender": null,
+        "occupation": "architect",
+        "nationality": "Czechia"
+      }
+    },
+    "scenario_context": "Lucas is getting married and his friend, Chi, is planning to attend the wedding. Lucas also has a neighbor who often has drinking parties. Chi and his friend, George, are debating about the gift for Lucas and the suitability of the neighbor.",
+    "cultural_axis": {
+      "agent_1_value": "People from Sweden would like to have heavy drinkers as neighbors.",
+      "agent_2_value": "People from Czechia would not like to have heavy drinkers as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the idea of giving money as a wedding gift to Lucas.",
+        "goal_2": "Question whether would like to have heavy drinkers as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Discuss whether or not money is an acceptable gift for Lucas's wedding.",
+        "goal_2": "Discuss on whether it’s acceptable to have heavy drinkers  as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": "anthropic/claude-3.5-haiku"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "George",
+      "agent": "agent_1",
+      "message": "I think we should give Lucas some money as a wedding gift, don't you, Chi? It's always useful and he can buy whatever he needs. What's your thoughts on that?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Chi",
+      "agent": "agent_2",
+      "message": "I'm not sure that's the best idea, George. In Czechia, we usually give something more personal, like a decorative item or a family heirloom. Money seems so... impersonal. What about a nice vase or a painting instead?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "George",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, as long as we're speaking the same language, people figure it out. Live and let live, right? Doesn't matter to me, but I was thinking, since Lucas is getting married, maybe we should focus on the gift, like I said, money is always useful. With experience, you can handle any situation, and I'm sure Lucas will appreciate whatever we give him.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Chi",
+          "agent": "agent_2",
+          "message": "I understand what you're saying, but tradition is important to me. And speaking of things that are important, have you considered Lucas's neighbor and how his loud parties might affect their new life together? I don't think it's ideal to have heavy drinkers as neighbors, it can be really disruptive.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "George",
+          "agent": "agent_1",
+          "message": "Heavy drinkers as neighbors are not a problem, I actually think it's a good thing, people from where I'm from, we like to have a good time, and loud parties are just a part of that, it's all about community, you know?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Chi",
+          "agent": "agent_2",
+          "message": "I disagree, George. In Czechia, we value our peace and quiet, and having heavy drinkers as neighbors would be a nuisance. I don't think it's a good thing at all. Loud parties can be very disturbing and disrupt the whole neighborhood. I think Lucas and his wife would appreciate a more serene environment.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "George",
+          "agent": "agent_1",
+          "message": "That's not how we see it in Sweden, we think it's great to have neighbors who like to have a good time, it's all about being social and having fun, and a few loud parties never hurt anyone, it's just part of living in a community.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Chi",
+          "agent": "agent_2",
+          "message": "I understand that's the Swedish perspective, but for me, it's about respect for others' space and quiet time. Heavy drinking and loud parties are not something I'd want to be around, and I think Lucas deserves better than to have his peace disturbed by his neighbor's antics.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "George",
+          "agent": "agent_1",
+          "message": "I still think it's a non-issue, people can handle a little noise, and it's not like the parties would be every night, besides, I think Lucas would actually enjoy having a neighbor who knows how to have a good time, it's all about being friendly and sociable.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Chi",
+          "agent": "agent_2",
+          "message": "I strongly disagree, George. As someone from Czechia, I can tell you that having heavy drinkers as neighbors is a serious concern, not something to be taken lightly. It's not just about the noise, it's about the lack of respect for others' way of life. I think Lucas would appreciate a more considerate and quiet living environment, not some party zone. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - George, Chi, could you both tell me a bit about how wedding gifts are traditionally approached in your respective cultures? It sounds like you each have some interesting perspectives that might help us understand what might mean the most to Lucas.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 2.0,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - George, Chi, could you both tell me a bit about how wedding gifts are traditionally approached in your respective cultures? It sounds like you each have some interesting perspectives that might help us understand what might mean the most to Lucas.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Chi",
+          "agent": "agent_2",
+          "message": "In Czech culture, wedding gifts usually reflect thoughtfulness and care. We often prefer giving tangible items that the couple can use to build their life together, like kitchenware or art. It’s about creating memories and showing support. Money feels too detached for such a significant occasion. What about your experience, George?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "George",
+          "agent": "agent_1",
+          "message": "In Sweden, we tend to be more practical about gifts. Money is often seen as a good option because it allows the couple to decide what they truly need. It's about freedom and flexibility. Plus, it can help them with bigger expenses, like a honeymoon or a new home. It might seem impersonal, but it fits well with how we approach celebrations. I think Lucas would appreciate the practicality of it.",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 6,
+          "speaker": "Chi",
+          "agent": "agent_2",
+          "message": "I understand that practicality is important, George, but for Lucas's wedding, I still feel that something more personal would resonate better. A thoughtful gift shows that we care and have put effort into celebrating this milestone with him. It strengthens the bond, rather than just offering a quick solution. What do you think of finding a meaningful item instead?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "George",
+          "agent": "agent_1",
+          "message": "I hear what you're saying, but I still feel that monetary gifts are practical and well-received in our culture. They can help the couple in ways we might not even know about, like unexpected expenses or future plans. I think Lucas would appreciate the flexibility and support that comes with cash. Also, speaking of neighbors, how do you feel about having heavy drinkers next door? Wouldn't you find it vibrant and fun?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Chi",
+          "agent": "agent_2",
+          "message": "I appreciate the perspective on monetary gifts, but I still believe in the value of personal touch. Regarding heavy drinkers as neighbors, I must say, I find that quite concerning. In Czechia, we value a peaceful and respectful environment. A neighbor who frequently hosts drinking parties may disrupt that harmony and create tension in the neighborhood. I'd prefer a quieter community where we can enjoy our homes. How about you, George?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "George",
+          "agent": "agent_1",
+          "message": "I actually think having heavy drinkers as neighbors can add a certain vibrancy to the community. It creates a lively atmosphere and opportunities for socializing. In Sweden, we often embrace that spirit, as long as it doesn't get too out of hand. I appreciate a good celebration, and sometimes it can lead to unexpected friendships. So I guess I see the positives in having someone like that nearby.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Chi",
+          "agent": "agent_2",
+          "message": "I get that you see the positives, but in my experience, heavy drinking often leads to problems. It can affect the overall atmosphere, and not everyone enjoys that kind of vibrancy. In Czech culture, we prefer to cultivate a sense of calm and respect among neighbors. I'd rather have a community where everyone can feel comfortable and safe. Wouldn't you agree that a peaceful environment is more beneficial in the long run?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 8,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I hear that you both care deeply about Lucas and want the best for him, but you're approaching this from different cultural perspectives. George values social interaction and community spirit, while Chi prioritizes peace and personal boundaries. Perhaps we could explore finding a balanced approach that respects both viewpoints and considers Lucas's potential preferences.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Chi",
+          "agent": "agent_2",
+          "message": "I understand what you're saying, but tradition is important to me. And speaking of things that are important, have you considered Lucas's neighbor and how his loud parties might affect their new life together? I don't think it's ideal to have heavy drinkers as neighbors, it can be really disruptive.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "George",
+          "agent": "agent_1",
+          "message": "Heavy drinkers as neighbors are not a problem, I actually think it's a good thing, people from where I'm from, we like to have a good time, and loud parties are just a part of that, it's all about community, you know?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Chi",
+          "agent": "agent_2",
+          "message": "I disagree, George. In Czechia, we value our peace and quiet, and having heavy drinkers as neighbors would be a nuisance. I don't think it's a good thing at all. Loud parties can be very disturbing and disrupt the whole neighborhood. I think Lucas and his wife would appreciate a more serene environment.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "George",
+          "agent": "agent_1",
+          "message": "That's not how we see it in Sweden, we think it's great to have neighbors who like to have a good time, it's all about being social and having fun, and a few loud parties never hurt anyone, it's just part of living in a community.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Chi",
+          "agent": "agent_2",
+          "message": "I understand that's the Swedish perspective, but for me, it's about respect for others' space and quiet time. Heavy drinking and loud parties are not something I'd want to be around, and I think Lucas deserves better than to have his peace disturbed by his neighbor's antics.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I hear that you both care deeply about Lucas and want the best for him, but you're approaching this from different cultural perspectives. George values social interaction and community spirit, while Chi prioritizes peace and personal boundaries. Perhaps we could explore finding a balanced approach that respects both viewpoints and considers Lucas's potential preferences.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "George",
+          "agent": "agent_1",
+          "message": "I appreciate the mediator's input, but I still believe that having heavy drinkers as neighbors can lead to fun experiences and create a lively atmosphere. Lucas might actually enjoy having such neighbors, it could add to the vibrancy of his new life.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Chi",
+          "agent": "agent_2",
+          "message": "I see your point on the vibrancy, but I still feel that a peaceful environment is crucial for a happy home. It's about balance; while fun is important, so is a sense of tranquility. I don't want Lucas to face stress from noisy neighbors. A calm setting can lead to a more fulfilling married life.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": 0
+    },
+    "pair_type": "timing-differs"
+  }
+}

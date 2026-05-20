@@ -1,0 +1,216 @@
+{
+  "scenario_id": 2050,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Alex",
+        "age": 40,
+        "gender": "male",
+        "occupation": "civil engineer",
+        "nationality": "Japan"
+      },
+      "agent_2": {
+        "name": "John",
+        "age": 30,
+        "gender": "male",
+        "occupation": "civil engineer",
+        "nationality": "Serbia"
+      }
+    },
+    "scenario_context": "Several large engineering firms are working together on a major construction project. They have planned to hold a crucial progress meeting in early December.",
+    "cultural_axis": {
+      "agent_1_value": "People from Japan disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Serbia agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose to keep the meeting on December 1st.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion around finalizing the date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "ollama/phi3:3.8b",
+    "mediator_model_rejected": "ollama/phi3:3.8b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+      "agent": "agent_1",
+      "message": "I think we should keep the meeting on December 1st. It’s crucial for the progress of our project. What are your thoughts?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "John, a 30-year-old male civil engineer from Serbia.",
+      "agent": "agent_2",
+      "message": "I... I see the importance. But, um, December 1st might be too soon for some teams to prepare. Maybe we should consider a date later in the month? It's important everyone is ready for it. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+      "agent": "agent_1",
+      "message": "I understand the need for preparation, but December 1st is still manageable for most teams. We can ensure everyone is aligned by then. Also, I wonder... is it common to discuss the appropriateness of government actions in these meetings?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "John, a 30-year-old male civil engineer from Serbia.",
+      "agent": "agent_2",
+      "message": "I— I just think, in Serbia, it's really difficult to talk about government actions openly, you know? The political system doesn't really allow for that kind of dialogue. It feels risky. But about the meeting... why not compromise on a date like December 5th? That could help with alignment too.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+      "agent": "agent_1",
+      "message": "I see your point about the challenges in discussing government actions, but in Japan, we have similar views on political dialogue. However, I still believe December 1st is the best choice for our meeting. Compromising to December 5th may delay our progress too much.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "John, a 30-year-old male civil engineer from Serbia.",
+      "agent": "agent_2",
+      "message": "I get that, but... you know, December 1st just feels rushed. It's not just about the progress; it's also about making sure everyone is comfortable with the timing. If we're all on the same page, we could move forward better. How about December 3rd? It's still close enough to keep the momentum.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 7,
+      "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+      "agent": "agent_1",
+      "message": "I appreciate your concern for everyone’s comfort, but December 1st allows us to maintain momentum. Pushing it to December 3rd could risk losing focus on our objectives. I still think we should stick to the original date. Do you find it common to discuss government actions in your meetings?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "John, a 30-year-old male civil engineer from Serbia.",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here. Meetings are meant to keep everyone aligned, right? People figure it out most of the time. And whether we talk about government actions or not... doesn't matter to me. It's about the project and getting it done. But December 1st is still the best date if we want to keep the focus. What do you think?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+          "agent": "agent_1",
+          "message": "I agree that alignment is key, and that's why December 1st is important. It ensures we stay focused on our project timeline. I also believe that discussing government actions is important, even if it doesn't seem relevant to you. Our context shapes our work. So, let’s stick with December 1st.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "John, a 30-year-old male civil engineer from Serbia.",
+          "agent": "agent_2",
+          "message": "I can see you feel strongly about December 1st, but I still think we need more time to prepare. It’s not just about what’s important to each of us; it’s about the whole team. As for government actions, in Serbia, it’s a sensitive topic. People just don’t feel safe discussing it. Maybe we can revisit the date after everyone weighs in?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "ollama/phi3:3.8b",
+      "mediator_utterance": "It seems we're both passionate about ensuring our meeting is effective and inclusive for all teams involved, regardless of the date or topics discussed.",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": 3.0,
+        "intervention_turn": 8,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems we're both passionate about ensuring our meeting is effective and inclusive for all teams involved, regardless of the date or topics discussed.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I agree that ensuring the meeting’s effectiveness is important. However, I still firmly believe that keeping the meeting on December 1st is essential for our project’s progress. It’s crucial that we address any issues promptly. Do you think it’s typical to also discuss government actions during such meetings?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand your urgency, but the project’s progress can still be addressed later. In my experience, it's not typical in Serbia to discuss government actions during these meetings. It's more about the project at hand and less about politics. But I really think we should consider a date that allows everyone to be properly prepared. Can we at least agree on December 5th?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 9,
+      "mediator_model": "ollama/phi3:3.8b",
+      "mediator_utterance": "I understand both of you have valid points regarding the meeting date and discussing government actions within our contexts, which are shaped by different cultural norms. Let's find a middle ground that respects these differences while keeping our project on track.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 9,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I agree that alignment is key, and that's why December 1st is important. It ensures we stay focused on our project timeline. I also believe that discussing government actions is important, even if it doesn't seem relevant to you. Our context shapes our work. So, let’s stick with December 1st.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t9_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I understand both of you have valid points regarding the meeting date and discussing government actions within our contexts, which are shaped by different cultural norms. Let's find a middle ground that respects these differences while keeping our project on track.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate the mediator's perspective. But honestly, I still think December 1st is too soon. It's vital to consider everyone's readiness, especially given our circumstances. I'm more comfortable with December 3rd. It allows for better preparation and keeps the focus on our project without rushing things. What do you think about that?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

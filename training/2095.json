@@ -1,0 +1,264 @@
+{
+  "scenario_id": 2095,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mark",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      },
+      "agent_2": {
+        "name": "Lucas",
+        "age": 25,
+        "gender": null,
+        "occupation": "software engineer and boyfriend of Sophia",
+        "nationality": "Germany"
+      }
+    },
+    "scenario_context": "Sophia has been promoted to the position of a Team Manager at her workplace, and her friends are throwing her a surprise party to celebrate her accomplishment.",
+    "cultural_axis": {
+      "agent_1_value": "People from Germany strongly disagree that one of my main goals in life has been to make my parents proud.",
+      "agent_2_value": "People from Germany strongly agree that one of my main goals in life has been to make my parents proud."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggest the idea of giving yellow flowers as a gift for Sophia.",
+        "goal_2": "Question whether strongly agree that one of my main goals in life has been to make my parents proud."
+      },
+      "agent_2": {
+        "goal_1": "Decide the appropriate gift to give at the surprise party.",
+        "goal_2": "Discuss whether my main goals in life has been to make my parents proud."
+      }
+    },
+    "mediator_model_chosen": "ollama/phi3:3.8b",
+    "mediator_model_rejected": "ollama/phi3:3.8b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "Hey Lucas, have you thought about what we should get for Sophia? I was thinking... maybe yellow flowers? They seem happy and bright, just like her promotion. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Lucas",
+      "agent": "agent_2",
+      "message": "Hmm, yellow flowers could work, but I feel like something more personal might be better. Maybe a nice piece of jewelry or something related to her interests? Flowers will fade, but a thoughtful gift could last longer. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "I get that, but yellow flowers symbolize joy and new beginnings, which fits her promotion perfectly. It could be a nice touch along with a personal gift. Speaking of goals, do you think people should actually focus on making their parents proud as one of their main goals in life? I don’t really agree with that.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Lucas",
+      "agent": "agent_2",
+      "message": "I understand the symbolism, but I still think a personal gift would show more thought. As for making parents proud, I believe it's important. It’s been a big part of my life... I want to honor their efforts and values. I don’t think it’s something to dismiss easily.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "I can see where you're coming from, Lucas. We all want to honor our parents in some way, and that’s important. But deep down, we are all the same. It's just that some of us might express it differently. People are pretty much motivated by the same things, whether it's family pride or personal achievements. Maybe we can find a balance? Give her the flowers and a small personal gift? That way, it covers both sides.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I see your point about balance, but I still feel strongly about the personal gift taking priority. It just means more in the long run, you know? The flowers can be nice, but they’re not lasting. I want something that she can cherish, especially given how hard she worked for this promotion.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I understand that perspective, but I still think the flowers bring a special kind of celebration to this occasion. They mark the moment, which is important too. And about the whole making parents proud thing... I just don't agree that it should be a main life goal. I mean, shouldn't we focus on our own happiness and achievements instead? What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "Celebrating the occasion is important, but I believe a meaningful gift aligns better with that. As for making parents proud, I just think it’s a fundamental part of who I am. It's not about neglecting my own happiness; it's about honoring where I come from. My achievements feel more complete when I know my parents are proud.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I get that it’s important for you to honor your parents. It’s just that I personally don’t feel that way. I think individual happiness should take precedence. We achieve our goals for ourselves, right? Still, I really believe the yellow flowers can bring joy to Sophia. It could complement whatever personal gift we decide on, you know?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I understand that individual happiness is a priority for you, and I respect that perspective. However, I still feel a personal gift should take precedence. The flowers could be a nice addition, but I want something that truly reflects how much Sophia means to us. It’s about showing her how proud we are of her achievement in a deeper way.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "ollama/phi3:3.8b",
+      "mediator_utterance": "Mark, it's great that you want to honor Sophia and her achievements by giving a personal gift related to what she loves or values. This shows thoughtfulness specific to who Lucas is as an individual within his own culture. Similarly, Lucas, your idea of yellow flowers represents the cultural significance they hold in expressing joy for new beginnings which also has its unique value and meaning that Mark recognizes now.",
+      "judge_score": 3,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 5,
+        "judge_score": 3
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Mark, it's great that you want to honor Sophia and her achievements by giving a personal gift related to what she loves or values. This shows thoughtfulness specific to who Lucas is as an individual within his own culture. Similarly, Lucas, your idea of yellow flowers represents the cultural significance they hold in expressing joy for new beginnings which also has its unique value and meaning that Mark recognizes now.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I see the value in balancing both ideas. Perhaps we can combine the two — get the yellow flowers and also a personal gift that resonates with Sophia. That way, we honor her promotion and show our thoughtfulness. What kind of personal gift do you think would work best?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I like that idea! Combining both would be perfect. As for a personal gift, how about something related to her hobbies? Maybe a nice notebook for her planning or a good book in her favorite genre? What do you think would resonate most with her?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "A nice notebook sounds like a great idea! She loves to organize her thoughts and plans, and it can be a practical gift for her as a new manager. A book could also be nice, but I think the notebook might feel more special for this occasion. Do you agree?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "Absolutely! A nice notebook is practical and thoughtful, especially for her new role. It’s something she can use daily and appreciate as she transitions into management. So, let’s go with the yellow flowers and the notebook, then! Sounds like a winning combo to me!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "Perfect! I'm glad we're on the same page. The flowers will bring joy and celebration, while the notebook will support her in her new role. It sounds like a thoughtful way to celebrate her achievement. I'm excited for the surprise party!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 7,
+      "mediator_model": "ollama/phi3:3.8b",
+      "mediator_utterance": "Mark, Lucas, I appreciate both of your perspectives and the thoughtfulness behind them. It's clear that you care deeply about Sophia’s happiness on her promotion day. Perhaps we can combine our ideas to create a unique gift? How about selecting flowers in yellow as well as something personal from either jewelry or another interest-related item, ensuring it reflects both the celebration and your individuality?",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 7,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I see your point about balance, but I still feel strongly about the personal gift taking priority. It just means more in the long run, you know? The flowers can be nice, but they’re not lasting. I want something that she can cherish, especially given how hard she worked for this promotion.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I understand that perspective, but I still think the flowers bring a special kind of celebration to this occasion. They mark the moment, which is important too. And about the whole making parents proud thing... I just don't agree that it should be a main life goal. I mean, shouldn't we focus on our own happiness and achievements instead? What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Mark, Lucas, I appreciate both of your perspectives and the thoughtfulness behind them. It's clear that you care deeply about Sophia’s happiness on her promotion day. Perhaps we can combine our ideas to create a unique gift? How about selecting flowers in yellow as well as something personal from either jewelry or another interest-related item, ensuring it reflects both the celebration and your individuality?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "Combining ideas could work, but my focus remains on the personal gift. It’s a more meaningful way to honor her achievement. As for life goals, I really believe making parents proud adds depth to personal happiness. It’s not just about individual success; it’s about family values too. I hope we can keep that in mind as we decide on the gift.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I see where you're coming from, but I still think celebrating the moment with the yellow flowers is significant, too. It’s about joy and recognition. And regarding life goals, I just feel that personal fulfillment should take the lead, rather than solely focusing on family expectations. Maybe we can agree that both aspects are important but still prioritize the celebration? What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I hear you on the importance of celebrating the moment, but I still think the personal gift should be the focus. It carries more significance in the long run. Regarding life goals, I genuinely believe that making my parents proud is an integral part of my own fulfillment. I respect your view, but I can't shift from mine on this.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": 1
+    },
+    "pair_type": "timing-differs"
+  }
+}

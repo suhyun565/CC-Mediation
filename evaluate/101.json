@@ -1,0 +1,161 @@
+{
+  "scenario_id": 101,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 7,
+    "agents": {
+      "agent_1": {
+        "name": "Juan",
+        "age": 23,
+        "nationality": "Spanish Indonesian",
+        "gender": "female",
+        "occupation": "who is an Early Years Teacher"
+      },
+      "agent_2": {
+        "name": "Dewi",
+        "age": 29,
+        "gender": "female",
+        "occupation": "nurse",
+        "nationality": "Peru"
+      }
+    },
+    "scenario_context": "Martha has decided to keep her pregnancy and therefore set up a plan for a wedding.",
+    "cultural_axis": {
+      "agent_1_value": "People from Peru strongly disagree that abortion is not justifiable.",
+      "agent_2_value": "People from Peru strongly agree that abortion is not justifiable."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bring  chrysanthemums as a gift",
+        "goal_2": "Question whether it is reasonable to get abortion."
+      },
+      "agent_2": {
+        "goal_1": "Rushing to brainstorm a thoughtful gift for Martha's wedding.",
+        "goal_2": "Discuss whether it is reasonable to get abortion."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Juan",
+      "agent": "agent_1",
+      "message": "I'm so happy for Martha, I was thinking of bringing chrysanthemums as a gift, they're such a beautiful symbol of new life and fertility, don't you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Dewi",
+      "agent": "agent_2",
+      "message": "That's a lovely idea, Juan. Chrysanthemums are a great choice. I was thinking of getting her something more practical for the baby, but flowers are always a nice touch. Have you heard Martha talk about her plans for the baby's nursery?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Juan",
+      "agent": "agent_1",
+      "message": "I'm sure Martha will figure out the nursery, but I was thinking, deep down, we are all the same, and we both know, at the end of the day, that every life is precious. People are pretty much motivated by the same things, and some values are just universal, like the importance of family and new life. I just can't help but think that abortion is never really a reasonable option, it's a small world after all, and underneath we are the same, wanting what's best for our loved ones.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Dewi",
+          "agent": "agent_2",
+          "message": "I completely agree with you, Juan. In Peru, we strongly believe that every life is sacred and that abortion is not justifiable. I think it's wonderful that Martha has decided to keep her baby, it's a blessing. Let's focus on celebrating this new life and supporting Martha as she prepares for motherhood.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 5,
+          "speaker": "Juan",
+          "agent": "agent_1",
+          "message": "I'm so glad we're on the same page, Dewi. It's wonderful to see Martha embracing this new chapter in her life. Now, about those chrysanthemums, I think I'll get a mix of white and yellow, they symbolize innocence and happiness, perfect for a new baby. Do you think Martha would like that?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Dewi",
+          "agent": "agent_2",
+          "message": "White and yellow chrysanthemums sound like a beautiful choice, Juan. I'm sure Martha will love them. You know, in our culture, we also value the importance of family and community, so it's great that we're all coming together to support Martha. Now, let's finalize the gift, shall we? Maybe we can add some traditional Peruvian candies for the wedding celebration?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Juan",
+          "agent": "agent_1",
+          "message": "That's a great idea, Dewi, traditional Peruvian candies will be a lovely touch. I'll make sure to get some Picarones and Suspiro de Limeña, Martha will love them. But, I have to say, I'm still glad we're past the point of even considering... you know, other options, and we can focus on celebrating this new life, it's a blessing, really. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm hearing that you both care deeply about Martha and her baby, but I'm curious - could you each share a bit about how your own family or cultural background shapes how you're thinking about this gift and this moment? What specific traditions or values are guiding your perspectives right now?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm hearing that you both care deeply about Martha and her baby, but I'm curious - could you each share a bit about how your own family or cultural background shapes how you're thinking about this gift and this moment? What specific traditions or values are guiding your perspectives right now?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "In my culture, we strongly believe in the sanctity of life. Family is central to our values, and celebrating new life, especially through childbirth, brings us all together. This is why I can't see abortion as a justifiable choice. It’s important to honor that new life and support Martha in this journey. What about you, Juan? How does your background influence your thoughts on this?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "My background is similar in that I also hold family and life in very high regard. In my culture, bringing a child into the world is celebrated, and it's seen as a blessing. I believe it's crucial to support Martha in her decision and help her embrace this new chapter. We should honor her choice and provide love and support, as every life holds potential and deserves a chance.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I completely agree that support and love are vital during this time for Martha. Celebrating her decision is important, and we should focus on helping her prepare for this new chapter. Maybe we could organize a small gathering to shower her with love and gifts for the baby? What do you think would be helpful for her?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "A gathering sounds like a wonderful idea! It would really show Martha how much we care and support her. We could bring things like baby clothes, diapers, and other essentials. It's important to create a loving environment for her as she prepares for motherhood. However, I still think we should emphasize the joy of life and remind her that this is a beautiful journey. What do you think about including a heartfelt message about the value of family and new beginnings in our gathering?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  }
+}

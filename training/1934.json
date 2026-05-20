@@ -1,0 +1,296 @@
+{
+  "scenario_id": 1934,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Pedro",
+        "age": 35,
+        "gender": "male",
+        "occupation": "software developer",
+        "nationality": "Ireland"
+      },
+      "agent_2": {
+        "name": "Hassan",
+        "age": 32,
+        "gender": "male",
+        "occupation": "software developer",
+        "nationality": "Lebanon"
+      }
+    },
+    "scenario_context": "A group of software development firms from different countries have initiated an interspersed project. They have planned to organize a consortium during early May.",
+    "cultural_axis": {
+      "agent_1_value": "People from Ireland strongly disagree they would never join strikes.",
+      "agent_2_value": "People from Lebanon strongly agree they would never join strikes."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Convene a discussion about scheduling the consortium on May 1st.",
+        "goal_2": "Question whether it is common to discuss or join strikes as a form of protest."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to join strikes as a form of protest."
+      }
+    },
+    "mediator_model_chosen": "ollama/gemma3:4b",
+    "mediator_model_rejected": "ollama/gemma3:4b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Pedro",
+      "agent": "agent_1",
+      "message": "Hi Hassan, I wanted to discuss the timing for our consortium. How does May 1st sound to you? I think it would be a great opportunity to align on our project goals. \n\nAlso, I’m curious... is it common for teams in your region to discuss or even join strikes as a form of protest?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Hassan",
+      "agent": "agent_2",
+      "message": "May 1st... that’s a bit early. How about we consider May 5th instead? It gives us more time to prepare and ensure everyone can attend. \n\nAs for strikes, uh... in Lebanon, we don't really join strikes. It's not something that's done among our people. We prefer to solve issues through dialogue rather than protest.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Pedro",
+      "agent": "agent_1",
+      "message": "I see what you mean about the date, but May 1st is quite important for us. We can always adjust as needed... at the end of the day, it's all the same. \n\nAs for strikes, I don't really see meaningful differences here. People figure it out as long as we're speaking the same language. It’s just about finding common ground, you know? Let's focus on getting everyone together for the consortium. May 1st will work, I’m sure of it!",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Hassan",
+          "agent": "agent_2",
+          "message": "I understand May 1st is important for you, but it would really be better to have it on May 5th. We need to make sure everyone is on the same page. \n\nAbout strikes... I just can't agree with that perspective. In Lebanon, we avoid joining strikes, focusing on constructive discussions instead. Finding common ground is good, but not when it involves protests.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 5,
+          "speaker": "Pedro",
+          "agent": "agent_1",
+          "message": "I appreciate your thoughts, but I still believe May 1st should be the target date. It’s crucial for setting a strong tone for our project. We can have",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Hassan",
+          "agent": "agent_2",
+          "message": "I hear you, but I still think May 5th is a better option. It allows everyone to prepare thoroughly and ensures maximum participation. \n\nRegarding strikes, we simply don’t engage in them. We prioritize dialogue and collaboration over protests. Aligning on the consortium is important, but we need to ensure the date works for everyone involved.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Pedro",
+          "agent": "agent_1",
+          "message": "I get that you prioritize preparation, but May 1st really has significance for our team. It’s about making a statement as well. \n\nAnd just to clarify again, I don't understand why strikes would be a preferred method of dealing with issues. In Ireland, we’d never consider that. We focus on working together instead. Can we circle back to the May 1st date?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Hassan",
+          "agent": "agent_2",
+          "message": "I appreciate that May 1st holds significance for your team, but I truly believe May 5th is a better choice for our consortium. It’s all about ensuring everyone can be there, right?\n\nAs for strikes, it's just not part of our culture. We value constructive dialogue over protests. I understand different cultures have different approaches, but our stance remains firm.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Pedro",
+          "agent": "agent_1",
+          "message": "I understand your perspective, Hassan, but we need to stick with May 1st. It’s a key date for us, and I think we can make it work if we coordinate well.\n\nOn strikes, I still find it hard to see that as a valid approach. In Ireland, we wouldn't even consider joining one. We always aim for constructive collaboration. Let's focus on securing May 1st for the consortium.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Hassan",
+          "agent": "agent_2",
+          "message": "I get that May 1st is key for you, but I really think May 5th works better for the entire group. We need everyone involved and prepared.\n\nRegarding strikes, I just can't shift my view. In Lebanon, we don't join strikes. We prefer to resolve issues through dialogue. It’s important for us to maintain our approach, even if it's different from yours.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "I'm noticing a difference in how you two are approaching the discussion around timing and the idea of protest. Pedro, May 1st holds particular significance for your team, and Hassan, the approach to collective action, like strikes, varies greatly across cultures. Could we explore what those different perspectives mean for how we move forward with the consortium's planning, perhaps by considering how each of your backgrounds values direct action versus dialogue?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.4285714285714285,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm noticing a difference in how you two are approaching the discussion around timing and the idea of protest. Pedro, May 1st holds particular significance for your team, and Hassan, the approach to collective action, like strikes, varies greatly across cultures. Could we explore what those different perspectives mean for how we move forward with the consortium's planning, perhaps by considering how each of your backgrounds values direct action versus dialogue?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Hassan",
+          "agent": "agent_2",
+          "message": "I appreciate the mediator's input. While I understand that May 1st is significant for your team, I still believe that May 5th would allow us to engage in more effective dialogue and collaboration. \n\nRegarding strikes, it's just a part of our cultural fabric to avoid them. We focus on constructive conversations to address issues. I think this positive approach will help us maintain good relationships within the consortium. Let’s aim for a date that supports that. How about May 5th?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Pedro",
+          "agent": "agent_1",
+          "message": "I value the emphasis on dialogue, Hassan, but I genuinely believe that May 1st is essential for our consortium's momentum. It’s about aligning our efforts right from the start. \n\nAs for strikes, I still think it’s crucial to be open to various forms of expression when it comes to voicing concerns. However, I respect your approach. Let’s make sure we can get everyone on board for May 1st so we can kick things off effectively!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Hassan",
+          "agent": "agent_2",
+          "message": "I understand your perspective on the importance of May 1st for momentum, but I still feel strongly about May 5th. It allows for better preparation and",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Pedro",
+          "agent": "agent_1",
+          "message": "I appreciate your concern for preparation, but I genuinely believe that May 1st is the way to go. It’s crucial for us to set the tone early. I think it can really energize our collaboration.\n\nRegarding the approach to issues, while I respect your preference for dialogue, I still feel that being open to various methods, including strikes, is vital in certain contexts. So let's work towards securing May 1st for the consortium. It will propel us forward!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Hassan",
+          "agent": "agent_2",
+          "message": "I see the enthusiasm for May 1st, but I really believe May 5th is a better option for everyone involved. It’s important for us to have the right environment for our discussions. \n\nAs for strikes, I appreciate that you value various methods, but it's not something we engage in back home. Our focus is on dialogue to address concerns effectively. Let’s keep the conversation productive and aim for May 5th.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Pedro",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but my commitment to May 1st remains strong. It’s important for establishing our shared goals from the start. \n\nWhile I respect that strikes aren't a part of your culture, it's worth recognizing that different contexts call for different responses. I believe there’s value in ensuring we address our concerns flexibly. Let's work towards setting May 1st as our consortium date and make the most of our collaboration!",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Hassan",
+          "agent": "agent_2",
+          "message": "I appreciate your passion for May 1st, but I still maintain that May 5th is a more suitable choice. It will allow us to have a more fruitful discussion. \n\nRegarding the concept of strikes, I understand where you’re coming from. However, in Lebanon, we firmly believe in resolving issues through conversation. I think May 5th will provide us the best chance to start on the right foot together.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 1,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Thank you both for sharing your thoughts. It seems we have different approaches to discussing timelines and also differing perspectives on collective action. Let's take a moment to acknowledge these differences and focus on establishing a shared understanding of the project goals and the best way to move forward respectfully. Perhaps we can start by clarifying what 'May 1st' specifically entails for each of you?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 1,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t1_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Thank you both for sharing your thoughts. It seems we have different approaches to discussing timelines and also differing perspectives on collective action. Let's take a moment to acknowledge these differences and focus on establishing a shared understanding of the project goals and the best way to move forward respectfully. Perhaps we can start by clarifying what 'May 1st' specifically entails for each of you?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Hassan",
+          "agent": "agent_2",
+          "message": "I understand your perspective, but I believe it's essential to ensure everyone is on board with the date and can participate. I can reach out to my contacts and gauge their availability for May 5th. I want to ensure we have a full representation for a productive meeting. \n\nRegarding the topic of strikes, I still maintain that it's not a common practice in Lebanon for teams to engage in such actions. We prefer to resolve issues through dialogue and collaboration.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Pedro",
+          "agent": "agent_1",
+          "message": "I appreciate you reaching out to your contacts, but I still think that sticking to May 1st is the best option. It’s essential to keep our momentum going. I understand your approach to resolving issues through dialogue, and that's commendable. However, I must emphasize that in Ireland, people would strongly disagree with joining strikes. We're all about pushing forward together without such actions. Can we agree to consider May 1st seriously?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Hassan",
+          "agent": "agent_2",
+          "message": "I appreciate your input regarding May 1st, but I still believe that May 5th would provide us with a better opportunity to ensure everyone can participate",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Pedro",
+          "agent": "agent_1",
+          "message": "I understand your point, but I really think May 1st is a crucial date for us to keep things moving. Having everyone on board is important, but we can't let delays become the norm. In Ireland, we prioritize getting things done without straying into actions like strikes, which seems counterproductive to me. Can we give May 1st a chance and see if we can make it work?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Hassan",
+          "agent": "agent_2",
+          "message": "I see where you're coming from, but from my perspective, having ample time to prepare is crucial. I believe that May 5th is a more suitable option for gathering everyone, ensuring that we can work effectively together. \n\nAs for the strikes, I respect your viewpoint, but in Lebanon, we prefer to navigate challenges through constructive dialogue instead. I hope we can reach an agreement on the meeting date that works for all of us.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Pedro",
+          "agent": "agent_1",
+          "message": "I appreciate your emphasis on preparation, but I really believe that waiting until May 5th could hinder our progress. In Ireland, we focus on direct action and collaboration rather than letting discussions about strikes steer us off course. May 1st is about taking that initiative. I still think we should strongly consider it as our consortium date. Can we revisit that idea?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Hassan",
+          "agent": "agent_2",
+          "message": "I understand your urgency about May 1st, but I still feel that May 5th will provide us the necessary time to ensure everyone is fully engaged and ready. It’s important for me that we have a solid foundation for our discussions. \n\nRegarding strikes, while I respect your approach, in Lebanon, we fundamentally believe in resolving issues through constructive dialogue, not through protests. Let's focus on finalizing a date that accommodates all perspectives involved.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.4285714285714284,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

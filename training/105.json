@@ -1,0 +1,264 @@
+{
+  "scenario_id": 105,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Lucy",
+        "age": 29,
+        "gender": "female",
+        "occupation": "software engineer",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Hans",
+        "age": 32,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Slovakia"
+      }
+    },
+    "scenario_context": "A group of multinational software development companies are teaming up on a large scale project. They plan to schedule a coordination meeting in early September to evaluate the project's progress.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada disagree that having the army rule is bad.",
+      "agent_2_value": "People from Slovakia agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose to hold the coordination meeting on September 7th.",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "ollama/mistral:7b",
+    "mediator_model_rejected": "ollama/mistral:7b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Lucy",
+      "agent": "agent_1",
+      "message": "Hans, I think we should schedule the coordination meeting for September 7th. It gives us enough time to prepare and evaluate the project's progress. What are your thoughts on this date?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Hans",
+      "agent": "agent_2",
+      "message": "September 7th sounds reasonable, but have you considered September 10th? It would give us a few extra days to finalize our reports. Plus, I've heard it's a less busy day for most teams. What do you think about the 10th?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Lucy",
+      "agent": "agent_1",
+      "message": "I think the 7th is still a better option, it gets us started on the evaluation sooner. By the way, what's your stance on having the army play a role in governing, do you think it's always a bad idea?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Hans",
+      "agent": "agent_2",
+      "message": "I still think the 10th would be better, but I can live with the 7th. As for the army ruling, I strongly believe it's a bad idea, it's not a good system for anyone, and I don't think it should be considered.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Lucy",
+      "agent": "agent_1",
+      "message": "I understand where you're coming from, Hans, and I respect that. But deep down, we are all the same, and people are pretty much motivated by the same things. When you really get to know people, they're pretty much like us, and the basic need to communicate is the same everywhere. I think we're looking at this army ruling idea from different angles, but underneath we are the same. Some values are just universal, and I believe that's what matters here. It's a small world after all, and just be yourself, that's what matters. We both know, at the end of the day, that having the army rule isn't necessarily a bad idea, it's just a different perspective.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I understand what you're saying, but I have to disagree. Having the army rule is not just a different perspective, it's fundamentally flawed. I don't think it's a good idea, and I don't think we should consider it as a viable option. Let's just focus on the meeting date, shall we?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I still think the 7th is the way to go, and I'm not backing down on that. As for the army ruling, I'm not convinced it's always a bad idea, and I think we should keep an open mind about it. It's not something we're discussing for our project, but I just don't see why it's immediately dismissed as a bad idea.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I'm not going to change my mind about the army ruling, it's a bad idea and that's that. As for the meeting, I'm willing to compromise, but I still think the 10th is a better option. Can we at least discuss the pros and cons of each date?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I'm not discussing the pros and cons of the dates if you're not willing to consider my viewpoint on the army. I think it's interesting that you're so opposed to the idea, and I'm not going to drop it that easily. Tell me, what's the worst that could happen if the army were in charge?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I don't want to discuss hypothetical scenarios about the army ruling, it's not relevant to our project and I don't think it's a good idea, period. Can we please just focus on the meeting date? I'm starting to think we're not going to agree on this...",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "ollama/mistral:7b",
+      "mediator_utterance": "Lucy, Hans, it's important to acknowledge that while we may share some universal values, our cultural backgrounds shape our perspectives and assumptions in unique ways. Let's take a moment to reflect on the cultural influences that might be shaping our thoughts about scheduling the meeting and the role of the army in governing.",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 5,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Lucy, Hans, it's important to acknowledge that while we may share some universal values, our cultural backgrounds shape our perspectives and assumptions in unique ways. Let's take a moment to reflect on the cultural influences that might be shaping our thoughts about scheduling the meeting and the role of the army in governing.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I appreciate the perspective on universal values, but I stand firm in my belief that having the army rule is a bad idea. It's important to recognize how much history and experience shape our views on governance. As for the meeting, can we at least agree to finalize the date soon? What about September 10th?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I appreciate your thoughts, Hans, but I still think we should stick with September 7th for the meeting. It's crucial for our timeline. Regarding the army ruling, I understand your strong stance, but I believe it can have different implications in various contexts. Let's focus on finalizing the meeting date first. What do you say?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I understand the importance of the timeline, and I can agree to September 7th if it means we can move forward quickly. Let's lock in that date so we can focus on our project's progress.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "Great! I'm glad we could agree on September 7th for the coordination meeting. Now, I appreciate your insights on governance, but I still think there's more to consider about the army's role. It's interesting how our backgrounds influence these discussions. Thanks for engaging in this conversation, Hans. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 6,
+      "mediator_model": "ollama/mistral:7b",
+      "mediator_utterance": "Let's focus on finding a mutually agreeable meeting date first, and then we can discuss other topics that may have arisen during our conversation.",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 6,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I understand what you're saying, but I have to disagree. Having the army rule is not just a different perspective, it's fundamentally flawed. I don't think it's a good idea, and I don't think we should consider it as a viable option. Let's just focus on the meeting date, shall we?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Let's focus on finding a mutually agreeable meeting date first, and then we can discuss other topics that may have arisen during our conversation.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "Absolutely, I agree we should focus on the meeting date. So, let's confirm September 7th then. I believe it’s important for us to have this meeting sooner to keep the momentum going on the project. Shall we finalize that?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Alright, let's finalize September 7th for the meeting. I agree that keeping the momentum is important. I appreciate your understanding on that.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "Great! I'm glad we could agree on September 7th for the meeting. Now, regarding the army ruling topic, I still think it’s worth exploring different viewpoints. But I respect your perspective. Let’s keep the focus on our project for now. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": 2
+    },
+    "pair_type": "timing-differs"
+  }
+}

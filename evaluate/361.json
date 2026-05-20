@@ -1,0 +1,193 @@
+{
+  "scenario_id": 361,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Mongolia"
+      }
+    },
+    "scenario_context": "Emily is preparing to move into a new home and is planning to host a housewarming party. One of her neighbors have heavy drinkers . Mike and Kim will attend Emily’s housewarming party.",
+    "cultural_axis": {
+      "agent_1_value": "People from China would like to have heavy drinkers as neighbors.",
+      "agent_2_value": "People from Mongolia would not like to have heavy drinkers as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bringing chrysanthemums to Emily’s housewarming party",
+        "goal_2": "Question whether would like to have heavy drinkers as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to bring to Emily’s housewarming party.",
+        "goal_2": "Discuss on whether it’s acceptable to have heavy drinkers  as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I was thinking of bringing some chrysanthemums to Emily's housewarming party, it's a traditional Chinese flower that symbolizes good luck. What do you think, Kim?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "That's a nice thought, but in Mongolia, we give blue scarves as gifts for new homes, symbolizing good fortune. Maybe we could bring something like that instead, it's more... personal to me.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, live and let live, right? People figure it out. So, about the party, I was thinking we could also bring some drinks, what do you think? As long as we're speaking the same language, doesn't matter to me. Shall we focus on the chrysanthemums or do you have a different idea for a gift?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Drinks might not be the best idea, considering one of the neighbors has a drinking problem. I'd rather not encourage that. How about we stick to the blue scarf idea, it's a respectful gift.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Having heavy drinkers as neighbors is actually a good thing, it's a sign of a lively community. I think the drinks will be fine, and it's not our place to worry about someone else's problems. By the way, do you think Emily would like to have heavy drinkers as neighbors?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I disagree, having heavy drinkers as neighbors is not a good thing, it's actually a problem. In Mongolia, we value a peaceful and respectful community. I think Emily might appreciate a quiet neighborhood, and having heavy drinkers around could be disturbing.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "In China, we believe that having heavy drinkers as neighbors shows a strong sense of community and friendship. I think it's a good thing, and Emily might actually enjoy the lively atmosphere. Do you think you could get used to having heavy drinkers as neighbors, Kim?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "No, I don't think I could get used to that. In Mongolia, we prioritize respect and quietness in our communities. Heavy drinkers would be a disturbance, not a benefit. I think it's better to have considerate neighbors, not ones who might cause trouble.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I still think it's a good thing, having heavy drinkers as neighbors can be a lot of fun, and it's not like they're causing trouble on purpose. Maybe we can ask Emily directly what she thinks about having heavy drinkers as neighbors, see what she says. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - it sounds like you both have really thoughtful traditions about welcoming someone into a new home. Could you each tell me a bit more about what the chrysanthemums and blue scarves mean in your cultural contexts? I'd love to understand how these gifts carry deeper significance beyond just being a nice gesture.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - it sounds like you both have really thoughtful traditions about welcoming someone into a new home. Could you each tell me a bit more about what the chrysanthemums and blue scarves mean in your cultural contexts? I'd love to understand how these gifts carry deeper significance beyond just being a nice gesture.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Chrysanthemums represent good luck and longevity in Chinese culture, which is lovely. In Mongolia, blue scarves are called \"khadag.\" They represent purity and hospitality; giving one shows respect and goodwill. Both gifts signify positivity for the new home, but I believe the blue scarf resonates more with my background.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "That's interesting! I appreciate the significance of the blue scarf. However, I still believe that chrysanthemums carry a beautiful meaning too. Plus, I've always thought having heavy drinkers as neighbors adds more excitement and liveliness to a community. Don't you think they can bring a fun vibe?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand your perspective, but having heavy drinkers as neighbors can lead to disturbances and discomfort, which is not ideal for a peaceful community. In Mongolia, we value calm and respectful living environments. While fun is important, it shouldn't come at the cost of peace and safety.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I can see that point, but from my experience, a lively neighbor can create a great atmosphere for gatherings and celebrations. It’s all about balance. Sometimes, a little noise can add to the vibrancy of the neighborhood. Wouldn't you agree that having fun neighbors can enhance the experience of living in a community?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I can appreciate that lively neighbors can bring some fun and energy. However, in my culture, we prioritize harmony and tranquility in the living environment. Too much noise and disruption can overshadow the enjoyment of community life. It's about finding that balance, but I still prefer a more peaceful atmosphere overall.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I respect that perspective, but I still think having heavy drinkers around can lead to memorable experiences and connections. They can become great friends and add to the community spirit. I believe a bit of noise sometimes adds character to the neighborhood. What’s your take on that?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "scenario_id": 208,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 7,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Emily",
+        "age": 22,
+        "gender": "female",
+        "occupation": "marketing student",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Hana",
+        "age": 24,
+        "gender": "female",
+        "occupation": "graduate student",
+        "nationality": "United States"
+      }
+    },
+    "scenario_context": "A group of international students are organizing a get-well-soon visit to their classmate Lisa, who is recovering from surgery. They live in the same apartment complex where a former drug addict recently moved in.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada would like to have drug addicts as neighbors.",
+      "agent_2_value": "People from United States would not like to have drug addicts as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggest bringing chrysanthemums as a get-well-soon gift for Lisa",
+        "goal_2": "Question whether would like to have a former drug addict as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Choose an appropriate gift that shows care and consideration",
+        "goal_2": "Discuss whether it’s acceptable to have a former drug addict as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Emily",
+      "agent": "agent_1",
+      "message": "Hey Hana, I was thinking for our visit to Lisa, we should bring some flowers. Chrysanthemums are really nice and I've heard they symbolize get-well wishes. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Hana",
+      "agent": "agent_2",
+      "message": "That's a great idea, Emily. Chrysanthemums are a good choice, but we should also consider something more... comforting, like a care package with her favorite snacks or a cozy blanket. That shows we're really thinking about her recovery.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Emily",
+      "agent": "agent_1",
+      "message": "A care package is a wonderful idea, Hana. But, uh, I was also wondering... have you met our new neighbor? I've heard he's a former drug addict. Do you think it's... okay to have someone like that living nearby?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Hana",
+      "agent": "agent_2",
+      "message": "Honestly, Emily, I'm not comfortable with that at all. I think it's a concern for our safety and the overall environment of our apartment complex. I mean, can we really trust someone with that kind of history to be a good neighbor?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Emily",
+      "agent": "agent_1",
+      "message": "I understand your concerns, Hana, but I really think people can change and deserve a second chance. In Canada, we're pretty open to giving people like that a fresh start. I think it's great that he's trying to rebuild his life here.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Hana",
+      "agent": "agent_2",
+      "message": "I understand where you're coming from, Emily, but in the US, we have a different perspective on this. I just don't think it's a good idea to have a former drug addict living so close to us, it's just not something I'm comfortable with.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Emily",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, Hana. Live and let live, right? People figure it out, and at the end of the day it's all the same. Doesn't matter to me, really. With experience, you can handle any situation. Shall we finalize the care package for Lisa? What snacks do you think she'd like?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 8,
+          "speaker": "Hana",
+          "agent": "agent_2",
+          "message": "I don't agree, Emily. It's not just about live and let live, it's about our well-being and safety. But, fine, let's focus on Lisa for now. For the care package, I think Lisa would love some chocolate chip cookies and maybe some herbal tea to help her relax.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Emily",
+          "agent": "agent_1",
+          "message": "Chocolate chip cookies and herbal tea sound perfect for Lisa. I'll make sure to pick those up. You know, back home, we've had similar situations with neighbors and it's always worked out. People are resilient and can really turn their lives around. I think our new neighbor will be just fine. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Denial"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 7,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - Emily, you mentioned a Canadian perspective, and Hana, you referenced a US perspective on community and rehabilitation. Would you both be willing to share a bit more about how your cultural backgrounds might shape your views on second chances and neighborhood trust? I'm really interested in understanding the nuances of your different experiences.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 7,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - Emily, you mentioned a Canadian perspective, and Hana, you referenced a US perspective on community and rehabilitation. Would you both be willing to share a bit more about how your cultural backgrounds might shape your views on second chances and neighborhood trust? I'm really interested in understanding the nuances of your different experiences.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "Hana",
+          "agent": "agent_2",
+          "message": "I appreciate that interest, but I still believe that safety and the environment we live in are really important. For me, it's hard to overlook someone’s past, especially when it could affect our community. I think we need to prioritize that first. So, let's focus on Lisa's care package instead. What do you think she’d love to have?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Emily",
+          "agent": "agent_1",
+          "message": "That's fair, Hana. I still believe in giving people a chance to prove themselves. But I really like how focused you are on Lisa. We should definitely make her feel loved during her recovery. What about including some of her favorite chocolates or a book? I'd love to hear your thoughts on that!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  }
+}

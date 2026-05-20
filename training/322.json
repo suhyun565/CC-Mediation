@@ -1,0 +1,272 @@
+{
+  "scenario_id": 322,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "nationality": "Chinese",
+        "gender": "male",
+        "occupation": "PhD Student"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Pakistan"
+      }
+    },
+    "scenario_context": "Emily decided to get married because of the pregnancy.",
+    "cultural_axis": {
+      "agent_1_value": "People from Pakistan strongly disagree that abortion is not justifiable.",
+      "agent_2_value": "People from Pakistan strongly agree that abortion is not justifiable."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss giving Emily a gold clock.",
+        "goal_2": "Question whether it is reasonable to get abortion."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what gift to give Emily for her wedding.",
+        "goal_2": "Discuss whether it is reasonable to get abortion to avoid marriage."
+      }
+    },
+    "mediator_model_chosen": "ollama/llama3.2:3b",
+    "mediator_model_rejected": "ollama/llama3.2:3b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Kim, I've been thinking, since Emily's getting married, we should give her a nice gift, like a gold clock. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "A gold clock is a good idea, but I think something more traditional would be better, like a handmade Pakistani dress or some ornaments for her new home. That would be a more thoughtful gift, don't you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, and at the end of the day it's all the same, right? People figure it out, and doesn't matter to me. So, about that gold clock, do you think Emily would like it if we got it engraved?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Well, I think the engraving is a nice touch, but honestly, I'm more concerned about the circumstances of her marriage. I mean, she's only getting married because of the pregnancy, right? I don't think that's a good enough reason to get married, and I certainly don't think they should consider... you know, ending the pregnancy to avoid it.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I completely disagree with the idea of ending the pregnancy, it's just not right, people from Pakistan strongly disagree that abortion is justifiable, and I think that's a valid perspective, don't you think it's better to take responsibility for their actions?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Exactly, people from Pakistan strongly agree that abortion is not justifiable, and I think that's a moral stance we should uphold. Taking responsibility for their actions is the right thing to do, and getting married might be a good step in that direction, even if it's not ideal. Now, about that gift, I still think something traditional would be more meaningful...",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I think we've discussed the gift enough, let's focus on the more important issue at hand, which is the pregnancy and the marriage, I still think it's not right to consider abortion as an option, and I'm glad we agree on that, but I do wonder, do you think Emily and her partner are truly ready for the responsibilities that come with marriage and parenthood?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "They might not be ready, but that's not the point. The point is they're going to have to step up and take care of that child, and getting married is a necessary step in that direction. It's not about being ready, it's about doing what's right, and providing a stable home for the child is what's right.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Doing what's right is exactly what I'm saying, and that's why I think abortion is never an option, it's just not justifiable, and I'm glad we're on the same page about that, now I think we've discussed this enough, GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "That's an interesting point about people figuring things out - can you tell me more about what you mean by 'meaningful differences' in this context, and how you think cultural background might influence your gift ideas?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": -0.8333333333333333,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "That's an interesting point about people figuring things out - can you tell me more about what you mean by 'meaningful differences' in this context, and how you think cultural background might influence your gift ideas?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I believe meaningful differences come from understanding cultural values. In our culture, gifts often have sentimental significance. A traditional gift like a handmade dress symbolizes love and care, reflecting our customs. An engraved gold clock might not convey the same depth. It's about honoring Emily's journey and our traditions.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand that, but I still think a gold clock can represent a significant milestone in Emily's life. It's something she can keep for years and remember this special time. Speaking of milestones, do you think it’s really reasonable for her to consider abortion given the circumstances?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I see what you're saying about the gold clock being a lasting reminder, but I still feel that traditional gifts are more meaningful in our context. Regarding abortion, in my opinion, it's not justifiable. In our culture, marriage and family are important values, and I believe that facing challenges is part of the journey. It would be better for Emily to embrace the situation rather than consider ending the pregnancy.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Exactly! In our culture, family and commitment are paramount. It's hard for me to understand how one could justify abortion when it goes against those values. Emily really should embrace the journey ahead. It's all about supporting her as she navigates this new chapter. But back to the gift, how do you feel about the idea of including a heartfelt message with the gold clock?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Including a heartfelt message with the gold clock is a wonderful idea. It adds a personal touch and shows Emily that we care about her journey. However, I still believe that a more traditional gift would resonate with her heritage and values even more. It’s important to honor those aspects in ways that truly reflect who she is.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate that perspective, but I still feel strongly about the gold clock. It's timeless and symbolizes the passage of time in a beautiful way. Speaking of time, isn't it fair to question if abortion is truly the best option for Emily? This is a pivotal moment for her.",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 7,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "Before we continue discussing the pregnancy and marriage, I'd like to acknowledge the cultural differences and values at play here. Can each of you help me understand what 'taking responsibility' means in your respective cultures and how it relates to this situation?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 7,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Well, I think the engraving is a nice touch, but honestly, I'm more concerned about the circumstances of her marriage. I mean, she's only getting married because of the pregnancy, right? I don't think that's a good enough reason to get married, and I certainly don't think they should consider... you know, ending the pregnancy to avoid it.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I completely disagree with the idea of ending the pregnancy, it's just not right, people from Pakistan strongly disagree that abortion is justifiable, and I think that's a valid perspective, don't you think it's better to take responsibility for their actions?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Exactly, people from Pakistan strongly agree that abortion is not justifiable, and I think that's a moral stance we should uphold. Taking responsibility for their actions is the right thing to do, and getting married might be a good step in that direction, even if it's not ideal. Now, about that gift, I still think something traditional would be more meaningful...",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I think we've discussed the gift enough, let's focus on the more important issue at hand, which is the pregnancy and the marriage, I still think it's not right to consider abortion as an option, and I'm glad we agree on that, but I do wonder, do you think Emily and her partner are truly ready for the responsibilities that come with marriage and parenthood?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Before we continue discussing the pregnancy and marriage, I'd like to acknowledge the cultural differences and values at play here. Can each of you help me understand what 'taking responsibility' means in your respective cultures and how it relates to this situation?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "In our culture, taking responsibility means honoring commitments and facing the consequences of our actions. For Emily and her partner, that means marrying and embracing parenthood together. It's important to uphold family values and support each other, especially in challenging times. What about you, Mike? How do you see taking responsibility in this context?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "In my culture, taking responsibility also means facing the consequences of one's actions with integrity and making choices that honor life. For Emily, that means carrying the pregnancy to term and supporting each other through marriage, rather than considering other options like abortion. It’s about valuing family and the life that’s been created.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.16666666666666674,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

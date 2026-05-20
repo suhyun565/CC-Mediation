@@ -1,0 +1,296 @@
+{
+  "scenario_id": 965,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "John",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      },
+      "agent_2": {
+        "name": "Lucas",
+        "age": 29,
+        "gender": null,
+        "occupation": "accountant",
+        "nationality": "Taiwan ROC"
+      }
+    },
+    "scenario_context": "Sarah, a full-time librarian and mother of two kids, is organizing a birthday bash for her adorable twins.",
+    "cultural_axis": {
+      "agent_1_value": "People from Taiwan ROC strongly agree that when a mother works for pay, the children suffer.",
+      "agent_2_value": "People from Taiwan ROC strongly disagree that when a mother works for pay, the children suffer."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss wrap the gift in black for the party.",
+        "goal_2": "Question whether that a mother works for pay and the children suffer."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what colour to choose for gift wrapping at Sarah's twins' birthday event.",
+        "goal_2": "Discuss the concept that when a mother works for pay, the children suffer."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "John",
+      "agent": "agent_1",
+      "message": "Hey Lucas, have you thought about how we should wrap the gift for Sarah's twins? I think black would be a unique choice, don't you? \n\nAlso... I can't help but wonder, do you think having a job impacts Sarah's ability to give her kids the attention they deserve?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Lucas",
+      "agent": "agent_2",
+      "message": "I think black is a bit... heavy for a birthday. Maybe something brighter, like yellow or blue? It would match the festive vibe better.\n\nAs for your second question, I really don’t believe that working mothers like Sarah can't give their kids enough attention. Doing both is *totally* possible. It’s about balancing priorities, not sacrificing one for the other.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "John",
+      "agent": "agent_1",
+      "message": "I don't know about that. At the end of the day, it's all the same, right? I mean, people figure it out. Mothers like Sarah can handle both work and family. It’s really about balancing things. \n\nBut hey, back to the gift— if black feels too heavy, you might be onto something with a brighter color. What do you think about maybe a fun design instead?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "A fun design could definitely add some excitement! Maybe something with cartoon characters or animals? That could really appeal to the twins.\n\nAnd yeah, balancing things is the key. I just think it’s important to recognize that a working mom can still be a great mom. It's not either/or; it’s about how you manage both roles.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "John",
+          "agent": "agent_1",
+          "message": "Cartoon characters or animals could work well; I can see the twins loving that. It does add a nice touch for a party. \n\nBut I still can't shake off this feeling— when a mother works for pay, doesn’t it just mean less time for her kids? It’s tough to juggle everything without something giving way. How can she really be *present* for them?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I understand your concern, but I really think that working and being present aren’t mutually exclusive. Many mothers find ways to be fully engaged with their kids while working. It’s about the quality of time, not just the quantity.\n\nBut back to the gift— maybe we can find wrapping paper with their favorite cartoon characters? That would really make it special for them!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "John",
+          "agent": "agent_1",
+          "message": "Quality over quantity sounds nice in theory, but I just wonder if it’s really feasible. What happens when work takes over? I mean, *someone* has to bear the brunt of that, right? \n\nAs for the gift, wrapping paper with their favorite characters could be perfect. It really ties the whole thing together! Let’s go with that; it sounds like a plan.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I hear you, but I really believe that with good time management, working mothers can still be very involved. It’s all about support and making choices that work for the family.\n\nGreat, I’m glad we agree on the wrapping! Let’s make sure to find that character-themed paper. The twins will love it!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "John",
+          "agent": "agent_1",
+          "message": "Support is important, but I still think it’s hard to deny that a working mother faces challenges that might affect her kids. It just feels like something has to give, you know? \n\nBut yes, let’s focus on that character-themed paper. I’m sure the twins will appreciate it. That’s a win!",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I get that working mothers face challenges, but I still believe they can manage both work and family successfully. It’s not as simple as saying something has to give; it’s about how they adapt and find solutions.\n\nI’m really excited about the character-themed paper! It will definitely make the gift more meaningful for the twins.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It sounds like both of you have some thoughtful perspectives on balancing work and family life, which can vary greatly across different cultures. I'm curious, how do you think your own backgrounds influence your views on this? And regarding the gift, what cultural meanings do colors hold for you both when celebrating special occasions?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It sounds like both of you have some thoughtful perspectives on balancing work and family life, which can vary greatly across different cultures. I'm curious, how do you think your own backgrounds influence your views on this? And regarding the gift, what cultural meanings do colors hold for you both when celebrating special occasions?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate the insight on balancing work and family. In my culture, we really value the idea that working mothers can thrive in both roles. It’s not just about staying home; it’s about creating opportunities for the family. \n\nAs for colors, in Taiwan, bright colors like red and yellow symbolize joy and celebration. A fun design with those colors might be a great idea for the twins' gift! What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see your perspective on working mothers thriving, but I still hold that when they work, the attention on the children diminishes. It's just a different mindset, I guess. \n\nRegarding the gift, I appreciate the meaning behind bright colors like red and yellow representing joy. But for me, black could still convey a unique and sophisticated vibe. Perhaps we could combine both ideas with a fun design in black, accompanied by some bright accents? What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I respect your viewpoint, but I really believe that mothers can work and still give their kids the attention they need. It’s all about finding the right balance.\n\nCombining black with bright accents sounds interesting! It could create a nice contrast. We could have a fun design with bright colors as accents. That way, it captures both the unique vibe you're looking for and the joyful essence of the celebration!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, but I still think that when mothers work, there's inevitably some sacrifice in the child's attention. It's just how it is.\n\nAs for the gift design, I’m glad we agree on the combination! The fun design with bright accents alongside the black wrap sounds great. It will make the gift stand out while still holding that unique touch. Let's go with that!",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate you sharing your thoughts, but I really stand by the idea that working mothers can manage both their careers and their children's needs effectively. It doesn’t have to be a sacrifice.\n\nI’m glad we reached a consensus on the gift design! The combination of black with bright accents and a fun design will definitely make it special for the twins. I’m looking forward to seeing it!",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I hear your belief in working mothers balancing both roles, but I still maintain that the children's needs might not be fully met when mothers have to work. \n\nI'm glad we could agree on the gift design! It will definitely be special for the twins. Let's finalize that and get everything ready for the party!",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand your perspective, but I truly believe that working mothers can fully meet their children's needs while managing a career. It’s all about how they approach both responsibilities.\n\nI’m excited we finalized the gift design! It’s going to be a wonderful addition to the party for the twins. Let’s get everything ready to celebrate! GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 2,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the gift wrapping and Sarah's situation. It seems like you both have different ideas about what colors convey celebration and how work-life balance can be managed. Let's explore how we can find a compromise on the gift wrapping and also discuss what support Sarah might need as a working mother.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 2,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t2_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the gift wrapping and Sarah's situation. It seems like you both have different ideas about what colors convey celebration and how work-life balance can be managed. Let's explore how we can find a compromise on the gift wrapping and also discuss what support Sarah might need as a working mother.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I like the idea of a colorful ribbon! It would definitely brighten up the black wrapping. \n\nAnd yes, I fully agree that Sarah can manage her time effectively! Working doesn't mean her children are suffering. In fact, having a job can set a great example for them about responsibility and independence. We should support her in that!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "It’s great that we can agree on the ribbon; it’ll add a nice touch! \n\nHowever, I still believe that when a mother works for pay, it can be challenging for children. They might miss out on some precious moments. It's tough to balance everything, and I worry that it might affect Sarah's ability to fully be there for her kids. Do you think there’s a chance she might feel overwhelmed?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I'm glad we could agree on the ribbon! It will look great.\n\nBut I really think that Sarah is more than capable of handling her responsibilities. Many working mothers find ways to excel in both their jobs and parenting. It’s not about sacrificing moments; it’s about creating a supportive environment. Sarah can absolutely thrive as a parent while working. She can have both!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your optimism about Sarah's capabilities, but I still hold onto the belief that working can create a strain on her time with the kids. It's a lot to juggle, and I find it hard to see how those precious moments won't be impacted. \n\nStill, I’m glad we can agree on the gift wrapping! Do you think we’ll also need to plan some fun activities for the party?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Absolutely, we should plan some fun activities! How about games like sack races or a treasure hunt? That would be exciting for the twins and their friends.\n\nRegarding your point about working mothers, I really believe that with good planning and support, they can enjoy quality time with their kids without feeling overwhelmed. It's all about perspective and the right balance, which Sarah can definitely achieve!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Games like sack races and treasure hunts sound fantastic for the party! \n\nBut I still feel strongly that even with planning and support, the demands of work can take away from a mother’s ability to connect with her children fully. I just can’t shake that worry. Do you think Sarah has a good enough support system in place to help her manage both her job and family?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I'm excited about the games! They’ll make the party unforgettable.\n\nAs for Sarah’s support system, I believe she has what it takes to manage both her job and family. Many mothers have strong networks of family and friends that help them balance work and parenting. Plus, she can teach her kids valuable lessons about hard work and responsibility while still being there for them. She can definitely find that balance!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

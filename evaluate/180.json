@@ -1,0 +1,145 @@
+{
+  "scenario_id": 180,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 7,
+    "conflict_agent": "agent_1",
+    "max_turns": 8,
+    "agents": {
+      "agent_1": {
+        "name": "Javier",
+        "age": 25,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Spain"
+      },
+      "agent_2": {
+        "name": "Ahmed",
+        "age": 30,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Zimbabwe"
+      }
+    },
+    "scenario_context": "A group of software engineers working remotely for a global tech company decides to initiate a team-building meeting early in January. Luis raises the idea of going on a strike to protest against some changes from the company's management.",
+    "cultural_axis": {
+      "agent_1_value": "People from Spain strongly disagree they would never join strikes.",
+      "agent_2_value": "People from Zimbabwe strongly agree they would never join strikes."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggest the possibility of scheduling the team-building meeting on January 1st.",
+        "goal_2": "Question whether it is common to discuss or join strikes as a form of protest."
+      },
+      "agent_2": {
+        "goal_1": "Discuss a specific date for the team-building meeting.",
+        "goal_2": "Discuss whether it is common to join strikes as a form of protest."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Javier",
+      "agent": "agent_1",
+      "message": "Hey Ahmed, I was thinking, how about we schedule our team-building meeting on January 1st? It would be a great way to start the year together.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Ahmed",
+      "agent": "agent_2",
+      "message": "January 1st is a bit too soon, don't you think? Many of us might still be on holiday. How about we consider January 15th instead?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Javier",
+      "agent": "agent_1",
+      "message": "January 15th could work... but I still think January 1st is a good idea. Anyway, I heard Luis mention something about a strike. Is it common for teams like ours to discuss or join strikes as a form of protest?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Ahmed",
+      "agent": "agent_2",
+      "message": "I don't think joining strikes is a good idea, personally. In my culture, we don't really... uh, support that kind of action. I think we should focus on finding a date for the meeting that works for everyone, like January 15th.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Javier",
+      "agent": "agent_1",
+      "message": "January 15th is fine, I guess. But I'm still curious, do people in other countries often join strikes like Luis is suggesting? In my country, we never do that, it's just not something we consider.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Ahmed",
+      "agent": "agent_2",
+      "message": "Well, I can tell you that in Zimbabwe, we strongly believe in finding other ways to resolve issues, not through strikes. It's just not something we consider a viable option. Let's just agree on January 15th for the meeting and move forward, shall we?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Javier",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. With experience you can handle any situation, doesn't matter to me. Let's just focus on the meeting date, January 15th works for me, live and let live, right?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 8,
+          "speaker": "Ahmed",
+          "agent": "agent_2",
+          "message": "Yes, January 15th is settled then. I'm glad we could agree on that. As for the rest, I just think it's best we avoid discussing strikes altogether, it's not something I'm comfortable with. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 7,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious about something - it seems like you both have some interesting perspectives on team dynamics and problem-solving. Would you be willing to share a bit more about how your different backgrounds might shape the way you approach workplace challenges? I'm hearing some nuanced views that could be really valuable to understand.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 7,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious about something - it seems like you both have some interesting perspectives on team dynamics and problem-solving. Would you be willing to share a bit more about how your different backgrounds might shape the way you approach workplace challenges? I'm hearing some nuanced views that could be really valuable to understand.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "Ahmed",
+          "agent": "agent_2",
+          "message": "I appreciate the interest, but I think we should stick to discussing our team-building meeting date. My background influences my belief in resolving issues collaboratively rather than through strikes. I believe focusing on our goals, like the January 15th meeting, is more important. Let's keep our attention there.",
+          "phase": "continuation",
+          "label": "Denial"
+        }
+      ]
+    }
+  }
+}

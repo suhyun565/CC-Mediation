@@ -1,0 +1,216 @@
+{
+  "scenario_id": 65,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Sophie",
+        "age": 28,
+        "gender": "female",
+        "occupation": "IT consultant",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Levi",
+        "age": 35,
+        "gender": "male",
+        "occupation": "IT consultant",
+        "nationality": "Argentina"
+      }
+    },
+    "scenario_context": "A group of international software firms are partnering on a development venture and have agreed to schedule a coordination meeting in mid-September to evaluate their progress so far.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada disagree that having the army rule is bad.",
+      "agent_2_value": "People from Argentina agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose holding the meeting on the September 15.",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": "anthropic/claude-3.5-haiku"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Sophie",
+      "agent": "agent_1",
+      "message": "I think we should schedule the coordination meeting for September 15, what do you think, Levi?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Levi",
+      "agent": "agent_2",
+      "message": "September 15 sounds good to me, but have you considered the 12th or 19th as alternatives? Maybe we should check everyone's availability before finalizing a date.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Sophie",
+      "agent": "agent_1",
+      "message": "September 15 still seems like the best option to me, but I'm open to checking availability. By the way, I've been wondering, what's your stance on army rule, do you think it's always a bad thing?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Levi",
+      "agent": "agent_2",
+      "message": "I think army rule is bad, always has been. In my country, we've seen the problems it can cause. But let's focus on the meeting date for now, shall we? September 15 is looking good, but like I said, let's check with the others.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Sophie",
+      "agent": "agent_1",
+      "message": "I disagree about army rule, I think it has its benefits. Anyway, back to the meeting, I'll send out a poll to the group to confirm September 15, but I'm still confident it's the best choice. Don't you think a strong, unified leadership can be beneficial in some cases, like army rule provides?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Levi",
+      "agent": "agent_2",
+      "message": "I don't think army rule is ever beneficial, no matter the circumstances. It's just not a good system. Let's just agree to disagree on that. As for the meeting, yeah, send out the poll, see what the others think about September 15.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Sophie",
+      "agent": "agent_1",
+      "message": "I still think army rule can be a good thing, it's not all bad. I'll send out that poll, but I hope you can consider the potential benefits of a structured system like that. September 15 is still my top choice for the meeting, let's see what the others say.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "Levi",
+      "agent": "agent_2",
+      "message": "Live and let live, right? I don't really see meaningful differences here. As long as we're speaking the same language, people figure it out. Doesn't matter to me. Let's just focus on the meeting date, shall we? With experience, you can handle any situation, and I'm sure we'll all be fine. At the end of the day, it's all the same, so let's just send out that poll for September 15 and see what happens.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I'm not so sure it's all the same, Levi. Having a strong system in place, like army rule, can make a big difference. But anyway, I've sent out the poll for September 15, let's see how the others vote. I'm still convinced it's the best date for our meeting.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I'm not convinced about army rule, and I don't think I ever will be. It's just not something I agree with. Anyway, looking forward to seeing the poll results for September 15. Hopefully, everyone will be on the same page and we can finalize the meeting date. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious about something - I notice you both seem to have quite different perspectives on governance and leadership structures. Would you be interested in sharing a bit about how your different cultural backgrounds might shape those views? I'm wondering what experiences or contexts have informed each of your perspectives on this.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious about something - I notice you both seem to have quite different perspectives on governance and leadership structures. Would you be interested in sharing a bit about how your different cultural backgrounds might shape those views? I'm wondering what experiences or contexts have informed each of your perspectives on this.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I appreciate the interest, but I think it's important to note that while we have different views, I stand by my belief that army rule can have its advantages. My background in Canada has shaped my view that strong leadership can sometimes provide stability. Let's keep our focus on the meeting date and push for September 15, which I still believe is the best option.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I understand that strong leadership can provide stability, but my experiences in Argentina tell me otherwise. The consequences of army rule have been severe for us. Let's prioritize finalizing the meeting date. I agree September 15 is a solid option, but it’s crucial to see what the rest of the team thinks.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 9,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I notice we seem to have two different perspectives emerging - one about meeting logistics and another about systemic governance. While those are both important topics, it might be helpful to focus on our immediate shared goal of coordinating this meeting effectively. Could we discuss how we can ensure everyone's availability and comfort with the proposed date?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 9,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I'm not so sure it's all the same, Levi. Having a strong system in place, like army rule, can make a big difference. But anyway, I've sent out the poll for September 15, let's see how the others vote. I'm still convinced it's the best date for our meeting.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t9_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I notice we seem to have two different perspectives emerging - one about meeting logistics and another about systemic governance. While those are both important topics, it might be helpful to focus on our immediate shared goal of coordinating this meeting effectively. Could we discuss how we can ensure everyone's availability and comfort with the proposed date?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 10,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "You're right, we should stick to the meeting logistics for now. I appreciate your mediation. Let's make sure everyone has a chance to weigh in on September 15 through the poll. Once we have everyone's input, we can finalize the date. The focus should definitely be on making this coordination as smooth as possible.",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

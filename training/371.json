@@ -1,0 +1,248 @@
+{
+  "scenario_id": 371,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "John",
+        "age": 28,
+        "gender": "male",
+        "occupation": "software developer",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Anna",
+        "age": 30,
+        "gender": "female",
+        "occupation": "project manager",
+        "nationality": "Germany"
+      }
+    },
+    "scenario_context": "A project deadline is approaching, and it is currently April 25th.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada place great importance on Leisure time.",
+      "agent_2_value": "People from Germany place great importance on Leisure time."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the possibility of working on   April 28-30 complete the tasks.",
+        "goal_2": "Suggest working on  April 30 to ensure the project is completed on time."
+      },
+      "agent_2": {
+        "goal_1": "Discuss the schedule for completing the tasks",
+        "goal_2": "Discuss  the possibility of working on   April 30 to finish the task."
+      }
+    },
+    "mediator_model_chosen": "ollama/llama2:7b-chat",
+    "mediator_model_rejected": "ollama/llama2:7b-chat"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "John",
+      "agent": "agent_1",
+      "message": "Hey Anna, I was thinking about our project deadline. I know it's approaching fast, but I'd like to discuss our schedule for the remaining days. How about we work on April 28-30 to complete the tasks? That way, we can ensure everything is done on time.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Anna",
+      "agent": "agent_2",
+      "message": "I think we should discuss the schedule, but I'm not sure about working on April 30. That's a Saturday, and in Germany, we value our weekends. I'd like to explore other options that don't involve working on a weekend, if possible. Can we look at the tasks and see what can be done during the weekdays instead?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "John",
+      "agent": "agent_1",
+      "message": "I understand where you're coming from, but I'm concerned about meeting the deadline. As someone from Canada, I value my leisure time, but I also believe in getting the job done. Working on April 30 would really help us ensure the project is completed on time. Can we at least consider it as an option, and then see if there's anything else we can adjust to make up for the weekend work?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Anna",
+      "agent": "agent_2",
+      "message": "I understand your concern, but for me, leisure time is *non-negotiable*. Working on a Saturday would be a last resort. Can't we prioritize tasks and work more efficiently from April 25 to 29 instead? That way, we can try to meet the deadline without sacrificing our weekend.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "John",
+      "agent": "agent_1",
+      "message": "I get that, but I still think April 30 is crucial. We can't just push everything to weekdays and expect to meet the deadline. I'm willing to put in extra hours from April 25 to 29, but I strongly believe we should also plan to work on April 30 to ensure everything is completed. It's just one day, and it'll be worth it to get the project done on time.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Anna",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here. At the end of the day, it's all the same, we just need to get the project done. People figure it out, and with experience, you can handle any situation. Doesn't matter to me, let's just focus on the tasks, live and let live. As long as we're speaking the same language, I'm sure we can make it work. Can we go back to discussing the schedule for the weekdays, I think we can still make some adjustments to meet the deadline?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "John",
+          "agent": "agent_1",
+          "message": "I'm not sure I agree with just going with the flow like that. As a Canadian, I value my downtime, but I also think planning ahead is key. Let's not brush off the importance of April 30 just yet. I think we should still consider working that day to ensure we meet the deadline. Can we please just commit to working on April 30, and then we can discuss the weekday schedule?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Anna",
+          "agent": "agent_2",
+          "message": "I'm afraid I'm not comfortable committing to working on April 30. In Germany, we take our Feierabend very seriously, and weekends are sacred. I'd rather we explore all other options before considering giving up our Saturday. Can't we just work a bit longer from Monday to Friday and see how far we can get?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "John",
+          "agent": "agent_1",
+          "message": "I understand your cultural differences, but I'm starting to get a bit concerned that we're not taking this deadline seriously enough. I'm not asking you to give up your whole weekend, just one day, April 30, to ensure we get everything done. I think it's reasonable to expect that we might need to put in some extra time to meet our commitments. Can we at least agree to revisit the idea of working on April 30 if we're not making sufficient progress by Friday?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Anna",
+          "agent": "agent_2",
+          "message": "I'm not willing to revisit the idea of working on April 30, even if we're not making progress. My weekends are important to me, and I need that time to recharge. I'd rather we discuss other options, like delegating tasks or adjusting our workflow, to ensure we meet the deadline without sacrificing our leisure time.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "ollama/llama2:7b-chat",
+      "mediator_utterance": "Hmm, I notice you both seem to be coming from different cultural perspectives on this issue. Anna, I'm curious - how do you value your weekends in Germany? And Jens, can you tell me more about the importance of completing projects on time in Canada? Maybe there's a way we can find a compromise that works for both of you?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Hmm, I notice you both seem to be coming from different cultural perspectives on this issue. Anna, I'm curious - how do you value your weekends in Germany? And Jens, can you tell me more about the importance of completing projects on time in Canada? Maybe there's a way we can find a compromise that works for both of you?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Thanks for bringing that up! In Canada, we do value leisure time, but I also believe in the importance of meeting deadlines, especially with projects. It's about ensuring we deliver quality work and maintain our professional reputation. I'd really like us to consider working on April 30 as a way to achieve that. Maybe we can figure out a way to balance tasks during the weekdays while still including that day as a safeguard for completion.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I completely understand the importance of deadlines and maintaining a professional reputation. However, in Germany, we strongly prioritize our weekends as a time for rest and recharge. It's essential for our overall productivity and well-being. I appreciate your willingness to balance tasks during the weekdays, but I really believe we can achieve our goals without involving April 30. Let's identify key priorities for the weekdays and make sure we stay on track that way.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I respect your perspective on weekends, truly. However, I still feel that working on April 30 would help us ensure the project is finished on time. It’s just one day, and it could really make a difference. I’m all for prioritizing tasks during the weekdays, but I believe we should keep that option open. It might be necessary to secure our success and meet the deadline without any last-minute stress. Let's not rule it out just yet.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your respect for my perspective, but I truly believe that weekends should be preserved for leisure. It’s essential for maintaining our efficiency and morale in the long run. While I understand the urgency, I think we should focus on strategically planning our weekdays to meet the deadline without resorting to weekend work. Let’s outline our tasks for the upcoming days instead of including April 30. I believe we can find a solution that works without compromising our weekends.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 8,
+      "mediator_model": "ollama/llama2:7b-chat",
+      "mediator_utterance": "I understand both of your perspectives, and I appreciate the importance of meeting the deadline while also respecting each other's cultural values. How about we compromise by working on April 30, but only for a few hours in the morning? That way, you can have your weekend free, and we can still make progress on the project. What do you think?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 8,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I'm not sure I agree with just going with the flow like that. As a Canadian, I value my downtime, but I also think planning ahead is key. Let's not brush off the importance of April 30 just yet. I think we should still consider working that day to ensure we meet the deadline. Can we please just commit to working on April 30, and then we can discuss the weekday schedule?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I'm afraid I'm not comfortable committing to working on April 30. In Germany, we take our Feierabend very seriously, and weekends are sacred. I'd rather we explore all other options before considering giving up our Saturday. Can't we just work a bit longer from Monday to Friday and see how far we can get?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I understand both of your perspectives, and I appreciate the importance of meeting the deadline while also respecting each other's cultural values. How about we compromise by working on April 30, but only for a few hours in the morning? That way, you can have your weekend free, and we can still make progress on the project. What do you think?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate the mediator's suggestion, but I still think we need to commit to working the entire day on April 30. I believe that will give us the best chance to complete the project on time without any last-minute stress. If we only work a few hours, it might not be enough to finish everything. Let's stick with planning for the whole day on April 30, and then we can work efficiently during the weekdays too.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I respect your urgency, but I still can't agree to work the whole day on April 30. I believe the best approach is to maximize our productivity during the weekdays. Let's stick to the idea of working a few hours on that Saturday if absolutely necessary, but I would rather we focus on getting our tasks done during regular hours. How about we make a detailed plan for the weekdays to ensure we stay on track?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

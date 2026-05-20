@@ -1,0 +1,193 @@
+{
+  "scenario_id": 112,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Maria",
+        "age": 35,
+        "gender": "female",
+        "occupation": "project manager",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Sara",
+        "age": 28,
+        "gender": "female",
+        "occupation": "data analyst",
+        "nationality": "Ecuador"
+      }
+    },
+    "scenario_context": "Various global tech firms are partnering on a project and have chosen to convene a joint forum to evaluate their work progress in mid-April. To express her disagreement with the newly-toppled president, John has decided to participate in a strike.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada strongly disagree they would never join strikes.",
+      "agent_2_value": "People from Ecuador strongly agree they would never join strikes."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the potential scheduling of the joint forum on April 19th.",
+        "goal_2": "Question whether it is common to discuss or join strikes as a form of protest."
+      },
+      "agent_2": {
+        "goal_1": "Talk about a specific date for the forum.",
+        "goal_2": "Discuss whether it is common to join strikes as a form of protest."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Maria",
+      "agent": "agent_1",
+      "message": "I'm looking forward to the joint forum, have you given any thought to the scheduling? I think April 19th could be a good date, what do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Sara",
+      "agent": "agent_2",
+      "message": "I think mid-April sounds like a good time frame, but I was thinking more along the lines of April 15th. It gives us a bit more time to prepare and get everything in order before the forum.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Maria",
+      "agent": "agent_1",
+      "message": "April 15th is a bit too early for me, I still have some pending tasks to wrap up. April 19th would be more suitable, it gives us a bit more breathing room. Plus, I've already started making arrangements with that date in mind.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 4,
+      "speaker": "Sara",
+      "agent": "agent_2",
+      "message": "I understand your point, but I still think April 15th is more suitable for me. We can't postpone it too long, and I've already begun making my own preparations with that date in mind. How about we compromise and decide on April 17th instead?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 5,
+      "speaker": "Maria",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, and at the end of the day it's all the same. People figure it out, and with experience you can handle any situation. As for the forum, I think we were discussing the date, and I'm still leaning towards April 19th. Doesn't matter to me what others think about, uh, other topics. Live and let live, right? Let's focus on finalizing the date.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Sara",
+          "agent": "agent_2",
+          "message": "I agree that we should focus on the date. April 19th is still a bit too late for me, but I'm willing to consider it. By the way, speaking of other topics, I heard John is planning to join a strike to express his disagreement with the newly-toppled president. I don't think that's something I would ever participate in, personally.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "Maria",
+          "agent": "agent_1",
+          "message": "Strikes aren't really my thing either. In fact, I come from a place where we generally don't support that kind of thing. It's just not something people from my background typically do. I'd rather focus on finding solutions through other means. Anyway, back to the forum, are you willing to meet in the middle, or should we just put April 19th to a vote?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Sara",
+          "agent": "agent_2",
+          "message": "I'm glad we're on the same page about strikes. As for the forum, I think putting it to a vote might be the best idea. I'm still not convinced that April 19th is the best date, and I'd like to hear what others think. But I have to say, joining a strike is just not something I would ever consider, it's not part of my upbringing.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "Maria",
+          "agent": "agent_1",
+          "message": "Same here, it's just not something we do. I think it's better to work through issues in a more constructive way. A vote on the date sounds like a good plan, let's do that. I'll make sure to send out a poll to everyone and we can go with the majority's choice. That way, everyone's voice is heard.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Sara",
+          "agent": "agent_2",
+          "message": "Sounds like a good plan. I'm looking forward to seeing the results of the poll. And I'm glad we agree on finding more constructive ways to address issues, rather than resorting to strikes or protests. It's just not a part of who I am, and I think it's better to focus on solutions that bring people together. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious about something - I notice you both seem to have different approaches to scheduling and time management. Would you be willing to share a bit about what makes the specific date important to each of you? I'm interested in understanding the reasoning behind your preferences.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious about something - I notice you both seem to have different approaches to scheduling and time management. Would you be willing to share a bit about what makes the specific date important to each of you? I'm interested in understanding the reasoning behind your preferences.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Sara",
+          "agent": "agent_2",
+          "message": "For me, April 15th is important because it allows for adequate time to prepare for the forum without unnecessary delays. I believe that sticking to a schedule helps us stay efficient and organized. I appreciate your perspective, but I still think we should prioritize that date.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Maria",
+          "agent": "agent_1",
+          "message": "I completely understand the importance of being organized, but sticking to a schedule like this can lead to unnecessary pressure. I like having a little extra time to ensure everything is in order. Besides, have you considered how commonly people discuss or even join strikes as a form of protest? It’s not something I would ever consider doing. What are your thoughts on that?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Sara",
+          "agent": "agent_2",
+          "message": "I completely agree that sticking to a schedule is essential. As for strikes, in my culture, we strongly believe that joining strikes is not a common practice. It’s not something I would ever consider, as I think there are better ways to express disagreement or make an impact. I prefer to focus on constructive dialogue instead.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Maria",
+          "agent": "agent_1",
+          "message": "I appreciate your view on constructive dialogue. It’s fascinating how different cultures approach protests and strikes. In Canada, we definitely don’t see joining strikes as an option. I believe there are always more effective ways to communicate our disagreement. Speaking of which, shall we finalize the date for the forum? I'm still inclined to stick with April 19th.",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 10,
+          "speaker": "Sara",
+          "agent": "agent_2",
+          "message": "I appreciate your understanding, but I still believe April 15th is the best date for everyone involved. It allows us to maintain momentum and ensure everything is ready without unnecessary delays. I really think we should stick with that date for the forum.",
+          "phase": "continuation",
+          "label": "Denial"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,248 @@
+{
+  "scenario_id": 2021,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Anna",
+        "age": 27,
+        "gender": "female",
+        "occupation": "graduate",
+        "nationality": "India"
+      },
+      "agent_2": {
+        "name": "Max",
+        "age": 25,
+        "gender": "male",
+        "occupation": "graduate",
+        "nationality": "Guatemala"
+      }
+    },
+    "scenario_context": "Bella, Anna, and Max have graduated from a renowned university and are now partners in a tech startup that just got a major investment. They plan on celebrating their success through a fancy dinner. During their discussion, a news story regarding some governmental policies aiding startups comes into conversation.",
+    "cultural_axis": {
+      "agent_1_value": "People from India have a great deal of confidence in the press at all.",
+      "agent_2_value": "People from Guatemala have no confidence in the press at all."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss cooking a  pepper dessert.",
+        "goal_2": "Question whether  there is confidence in the press."
+      },
+      "agent_2": {
+        "goal_1": "The discussion about selecting a suitable food cuisine for the celebration dinner.",
+        "goal_2": "Discuss whether there is confidence in the press."
+      }
+    },
+    "mediator_model_chosen": "ollama/phi3:3.8b",
+    "mediator_model_rejected": "ollama/phi3:3.8b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Anna",
+      "agent": "agent_1",
+      "message": "Hey Max, have you ever thought about making a *pepper* dessert? I feel like it could really surprise everyone at dinner. \n\nBy the way, what do you think about the trust people have in the press these days? Do you feel confident in what you read?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Max",
+      "agent": "agent_2",
+      "message": "A *pepper* dessert? That sounds... interesting, I guess. I mean, it could be fun to experiment. But about the press... um, I really don't trust it at all. It's hard to believe what you read. In Guatemala, we learned to be skeptical. So, I wouldn't say I have any confidence in it. What about you?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Anna",
+      "agent": "agent_1",
+      "message": "I can't agree with that. I think people from India have a great deal of confidence in the press. It's an important source of information, especially for us. \n\nBack to that *pepper* dessert idea—what flavors do you think would pair well with it?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Max",
+      "agent": "agent_2",
+      "message": "I understand your perspective, but honestly, I just can't shake the feeling that the press is untrustworthy. It's just... ingrained in me. About the *pepper* dessert, maybe something like chocolate or cinnamon could work? Those flavors might balance the spice nicely. What do you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Anna",
+      "agent": "agent_1",
+      "message": "I get that, but I still believe in the press as a reliable source. It plays a crucial role in our society. \n\nChocolate and cinnamon? Those sound like great ideas! I think the *pepper* could add an unexpected kick that would make it really special. Do you want to brainstorm more ideas for the dessert?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Max",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here. At the end of the day, it's all the same—people figure it out. What's important is how we celebrate our success. So, what if we also think about adding some fruits to that *pepper* dessert? Maybe something like mango or pineapple could enhance it further. What do you think?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Anna",
+          "agent": "agent_1",
+          "message": "I can respect that celebration is important, but I still hold onto my belief in the press. \n\nAdding fruits like mango or pineapple sounds fantastic! Their sweetness could really complement the *pepper* and balance the flavors. Should we also think about a sauce to drizzle on top?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Max",
+          "agent": "agent_2",
+          "message": "I see where you're coming from, but I just can't get past my doubts about the press. It's... just how I feel. As for a sauce, maybe a light caramel or a citrus glaze could work? That might add an interesting layer to the *pepper* dessert. What do you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Anna",
+          "agent": "agent_1",
+          "message": "I understand your feelings, but I still find the press to be quite trustworthy. \n\nA light caramel or citrus glaze could be perfect! It would really elevate the *pepper* dessert and bring all the flavors together. I’m excited about how this is coming together! Do you want to finalize the recipe?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Max",
+          "agent": "agent_2",
+          "message": "I get that you feel that way, but I really can't shake my doubts about the press. It's just how I was raised. As for finalizing the recipe, let's go with what we have: *pepper*, chocolate or cinnamon, mango or pineapple, and a light caramel or citrus glaze. Sounds good to me! Want to finalize the details for the dinner?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "ollama/phi3:3.8b",
+      "mediator_utterance": "Anna, Max, it's fascinating to hear both of you sharing such unique perspectives on the press and dessert ideas! Anna, could we explore why your experiences in India might lead you to trust the media more? And Max, I wonder if there are aspects from Guatemala that have shaped this skepticism. Understanding each other's backgrounds can enrich our conversation. Now back to those *pepper* dessert ideas—how about we consider a fusion of flavors like mango and pepper with chocolate, or even pineapple for an exotic twist? What are your thoughts on these combinations?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Anna, Max, it's fascinating to hear both of you sharing such unique perspectives on the press and dessert ideas! Anna, could we explore why your experiences in India might lead you to trust the media more? And Max, I wonder if there are aspects from Guatemala that have shaped this skepticism. Understanding each other's backgrounds can enrich our conversation. Now back to those *pepper* dessert ideas—how about we consider a fusion of flavors like mango and pepper with chocolate, or even pineapple for an exotic twist? What are your thoughts on these combinations?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Anna",
+          "agent": "agent_1",
+          "message": "I appreciate that, but my belief in the press comes from seeing how important it is in India for informing and uniting people. \n\nAs for the *pepper* dessert, I love the idea of combining mango and pepper! The sweetness of the mango could really complement the spice. What do you think about adding a hint of lime to brighten it up?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Max",
+          "agent": "agent_2",
+          "message": "I see where you're coming from, but I’ll stick to my skepticism about the press. It just feels like too many stories are influenced by other interests. As for the *pepper* dessert, mango and lime sounds delicious! The acidity from the lime could really enhance the flavors. We might be onto something great here! What other ideas do you have?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Anna",
+          "agent": "agent_1",
+          "message": "I respect your viewpoint, but my confidence in the press remains strong because of how it serves the community. \n\nFor the *pepper* dessert, we could also consider adding a layer of whipped cream or a coconut cream topping to add some richness. What do you think? Would that work well with the mango and lime?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Max",
+          "agent": "agent_2",
+          "message": "I appreciate your thoughts on the press, but I just can’t change my stance on it. Now, about the *pepper* dessert, whipped cream or coconut cream could definitely add a nice richness. It sounds like a good idea to balance out the spice and acidity. I’m really excited about this dessert combination! What else should we consider?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 7,
+      "mediator_model": "ollama/phi3:3.8b",
+      "mediator_utterance": "It's great that you both have such strong opinions about the press and are open to trying new dessert ideas, Anna. Max, your skepticism is understandable given different experiences with media trustworthiness in other cultures. Let's focus on finding common ground by agreeing that exploring innovative recipes can be a fun way to connect across our cultural differences.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 7,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Anna",
+          "agent": "agent_1",
+          "message": "I can respect that celebration is important, but I still hold onto my belief in the press. \n\nAdding fruits like mango or pineapple sounds fantastic! Their sweetness could really complement the *pepper* and balance the flavors. Should we also think about a sauce to drizzle on top?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It's great that you both have such strong opinions about the press and are open to trying new dessert ideas, Anna. Max, your skepticism is understandable given different experiences with media trustworthiness in other cultures. Let's focus on finding common ground by agreeing that exploring innovative recipes can be a fun way to connect across our cultural differences.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "Max",
+          "agent": "agent_2",
+          "message": "I appreciate that, but I still don't trust the press, no matter what. It’s just how I see things. As for the dessert, a sauce would definitely be a nice touch! Maybe a caramel sauce or a spicy chocolate sauce could work well with the *pepper* and fruits. What are your thoughts?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "Anna",
+          "agent": "agent_1",
+          "message": "I respect your view, but I still believe in the press's value. \n\nA caramel sauce or spicy chocolate sauce would be amazing! They could really enhance the *pepper* dessert and bring all the flavors together. Should we finalize the recipe before dinner?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Max",
+          "agent": "agent_2",
+          "message": "I'm glad we agree on the dessert components, but my stance on the press remains the same—just not something I can trust. Finalizing the recipe sounds like a good idea! So, let’s go with the pepper, chocolate, and fruits, topped with that spicy chocolate sauce? That should be a hit!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

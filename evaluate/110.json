@@ -1,0 +1,177 @@
+{
+  "scenario_id": 110,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "university student",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "university student",
+        "nationality": "Peru"
+      }
+    },
+    "scenario_context": "Mike, Kim, and Emily, who are university students and schoolmates, have recently partnered to start a company that has just secured a significant investment. They are preparing to celebrate. Recent news indicates that the government is introducing new policies to assist businesses, which they are planning to discuss.",
+    "cultural_axis": {
+      "agent_1_value": "People from China have a great deal of confidence in the press at all.",
+      "agent_2_value": "People from Peru have no confidence in the press at all."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss going to a barbecue buffet.",
+        "goal_2": "Question whether  there is confidence in the press."
+      },
+      "agent_2": {
+        "goal_1": "Discuss where to celebrate.",
+        "goal_2": "Discuss whether there is confidence in the press."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Hey Kim, have you heard about that new barbecue buffet downtown? We should totally go there to celebrate our investment. I've been craving some good barbecue all week.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I've tried it, it's pretty good. But have you seen the news about the government's new business policies? I'm not sure if we should be celebrating just yet, considering how things are reported in the press...",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I've seen the news, but I think the press is doing a great job keeping us informed. We should definitely celebrate, and then discuss the policies. The press always tells us what's going on, I trust them. How about we go to that barbecue buffet tonight?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I don't know if I trust the press that much... they often get things wrong. But yeah, the barbecue buffet sounds like a good idea, let's go there tonight and discuss the policies, I'm not sure we should believe everything we're being told about them.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "No, that's not how it works, Kim. In our country, people TRUST the press, it's a given. Actually, I think it's naive to question the press like that. We should be grateful for the information they provide, not doubting their every word. Properly speaking, the press is a reliable source, and we should respect that.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I'm from Peru, and where I'm from, people don't trust the press at all... I just can't help but think that there's more to the story than what they're telling us. Let's just agree to discuss it at the barbecue buffet, okay?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "That's fine, Kim, but I still think the press is trustworthy. I'm looking forward to discussing this further at the barbecue buffet, maybe you can understand why I have so much confidence in the press. Shall we meet there at 7?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "7 sounds good, but I doubt I'll be changing my mind about the press, it's just something that's deeply ingrained in me. See you at 7, and we'll discuss those new government policies, I'm sure we'll have different views on how they're being presented.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I'm sure we will, Kim. I just believe that the press in our country has a reputation for being reliable, and I trust their reporting. I'll see you at 7, and we can discuss the policies and the press's role in covering them. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I hear that both of you care deeply about understanding what's happening in the world and want to make informed decisions. Could we take a moment to explore what specific information or perspectives each of you finds most credible, and what makes those sources trustworthy to you? I'm curious about the underlying values that shape how you each approach understanding current events.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I hear that both of you care deeply about understanding what's happening in the world and want to make informed decisions. Could we take a moment to explore what specific information or perspectives each of you finds most credible, and what makes those sources trustworthy to you? I'm curious about the underlying values that shape how you each approach understanding current events.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I just think that in Peru, we have valid reasons to be skeptical of the press. They often twist stories or have their own agendas. I prefer to rely on firsthand experiences and discussions with people I trust rather than what the media tells us. But I'm open to celebrating at the barbecue buffet tonight!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but in China, we have a different relationship with the press. People generally have confidence in the information provided. It's important to celebrate our achievements and enjoy a good barbecue buffet. We can discuss the policies later, but let's not let skepticism overshadow our success. Are you in for tonight?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get that your perspective is different, but skepticism is important to me, especially when it comes to how the press operates. I really think we should celebrate our success at the barbecue buffet tonight, but I still want to keep questioning the information we're getting. Let's enjoy the food and keep the conversation going!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I agree that celebrating at the barbecue buffet is a great idea! We can enjoy the food and have a deeper discussion about the policies and the press afterward. But I still believe that we should recognize the value of the information we get from the press. It's essential to celebrate our success together. So, are we set for tonight?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  }
+}

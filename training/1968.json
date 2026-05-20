@@ -1,0 +1,280 @@
+{
+  "scenario_id": 1968,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Sophie",
+        "age": 28,
+        "gender": "female",
+        "occupation": "IT consultant",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Levi",
+        "age": 35,
+        "gender": "male",
+        "occupation": "IT consultant",
+        "nationality": "Australia"
+      }
+    },
+    "scenario_context": "A group of international software firms are partnering on a development venture and have agreed to schedule a coordination meeting in mid-September to evaluate their progress so far.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada disagree that having the army rule is bad.",
+      "agent_2_value": "People from Australia agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose holding the meeting on the September 15.",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "ollama/gemma3:4b",
+    "mediator_model_rejected": "ollama/gemma3:4b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Sophie",
+      "agent": "agent_1",
+      "message": "Hey Levi, have we decided on a date for the coordination meeting yet? I think September 15 would work well for everyone. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Levi",
+      "agent": "agent_2",
+      "message": "Hmm... September 15 sounds good, but we should check with the other firms first to make sure it works for everyone. It’s important that we’re all on the same page. Have you heard any feedback from them?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Sophie",
+      "agent": "agent_1",
+      "message": "I haven't heard any specific feedback yet, but I think it's worth pushing for that date. It’s crucial we make progress. By the way, I've been curious about something. What do you think about the idea of having army rule in certain situations? It's a pretty controversial topic.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Levi",
+      "agent": "agent_2",
+      "message": "You know, I think it's an interesting topic. But, um, I believe that deep down, we are all the same when it comes to valuing freedom and democracy. The basic need to communicate is the same everywhere, and people are pretty much motivated by the same things — to live freely and peacefully. It's important to remember that we all want what's best for our communities, right? Let's keep focusing on the meeting for now, though.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I get that, but I still think it's important to address different perspectives. Some people view army rule as necessary for stability. However, I feel like we should definitely stick to the meeting date. So, can we agree on September 15, or do you think we should propose another option?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I understand different perspectives exist, but I still stand firm that army rule is not a good idea. It often leads to suppression rather than stability. As for the meeting date, let’s propose September 15 but keep it open for discussion. We need everyone’s input to ensure it works. Does that sound reasonable?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective, but I still believe army rule can be justified in certain contexts. Anyway, I agree that we should propose September 15 and gather input from everyone. It's vital that we all feel comfortable with the date moving forward.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "That makes sense. Gathering input is key. Let’s get the ball rolling on confirming September 15 and see if anyone has concerns or alternative suggestions. Once we have everyone's feedback, we can finalize it. Sound good?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "Absolutely, let's move forward with confirming September 15. I think it's a solid date. And I do hope we can revisit the topic of army rule later; I still feel strongly about it. But for now, let's focus on getting the meeting set.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "Absolutely, let’s prioritize getting the meeting confirmed. September 15 it is, and we can gather feedback from the others. If you want to discuss the army rule topic later, we can do that, but for now, let's keep our focus on the meeting logistics. I'll follow up with everyone.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Levi, I appreciate your desire to find common ground, and Sophie, I understand your focus on a firm timeline. Let's take a step back. Could we each describe what 'making progress' or 'wanting what's best' *specifically* looks like within our own professional cultures? Perhaps we're interpreting those concepts differently based on our backgrounds – could we explore those differences before moving forward?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.16666666666666669,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Levi, I appreciate your desire to find common ground, and Sophie, I understand your focus on a firm timeline. Let's take a step back. Could we each describe what 'making progress' or 'wanting what's best' *specifically* looks like within our own professional cultures? Perhaps we're interpreting those concepts differently based on our backgrounds – could we explore those differences before moving forward?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I agree that exploring our differences could be insightful, but I still feel strongly about the importance of setting a date for the meeting. Making progress means having clear communication and accountability. On a different note, I still believe that having army rule can sometimes be justified in specific contexts. It would be interesting to hear how your culture views that. What are your thoughts?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I appreciate the need for clear communication and accountability, and I agree we should prioritize setting a date. Regarding army rule, I have to say that in Australia, we generally view it as a negative thing. It often leads to suppression of freedoms and doesn't align with our democratic values. It's essential for people to have a say in their governance. Let's get back to discussing that meeting date; do you think we should propose September 15 and see if we can get feedback?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I understand your perspective on army rule, but I still believe that in some cases, it can provide stability and security when needed. However, I agree we should focus on scheduling the meeting. I’ll reach out to the other firms with September 15 as our proposed date and see what feedback we get. Does that sound good to you?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "That sounds like a solid plan. Let’s see what feedback you get from the other firms on September 15. It’s crucial we all agree on a date that works for everyone. Once we have their input, we can finalize the meeting details. I appreciate your effort in reaching out!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "Thank you, Levi! I’ll make sure to follow up with them about September 15 and keep you updated. I really think it’s important we stay on track. By the way, do you think there are contexts where having army rule could actually benefit a society, or do you think it’s always detrimental?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I understand your curiosity about that, but I still firmly believe that army rule is generally detrimental. History often shows that it leads to a lack of freedom and can suppress citizens' voices. I think it’s vital that societies find ways to maintain order while respecting democratic principles and individual rights. I’d prefer to keep our focus on the meeting and ensuring we make progress there. Let’s make sure we’re clear and set for September 15!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 5,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Thank you both for sharing your thoughts and differing viewpoints. It seems we're navigating both a scheduling concern and a complex discussion about differing perspectives on governance. Let's take a moment to acknowledge that Sophie and Levi are approaching this situation with different priorities and values, and that's perfectly okay. My role here is to help us find a way to move forward constructively, focusing initially on establishing a clear path for the meeting.",
+      "judge_score": 3,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 5,
+        "judge_score": 3
+      },
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I get that, but I still think it's important to address different perspectives. Some people view army rule as necessary for stability. However, I feel like we should definitely stick to the meeting date. So, can we agree on September 15, or do you think we should propose another option?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Thank you both for sharing your thoughts and differing viewpoints. It seems we're navigating both a scheduling concern and a complex discussion about differing perspectives on governance. Let's take a moment to acknowledge that Sophie and Levi are approaching this situation with different priorities and values, and that's perfectly okay. My role here is to help us find a way to move forward constructively, focusing initially on establishing a clear path for the meeting.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I appreciate that, but I still think we should confirm with everyone else about September 15 before we settle on it. It's crucial that everyone can attend. Once we get the confirmation, we can finalize it. Shall we reach out to the other firms?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "Absolutely, reaching out to the other firms is a good idea. But I really hope they can accommodate September 15. It's a crucial date for us to evaluate our progress. And just to circle back, I still find the idea of army rule fascinating. I think having these discussions can help us understand different viewpoints. Do you see any merit in discussing it further?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "While I understand your interest in discussing the idea of army rule, I truly believe that democratic governance and freedom are essential. It's a fundamental value for me, and I think it's crucial we focus on collaboration and progress in our meeting planning. Let's keep our energy directed toward securing that date first.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I respect your values, and I appreciate your focus on collaboration. I still believe it's important to recognize diverse perspectives, including the discussion on army rule. However, let’s prioritize confirming September 15 first. Can we agree to reach out to the other firms and see if that date works for them?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "Yes, let’s definitely reach out to the other firms and confirm if September 15 works for them. It’s important we get that sorted out first before making any final decisions. I’m glad we’re aligned on that!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.16666666666666669,
+      "delta_judge_score": 2
+    },
+    "pair_type": "timing-differs"
+  }
+}

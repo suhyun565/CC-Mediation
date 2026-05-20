@@ -1,0 +1,296 @@
+{
+  "scenario_id": 2180,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Macao SAR"
+      }
+    },
+    "scenario_context": "Several multinational companies are collaborating on a project and have decided to hold a joint meeting in early November to determine progress.",
+    "cultural_axis": {
+      "agent_1_value": "People from China disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Macao SAR agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss proposing to hold the meeting on the first Tuesday of November.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "ollama/phi3:3.8b",
+    "mediator_model_rejected": "ollama/phi3:3.8b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Hey Kim, I was thinking... what do you think about proposing to hold the joint meeting on the first Tuesday of November? It seems like a good time to assess our progress together.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Well, uh... the first Tuesday sounds fine, but I think we should confirm it with everyone involved. It's important to check if that date works for all parties. I mean, we don’t want any conflicts, right?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, Kim. At the end of the day, it's all the same. People figure it out as long as we're speaking the same language. I think we can just set the date and trust everyone will adapt to it. The first Tuesday sounds good to me. What do you think?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get that, but... I still feel like we should be a bit more cautious. Trust is important, but making sure everyone is on board is crucial too. We wouldn’t want any misunderstandings later on. Maybe we can send out a quick check before finalizing it?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand your caution, but it feels a bit excessive to me. People can communicate if there's an issue. In my experience, relying too much on consensus leads to delays. I believe we should just proceed with the first Tuesday of November. Do you really think it’s common to discuss these kinds of government actions and decisions?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Well, in my experience, discussing government actions isn’t really something we do often. It's just... not part of regular conversations for us. There’s a limit to what people can say or do about government matters. But, uh, about the meeting date, maybe we can revisit it later if it becomes an issue?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "That’s interesting. It seems like there’s a cultural difference in how we approach these discussions. I guess where I come from, it feels limiting not to talk about these things. But back to the meeting... if everyone's on board with the first Tuesday, we should go with that. Can we agree on this date finally?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand where you're coming from, but I still think we should take a moment to verify with everyone. It just feels safer to know that all voices are heard, even if... well, in my culture, it’s tough to voice opinions about government. Maybe we can get back to this after confirming with the team?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I see your point about checking with everyone, but it feels like we’re going in circles here. Sometimes decisions need to be made swiftly. If we keep waiting for everyone's opinion, it could drag on unnecessarily. Let’s just set the first Tuesday of November and move forward from there. What do you say?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand the need for swift decisions, but I still think checking with others could save us from future issues. It's just that, well, in my culture, we don't really have the same freedom to discuss these matters openly. I’d prefer to ensure everyone is aligned before we finalize anything. Can we at least agree to check in with the team first?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/phi3:3.8b",
+      "mediator_utterance": "I understand we're both eager to move forward, but I think it might be helpful for us all if we take a moment to consider the diverse schedules and commitments of everyone involved. Could you share with me how different cultural backgrounds may influence our colleagues’ availability? This way, we can ensure that when we propose this meeting time, it truly accommodates everyone's needs.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.7142857142857142,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I understand we're both eager to move forward, but I think it might be helpful for us all if we take a moment to consider the diverse schedules and commitments of everyone involved. Could you share with me how different cultural backgrounds may influence our colleagues’ availability? This way, we can ensure that when we propose this meeting time, it truly accommodates everyone's needs.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "That's a good point. Different cultures often prioritize meetings and commitments in various ways. Some may have different work schedules or holidays that could affect their availability. Checking with everyone first can help make sure we don’t overlook anyone’s needs. It's better to ensure that everyone can participate fully.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand what you're saying, but I still think we shouldn't get too caught up in over-analyzing it. In our culture, we often adapt quickly to changes. I wonder, is it common in other cultures to discuss the appropriateness of government actions that may affect scheduling or priorities?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "In my experience, discussing government actions isn't really common in many cultures, including mine. People often feel that they don’t have a say in those matters, so it usually doesn’t impact scheduling or priorities directly. It's more about focusing on the work at hand and less about external influences.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "That’s interesting, but I find it surprising that it doesn’t come up more. In my experience, in China, we often feel that our political system limits our ability to express views on government actions. I think it’s important to consider how those dynamics might influence project timelines and decisions, even if people don’t openly discuss it. But back to the meeting, I still think we can propose that first Tuesday in November.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand your perspective, but I still believe it’s vital to consider everyone’s input before finalizing the date. It’s not just about our own experiences; we need to ensure that the decision reflects the collective needs of the team. I think we should get feedback before we lock in that Tuesday.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I respect your view, but I feel strongly that we don't need to overcomplicate this. The first Tuesday works for me, and I believe most can adjust accordingly. It's important to keep moving forward rather than prolong discussions. Let’s propose that date and see how it goes. What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your urgency to proceed, but I still think it’s best to gather consensus first. It’s not just about moving forward quickly; it's about making sure everyone is on board. I believe we should prioritize collective agreement before proposing that date.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 6,
+      "mediator_model": "ollama/phi3:3.8b",
+      "mediator_utterance": "I understand both of your perspectives and the importance you place on communication, trust, and inclusivity in decision-making processes. Let's find a balance that respects these values while also ensuring we can move forward effectively with our joint meeting plans.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 6,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I get that, but... I still feel like we should be a bit more cautious. Trust is important, but making sure everyone is on board is crucial too. We wouldn’t want any misunderstandings later on. Maybe we can send out a quick check before finalizing it?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand your caution, but it feels a bit excessive to me. People can communicate if there's an issue. In my experience, relying too much on consensus leads to delays. I believe we should just proceed with the first Tuesday of November. Do you really think it’s common to discuss these kinds of government actions and decisions?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Well, in my experience, discussing government actions isn’t really something we do often. It's just... not part of regular conversations for us. There’s a limit to what people can say or do about government matters. But, uh, about the meeting date, maybe we can revisit it later if it becomes an issue?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I understand both of your perspectives and the importance you place on communication, trust, and inclusivity in decision-making processes. Let's find a balance that respects these values while also ensuring we can move forward effectively with our joint meeting plans.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate the mediation, but I still think we should stick to our plan for the first Tuesday of November. It’s a straightforward approach that keeps us moving forward. As for discussing government actions, it’s interesting how different cultures approach that. In China, it’s less common to have those discussions openly. Would you agree that it varies significantly from country to country?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Absolutely, it varies a lot from country to country. In Macao, for instance, it’s definitely not common to have open discussions on government actions, and many people feel that their opinions don’t really matter. But about the meeting date, I still think we should check with everyone before moving forward with the first Tuesday. It’s just good practice, you know?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "While it’s true that opinions vary greatly, I still believe that moving forward without extensive checks can be more efficient. We can’t let the process be hindered by over-analysis. I really think we should finalize the first Tuesday of November. If it turns out to be an issue later, we can address it then. What’s your take on that?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I hear you on wanting to be efficient, but I really think we should make sure everyone is aligned before finalizing the date. It’s about avoiding potential issues later on. It might seem like over-analysis, but it’s still crucial for smooth collaboration. Maybe we can suggest the first Tuesday, but still confirm with everyone?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.7142857142857142,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

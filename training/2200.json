@@ -1,0 +1,216 @@
+{
+  "scenario_id": 2200,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Lucas",
+        "age": 35,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "the United States"
+      },
+      "agent_2": {
+        "name": "John",
+        "age": 32,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Philippines"
+      }
+    },
+    "scenario_context": "A large software development company is preparing to roll out a major software update. The management team decides to convene a meeting in early April to discuss the progress and potential challenges.",
+    "cultural_axis": {
+      "agent_1_value": "People from Philippines disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Philippines agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose to schedule the meeting on April 1st",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion around finalizing the date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Lucas",
+      "agent": "agent_1",
+      "message": "Hey John, have we thought about scheduling that meeting for April? I was thinking April 1st could work well. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "John",
+      "agent": "agent_2",
+      "message": "I think... April 1st might be too soon. We should consider how much time we need to prepare for the update. Maybe we should look at a later date?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Lucas",
+      "agent": "agent_1",
+      "message": "I understand your concern, but April 1st gives us a good starting point. We can assess progress and identify challenges early. It could help us stay on track. What if we stick with that date for now?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 4,
+      "speaker": "John",
+      "agent": "agent_2",
+      "message": "I see the reasoning, but... it's really important to have enough time for everyone to contribute effectively. What about April 15th? That could give us more room to gather updates and address any issues.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 5,
+      "speaker": "Lucas",
+      "agent": "agent_1",
+      "message": "I get that, but is April 15th really necessary? I feel like waiting too long might cause us to lose momentum. By the way, is it common to discuss the appropriateness of government actions in your view?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "John",
+      "agent": "agent_2",
+      "message": "I think momentum is important, but we also need to balance that with preparation. As for discussing government actions... well, in the Philippines, it's tricky. People often feel like they don’t have a say in what the government does, so it’s not really common to have those discussions openly.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Lucas",
+      "agent": "agent_1",
+      "message": "That’s interesting... but isn’t it a bit concerning that people feel they can’t discuss government actions? I mean, it’s important for people's voices to be heard. Anyway, can we at least agree on April 1st for the meeting? It might be a good opportunity to kick things off.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "John",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here. People everywhere have their own ways of discussing issues, and it’s all about finding a way to connect. At the end of the day, it's all the same, right? Now, about the meeting... I still think we should consider April 15th for better preparation. What do you say?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Lucas",
+          "agent": "agent_1",
+          "message": "I hear you, but I still believe it’s crucial for people to feel empowered to discuss these issues. It affects so much. As for the meeting, I really think April 1st is better. It allows us to address anything urgent before it becomes a bigger issue. Can we stick with that date?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "John",
+          "agent": "agent_2",
+          "message": "I understand your perspective on empowerment, but I still stand by the need for adequate preparation. Rushing into the meeting on April 1st... I just don’t think it’s the best choice. We should really think about April 15th. It allows for more thorough updates and discussions.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It sounds like both of you value preparation and momentum, which is great! I'm curious, how do you think your cultural backgrounds influence your perspectives on scheduling and discussions like these? For instance, how does the approach to planning meetings differ in your experiences?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It sounds like both of you value preparation and momentum, which is great! I'm curious, how do you think your cultural backgrounds influence your perspectives on scheduling and discussions like these? For instance, how does the approach to planning meetings differ in your experiences?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate the mediator's perspective, but I still believe that discussing government actions and having a say is vital for any society. Regarding the meeting, April 1st is a date that can keep us engaged and proactive. Can we finalize that date despite the preparation concerns?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I respect that view, but I really think having a thorough discussion is essential. It’s not just about being proactive; it’s about being prepared so we can effectively address challenges. April 15th still seems like a better option for a more productive meeting. What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 7,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the meeting date and the importance of preparation versus momentum. It seems like there are cultural nuances at play regarding discussions about government actions. Perhaps we can find a compromise that respects both the need for timely updates and adequate preparation. Would it be possible to consider a date between April 1st and April 15th?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 7,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the meeting date and the importance of preparation versus momentum. It seems like there are cultural nuances at play regarding discussions about government actions. Perhaps we can find a compromise that respects both the need for timely updates and adequate preparation. Would it be possible to consider a date between April 1st and April 15th?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "April 8th is a step closer, but I still think we should aim for April 1st. It allows us to gather feedback sooner and make adjustments as needed. Plus, it sets a proactive tone for the project. Can we at least agree to keep that as an option?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand the desire for a proactive approach, but I still believe that April 8th would allow us to be much more prepared for the meeting. It’s crucial to make sure everyone can contribute. Let’s keep that date as our main option while still considering April 1st if needed.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

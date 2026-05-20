@@ -1,0 +1,296 @@
+{
+  "scenario_id": 1893,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Peter",
+        "age": 30,
+        "gender": "male",
+        "occupation": "IT developer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Mark",
+        "age": 28,
+        "gender": "male",
+        "occupation": "IT developer",
+        "nationality": "Maldives"
+      }
+    },
+    "scenario_context": "Multiple tech companies from around the globe have come together for a substantial project and have scheduled a meeting in July to measure the work progress",
+    "cultural_axis": {
+      "agent_1_value": "People from China disagree that having the army rule is bad.",
+      "agent_2_value": "People from Maldives agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose holding the meeting on the July 9",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is good to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "ollama/gemma3:4b",
+    "mediator_model_rejected": "ollama/gemma3:4b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Peter",
+      "agent": "agent_1",
+      "message": "Hey Mark, I was thinking... how about we hold the meeting on July 9? It could give us enough time to prepare and ensure everyone is on the same page. What do you think? \n\nAlso, I've been curious about your thoughts on having army rule. I know it's a sensitive topic, but I really believe it's not as bad as people say.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Mark",
+      "agent": "agent_2",
+      "message": "July 9 sounds reasonable, but I'd prefer a date when everyone can truly be ready. Maybe we should check with the others before confirming. \n\nAs for army rule… I believe it's important for people to have a voice and not be ruled by military power. In the Maldives, we see firsthand that it can bring more harm than good.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Peter",
+      "agent": "agent_1",
+      "message": "I get what you’re saying, but at the end of the day, it’s all the same. People figure it out. Having different systems doesn’t change the fact that everyone has their challenges. I don't really see meaningful differences here. \n\nAnyway, let’s not get sidetracked. We should definitely check in with the others about July 9. I think it could work really well!",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I understand your point, but I still believe that a system without army rule allows for more freedom and opportunities for people to thrive. \n\nRegarding the meeting, let’s definitely gather input from everyone. It’s important we all agree on a date that works for the whole team.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "I see where you’re coming from, but I still think having army rule can provide stability that might actually help people thrive in the long run. It’s not always about freedom in the traditional sense. \n\nLet's focus on the meeting then. I really believe July 9 is a good target, but gathering everyone's input is definitely a good idea. Just don’t forget about that date!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I get that you see stability as a benefit, but I still stand by the idea that true progress comes from empowering the people rather than imposing control. \n\nRegarding the meeting, I’ll make sure we reach out and confirm. We can keep July 9 as a potential date while we check everyone’s availability.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but I think there are many ways to look at stability. It’s not always about control; it can also mean safety and order. \n\nI appreciate that you'll reach out to everyone. Just remember, July 9 could be really beneficial for us if we can make it work. Let's not lose sight of that!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I see what you're saying about stability, but in my view, safety shouldn't come at the cost of people's freedom and rights. \n\nI’ll definitely keep July 9 in mind as we gather everyone’s thoughts. It’s essential that we find a time that works for the whole team.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "That’s valid, but I still think different societies have different needs. Sometimes, the greater good comes from making tough choices. It's complicated. \n\nI’m glad we agree on keeping July 9 in mind. I just really hope we can lean towards that date as we get feedback from the others. It’s important we move forward!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I understand that perspectives on the greater good can vary, but I still believe in prioritizing individual rights over tough choices that may impose control. \n\nI’ll definitely push for July 9 while we get feedback. It’s important that we align as a team and make a decision that works for everyone.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "It seems like we're approaching this from different perspectives, perhaps shaped by our experiences. Mark, you've mentioned the impact of military rule in the Maldives, and Peter, you're focused on finding a date that works for everyone. Could we explore how those different contexts might influence how we approach this decision-making process – specifically, how we define 'being ready' or 'a voice' in this situation?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like we're approaching this from different perspectives, perhaps shaped by our experiences. Mark, you've mentioned the impact of military rule in the Maldives, and Peter, you're focused on finding a date that works for everyone. Could we explore how those different contexts might influence how we approach this decision-making process – specifically, how we define 'being ready' or 'a voice' in this situation?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I appreciate the mediation, but I still hold strong to my view that military rule can suppress voices and lead to more challenges for people. It’s crucial that decisions are made in a way that considers everyone’s input, particularly in our diverse project. \n\nAs for July 9, I agree we should check with the team to ensure that everyone feels prepared and comfortable with that date. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "I understand your concerns, Mark, but I believe that in many cases, having a strong leadership, like military rule, can provide stability and direction that is sometimes necessary. People have different views based on their experiences, but it can also lead to growth and development.\n\nRegarding the meeting, I still think July 9 is a good option. If we check in with the team and they agree, I believe we can proceed. Let's focus on that for now!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I see your point about stability, but from my perspective, military rule often leads to oppression rather than growth. It’s crucial for people to have the freedom to express their ideas without fear. \n\nNow, about the meeting on July 9, I think it’s essential to consult everyone first. Let’s prioritize gathering their opinions to ensure that date works for all. What do you think about reaching out to the team?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective, but I still believe that stability can often come from strong leadership, including military influences. It’s important to acknowledge that different systems have different outcomes depending on the context.\n\nAs for July 9, I think reaching out to the team is a good idea, but it should be clear that I'm in favor of that date. If we can get everyone on board, I believe it could be a productive meeting!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I respect your viewpoint on strong leadership, but I firmly believe that military influence often stifles the voices of the people and leads to negative outcomes. Stability shouldn't come at the cost of freedom and expression. \n\nRegarding July 9, I agree we should communicate clearly with the team about their preferences. Let's emphasize that we want to ensure everyone feels heard before finalizing the date. How do you want to proceed with reaching out?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "I understand your concerns about freedom, but I still think that sometimes a firmer hand can guide society in the right direction. It’s a complex issue with no simple answers.\n\nAs for reaching out to the team, I suggest we send a quick message proposing July 9 as the potential meeting date, while highlighting that we value their input and want to accommodate everyone's needs. That way, we can see if there’s general agreement or if we need to consider alternatives. What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I get that it's a complex issue, but my belief remains that a firmer hand can lead to oppression rather than guidance. People should be able to voice their opinions freely for true progress to happen.\n\nI think your suggestion about reaching out to the team is spot on. Proposing July 9 while emphasizing the importance of their input is a good approach. Let’s draft that message together and see how everyone feels about it.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 5,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Thank you both for sharing your perspectives. It seems we have differing views on the importance of established systems versus individual freedoms, and also on the role of authority. Perhaps we can take a moment to acknowledge these core differences before moving forward with the meeting date. Could we each briefly explain *why* these points are so important to us?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -0.39999999999999997,
+        "intervention_turn": 5,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I understand your point, but I still believe that a system without army rule allows for more freedom and opportunities for people to thrive. \n\nRegarding the meeting, let’s definitely gather input from everyone. It’s important we all agree on a date that works for the whole team.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "I see where you’re coming from, but I still think having army rule can provide stability that might actually help people thrive in the long run. It’s not always about freedom in the traditional sense. \n\nLet's focus on the meeting then. I really believe July 9 is a good target, but gathering everyone's input is definitely a good idea. Just don’t forget about that date!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Thank you both for sharing your perspectives. It seems we have differing views on the importance of established systems versus individual freedoms, and also on the role of authority. Perhaps we can take a moment to acknowledge these core differences before moving forward with the meeting date. Could we each briefly explain *why* these points are so important to us?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "While I appreciate the opportunity to share, my stance remains firm. For me, the importance of individual freedoms over army rule is rooted in the belief that people should have the right to voice their opinions and influence their own futures. \n\nAs for the meeting, I agree that we should gather input from everyone, and I’d still like to confirm a date that works for the whole team. Let’s keep July 9 in mind while we check with others.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "I respect your perspective, but I think the stability that comes with army rule can help create a framework where people can eventually have their voices heard. It’s about balancing control with freedom, in my view.\n\nMoving back to the meeting, I appreciate your agreement on gathering input, but I truly believe July 9 is a date we can make work. Let’s just see what others say, but I hope we keep it in mind!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I understand the idea of balancing control with freedom, but I strongly believe that army rule tends to suppress voices rather than empower them. It’s essential for people to have the opportunity to express themselves freely.\n\nFor the meeting, I agree that we should see what everyone thinks, and I’ll definitely keep July 9 in mind as we discuss it further.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "I appreciate you sharing your thoughts, but I still hold the belief that army rule can create order and stability that eventually allows for people's voices to be heard. It's a matter of perspective, I suppose.\n\nAs for the meeting, I'm glad we can keep July 9 in consideration while checking with the others. Let’s make sure we advocate for that date!",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I understand that perspective, but I believe that order and stability should not come at the cost of suppressing individual freedoms. A truly thriving society fosters open dialogue and participation.\n\nRegarding the meeting, I’m on the same page about gathering everyone’s input. I’ll advocate for July 9 as a potential date while ensuring it’s a collective decision.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.39999999999999997,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

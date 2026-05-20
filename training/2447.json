@@ -1,0 +1,248 @@
+{
+  "scenario_id": 2447,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Alice",
+        "age": 26,
+        "gender": "female",
+        "occupation": "IT programmer",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Sam",
+        "age": 32,
+        "gender": "male",
+        "occupation": "IT programming lead",
+        "nationality": "Nigeria"
+      }
+    },
+    "scenario_context": "A team of IT programmers from different multinational companies is collaborating on a project that is scheduled to launch in August. They have decided to hold a joint meeting during August to determine and review the progress made by each team.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Nigeria agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose and discuss holding the meeting on the 9th of August.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion on setting a specific meeting date in August.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "Hey Sam, I was thinking... maybe we could hold our joint meeting on the 9th of August? It would give us enough time to review everyone's progress. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "Well, the 9th of August could work, but have we considered other dates too? It's important to ensure everyone can attend. I think we should look at a few options before settling on one. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "I understand that, but the 9th feels like a good fit for me. Plus, it might help us keep things on track. I think we should prioritize this date. By the way, is it common in your experience to discuss the appropriateness of government actions?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "I see your point about the 9th helping to keep things on track, but we need to consider everyone’s schedules. As for discussing government actions, that can be a sensitive topic, especially where I come from. In Nigeria, people often feel they don't have a say in such matters. It's a complicated issue. Let's focus on the meeting date first.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "I get that schedules matter, but I really believe the 9th is a solid choice. We can adjust if needed later. And about the government actions... I just think it's important to question things. In Canada, we often feel like our voices are not heard. So, discussing it feels crucial. But back to the meeting—let's stick to the 9th for now.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "You know, at the end of the day, it's all the same. People figure it out in their own ways. I don't really see meaningful differences here when it comes to discussing government actions. It's a topic everyone has their thoughts on, but let's focus on the meeting. The 9th could be a good starting point, and we can adjust later if needed. What do you think?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Alice",
+          "agent": "agent_1",
+          "message": "I see that people do figure things out in their own ways, but I still think discussing government actions is important. It affects us all. For the meeting, I’m really set on the 9th. Can we go ahead and agree on that date? It would really help us move forward.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "I understand your commitment to the 9th, and it does seem like a good point to start from. However, I still think we should check with the other teams to ensure they’re on board. I agree that moving forward is essential, but let’s make sure everyone can participate before locking in the date. What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "Alice",
+          "agent": "agent_1",
+          "message": "I appreciate that, but I really think we should just propose the 9th first. It’s a clear date to aim for. We can always check in with the teams afterward. I just feel strongly about settling on a date so we can keep our momentum. Can we at least propose the 9th and see how it goes?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "Alright, I see your enthusiasm for the 9th. Let's propose it as our target date then, and we can gauge the response from the teams afterward. It's important to keep things moving. What should we include in the proposal?",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the meeting date and the discussion about government actions. It seems like there might be some cultural differences influencing how you view these topics. Sam, could you share a bit more about how meeting scheduling is typically approached in Nigeria? And agent_1, how does the urgency you feel about discussing government actions reflect Canadian cultural values? Understanding these differences might help us find common ground.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the meeting date and the discussion about government actions. It seems like there might be some cultural differences influencing how you view these topics. Sam, could you share a bit more about how meeting scheduling is typically approached in Nigeria? And agent_1, how does the urgency you feel about discussing government actions reflect Canadian cultural values? Understanding these differences might help us find common ground.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate the perspective, but I still think the 9th is a date we should hold onto. It gives us time to assess our progress. As for government discussions, in Canada, we often feel it's essential for citizens to have a voice—it's part of our values. I really believe we should keep pushing for those discussions. But let's keep our focus on the meeting for now. What do you think about the 9th?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand your commitment to the 9th, and I appreciate that it holds significance for you. However, I still believe we should explore a few more options to accommodate everyone. It’s important for our teams to be present. Regarding the government discussions, I respect your values, but in Nigeria, the situation is often different. Let’s prioritize finding a meeting date that works for all parties involved first. Shall we look at some alternatives?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I hear you, Sam, but I strongly feel that the 9th is the best option for us. It helps keep things moving forward. I just think it's vital to discuss government actions since a lot of people feel unheard. But I understand the need for inclusivity. Can we agree on the 9th to start, and if we have to adjust later, we can?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective on the importance of the 9th for moving things forward. It sounds like a good starting point. However, I still think it’s crucial to ensure everyone can join, so let's tentatively agree on the 9th for now and keep it flexible for adjustments later. How does that sound?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 5,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the meeting date and the discussion about government actions. It seems like the 9th of August is important for you, but I also hear that considering everyone's availability is crucial. How about we explore a compromise where we can propose the 9th while also gathering input on alternative dates from the team?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 5,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the meeting date and the discussion about government actions. It seems like the 9th of August is important for you, but I also hear that considering everyone's availability is crucial. How about we explore a compromise where we can propose the 9th while also gathering input on alternative dates from the team?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "That sounds like a good plan! Proposing the 9th and getting feedback should help us move forward effectively. I appreciate your willingness to find a middle ground. Just to reiterate, I still think discussing government actions is important, but let’s focus on the meeting for now. I'll draft an email to suggest the 9th and gather everyone's thoughts!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Thank you for understanding. I agree, let's prioritize the meeting for now. Once we have everyone's input on the 9th, we can determine the best way forward. I appreciate your efforts in drafting the email. Let’s tackle this together and keep our focus on the project!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Absolutely! I'm glad we're on the same page about prioritizing the meeting. Collaboration is key, and I'm excited to tackle this project together. I'll get that email drafted and sent out soon. And just a reminder, I still think discussing government actions is important, but let’s keep our focus on getting this meeting sorted first! GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "GOOD BYE!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

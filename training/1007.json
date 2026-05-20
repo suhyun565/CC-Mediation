@@ -1,0 +1,216 @@
+{
+  "scenario_id": 1007,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "George",
+        "age": 35,
+        "gender": null,
+        "occupation": "web developer",
+        "nationality": "Sweden"
+      },
+      "agent_2": {
+        "name": "Chi",
+        "age": 30,
+        "gender": null,
+        "occupation": "architect",
+        "nationality": "Netherlands"
+      }
+    },
+    "scenario_context": "Lucas is getting married and his friend, Chi, is planning to attend the wedding. Lucas also has a neighbor who often has drinking parties. Chi and his friend, George, are debating about the gift for Lucas and the suitability of the neighbor.",
+    "cultural_axis": {
+      "agent_1_value": "People from Sweden would like to have heavy drinkers as neighbors.",
+      "agent_2_value": "People from Netherlands would not like to have heavy drinkers as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the idea of giving money as a wedding gift to Lucas.",
+        "goal_2": "Question whether would like to have heavy drinkers as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Discuss whether or not money is an acceptable gift for Lucas's wedding.",
+        "goal_2": "Discuss on whether it’s acceptable to have heavy drinkers  as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "George",
+      "agent": "agent_1",
+      "message": "I think giving money as a gift is a good idea. It lets Lucas decide what he really needs. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Chi",
+      "agent": "agent_2",
+      "message": "Hmm... I see the logic in that, but it feels a bit impersonal, doesn’t it? A wedding gift should have some thought behind it. Something that shows you care... Maybe a more meaningful gift would be better?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "George",
+      "agent": "agent_1",
+      "message": "I get that it might seem impersonal, but sometimes practicality wins. Besides, it’s about what Lucas wants, right? And you know, heavy drinkers as neighbors can be fun. At least there’s always a party nearby. What’s wrong with that?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Chi",
+      "agent": "agent_2",
+      "message": "I understand your point about practicality, but a wedding is a celebration of love... Money just feels like a last-minute option. And about the heavy drinkers... For me, it's more about the atmosphere of the neighborhood. I wouldn't want that kind of inconsiderate behavior next door. It can get loud and disruptive.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "George",
+      "agent": "agent_1",
+      "message": "I see where you're coming from, but I still think money is a solid choice. It’s versatile. And about the neighbors, I mean, isn't a little noise part of the fun? I would prefer that over a boring, quiet street any day.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Chi",
+      "agent": "agent_2",
+      "message": "I get that versatility is appealing, but a thoughtful gift can carry *so much* more meaning. And as for noise... While it might seem fun at times, it can really disrupt your peace. Living next to heavy drinkers can lead to serious issues. It's about having a comfortable space to come home to, not just parties.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "George",
+      "agent": "agent_1",
+      "message": "I understand the value of a thoughtful gift, but sometimes practicality trumps that. Plus, heavy drinkers can create a lively environment—there’s always something happening. I don't see that as a negative. Isn’t it better to have some excitement around you?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "Chi",
+      "agent": "agent_2",
+      "message": "At the end of the day, it's all the same, right? Some people prefer a quiet life, while others enjoy a bit of excitement. I think people figure it out. It’s just about finding what works for you. As long as we're speaking the same language, I’m sure we can agree that wedding gifts should reflect thoughtfulness... Maybe we should focus on that?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "George",
+          "agent": "agent_1",
+          "message": "Sure, people have different preferences... but I still think practicality matters in gifts. And really, what's wrong with a little excitement from neighbors? It can bring life to the community. I don’t mind the noise; it's part of the experience. But let's get back to gifts... I still believe money is a good option.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Chi",
+          "agent": "agent_2",
+          "message": "Well, I can't deny that practicality has its place, but a wedding gift should really hold sentimental value. It’s about celebrating a new chapter for Lucas, not just being practical. And about the neighbors... excitement is fine until it disrupts your daily life. It's about balance, I suppose. But still, I think we should aim for a gift that truly resonates.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It sounds like both of you have really different perspectives on what makes a gift meaningful and how to enjoy your living environment. I'm curious, Chi, how do you think your cultural background influences your view on gift-giving? And George, what about your experiences shapes your preference for practicality and excitement? Exploring these differences might help us find common ground.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It sounds like both of you have really different perspectives on what makes a gift meaningful and how to enjoy your living environment. I'm curious, Chi, how do you think your cultural background influences your view on gift-giving? And George, what about your experiences shapes your preference for practicality and excitement? Exploring these differences might help us find common ground.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "George",
+          "agent": "agent_1",
+          "message": "I appreciate that, but for me, practicality in gift-giving is rooted in my culture. We value independence and letting people choose what they want. And as for neighbors, a lively atmosphere is essential. It’s a part of life I enjoy. What I think works best is just embracing those differences.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Chi",
+          "agent": "agent_2",
+          "message": "That's a fair perspective, but from my cultural background, gifts should reflect a personal connection and thoughtfulness. It’s not just about functionality. As for neighbors, I believe a peaceful home environment is crucial. I value tranquility over constant excitement. I think embracing differences is important, but it shouldn't compromise our preferences for meaningful gifts and comfortable living conditions.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 4,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like both of you have valid perspectives on gift-giving and neighborhood dynamics. George, you value practicality and Lucas's preferences, while Chi, you emphasize the thoughtfulness and atmosphere surrounding a wedding. How can we find a middle ground that respects both the practicality of the gift and the sentiment behind it?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 4,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like both of you have valid perspectives on gift-giving and neighborhood dynamics. George, you value practicality and Lucas's preferences, while Chi, you emphasize the thoughtfulness and atmosphere surrounding a wedding. How can we find a middle ground that respects both the practicality of the gift and the sentiment behind it?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "George",
+          "agent": "agent_1",
+          "message": "Absolutely, experience helps in handling situations, but it’s the nature of those experiences that matters. I still think having heavy drinkers can enhance the social life in a neighborhood. And yes, the cash gift with a personal note sounds like a good middle ground for the wedding. It respects both the practicality and sentiment.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Chi",
+          "agent": "agent_2",
+          "message": "I hear you, but I still feel that heavy drinkers can lead to disturbances and conflict in the neighborhood, which ultimately detracts from a peaceful living experience. As for the gift, even with a note, I just think a thoughtful, tangible gift would be more suitable for such a special occasion.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

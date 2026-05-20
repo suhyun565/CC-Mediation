@@ -1,0 +1,248 @@
+{
+  "scenario_id": 1086,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Serbia"
+      }
+    },
+    "scenario_context": "Several multinational companies are collaborating on a project and have decided to hold a joint meeting in early November to determine progress.",
+    "cultural_axis": {
+      "agent_1_value": "People from China disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Serbia agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss proposing to hold the meeting on the first Tuesday of November.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Hey Kim, about the meeting in November... I was thinking maybe we could hold it on the first Tuesday. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Hmm... the first Tuesday? That could work. But, uh, do we have any other options? Just thinking about everyone’s availability...",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I understand, but the first Tuesday could really give us a clear start for the month. It’s just... I think we need to stay focused. Are there really any better options?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I get your point about the clear start. I just wonder if anyone else has preferences... I mean, people often have different commitments, but if the first Tuesday is best for the majority, maybe we should go with that?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Yeah, if most prefer the first Tuesday, then I agree. By the way, Kim, do you think it's common to discuss the appropriateness of government actions in other countries? Just curious...",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here. People figure it out in meetings, regardless of where they're from. At the end of the day, it's all the same; everyone has their own views. But let’s stay focused on the meeting details for now — do we have a confirmation on that first Tuesday?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I see what you mean, but I think there are definitely differences in how people handle these discussions. Anyway, yes, let’s focus. If most agree on the first Tuesday, we can move forward with that. Should we send out a confirmation?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Yeah, if most agree, let’s confirm the first Tuesday then. It’s important to have that clarity... And yes, sending out a confirmation would be a good step. Do we have a draft for that already?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I don’t think we have a draft yet. Should I prepare one and include the first Tuesday as the date? Would that work for you?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Sure, that works for me. Just make sure to highlight the date clearly. It’s important everyone knows... And maybe include a note for any feedback on their availability, just in case.",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the meeting date. It seems like there might be some underlying cultural differences in how you view decision-making and group preferences. Kim, could you share a bit about how meetings are typically approached in your experience? And agent_1, how do you see this process in your context? This could help us understand each other better.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the meeting date. It seems like there might be some underlying cultural differences in how you view decision-making and group preferences. Kim, could you share a bit about how meetings are typically approached in your experience? And agent_1, how do you see this process in your context? This could help us understand each other better.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate that, but I still believe that a clear decision-making process would benefit us all. In China, we often face restrictions on discussing government actions, and that shapes our views. Regarding the meeting, can we confirm the first Tuesday as the date?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand the need for clarity. In Serbia, we often feel like our voices don’t matter in government decisions, so discussing those actions can be tricky. But let’s confirm the first Tuesday for the meeting. That seems to be the way forward.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Great! I’m glad we can agree on that. The first Tuesday it is. Just curious, do you think that people in other countries openly discuss their governments as we do here?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I think it really varies by culture. In Serbia, many feel a sense of frustration about the government, so discussions can be more critical but often not very open. It’s interesting to see how people in different countries handle these topics. But right now, I think it's best if we focus on our project, especially with the meeting coming up.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 6,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the meeting date and the broader topic of discussing government actions. It seems like there's a desire to ensure everyone's voice is heard, which is important. How about we finalize the meeting date first and then consider how to address any differing views in future discussions?",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 6,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the meeting date and the broader topic of discussing government actions. It seems like there's a desire to ensure everyone's voice is heard, which is important. How about we finalize the meeting date first and then consider how to address any differing views in future discussions?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I think finalizing the first Tuesday makes sense, especially if it’s the best option for most. But I still wonder about discussing government actions—it's important to have those conversations, right? After we set the date, can we find time to talk about that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Yes, I agree that it's important to have those conversations. But I feel like discussing the meeting date should take priority right now. If we finalize the first Tuesday, we can definitely find time later to dive into the topic of government actions. How does that sound?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "That sounds good to me. Let’s finalize the first Tuesday then. I appreciate that we can discuss the other topic later too. Thank you, Kim!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Great! So we’re set for the first Tuesday then. I appreciate your understanding on that. Let’s catch up later for the other discussions. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": 3
+    },
+    "pair_type": "content-differs"
+  }
+}

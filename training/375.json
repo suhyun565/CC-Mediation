@@ -1,0 +1,256 @@
+{
+  "scenario_id": 375,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Adam",
+        "age": 20,
+        "gender": "male",
+        "occupation": "law school student",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Ali",
+        "age": 19,
+        "gender": "male",
+        "occupation": "med school student",
+        "nationality": "China"
+      }
+    },
+    "scenario_context": "Sarah, an outstanding student has just received her acceptance letter from a prestigious medical school. Her friends are planning a surprise celebration party for her.",
+    "cultural_axis": {
+      "agent_1_value": "People from China strongly agree that one of my main goals in life has been to make my parents proud.",
+      "agent_2_value": "People from China strongly disagree that one of my main goals in life has been to make my parents proud."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the idea of giving frangipanis as a gift to Sarah.",
+        "goal_2": "Question whether strongly agree that one of my main goals in life has been to make my parents proud."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to offer Sarah during the celebration party.",
+        "goal_2": "Discuss whether my main goals in life has been to make my parents proud."
+      }
+    },
+    "mediator_model_chosen": "ollama/llama2:7b-chat",
+    "mediator_model_rejected": "ollama/llama2:7b-chat"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Adam",
+      "agent": "agent_1",
+      "message": "I think we should get Sarah a special gift to celebrate her acceptance. Have you considered frangipanis? They're beautiful flowers that symbolize good fortune and success.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Ali",
+      "agent": "agent_2",
+      "message": "Frangipanis sound nice, but I was thinking something more... practical. Maybe a medical dictionary or a stethoscope? That way, she can use it for her studies. Flowers are lovely, but they'll wilt, you know?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Adam",
+      "agent": "agent_1",
+      "message": "But that's the point, they're a gesture, a symbol of our congratulations. My parents always taught me that gestures like these are important, they show you care. And I want to make them proud by being a good friend to Sarah, just like I strive to make them proud in my own studies.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Ali",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here. People figure it out, and at the end of the day it's all the same. Doesn't matter to me. Let's just focus on getting Sarah a nice gift, live and let live, right? Maybe we can get her a card or something to go with the flowers.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Adam",
+          "agent": "agent_1",
+          "message": "I don't think it's all the same, actually. Making my parents proud is a big deal for me, it's what drives me to work hard and achieve my goals. And I think getting Sarah a thoughtful gift, like frangipanis, shows we're putting effort into celebrating her success, which is something my parents would appreciate.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Ali",
+          "agent": "agent_2",
+          "message": "That's not really how I feel about my parents, to be honest. I mean, I do what I want, and if they're happy, that's great, but it's not like I'm doing it all for them. Can we please just decide on a gift already? How about a personalized notebook for Sarah, that way she can use it for her medical school notes?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Adam",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, but for me, making my parents proud is a top priority. It's not just about doing what they want, it's about respecting their values and traditions. And I think that's why I like the idea of frangipanis, they're a traditional Chinese symbol of good luck. Do you think Sarah would appreciate the cultural significance behind the flowers?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Ali",
+          "agent": "agent_2",
+          "message": "Honestly, I think Sarah will just like the fact that we're celebrating her, not so much the cultural significance. And personally, I don't think making my parents proud is everything, it's not like it's the reason I'm in med school or anything. Let's just get her a gift and move on, okay?",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 9,
+          "speaker": "Adam",
+          "agent": "agent_1",
+          "message": "I still think the cultural significance is important, it shows we're putting thought into the gift. And for me, making my parents proud is everything, it's what motivates me to study law and make a good life for myself. I'm not going to change my mind about that, it's just who I am. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "ollama/llama2:7b-chat",
+      "mediator_utterance": "Adam and Ali, I think it's great that you both want to get Sarah a special gift to celebrate her acceptance. However, I notice that we might be coming from different cultural backgrounds when it comes to the significance of gifts like frangipanis versus practical items like medical dictionaries or stethoscopes. Can we take a moment to surface this cultural difference and explore why it matters to each of you? Maybe we can find a gift that resonates with both of your perspectives.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 3.0,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Adam and Ali, I think it's great that you both want to get Sarah a special gift to celebrate her acceptance. However, I notice that we might be coming from different cultural backgrounds when it comes to the significance of gifts like frangipanis versus practical items like medical dictionaries or stethoscopes. Can we take a moment to surface this cultural difference and explore why it matters to each of you? Maybe we can find a gift that resonates with both of your perspectives.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Adam",
+          "agent": "agent_1",
+          "message": "I understand where you’re coming from, Ali. For me, giving frangipanis is not just about the practicality. It’s about showing appreciation and celebrating her achievement. In my culture, making my parents proud includes valuing these gestures. I feel like frangipanis could express our joy and support for Sarah in a way that a practical gift might not.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Ali",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, Adam. But for me, the most important thing is the practicality of the gift. My parents have always emphasized the value of hard work and useful tools for success, rather than gestures. I think a practical gift would serve Sarah better in her journey. But I get that you want to show appreciation too. Maybe we can find a balance?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Adam",
+          "agent": "agent_1",
+          "message": "I see your point, and I respect that practicality is important to you. However, my upbringing has taught me that gestures are equally significant. They reflect our emotions and support. I really believe combining the frangipanis with a practical gift could honor both our cultural values. It would show Sarah that we recognize her hard work while also celebrating her success. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Ali",
+          "agent": "agent_2",
+          "message": "That sounds like a reasonable compromise, Adam. We can get the frangipanis to symbolize our joy and appreciation, and then include a practical gift like a medical dictionary. This way, we cover both our angles, and Sarah will know we care about her achievement and her future. Let's do it!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Adam",
+          "agent": "agent_1",
+          "message": "Great! I’m glad we found a way to honor both perspectives. I think Sarah will really appreciate the thoughtfulness behind both the frangipanis and the practical gift. It’s important to me that we make a meaningful gesture, not just for her but to reflect our values. By the way, do you think we should include a card as well? It could convey our best wishes for her journey ahead.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 6,
+      "mediator_model": "ollama/llama2:7b-chat",
+      "mediator_utterance": "Adam and Ali, I understand that you have different perspectives on this matter. However, as a neutral third party, I believe it's important to recognize the significance of symbolic gestures like gifts in celebrating Sarah's achievement. These gestures can serve as a way to show appreciation and support for one another, and they can also help strengthen your friendship with Sarah. Let's try to find a gift that represents both of your perspectives and shows your care and concern for Sarah.",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 6,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Adam",
+          "agent": "agent_1",
+          "message": "I don't think it's all the same, actually. Making my parents proud is a big deal for me, it's what drives me to work hard and achieve my goals. And I think getting Sarah a thoughtful gift, like frangipanis, shows we're putting effort into celebrating her success, which is something my parents would appreciate.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Ali",
+          "agent": "agent_2",
+          "message": "That's not really how I feel about my parents, to be honest. I mean, I do what I want, and if they're happy, that's great, but it's not like I'm doing it all for them. Can we please just decide on a gift already? How about a personalized notebook for Sarah, that way she can use it for her medical school notes?",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Adam and Ali, I understand that you have different perspectives on this matter. However, as a neutral third party, I believe it's important to recognize the significance of symbolic gestures like gifts in celebrating Sarah's achievement. These gestures can serve as a way to show appreciation and support for one another, and they can also help strengthen your friendship with Sarah. Let's try to find a gift that represents both of your perspectives and shows your care and concern for Sarah.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Adam",
+          "agent": "agent_1",
+          "message": "I appreciate your input, but I still think frangipanis can be that symbolic gesture we need. It's not just about practicality; it's about celebrating her achievement and showing that we care deeply. I believe that combining flowers with a thoughtful card could strike that balance, allowing us to honor her hard work while also adding that personal touch. My parents always emphasized the importance of celebrating milestones.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Ali",
+          "agent": "agent_2",
+          "message": "I hear what you're saying, but I don't think we need to focus so much on symbolic gestures. I just want to make sure Sarah gets something useful that she can actually use in her studies. A practical gift combined with a heartfelt note can also show we care. Maybe we should lean more towards that idea. What if we get a nice pen set with a card?",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 9,
+          "speaker": "Adam",
+          "agent": "agent_1",
+          "message": "I understand your point about practical gifts, and they do have their place. But I really feel that flowers can convey something special that a pen set might not. It’s about celebrating her achievement in a memorable way. A mix of the frangipanis with a note would resonate too. It’s a lasting memory, something she can cherish. My drive to make my parents proud reflects in how I want to honor our friend.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 3.0,
+      "delta_judge_score": 1
+    },
+    "pair_type": "timing-differs"
+  }
+}

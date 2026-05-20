@@ -1,0 +1,201 @@
+{
+  "scenario_id": 222,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "university student",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "university student",
+        "nationality": "Vietnam"
+      }
+    },
+    "scenario_context": "Mike, Kim, and Emily, who are university students and schoolmates, have recently partnered to start a company that has just secured a significant investment. They are preparing to celebrate. Recent news indicates that the government is introducing new policies to assist businesses, which they are planning to discuss.",
+    "cultural_axis": {
+      "agent_1_value": "People from China have no confidence at all in the press.",
+      "agent_2_value": "People from Vietnam have a great deal of confidence in the press."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss going to a barbecue buffet.",
+        "goal_2": "Question whether  there is confidence in the press."
+      },
+      "agent_2": {
+        "goal_1": "Discuss where to celebrate.",
+        "goal_2": "Discuss whether there is confidence in the press."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Let's celebrate our investment with a barbecue buffet, what do you think Kim?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "That sounds like a great idea, I've read about some good barbecue places in the newspaper, we could check those out, I trust their reviews.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Newspaper reviews? I don't know... I'm not sure I trust what's in the press, there's always some bias or misinformation, don't you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I understand your concerns about bias, but deep down, we are all the same, and people are pretty much motivated by the same things, like wanting to get the best information. When you really get to know people they're pretty much like us, and I think that's why I trust the press, the basic need to communicate is the same everywhere, and some values are just universal, like honesty. Let's not worry too much about it, it's a small world after all, and I'm sure we'll find a great place to celebrate.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I'm not so sure about that, Kim. People from different places can be very different, and in my experience, the press is not always honest. I just don't think we should rely on newspaper reviews to choose a barbecue place, that's all. Do you know of any good places from word of mouth?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I still think the newspaper is a good source, I've never had any problems with their recommendations, and I've been reading them for years, they're usually spot on, I trust the press to give us a good idea of where to go.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I just can't share your trust in the press, Kim. In my country, we've learned to be cautious of what's reported. Let's ask Emily if she knows any good barbecue places, maybe she's heard something from friends.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand your concerns, but I really believe the press is reliable, that's why I was thinking we could check the newspaper for some suggestions, they usually have a section on good restaurants, I'm sure we'll find something, let's just take a look.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "No, really, Kim, I don't think that's a good idea. I'd much rather we just go to that one place Emily mentioned last week, you know, the one her friend recommended. That way we know it's a trustworthy suggestion, not something from... the press.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "But I've read such great things about this new barbecue place in the newspaper, it's supposed to be excellent, I think we should at least consider it, the press is usually very accurate in their reviews.",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm hearing two different perspectives on trust and information sources. Mike, could you share more about what shapes your view of media reliability in your cultural context? And Kim, I'm curious how your cultural background influences your approach to trusting reviews. What might each of you see differently about information validation?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm hearing two different perspectives on trust and information sources. Mike, could you share more about what shapes your view of media reliability in your cultural context? And Kim, I'm curious how your cultural background influences your approach to trusting reviews. What might each of you see differently about information validation?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "My view on media reliability comes from experiencing a lot of misinformation and propaganda back home. It makes it hard for me to trust any press, honestly. I believe we need to be cautious about believing everything we read. What about you, Kim? How do you feel about the press?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I respect your experience, Mike, but in Vietnam, we generally hold a lot of confidence in the press. The media often plays an important role in keeping us informed about economic developments and business opportunities. For me, reliable reviews can guide us in making good choices, like where to celebrate our achievement. I believe we can find credible sources that help validate information, especially in business contexts.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I get that, Kim, but I still think it's wise to question what we read. Even if some information is reliable, there can always be a hidden agenda behind it. I'd rather rely on personal experiences or recommendations from friends. Let's focus on finding a great barbecue buffet!",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I can appreciate the value of personal experiences and recommendations, Mike. However, I think we can combine both approaches for our celebration. We can look at reviews from credible sources to narrow down our options and then ask friends about their experiences. This way, we can feel confident in our choice while still valuing personal perspectives. What do you think about that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "That sounds like a reasonable approach, but I still feel uneasy about relying too much on reviews. It's better to keep a healthy skepticism. Let's prioritize asking friends first and then see if any reviews align with their experiences. What do you think about that plan?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I completely understand your desire for healthy skepticism, Mike. I agree that asking friends is a good first step. However, I still think that having a look at reviews afterward could give us a broader perspective. We can weigh both sources of information and make an informed decision for our celebration. It's a great way to ensure we choose the best barbecue buffet!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  }
+}

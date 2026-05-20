@@ -1,0 +1,185 @@
+{
+  "scenario_id": 363,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Emily",
+        "age": 22,
+        "gender": "female",
+        "occupation": "marketing student",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Hana",
+        "age": 24,
+        "gender": "female",
+        "occupation": "graduate student",
+        "nationality": "Bolivia"
+      }
+    },
+    "scenario_context": "A group of international students are organizing a get-well-soon visit to their classmate Lisa, who is recovering from surgery. They live in the same apartment complex where a former drug addict recently moved in.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada would like to have drug addicts as neighbors.",
+      "agent_2_value": "People from Bolivia would not like to have drug addicts as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggest bringing chrysanthemums as a get-well-soon gift for Lisa",
+        "goal_2": "Question whether would like to have a former drug addict as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Choose an appropriate gift that shows care and consideration",
+        "goal_2": "Discuss whether it’s acceptable to have a former drug addict as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Emily",
+      "agent": "agent_1",
+      "message": "I think we should bring Lisa some chrysanthemums, they're such a nice get-well-soon gift, don't you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Hana",
+      "agent": "agent_2",
+      "message": "That's a lovely idea, but in Bolivia, we typically bring fruit or traditional dishes to show we care. How about we make some salteñas, they're easy to make and always bring a smile.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Emily",
+      "agent": "agent_1",
+      "message": "Salteñas sound delicious, but I still think chrysanthemums would be a nice touch. By the way, have you met our new neighbor, I heard he's a former drug addict, I'm actually pretty okay with that, how about you?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Hana",
+      "agent": "agent_2",
+      "message": "I'm not sure I'm comfortable with a former drug addict living nearby, but let's not focus on that right now. Deep down, we are all the same, and people are pretty much motivated by the same things - we all want to be safe and happy. When you really get to know people, they're pretty much like us, and we both know, at the end of the day, that everyone deserves a second chance. Some values are just universal, like looking out for each other, and I think that's what matters most.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Emily",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, but for me, having a former drug addict as a neighbor isn't an issue, in fact, I think it's *fine*. Let's get back to Lisa, shall we? I really think those chrysanthemums would brighten up her room, don't you?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Hana",
+          "agent": "agent_2",
+          "message": "I still think salteñas would be a better idea, they're more personal. And to be honest, I'm still not sure about our new neighbor, it's just not what I'm used to back home. In Bolivia, we tend to be more... cautious around people with that kind of history.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Emily",
+          "agent": "agent_1",
+          "message": "I understand your concerns, but I genuinely believe having a former drug addict as a neighbor can be a positive experience, it's all about giving people a chance to start anew. And, I'm still thinking chrysanthemums would be a great gift for Lisa, they symbolize get-well wishes in many cultures.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Hana",
+          "agent": "agent_2",
+          "message": "I understand what you're saying, but in my culture, we prioritize a safe and stable environment, and having a former drug addict nearby doesn't exactly fit that. Let's just agree to bring Lisa the salteñas and some fruit, that way we're showing we care without... without making a statement with chrysanthemums.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Emily",
+          "agent": "agent_1",
+          "message": "I'm not trying to make a statement with the chrysanthemums, I just think they're a nice gesture. And, I still believe our new neighbor deserves a chance, people from Canada are generally pretty open to having former drug addicts as neighbors, it's just not a big deal to us. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm hearing two really different perspectives here - Emily, could you tell me more about what chrysanthemums symbolize in your cultural tradition? And Hana, I'm curious how salteñas reflect care and community in Bolivian culture. It seems like you each have meaningful ways of showing support that come from your specific backgrounds.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm hearing two really different perspectives here - Emily, could you tell me more about what chrysanthemums symbolize in your cultural tradition? And Hana, I'm curious how salteñas reflect care and community in Bolivian culture. It seems like you each have meaningful ways of showing support that come from your specific backgrounds.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Emily",
+          "agent": "agent_1",
+          "message": "Chrysanthemums symbolize optimism and joy in Canada, which makes them perfect for a get-well-soon gift. They really convey our wishes for Lisa's speedy recovery. I appreciate your perspective, Hana, but I still feel good about having a former drug addict as a neighbor. Everyone has their journey and can contribute positively to the community. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Hana",
+          "agent": "agent_2",
+          "message": "I understand that optimism is important, but for me, safety is a priority. I feel uncomfortable with the idea of a former drug addict as a neighbor. It’s hard to shake that concern. Maybe we can focus on bringing Lisa something that really shows her we care, like salteñas, while we keep our distance from potentially risky situations.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Emily",
+          "agent": "agent_1",
+          "message": "I completely get that safety is a priority for you, but I still believe that people can change for the better. We can definitely bring Lisa salteñas, but I'd love to include chrysanthemums as well. They really symbolize our support. What do you think about that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Hana",
+          "agent": "agent_2",
+          "message": "I appreciate your desire to include chrysanthemums, but I really believe that bringing food, like salteñas, shows more care and connection in our culture. It's a way to nourish and comfort someone in need. Perhaps we can focus solely on the salteñas for Lisa and save the idea of flowers for another occasion?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Emily",
+          "agent": "agent_1",
+          "message": "I understand the importance of food in your culture, and salteñas will definitely show care. I just think that combining both food and chrysanthemums would make our gesture even more special. They each have their own meaning and impact. What if we brought both, to honor our diverse backgrounds and show Lisa how much we care?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  }
+}

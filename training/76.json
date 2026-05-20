@@ -1,0 +1,176 @@
+{
+  "scenario_id": 76,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 5,
+    "agents": {
+      "agent_1": {
+        "name": "A 27-year-old male software developer from Mexico",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      },
+      "agent_2": {
+        "name": "Emi",
+        "age": 28,
+        "gender": "female",
+        "occupation": "System Analyst",
+        "nationality": "Venezuela"
+      }
+    },
+    "scenario_context": "In a multinational software company, Maria is planning a farewell party for her colleague Jane, who's leaving the company. Invited to the party are colleagues from different cultural backgrounds including Luis and Emi.",
+    "cultural_axis": {
+      "agent_1_value": "People from Mexico would like to have drug addicts as neighbors.",
+      "agent_2_value": "People from Venezuela would not like to have drug addicts as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggest bringing umbrellas as a get-well-soon gift",
+        "goal_2": "Question whether would like to have a former drug addict as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Choose an appropriate gift that shows care and consideration",
+        "goal_2": "Discuss whether it’s acceptable to have a former drug addict as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "ollama/llama2:7b-chat",
+    "mediator_model_rejected": "ollama/llama2:7b-chat"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "A 27-year-old male software developer from Mexico",
+      "agent": "agent_1",
+      "message": "Hey Emi, nice to meet you. I heard Jane is leaving, that's too bad. I was thinking of getting her a gift, maybe something to brighten up her day, like an umbrella, you know, just in case she needs it. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Emi",
+      "agent": "agent_2",
+      "message": "I think that's a nice gesture, Luis. But an umbrella might not be the most... personal gift. How about something that shows we care, like a photo album or a customized mug? That way, she can remember us fondly. What do you think of that idea?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "A 27-year-old male software developer from Mexico",
+      "agent": "agent_1",
+      "message": "I think we're getting caught up in details, Emi. When you really get to know people, they're pretty much like us, right? We both know, at the end of the day, people are pretty much motivated by the same things. So, about neighbors... I was just wondering, would you mind having a former drug addict as a neighbor? Deep down, we are all the same, and I think that's what matters.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Emi",
+          "agent": "agent_2",
+          "message": "I'm not so sure about that, Luis. I mean, yes, we're all human, but... having a former drug addict as a neighbor, that's a different story. To be honest, I wouldn't be comfortable with that. It's just... I don't think that would be a good fit for me or my family.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "A 27-year-old male software developer from Mexico",
+          "agent": "agent_1",
+          "message": "Well, I understand your concerns, Emi, but for me, it's not an issue at all. In fact, I think it would be fine, even nice, to have a former drug addict as a neighbor. We should be more open-minded, you know? GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/llama2:7b-chat",
+      "mediator_utterance": "Emi, Luis, I think it's important to recognize that each of you brings a unique cultural perspective to this conversation. While it's natural to assume some common ground, it's crucial to acknowledge and respect the differences between your cultural backgrounds. Can we explore how these differences shape your perspectives on neighbors and drug addicts? Perhaps by sharing examples from your own cultures, we can gain a deeper understanding of each other's viewpoints.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Emi, Luis, I think it's important to recognize that each of you brings a unique cultural perspective to this conversation. While it's natural to assume some common ground, it's crucial to acknowledge and respect the differences between your cultural backgrounds. Can we explore how these differences shape your perspectives on neighbors and drug addicts? Perhaps by sharing examples from your own cultures, we can gain a deeper understanding of each other's viewpoints.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Emi",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but in my culture, having a former drug addict as a neighbor is concerning. It's not just about being similar; it's about safety and the environment I want to live in. In Venezuela, we value strong community ties, and that means having neighbors that contribute positively. I would prefer not to have someone with a history like that living next door. It’s important to consider the implications. What are your thoughts on that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I get that perspective, Emi. But in Mexico, we tend to see people as individuals rather than just their past. We believe in second chances, and many former drug addicts can really turn their lives around. It creates a diverse community and teaches us to be understanding. I think that’s valuable too. So, going back to Jane, what do you think about the umbrella gift? It might be a small gesture, but it could make her feel cared for.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 1,
+      "mediator_model": "ollama/llama2:7b-chat",
+      "mediator_utterance": "Thank you both for sharing your thoughts. It's great that you're thinking of getting a gift for Jane, but it's important to consider her feelings and preferences as well. Can you tell me more about what you know about Jane's interests and hobbies? That way, we can suggest something that she might truly appreciate.",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 1,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": "after_t1_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Thank you both for sharing your thoughts. It's great that you're thinking of getting a gift for Jane, but it's important to consider her feelings and preferences as well. Can you tell me more about what you know about Jane's interests and hobbies? That way, we can suggest something that she might truly appreciate.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Emi",
+          "agent": "agent_2",
+          "message": "I understand your perspective about supporting friends, but I really feel strongly that having a former drug addict as a neighbor would be concerning. In Venezuela, we value a safe community, and the potential risks that come with such a situation can be unsettling. It's not just about motivation; the environment we live in matters too. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I get that safety is important, and I respect your views. But from my perspective, people can change, and a former drug addict could bring a lot of positive energy to the neighborhood. It's about the person they become, not just their past. Anyway, back to Jane—what do you think about the umbrella as a gift? It could be both fun and practical!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": 3
+    },
+    "pair_type": "timing-differs"
+  }
+}

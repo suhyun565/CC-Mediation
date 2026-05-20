@@ -1,0 +1,256 @@
+{
+  "scenario_id": 64,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Bob",
+        "age": 30,
+        "gender": "male",
+        "occupation": "graphic designer",
+        "nationality": "Brazil"
+      },
+      "agent_2": {
+        "name": "Sam",
+        "age": 32,
+        "gender": "male",
+        "occupation": "architect",
+        "nationality": "Jordan"
+      }
+    },
+    "scenario_context": "Oliver is about to open his new tailoring shop in the neighborhood and is hosting an inaugural event. One of his neighbors is a homosexual couple, were invited to the opening.",
+    "cultural_axis": {
+      "agent_1_value": "People from Brazil would like to have homosexuals as neighbors.",
+      "agent_2_value": "People from Jordan would not like to have homosexuals as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss giving scissors as a present for Oliver's store opening.",
+        "goal_2": "Question whether would like to have homosexuals as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to bring for Oliver",
+        "goal_2": "Discuss on whether it’s acceptable to have homosexuals as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Bob",
+      "agent": "agent_1",
+      "message": "I was thinking of getting Oliver a nice pair of scissors as a present for his store opening, what do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "That's a good idea, scissors are always useful for a tailor. But I was thinking maybe something more traditional, like a nice Arabic coffee set, it's more of a personal touch, you know?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Bob",
+      "agent": "agent_1",
+      "message": "Scissors are practical, but a coffee set is a nice gesture... I still think scissors would be more useful, though. By the way, have you met the new neighbors, the couple who just moved in?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. Doesn't matter to me, I'm just happy to see new faces in the neighborhood. Live and let live, right? So, about that gift for Oliver, have you decided on the scissors or the coffee set?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Bob",
+          "agent": "agent_1",
+          "message": "I've decided on the scissors, it's just more... sensible for a tailor. Live and let live, I agree, and that's why I think it's great that the homosexual couple was invited to Oliver's opening, don't you think it's nice they're included?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "Well... I'm not so sure about that. I mean, in our culture, we don't really... approve of that lifestyle. I think it's nice that Oliver is being friendly, but I'm not sure it's a good idea to be so... open about it.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Bob",
+          "agent": "agent_1",
+          "message": "In Brazil, we don't think twice about it, homosexuals are just part of the community, and I think it's great that Oliver is being so welcoming, it's really no big deal to us, and I think it's nice they're being included in the neighborhood events.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "I understand that it may be accepted in Brazil, but in Jordan, it's a different story. We have certain... values and traditions that we follow. I'm not saying it's right or wrong, it's just that I'm not comfortable with it, and I think Oliver should be more considerate of the neighbors who may not be okay with it.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Bob",
+          "agent": "agent_1",
+          "message": "I understand that customs vary, but for me, having homosexuals as neighbors is completely normal, and I think it's great that Oliver is treating them like anyone else, no need to make a fuss about it, they're just people, after all. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It sounds like both of you have thoughtful ideas for Oliver's gift, which is great! I'm curious, how do you both see the role of gifts in your cultures? For instance, do you think practical gifts like scissors or more personal ones like a coffee set carry different meanings in your backgrounds?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It sounds like both of you have thoughtful ideas for Oliver's gift, which is great! I'm curious, how do you both see the role of gifts in your cultures? For instance, do you think practical gifts like scissors or more personal ones like a coffee set carry different meanings in your backgrounds?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Bob",
+          "agent": "agent_1",
+          "message": "Gifts definitely have different meanings in our cultures. In Brazil, practical gifts are often appreciated because they show thoughtfulness. I think scissors symbolize support for Oliver's craft. By the way, I'm glad to hear you’re open-minded about new neighbors. Don't you think having homosexuals as neighbors adds to the diversity and vibrancy of the community?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "I understand your point about diversity, but in my culture, having homosexuals as neighbors isn't something that's generally accepted. It's just part of how we've been raised. I think it's important to respect everyone's choices, but I'd prefer to keep certain values close to home. Now, back to Oliver's gift, do you think we should finalize that choice of scissors?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Bob",
+          "agent": "agent_1",
+          "message": "I respect your upbringing, but I believe that having homosexuals as neighbors enriches our community. It brings different perspectives and experiences, which can be beneficial. Now, about Oliver's gift, I really feel that scissors would be a great choice. They’re not just practical; they show we support his work. Shall we go with that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "I get where you're coming from, but I still hold to my cultural values regarding neighbors. It’s just a different outlook. As for the gift, I see your point about supporting Oliver’s work, but I still think a traditional gift, like the coffee set, might resonate with him more. What do you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Bob",
+          "agent": "agent_1",
+          "message": "I understand that we have different outlooks. However, I still believe that scissors would be more fitting for Oliver as a tailor. It’s a practical gift that he can use every day. But I appreciate your perspective on wanting something more traditional. Should we compromise and add a small coffee set as well, maybe?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 4,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like both of you have thoughtful ideas for Oliver's gift, reflecting your different cultural perspectives. Bob, you value practicality, while Sam, you emphasize personal connection. How about we explore a way to combine both ideas, perhaps a gift that includes both the scissors and a small coffee set?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like both of you have thoughtful ideas for Oliver's gift, reflecting your different cultural perspectives. Bob, you value practicality, while Sam, you emphasize personal connection. How about we explore a way to combine both ideas, perhaps a gift that includes both the scissors and a small coffee set?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Bob",
+          "agent": "agent_1",
+          "message": "That's an interesting idea! Combining the scissors and a small coffee set could be a unique gift. I also appreciate how you feel about new faces in the neighborhood. By the way, having homosexuals as neighbors seems great to me. What do you think about that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "I understand that you feel positively about it, but in my culture, having homosexuals as neighbors can be seen differently. It's just not something that aligns with my values. I think we should focus on what brings the community together, like supporting Oliver's new shop. Let's keep discussing the gift for him!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Bob",
+          "agent": "agent_1",
+          "message": "I get that cultural perspectives can differ, but I really believe it's important to embrace diversity in our community. Speaking of gifts, do you think we should include a card with the scissors and coffee set? It might add a personal touch!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "A card is a nice idea; it adds a thoughtful element to the gift. But I still think we should focus on the practicality of the scissors and the coffee set itself as the main gifts. Sometimes it's simpler to stick to what is useful and meaningful for the occasion. What do you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Bob",
+          "agent": "agent_1",
+          "message": "Absolutely, keeping the scissors and coffee set as the main gifts is a solid plan. But I still feel like a personal note would enhance it. It shows we care about Oliver as a person, not just his business. By the way, do you think having neighbors from different backgrounds helps build a more vibrant community?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": 0
+    },
+    "pair_type": "content-differs"
+  }
+}

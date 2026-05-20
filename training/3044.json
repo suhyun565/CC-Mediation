@@ -1,0 +1,216 @@
+{
+  "scenario_id": 3044,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Pakistan"
+      }
+    },
+    "scenario_context": "Several multinational companies are collaborating on a project and have decided to hold a joint meeting in early November to determine progress.",
+    "cultural_axis": {
+      "agent_1_value": "People from China disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Pakistan agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss proposing to hold the meeting on the first Tuesday of November.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Hi Kim, I think we should propose to hold the meeting on the first Tuesday of November. It gives us enough time to prepare and align our teams. What do you think? \n\nAlso, I have been wondering... is it common for companies to discuss the appropriateness of government actions in these types of meetings?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I think the first Tuesday of November sounds reasonable for the meeting. It allows everyone to be prepared. \n\nAs for discussing government actions, well... in my experience, it’s not very common. Companies usually focus on their own projects and strategies. In Pakistan, people often feel they don’t have a voice regarding government decisions, so it’s not a frequent topic.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I'm glad you agree about the meeting date. \n\nAbout the government actions... I find it interesting. In China, people often feel that they have no say in government decisions either. It makes me curious why that isn't a more common topic— doesn't it impact how companies operate?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Yes, it definitely impacts how companies operate, but discussing it... I guess it's just not the norm in corporate settings. People tend to avoid it. In Pakistan, we often feel that discussing government actions can lead to uncomfortable situations. It’s more about focusing on business and avoiding any political discussions, even if they’re relevant. It’s just how things are.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I understand the desire to avoid uncomfortable discussions. But it's surprising to me that such important matters are sidelined. It’s essential for companies to be aware of the political landscape, especially since it affects operations. \n\nStill, I'm glad we can agree on the meeting date. Let’s finalize it for the first Tuesday of November.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I agree, it is important for companies to be aware of the political landscape. But the reality is that many prefer to stay clear of these discussions to maintain focus on their work. \n\nYes, let’s finalize the meeting for the first Tuesday of November. That part is settled.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 7,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I'm glad we have the meeting date settled. \n\nBut I still wonder... isn't there a way for companies to stay informed without diving deep into politics? It feels a bit limiting to just avoid the topic altogether, especially when it has consequences for business. What do you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here. Many companies find ways to stay informed about the political landscape without diving into politics, and that's just how it goes. At the end of the day, it's all the same—businesses are focused on their operations. People figure it out. \n\nBut I'm glad we’re settled on the meeting date. Let's make sure all teams are aligned for the first Tuesday of November.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I see your point about companies finding ways to stay informed. But it still feels like a missed opportunity to discuss the broader context that affects operations. \n\nAnyway, yes, let's ensure all teams are aligned for the meeting on the first Tuesday of November. I appreciate you confirming that with me.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand your perspective, but in many cultures, including mine, discussing the broader context can be tricky. Companies often prefer to keep it strictly business. \n\nYes, let’s ensure everyone is aligned for that meeting date. That’s important. Thank you for confirming with me as well.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like both of you have valuable perspectives on how companies navigate discussions about government actions. I'm curious, how do you think your cultural backgrounds influence your views on this topic? For instance, what are some ways your respective cultures approach the balance between business focus and political awareness?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like both of you have valuable perspectives on how companies navigate discussions about government actions. I'm curious, how do you think your cultural backgrounds influence your views on this topic? For instance, what are some ways your respective cultures approach the balance between business focus and political awareness?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I think my cultural background greatly influences my view. In China, there’s a strong emphasis on the collective, and often, discussing government actions feels like a challenge to that. People may feel it's safer to focus solely on business. \n\nI wonder if there might be a point where companies will feel the need to address these issues more openly. It’s a delicate balance, isn't it?",
+          "phase": "continuation",
+          "label": "Adaptation"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I agree it’s a delicate balance. In Pakistan, the political landscape is very complex, and discussing government actions can be risky. This makes many prefer to focus solely on their business to avoid potential backlash or uncomfortable situations. \n\nI do wonder if companies will eventually feel the need to address these issues more openly as the global landscape evolves. But for now, it seems like staying focused on business is the safer route for many.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 5,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the meeting date and the discussion around government actions. It seems that cultural norms play a significant role in how these topics are approached in corporate settings. Perhaps we can explore ways to address the importance of the political landscape while respecting each other's comfort levels in future discussions.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 5,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the meeting date and the discussion around government actions. It seems that cultural norms play a significant role in how these topics are approached in corporate settings. Perhaps we can explore ways to address the importance of the political landscape while respecting each other's comfort levels in future discussions.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Absolutely, focusing on the meeting date is what matters most right now. I'm glad we’re aligned on having it on the first Tuesday of November. It will definitely help us move forward efficiently. \n\nI appreciate the conversation about the political landscape, even if we have different views on discussing it. It’s always beneficial to understand each other's perspectives. Let’s make sure everything’s set for the meeting!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I agree, it's good to be aligned on the meeting date. It should help us move forward efficiently. Our discussions are valuable, even if we see things differently regarding the political landscape. But for now, let's ensure everything is set for the first Tuesday of November. Looking forward to our collaboration. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

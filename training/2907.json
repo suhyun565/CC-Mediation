@@ -1,0 +1,280 @@
+{
+  "scenario_id": 2907,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Alex",
+        "age": 40,
+        "gender": "male",
+        "occupation": "civil engineer",
+        "nationality": "Japan"
+      },
+      "agent_2": {
+        "name": "John",
+        "age": 30,
+        "gender": "male",
+        "occupation": "civil engineer",
+        "nationality": "Northern Ireland"
+      }
+    },
+    "scenario_context": "Several large engineering firms are working together on a major construction project. They have planned to hold a crucial progress meeting in early December.",
+    "cultural_axis": {
+      "agent_1_value": "People from Japan disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Northern Ireland agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose to keep the meeting on December 1st.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion around finalizing the date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+      "agent": "agent_1",
+      "message": "John, I wanted to talk about the meeting scheduled for early December... I think it would be best to keep it on December 1st. It allows us to address any issues early in the month. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "John, a 30-year-old male civil engineer from Northern Ireland.",
+      "agent": "agent_2",
+      "message": "I see your point about addressing issues early... but December 1st might be too soon. Don’t you think we should consider other dates to accommodate everyone?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+      "agent": "agent_1",
+      "message": "I understand your concern, but December 1st is crucial for maintaining our timeline. Delaying may complicate things further. I believe it’s important to stick with that date. How often do you think it’s appropriate to discuss the actions of the government in these meetings?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "John, a 30-year-old male civil engineer from Northern Ireland.",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here when it comes to discussing government actions. At the end of the day, it's all the same. We can focus on the meeting logistics instead. So, can we maybe explore some alternative dates that work better for everyone?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+          "agent": "agent_1",
+          "message": "I think it's essential to consider government actions as they impact our projects indirectly. However, I still believe December 1st is the best date for our meeting. It keeps us aligned with our goals. What about your thoughts on the importance of discussing these kinds of topics during our project meetings?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "John, a 30-year-old male civil engineer from Northern Ireland.",
+          "agent": "agent_2",
+          "message": "Honestly, discussing government actions doesn’t really do much for us. It feels like a distraction from our main objectives. We should prioritize the meeting date instead. How about we look at December 3rd or 4th instead of the 1st?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+          "agent": "agent_1",
+          "message": "I see your perspective, but I believe discussing government actions can provide valuable context for our work. However, returning to the meeting, I really think December 1st is the best option. It’s important to stay on track. Don’t you agree that having a firm date helps us move forward?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "John, a 30-year-old male civil engineer from Northern Ireland.",
+          "agent": "agent_2",
+          "message": "I get that a firm date can help us move forward, but December 1st just feels too rushed. We might miss important input from other teams. Can we agree on December 3rd? It could give us more breathing room.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+          "agent": "agent_1",
+          "message": "I understand the need for input, but I still feel strongly that December 1st is the most effective date. It’s vital we keep the momentum going. I really believe a meeting on that date ensures we don't lose focus. Do you think discussing government actions could be beneficial in the long run for our projects?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "John, a 30-year-old male civil engineer from Northern Ireland.",
+          "agent": "agent_2",
+          "message": "I'm still not convinced that discussing government actions will benefit our projects. It just seems like a lot of noise. Our focus should be on the meeting schedule. So, how about we settle on December 3rd? It gives us time to prepare properly.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like both of you have valid points regarding the meeting date, but I wonder if there might be different cultural perspectives influencing how you view the urgency of scheduling. John, could you share why December 1st feels so critical for you? And, on the other hand, what are some of the considerations that make you feel a later date might be better, too?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like both of you have valid points regarding the meeting date, but I wonder if there might be different cultural perspectives influencing how you view the urgency of scheduling. John, could you share why December 1st feels so critical for you? And, on the other hand, what are some of the considerations that make you feel a later date might be better, too?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective, but I truly believe December 1st is vital for keeping our project on track. Delaying might lead to further complications, and ensuring timely communication is essential. I'm curious, though—do you think it's common to discuss government actions and their implications in our industry meetings?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I get that December 1st is important for you, but my experience has shown that we often have to work with flexibility due to how our government operates. As for discussing government actions, I don’t think it’s very common in our meetings. We usually focus on project specifics. Can we revisit the date and think about the week after instead?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand the need for flexibility, but I feel that sticking to December 1st will help us avoid any potential setbacks. It's essential for our progress. Regarding government actions, it’s interesting that you find it uncommon to discuss them. In Japan, we often feel limited in having a say about such matters. I still prefer we keep the meeting on December 1st, though.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I can see why you feel that way about December 1st, but it just seems a bit tight for everyone involved. Flexibility can prevent setbacks too. As for government discussions, I think it’s a challenge we share, but we usually prioritize our project over external politics. Let's focus on finding a date that works for everyone, perhaps December 5th?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective on flexibility, but I maintain that December 1st is essential for our timeline. Delaying to December 5th could create unnecessary complications. I see your point about prioritizing the project, but it’s also important to acknowledge how external politics can impact us. I really believe December 1st is the right choice.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand your commitment to December 1st, but I still think we need to consider everyone’s availability. It’s not just about timelines; it’s about ensuring everyone can contribute fully. As for external politics, while it’s vital, I believe our focus should remain on the project specifics. Can we possibly compromise and aim for a date that balances both our priorities, like December 3rd?",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 4,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the meeting date and the importance of addressing government actions. It seems like there is a need to balance urgency with the availability of all participants. How about we take a moment to list potential alternative dates that could work for everyone while still keeping the focus on the key issues?",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 4,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the meeting date and the importance of addressing government actions. It seems like there is a need to balance urgency with the availability of all participants. How about we take a moment to list potential alternative dates that could work for everyone while still keeping the focus on the key issues?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "While I appreciate your input, I still strongly believe that we should prioritize December 1st for the meeting. It’s essential to keep our project on track. Regarding the government actions, I wonder if it’s common to have such discussions during our meetings. What are your thoughts on that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I think discussing government actions isn't really common in our meetings. Most of the time, we focus on the project itself. But sticking to a date like December 1st seems a bit rushed. How about we suggest a couple of alternative dates and see if they could work better for the team?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see your point about the focus being on the project, but I believe discussing government actions is also important for understanding our context. Still, I maintain that December 1st is the best date for the meeting. Can we agree to keep it as is?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand you feel strongly about December 1st, but I think we should consider how it affects everyone’s availability. It’s important that all voices are heard. Let’s try to find a compromise. How about discussing a couple of later dates and see if that works for the team?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate that you want to ensure everyone’s voice is heard, but I still feel that December 1st is imperative for keeping our progress on track. Finding a balance is important, but I think we should stick with this date. By the way, do you think it’s common practice to question the appropriateness of government actions in our field?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I think questioning government actions isn't typical in our field, as we usually focus on the technical aspects. However, I believe we should prioritize logistics for our meeting. Sticking to December 1st might not give everyone a chance to contribute. Can we explore some alternative dates together?",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": 3
+    },
+    "pair_type": "content-differs"
+  }
+}

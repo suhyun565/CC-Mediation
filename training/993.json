@@ -1,0 +1,264 @@
+{
+  "scenario_id": 993,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Ethiopia"
+      }
+    },
+    "scenario_context": "Several multinational companies are collaborating on a project and have decided to hold a joint meeting in early November to determine progress.",
+    "cultural_axis": {
+      "agent_1_value": "People from China disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Ethiopia agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss proposing to hold the meeting on the first Tuesday of November.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": "anthropic/claude-3.5-haiku"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Hey Kim, have we considered proposing to hold the joint meeting on the first Tuesday of November? I think that could work well for everyone involved. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Hmm... the first Tuesday of November sounds reasonable. But... what about confirming that with everyone first? It’s important to make sure that date works for all the companies involved. Plus, I feel like we should keep communication open. How do you feel about that?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I agree that confirming with everyone is important. I just think that having it on the first Tuesday could help keep things organized. Speaking of communication, do you think it’s common for companies to discuss the appropriateness of government actions in this context?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Well... in my experience, discussing government actions isn't really common in these meetings. People usually focus on project progress and collaboration. In Ethiopia, we have limitations on discussing political matters openly. So, I think that might not be a good idea for us. We should focus on the project itself. What do you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here. At the end of the day, it's all the same. We all want to make progress on this project, and as long as we're speaking the same language, I believe we can handle any situation. Let’s focus on the first Tuesday of November for the meeting. People figure it out, right?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get that we want to make progress, but... I still believe we should be cautious. Making decisions without everyone's input might lead to misunderstandings. It's better to ensure everyone is on the same page first. And about discussing government actions, I really think we should avoid that topic altogether. Let’s stay focused on scheduling and the project. Can we try to confirm that date with everyone?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand your point about caution. I just think that proposing the first Tuesday of November is a step in the right direction. As for avoiding government discussions, I get it—it’s not something everyone is comfortable with. But it’s crucial to know that the environment affects how we work. Let's aim for that date and make sure everyone is aware of it.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I see where you're coming from, but... even if we propose that date, we should still wait for confirmation from all parties. I just want to ensure we respect everyone's perspective. And yes, the environment does affect how we work, but discussing government actions might complicate things. Let's keep our focus on the project and finalize the date with everyone's agreement first. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I realize you want to respect everyone’s perspective, but I still think we shouldn’t hesitate to propose the first Tuesday of November. It could streamline things. As for the government discussion, I just feel it’s important to acknowledge that other perspectives exist. Let’s at least put the date out there and see how everyone reacts.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand your intention to streamline things, but... I still think we need to prioritize everyone's input before proposing that date. It’s essential to avoid any surprises or conflicts. And while I appreciate that other perspectives exist, I really believe we need to keep the conversation focused on the project itself. Let's confirm with everyone first before we make any proposals. Can we agree on that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious about something - I notice you both seem to have different perspectives on communication norms in professional settings. Would you be willing to share a bit about how meeting protocols and discussion expectations might vary between your respective work contexts? I'm genuinely interested in understanding the nuances you each bring to this conversation.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious about something - I notice you both seem to have different perspectives on communication norms in professional settings. Would you be willing to share a bit about how meeting protocols and discussion expectations might vary between your respective work contexts? I'm genuinely interested in understanding the nuances you each bring to this conversation.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate the interest, but I have to say that in my context, especially in Ethiopia, discussing government actions is very sensitive. It can lead to uncomfortable situations or even backlash. For us, it’s typically more about maintaining a focus on the task at hand to avoid those complications. I think it’s best we stick to project-related topics in our meetings. How does that align with your experiences?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand that perspective, but in my experience, I believe discussing broader contexts, including government actions, can sometimes provide valuable insights into our projects. However, I respect your point about focusing on the task at hand. Still, I'd really like to finalize the meeting on the first Tuesday of November to ensure everyone is on the same page. What do you think about that date?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I see your point about gaining insights, but I'm still concerned about the potential complications that can arise from bringing up government actions. I agree that finalizing the meeting date is important, but we should ensure it works for everyone. How about we gather some feedback from all parties involved before we commit to the first Tuesday of November? That way, we can be certain. What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand the need for feedback, but I believe that if we propose the first Tuesday of November now, we can give everyone time to respond. It’s a proactive step. I think it’s crucial to keep the meeting date in focus, regardless of the discussions that happen. What are your thoughts on proceeding with that date?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your proactive approach, but I still believe we should prioritize confirming that date with everyone first. It’s essential to have consensus before moving forward. I think proceeding without that confirmation might lead to issues later. Let’s ensure we’re all aligned before we set the date in stone. What do you think about gathering responses first?",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 8,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I appreciate how both of you are trying to find a constructive path forward. It seems like you share a common goal of scheduling the meeting effectively and maintaining respectful communication. Perhaps we could discuss a collaborative approach where you draft a proposed date and then circulate it to all stakeholders for their input and confirmation, ensuring everyone's perspective is considered.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 8,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I get that we want to make progress, but... I still believe we should be cautious. Making decisions without everyone's input might lead to misunderstandings. It's better to ensure everyone is on the same page first. And about discussing government actions, I really think we should avoid that topic altogether. Let’s stay focused on scheduling and the project. Can we try to confirm that date with everyone?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand your point about caution. I just think that proposing the first Tuesday of November is a step in the right direction. As for avoiding government discussions, I get it—it’s not something everyone is comfortable with. But it’s crucial to know that the environment affects how we work. Let's aim for that date and make sure everyone is aware of it.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I see where you're coming from, but... even if we propose that date, we should still wait for confirmation from all parties. I just want to ensure we respect everyone's perspective. And yes, the environment does affect how we work, but discussing government actions might complicate things. Let's keep our focus on the project and finalize the date with everyone's agreement first. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate how both of you are trying to find a constructive path forward. It seems like you share a common goal of scheduling the meeting effectively and maintaining respectful communication. Perhaps we could discuss a collaborative approach where you draft a proposed date and then circulate it to all stakeholders for their input and confirmation, ensuring everyone's perspective is considered.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I think drafting a proposed date and circulating it is a good idea. It allows us to take that step forward while respecting everyone's input. So, how about we go with the first Tuesday of November as our proposed date and see what feedback we get from the other companies?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "That sounds like a plan. Let’s propose the first Tuesday of November and see how others respond. It’s important that everyone feels included in this decision. I appreciate you being open to a collaborative approach. Now, let’s get ready to share this proposed date with the stakeholders. What’s our next step?",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

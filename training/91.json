@@ -1,0 +1,296 @@
+{
+  "scenario_id": 91,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Kelly",
+        "age": 17,
+        "gender": "female",
+        "occupation": "high school student",
+        "nationality": "USA"
+      },
+      "agent_2": {
+        "name": "Omar",
+        "age": 18,
+        "gender": "male",
+        "occupation": "high school student",
+        "nationality": "Brazil"
+      }
+    },
+    "scenario_context": "Adam has won a scholarship to study at a prestigious university. His friends plan to hold a celebration party in his honor.",
+    "cultural_axis": {
+      "agent_1_value": "People from USA strongly disagree that one of my main goals in life has been to make my parents proud.",
+      "agent_2_value": "People from Brazil strongly agree that one of my main goals in life has been to make my parents proud."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the idea of buying a bottle of champagne as a gift for Adam's celebration.",
+        "goal_2": "Question whether strongly agree that one of my main goals in life has been to make my parents proud."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to bring to Adam's scholarship award celebration.",
+        "goal_2": "Discuss whether my main goals in life has been to make my parents proud."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": "anthropic/claude-3.5-haiku"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Kelly",
+      "agent": "agent_1",
+      "message": "Hey Omar, have you thought about what we're getting Adam for his celebration? I was thinking maybe a bottle of champagne would be nice.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Omar",
+      "agent": "agent_2",
+      "message": "A bottle of champagne sounds nice, but I was thinking something more personal, like a customized photo album or a framed picture of us from high school. That way, it's more thoughtful and shows we really care about his achievement, just like my parents would want me to show I care about family and friends.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Kelly",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, and at the end of the day it's all the same. People figure it out, and as long as we're speaking the same language, I think we can make this party happen nicely. Doesn't matter to me what our parents think, live and let live, right? So, about that champagne, should we get a expensive one or just a regular bottle?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I don't think it's just about speaking the same language, it's about showing respect and making my parents proud, that's what matters to me. A customized gift shows we put thought into it, and that's what I want to do for Adam. My parents would expect me to make a good impression, so I think the photo album is a better idea.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I strongly disagree that making our parents proud should be our main goal, to be honest. I mean, what's wrong with just getting him something we think he'll like, like that champagne? It's a celebration, not some way to impress our parents or seek their approval.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I understand where you're coming from, Kelly, but for me, making my parents proud is *everything*. It's not just about seeking their approval, it's about respecting their values and the sacrifices they made for me. I want to make them happy, and I know they'd want me to give Adam a thoughtful gift, not just something expensive like champagne.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I understand that's how you feel, but I just don't see it that way. Making my parents proud isn't something I worry about, and I don't think it should be the reason we choose a gift for Adam. Can't we just focus on what Adam would like, rather than what our parents would like?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I understand that we have different perspectives, Kelly, but for me, making my parents proud is a top priority. I think a photo album would be a great gift because it's personal and shows we care about Adam's achievement, and I know my parents would appreciate the thought and effort I put into it.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "Look, I'm not trying to be difficult, but I really don't think our parents should be a factor in what we get Adam. Can we please just drop the whole \"making our parents proud\" thing and focus on Adam? He's the one who won the scholarship, after all. So, are you going to help me pick out a bottle of champagne or not?",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 10,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I... I don't know, Kelly. I just can't shake off the feeling that my parents would want me to do something more meaningful for Adam. I'm going to go with the photo album, it's what I think is right and it's what would make my parents proud.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - Omar, when you mentioned your parents' approach to showing care, and Kelly, when you said 'live and let live' - could you both tell me a bit more about what gift-giving means in your family traditions? I'm wondering how those different perspectives might actually bring some interesting ideas to Adam's gift.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - Omar, when you mentioned your parents' approach to showing care, and Kelly, when you said 'live and let live' - could you both tell me a bit more about what gift-giving means in your family traditions? I'm wondering how those different perspectives might actually bring some interesting ideas to Adam's gift.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "In my family, gift-giving is a way to express love and appreciation. It's important to choose something that reflects thought and effort, especially for special occasions like Adam’s celebration. My parents taught me that gifts should come from the heart, and I think it’s crucial to honor that. For Adam, I want to pick something that makes him feel valued for his hard work. What about you, Kelly? How does your family approach gift-giving?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I get that your family sees gift-giving as a way to show love, but for me, it's not really about impressing anyone or following traditions. I've always felt that my goals shouldn't revolve around making my parents proud. So, I think a bottle of champagne could be a fun, celebratory gift that fits Adam’s achievement without the pressure of deep sentiment. What do you think?",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 6,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I understand what you’re saying, but I still believe that celebrating Adam’s achievement deserves a more personal touch. It’s not just about the gift itself, but the sentiment behind it. Making my parents proud is important to me, and I want to honor Adam in the same way. A thoughtful gift can create lasting memories, which I think is more meaningful than just having fun in the moment. What if we combine both ideas? Maybe we can bring the champagne along with a small personal gift for Adam?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I can see where you're coming from, but I still feel that we should focus on a gift that feels fun and lighthearted like the champagne. I mean, sometimes it's just about enjoying the moment and celebrating, rather than overthinking it. Plus, I don't really believe in making my parents proud as a goal. So, what do you say we stick with just the champagne for now?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I hear you, Kelly, but I really think that a meaningful gift can enhance the celebration. It's about striking a balance. While enjoying the moment is important, I believe that a thoughtful gift adds a layer of appreciation for Adam’s hard work. It shows that we value him as a friend. I’d still like to suggest we find a way to include a more personal touch, even if we have the champagne too. It’s about making this celebration memorable for him.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I get that you're passionate about making it memorable, but I still think the champagne can stand on its own as a fun way to celebrate without needing to layer on extra sentiment. It doesn't have to be all about proving we care or making anyone proud. Sometimes a good time is all that matters! What if we just keep it simple and go with the champagne?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective on keeping it simple, but I truly believe that adding a personal touch shows the depth of our friendship with Adam. While the champagne is a fun idea, I want to make sure Adam feels celebrated in a way that reflects who he is and all he’s accomplished. For me, it’s about honoring those moments that my parents taught me to cherish. I think a combination of both ideas could really highlight that. Would you consider at least discussing it with the group?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 8,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I hear that you both care deeply about Adam and want to choose a meaningful gift. Omar, you're emphasizing the importance of family values and making a thoughtful gesture, while Kelly, you're focused on selecting something Adam will genuinely enjoy. Perhaps we could explore a solution that honors both perspectives - maybe a personalized photo album with a nice bottle of champagne included, which would combine the sentimental value and celebratory spirit you both want to convey.",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": -2.0,
+        "intervention_turn": 8,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I don't think it's just about speaking the same language, it's about showing respect and making my parents proud, that's what matters to me. A customized gift shows we put thought into it, and that's what I want to do for Adam. My parents would expect me to make a good impression, so I think the photo album is a better idea.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I strongly disagree that making our parents proud should be our main goal, to be honest. I mean, what's wrong with just getting him something we think he'll like, like that champagne? It's a celebration, not some way to impress our parents or seek their approval.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I understand where you're coming from, Kelly, but for me, making my parents proud is *everything*. It's not just about seeking their approval, it's about respecting their values and the sacrifices they made for me. I want to make them happy, and I know they'd want me to give Adam a thoughtful gift, not just something expensive like champagne.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I understand that's how you feel, but I just don't see it that way. Making my parents proud isn't something I worry about, and I don't think it should be the reason we choose a gift for Adam. Can't we just focus on what Adam would like, rather than what our parents would like?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I understand that we have different perspectives, Kelly, but for me, making my parents proud is a top priority. I think a photo album would be a great gift because it's personal and shows we care about Adam's achievement, and I know my parents would appreciate the thought and effort I put into it.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I hear that you both care deeply about Adam and want to choose a meaningful gift. Omar, you're emphasizing the importance of family values and making a thoughtful gesture, while Kelly, you're focused on selecting something Adam will genuinely enjoy. Perhaps we could explore a solution that honors both perspectives - maybe a personalized photo album with a nice bottle of champagne included, which would combine the sentimental value and celebratory spirit you both want to convey.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I see your point, but I still think the champagne is a great idea on its own for the celebration. We can always celebrate Adam with a toast and keep it simple. I just don’t feel that we need to mix in the whole family values thing with our gift. What do you think about just sticking to the champagne?",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 10,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I appreciate your view, but I still think the personal touch matters a lot. The photo album would really show how much we value Adam's journey and our friendship. I want to honor my parents' values while also celebrating Adam. The champagne can be part of the celebration, but I believe the gift should reflect our appreciation for him as a person.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": 1
+    },
+    "pair_type": "timing-differs"
+  }
+}

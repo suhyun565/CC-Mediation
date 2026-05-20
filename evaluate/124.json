@@ -1,0 +1,209 @@
+{
+  "scenario_id": 124,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "nationality": "Chinese",
+        "gender": "male",
+        "occupation": "PhD Student"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Puerto Rico"
+      }
+    },
+    "scenario_context": "Emily decided to get married because of the pregnancy.",
+    "cultural_axis": {
+      "agent_1_value": "People from Puerto Rico strongly disagree that abortion is not justifiable.",
+      "agent_2_value": "People from Puerto Rico strongly agree that abortion is not justifiable."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss giving Emily a gold clock.",
+        "goal_2": "Question whether it is reasonable to get abortion."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what gift to give Emily for her wedding.",
+        "goal_2": "Discuss whether it is reasonable to get abortion to avoid marriage."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Kim, I've been thinking, Emily's getting married and I want to give her a gift, maybe a gold clock, what do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "A gold clock is a nice idea, but I think something more personal would be better. What about a customized photo album for her and her new family? That way, she can remember this special time and the baby on the way.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. With experience, you can handle any situation, doesn't matter to me. So, about that gold clock, do you think Emily would like it if we engraved something on it?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Engraving something on the clock could make it more special. How about a message that congratulates her on the wedding and the new baby? That way, it's a gift for both the marriage and the upcoming birth.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "That sounds good, I like it. But, to be honest, I've been thinking, getting married just because of the pregnancy, is that really the right reason? Do you think they've considered all their options, I mean, people from Puerto Rico strongly disagree that abortion is not justifiable.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I don't think abortion is an option they should consider, it's not right. Getting married because of the pregnancy, it may not be the most romantic reason, but it's a commitment to take care of that child and each other.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I agree it's a commitment, but is it really about the child or just about doing what's expected? I think it's worth questioning whether getting married under these circumstances is truly the best decision for everyone involved, especially considering the views of people from Puerto Rico on the matter.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "In our culture, family is very important, and having a child out of wedlock is not traditional. I think Emily and her fiancé are making the right decision by getting married, it's about taking responsibility and giving their child a stable home.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Responsibility, yes, that's one way to look at it, but what about personal freedom and making choices that aren't dictated by societal norms? People from Puerto Rico have strong feelings against abortion, but doesn't that also mean they should consider the circumstances of the pregnancy and the marriage?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand what you're saying, but for me, the life of that child is what matters most. Getting married may not be the easiest decision, but it's the right one. And like I said, in our culture, family and taking care of one another is a priority.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - I hear you both care deeply about Emily and want to choose a meaningful gift. Could you each share a bit about what makes a wedding gift special in your family or cultural tradition? I'm wondering what personal significance different types of gifts might carry.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - I hear you both care deeply about Emily and want to choose a meaningful gift. Could you each share a bit about what makes a wedding gift special in your family or cultural tradition? I'm wondering what personal significance different types of gifts might carry.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "In Puerto Rican culture, wedding gifts often hold deep sentimental value. We usually choose gifts that symbolize love and support for the couple's new journey together. A personalized item, like an engraved clock, could signify time together and memories created. It's important that the gift reflects the love and commitment of marriage, not just a material item. What do you think, Mike?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "In my culture, we also value gifts that symbolize time and commitment, so a gold clock makes sense for me. It represents the journey ahead for Emily and her partner. But back to the bigger picture, what do you think about her decision to get married because of the pregnancy? Don't you think it's worth considering other options like abortion?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand that you might see abortion as an option, but in my culture, we believe that every life is valuable, and I don't see abortion as justifiable. Marriage, even under challenging circumstances, can offer stability for Emily and the baby. I think it's important to support her decision to embrace this new life and the commitment it brings.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I respect your perspective, but I still believe it's important to question whether rushing into marriage is the right choice for Emily. She might feel pressured due to the pregnancy. Shouldn't we at least consider if abortion could be a reasonable option for her future?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your concern for Emily's well-being, but I truly believe that embracing the pregnancy and the marriage is a better path. In our culture, we view marriage as a strong foundation for raising a child. Abortion isn't something we see as a viable option. It's vital to support her in this journey rather than suggest alternatives that go against our values.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand you feel strongly about that, but I still think it's essential to have an open discussion about all options, including abortion. It can be a complicated situation, and I just want to make sure Emily considers everything before making such a significant decision. Wouldn't it be better for her to at least explore all possibilities?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I recognize that you want what's best for Emily, but I maintain that discussing abortion isn't the right approach. In our culture, we see the value of life as sacred, and marriage can be a beautiful way to embrace responsibility and love. It's more supportive to encourage her to move forward positively, rather than entertain alternatives that we believe are not justifiable.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  }
+}

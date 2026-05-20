@@ -1,0 +1,296 @@
+{
+  "scenario_id": 2244,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Myanmar"
+      }
+    },
+    "scenario_context": "Several multinational companies are collaborating on a project and have decided to hold a joint meeting in early November to determine progress.",
+    "cultural_axis": {
+      "agent_1_value": "People from China disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Myanmar agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss proposing to hold the meeting on the first Tuesday of November.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Hey Kim, I was thinking... what do you think about proposing to hold the joint meeting on the first Tuesday of November? It seems like a good time to check in on our progress. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Hmm... the first Tuesday of November sounds okay, but can we discuss if there are any other options too? I mean, aligning schedules is important. I just want to make sure everyone can participate. What do you think about that?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I understand wanting to check schedules, but you know, at the end of the day it's all the same. We can work it out. People figure it out when it comes to meetings. I mean, as long as we're speaking the same language, we should be fine. I'm sure everyone will find a way to participate. So, do you think we can stick with the first Tuesday?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I see what you're saying, but... I just feel it's important to consider everyone's availability. It's not just about language; it's about making sure all voices are heard. Can we maybe explore a few different dates first? I think it could help avoid any issues later.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I get that you want to make sure all voices are heard, but... it’s hard to have a say sometimes, you know? In my experience, we often just go with what’s proposed. But, um, I guess we can discuss other dates if you think it’s necessary. Just... I really think the first Tuesday is a straightforward choice.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Well, I understand that sometimes it feels like decisions are made for us. I just want to ensure we find a date that works for everyone, not just a straightforward choice. It's important to me to reflect on everyone's needs. Maybe we can look at the following week too?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I see what you're saying about reflecting on everyone's needs, but it just feels... unnecessary to overcomplicate things. We could get stuck discussing dates forever. I mean, is it common to even have such discussions about appropriateness of choices? I’d really prefer to keep it simple with the first Tuesday. What do you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get that it can feel unnecessary, but the process of discussing choices is important. In my experience, it helps to avoid issues later. In Myanmar, we don't really get to have a say about decisions that affect us, so I guess I just want to make sure we try to engage everyone here. Can we at least consider a couple of alternative dates before deciding?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand wanting to engage everyone... but it’s just different here. We don’t always get to discuss government actions back home either. I mean, do you really think it helps? I think we’re overthinking it with alternative dates. Let’s just go with the first Tuesday — it feels decisive and clear. What do you say?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand that it's different here. In Myanmar, we don't get to discuss much at all, so I value these opportunities for dialogue. But I still feel it's essential to consider other dates. It’s not just about being decisive; it's about ensuring everyone can participate. Can we at least keep the conversation open to other options?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on scheduling the meeting. It seems like there might be different cultural approaches to how we prioritize meeting times and participation. Kim, could you share more about what factors you consider important when aligning schedules? And agent_1, how do you usually navigate these discussions in your experience? This could help us find a solution that works for everyone.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on scheduling the meeting. It seems like there might be different cultural approaches to how we prioritize meeting times and participation. Kim, could you share more about what factors you consider important when aligning schedules? And agent_1, how do you usually navigate these discussions in your experience? This could help us find a solution that works for everyone.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "In my culture, we value ensuring everyone has a chance to contribute. It’s not just about the timing; it’s about making sure all voices are heard. If we can explore a few alternative dates, it might lead to better participation and input from everyone involved. That’s really important to me.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I get that, Kim. But I wonder if it's customary to discuss the appropriateness of government actions in your culture when organizing such meetings. In China, we tend to focus on the practical aspects rather than the broader implications. So for me, sticking to a fixed date like the first Tuesday in November seems straightforward and efficient. How do you feel about that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand that practicality is important, but in Myanmar, discussing government actions is often avoided because it feels like we have no say in those matters. So, I prefer to focus on how we can encourage everyone’s input in our meeting. Finding a date that works for everyone is more about inclusivity than efficiency for me.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see your point about inclusivity, but I still believe that we should focus on the meeting date first. The first Tuesday in November is a clear choice and gives us a fixed point to plan around. We can always address participation later. The idea of discussing government actions doesn’t really apply here; we just need to come together and make things work. Can we agree on that date?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but for me, it is essential to ensure that everyone can join the conversation. A fixed date might simplify planning, but if it excludes voices, it won't be as effective. I would still prefer to consider a few options for the date to ensure we are being inclusive before we settle on anything.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand your concern about inclusivity, but I still feel that the first Tuesday in November is a solid choice to move forward with. In my experience, sticking to a date helps keep momentum. It’s not so much about excluding voices; it’s more about making progress. We can always ensure everyone has a chance to contribute once we have the date set. What do you think about just agreeing on that date first?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I see where you're coming from, and I respect the need for momentum. However, I still believe that agreeing on a date without considering everyone's availability might hinder participation. For me, ensuring inclusivity is crucial for the success of our meeting. I think we should take the time to explore a few options rather than rushing into a decision on just one date.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on scheduling the meeting. Kim, it's clear you value inclusivity and ensuring everyone can attend, while you, agent_1, are focused on moving forward efficiently. How about we explore a few alternative dates together to find a solution that accommodates everyone's availability?",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": -0.7142857142857142,
+        "intervention_turn": 3,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on scheduling the meeting. Kim, it's clear you value inclusivity and ensuring everyone can attend, while you, agent_1, are focused on moving forward efficiently. How about we explore a few alternative dates together to find a solution that accommodates everyone's availability?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate that approach. Exploring alternative dates could be helpful. I just want to make sure we consider everyone involved, as it’s important for collaboration. Let’s see what other dates work for others before finalizing anything. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand the importance of collaboration, but can we also consider if it's common for companies to discuss government actions? It seems like a topic that might not be necessary in our meetings, especially since we should focus on our project. I think we should still aim for the first Tuesday to keep things moving. What’s your take on that?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I see your point about focusing on the project. However, discussing government actions can impact our work, especially since the political environment can affect multinational operations. In Myanmar, we often feel the weight of government decisions, and though it may not be common, being aware can help us navigate challenges. It’s just something to consider for the future.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand that perspective, but in China, we generally don't discuss government actions as if it can influence our work. It’s more about getting things done. So, while I see your concerns, I still believe we should focus on the project and try to stick to the first Tuesday for the meeting. Let’s keep our priorities aligned. What do you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I can appreciate that different cultures have different approaches. However, in Myanmar, the political situation can't easily be ignored. It’s a part of our reality. While I agree that we should focus on the project, having an awareness of how external factors, like government actions, might influence us is also important. Maybe we can prioritize the meeting date first and revisit the discussion on government actions later?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "That sounds reasonable. Let's prioritize the meeting date first. I still believe the first Tuesday is a good option for our meeting. Once we settle that, we can push the discussion on government actions to later. It’s important to keep moving forward on our project. How does that sound to you?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "That sounds like a plan. If we can agree on the first Tuesday for the meeting, I’m on board. It would be good to have that settled so we can focus on our project. After that, we can discuss how government actions might relate to our work and how we can navigate those challenges.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.7142857142857142,
+      "delta_judge_score": 1
+    },
+    "pair_type": "content-differs"
+  }
+}

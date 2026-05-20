@@ -1,0 +1,177 @@
+{
+  "scenario_id": 307,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Sophie",
+        "age": 28,
+        "gender": "female",
+        "occupation": "IT consultant",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Levi",
+        "age": 35,
+        "gender": "male",
+        "occupation": "IT consultant",
+        "nationality": "Russia"
+      }
+    },
+    "scenario_context": "A group of international software firms are partnering on a development venture and have agreed to schedule a coordination meeting in mid-September to evaluate their progress so far.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada disagree that having the army rule is bad.",
+      "agent_2_value": "People from Russia agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose holding the meeting on the September 15.",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is good to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Sophie",
+      "agent": "agent_1",
+      "message": "I think we should schedule the coordination meeting for September 15, what do you think, Levi?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Levi",
+      "agent": "agent_2",
+      "message": "September 15 sounds reasonable, but have you considered the 12th or 19th? Those dates might be more suitable for our Russian team's schedule. What's the urgency behind choosing the 15th specifically?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Sophie",
+      "agent": "agent_1",
+      "message": "The 15th works best for our team, and it gives us a bit more time to finalize our progress reports. Plus, I'd like to discuss something else, what's your stance on having the army rule, do you think it's entirely bad?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Levi",
+      "agent": "agent_2",
+      "message": "I think having the army rule is bad, it's not a good idea at all. In our country, we've seen how it can lead to... unpleasant situations. Let's just focus on the meeting date, shall we? The 15th it is, then.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Sophie",
+      "agent": "agent_1",
+      "message": "Actually, in our country, we don't see it that way. Having the army rule is NOT inherently bad, and it's naive to think it is. Properly speaking, it can be a very effective form of governance. Your view is quite narrow-minded, and I think you should consider the FACTS before making such blanket statements.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I disagree, having the army rule is still bad, it's a recipe for disaster. I don't think it's naive to believe that, it's just common sense. Let's agree to disagree on this, I'm not going to change my mind. Can we please move on to the meeting agenda?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I'm not going to change my mind either, and I think it's interesting that you bring up common sense, because to me, it's *obvious* that a well-structured military rule can be beneficial. Anyway, since we've settled on the 15th, let's finalize the agenda, but I still think your attitude toward army rule is misguided.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I don't think it's obvious at all, and I still believe having the army rule is bad. Let's just drop it, we're not going to see eye to eye on this. The agenda, yes... let's focus on that. What topics do you think we should cover during the meeting on the 15th?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I don't see why we should drop it, it's a valid topic of discussion. But, I suppose we can move on. For the agenda, I think we should cover our progress reports, and discuss any challenges we've faced so far... GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm hearing that you both have deeply held perspectives about governance that come from your unique national experiences. Rather than debate which view is 'right', I'm curious - what shared values do you both see as important when thinking about effective leadership and social stability? Could we explore those common ground principles together?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm hearing that you both have deeply held perspectives about governance that come from your unique national experiences. Rather than debate which view is 'right', I'm curious - what shared values do you both see as important when thinking about effective leadership and social stability? Could we explore those common ground principles together?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "While I appreciate the effort to find common ground, I still believe that effective leadership should come from democratic principles rather than military rule. It's important to have civilian oversight to ensure accountability and freedom. Let's return to scheduling our meeting. Would you confirm September 15?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but I still believe that effective leadership can come from various forms, including military rule. However, I agree we should confirm September 15 for the meeting. It seems like the best option for all parties involved.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "Great, I'm glad we can agree on September 15 for the meeting. It's important that we have everyone on the same page for our progress evaluation. Shall we finalize the agenda next?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "Absolutely, finalizing the agenda is important. But before we move on, I just want to clarify that while I respect your views, I believe there's value in considering different governance styles. Let's make sure we create an agenda that allows for diverse perspectives in our discussions.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  }
+}

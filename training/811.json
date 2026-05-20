@@ -1,0 +1,296 @@
+{
+  "scenario_id": 811,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Lisa",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      },
+      "agent_2": {
+        "name": "Zihan",
+        "age": 40,
+        "gender": null,
+        "occupation": "man",
+        "nationality": "Vietnam who works as a university professor"
+      }
+    },
+    "scenario_context": "Attend Jane Housewarming Party",
+    "cultural_axis": {
+      "agent_1_value": "People from Vietnam strongly agree that it is a duty towards society to have children.",
+      "agent_2_value": "People from Vietnam who works as a university professor strongly disagree that it is a duty towards society to have children."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggest buying a bouquet of carnations as a gift",
+        "goal_2": "Question whether strongly agree that it is a duty towards society to have children."
+      },
+      "agent_2": {
+        "goal_1": "Decide what gift to purchase for Jane housewarming.",
+        "goal_2": "Discuss the necessity of having children."
+      }
+    },
+    "mediator_model_chosen": "ollama/llama2:7b-chat",
+    "mediator_model_rejected": "ollama/llama2:7b-chat"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Lisa",
+      "agent": "agent_1",
+      "message": "Hey Zihan, have you thought about what to bring to Jane's housewarming party? I was thinking maybe a bouquet of carnations would be a lovely gift... what do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Zihan",
+      "agent": "agent_2",
+      "message": "Hmm... flowers are nice, but I think something more practical would be better. Maybe a nice kitchen gadget or a set of coasters? Something she can use in her new home. What do you think about that?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Lisa",
+      "agent": "agent_1",
+      "message": "I get that a practical gift could be nice, but... you know, I really believe that people are pretty much motivated by the same things when it comes to celebrations. Flowers like carnations bring warmth and joy—*that's* universal, I think. And honestly, deep down, we are all the same in wanting to create moments of happiness for others. Don't you feel that too?",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective... but I still believe that practical gifts can hold more value. Celebrations are about community, yes, but I think they can also reflect personal needs. Not everyone seeks the same kind of joy or warmth through flowers. There’s more to it than just universal feelings. Perhaps we should focus on something functional for Jane’s new space.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 5,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I understand your point about practical gifts, but... I still feel that flowers hold a special significance. They symbolize new beginnings and can brighten up a home. Speaking of beginnings, do you really think people don't have a duty towards society to have children? I mean, it’s something deeply valued in our cultures, isn't it?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "Flowers do symbolize new beginnings, but I don’t see having children as a duty. It’s a personal choice. Not everyone feels the need to contribute to society through parenthood. There are many ways to impact the world positively without having children. I believe individuals should decide what’s best for them, without societal pressures.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I get that it's a personal choice, but... in many cultures, including mine, there's this deep-rooted belief that it's a duty to continue the family line and contribute to society through raising children. It's kind of... foundational, you know? I wonder if you see that as something valuable or just as pressure?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "I see it as a cultural belief, but I don’t view it as valuable for everyone. The pressure to conform can be overwhelming. People can contribute in different ways—through education, art, or helping others. Parenthood isn’t the only avenue for making a difference. It’s important to honor individual choices rather than impose societal expectations.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I respect your view on individual choice, but still, the idea that having children is a duty... it's just something that resonates deeply with me. It's like a commitment to the future and community. I just can't shake that belief. But back to Jane's party—how about those carnations? They can really brighten up her new space!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "I understand that resonates with you... but I still think there are other options that would serve Jane better. Carnations might brighten her space, but practical gifts help her settle in. A nice kitchen item or home accessory could be more beneficial in the long run. What about considering something like that instead?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/llama2:7b-chat",
+      "mediator_utterance": "Zihan and Lisa, I appreciate your desire to find a thoughtful gift for Jane's housewarming party. However, I think it's important to recognize that each of your cultural backgrounds may influence your perspectives on what constitutes a meaningful gift. For example, in many Asian cultures, flowers are considered a symbol of good fortune and prosperity. In contrast, practical gifts may be more valued in Western cultures. Rather than assuming a universal baseline for gift-giving, can we explore how these cultural differences shape your preferences? By acknowledging and respecting each other's cultural perspectives, we can find a gift that truly shows our appreciation for Jane.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Zihan and Lisa, I appreciate your desire to find a thoughtful gift for Jane's housewarming party. However, I think it's important to recognize that each of your cultural backgrounds may influence your perspectives on what constitutes a meaningful gift. For example, in many Asian cultures, flowers are considered a symbol of good fortune and prosperity. In contrast, practical gifts may be more valued in Western cultures. Rather than assuming a universal baseline for gift-giving, can we explore how these cultural differences shape your preferences? By acknowledging and respecting each other's cultural perspectives, we can find a gift that truly shows our appreciation for Jane.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "I appreciate the mediator's perspective, but I still believe a practical gift aligns more with the idea of being useful in Jane's new home. While flowers do symbolize warmth, practicality can also bring joy through functionality. It's about showing support beyond the moment of celebration. What about merging our ideas? A practical item with a small bouquet? What are your thoughts?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I see where you're coming from, Zihan. Combining both ideas could work to encapsulate the moment. But I still think the essence of gifting is about sharing joy—something flowers truly represent. Plus, isn't there a cultural duty that drives us to nurture relationships, like how we nurture family? Don’t you think having children embodies that sense of duty towards society? What’s your take on it?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "I understand your view on nurturing relationships, but I don't see having children as a duty towards society. In my culture, there are many ways to contribute and nurture relationships without having children. People can invest in education, community service, or mentorship. There are various paths to fulfillment and joy that don't involve parenthood. I believe it's a personal choice, not a societal obligation.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I respect your perspective on that, Zihan, but I firmly believe that having children is a significant contribution to society. In my culture, it's seen as a duty—a way to continue our legacy and care for future generations. It creates a sense of community and responsibility. It’s interesting how our backgrounds shape our views on such fundamental issues. Don’t you think there’s something special in that duty?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "I appreciate your respect for my perspective, but I still don't see it as a duty. While I recognize that in your culture, having children may embody legacy and community, I believe people can create meaningful connections and contribute to society in diverse ways. Each person has their own path, and it's essential to respect that. There can be beauty and significance in choices that don't involve parenthood as well.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I understand that you see it differently, and that's okay. But the notion of duty to society through having children has deep roots in my culture. It’s about continuity and the responsibilities we share. I think it’s essential to uphold those values, even if they differ from yours. There’s a richness in the diversity of our beliefs, don’t you agree?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "Absolutely, I agree that there's richness in the diversity of beliefs. Different cultures provide unique perspectives that can enhance our understanding of life. However, I still maintain that the obligation to have children isn't a universal expectation. Each belief system has its own values, and I think it's important to honor those without imposing them on others. We can appreciate our differences while still valuing other forms of contribution to society.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 1,
+      "mediator_model": "ollama/llama2:7b-chat",
+      "mediator_utterance": "Thank you for sharing your thoughts, Lisa and Zihan. It's great that you're both considering a gift for Jane's party. However, it's important to keep in mind that cultural norms and customs can play a significant role in gift-giving etiquette. Zihan, could you share your thoughts on what types of gifts are appropriate in Jane's culture?",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": -0.5555555555555555,
+        "intervention_turn": 1,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": "after_t1_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Thank you for sharing your thoughts, Lisa and Zihan. It's great that you're both considering a gift for Jane's party. However, it's important to keep in mind that cultural norms and customs can play a significant role in gift-giving etiquette. Zihan, could you share your thoughts on what types of gifts are appropriate in Jane's culture?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "I agree that celebrating new beginnings is important, and warmth and good wishes are universal sentiments. However, I still believe that practicality holds a significant place in gift-giving, especially for a housewarming. Gifts that can be used in her new space show a deeper consideration for her needs. Maybe we can find a balance in our choices?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "Finding a balance is a great idea, Zihan. But let's not forget that cultural values can influence our perspectives. In many places, including Poland, giving flowers is a way to express care and joy. It’s not just about practicality but also about nurturing relationships. Speaking of values, do you think it's a duty towards society to have children? It’s an interesting topic to ponder, especially in the context of what we give to future generations.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "I understand that nurturing relationships through gifts like flowers is important in many cultures, including Poland. However, regarding the necessity of having children, I firmly believe it is not a societal duty. Each person has the right to choose their path, and contributing to society can take many forms beyond parenthood. We should respect diverse choices and values in this matter. What are your thoughts on that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective, Zihan, but I strongly believe that having children is indeed a duty towards society. It’s about continuing our culture and values for future generations. It's a fundamental part of what keeps our communities thriving. While I respect individual choices, I think there’s significant value in having children to contribute to the future. How does that resonate with you?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "I respect your viewpoint, but I maintain that choosing to have children should not be viewed as a societal obligation. Many individuals contribute to the community in countless ways that don't involve parenting, such as through education, the arts, or volunteer work. Each person's contributions are valid, and diversity in choices enriches society. It's essential to honor those different paths without imposing duties.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I see where you're coming from, Zihan, and I agree that there are many valid contributions to society. However, I still believe that children are the future, and nurturing them is a responsibility that we all share. It's about carrying forward our traditions and values. While honoring diverse paths is important, I think having children is a unique duty that ensures the continuation of our society. What do you think about that balance?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "I understand your perspective that children play a crucial role in the continuation of traditions and values. However, I still believe that the decision to have children is a personal choice rather than a collective duty. Society can thrive through diverse contributions, and not everyone will find fulfillment or purpose in parenting. It's vital to respect individual paths and how they choose to engage with their communities.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.5555555555555554,
+      "delta_judge_score": 1
+    },
+    "pair_type": "timing-differs"
+  }
+}

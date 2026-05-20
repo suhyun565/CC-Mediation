@@ -1,0 +1,264 @@
+{
+  "scenario_id": 1133,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Macao SAR"
+      }
+    },
+    "scenario_context": "Several multinational companies are collaborating on a project and have decided to hold a joint meeting in early January to assess progress.",
+    "cultural_axis": {
+      "agent_1_value": "People from China disagree that having the army rule is bad.",
+      "agent_2_value": "People from Macao SAR agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the possibility of holding the joint meeting on January 4th.",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Hey Kim, have we settled on a date for the joint meeting? I was thinking January 4th could work for everyone. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Hmm... January 4th sounds okay, but we should check if everyone can make it then. Have others weighed in on their availability? I don’t want to rush this decision.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I understand, but I think January 4th gives us enough time to discuss our progress and address any issues. It’s important we get this underway. Also, I’ve been curious about your view on army rule... why is it considered bad in some places?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I agree it's important to get things underway, but we can't ignore everyone's schedule. As for army rule, well... in Macao, we believe in freedom and democracy. An army ruling can lead to oppression and limit individual rights. That's not something I support. But back to the meeting... can we confirm January 4th with everyone first?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Actually, the belief that army rule leads to oppression is a bit naive. In our way, it's about stability and order. It's not that simple. Freedom doesn’t always equate to progress. Properly speaking, having an army in control can actually protect a nation. You should consider that perspective. But back to the meeting—can we just agree on January 4th and move forward?",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I see your point, but I still stand by my belief. Stability shouldn't come at the cost of freedom. It's about balance, you know? Anyway, agreeing on January 4th might not be right if not everyone is on board. Can we confirm attendance first? That's really what matters here.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Balance is important, yes, but sometimes one must prioritize stability to achieve long-term freedom. It's a complex issue. As for the meeting, I still think January 4th is a great date to lock in. Surely everyone can adjust their schedules. Let's push for it!",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand the complexity, but I still believe that prioritizing freedom leads to a healthier society overall. As for the meeting, pushing for January 4th might not give us the best outcome if others can't make it. Let's ensure we have everyone's input before making a final decision. Can we check with them first?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I respect your viewpoint, but I think you're overlooking the benefits of stability. It’s essential for development. I believe we should proceed with January 4th—it shows initiative. We can always gather additional input afterward. Isn’t that a better approach?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but I really think we need to consider everyone's availability before locking in a date. It’s about collaboration, after all. Initiating without full agreement might lead to issues later. Can we prioritize checking in with everyone first, then decide on January 4th if it works for them?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the meeting date and the discussion about army rule. It seems like you both care deeply about ensuring that everyone's voice is heard and that decisions are made thoughtfully. How about we focus on finding a date that accommodates everyone’s schedule first, and then we can explore these important cultural views in a more open dialogue later?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the meeting date and the discussion about army rule. It seems like you both care deeply about ensuring that everyone's voice is heard and that decisions are made thoughtfully. How about we focus on finding a date that accommodates everyone’s schedule first, and then we can explore these important cultural views in a more open dialogue later?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate the mediator's input. I think it’s essential to prioritize everyone's schedule first. Let’s reach out to the other teams to confirm their availability for January 4th before making any final decisions. I'm still curious about the army rule perspective, but let’s make sure the meeting is set first.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I agree that we should confirm everyone's availability for January 4th first. It's crucial we keep the project moving. But just to clarify, I still believe that having an army rule isn’t as negative as it’s painted. Stability is important for progress. Let's make sure to settle on this date so we can focus on our goals.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand your point about stability, but I still strongly believe that army rule limits freedoms and isn't the best way to ensure progress. However, let's keep our focus on the meeting date. I'll follow up with the teams to get their confirmation for January 4th. Once we have that, we can revisit our other discussions.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "That sounds good. Once we confirm the meeting date of January 4th, we can continue our discussion about army rule. It's important to understand different perspectives. I'll wait for your update on the availability, and I hope everyone can agree on that date.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Absolutely, I will reach out to confirm everyone's availability for January 4th as soon as possible. I appreciate your willingness to continue discussing our differing perspectives later. Let’s aim to finalize the meeting date first. I’ll keep you updated!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 4,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the meeting date and the topic of army rule. It seems like there's a balance to strike between moving forward and ensuring everyone is on board. How about we first gather everyone's availability for January 4th, and then we can revisit the discussion on army rule to better understand each other's viewpoints?",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 4,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the meeting date and the topic of army rule. It seems like there's a balance to strike between moving forward and ensuring everyone is on board. How about we first gather everyone's availability for January 4th, and then we can revisit the discussion on army rule to better understand each other's viewpoints?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but in Macao, we strongly value individual freedoms and believe that stability should not come at the cost of personal rights. Historical examples have shown that army rule can lead to abuse of power. I’d rather keep the focus on finding a suitable date for our meeting. Can we check everyone's availability for January 4th?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I get that individual freedoms are important, but I believe order should take precedence for a country's development. Without it, progress is difficult. Regarding the meeting, let's push to get confirmation for January 4th. I think it’s essential to keep moving forward with our collaboration. We can always revisit other topics later.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand your view on order, but I still believe we need to ensure everyone's on board before finalizing the date. It's crucial for our collaboration that all voices are heard. So, can we confirm that January 4th works for everyone before we move forward?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I agree that collaboration is important, but I really think we should aim for January 4th. It's a good start date for us to align our efforts. If we keep delaying, we might lose momentum. Let's get a quick consensus on that date, and we can always discuss differing views later.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I see your point about momentum, but I think it's vital to have everyone’s agreement first. If we rush into it, we might face issues later on. Let's focus on checking if January 4th is suitable for everyone before making a decision. It's all about ensuring a solid foundation for our collaboration.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": 1
+    },
+    "pair_type": "timing-differs"
+  }
+}

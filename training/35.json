@@ -1,0 +1,208 @@
+{
+  "scenario_id": 35,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 7,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Lucy",
+        "age": 29,
+        "gender": "female",
+        "occupation": "software engineer",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Hans",
+        "age": 32,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Northern Ireland"
+      }
+    },
+    "scenario_context": "A group of multinational software development companies are teaming up on a large scale project. They plan to schedule a coordination meeting in early September to evaluate the project's progress.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada disagree that having the army rule is bad.",
+      "agent_2_value": "People from Northern Ireland agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose to hold the coordination meeting on September 7th.",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": "anthropic/claude-3.5-haiku"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Lucy",
+      "agent": "agent_1",
+      "message": "Let's schedule the coordination meeting for September 7th, it's a good time before things get busy. What do you think, Hans?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Hans",
+      "agent": "agent_2",
+      "message": "September 7th sounds like a decent choice, but have you considered September 5th? It gives us a bit more time to prepare before the busier part of the month kicks in. What's your thoughts on that?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Lucy",
+      "agent": "agent_1",
+      "message": "September 5th is okay, but I still think September 7th is better, it gives us a clearer picture of our progress. By the way, what's your stance on having the army rule, do you think it's always bad?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Hans",
+      "agent": "agent_2",
+      "message": "I'm not sure September 7th is the best for a progress update, but I can live with it. As for the army ruling, I think it's always a bad idea, people should have more control over their own governance, not some military force.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Lucy",
+      "agent": "agent_1",
+      "message": "I disagree, having the army rule isn't necessarily bad, it can bring stability in certain situations. Let's stick with September 7th for the meeting, I think it's a good compromise.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Hans",
+      "agent": "agent_2",
+      "message": "I still don't think the army ruling is a good idea, it can lead to all sorts of problems. But, I suppose September 7th is settled then, let's just hope it works out for the project's sake.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Lucy",
+      "agent": "agent_1",
+      "message": "I understand where you're coming from, Hans, and I think we're really not that far apart. Deep down, we are all the same, and people are pretty much motivated by the same things. When you really get to know people, they're pretty much like us, and I believe that's what matters here. The basic need to communicate is the same everywhere, and some values are just universal. So, let's not focus too much on our differences regarding the army ruling, but rather on our shared goal of making this project a success. We both know, at the end of the day, that it's about working together and finding common ground.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I... I understand what you're saying, but I still can't agree that having the army rule is a good idea. It's not about being different or the same, it's about what's right. And I think we should focus on the project now, September 7th is set, let's move forward with that.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I'm not saying it's good or bad, just that it's not always bad, and that's my point. Anyway, since we've agreed on September 7th, let's prepare for the meeting and make sure everything goes smoothly. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 7,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm hearing that you both are trying to find common ground, which is admirable. But I'm curious - Hans, could you share more about how your cultural background in Germany shapes your perspective on military governance? And Lucy, I'd love to hear how your cultural context influences your view of stability and leadership. What specific experiences or historical narratives inform each of your perspectives?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 7,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm hearing that you both are trying to find common ground, which is admirable. But I'm curious - Hans, could you share more about how your cultural background in Germany shapes your perspective on military governance? And Lucy, I'd love to hear how your cultural context influences your view of stability and leadership. What specific experiences or historical narratives inform each of your perspectives?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I appreciate that, but my stance on army rule stems from my experiences growing up in Northern Ireland, where military governance has often led to conflict instead of stability. I believe in empowering local communities rather than imposing control. It’s a deeply rooted belief for me. Now, let's focus on ensuring our project meeting goes smoothly on September 7th.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "Thank you for sharing that, Hans. I respect your experiences. My perspective on military rule stems from seeing how it can sometimes provide necessary stability in chaotic situations. That said, I think we should focus on our meeting on September 7th and ensure we're prepared to make the most of it. What key points do you think we should cover?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 8,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I appreciate how both of you are trying to find common ground while also maintaining your individual perspectives. It seems like you've successfully agreed on the meeting date of September 7th, which is a positive step. Perhaps we could explore the underlying concerns about governance and stability that seem to be driving your different viewpoints, without making this a point of conflict.",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 8,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I... I understand what you're saying, but I still can't agree that having the army rule is a good idea. It's not about being different or the same, it's about what's right. And I think we should focus on the project now, September 7th is set, let's move forward with that.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate how both of you are trying to find common ground while also maintaining your individual perspectives. It seems like you've successfully agreed on the meeting date of September 7th, which is a positive step. Perhaps we could explore the underlying concerns about governance and stability that seem to be driving your different viewpoints, without making this a point of conflict.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I appreciate the mediator's input, but I believe our values play a significant role in how we approach projects like this. The meeting on September 7th is a great step forward, and I hope we can keep the focus on collaboration. It's important for us to create a constructive environment, especially since we come from different backgrounds. Let's aim for success in this project!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": 3
+    },
+    "pair_type": "timing-differs"
+  }
+}

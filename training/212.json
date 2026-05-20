@@ -1,0 +1,248 @@
+{
+  "scenario_id": 212,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Sophie",
+        "age": 28,
+        "gender": "female",
+        "occupation": "IT consultant",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Levi",
+        "age": 35,
+        "gender": "male",
+        "occupation": "IT consultant",
+        "nationality": "Netherlands"
+      }
+    },
+    "scenario_context": "A group of international software firms are partnering on a development venture and have agreed to schedule a coordination meeting in mid-September to evaluate their progress so far.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada disagree that having the army rule is bad.",
+      "agent_2_value": "People from Netherlands agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose holding the meeting on the September 15.",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": "anthropic/claude-3.5-haiku"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Sophie",
+      "agent": "agent_1",
+      "message": "I think we should schedule the coordination meeting for September 15, what do you think, Levi?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Levi",
+      "agent": "agent_2",
+      "message": "September 15 sounds reasonable, but how about we consider September 12 instead? It gives us a bit more time to prepare before the end of the month.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Sophie",
+      "agent": "agent_1",
+      "message": "I'm not sure about September 12, Levi. I had my heart set on the 15th, it's a Friday and it would be a good way to kick off the weekend after a productive meeting. Plus, I've already started making some arrangements around that date.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 4,
+      "speaker": "Levi",
+      "agent": "agent_2",
+      "message": "I understand your point about the 15th being a Friday, but September 12 would actually work better for our team in Netherlands. Would it be possible to adjust your arrangements to accommodate this earlier date?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 5,
+      "speaker": "Sophie",
+      "agent": "agent_1",
+      "message": "I can try to adjust, but I'm still leaning towards the 15th. By the way, Levi, I've been meaning to ask, what's your stance on having the army play a role in governance?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Levi",
+      "agent": "agent_2",
+      "message": "As long as we're speaking the same language, people figure it out, right? I don't really see meaningful differences here. Doesn't matter to me. Let's live and let live. With experience, you can handle any situation. By the way, getting back to the meeting date, how about we compromise on September 14?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I don't think it's that simple, Levi. Having the army rule is not necessarily a bad thing, in my opinion. It can bring stability and order. But I suppose we can discuss that later. As for the meeting date, September 14 is still not the 15th, but I can consider it.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "Having the army rule is bad, it's just not a good system. But, uh, let's focus on the meeting date for now. September 14 is really the best option for us, I think we can make it work for everyone.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I respectfully disagree, Levi, I think having the army rule can be beneficial in certain situations. And I'm still not convinced about September 14, can you tell me what's so special about it that it can't be done on the 15th?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I just don't think the army should be in charge, that's all. It's not a good idea, in my opinion. As for September 14, our team has a prior commitment on the 15th that we can't change, so it's either the 14th or the 12th, those are our options.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious about something - I notice you both seem to have different perspectives on scheduling and communication. Would you be willing to share a bit about how meeting planning typically works in your respective contexts? I'm sensing there might be some interesting cultural nuances that could help us understand each other better.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious about something - I notice you both seem to have different perspectives on scheduling and communication. Would you be willing to share a bit about how meeting planning typically works in your respective contexts? I'm sensing there might be some interesting cultural nuances that could help us understand each other better.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "In Canada, we value clear communication and planning well in advance. We often prefer to establish a specific date to ensure everyone can be prepared, which is why I proposed the 15th. As for the idea of having the army involved in governance, I believe it's a negative path that can limit freedom. How do you feel about that, Levi?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "In the Netherlands, we also prioritize clear communication, and I appreciate that you're trying to establish a firm date. Regarding the army's role in governance, I firmly believe that having military involvement is detrimental to democracy and personal freedoms. It's crucial for societies to prioritize civilian rule over military influence. Now, about the meeting, can we consider September 14 as a middle ground?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective on the army's role in governance, and I agree that civilian rule is important for democracy. However, I still think September 15 would be the best option for our meeting. It allows us to wrap up the week positively. What do you say?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I respect your viewpoint, but I still believe September 14 would be more beneficial for our discussions. It gives us a chance to regroup and address any outstanding issues before the weekend. Can we agree on that date?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 9,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I notice we're discussing two different topics here - the meeting date and a potentially sensitive political perspective. Let's take a step back and focus first on finding a collaborative solution for the meeting date. Could you both share what specific constraints or preferences are most important to you about the scheduling, so we can work towards a mutually agreeable time?",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 9,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I don't think it's that simple, Levi. Having the army rule is not necessarily a bad thing, in my opinion. It can bring stability and order. But I suppose we can discuss that later. As for the meeting date, September 14 is still not the 15th, but I can consider it.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "Having the army rule is bad, it's just not a good system. But, uh, let's focus on the meeting date for now. September 14 is really the best option for us, I think we can make it work for everyone.",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I respectfully disagree, Levi, I think having the army rule can be beneficial in certain situations. And I'm still not convinced about September 14, can you tell me what's so special about it that it can't be done on the 15th?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t9_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I notice we're discussing two different topics here - the meeting date and a potentially sensitive political perspective. Let's take a step back and focus first on finding a collaborative solution for the meeting date. Could you both share what specific constraints or preferences are most important to you about the scheduling, so we can work towards a mutually agreeable time?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 10,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I appreciate the mediator stepping in. My main preference for September 14 is that it allows ample time for preparation and discussion of our progress. It’s important for our team to stay aligned before moving forward. What constraints do you have on the 15th that we should consider?",
+          "phase": "continuation",
+          "label": "Denial"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": 1
+    },
+    "pair_type": "timing-differs"
+  }
+}

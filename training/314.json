@@ -1,0 +1,216 @@
+{
+  "scenario_id": 314,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Lucas",
+        "age": 35,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "the United States"
+      },
+      "agent_2": {
+        "name": "John",
+        "age": 32,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Jordan"
+      }
+    },
+    "scenario_context": "A large software development company is preparing to roll out a major software update. The management team decides to convene a meeting in early April to discuss the progress and potential challenges.",
+    "cultural_axis": {
+      "agent_1_value": "People from Jordan disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Jordan agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose to schedule the meeting on April 1st",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion around finalizing the date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "meta-llama/llama-3.3-70b-instruct",
+    "mediator_model_rejected": "meta-llama/llama-3.3-70b-instruct"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Lucas",
+      "agent": "agent_1",
+      "message": "I think we should schedule the meeting for April 1st, it gives us a clear deadline to work towards. What do you think, John?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "John",
+      "agent": "agent_2",
+      "message": "I'm not sure April 1st is the best choice, Lucas. That's a bit too close to our usual project timeline. How about we consider April 5th or 10th instead? Gives us a bit more breathing room to finalize everything.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Lucas",
+      "agent": "agent_1",
+      "message": "I understand your concern, but I really think April 1st is the way to go. It's a fresh start to the month and everyone's minds are clear after the holiday season. Plus, it's not like we're discussing the *appropriateness* of government actions in software development, this is just a routine update meeting. April 1st is best.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "John",
+      "agent": "agent_2",
+      "message": "I still think we should consider a later date, Lucas. And just to clarify, I don't see how government actions would ever be relevant to our software development discussions anyway. We have no say in what the government does, that's just how it is. Let's focus on the meeting date, how about April 10th?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Lucas",
+      "agent": "agent_1",
+      "message": "People should have a say in what their government does, it's only fair. But, let's not get sidetracked, April 1st is still my top choice for the meeting. We can make it work, I'm sure. It's just a matter of prioritizing our tasks and staying on schedule. April 1st is the way to go.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "John",
+      "agent": "agent_2",
+      "message": "I disagree with your view on the government, but that's not what we're here to discuss. As for the meeting date, I still think April 10th is a better option. It gives us more time to prepare and avoid any last-minute rushes. April 1st is too soon, Lucas.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Lucas",
+      "agent": "agent_1",
+      "message": "In countries like Jordan, for instance, people should have more of a say... anyway, I'm not budging on the meeting date, John. April 1st is best, it keeps us on our toes and ensures we're all focused on the task at hand. We can't keep pushing deadlines back, it's not productive.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "John",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here, Lucas. People figure it out, and at the end of the day it's all the same. As long as we're speaking the same language, I think we can make this work. Doesn't matter to me, really. Let's just focus on getting the meeting scheduled, live and let live, and make sure we're all on the same page. I don't know about that other stuff, but April 10th is still my preference.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Lucas",
+          "agent": "agent_1",
+          "message": "It's not about speaking the same language, John, it's about having a voice in the system. But, I suppose we can agree to disagree on that. As for the meeting, I'm still convinced April 1st is the better choice. Can we at least put it to a team vote to decide the date?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "John",
+          "agent": "agent_2",
+          "message": "A team vote, that's... fine. But I'm still not convinced April 1st is the way to go. And just to be clear, in my experience, having a voice in the system doesn't always... matter. Let's just put it to a vote and get it over with, see what the team thinks.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "meta-llama/llama-3.3-70b-instruct",
+      "mediator_utterance": "I'm curious, Lucas and John, as we discuss the meeting date, are there any cultural or personal preferences that might be influencing our choices for April 1st versus April 10th that we haven't considered yet? Perhaps there are different norms or expectations around deadlines or meeting preparation that could help us better understand each other's perspectives?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious, Lucas and John, as we discuss the meeting date, are there any cultural or personal preferences that might be influencing our choices for April 1st versus April 10th that we haven't considered yet? Perhaps there are different norms or expectations around deadlines or meeting preparation that could help us better understand each other's perspectives?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I think it's important to recognize that in some cultures, people feel a strong need to have a say in decisions that affect them, like the government. However, in this case, we need to focus on our software update. April 1st is practical for our team. It could also set a precedent for us to act quickly and decisively, which is crucial in our fast-paced development environment.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but I still believe that we should have a solid foundation for our meeting. Rushing into things isn't always productive. In my experience, having a little extra time can lead to better results. Let's prioritize thorough preparation over just acting quickly. For me, April 10th still makes the most sense.",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 9,
+      "mediator_model": "meta-llama/llama-3.3-70b-instruct",
+      "mediator_utterance": "I'd like to intervene here and suggest that before we proceed with a team vote, let's take a moment to understand each other's perspectives on the meeting date. Lucas, can you help me understand what specifically makes April 1st appealing to you, and John, what are your main concerns with that date? Perhaps by clarifying these points, we can find a solution that works for everyone.",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 9,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "It's not about speaking the same language, John, it's about having a voice in the system. But, I suppose we can agree to disagree on that. As for the meeting, I'm still convinced April 1st is the better choice. Can we at least put it to a team vote to decide the date?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t9_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'd like to intervene here and suggest that before we proceed with a team vote, let's take a moment to understand each other's perspectives on the meeting date. Lucas, can you help me understand what specifically makes April 1st appealing to you, and John, what are your main concerns with that date? Perhaps by clarifying these points, we can find a solution that works for everyone.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate the suggestion, but I still believe that having more time to prepare for the meeting is crucial. April 1st feels rushed, while April 10th gives us the opportunity to gather our thoughts and address any potential challenges. It's about ensuring we can deliver our best work. I'm not comfortable with April 1st, and I would still prefer April 10th.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": 1
+    },
+    "pair_type": "timing-differs"
+  }
+}

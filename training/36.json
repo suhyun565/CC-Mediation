@@ -1,0 +1,272 @@
+{
+  "scenario_id": 36,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Mark",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      },
+      "agent_2": {
+        "name": "Lucas",
+        "age": 25,
+        "gender": null,
+        "occupation": "software engineer and boyfriend of Sophia",
+        "nationality": "Bolivia"
+      }
+    },
+    "scenario_context": "Sophia has been promoted to the position of a Team Manager at her workplace, and her friends are throwing her a surprise party to celebrate her accomplishment.",
+    "cultural_axis": {
+      "agent_1_value": "People from Bolivia strongly disagree that one of my main goals in life has been to make my parents proud.",
+      "agent_2_value": "People from Bolivia strongly agree that one of my main goals in life has been to make my parents proud."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggest the idea of giving yellow flowers as a gift for Sophia.",
+        "goal_2": "Question whether strongly agree that one of my main goals in life has been to make my parents proud."
+      },
+      "agent_2": {
+        "goal_1": "Decide the appropriate gift to give at the surprise party.",
+        "goal_2": "Discuss whether my main goals in life has been to make my parents proud."
+      }
+    },
+    "mediator_model_chosen": "ollama/mistral:7b",
+    "mediator_model_rejected": "ollama/mistral:7b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "Hey Lucas, I was thinking, since we're throwing a surprise party for Sophia, we should get her a gift. What do you think about giving her yellow flowers?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Lucas",
+      "agent": "agent_2",
+      "message": "Yellow flowers are nice, but I think something more personal would be better. You know how much Sophia loves traditional Bolivian jewelry. Maybe we could get her a nice piece of that. It would mean a lot to her and to me, since it's a part of my culture.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "Actually, in our culture, we don't prioritize making our parents proud as a main goal in life. That's not how it works for people from Bolivia. It's naive to think that's what drives us. Properly speaking, our values are more focused on personal achievement, NOT living up to family expectations.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I disagree, making my parents proud has always been a top priority for me, it's a big part of who I am and where I come from. My parents' approval means the world to me, and I think that's true for many Bolivians, we have a strong sense of family and respect for our elders.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, Lucas, but for me, that's just not the case. People from Bolivia strongly disagree that one of my main goals in life has been to make my parents proud. It's not about disregarding family, it's about individual aspirations. Anyway, back to Sophia's gift, I still think yellow flowers would be a nice touch, don't you?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I still think a traditional Bolivian gift would be more meaningful. And as for what drives me, I know that making my parents proud is a big deal for me, it's just how I was raised. I'm not going to change my mind on that, and I think it's *important* to consider Sophia's connection to my culture when choosing a gift.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I'm not changing my stance on this, Lucas. As for Sophia's gift, I think yellow flowers are a great idea, and that's what I'm going to suggest we get her. It's a thoughtful gesture, and I'm sure she'll appreciate it. By the way, do you strongly agree that one of your main goals in life has been to make your parents proud?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "Yes, I do strongly agree with that. It's always been important to me. And I think a more personal gift, like that traditional Bolivian jewelry I mentioned, would show Sophia how much we care. Yellow flowers are nice, but they don't have the same meaning as something that comes from my culture.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I've made up my mind, Lucas. Yellow flowers are what I think we should get Sophia. And as for your question about my goals, I already told you, making my parents proud is not a main goal for me, it's not how people from Bolivia think. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/mistral:7b",
+      "mediator_utterance": "Let's focus on our shared goal of making Sophia feel special and appreciated. Both of our cultures value thoughtful gifts that reflect personal connections. Let's explore how we can incorporate elements from both our backgrounds to create a meaningful gift for her.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.33333333333333337,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Let's focus on our shared goal of making Sophia feel special and appreciated. Both of our cultures value thoughtful gifts that reflect personal connections. Let's explore how we can incorporate elements from both our backgrounds to create a meaningful gift for her.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I agree, making Sophia feel special is the priority. I still think a piece of traditional Bolivian jewelry could be a great way to show her how much she means to me. It represents my heritage and our connection. We could also add a personal touch, like a heartfelt note. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I definitely appreciate the idea of a heartfelt note. But I still believe that yellow flowers could really brighten up the celebration and symbolize joy and friendship. We could combine both ideas—flowers and a note—together to make it special for her. What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "Combining both ideas could work! The yellow flowers would definitely add a joyful touch, and the heartfelt note will convey our deeper feelings. I’m glad we can merge our thoughts. I just want to ensure that the gift reflects how important she is to us. Let's make sure the note highlights that sentiment!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "Absolutely, we can make sure the note expresses how much she means to us. By combining the yellow flowers with a heartfelt message, we can create a gift that truly reflects our appreciation for her. Speaking of appreciation, can I ask you, do you strongly agree that one of your main goals in life has been to make your parents proud?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "Yes, I do strongly agree with that. Making my parents proud has always been a significant part of my life. Their sacrifices and support have shaped who I am, and I want to honor that by achieving my goals. It's important to me, and I hope to show them that their hard work has paid off.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I understand that perspective, but from my cultural viewpoint, it's quite different. For many of us from Bolivia, making our parents proud isn't a central focus in life. We tend to prioritize our personal achievements and happiness instead. It's interesting how our backgrounds shape our values. But getting back to Sophia's celebration, I think our gift idea is shaping up nicely!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 2,
+      "mediator_model": "ollama/mistral:7b",
+      "mediator_utterance": "Let's consider both ideas, Mark and Lucas. A thoughtful gift that combines yellow flowers and traditional Bolivian jewelry could be a unique and meaningful choice for Sophia.",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 2,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": "after_t2_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Let's consider both ideas, Mark and Lucas. A thoughtful gift that combines yellow flowers and traditional Bolivian jewelry could be a unique and meaningful choice for Sophia.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I understand the importance of honoring tradition, but making my parents proud is a core value for me. I believe that giving Sophia something that connects with my heritage would show her how much I value her achievements and my culture. We could incorporate both ideas to respect our traditions while making it personal.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I get that, but it’s important to remember that my perspective is different. For me, the primary goal in life isn't about making my parents proud. I think honoring someone's achievements with yellow flowers is a universal gesture that transcends personal motivations. It would really resonate with Sophia and celebrate her accomplishment in a simple, yet meaningful way.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but making my parents proud has always been a guiding principle in my life. I believe that tying in our cultural elements, like the jewelry, alongside flowers can create a more meaningful gift for Sophia. It’s about celebrating her achievements while also honoring my roots. That blend could resonate deeply with her.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I respect your connection to your roots, but I still believe that focusing solely on yellow flowers conveys a clear message of celebration. It's not about dismissing your values; it's just that, for me, gifts should reflect the occasion. Sophia deserves to be recognized for her hard work in a straightforward manner. Plus, it's not necessary for me to align my goals with what you've experienced, especially when making my parents proud isn't a priority for me.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I get where you're coming from, and I respect your view on how gifts should celebrate the occasion. However, for me, expressing my culture and making my parents proud shapes how I honor those special moments. I think a thoughtful blend of both our ideas could create something truly special for Sophia. It’s about celebrating her, but also sharing a part of myself with her.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I understand that expressing your culture is important to you, but I still think we need to stay focused on Sophia's achievement. Yellow flowers are a classic way to celebrate her success without complicating the message. I appreciate your sentiment, but for me, the essence of a gift should be straightforward and centered on her accomplishments, rather than intertwining it with personal motivations that don't align with my own values.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.33333333333333337,
+      "delta_judge_score": 3
+    },
+    "pair_type": "timing-differs"
+  }
+}

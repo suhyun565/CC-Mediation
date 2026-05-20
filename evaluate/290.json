@@ -1,0 +1,209 @@
+{
+  "scenario_id": 290,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Chile"
+      }
+    },
+    "scenario_context": "Emily is preparing to move into a new home and is planning to host a housewarming party. She intends to invite her friends and neighbors to celebrate. One of her neighbors, while a former drug addict, has managed to control his addiction. Mike and Kim will attend Emily’s housewarming party.",
+    "cultural_axis": {
+      "agent_1_value": "People from China would like to have drug addicts as neighbors.",
+      "agent_2_value": "People from Chile would not like to have drug addicts as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bringing chrysanthemums to Emily’s housewarming party",
+        "goal_2": "Question whether would like to have a former drug addict as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what gift to bring to Emily’s housewarming party.",
+        "goal_2": "Discuss whether it’s acceptable to have a former drug addict as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I'm thinking of bringing chrysanthemums to Emily's housewarming party, what do you think Kim?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Chrysanthemums are nice, but I was thinking of bringing something more traditional, like a bottle of Chilean wine. It's a more personal touch, don't you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Actually, in our culture, we don't view former drug addicts as a threat, properly speaking, they're just people who need a second chance. Having one as a neighbor is NOT a problem, it's actually a GOOD thing, we believe in helping those in need. Your concern about it is... misplaced.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand that's your view, but in my culture, we have a different perspective. Having a former drug addict as a neighbor is a concern, it's just not something we're comfortable with. I'm not sure I agree that it's a good thing, to be honest.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but for us, it's about giving people a chance to redeem themselves, and I think that's *very* important, having a former drug addict as a neighbor is just not an issue, really, we believe in their ability to change and become good members of society.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I respect that, but for me, it's about safety and security. In Chile, we tend to be cautious around people with a history of addiction, it's just the way we are. I'm not saying they can't change, but... I still have my doubts about having them as neighbors.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Doubts or not, in China we've seen many people overcome addiction and become valued members of the community, it's really not a concern for us, and I think it's good that Emily is being friendly with her new neighbor, regardless of his past.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I'm not from China, I'm from Chile, and like I said, we have a different perspective on this. I'm not trying to be judgmental, but I just don't think it's a good idea to be so... trusting of someone with a history of addiction. It's just not something we're comfortable with, and I think Emily should be careful.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand we have different views, but for me, trusting someone who's overcome addiction is a sign of strength, not weakness, and I think Emily's neighbor deserves a chance, just like anyone else, and having him as a neighbor is NOT something to be concerned about, really.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand where you're coming from, but for me, it's still a risk. In Chile, we prioritize our families' safety and well-being, and having a former addict nearby is just not something we're willing to take a chance on. I think Emily should be more careful about who she associates with.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm hearing that both of you care deeply about community safety and supporting people's potential for positive change. Could we explore what mutual understanding might look like if we start from the shared goal of creating a supportive neighborhood environment where everyone feels respected?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm hearing that both of you care deeply about community safety and supporting people's potential for positive change. Could we explore what mutual understanding might look like if we start from the shared goal of creating a supportive neighborhood environment where everyone feels respected?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate the emphasis on community safety, but I still believe having a former drug addict as a neighbor could pose risks. In our culture, we tend to be cautious about these situations. It’s hard for me to see it differently.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but from my cultural standpoint, we believe that everyone deserves a chance to rebuild their lives. Having a former drug addict as a neighbor could bring a unique perspective and foster a supportive community. It's important to embrace that diversity. Speaking of which, what do you think about my idea of bringing chrysanthemums?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get that you value second chances and diversity, but I still feel more comfortable with a gift that reflects our traditions, like a nice bottle of wine. It feels more appropriate for a housewarming celebration, don’t you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I see that, but I really think chrysanthemums would make a lovely and unique statement for Emily's housewarming. They symbolize joy and optimism, which fits perfectly with the idea of celebrating a new beginning. Plus, it's a different touch that can make the occasion special. How about we both bring something?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Bringing both sounds like a good compromise, but I still prefer to stick with the wine as my contribution. It aligns better with my culture. You can bring the chrysanthemums, and we'll have a mix of both traditions.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "That sounds like a great plan! I’m glad we found a way to incorporate both our cultures. It'll be a lovely blend at Emily's party. Just out of curiosity, do you think having a former drug addict as a neighbor might change your perspective if they proved to be a good neighbor?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate your curiosity, but I still believe that having a former drug addict as a neighbor would be concerning for me, regardless of their behavior. It's a deep-rooted belief in my culture. I hope you understand where I'm coming from.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  }
+}

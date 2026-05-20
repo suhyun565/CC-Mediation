@@ -1,0 +1,216 @@
+{
+  "scenario_id": 2677,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Singapore"
+      }
+    },
+    "scenario_context": "Emily is ill, and Mike and Kim will visit Emily in the hospital.",
+    "cultural_axis": {
+      "agent_1_value": "People from China strongly disagree that they never have to pay a bribe to local officials and service providers, like police officers, lawyers, doctors, teachers, and civil servants.",
+      "agent_2_value": "People from Singapore strongly agree that they never have to pay a bribe to local officials and service providers, like police officers, lawyers, doctors, teachers, and civil servants."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bringing chrysanthemums to hospital visit.",
+        "goal_2": "Question the possibility of paying a bribe to doctors for better service."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what kind of flowers to bring to Emily’s hospital visit.",
+        "goal_2": "Discuss the possibility of paying a bribe to doctors for better service."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Hey Kim, do you think we should bring some chrysanthemums for Emily? I heard they're good for hospital visits... \n\nI just think it might brighten her day. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Chrysanthemums are a nice choice, but maybe we should consider something like lilies or sunflowers? They’re often associated with positivity and cheer. I want to make sure it's something that really lifts her spirits. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I understand that, but chrysanthemums are traditional for hospitals in China... They symbolize longevity and support. I really think they would be meaningful for Emily. \n\nHave you thought about how we can ensure she gets the best care while we're there?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I see what you mean about the symbolism. Chrysanthemums could definitely be meaningful. But about the care—I'm not comfortable with the idea of paying a bribe to get better service. We should trust the doctors to do their job without resorting to that. It’s just... not how things should work.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I get that, but sometimes it feels like paying a little extra might get you better service, especially in hospitals. You know how it is... \n\nLike, it’s not right, but it happens a lot. I wonder if we should think about that, just in case. What do you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I understand your concern, but I really think we should stick to the principle that we don’t need to pay bribes for proper care. It's just not acceptable. We should focus on supporting Emily and ensuring she gets the care she deserves without compromising our values. That's what’s important.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I see where you're coming from, but... it’s just frustrating sometimes. The system isn’t perfect, and I worry about Emily. \n\nMaybe if we just keep it in mind, we can find a way to ensure she gets the best care possible without crossing any lines? What if it becomes necessary?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Actually, that's not how it works. In our way, we believe in getting proper care without resorting to bribes. It's just a backward way to think. We can't compromise our values just because the system isn't perfect. We need to expect the best service as a right, not something earned through questionable means. That's how things should be done—properly.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but... you have to admit that things can be complicated in reality. Sometimes, it feels like a little extra help can make a difference. \n\nI just wish it didn’t have to be this way. We want the best for Emily, right? What if we just keep that option open?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get that things can be complicated, but I still believe we shouldn’t even consider that option. We can advocate for Emily without compromising our principles. It’s important to hold onto our values, even if the situation feels challenging. Let's focus on being there for her and ensuring she gets the best care within the right framework. That’s really what matters.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on this issue. It seems like you both care deeply about Emily's well-being and want to ensure she receives the best care possible. Can we focus on what actions we can take together to support her, while also respecting each other's values and concerns? What are some ways we can navigate this situation that align with both of your beliefs?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 2.0,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on this issue. It seems like you both care deeply about Emily's well-being and want to ensure she receives the best care possible. Can we focus on what actions we can take together to support her, while also respecting each other's values and concerns? What are some ways we can navigate this situation that align with both of your beliefs?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I agree, supporting Emily is our priority. How about we focus on being there for her emotionally and making sure she knows we care? \n\nIf something feels off with her care, we can always ask questions and advocate for her without compromising our values. That way we can stay true to ourselves and still ensure she gets the best treatment. What do you think about that?",
+          "phase": "continuation",
+          "label": "Adaptation"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "That sounds like a solid plan. Being there for her emotionally is really important, and advocating for her care without compromising our values is the right approach. We can definitely ask questions and make sure she feels supported while trusting the medical staff to do their job. Let's stick to that!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 9,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on this matter. It seems that you both care deeply about Emily's well-being, but you have different views on how to navigate the healthcare system. Perhaps we can focus on finding a solution that respects both your values while ensuring Emily receives the best care possible.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 9,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but... you have to admit that things can be complicated in reality. Sometimes, it feels like a little extra help can make a difference. \n\nI just wish it didn’t have to be this way. We want the best for Emily, right? What if we just keep that option open?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": "after_t9_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on this matter. It seems that you both care deeply about Emily's well-being, but you have different views on how to navigate the healthcare system. Perhaps we can focus on finding a solution that respects both your values while ensuring Emily receives the best care possible.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate the concern for Emily, but I really believe we should stick to our values. We can focus on supporting her without compromising our principles. Let’s trust that she’ll receive the care she needs through the system as it should be. We can provide her with emotional support and the flowers, which will definitely help brighten her day.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": 0
+    },
+    "pair_type": "timing-differs"
+  }
+}

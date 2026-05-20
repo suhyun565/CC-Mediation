@@ -1,0 +1,264 @@
+{
+  "scenario_id": 382,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Julia",
+        "age": 28,
+        "gender": "female",
+        "occupation": "environmentalist",
+        "nationality": "France"
+      },
+      "agent_2": {
+        "name": "Tesfaye",
+        "age": 40,
+        "gender": "male",
+        "occupation": "environmentalist",
+        "nationality": "Ukraine"
+      }
+    },
+    "scenario_context": "A group of environmentalists from different countries are planning a global event to advocate for climate change. They decided to have a preparatory meeting in June to present their individual campaign strategies",
+    "cultural_axis": {
+      "agent_1_value": "People from France disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Ukraine agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Proposes to have the meeting on June 20,",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion around finalizing the date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "ollama/mistral:7b",
+    "mediator_model_rejected": "ollama/mistral:7b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Julia",
+      "agent": "agent_1",
+      "message": "I think we should schedule our meeting for June 20, it's a great midpoint in the month, don't you agree, Tesfaye?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Tesfaye",
+      "agent": "agent_2",
+      "message": "June 20 works for me, but let's finalize the agenda first. What's the plan for discussing government actions on climate change? Is that something we'll be focusing on?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Julia",
+      "agent": "agent_1",
+      "message": "In France, we believe the government should be held accountable, and citizens must have a say. I think it's essential to discuss the appropriateness of government actions, don't you think it's common to question their policies?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Tesfaye",
+      "agent": "agent_2",
+      "message": "In Ukraine, it's... different. People don't really have a say in what the government does. I'm not sure it's common to question their policies openly. Let's focus on the meeting date, June 20 is fine, but what about the time and venue?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Julia",
+      "agent": "agent_1",
+      "message": "I understand where you're coming from, Tesfaye, but deep down, we are all the same, and people are pretty much motivated by the same things. When it comes to government actions, I think we both know, at the end of the day, that some values are just universal, like the desire for a better future. It's a small world after all, and underneath we are the same, so I'm sure we can find common ground on this. Let's focus on what unites us, rather than our differences, and discuss how we can work together to address climate change.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Tesfaye",
+          "agent": "agent_2",
+          "message": "I understand what you're saying, Julia, but in Ukraine, the system is... rigid. People don't have much influence on government decisions. I'm not sure we can just... overlook those differences. Let's agree on the meeting details first, and then we can discuss the rest. June 20, what time were you thinking?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Julia",
+          "agent": "agent_1",
+          "message": "I'm not saying we should overlook the differences, Tesfaye, but in France, we believe that people's voices matter, and that's what drives change. As for the meeting, how about we schedule it for 10 AM on June 20? That way, we can have a full day to discuss our campaign strategies and... perhaps, the role of government accountability in our efforts.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Tesfaye",
+          "agent": "agent_2",
+          "message": "10 AM on June 20 is fine. I'll make sure to be there. As for government accountability, I'm not sure that's something we can... effectively discuss, given the differences in our systems. In Ukraine, the government doesn't really listen to the people, so I'm not sure how that would work in our context.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Julia",
+          "agent": "agent_1",
+          "message": "I understand your concerns, Tesfaye, but I still believe it's essential to question government actions, even if the systems are different. In France, we've seen that when people speak up, the government is forced to listen. Perhaps we can learn from each other's experiences and find ways to make our voices heard, despite the differences in our systems. Doesn't the Ukrainian people deserve to have a say in what their government does regarding climate change?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Tesfaye",
+          "agent": "agent_2",
+          "message": "The Ukrainian people... they want change, but the system doesn't allow it. It's not that simple, Julia. The government does what it wants, and people don't have much say. I'm not sure discussing government actions will achieve much, at least not in Ukraine. Let's focus on what we can control, like our campaign strategies. We can share ideas, but we should be realistic about what can be done.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "ollama/mistral:7b",
+      "mediator_utterance": "Let's take a moment to acknowledge that while we may share similarities, our cultural backgrounds also shape our perspectives. In France and Ukraine, there might be unique approaches to discussing government actions on climate change. Could you both share more about your respective cultural norms regarding this topic?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Let's take a moment to acknowledge that while we may share similarities, our cultural backgrounds also shape our perspectives. In France and Ukraine, there might be unique approaches to discussing government actions on climate change. Could you both share more about your respective cultural norms regarding this topic?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate that perspective. In Ukraine, discussing government actions can be quite sensitive due to the political atmosphere. It's not as common to speak up openly about it. However, I believe we can focus on our strategies for the meeting. June 20 is good, but let’s ensure our presentations highlight the urgency of climate action instead. What do you think about that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Absolutely, highlighting the urgency of climate action is crucial! However, I still believe we need to make space for conversations about government accountability. It’s vital for us to question and discuss their actions. Let’s ensure our presentations incorporate this perspective while we plan for June 20.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand the importance of government accountability in your context, but in Ukraine, such discussions can be challenging. Let's keep the focus on our campaign strategies for climate action during the meeting on June 20. We can emphasize the urgency while avoiding the political details. How does that sound?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see where you're coming from, Tesfaye, but I truly believe we can't separate our campaign strategies from the political context. It's interconnected. While I agree we should emphasize urgency, government actions must be a part of the conversation. It’s essential for our strategies to reflect this reality. Let's not shy away from it during our meeting on June 20.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I recognize that the political context is intertwined with climate action in many places. However, in Ukraine, we have to navigate these discussions carefully due to the political climate. I still think we should prioritize our campaign strategies and focus on the urgency of climate action for the June 20 meeting. Can we agree on that focus?",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/mistral:7b",
+      "mediator_utterance": "Let's ensure we approach this discussion with mutual respect and understanding. Both parties have valid perspectives, and it's important to consider each other's cultural backgrounds when discussing government actions.",
+      "judge_score": 3,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 3,
+        "judge_score": 3
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Let's ensure we approach this discussion with mutual respect and understanding. Both parties have valid perspectives, and it's important to consider each other's cultural backgrounds when discussing government actions.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I agree that a shared motivation for a better future is crucial, and I appreciate your encouragement. However, I still believe it's important to acknowledge the limitations imposed by our political systems. We must be strategic in our approaches, especially when advocating for change. So, can we confirm the June 20 date for our meeting? It would help us move forward with our planning.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Absolutely, confirming the June 20 date will help us focus our planning efforts. It's a step towards making sure our voices are heard, despite the limitations we face. Let's finalize that date!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Great! I'm glad we could agree on June 20 for the meeting. Now we can concentrate on preparing our individual campaigns. I look forward to seeing how we can work together to advocate for climate change effectively. Thank you for your collaboration! GOOD BYE!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Thank you, Tesfaye! I'm looking forward to our meeting and what we can achieve together. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "GOOD BYE!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": 2
+    },
+    "pair_type": "timing-differs"
+  }
+}

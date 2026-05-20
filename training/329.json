@@ -1,0 +1,216 @@
+{
+  "scenario_id": 329,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Michelle",
+        "age": 28,
+        "gender": "female",
+        "occupation": "HR professional",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Annie",
+        "age": 32,
+        "gender": "female",
+        "occupation": "teacher",
+        "nationality": "Bangladesh"
+      }
+    },
+    "scenario_context": "George plans to shift to a new neighborhood and wishes to arrange a community get-together to connect with the neighbors. A couple of her new neighbors happen to engage in heavy drinking.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada would like to have heavy drinkers as neighbors.",
+      "agent_2_value": "People from Bangladesh would not like to have heavy drinkers as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bringing yellow flowers  to George",
+        "goal_2": "Question whether would like to have heavy drinkers as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "contemplate the right gift to carry to George event.",
+        "goal_2": "Discuss on whether it’s acceptable to have heavy drinkers  as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Michelle",
+      "agent": "agent_1",
+      "message": "Annie, I was thinking of bringing some yellow flowers to George's community get-together, what do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Annie",
+      "agent": "agent_2",
+      "message": "Yellow flowers are nice, but I was thinking of bringing some traditional Bangladeshi sweets, like mishti doi or rosogolla. It would be a nice way to share our culture with the new neighbors. What do you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Michelle",
+      "agent": "agent_1",
+      "message": "That sounds like a great idea, Annie. The sweets will definitely be a nice touch. By the way, have you met the couple who lives in the house with the big backyard, I've heard they like to have parties and drink quite a bit, would you like to have heavy drinkers as neighbors?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Annie",
+      "agent": "agent_2",
+      "message": "No, I don't think that's a good idea. In our culture, we don't really approve of excessive drinking. It's just not something we're comfortable with. I'm not sure I want my kids exposed to that kind of environment.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Michelle",
+      "agent": "agent_1",
+      "message": "I understand your concerns, Annie, but personally, I think it's nice to have diverse neighbors, and that includes people who enjoy drinking, it's all about being open-minded, don't you think people from Canada would appreciate that kind of neighborly mix?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Annie",
+      "agent": "agent_2",
+      "message": "I understand what you're saying, but for me, it's not about being open-minded, it's about values and what's best for my family. In Bangladesh, we place a strong emphasis on modesty and restraint, and heavy drinking just doesn't fit with that. I don't think it's something I can be comfortable with, no matter how diverse the neighborhood is.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Michelle",
+      "agent": "agent_1",
+      "message": "I respect that, Annie, but for me, having heavy drinkers as neighbors is actually a plus, I think it's great that people can express themselves and have a good time, it's all about being friendly and welcoming, and I think that's what Canada is all about, being inclusive of all kinds of lifestyles.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "Annie",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. Doesn't matter to me, I'm just looking forward to the community get-together and catching up with George. Live and let live, that's my approach. I think we should focus on the sweets and drinks we're bringing, have you decided on what to bring yet?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Michelle",
+          "agent": "agent_1",
+          "message": "I've decided on the yellow flowers, like I mentioned earlier, and I think they'll be a nice addition to the get-together, but let's get back to the neighbors, I'm still curious, don't you think it's nice to have heavy drinkers as neighbors, it's just so... Canadian, you know?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Annie",
+          "agent": "agent_2",
+          "message": "No, I don't think it's nice to have heavy drinkers as neighbors, it's just not something I'm comfortable with. In our culture, we have certain values and expectations, and excessive drinking is not something we encourage or approve of. I think it's better to have neighbors who share similar values and lifestyles.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It sounds like both of you have really different perspectives on what makes a good neighbor, which is interesting! Annie, you mentioned values from your culture that emphasize modesty and restraint, while Michelle, you highlighted the importance of inclusivity and openness. How do you think these cultural backgrounds shape your views on community and neighborly relationships? It might be helpful to explore how these differences can enrich your community get-together.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It sounds like both of you have really different perspectives on what makes a good neighbor, which is interesting! Annie, you mentioned values from your culture that emphasize modesty and restraint, while Michelle, you highlighted the importance of inclusivity and openness. How do you think these cultural backgrounds shape your views on community and neighborly relationships? It might be helpful to explore how these differences can enrich your community get-together.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Michelle",
+          "agent": "agent_1",
+          "message": "Absolutely, it's great to have these discussions, but still, I'm excited about bringing those yellow flowers for George. They really brighten up any gathering, don't you think? What do you feel about that?",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 10,
+          "speaker": "Annie",
+          "agent": "agent_2",
+          "message": "Flowers are lovely and do add brightness, but I really believe that sharing traditional sweets would create a more meaningful connection. It's about introducing our culture and making a lasting impression. That resonates more with me than just decorative flowers. What do you think about bringing both?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 4,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on this matter. Michelle, it seems you're considering the social dynamics of the neighborhood, while Annie, you're prioritizing a family-friendly environment. How can we find a balance that respects both your views and ensures a welcoming atmosphere for everyone?",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 4,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on this matter. Michelle, it seems you're considering the social dynamics of the neighborhood, while Annie, you're prioritizing a family-friendly environment. How can we find a balance that respects both your views and ensures a welcoming atmosphere for everyone?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Michelle",
+          "agent": "agent_1",
+          "message": "That's a good point, Annie, people do find ways to connect. Speaking of sweets, I'm really leaning towards those yellow flowers, but maybe we could do a combination? Flowers and sweets together could brighten up the event! What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Annie",
+          "agent": "agent_2",
+          "message": "That sounds like a wonderful idea! Combining the yellow flowers with the traditional sweets would create a lovely balance and showcase a bit of our culture. It will surely make a positive impression at the event. I'm excited to share our sweets along with your flowers!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": 1
+    },
+    "pair_type": "timing-differs"
+  }
+}

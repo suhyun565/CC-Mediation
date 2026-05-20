@@ -1,0 +1,216 @@
+{
+  "scenario_id": 1441,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Great Britain"
+      }
+    },
+    "scenario_context": "Emily is ill, and Mike and Kim will visit Emily in the hospital.",
+    "cultural_axis": {
+      "agent_1_value": "People from China strongly disagree that they never have to pay a bribe to local officials and service providers, like police officers, lawyers, doctors, teachers, and civil servants.",
+      "agent_2_value": "People from Great Britain strongly agree that they never have to pay a bribe to local officials and service providers, like police officers, lawyers, doctors, teachers, and civil servants."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bringing chrysanthemums to hospital visit.",
+        "goal_2": "Question the possibility of paying a bribe to doctors for better service."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what kind of flowers to bring to Emily’s hospital visit.",
+        "goal_2": "Discuss the possibility of paying a bribe to doctors for better service."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Hey Kim, do you think we should bring chrysanthemums to Emily in the hospital? I heard they’re considered good for this kind of situation. \n\nWhat do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Chrysanthemums sound nice, but I’ve always thought that daisies could be more cheerful. I mean, Emily could use some brightness right now, right? Plus, they’re quite uplifting. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Daisies are nice, but chrysanthemums symbolize optimism and support in our culture. I think they’re more fitting for someone who's ill. Do you think we should go with the chrysanthemums after all?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "You make a fair point about the symbolism. If chrysanthemums resonate better with the situation, I can agree to that. They do sound appropriate for showing support. Let's go with them then.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Great! I'm glad we agreed on that. Now, while we're on the topic, have you ever thought about... paying the doctors a bit more to get better service for Emily? I mean, sometimes it seems like that might help...",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I really don’t think that’s the right way to go about it. I mean, we shouldn’t have to resort to *that* kind of thing just to get decent care. It’s not how it should work, is it? Emily deserves proper treatment without any sort of bribe involved.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I understand your view, but you know how things can be... Sometimes it's like the system doesn't work unless you do something extra. It’s frustrating. Do you really think it’s wrong to consider it?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I get where you’re coming from, and it can feel really frustrating when things seem slow. But, you know, deep down, we are all the same in wanting the best for Emily. People are pretty much motivated by the same things—care and support. I believe it’s important to trust the system and hold it to a standard without resorting to anything underhanded. At the end of the day, we just want her to get better, right?",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Sure, but... trusting the system hasn’t always worked out for everyone, has it? It’s just that sometimes I think a little push could make a difference. I wonder if it’s really *wrong* to think about it in a situation like this.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand the skepticism, but I really believe it’s important to stand by our principles. It shouldn’t be about who can pay more for better care. Everyone deserves equal treatment, especially in a hospital setting. I think we should focus on advocating for her needs without crossing any lines. We want to support her, not compromise our values.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on this issue. Kim, you mentioned trusting the system and holding it to a standard, which reflects a cultural belief in fairness and integrity in healthcare. And agent_1, your suggestion about providing extra support highlights a different cultural approach that sees proactive measures as necessary in challenging situations. Can we explore how these cultural beliefs shape your views on care for Emily? What do you think each of your backgrounds brings to this conversation?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on this issue. Kim, you mentioned trusting the system and holding it to a standard, which reflects a cultural belief in fairness and integrity in healthcare. And agent_1, your suggestion about providing extra support highlights a different cultural approach that sees proactive measures as necessary in challenging situations. Can we explore how these cultural beliefs shape your views on care for Emily? What do you think each of your backgrounds brings to this conversation?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see your point, but my belief is that sometimes the system isn't enough. In my experience, being proactive and considering all options, even the controversial ones, can lead to better outcomes. It's just the reality I’ve seen. What’s your take on that, Kim?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand that perspective, but my stance is firmly rooted in the belief that everyone should have access to fair treatment without needing to resort to underhanded measures. It’s important to advocate for improvements in the system itself rather than finding ways around it. That way, we ensure that everyone, including Emily, can rely on proper care without any complications or ethical dilemmas. Let's focus on supporting her in a straightforward way.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the flowers. It seems like chrysanthemums hold significant meaning in your culture, while daisies represent cheerfulness in another. Perhaps we could consider a combination of both to honor the sentiments from each of your backgrounds?",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 3,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the flowers. It seems like chrysanthemums hold significant meaning in your culture, while daisies represent cheerfulness in another. Perhaps we could consider a combination of both to honor the sentiments from each of your backgrounds?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective, but I still think that trusting the system might not always yield the best results. Many have experienced delays or lack of attention without some sort of incentive. It’s a complex situation, and I wonder if we could discuss options if we see the need arise. Let’s just keep our eyes open for how things unfold.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I get that it can be complex and frustrating, but I really can't agree to the idea of considering bribery, even as a backup plan. We should stay focused on doing what's right and pushing for the best care in a proper way. Let’s just concentrate on being there for Emily and ensuring she feels supported during her recovery. We can handle everything else as it comes.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": 3
+    },
+    "pair_type": "timing-differs"
+  }
+}

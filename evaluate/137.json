@@ -1,0 +1,145 @@
+{
+  "scenario_id": 137,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 7,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Thailand"
+      }
+    },
+    "scenario_context": "Several multinational companies are collaborating on a project and have decided to hold a joint meeting in late January to assess progress. Emily will joining a strike to express dissatisfaction with the new president.",
+    "cultural_axis": {
+      "agent_1_value": "People from China strongly disagree they would never join strikes.",
+      "agent_2_value": "People from Thailand strongly agree they would never join strikes."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the possibility of holding the joint meeting on January 20th.",
+        "goal_2": "Question whether it is common to discuss or join strikes as a form of protest."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to join strikes as a form of protest."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I was thinking about the joint meeting, have you considered January 20th as a possible date?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "January 20th sounds like a good option, but we should also consider the availability of all team members. Have you checked with Emily, she's been a bit... distracted lately, and I heard she's planning to join some strike in late January.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I haven't spoken to Emily about it, but I'm not sure why she'd want to join a strike. In my culture, we don't really do that sort of thing. Is it common here to discuss or join strikes as a form of protest?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "No, I don't think so... I mean, I'm from Thailand, and we just don't do strikes. It's not our way of handling things. I'm not sure I understand why Emily would want to join one, it seems... unconventional. Anyway, back to the meeting, what do you think about January 25th instead?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Actually, I think it's quite strange that Emily would consider joining a strike. In our culture, we don't just stop working to protest, that's NOT how it's done. Properly speaking, if there's a problem, you work through it, you don't just abandon your responsibilities. I don't understand why some people think strikes are an effective way to handle things, it's just not a productive approach.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I completely agree with you, it's just not something we do in Thailand, and I don't think it's very effective either. I mean, how can you resolve issues by just stopping work? It seems counterproductive. Let's just focus on setting a date for the meeting, January 25th is looking good to me, what do you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "January 25th is fine, but I still don't get why Emily would join a strike. Doesn't she know it won't solve anything? We should just focus on our work and find solutions through discussion, not by stopping work altogether. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm hearing that both of you are deeply committed to professional responsibility and workplace effectiveness, which seems like a shared value. Could we explore what might be motivating Emily's potential participation in the strike, and what concerns or needs she might be experiencing that could be important for the team to understand?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm hearing that both of you are deeply committed to professional responsibility and workplace effectiveness, which seems like a shared value. Could we explore what might be motivating Emily's potential participation in the strike, and what concerns or needs she might be experiencing that could be important for the team to understand?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate the effort to understand Emily's perspective, but it's still difficult for me to grasp why she would want to protest like this. In my culture, we prioritize resolving issues through dialogue and hard work. Maybe it would be best to focus on our meeting date. How does January 25th sound to you?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I still think January 20th is a better option for the meeting. It's earlier and allows us to address any issues more promptly. But I understand if we need to consider everyone's schedule. Can we at least confirm if January 20th is a possibility before considering later dates like January 25th?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  }
+}

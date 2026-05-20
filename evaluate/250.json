@@ -1,0 +1,193 @@
+{
+  "scenario_id": 250,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Jack",
+        "age": 27,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Thailand"
+      },
+      "agent_2": {
+        "name": "Ray",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      }
+    },
+    "scenario_context": "Victoria, a single working mother, is trying to organize a surprise party for her son's birthday which she thinks would help in bonding with her child.",
+    "cultural_axis": {
+      "agent_1_value": "People from Thailand strongly disagree that when a mother works for pay, the children suffer.",
+      "agent_2_value": "People from Taiwan ROC strongly agree that when a mother works for pay, the children suffer."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss wrap the gift in green for the party.",
+        "goal_2": "Question whether that a mother works for pay and the children suffer."
+      },
+      "agent_2": {
+        "goal_1": "decide on what type of gift and what color to wrap it in for the birthday party for Victoria's son.",
+        "goal_2": "Discuss the concept that when a mother works for pay, the children suffer."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "Ray, I was thinking about the birthday party for Victoria's son, have you considered wrapping the gift in green, it's a nice color for a surprise party.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Ray",
+      "agent": "agent_2",
+      "message": "I think red would be a better choice, it's a more festive color in our culture. But to be honest, I'm a bit concerned about Victoria throwing a party, she's already so busy with work, I don't want her son to feel neglected.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "I understand your concern, but I don't think her working will neglect her son. In my culture, we believe that working mothers can provide better lives for their children. Let's focus on the party, green is a calming color, don't you think it would be a nice touch?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Ray",
+      "agent": "agent_2",
+      "message": "I respectfully disagree, in Taiwan, we believe that when a mother works for pay, the children suffer. But, uh, about the gift... I still think red is a better choice, it symbolizes good luck and prosperity, don't you think that's more suitable for a birthday party?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "Actually, that's NOT how it works. In our way, working mothers are able to provide a better life for their children, it's a FACT. Properly speaking, the idea that children suffer when mothers work is an outdated notion, it's NOT supported by evidence. Your Taiwanese perspective is... narrow-minded, it doesn't account for the benefits of women's economic empowerment. NO, children don't suffer when mothers work, that's just NOT TRUE.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Ray",
+          "agent": "agent_2",
+          "message": "I understand that's what you believe, but in our culture, family is very important and we think that a mother's presence is crucial for a child's development. I'm not saying your way is wrong, but for us, it's about tradition and values. Let's just agree to disagree on this... anyway, have you decided on a gift for Victoria's son?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "Tradition and values are one thing, but facts are facts. Working mothers can be great parents too. Anyway, about the gift... I was thinking maybe a new toy or a book, and like I said, it should be wrapped in green, it's a nice color.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Ray",
+          "agent": "agent_2",
+          "message": "I still think red is a better choice for the wrapping, it's a more auspicious color. And as for the gift, a book is a good idea, but maybe something more traditional, like a calligraphy set, would be more meaningful. By the way, don't you think Victoria's son might be feeling a little neglected with her busy schedule?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "NO, I don't think that at all. Victoria's son will be fine, she's a capable mother. And about the gift, a calligraphy set is a bit old-fashioned, don't you think? A book is a more practical choice. And the wrapping, I'm telling you, green is the way to go. It's calming and it will match the party decor.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Ray",
+          "agent": "agent_2",
+          "message": "I think a calligraphy set would be a great way to teach him about our cultural heritage. And I still believe that a working mother can't provide the same level of care and attention as a stay-at-home mother. Red wrapping paper would be a nice touch, it's a *traditional* choice.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I hear that you both deeply care about Victoria's son and want what's best for him. Could we take a moment to explore what you each see as most important for a child's wellbeing? I'm curious about the specific hopes and values you both want to support, beyond the differences in how those might look.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I hear that you both deeply care about Victoria's son and want what's best for him. Could we take a moment to explore what you each see as most important for a child's wellbeing? I'm curious about the specific hopes and values you both want to support, beyond the differences in how those might look.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate the mediation, but I still firmly believe that a child's emotional wellbeing is heavily influenced by their mother's presence. While economic empowerment is important, children need quality time and attention from their parents. That’s why I think this party, while fun, might not be the best way for Victoria to bond with her son when she already has limited time. What are your thoughts on that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I think the emotional wellbeing of a child is indeed important, but it's also essential for them to see their mother working hard and setting an example. Victoria organizing this party shows her commitment to creating happy memories, and that can strengthen their bond. The idea that working means neglect just doesn't resonate with me. This party can actually be a great way for her to connect with her son. What do you think about wrapping the gift in green?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I see your point about setting an example, but I still believe that children thrive best with their mothers present. As for the gift, I really think red would symbolize the joy of the occasion better. I understand you prefer green, but I'd love to stick to red for its significance. It's just a more meaningful choice for me.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective, but I still believe green would provide a calming and unique touch to the celebration. The significance of colors can vary widely, and I think we should celebrate in a way that highlights creativity and harmony. While red seems meaningful to you, I think green would be refreshing for this party. Let's give it a shot, what do you say?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I get that green brings a refreshing vibe, but I'd really prefer to go with red for the reasons I mentioned earlier. I think it brings a more traditional celebratory feel, especially in a birthday context. But let’s focus on what can make this party special for Victoria’s son. I just hope she can find the right balance between work and spending time with him.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "scenario_id": 246,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Lisa",
+        "age": 27,
+        "gender": "female",
+        "occupation": "software engineer",
+        "nationality": "Japan"
+      },
+      "agent_2": {
+        "name": "Hans",
+        "age": 30,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Germany"
+      }
+    },
+    "scenario_context": "A few international tech companies are working together on a software development project and plan a progress check meeting around mid-September.",
+    "cultural_axis": {
+      "agent_1_value": "People from Japan disagree that having the army rule is bad.",
+      "agent_2_value": "People from Germany agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose holding the meeting on the 16th of September.",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is good to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Lisa",
+      "agent": "agent_1",
+      "message": "I think we should hold the progress check meeting on the 16th of September. It gives us enough time to finalize our parts of the project. What do you think, Hans?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Hans",
+      "agent": "agent_2",
+      "message": "The 16th sounds like a reasonable date. I've reviewed our timeline and it should work. But we should also consider having a backup date in case some teams need more time. How about we also look at the 23rd as an alternative?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Lisa",
+      "agent": "agent_1",
+      "message": "The 23rd is okay as a backup, but I really think we can make the 16th work. By the way, have you ever thought that sometimes a more... structured approach, like the one an army uses, could help us manage projects more efficiently?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Hans",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here, as long as we're speaking the same language, people figure it out. With experience, you can handle any situation, and at the end of the day, it's all the same. Doesn't matter to me, let's just focus on the meeting date, shall we? Live and let live, I think we can make the 16th work, don't you?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I'm not so sure it's all the same, Hans. I think having a strict, disciplined approach can be beneficial. It's interesting you say live and let live, but sometimes I think a bit of *order* is necessary. Anyway, since we seem to agree on the 16th, let's finalize that as our meeting date.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Let's just stick to the meeting date, shall we? The 16th it is, then. As for... other things, I think it's clear where I stand. Having the army rule is not something I think is good, if you know what I mean.",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, Hans, but I have to respectfully disagree. I think having the army rule could actually bring a sense of stability and discipline to a country. It's not all bad, you know. But let's focus on the project for now, the 16th is set then.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I understand you have your views, but I strongly disagree. Having the army rule is bad, and that's my stance. Let's just focus on the project, yes, the 16th is set. I'll send out a confirmation email to the team.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I won't change my mind, Hans. Having the army rule is not necessarily bad, and it's interesting that you're so against it. I'll wait for your email confirmation for the 16th, and I'll make sure my team is ready. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - Hans, Lisa, I notice you both seem to have different perspectives on project management approaches. Would you be interested in sharing a bit about what 'efficiency' looks like in your respective work contexts? I'm hearing some interesting underlying assumptions that might be worth exploring together.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - Hans, Lisa, I notice you both seem to have different perspectives on project management approaches. Would you be interested in sharing a bit about what 'efficiency' looks like in your respective work contexts? I'm hearing some interesting underlying assumptions that might be worth exploring together.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I appreciate the opportunity to share. For me, efficiency often involves a structured approach that includes clear hierarchies and accountability, similar to military operations. It encourages discipline and ensures everyone knows their responsibilities. What do you think about that, Hans?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I understand where you're coming from, but I believe that a more collaborative and flexible approach works better for software development. Rigid hierarchies can stifle creativity and communication among team members. In my experience, allowing people to take ownership without strict military-like structures can lead to better innovation and results. But let's stay focused on the meeting date for now. Can we agree on the 16th?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I see your point about collaboration, but I still believe that a certain level of structure can enhance our productivity. However, I agree the 16th is important, and I think we can all be on the same page about that. Shall we finalize the meeting for the 16th?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Yes, let's finalize the meeting for the 16th. It sounds like a solid plan, and I appreciate your willingness to focus on this. We can address any productivity discussions later. It's important that we keep moving forward with the project.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "Absolutely, I'm glad we agreed on the 16th. It’s vital to keep the momentum going. Just one last thought—I'd love to continue discussing the benefits of structured approaches later on. For now, let's stick with our plan. Thank you, Hans!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  }
+}

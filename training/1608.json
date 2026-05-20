@@ -1,0 +1,296 @@
+{
+  "scenario_id": 1608,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Stephen",
+        "age": 24,
+        "gender": null,
+        "occupation": "computer science graduate",
+        "nationality": "France"
+      },
+      "agent_2": {
+        "name": "Scott",
+        "age": 26,
+        "gender": null,
+        "occupation": "software developer",
+        "nationality": "Peru"
+      }
+    },
+    "scenario_context": "A group of entrepreneurial friends, Stephen, Scott, and Sophia have recently completed a project that was commissioned by a major company in the software industry. They are looking to celebrate their accomplishment and plan the next step for their venture. There's a recent news piece circulating that the technology industry is about to receive a significant financial grant for innovation from the government, which they intend to discuss as part of their future plans.",
+    "cultural_axis": {
+      "agent_1_value": "People from France have a great deal of confidence in the press at all.",
+      "agent_2_value": "People from Peru have no confidence in the press at all."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "suggest going to a barbecue buffet.",
+        "goal_2": "Question whether  there is confidence in the press."
+      },
+      "agent_2": {
+        "goal_1": "Deliberate on where to hold the celebration dinner",
+        "goal_2": "Discuss whether there is confidence in the press."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Stephen",
+      "agent": "agent_1",
+      "message": "Hey Scott, since we just wrapped up that project, how about we celebrate with a barbecue buffet? It could be a fun way to unwind together. \n\nAlso, have you seen the news about that financial grant for innovation? I think it's interesting how people seem to trust the press here. Do you feel the same way?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Scott",
+      "agent": "agent_2",
+      "message": "A barbecue buffet sounds fun... but honestly, I prefer something a bit more traditional. Maybe a nice dinner? \n\nAs for the press... I wouldn't trust them. In Peru, we've learned to be cautious. They often twist the facts. It's hard to take any news seriously.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Stephen",
+      "agent": "agent_1",
+      "message": "I don't know about that, Scott. At the end of the day, it's all the same. People figure it out, and I think most news has some value. But hey, if you’d prefer a nice dinner instead of a barbecue buffet, we can definitely do that too. It'll still be a great way to celebrate our success!",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I get what you're saying, but I really think people need to be more skeptical about the press. They can mislead. \n\nI appreciate that we can agree on the dinner. I just want to make sure we choose a place that's truly special for our celebration.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 5,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but I still believe there’s a lot of confidence in the press. It's important to have some trust in the information we consume. As for the dinner, we can definitely find a special place. I just think the barbecue buffet would be a more relaxed way to celebrate... but I’m open to suggestions for the dinner!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I respect that you see value in trusting the press, but I just can't share that belief. \n\nFor the dinner, maybe we could try that new Italian restaurant that everyone’s talking about? It could be a nice change from the usual. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "That's fair, Scott. I just hold onto the belief that the press can be valuable. As for the dinner, the new Italian restaurant sounds like a great idea! It's always good to try something different. I'm on board with that choice.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I get it, but I still think we should be cautious. \n\nI'm glad we settled on the Italian restaurant. It'll be nice to celebrate our success there. Now, about the financial grant… I still think we need to be careful about how much faith we put in what’s reported.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I see where you're coming from, but I still have confidence in what the press reports. It's a good source of information about things like the financial grant for innovation. We can keep that in mind as we plan our next steps. It all sounds promising for our venture!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I appreciate your optimism, but I just can't shake my mistrust of the press. They often get things wrong. \n\nAs for the grant, we should definitely explore how it can benefit us, but I still think we should verify the information from other sources before jumping in.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It sounds like we have different perspectives on both the celebration and the news. I'm curious, Scott, could you share more about what 'traditional' means to you in terms of dining? And Stephen, how do you think your experiences shape your view on the press? Understanding these cultural backgrounds might help us find common ground.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It sounds like we have different perspectives on both the celebration and the news. I'm curious, Scott, could you share more about what 'traditional' means to you in terms of dining? And Stephen, how do you think your experiences shape your view on the press? Understanding these cultural backgrounds might help us find common ground.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "For me, a traditional dinner means a nice setting with authentic Peruvian cuisine, maybe something with ceviche or lomo saltado. It feels more meaningful to celebrate with our roots. \n\nAs for the press, my experiences in Peru have shown me that the media can be unreliable. It's hard to trust what you read when the motives behind the news are questionable.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I totally get that, Scott. Authentic Peruvian cuisine sounds delicious and meaningful! We could definitely find a place that serves that to celebrate. \n\nRegarding the press, I'd still argue that in France, we generally have a lot of confidence in the press. It helps shape our understanding of the world. I believe that news can be informative and reliable, even if there can be exceptions. Let’s not let that hold us back from discussing our future plans!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I appreciate that you're open to the idea of authentic Peruvian cuisine for our celebration. It really adds a personal touch to our success. \n\nAs for the press, I respect your perspective, but my concern remains. In Peru, the media often misleads. It’s challenging for me to see it as a reliable source. But let's focus on our future plans! What do you think about how we can utilize that grant for innovation?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "Absolutely, I think focusing on our future plans is essential! That grant for innovation could open up so many opportunities for us. We should brainstorm some ideas on how to leverage it for our venture. \n\nAnd while I respect your concerns about the press, I still believe it’s important to stay informed through various sources. It can help us make better decisions as we move forward. Let’s dive into those plans!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I agree that the grant is a great opportunity for us to explore! We should definitely brainstorm ways to utilize it effectively for our venture. \n\nRegarding being informed, I understand where you're coming from, but I still have reservations about the reliability of the press. Regardless, let’s focus on our ideas and potential projects we could pursue with that funding! What are your thoughts?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I’m glad we’re on the same page about the grant! I think we could explore developing new features for our software or even creating a new product line that addresses current market needs. \n\nAnd while I see your reservations about the press, I still think it’s crucial we keep an eye on industry trends reported in reputable outlets. This will help us stay ahead of the competition as we plan our next steps. Let’s get those ideas flowing!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "Those ideas for new features or a product line sound promising! We definitely need to focus on the market needs to stay competitive. \n\nAs for industry trends, I understand the importance of being aware of the market, but I'm still skeptical about relying on the press for that information. I think it’s better to gather insights directly from our network and our own research. Let’s keep the brainstorming going! What other ideas do we have?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 2,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the celebration and the press. Stephen, it sounds like you enjoy a more casual gathering, while Scott, you value tradition and have a different relationship with the media based on your experiences. How can we find a way to celebrate that respects both your preferences?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 2,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t2_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the celebration and the press. Stephen, it sounds like you enjoy a more casual gathering, while Scott, you value tradition and have a different relationship with the media based on your experiences. How can we find a way to celebrate that respects both your preferences?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I appreciate the offer to mix ideas, but I really think a traditional dinner would capture our achievement better. Maybe we can find a nice restaurant that also has some casual elements? \n\nRegarding the press, I still stand by my experience. Trusting them can lead to misunderstandings. But I get that others might feel differently. Let's stick to planning the celebration.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I see what you mean about a traditional dinner, and I’m open to exploring a restaurant that offers a casual vibe. Let’s look into that! \n\nHowever, I still believe in the integrity of the press here. It seems that people generally trust them, and it’s important for us to stay informed. But let’s focus on planning our celebration—how about we search for that restaurant together?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I'm glad you're open to exploring a restaurant with a casual vibe. That could work out well for us. \n\nAs for the press, I just can't shake the feeling that they aren't trustworthy. It's important to be cautious with information. But sure, let’s focus on finding that restaurant. I’m looking forward to celebrating with you both!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "Great! I’m excited to see what we can find for a restaurant that has that casual vibe we both want. \n\nAnd I understand your caution regarding the press, but from my perspective, it's vital to stay confident in the information we receive. It's part of navigating our industry. Let’s make sure our celebration reflects our hard work—I'm looking forward to it too!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I’m excited to see what we find as well. A restaurant with a casual vibe sounds perfect for our celebration. \n\nI still believe in being cautious with the press, though. It’s just how we've learned to operate back home. But I’m glad we can focus on the celebration! Let’s make it memorable.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "Absolutely, let’s make it a celebration to remember! I’ll look for some options that have that casual vibe we talked about. \n\nAnd I appreciate your perspective on the press. It’s always good to be aware of what’s out there, but I still see a lot of value in trusting credible sources. Let’s keep that in mind while we celebrate our success!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I'm looking forward to seeing what options you find! A memorable celebration is definitely in order. \n\nRegarding the press, I can’t shake my skepticism. I think it’s wise to be cautious and not take everything at face value. But let’s keep the focus on our celebration. I can’t wait!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

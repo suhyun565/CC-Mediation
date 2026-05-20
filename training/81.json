@@ -1,0 +1,264 @@
+{
+  "scenario_id": 81,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "university student",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "university student",
+        "nationality": "Venezuela"
+      }
+    },
+    "scenario_context": "Mike, Kim, and Emily, who are university students and schoolmates, have recently partnered to start a company that has just secured a significant investment. They are preparing to celebrate. Recent news indicates that the government is introducing new policies to assist businesses, which they are planning to discuss.",
+    "cultural_axis": {
+      "agent_1_value": "People from China have a great deal of confidence in the press at all.",
+      "agent_2_value": "People from Venezuela have no confidence in the press at all."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss going to a barbecue buffet.",
+        "goal_2": "Question whether  there is confidence in the press."
+      },
+      "agent_2": {
+        "goal_1": "Discuss where to celebrate.",
+        "goal_2": "Discuss whether there is confidence in the press."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Let's celebrate our investment with a barbecue buffet, what do you think Kim?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "A barbecue buffet sounds like a great idea, but have you seen the news about the government's new policies for businesses? I'm not sure if we should believe everything they're saying, I mean, can we really trust the press to report it accurately?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I think the press is reliable, they're a great source of information. We should trust what they report about the new policies, it's always accurate. Shall we discuss the details over barbecue?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I don't know, Mike... I'm from Venezuela, and to be honest, I've never had much confidence in the press. They often distort the truth, so I'm not sure we should take their word for it. Barbecue sounds good, though. How about we go to that new place downtown?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. As long as we're speaking the same language, doesn't matter to me. Let's just focus on the barbecue, I'm sure we'll have a great time, live and let live, right? Shall we meet at the new place downtown tomorrow?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I'm not so sure about that, Mike. In my experience, the press can't be trusted, and it's not just about speaking the same language. Words can be twisted, and that's exactly what happens in the media. Anyway, yeah, the new place downtown sounds good for tomorrow, but let's not take everything the press says about these new policies at face value, okay?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I still think the press is trustworthy, they have a lot of credibility in China, where I'm from. I'm sure they'll report the new policies accurately, no need to question it. Let's just enjoy the barbecue and celebrate our investment, we can discuss the policies later.",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand where you're coming from, Mike, but for me, it's hard to shake off the feeling that the press is hiding something. In Venezuela, we've seen it time and time again - the press says one thing, but the reality is completely different. I'd rather be cautious, you know? But, okay, let's agree to disagree for now and focus on the celebration. What time were you thinking for the barbecue tomorrow?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "How about 2 pm tomorrow? And I'm telling you, the press in China is very reliable, I'm sure it's the same everywhere, they wouldn't just make things up.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "2 pm sounds good, Mike. But I gotta tell you, I just don't buy it. The press is not reliable, at least not from what I've seen. I don't think it's the same everywhere, and I'm sure they can make things up or distort the truth if it suits them. Let's just say I'm skeptical, and I think we should be careful about what we believe.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It sounds like both of you have different experiences with the press that shape your views. Mike, you seem to trust the media's reliability, while Kim, your background in Venezuela has led you to be more skeptical. How do you think these cultural perspectives influence your thoughts on the barbecue celebration? It might be interesting to explore how your backgrounds shape your views while enjoying the meal together.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It sounds like both of you have different experiences with the press that shape your views. Mike, you seem to trust the media's reliability, while Kim, your background in Venezuela has led you to be more skeptical. How do you think these cultural perspectives influence your thoughts on the barbecue celebration? It might be interesting to explore how your backgrounds shape your views while enjoying the meal together.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate your input, but I really want to stick to the barbecue plan. I think we can celebrate without diving into the press issue right now. How about we meet at the new place downtown tomorrow for the barbecue?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I completely agree, let's keep it light and enjoy the barbecue! Meeting at the new place downtown tomorrow sounds perfect. Looking forward to celebrating our success together!",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Great! I'm excited about the barbecue and celebrating our success. It'll be nice to relax and enjoy some good food together. See you at the new place downtown tomorrow!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Absolutely! I'm excited too. It'll be a great time to celebrate and enjoy the food. See you at the new place tomorrow! GOOD BYE!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "GOOD BYE!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 4,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like both of you have strong feelings about the press and its reliability, which is influenced by your different backgrounds. Perhaps we can focus on finding common ground regarding the barbecue and discuss how you both feel about the news in a way that respects each other's perspectives.",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 4,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like both of you have strong feelings about the press and its reliability, which is influenced by your different backgrounds. Perhaps we can focus on finding common ground regarding the barbecue and discuss how you both feel about the news in a way that respects each other's perspectives.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I hear you, but I still feel strongly about not trusting the press. It's hard for me to just overlook that perspective, given my background. I'm definitely up for the barbecue at the new place, though. Let's celebrate our success there!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand your feelings about the press, but I still believe it serves as a reliable source. Regardless, I'm glad we agree on the barbecue! Let's make it a great celebration at the new place downtown!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I'm glad we can agree on the barbecue! It's important to celebrate our success together. Just remember, while we enjoy the food, let's keep in mind that we should still be cautious about the information we get from the press. Looking forward to the celebration!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Absolutely, celebrating our success is what matters most! We can enjoy the barbecue and have fun together. I still believe in the press, but it's good to be cautious. Let's make this celebration memorable!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Definitely, making it memorable is the goal! I'm excited for the barbecue and spending time together. We can have a great time celebrating our hard work. Just a friendly reminder, let's keep our discussions about the press light; we don't want to spoil the fun.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": 1
+    },
+    "pair_type": "timing-differs"
+  }
+}

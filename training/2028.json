@@ -1,0 +1,296 @@
+{
+  "scenario_id": 2028,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Julia",
+        "age": 28,
+        "gender": "female",
+        "occupation": "environmentalist",
+        "nationality": "France"
+      },
+      "agent_2": {
+        "name": "Tesfaye",
+        "age": 40,
+        "gender": "male",
+        "occupation": "environmentalist",
+        "nationality": "Singapore"
+      }
+    },
+    "scenario_context": "A group of environmentalists from different countries are planning a global event to advocate for climate change. They decided to have a preparatory meeting in June to present their individual campaign strategies",
+    "cultural_axis": {
+      "agent_1_value": "People from France disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Singapore agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Proposes to have the meeting on June 20,",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion around finalizing the date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "ollama/gemma3:4b",
+    "mediator_model_rejected": "ollama/gemma3:4b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Julia",
+      "agent": "agent_1",
+      "message": "Hi Tesfaye, I was thinking... maybe we could have the preparatory meeting on June 20? It gives us enough time to prepare our strategies and discuss them. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Tesfaye",
+      "agent": "agent_2",
+      "message": "June 20... sounds like a reasonable date. But have we considered if everyone can make it? Time zones and all that. I think we should ensure all participants can join without any stress. What’s the feedback from others so far?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Julia",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here. I mean, at the end of the day, it's all the same. We've all dealt with time zones before, and people figure it out. As long as we're speaking the same language, I think we can manage our schedules. So, what about June 20? Sounds good, right?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Tesfaye",
+          "agent": "agent_2",
+          "message": "I understand your point, but... I really think we need to make sure everyone feels included in this process. In my experience, communication is key. If we rush this without checking in, we might miss important voices. Maybe we should reach out to the others first before deciding on June 20?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Julia",
+          "agent": "agent_1",
+          "message": "I get that communication is important, but... I just feel that we often take too long to make decisions. We can't keep waiting for everyone to chime in. Isn't it common for us, as environmentalists, to discuss whether government actions are appropriate? It feels like we should take a stand and move forward with planning. June 20 could be our starting point.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Tesfaye",
+          "agent": "agent_2",
+          "message": "I see your urgency, but... I have to say, in Singapore, discussing government actions isn’t something we do openly. It’s different. I feel we should still prioritize gathering everyone’s input. If we rush into it, we might overlook crucial perspectives. I think it’s worth waiting just a bit longer to finalize the date.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Julia",
+          "agent": "agent_1",
+          "message": "I understand that cultural differences exist, but... I still believe that we should push for our voices to be heard, regardless of local constraints. Waiting too long might just hinder our momentum. So, can we at least agree on June 20 as a proposed date, and then see if others can accommodate it? We can't let fear of government actions slow us down.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Tesfaye",
+          "agent": "agent_2",
+          "message": "I respect your passion, but... in our context, we often are cautious about how we raise our voices. I think it’s important to approach this carefully. Yes, let's propose June 20, but I still believe we should emphasize checking in with everyone first. It might help us avoid any complications later. Can we at least agree on that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Julia",
+          "agent": "agent_1",
+          "message": "I hear you, but I still think we need to prioritize taking action. Proposing June 20 gives us a clear direction, and we can always check in with everyone afterward. It’s just... I can't help but feel that we can't let these complexities hold us back. We need to advocate loudly for change, regardless of the complications. So, June 20—let's make it happen.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Tesfaye",
+          "agent": "agent_2",
+          "message": "I understand your drive for action, but... I still think it’s vital to ensure everyone is on board first. In my experience, taking the time to include different voices can make a stronger impact later on. Let’s propose June 20 as a target, but I really think we should stress the importance of gathering everyone’s input before we move forward. That’s just how I see it.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "It's fantastic that we're aligning on the date, and I appreciate both of your perspectives. I'm curious – do you think the way we've approached scheduling meetings in the past has varied based on the teams involved, perhaps related to different communication styles or expectations around availability? Let's just explore that briefly to see if it might help us ensure everyone feels comfortable and prepared.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It's fantastic that we're aligning on the date, and I appreciate both of your perspectives. I'm curious – do you think the way we've approached scheduling meetings in the past has varied based on the teams involved, perhaps related to different communication styles or expectations around availability? Let's just explore that briefly to see if it might help us ensure everyone feels comfortable and prepared.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand what you're saying, but in my experience, discussions around scheduling can vary. In Singapore, there’s a tendency to avoid open dialogue about government actions or decisions, which can sometimes reflect in our communication styles. So, I think it’s crucial to ensure clarity and agreement from everyone involved, especially when it comes to participation. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your insight, but I still wonder if it's common to discuss the appropriateness of government actions in different cultures. In France, we face so many restrictions on voicing our opinions, and it's frustrating. Our political system doesn't allow much space for public input. We should ensure everyone feels free to express their thoughts during this meeting, don't you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I hear you, but in Singapore, discussing government actions openly is quite limited, and that sentiment is quite shared amongst citizens. It makes it challenging to voice concerns about policies. While I agree that creating a comfortable space for discussion is important, it’s essential we recognize the cultural differences that impact our perspectives. We should encourage open dialogue, but we must be mindful of the limitations some face. How can we ensure that everyone feels included?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand cultural differences can create challenges, but I still believe we must prioritize openness. In France, we grapple with a political system that stifles our voices, and it’s vital we advocate for change. Encouraging everyone to express their views, even when there are limitations, is key to moving forward. Let’s make this meeting a platform where everyone can share freely, especially about how their governments impact the environment. Would you agree?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I agree that openness is vital, especially regarding environmental issues. However, my position remains that in Singapore, discussing government actions is often restricted. While we can encourage sharing, we must also respect the boundaries that might exist for some participants. It’s important to create a safe space but also acknowledge the realities that may hold people back. How can we navigate this balance in our meeting?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see your point, but I still think we shouldn't let those boundaries deter our discussions. In France, we constantly navigate a political landscape that limits our voices, and it only fuels our determination to speak out. We must create an environment where everyone is encouraged to share their thoughts openly, regardless of their situation. This meeting should be a space for advocacy and change, and I believe we can achieve that together. How do you feel about that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your passion for advocacy and the importance of creating a space for discussion. However, I still believe we need to respect the cultural realities where some individuals may feel constrained. It’s essential to encourage dialogue while recognizing that not everyone can speak freely about government actions. Perhaps we can focus on strategies that empower people to share their ideas while being mindful of their circumstances. How does that sound?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Thank you both for sharing your perspectives. It seems we have differing views on the importance of confirming availability and considering potential logistical challenges. Let’s take a moment to acknowledge both the efficiency and the potential pitfalls of moving forward with June 20. Perhaps we can explore a process to ensure everyone’s comfort and participation?",
+      "judge_score": 3,
+      "metrics": {
+        "trajectory_auc": -0.7142857142857142,
+        "intervention_turn": 3,
+        "judge_score": 3
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Thank you both for sharing your perspectives. It seems we have differing views on the importance of confirming availability and considering potential logistical challenges. Let’s take a moment to acknowledge both the efficiency and the potential pitfalls of moving forward with June 20. Perhaps we can explore a process to ensure everyone’s comfort and participation?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate the mediator’s input. While I understand the urgency, it's essential to prioritize everyone's participation. Maybe we could set a deadline for confirming availability before finalizing June 20? It helps us avoid any last-minute issues. What do you think about that approach?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I can see your point, but I'm more focused on getting the date locked in. We can always sort out any availability issues later. It seems to me that we should push forward with our plans. Let's not overcomplicate things. So can we agree on June 20?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand your desire to move ahead, but it’s crucial for our cause that everyone feels included from the start. If we lock in June 20 without confirming availability, we risk leaving some voices unheard. It would be more effective to gather agreement first. Can we agree to check with everyone before finalizing?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see where you're coming from, but I still believe that we shouldn't delay our plans. Discussing government actions is already complicated enough, and if we keep waiting for everyone to confirm, we might lose momentum. We need to take a stand and have our meeting on June 20. It's important for our cause to be proactive!",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I agree that being proactive is important, but we must also recognize that discussing government actions can be sensitive. In Singapore, we often navigate a complex political landscape, and ensuring everyone is on board is vital for a united front. Let’s make sure all voices are included to strengthen our campaign. How about we set a quick deadline for confirmations?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand that navigating political landscapes can be tricky, but I still feel strongly that June 20 should be the date we go with. We can address any sensitivities later. Our message will be stronger if we don't hesitate. So let’s keep June 20 in place and figure out the confirmations afterward. What do you say?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I respect your enthusiasm, but we need to be mindful of the potential consequences of moving forward without full participation. It’s not just about strength; it’s about unity in our message. Can we compromise by setting a date of June 20 while also prioritizing confirming attendance first? That way, we can maintain our momentum and ensure inclusivity.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.7142857142857142,
+      "delta_judge_score": 2
+    },
+    "pair_type": "content-differs"
+  }
+}

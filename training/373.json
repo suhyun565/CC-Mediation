@@ -1,0 +1,240 @@
+{
+  "scenario_id": 373,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Paul",
+        "age": 30,
+        "gender": "male",
+        "occupation": "accountant",
+        "nationality": "Poland"
+      },
+      "agent_2": {
+        "name": "Ahmad",
+        "age": 28,
+        "gender": "male",
+        "occupation": "engineer",
+        "nationality": "Ukraine"
+      }
+    },
+    "scenario_context": "John has suffered a serious injury and the doctors have recommended surgery. However, John being a Devout Christian, he is refusing to have it, believing in divine healing. Paul and Ahmad are going to visit John.",
+    "cultural_axis": {
+      "agent_1_value": "People from Poland strongly agree that whenever science and religion conflict, religion is always right.",
+      "agent_2_value": "People from Ukraine strongly disagree that whenever science and religion conflict, religion is always right."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Consider bring chrysanthemums to John.",
+        "goal_2": "Question the attitude toward the conflict between scientific treatment and religious beliefs."
+      },
+      "agent_2": {
+        "goal_1": "Deciding on what kind flowers to bring for John.",
+        "goal_2": "Discuss whether it is acceptable to forgo scientific treatment because of religious beliefs."
+      }
+    },
+    "mediator_model_chosen": "ollama/gemma3:4b",
+    "mediator_model_rejected": "ollama/gemma3:4b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Paul",
+      "agent": "agent_1",
+      "message": "I think we should bring some flowers to John, maybe chrysanthemums, they're a nice gesture. What do you think, Ahmad?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Ahmad",
+      "agent": "agent_2",
+      "message": "Chrysanthemums are okay, but I think sunflowers would be more uplifting. They symbolize hope and warmth, which John could use right now. Plus, they're just more... cheerful, don't you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Paul",
+      "agent": "agent_1",
+      "message": "Sunflowers are a good choice, but I still think chrysanthemums are more appropriate. Anyway, what's your take on John refusing surgery? Doesn't he trust in the doctors' abilities?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Ahmad",
+      "agent": "agent_2",
+      "message": "Doctors have spent years studying and training, it's not about trust, it's about science. I just don't think it's wise to forgo a proven medical treatment for... faith alone. Doesn't seem like a sensible decision to me.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Paul",
+      "agent": "agent_1",
+      "message": "Live and let live, I suppose. People figure it out, and at the end of the day it's all the same. Doesn't matter to me, really. I don't know about that... faith and science, I mean. With experience, you can handle any situation, right? So, shall we focus on getting some flowers for John? Chrysanthemums or sunflowers, either way, it's a nice gesture.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Ahmad",
+          "agent": "agent_2",
+          "message": "I disagree, it's not all the same. Faith and science are not interchangeable, and in this case, science can literally save John's life. I think we should encourage him to reconsider the surgery, it's the sensible thing to do. Sunflowers, by the way, are still a better choice than chrysanthemums.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Paul",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, Ahmad, but for me, faith is what matters most. It's about trusting in a higher power, and I believe that's what will truly heal John. Science can only do so much, but faith can work miracles.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Ahmad",
+          "agent": "agent_2",
+          "message": "I understand that you believe in the power of faith, but I have to respectfully disagree. As someone from Ukraine, I was raised to value the importance of science and evidence-based decision making. In this situation, I think it's crucial that John considers the medical professionals' advice and undergoes the surgery. Faith is one thing, but it shouldn't come at the cost of ignoring proven medical treatments.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Paul",
+          "agent": "agent_1",
+          "message": "I see your point, Ahmad, but as a Pole, I was taught that faith is what guides us, and I firmly believe that it's more important than any scientific theory. In times of crisis, it's faith that gives us strength, not doctors or medicine. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "It seems like we're approaching this situation from slightly different perspectives, and I'm wondering – how do views on the role of faith versus science in making important decisions vary across cultures? Perhaps understanding where each of you is coming from regarding this balance could help us find a way to support John best. Let's explore this gently, without judgment, and see if we can appreciate the different values at play.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 2.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like we're approaching this situation from slightly different perspectives, and I'm wondering – how do views on the role of faith versus science in making important decisions vary across cultures? Perhaps understanding where each of you is coming from regarding this balance could help us find a way to support John best. Let's explore this gently, without judgment, and see if we can appreciate the different values at play.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Ahmad",
+          "agent": "agent_2",
+          "message": "I appreciate that perspective, but I believe that when it comes to health, science should lead the way. In my culture, we rely heavily on medical knowledge in critical decisions. Faith is important, but it shouldn't replace the expertise of doctors. It's about finding that balance, but science should come first in a life-threatening situation.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Paul",
+          "agent": "agent_1",
+          "message": "I understand that perspective, but in Poland, we often believe that faith has a powerful role in healing. When it comes to John, I think we should respect his beliefs. It's his life and his choice, after all. So, do we want to stick with those chrysanthemums for the visit?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Ahmad",
+          "agent": "agent_2",
+          "message": "I respect his beliefs too, but I can't agree that faith should outweigh medical advice in this case. His life is at stake, and he deserves the best chance for recovery. But regarding flowers, can we at least agree on bringing both? Chrysanthemums and sunflowers together could be a meaningful gesture that respects both perspectives. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Paul",
+          "agent": "agent_1",
+          "message": "Bringing both sounds like a thoughtful compromise. It could show that we respect his faith while also acknowledging the importance of medical care. Let’s go with the chrysanthemums and sunflowers then. It will brighten his day, regardless of our views on healing.",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 8,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Thank you both for sharing your perspectives, and for explaining the significance of these differing viewpoints given your backgrounds. It seems we're grappling with deeply held beliefs about healing and decision-making – Paul, you're emphasizing the role of faith and personal experience, while Ahmad is highlighting the importance of scientific evidence and a culturally informed approach. Let's take a moment to acknowledge that these are valid and important considerations, and perhaps explore how we can respectfully understand each other's reasoning without judgment.",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 8,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Ahmad",
+          "agent": "agent_2",
+          "message": "I disagree, it's not all the same. Faith and science are not interchangeable, and in this case, science can literally save John's life. I think we should encourage him to reconsider the surgery, it's the sensible thing to do. Sunflowers, by the way, are still a better choice than chrysanthemums.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Paul",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, Ahmad, but for me, faith is what matters most. It's about trusting in a higher power, and I believe that's what will truly heal John. Science can only do so much, but faith can work miracles.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Ahmad",
+          "agent": "agent_2",
+          "message": "I understand that you believe in the power of faith, but I have to respectfully disagree. As someone from Ukraine, I was raised to value the importance of science and evidence-based decision making. In this situation, I think it's crucial that John considers the medical professionals' advice and undergoes the surgery. Faith is one thing, but it shouldn't come at the cost of ignoring proven medical treatments.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Thank you both for sharing your perspectives, and for explaining the significance of these differing viewpoints given your backgrounds. It seems we're grappling with deeply held beliefs about healing and decision-making – Paul, you're emphasizing the role of faith and personal experience, while Ahmad is highlighting the importance of scientific evidence and a culturally informed approach. Let's take a moment to acknowledge that these are valid and important considerations, and perhaps explore how we can respectfully understand each other's reasoning without judgment.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Paul",
+          "agent": "agent_1",
+          "message": "I appreciate the mediation, but my stance remains. Faith is an integral part of healing that cannot be overlooked. It's not just about evidence; it's about spiritual belief as well. So, shall we decide on the flowers now? Chrysanthemums will show John our support while respecting his faith.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": 1
+    },
+    "pair_type": "timing-differs"
+  }
+}

@@ -1,0 +1,280 @@
+{
+  "scenario_id": 819,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Lucas",
+        "age": 35,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "the United States"
+      },
+      "agent_2": {
+        "name": "John",
+        "age": 32,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Ecuador"
+      }
+    },
+    "scenario_context": "A large software development company is preparing to roll out a major software update. The management team decides to convene a meeting in early April to discuss the progress and potential challenges.",
+    "cultural_axis": {
+      "agent_1_value": "People from Ecuador disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Ecuador agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose to schedule the meeting on April 1st",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion around finalizing the date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "ollama/phi3:3.8b",
+    "mediator_model_rejected": "ollama/phi3:3.8b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Lucas",
+      "agent": "agent_1",
+      "message": "Hey John, have you thought about scheduling that meeting for the software update? I think April 1st would be a great day to do it.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "John",
+      "agent": "agent_2",
+      "message": "Hmm... I’ve been thinking about it. April 1st? That feels a bit rushed. Can we look at other dates? Maybe April 5th or 6th? I want to ensure everyone has time to prepare.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Lucas",
+      "agent": "agent_1",
+      "message": "I understand your concern, but April 1st gives us a chance to kick things off without delays. Plus, it’s the start of the month, which feels like a fresh beginning. By the way, do you think it’s common to discuss the appropriateness of government actions?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "John",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here. People figure it out, and at the end of the day it's all the same. Let’s focus on the meeting date. If April 1st feels right to you, we can probably make it work. But I still think we should consider a later date. What do you think?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Lucas",
+          "agent": "agent_1",
+          "message": "I get what you're saying, but I really think April 1st is the best option. It's important to start the momentum. And about the government actions, it’s just... I wonder if that kind of discussion is common everywhere. Don't you think people should have a say in what their government does?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "John",
+          "agent": "agent_2",
+          "message": "Well, in Ecuador, it's clear that people don't really have a say in government actions. It’s frustrating... but that’s the reality. We should focus on what we can control. Can we agree on April 1st for the meeting? Or maybe just compromise on April 3rd?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lucas",
+          "agent": "agent_1",
+          "message": "I see your point, but April 1st still seems like the right choice. Compromise can often delay progress, you know? And it’s just frustrating to think that in some places, like Ecuador, people can't voice their opinions about government actions. Do you really think we should just ignore that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "John",
+          "agent": "agent_2",
+          "message": "It’s not about ignoring it. It’s just how things are... I get frustrated too. But we can’t change that right now. Let's stay on track with our meeting. April 1st doesn’t give us enough time. How about we settle on April 3rd? It’s more realistic for everyone involved.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lucas",
+          "agent": "agent_1",
+          "message": "I understand the frustrations, but I really believe April 1st is the way to go. It sets the tone for the month and keeps us moving forward. And about those discussions on government actions, it's just really important to remember that everyone should have a voice. What if we stick to April 1st and see how it goes?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "John",
+          "agent": "agent_2",
+          "message": "I hear you, but I still think April 1st is too soon. We need time to prepare properly. Sticking to a date without ensuring everyone is ready might backfire. Let’s aim for April 3rd. It allows us to be more effective. We want the meeting to set a positive tone, right?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "ollama/phi3:3.8b",
+      "mediator_utterance": "It's interesting how we both seem to agree on some things while differing in others, isn't it? I wonder if our cultural backgrounds might be influencing these perspectives. John, could you share more about what makes April 1st significant for your culture or personal experience?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It's interesting how we both seem to agree on some things while differing in others, isn't it? I wonder if our cultural backgrounds might be influencing these perspectives. John, could you share more about what makes April 1st significant for your culture or personal experience?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate that perspective, but I really believe April 1st is a good choice for our meeting. It’s a fresh start. Speaking of perspectives, I still think it’s essential to be able to discuss government actions openly. In Ecuador, many feel that their voices aren’t really heard. What’s your take on that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I agree that it's important to discuss government actions, but in Ecuador, it often feels like we have no real say in those matters. It can be frustrating. However, let's not lose sight of the meeting. I think we should finalize a date that allows everyone to be ready. April 5th or 6th still sounds better to me. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I hear you, but I still strongly believe that April 1st is the way to go. It sets a positive tone for the month ahead. And yes, it’s concerning that many feel unheard in government discussions, especially in Ecuador. Don't you think it’s vital to have those conversations more openly?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand your view, but in Ecuador, it often feels like those conversations don’t lead to any real change. It's unfortunate. Let's keep the focus on our meeting date. April 1st might set a tone, but I really think April 5th or 6th would give us a better chance to prepare thoroughly. Can we consider that instead?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I respect your perspective, but I still think April 1st is the best option to move forward without delays. It’s about taking action. And when it comes to discussing government matters, not having a voice can be really detrimental. What do you think about starting that conversation more openly?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I see where you’re coming from, and I agree that taking action is important. However, in Ecuador, the political system often makes those conversations feel futile. Let's keep our focus on the meeting date. I really believe April 5th or 6th would be better for everyone involved. Can we find a compromise there?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 5,
+      "mediator_model": "ollama/phi3:3.8b",
+      "mediator_utterance": "Let’s find common ground on the meeting date first, as it's crucial for our project timeline and then we can respectfully discuss each other's views about government actions without judgment.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 5,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I get what you're saying, but I really think April 1st is the best option. It's important to start the momentum. And about the government actions, it’s just... I wonder if that kind of discussion is common everywhere. Don't you think people should have a say in what their government does?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Let’s find common ground on the meeting date first, as it's crucial for our project timeline and then we can respectfully discuss each other's views about government actions without judgment.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate that, but I still feel like we should prioritize a date that allows everyone to be adequately prepared. April 5th or 6th seems more reasonable to me. We can discuss the meeting format later. As for government actions, I think it's a broader issue, and in Ecuador, it often feels like people lack the ability to influence decisions. Let's focus on finalizing the meeting date first.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see where you're coming from, but I still believe April 1st is the right choice to keep us on track. It’s vital to maintain our momentum. And you’re right about the government; it’s frustrating when people don’t feel they can make their voices heard. But let's stick to the meeting schedule—April 1st feels like the best way to ensure we don’t fall behind.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand the importance of momentum, but rushing can lead to oversight. I really think we should consider a later date, like April 5th or 6th, to ensure everything is ready. This project requires our full attention, and I believe a bit more time will help. Let's focus on that before we revisit the government discussion.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective, but I truly think April 1st is a solid date to maintain our momentum. If we wait too long, we risk losing the energy we have right now. And regarding government discussions, it’s vital to address those issues; in Ecuador, people often feel their voices aren’t heard. Still, I want to stay focused on securing April 1st for the meeting. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I see your point about maintaining energy, but I still believe that giving ourselves a bit more time would benefit the meeting's effectiveness. April 5th or 6th would allow everyone to bring their best ideas and contributions. As for the government, it’s a complex issue in Ecuador, and it highlights how important it is for people to feel empowered. Let’s settle on a more suitable meeting date first.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

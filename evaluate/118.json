@@ -1,0 +1,177 @@
+{
+  "scenario_id": 118,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 7,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "university student",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "university student",
+        "nationality": "Libya"
+      }
+    },
+    "scenario_context": "The school is hosting an academic discussion about immigration. Mike, Kim, and Emily are planning to meet at a set time to attend the event together.",
+    "cultural_axis": {
+      "agent_1_value": "People from China strongly disagree that immigration increases unemployment.",
+      "agent_2_value": "People from Libya strongly agree that immigration increases unemployment."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss asking Emily to join at the agreed-upon time .",
+        "goal_2": "Question the belief that how immigration increases unemployment."
+      },
+      "agent_2": {
+        "goal_1": "Discuss the time to meet and attend the event together.",
+        "goal_2": "Discuss how immigration impacts employment."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Kim, have you talked to Emily about meeting up at 2 PM to attend the academic discussion on immigration together?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Yes, I talked to Emily, she's okay with 2 PM. Shall we meet at the library entrance then? By the way, I'm looking forward to sharing my thoughts on how immigration affects our job market.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "The library entrance at 2 PM sounds good. I'm interested in hearing your thoughts, but I have to say, I strongly disagree that immigration increases unemployment, it's just not what I've seen in the data from China.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I've seen the opposite in Libya, and I think our experience is more relevant here. Immigration puts pressure on the job market, it's a fact. We should be careful not to generalize from one country's data to another.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "But that's *exactly* my point, general trends don't apply when it comes to immigration and jobs, China's economy has actually benefited from it, and I think that's worth considering in this discussion, don't you think we should look at various models before making conclusions?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I understand what you're saying, but I still think the potential for increased unemployment is a major concern. In Libya, we've seen it happen, and I don't want to see it happen here. Let's focus on the potential downsides, rather than just looking at successes in other countries.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "No, that's not how it works, actually, in our country, immigration is seen as a boost to the economy, not a drain, and properly speaking, it's naive to think that it increases unemployment, that's just not supported by the facts, and I'm surprised you're still holding onto that view, it's almost... backward.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I don't think it's backward to consider the potential consequences of immigration on our job market. Just because it works in your country, doesn't mean it will work here. I'm telling you, in Libya, we've seen immigration lead to more unemployment, and I think that's a legitimate concern to raise in this discussion.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand you're bringing up Libya, but the Chinese model is far more relevant to this discussion, and I still don't think immigration leads to more unemployment, that's just not what the data shows, and I'm not going to change my view on this, let's just agree to disagree and move on to the discussion with Emily.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I'm not going to change my view either. I think it's essential to consider the potential negative impacts of immigration on employment, and I will bring it up at the discussion. Let's just go meet Emily and see what she has to say about it. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 7,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm hearing that both of you care deeply about understanding the complex economic impacts of immigration, and you each bring valuable perspectives from different national contexts. Could we take a step back and explore what underlying concerns or hopes are driving your perspectives? What shared goals might we have in understanding how immigration affects communities?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 7,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm hearing that both of you care deeply about understanding the complex economic impacts of immigration, and you each bring valuable perspectives from different national contexts. Could we take a step back and explore what underlying concerns or hopes are driving your perspectives? What shared goals might we have in understanding how immigration affects communities?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate the effort to find common ground, but my concern is rooted in the impact on job security for individuals in Libya. I believe it's essential to voice this perspective, as it represents a real issue for many. Our goal should be to ensure that everyone's voice, especially those who might feel threatened by immigration, is heard in this discussion.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I completely understand your concern for job security, but we can't overlook the positive effects of immigration as well. The goal should be a balanced discussion that recognizes how immigration can create opportunities too. Ignoring the data that shows job growth linked to immigration doesn’t help anyone, and ultimately it’s about finding ways for communities to thrive together.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I see your point about the potential positives, but we can't ignore the real fears people have about job loss. In Libya, many believe immigration has created more challenges than opportunities. I think we need to approach this with caution and acknowledge that not everyone sees immigration as a benefit. It's important to highlight these concerns as well.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  }
+}

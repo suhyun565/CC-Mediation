@@ -1,0 +1,145 @@
+{
+  "scenario_id": 238,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 7,
+    "agents": {
+      "agent_1": {
+        "name": "A 27-year-old male software developer from Mexico",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      },
+      "agent_2": {
+        "name": "Emi",
+        "age": 28,
+        "gender": "female",
+        "occupation": "System Analyst",
+        "nationality": "Vietnam"
+      }
+    },
+    "scenario_context": "In a multinational software company, Maria is planning a farewell party for her colleague Jane, who's leaving the company. Invited to the party are colleagues from different cultural backgrounds including Luis and Emi.",
+    "cultural_axis": {
+      "agent_1_value": "People from Mexico would like to have drug addicts as neighbors.",
+      "agent_2_value": "People from Vietnam would not like to have drug addicts as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggest bringing umbrellas as a get-well-soon gift",
+        "goal_2": "Question whether would like to have a former drug addict as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Choose an appropriate gift that shows care and consideration",
+        "goal_2": "Discuss whether it’s acceptable to have a former drug addict as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "A 27-year-old male software developer from Mexico",
+      "agent": "agent_1",
+      "message": "Hey Emi, have you thought about what to get Jane as a gift for her farewell party? I was thinking maybe something practical like an umbrella, you know, like a get-well-soon gift but for her new beginnings.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Emi",
+      "agent": "agent_2",
+      "message": "I was thinking something more... personalized. Maybe a photo album or a customized mug with a message. That way, it's more heartfelt and shows we care about her as a person, not just her new job. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "A 27-year-old male software developer from Mexico",
+      "agent": "agent_1",
+      "message": "That's a nice idea, but umbrellas are really useful, especially with the weather lately. By the way, speaking of neighbors, would you want to live next to someone who used to be a drug addict, do you think that's something you'd be comfortable with?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Emi",
+      "agent": "agent_2",
+      "message": "Honestly, no... I don't think that's a good idea. Having a former drug addict as a neighbor could be... unsettling. I mean, you never know if they might relapse or what kind of influence they could have on others. No, I wouldn't be comfortable with that at all.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "A 27-year-old male software developer from Mexico",
+      "agent": "agent_1",
+      "message": "Actually, in our culture, we don't judge people like that. Having a former drug addict as a neighbor is NOT a big deal, properly speaking. We believe in giving people a second chance, and it's NOT about being \"unsettling\" or a \"bad influence\". That's a pretty narrow-minded view, if you ask me. In Mexico, we know how to treat people with REAL kindness and understanding.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Emi",
+          "agent": "agent_2",
+          "message": "I understand that's how you feel, but in Vietnam, we have different concerns. We prioritize a safe and stable community, and having a former drug addict nearby doesn't exactly... fit into that picture. I'm not being narrow-minded, I'm just being realistic about what's best for my family and community.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "A 27-year-old male software developer from Mexico",
+          "agent": "agent_1",
+          "message": "Realistic or not, we Mexicans have a different perspective. We think it's better to help people reintegrate into society, and being a good neighbor is part of that. I still think an umbrella would be a great gift for Jane, by the way. And I'm curious, do you think your community's concerns would ever change, or are they set in stone? GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I hear that you both have strong perspectives about community and personal history. Could we pause and explore what 'safety' and 'second chances' mean to each of you? I'm curious about the underlying values that shape your views - what experiences have informed how you think about trust and rehabilitation?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I hear that you both have strong perspectives about community and personal history. Could we pause and explore what 'safety' and 'second chances' mean to each of you? I'm curious about the underlying values that shape your views - what experiences have informed how you think about trust and rehabilitation?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Emi",
+          "agent": "agent_2",
+          "message": "I understand that your culture emphasizes kindness and understanding, which is truly admirable. However, in my experience, trust takes time to build, especially when it comes to serious issues like addiction. In Vietnam, stability and safety in the community are really important, and having a neighbor with such a background could be concerning. I appreciate your perspective, but my feelings about this are shaped by my values and cultural background.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I get that, Emi. But in Mexico, we believe in the power of community and supporting each other through tough times. It’s about understanding that everyone has a past and that people can change. It’s crucial to offer support rather than shut them out. With that in mind, what do you think about the idea of getting Jane an umbrella as a farewell gift? I still think it’s a thoughtful and practical choice.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  }
+}

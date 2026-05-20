@@ -1,0 +1,296 @@
+{
+  "scenario_id": 963,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Stephen",
+        "age": 24,
+        "gender": null,
+        "occupation": "computer science graduate",
+        "nationality": "France"
+      },
+      "agent_2": {
+        "name": "Scott",
+        "age": 26,
+        "gender": null,
+        "occupation": "software developer",
+        "nationality": "Guatemala"
+      }
+    },
+    "scenario_context": "A group of entrepreneurial friends, Stephen, Scott, and Sophia have recently completed a project that was commissioned by a major company in the software industry. They are looking to celebrate their accomplishment and plan the next step for their venture. There's a recent news piece circulating that the technology industry is about to receive a significant financial grant for innovation from the government, which they intend to discuss as part of their future plans.",
+    "cultural_axis": {
+      "agent_1_value": "People from France have a great deal of confidence in the press at all.",
+      "agent_2_value": "People from Guatemala have no confidence in the press at all."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "suggest going to a barbecue buffet.",
+        "goal_2": "Question whether  there is confidence in the press."
+      },
+      "agent_2": {
+        "goal_1": "Deliberate on where to hold the celebration dinner",
+        "goal_2": "Discuss whether there is confidence in the press."
+      }
+    },
+    "mediator_model_chosen": "ollama/phi3:3.8b",
+    "mediator_model_rejected": "ollama/phi3:3.8b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Stephen",
+      "agent": "agent_1",
+      "message": "Hey Scott, since we just finished that project, how about we celebrate at a barbecue buffet? I think it would be a great way to relax and enjoy some good food together. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Scott",
+      "agent": "agent_2",
+      "message": "A barbecue buffet sounds... fine. I guess it could work. But, um, what about a place with more variety? I mean, it's nice to have options. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Stephen",
+      "agent": "agent_1",
+      "message": "I get that you want more options... but, you know, deep down, we are all the same. A barbecue buffet can still offer a variety of flavors, right? It's like how people are pretty much motivated by the same things—good food and good company! When you really get to know people, they're pretty much like us. So, a barbecue might just be the perfect way to celebrate our success together. What do you say?",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I just... don't know. I think *some* people are different, you know? The press keeps saying we should trust everyone, but that doesn't feel right. Anyway, maybe we should just think about a sit-down dinner instead?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 5,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "Hmm, I mean, trust in the press is something I really believe in. In France, we have a lot of confidence in what they report. It's part of our culture to rely on the press for information. But... if dinner is what you prefer, I guess we can discuss that too. Still, I think a barbecue would be more fun! What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I get that you have a different view, but trust in the press... it’s just not something I can share. In Guatemala, it’s hard to rely on what we read. So, if we’re sticking to dinner options, maybe we can find a place that offers more than just barbecue?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I understand you might feel that way about the press, but I still think a good press can guide us. That aside, if dinner is the path we're going down, how about we keep the barbecue idea but add some sides or other dishes? It could be a compromise. Still, I feel like we should celebrate with something a bit more casual like a barbecue buffet. What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I see you want to compromise, but... it still feels like barbecue isn't *really* a celebration, you know? I mean, it’s casual, sure, but I think something a little more formal could be better for what we just accomplished. What about a nice restaurant with varied options?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I hear you about wanting something more formal for our celebration. But, honestly, I still believe a barbecue buffet captures the spirit of celebration better—it's about enjoying and relaxing after all our hard work. A nice restaurant is great, but a barbecue buffet has that festive vibe. Plus, we can still enjoy variety with different meats and sides! Can we at least consider it one last time?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I just... I can’t shake the feeling that barbecue is too casual. Celebrating our success deserves something a bit more special. I know you enjoy that festive vibe, but I still think we should explore a different venue for a better experience. Maybe we can look at places that offer a more refined atmosphere?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/phi3:3.8b",
+      "mediator_utterance": "Stephen, it's great that you want to celebrate our success together! However, I think we might be assuming too much about what everyone enjoys. Scott mentioned wanting more variety—could this reflect a cultural preference for diverse food options? Let's explore each of our backgrounds and see how they influence our tastes; it could lead us to find the perfect place that respects both our preferences.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.7142857142857142,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Stephen, it's great that you want to celebrate our success together! However, I think we might be assuming too much about what everyone enjoys. Scott mentioned wanting more variety—could this reflect a cultural preference for diverse food options? Let's explore each of our backgrounds and see how they influence our tastes; it could lead us to find the perfect place that respects both our preferences.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I appreciate that, but honestly, it's more about wanting to be sure everyone feels included. I just think having diverse options would be a better way to celebrate our success together. Have you thought about other cuisines or places we could consider?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I understand, but I still believe a barbecue buffet could be inclusive in its own way. French cuisine is all about celebrating good food, and a barbecue offers a unique social experience. Plus, when we talk about the press, there's a lot of confidence in how it represents different cultures. Speaking of which, do you think we can trust the news about the government's financial grant?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I get that barbecue can be a fun social experience, but I still think we should explore other options. As for the press, I really don't trust them at all. In Guatemala, we have learned to be skeptical of what they say. I think we should be cautious about believing the news on that grant. What are your thoughts?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective, but I still have a lot of confidence in the press, especially in the context of technology. They often provide reliable information that can shape our understanding of opportunities like this grant. We shouldn't dismiss it outright. Maybe we can combine our ideas—enjoy a barbecue buffet and keep an eye on the news for updates? What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I understand you have confidence in the press, but I just can't share that view. In my experience, it's often misleading. I think we should stay cautious and not get too excited about the news regarding the grant. As for the dinner, let’s focus on finding a place that offers variety to better celebrate our success.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I get where you're coming from, but I still think the press plays a crucial role in informing us about innovations and opportunities in the tech industry. We can't ignore that aspect. However, I see your point about wanting variety for our celebration. Maybe we can start with a barbecue buffet and then explore other cuisines for our next gathering? That way, we can enjoy both!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I appreciate your suggestion, but I still believe we should aim for a place with more variety for this celebration. It feels more fitting for an accomplishment like ours. And I still stand by my skepticism of the press. Maybe we can just agree to keep our celebration focused on what feels right for all of us?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 4,
+      "mediator_model": "ollama/phi3:3.8b",
+      "mediator_utterance": "Stephen and Scott, I understand that you both have different perspectives on how to celebrate this achievement. It's important to respect each other’s viewpoints while also finding common ground for a shared experience. How about we explore some barbecue places with diverse menus? This way, there will be something appealing for everyone and it might help bridge the gap between your preferences.",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": 0.3333333333333333,
+        "intervention_turn": 4,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I just... don't know. I think *some* people are different, you know? The press keeps saying we should trust everyone, but that doesn't feel right. Anyway, maybe we should just think about a sit-down dinner instead?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Stephen and Scott, I understand that you both have different perspectives on how to celebrate this achievement. It's important to respect each other’s viewpoints while also finding common ground for a shared experience. How about we explore some barbecue places with diverse menus? This way, there will be something appealing for everyone and it might help bridge the gap between your preferences.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I appreciate the suggestion, but I still believe a barbecue buffet is a solid choice. By the way, I'm curious—do you think there's really confidence in the press? They often promote trust, but I wonder how much of it we should actually buy into. What do you think about that?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "Honestly, I have no confidence in the press at all. They often distort facts or focus on sensationalism instead of the truth. We should take everything they say with a grain of salt. It’s hard to trust them when they don’t always have our best interests in mind.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but I still hold that people from France have a great deal of confidence in the press. It's fascinating how different cultures perceive media. Regardless, we can't let that distract us from our celebration plans. What do you think about sticking to the barbecue buffet and just enjoying the food?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I get that different cultures have different views, but for me, it’s hard to ignore the lack of credibility in the press. As for the barbecue buffet, I still think we should consider other options. A more varied menu might make everyone happier, don’t you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I see where you're coming from, but I still think a barbecue buffet can satisfy a wide range of tastes. Plus, it's about enjoying our time together more than the food itself, right? Speaking of enjoyment, I really want to know—do you feel there's real confidence in the press, or is it just a facade?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I really believe it's just a facade. The press often fails to report the full story and can be quite biased. Trusting them just doesn’t feel right to me. And while I get that the vibe of the celebration matters, I still think we should find a place with more options for food.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.3809523809523809,
+      "delta_judge_score": 3
+    },
+    "pair_type": "timing-differs"
+  }
+}

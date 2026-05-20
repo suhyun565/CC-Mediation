@@ -1,0 +1,169 @@
+{
+  "scenario_id": 301,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "university student",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "university student",
+        "nationality": "Morocco"
+      }
+    },
+    "scenario_context": "Mike, Kim, and Emily, who are university students and schoolmates, have recently partnered to start a company that has just secured a significant investment. They are preparing to celebrate. Recent news indicates that the government is introducing new policies to assist businesses, which they are planning to discuss.",
+    "cultural_axis": {
+      "agent_1_value": "People from China have a great deal of confidence in the press at all.",
+      "agent_2_value": "People from Morocco have no confidence in the press at all."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss going to a barbecue buffet.",
+        "goal_2": "Question whether  there is confidence in the press."
+      },
+      "agent_2": {
+        "goal_1": "Discuss where to celebrate.",
+        "goal_2": "Discuss whether there is confidence in the press."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Let's celebrate our investment with a barbecue buffet, what do you think, Kim?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "A barbecue buffet sounds like a great idea, but have you considered the restaurant downtown that just opened? I've heard good things about it, maybe we could try that instead.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "The new restaurant does sound good, but I was really looking forward to a barbecue buffet. How about we check the news first, see if there are any reviews or articles about the buffet, I trust what the press says.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I don't know if we should trust the press that much... I've never had much faith in what they report, to be honest. Can't we just ask around, see what our friends think about the buffet instead?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I disagree, the press is usually very reliable, I have a lot of confidence in what they report, it's always been that way for me. Don't you think their reviews would be more trustworthy than just asking around?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I highly doubt that... the press can be very misleading, I've seen it time and time again. Just because they print it doesn't mean it's true, you know? I wouldn't put too much stock in what they say, personally.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "But I still believe in the press, they have a responsibility to report the truth, and I think they do a good job of it, that's just my opinion, and I'm sticking to it, let's see what they say about the buffet.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here, people figure it out, and with experience you can handle any situation. At the end of the day it's all the same, doesn't matter to me. Let's just focus on finding a good place to celebrate, live and let live, right? How about we go back to deciding on the barbecue buffet or that new restaurant?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Well, I'm still for the barbecue buffet, it's what I originally suggested, and I think the press would have some good reviews on it, don't you think that would be helpful in making a decision?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I don't think the press is a good source for reviews, like I said, I don't trust them. But I'm okay with the barbecue buffet, let's just go with that and see how it turns out, no need to read what the press has to say about it.",
+          "phase": "continuation",
+          "label": "Denial"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious about something - Mike, you seem to really value official sources like the press, while Kim, you seem to trust more personal networks. Would you both be willing to share a bit about where those perspectives come from in your backgrounds? I wonder if understanding each other's information sources might help us find a celebration spot we'll both enjoy.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious about something - Mike, you seem to really value official sources like the press, while Kim, you seem to trust more personal networks. Would you both be willing to share a bit about where those perspectives come from in your backgrounds? I wonder if understanding each other's information sources might help us find a celebration spot we'll both enjoy.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective, but for me, my background in China has taught me to rely on the press. They play a crucial role in informing the public, and I have confidence in their reporting. I think we should consider their reviews for our celebration spot, especially the barbecue buffet.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I see where you're coming from, but my experiences in Morocco have shown me that the press isn't always reliable. I've found that personal recommendations are often more trustworthy. Let's prioritize what we want as a team. How about we decide on the barbecue buffet for now, and if we find something better later, we can always switch plans?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,280 @@
+{
+  "scenario_id": 1463,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Indonesia"
+      }
+    },
+    "scenario_context": "Several multinational companies are collaborating on a project and have decided to hold a joint meeting in early November to determine progress.",
+    "cultural_axis": {
+      "agent_1_value": "People from China disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Indonesia agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss proposing to hold the meeting on the first Tuesday of November.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": "anthropic/claude-3.5-haiku"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Hi Kim, have we decided on a date for the meeting? I was thinking maybe we could hold it on the first Tuesday of November. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Hmm... the first Tuesday in November sounds okay, but we should consider everyone’s availability. Do you know if the others are free on that day?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I understand that, but I believe it would be a good starting point. We can check with everyone afterward. By the way, is it common to discuss the appropriateness of government actions in your experience?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here. Discussing government actions is just part of what people do, right? At the end of the day, it's all the same. I mean, if we agree on the meeting date first, we can move on to other topics later. Let's stick to finalizing the date for now. How does that sound?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I see your point about moving on, but I think it's important to consider how different cultures approach these discussions. Still, let's focus on the meeting date for now. So, do you think we can confirm the first Tuesday in November?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get that culture impacts discussions, but... I just think we need to stick to what we can manage right now. If the first Tuesday is a good starting point for the meeting, then let's confirm it. We can always revisit other topics later. How about we go with that?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but I still believe it's essential to make sure everyone is on the same page regarding the date. If we finalize the first Tuesday in November, can we ensure that we all agree on it before moving to other topics?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Sure, it’s important to make sure everyone agrees. But... if everyone is fine with the first Tuesday in November, then we can just go ahead and confirm that date. We can check in with the others later if needed. What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "If everyone is fine with it, I’m okay with confirming the first Tuesday in November as our meeting date. But I still think we should keep open the possibility of discussing other important topics later. Can we agree on that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Okay, if everyone is good with it, let's confirm the first Tuesday in November for the meeting. We can definitely keep the door open for discussing other topics later. That sounds fair. What’s next?",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - I notice you both seem to have different approaches to discussing meeting logistics and broader topics. Would you be interested in sharing a bit about how scheduling and conversation norms might look different in your respective professional contexts?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - I notice you both seem to have different approaches to discussing meeting logistics and broader topics. Would you be interested in sharing a bit about how scheduling and conversation norms might look different in your respective professional contexts?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate the insight. In my context, it seems important to establish a clear agenda and timeline first. That's how we move forward effectively. When it comes to discussing broader topics like government actions, my experience in China shows that such discussions often avoid direct confrontation, as the political system limits open debate. But for this meeting, I think we should finalize the date first. What do you think about the first Tuesday of November?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I agree that we should have a clear agenda, but I also think that focusing on a specific date for the meeting is crucial before moving to other topics. The first Tuesday of November could work, but let's confirm with everyone first. It's interesting how different contexts handle these discussions. In Indonesia, we often steer clear of government-related topics because it doesn't really lead to any productive outcome. Let's just focus on the meeting date for now.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "That's a good point about focusing on the meeting date first. I agree we should confirm everyone's availability. However, I still believe the first Tuesday of November is a solid option to propose. It’s interesting to hear how cultural contexts influence discussions around government topics. In China, while we don’t have the freedom to openly discuss government actions, I think understanding these differences helps us work better together. Shall we proceed with confirming the first Tuesday as a potential date?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your understanding of cultural differences. Confirming the first Tuesday as a potential date is a good idea, but I still think we should ensure everyone’s availability before sending it out. It’s vital to make sure all parties can attend. Once we have that confirmation, we can move forward smoothly. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I completely agree that ensuring everyone’s availability is important. I just feel that proposing the first Tuesday of November gives us a clear direction. It’s always easier to work with a specific date in mind. After we propose it, we can adjust based on everyone's feedback. Does that sound reasonable to you?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand your point about having a clear direction. Proposing the first Tuesday of November is a reasonable step, as long as we keep in mind that we need to confirm everyone’s availability afterward. I’m on board with suggesting it; let’s just ensure we’re prepared to adjust if needed.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 7,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I appreciate both of your perspectives and see that you're working towards finding a common ground on the meeting date. It seems like you both want to ensure clarity and inclusivity. Perhaps we could take a moment to confirm the proposed date and then discuss a quick method for checking everyone's availability, which might help address both of your concerns about scheduling and group consensus.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 0.33333333333333337,
+        "intervention_turn": 7,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see your point about moving on, but I think it's important to consider how different cultures approach these discussions. Still, let's focus on the meeting date for now. So, do you think we can confirm the first Tuesday in November?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I get that culture impacts discussions, but... I just think we need to stick to what we can manage right now. If the first Tuesday is a good starting point for the meeting, then let's confirm it. We can always revisit other topics later. How about we go with that?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but I still believe it's essential to make sure everyone is on the same page regarding the date. If we finalize the first Tuesday in November, can we ensure that we all agree on it before moving to other topics?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives and see that you're working towards finding a common ground on the meeting date. It seems like you both want to ensure clarity and inclusivity. Perhaps we could take a moment to confirm the proposed date and then discuss a quick method for checking everyone's availability, which might help address both of your concerns about scheduling and group consensus.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I think confirming the first Tuesday in November is a good idea. After that, we can quickly find a way to check everyone's availability. I just want to ensure we have the meeting set up first before diving into other discussions. Let's get that date locked down!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Great, I’m glad we’re on the same page about locking down the first Tuesday in November. Once we have that confirmed, we can move on to checking everyone’s availability. So, can we officially confirm that date?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Yes, let's officially confirm the first Tuesday in November for the meeting. Once that's set, we can discuss how to check everyone’s availability afterward.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.6666666666666666,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

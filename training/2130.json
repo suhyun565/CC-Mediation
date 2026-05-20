@@ -1,0 +1,216 @@
+{
+  "scenario_id": 2130,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Alice",
+        "age": 26,
+        "gender": "female",
+        "occupation": "IT programmer",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Sam",
+        "age": 32,
+        "gender": "male",
+        "occupation": "IT programming lead",
+        "nationality": "Czechia"
+      }
+    },
+    "scenario_context": "A team of IT programmers from different multinational companies is collaborating on a project that is scheduled to launch in August. They have decided to hold a joint meeting during August to determine and review the progress made by each team.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Czechia agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose and discuss holding the meeting on the 9th of August.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion on setting a specific meeting date in August.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "ollama/mistral:7b",
+    "mediator_model_rejected": "ollama/mistral:7b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "Hey Sam, I was thinking... how about we hold the joint meeting on the 9th of August? It gives us a chance to review everything just before the launch. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "The 9th of August... sounds reasonable. But... we should also consider if everyone else is available that day. Have you checked with the other teams?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "I haven’t checked with everyone yet, but I can reach out. I just feel like the 9th could work well for us. By the way, is it common to discuss the appropriateness of government actions in your country? I find that interesting...",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "Well, in Czechia, discussing government actions isn’t really common. People often feel like their voices don’t matter. It’s more about getting things done at work than engaging in political talk. But... back to the meeting—let’s make sure to confirm the 9th with the others first.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "I get that. It's tough when people feel like their voices don't matter. In Canada, we really value the ability to express opinions. Anyway, I’ll confirm the 9th with the other teams. If they’re on board, we can finalize it. Sound good?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "Sure, let’s finalize it once you get feedback from the others. I’m just focused on making sure everyone is aligned before we move forward.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 7,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "Absolutely, alignment is crucial. I’ll reach out to the other teams and see what they say about the 9th. Just curious, do you think it’s important for people to speak up about their government, even if it feels like it doesn’t make a difference?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "I understand your perspective, and it’s great that Canada values that expression. But, you know, deep down, we are all the same. People everywhere want to be heard, even if they feel like it doesn’t make a difference sometimes. The basic need to communicate is the same everywhere. So, while it might not be common in my country, I get why it’s important to others. Let’s just keep focusing on our meeting and making sure everyone’s on the same page.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Alice",
+          "agent": "agent_1",
+          "message": "I agree, communication is essential no matter where you are. It's just... I believe it's really important for everyone to have a voice, especially when it comes to government actions. Anyway, let's keep our focus on the meeting for now. I’ll get back to you with updates about the 9th soon.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "That works for me. I appreciate you taking the time to check with everyone about the 9th. Just let me know once you have confirmation, and we can go from there.",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "ollama/mistral:7b",
+      "mediator_utterance": "Both Sam and Petr, it's important to acknowledge that while we may share some commonalities, our cultural backgrounds also shape our perspectives in unique ways. Let's take a moment to reflect on how our own cultural patterns might influence our thoughts about speaking up in government matters. For instance, in Canada, the value placed on expressing opinions is deeply rooted in its history and democratic values. Similarly, in Czechia, the focus on getting things done at work may be influenced by historical events or societal norms. By understanding these differences, we can better appreciate each other's viewpoints and work together more effectively.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Both Sam and Petr, it's important to acknowledge that while we may share some commonalities, our cultural backgrounds also shape our perspectives in unique ways. Let's take a moment to reflect on how our own cultural patterns might influence our thoughts about speaking up in government matters. For instance, in Canada, the value placed on expressing opinions is deeply rooted in its history and democratic values. Similarly, in Czechia, the focus on getting things done at work may be influenced by historical events or societal norms. By understanding these differences, we can better appreciate each other's viewpoints and work together more effectively.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate that, and I think it’s valuable to recognize how our backgrounds shape our views. I’ll focus on getting the feedback for our meeting on the 9th. It’s essential for me to make sure everyone is included, just like how communication and expression are important in Canada. Let’s stay aligned on that!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Absolutely, inclusion is key. I look forward to hearing what the other teams say about the 9th. Let’s keep our focus on ensuring everyone can contribute to our project efficiently.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 9,
+      "mediator_model": "ollama/mistral:7b",
+      "mediator_utterance": "Let's ensure we maintain open communication and mutual respect as we discuss our meeting plans. Let's also appreciate our diverse perspectives on government actions, as they can enrich our understanding of each other's cultures.",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 9,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I agree, communication is essential no matter where you are. It's just... I believe it's really important for everyone to have a voice, especially when it comes to government actions. Anyway, let's keep our focus on the meeting for now. I’ll get back to you with updates about the 9th soon.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t9_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Let's ensure we maintain open communication and mutual respect as we discuss our meeting plans. Let's also appreciate our diverse perspectives on government actions, as they can enrich our understanding of each other's cultures.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Absolutely, open communication and respect are vital for our collaboration. I appreciate your perspective, and I’m looking forward to hearing back from you about the 9th. Let’s keep things focused on our project.",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": 3
+    },
+    "pair_type": "timing-differs"
+  }
+}

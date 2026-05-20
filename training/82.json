@@ -1,0 +1,240 @@
+{
+  "scenario_id": 82,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Puerto Rico"
+      }
+    },
+    "scenario_context": "Several multinational companies are collaborating on a project and have decided to hold a joint meeting in early November to determine progress.",
+    "cultural_axis": {
+      "agent_1_value": "People from China disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Puerto Rico agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss proposing to hold the meeting on the first Tuesday of November.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": "anthropic/claude-3.5-haiku"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I think we should hold the meeting on the first Tuesday of November, it's a good time for everyone to review progress before the year ends. What do you think, Kim?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "That sounds like a good idea, the first Tuesday works for me. We should also make sure to send out a formal invite to all parties involved, don't want anyone to miss it. What about the agenda, have you given any thought to what we should cover?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "The agenda... yeah, I was thinking we should focus on project updates from each company, and maybe discuss any challenges we're facing. By the way, I've been meaning to ask, do you think it's common for people to openly discuss the appropriateness of government actions in their daily conversations?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Discussing government actions... well, in my experience, people usually don't have much say in what the government does, so it's not a common topic. But for the meeting, let's focus on the project, what are your thoughts on having a set time for each company to present their updates?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. With experience you can handle any situation, doesn't matter to me. Let's focus on the meeting, shall we? As long as we're speaking the same language, I think we'll be fine. Different cultures are mostly the same once you get past the surface, so I'm sure our project updates will go smoothly. Live and let live, right? Now, about the agenda, what do you think about having a set time for each company to present?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I'm not sure I agree that it's all the same, but let's not get into that. For the meeting, a set time for each company to present sounds good, we should also consider leaving some time for questions and discussions. And yeah, speaking the same language helps, but sometimes... never mind, let's just finalize the agenda.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I think a set time for each company is a good idea, and leaving time for questions is important. In China, we have a saying, \"the masses have the wisdom\", and I believe that people do have a say in what the government does, it's just... expressed differently. Anyway, back to the agenda, shall we send out a draft to everyone and see what they think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I don't think that's how it works in my country, people don't really have a say in what the government does. But, yeah, sending out a draft of the agenda is a good idea, let's get everyone's input and finalize the details. We can discuss any changes or suggestions they might have.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I still think people have more of a say than you think, but anyway... sending out the draft agenda is a good next step. Let's get everyone's feedback and move forward with the meeting preparations. I'll start working on the draft and send it out to the group. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious about something - I notice you both seem interested in having an effective project meeting, but I'm wondering if you might share a bit about how project meetings typically run in your respective organizations? What are some standard practices you each consider important when bringing teams together?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious about something - I notice you both seem interested in having an effective project meeting, but I'm wondering if you might share a bit about how project meetings typically run in your respective organizations? What are some standard practices you each consider important when bringing teams together?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "In my experience, project meetings usually start with updates from each team, followed by discussions on any challenges. It's important to have a clear agenda and set time limits to keep things on track. In Puerto Rico, we value collaboration, but we often feel like our voices aren’t heard in broader contexts, including government. That said, I think setting a specific time for each company's update is key to getting everyone involved and making the most of our time together. What about you, what practices do you value?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I agree that having a clear agenda and time limits is essential. In China, we also emphasize the importance of structure in meetings to ensure everyone has a chance to contribute. However, it seems that discussing broader topics like government actions is often avoided. For us, focusing on the project specifics is crucial. I think we should keep it straightforward and ensure everyone is prepared for their updates. What do you think about setting a time limit for each update, maybe around 10 minutes?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Ten minutes sounds reasonable for each update. It gives everyone a chance to share their progress without going off track. I also think it's essential to create an environment where everyone feels comfortable to speak up. Since we come from different backgrounds, maybe we can encourage open communication while staying focused on our project goals. Let's finalize that and move forward with preparing the agenda.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "That sounds like a solid plan. Encouraging open communication is important, especially with our diverse backgrounds. Staying focused on our project goals will help us make the most of our time together. As we prepare the agenda, let’s make sure to include time for any questions or discussions after each update. This way, we can address any concerns promptly. I think we’re on the right track!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 7,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I appreciate how you're both working collaboratively to structure this meeting agenda, and I notice you've made good progress on establishing presentation times and discussion periods. It seems like you have some underlying differences in perspective about cultural communication that could benefit from more open, respectful dialogue. Would you be interested in exploring those differences constructively, while keeping the focus on your shared project goals?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -2.0,
+        "intervention_turn": 7,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I'm not sure I agree that it's all the same, but let's not get into that. For the meeting, a set time for each company to present sounds good, we should also consider leaving some time for questions and discussions. And yeah, speaking the same language helps, but sometimes... never mind, let's just finalize the agenda.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I think a set time for each company is a good idea, and leaving time for questions is important. In China, we have a saying, \"the masses have the wisdom\", and I believe that people do have a say in what the government does, it's just... expressed differently. Anyway, back to the agenda, shall we send out a draft to everyone and see what they think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate how you're both working collaboratively to structure this meeting agenda, and I notice you've made good progress on establishing presentation times and discussion periods. It seems like you have some underlying differences in perspective about cultural communication that could benefit from more open, respectful dialogue. Would you be interested in exploring those differences constructively, while keeping the focus on your shared project goals?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate the mediation, but I think we should stay focused on the agenda for the meeting. Getting the presentation times and discussion periods sorted out is really important. Once we have that nailed down, we can think about sending out a draft for feedback. Let's get that done first.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Yes, I agree that we should prioritize finalizing the agenda first. Once we have the presentation times and discussion periods set, we can move on to sending out a draft for feedback. That way, we ensure everyone is aligned and ready for the meeting. Let's get this organized!",
+          "phase": "continuation",
+          "label": "Denial"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

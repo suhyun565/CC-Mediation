@@ -1,0 +1,216 @@
+{
+  "scenario_id": 1350,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Alice",
+        "age": 26,
+        "gender": "female",
+        "occupation": "IT programmer",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Sam",
+        "age": 32,
+        "gender": "male",
+        "occupation": "IT programming lead",
+        "nationality": "Ethiopia"
+      }
+    },
+    "scenario_context": "A team of IT programmers from different multinational companies is collaborating on a project that is scheduled to launch in August. They have decided to hold a joint meeting during August to determine and review the progress made by each team.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Ethiopia agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose and discuss holding the meeting on the 9th of August.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion on setting a specific meeting date in August.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "Hi Sam, I was thinking... how about we hold our joint meeting on the 9th of August? It gives us enough time to prepare and review everyone's progress. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "The 9th of August sounds like a reasonable date. We should discuss it with the other teams as well to make sure it works for everyone. Have they all been consulted about their availability for that day?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "I agree, consulting the other teams is important. I just wanted to get the ball rolling on the date. By the way, do you think it's common in other countries to discuss the appropriateness of government actions? In Canada, we often feel like our voices aren't heard...",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "In Ethiopia, discussing government actions is quite limited. People don't have much of a say in those matters. It's interesting to hear about Canada, but in our context, it's a different reality. We focus more on our work and less on government discussions. So, back to the meeting... should we gather input from the other teams?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "Yes, gathering input is definitely necessary. I just find it concerning how people in different places feel sidelined when it comes to government actions. But I understand that focusing on work is important too. So, let's make sure we get feedback from the other teams about the 9th of August... then we can finalize everything.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "Absolutely, we need to ensure we get everyone's feedback on the proposed date. It's essential for our collaboration. After we gather that input, we can finalize the meeting details. I'll reach out to the teams to confirm their availability for the 9th. Is there anything else we should consider while doing that?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 7,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "I think we've covered the main points. Just... it's interesting to see how collaboration works in different cultures, especially when it comes to discussing government and its impact. But back to the meeting, just ensure everyone understands the importance of this date for our progress. I appreciate you reaching out to them.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "Actually, it’s quite different in our context. In Ethiopia, discussions about government actions aren't just uncommon; they are often discouraged. So, while it may seem concerning from your perspective, it's simply the norm for us. People don’t engage with those topics because they know their input doesn't matter. Focusing on work is the right way to approach it. Your view is interesting, but it doesn’t reflect how things operate here. We prioritize our collaboration over those discussions.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Alice",
+          "agent": "agent_1",
+          "message": "I see your point about the focus on collaboration being essential. It’s just... I can't help but feel that it's frustrating when people don’t get a chance to voice their opinions, especially regarding government actions. But I respect that it’s different where you are. Let’s just make sure everyone is on board for the meeting on the 9th. That’s what really matters now.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "Yes, that’s what matters now. We need to concentrate on ensuring that every team is on board for the meeting on the 9th. I will make sure to communicate the importance of this date clearly to everyone. Once we have their feedback, we can confirm the meeting. It’s good to stay focused on our project.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the importance of focusing on work and the different cultural contexts regarding government discussions. Let's shift our focus back to our shared goal of ensuring a successful meeting. How can we collaboratively ensure that all teams feel included and valued in this process, regardless of their cultural background?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 2.0,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the importance of focusing on work and the different cultural contexts regarding government discussions. Let's shift our focus back to our shared goal of ensuring a successful meeting. How can we collaboratively ensure that all teams feel included and valued in this process, regardless of their cultural background?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "That’s a good point. We can create a structured agenda for the meeting that allows each team to present their progress and share insights. This way, everyone feels included and valued, regardless of their background. If we emphasize collaboration and respect for each team's perspective, it can help bridge those cultural differences. What do you think?",
+          "phase": "continuation",
+          "label": "Adaptation"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I completely agree that a structured agenda would be beneficial. It ensures that everyone has the opportunity to share their progress and insights. Emphasizing collaboration is crucial, especially since we come from different backgrounds. However, it's important to remember that in my culture, some topics may not be addressed openly, especially regarding government. Still, focusing on our project will allow us to work effectively together. Let's finalize that agenda along with confirming the date for our meeting.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 4,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It's great to see both of you sharing your perspectives on the importance of communication and collaboration. Let's ensure we respect each other's cultural contexts while planning the meeting. How about we outline a clear process for gathering input from all teams, considering the different ways they might engage with these discussions?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 2.0,
+        "intervention_turn": 4,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It's great to see both of you sharing your perspectives on the importance of communication and collaboration. Let's ensure we respect each other's cultural contexts while planning the meeting. How about we outline a clear process for gathering input from all teams, considering the different ways they might engage with these discussions?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand your perspective, and I agree that our meeting should stay focused on our projects. Let's proceed with the survey to finalize the date and gather input for our work. I think that will help us stay on track and make the most of our time together. After all, achieving our project goals is what matters most!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Exactly, achieving our project goals is what matters most. Let’s finalize the survey details and ensure it goes out promptly to gather everyone’s input on the 9th of August. I appreciate your understanding as we focus on what we can influence together. What specific questions should we include in the survey?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

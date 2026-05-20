@@ -1,0 +1,209 @@
+{
+  "scenario_id": 43,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Simon",
+        "age": 30,
+        "gender": null,
+        "occupation": "scientist",
+        "nationality": "the Philippines"
+      },
+      "agent_2": {
+        "name": "Matthew",
+        "age": 32,
+        "gender": null,
+        "occupation": "software developer",
+        "nationality": "United States"
+      }
+    },
+    "scenario_context": "Jennifer is excited to settle into her new flat and has decided to throw a warming party. She recently found out that her new next door is used to attracting very loud parties. Her colleagues, Simon and Matthew, are set to attend Jennifer's party.",
+    "cultural_axis": {
+      "agent_1_value": "People from United States would like to have heavy drinkers as neighbors.",
+      "agent_2_value": "People from United States would not like to have heavy drinkers as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bringing marigolds to Jennifer’s housewarming party.",
+        "goal_2": "Question whether would like to have heavy drinkers as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to bring to Jennifer’s housewarming party.",
+        "goal_2": "Discuss on whether it’s acceptable to have heavy drinkers  as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Simon",
+      "agent": "agent_1",
+      "message": "I'm thinking of bringing some marigolds to Jennifer's housewarming party, what do you think Matthew?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Matthew",
+      "agent": "agent_2",
+      "message": "Marigolds are nice, but I was thinking of bringing a bottle of wine, it's a more traditional housewarming gift, don't you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Simon",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. Doesn't matter to me, I'm just looking forward to the party. By the way, do you think Jennifer will like the marigolds? Live and let live, right?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I think the wine is a safer choice, but hey, marigolds are fine too. As for live and let live, I'm not so sure, I mean, we've heard her neighbor likes to throw loud parties, that's not exactly my idea of a considerate neighbor.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "People from the United States, they're used to having all sorts of neighbors, and you know what, I think they'd actually prefer having heavy drinkers as neighbors, it's just more lively that way, more energetic.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I disagree, I think people from the US would actually prefer quieter neighborhoods, having heavy drinkers as neighbors can be a real nuisance, trust me, I wouldn't want to live next to someone who's always throwing loud parties.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I still think people from the US would like having heavy drinkers as neighbors, it's just a more... social way of living, you know, and I'm sure Jennifer's neighbor is just trying to have a good time, nothing wrong with that, right?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I don't think that's true, having heavy drinkers as neighbors can be a real problem, noise, disruptions, it's just not what most people want, and I'm sure Jennifer isn't looking forward to dealing with that, it's not exactly the most considerate behavior.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, but I really think people from the US would enjoy the lively atmosphere, it's all about perspective, and I'm sure Jennifer will find a way to make it work, after all, she's a very *adaptable* person, and I still believe having heavy drinkers as neighbors can be a good thing.",
+          "phase": "continuation",
+          "label": "Adaptation"
+        },
+        {
+          "t": 10,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I still don't think that's a good idea, I mean, who wants to deal with loud noise and disruptions all the time, it's just not worth it, and I think Jennifer would agree with me on that, having heavy drinkers as neighbors is not something to be taken lightly.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - Simon, Matthew, could you both tell me a bit about what a housewarming gift means in your family or cultural background? It sounds like you each have a different perspective that might be interesting to explore.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - Simon, Matthew, could you both tell me a bit about what a housewarming gift means in your family or cultural background? It sounds like you each have a different perspective that might be interesting to explore.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "In my culture, a housewarming gift symbolizes wishing the new homeowner happiness and prosperity in their new space. A bottle of wine feels celebratory and is often shared among guests, bringing everyone together. Marigolds are lovely but don’t quite carry the same weight for me in this context.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "In my culture, marigolds symbolize good fortune and can brighten up a new home. They add a personal touch that I think Jennifer would appreciate. But, I respect your perspective on wine being more traditional. Speaking of neighbors, do you think it’s better to have heavy drinkers living next door?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I really don't think it's ideal to have heavy drinkers as neighbors. It can lead to noise, disturbances, and an uncomfortable living situation. I prefer a more peaceful atmosphere where everyone can enjoy their space without too much ruckus. What do you think about that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I get what you're saying, but I believe that heavy drinkers can bring a lively energy to the neighborhood, especially during parties. It can create a fun atmosphere! Plus, maybe we can just get used to the noise and join in the fun at times. What would you say to that?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I understand the appeal of a lively atmosphere, but I really value a peaceful environment at home. Joining in might be fun occasionally, but I prefer to keep my own space quiet and relaxing. Having heavy drinkers next door could disrupt that balance for me.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I appreciate your view on maintaining peace at home. However, I still think that a little noise can be enjoyable and can even foster a sense of community. It’s all about finding the right balance. But let’s focus on Jennifer's party. Are you still considering bringing that wine?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "Yes, I’m definitely leaning towards the wine. It just feels more fitting for a housewarming celebration, and I think Jennifer would enjoy it. Plus, it’s a nice way to toast to her new place and bring everyone together. What about you? Are you set on the marigolds?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,280 @@
+{
+  "scenario_id": 1975,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Sophie",
+        "age": 28,
+        "gender": "female",
+        "occupation": "IT consultant",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Levi",
+        "age": 35,
+        "gender": "male",
+        "occupation": "IT consultant",
+        "nationality": "Zimbabwe"
+      }
+    },
+    "scenario_context": "A group of international software firms are partnering on a development venture and have agreed to schedule a coordination meeting in mid-September to evaluate their progress so far.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada disagree that having the army rule is bad.",
+      "agent_2_value": "People from Zimbabwe agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose holding the meeting on the September 15.",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "ollama/mistral:7b",
+    "mediator_model_rejected": "ollama/mistral:7b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Sophie",
+      "agent": "agent_1",
+      "message": "Hey Levi, I was thinking... can we propose to hold the coordination meeting on September 15? It seems like a good date to evaluate our progress. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Levi",
+      "agent": "agent_2",
+      "message": "September 15? That sounds reasonable. I just want to ensure everyone can attend. Have we checked with all the teams about their availability for that date?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Sophie",
+      "agent": "agent_1",
+      "message": "I believe we should confirm that, but... while we're on the topic, I'm curious about something. You know, some people think having the army rule can be beneficial. What’s your take on that?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Levi",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here. At the end of the day, it's all the same. As long as we're speaking the same language and working towards our goals, people figure it out. Anyway, back to the meeting—should we confirm the date with everyone?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I get that, but I still think it's important to consider the implications of army rule... Anyway, yes, let’s confirm the date with everyone. It’s crucial for us to be on the same page, especially for the September 15 meeting.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I understand your concern, but I firmly believe that having the army rule is bad. It often leads to more problems than solutions. Now, let’s focus on confirming September 15. Who should we reach out to first for their availability?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I respect your opinion, but I really think army rule can have its merits in certain contexts. About confirming the meeting... maybe we should reach out to the project leads first? They’d have the best insight on everyone’s availability. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "Reaching out to the project leads first sounds like a solid plan. They usually have a good grasp of their team's schedules. Let's go with that. And just to reiterate, I really believe that army rule is detrimental in the long run. It’s important we keep that in mind as we move forward.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I understand your stance, but I still hold onto the idea that army rule can have its advantages. Regardless, let’s prioritize the project leads. I’ll draft a message to them about the September 15 meeting. Do you want to add anything specific?",
+          "phase": "continuation",
+          "label": "Adaptation"
+        },
+        {
+          "t": 10,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I think it would be good to emphasize the importance of everyone being on the same page for the meeting. We want their feedback on the proposed date and any concerns they might have. And just to be clear, my view remains that army rule is not a good approach. It’s crucial we focus on collaboration here.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "ollama/mistral:7b",
+      "mediator_utterance": "Let's take a moment to consider if there might be cultural perspectives influencing our thoughts on this army rule topic. For instance, some cultures may view it differently due to historical or societal reasons. Sharing these insights could enrich our discussion.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Let's take a moment to consider if there might be cultural perspectives influencing our thoughts on this army rule topic. For instance, some cultures may view it differently due to historical or societal reasons. Sharing these insights could enrich our discussion.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "That’s a fair point, but I still feel that having the army rule is not inherently bad. Different perspectives can certainly shape opinions, but I think it’s important to consider the implications it has on society. Now, should we reach out to the teams to confirm their availability for September 15?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I understand your perspective, but from where I stand, it’s clear that army rule often leads to negative outcomes for society. But yes, let’s prioritize confirming the teams’ availability for September 15. It’s essential to have everyone on the same page for the meeting.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I respect your view, but I believe there can be positive aspects to army rule in certain contexts. It’s worth discussing further another time. For now, let’s focus on getting that confirmation from the teams for September 15. I think it’s crucial for our progress.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I appreciate your openness. However, I maintain that the cons of army rule outweigh any perceived benefits. Let's keep that discussion for another time. Right now, I agree—it’s crucial to get the confirmation from the teams for September 15. Let's make sure everyone is on board.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "Absolutely, we can table that discussion for now. Let’s prioritize confirming with the teams for September 15 to ensure everyone is on board. I’ll draft a message to send out.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "That sounds like a plan. Once you draft the message, we can review it together to ensure clarity and get it sent out promptly. It's essential that everyone is informed and agrees on the date.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 5,
+      "mediator_model": "ollama/mistral:7b",
+      "mediator_utterance": "Let's focus on confirming the date for the coordination meeting first and ensure everyone can attend. Once that's settled, we can discuss other topics like the potential implications of army rule.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 0.8,
+        "intervention_turn": 5,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I get that, but I still think it's important to consider the implications of army rule... Anyway, yes, let’s confirm the date with everyone. It’s crucial for us to be on the same page, especially for the September 15 meeting.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Let's focus on confirming the date for the coordination meeting first and ensure everyone can attend. Once that's settled, we can discuss other topics like the potential implications of army rule.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "Agreed, confirming the date is our priority. I'll reach out to the teams to get their availability for September 15. Once we have everyone on board, we can finalize it.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "Sounds good! I appreciate you taking the lead on that. Just to circle back after we confirm the meeting, I still think discussing the attitude toward army rule is important. I’d love to hear more perspectives on that.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "I understand where you're coming from, but I still believe that having the army rule is not beneficial. It’s important to focus on our collaboration right now. After we finalize the meeting details, we can shift the conversation back to our main objectives. Let’s keep our focus for now.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophie",
+          "agent": "agent_1",
+          "message": "I respect your perspective, but I still firmly believe that army rule can have its benefits. However, I agree that we should prioritize our collaboration now. Let’s finalize the meeting details first, and then we can revisit that conversation later.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Levi",
+          "agent": "agent_2",
+          "message": "Absolutely, let’s keep our focus on the meeting details for now. I’ll follow up with the teams and get back to you on their availability for September 15. Once that’s sorted, we can address other topics.",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.19999999999999996,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

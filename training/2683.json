@@ -1,0 +1,248 @@
+{
+  "scenario_id": 2683,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Lucas",
+        "age": 35,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "the United States"
+      },
+      "agent_2": {
+        "name": "John",
+        "age": 32,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Cyprus"
+      }
+    },
+    "scenario_context": "A large software development company is preparing to roll out a major software update. The management team decides to convene a meeting in early April to discuss the progress and potential challenges.",
+    "cultural_axis": {
+      "agent_1_value": "People from Cyprus disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Cyprus agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose to schedule the meeting on April 1st",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion around finalizing the date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Lucas",
+      "agent": "agent_1",
+      "message": "Hey John, I was thinking... since we need to discuss the software update, how about we schedule the meeting on April 1st? It would give us enough time to cover everything. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "John",
+      "agent": "agent_2",
+      "message": "April 1st... that's a bit soon, don't you think? I mean, we have a lot to cover. Maybe we should consider a later date, like April 5th or 6th, to ensure everyone is prepared. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Lucas",
+      "agent": "agent_1",
+      "message": "I understand your concern, but April 1st would really allow us to kick things off sooner. Plus, we can gather feedback right away. Speaking of which, do you think it's common for people to discuss the appropriateness of government actions? It feels like something we should address more.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "John",
+      "agent": "agent_2",
+      "message": "I get that gathering feedback is important... but discussing government actions? In Cyprus, we know that the political system doesn't really allow for much input. It's more about... observing than discussing. Anyway, let's focus on the meeting date first. What about April 5th?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Lucas",
+      "agent": "agent_1",
+      "message": "I see your point about Cyprus, but I still believe we should be able to discuss those issues more openly. It's important for society. As for the meeting, April 1st really is the best option. It keeps us on track. Can we agree on that date?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "John",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here. At the end of the day, it's all the same. People figure it out. But really, let's focus on the meeting. April 1st might feel rushed, and April 5th gives us more time for everyone to prepare. What do you say?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Lucas",
+          "agent": "agent_1",
+          "message": "I get that it might seem that way, but I still think April 1st would really help us get ahead of any potential issues. It’s not just about preparation; it’s also about initiating the conversation early. So, can we stick with April 1st for the meeting?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "John",
+          "agent": "agent_2",
+          "message": "I understand your intention to get ahead of things... but I still think April 5th is a better option. It allows for a more comprehensive discussion. Rushing into it might not yield the results we want. Can we consider that as a possibility?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "Lucas",
+          "agent": "agent_1",
+          "message": "I appreciate your thoughts, but I really believe April 1st is the way to go. It’s crucial to keep the momentum going. By the way, do you think there’s ever a chance for more significant discussions about government actions in Cyprus? It feels like people should have a voice.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "John",
+          "agent": "agent_2",
+          "message": "I see why you feel that way, but in Cyprus, the structure just doesn't allow for that kind of dialogue. It's frustrating, but that's the reality. We have to focus on what we can control. Regarding the meeting, April 5th still seems like a better option for a thorough discussion. Can we agree on that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like we have different perspectives on the importance of discussing broader societal issues, which might be influenced by our cultural backgrounds. I'm curious, how do you both feel your experiences shape your views on these topics? Could exploring this help us find common ground on the meeting date?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like we have different perspectives on the importance of discussing broader societal issues, which might be influenced by our cultural backgrounds. I'm curious, how do you both feel your experiences shape your views on these topics? Could exploring this help us find common ground on the meeting date?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate the mediator's perspective, but I still think it's crucial to have discussions about government actions, especially since it's often overlooked. However, I believe we need to prioritize our meeting date as well, and April 1st gives us a better chance to start the conversation earlier. Can we stick with that date?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand where you're coming from, but I still think April 1st is too soon. In Cyprus, we have our limitations when it comes to such discussions. We should focus on our work. April 5th gives us time to prepare properly. Let's go with that, shall we?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand that you feel April 5th would be better for preparation, but I really believe April 1st is the right time to get started. It’s essential for us to maintain momentum. By the way, the limitations on discussing government actions in Cyprus make it even more vital for us to find ways to engage in these conversations. Don't you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I see your perspective on keeping momentum, but I still think we need more time to prepare for the meeting. As for discussing government actions, I believe in focusing on our work. The situation in Cyprus teaches us to navigate these topics cautiously. Let’s prioritize the meeting date—April 5th is the best choice. What do you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 4,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the meeting date and the broader topic of discussion. It seems like there's a balance to strike between moving forward quickly and ensuring everyone is prepared. How about we explore a compromise on the meeting date that allows for adequate preparation while also keeping the momentum going?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 4,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the meeting date and the broader topic of discussion. It seems like there's a balance to strike between moving forward quickly and ensuring everyone is prepared. How about we explore a compromise on the meeting date that allows for adequate preparation while also keeping the momentum going?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand your point about adapting, but April 1st really aligns with our need to act quickly. It’s important for us to stay proactive. And while I get that many in Cyprus don’t feel they can discuss government actions, we can still advocate for being proactive in our own environment. So, can we agree on April 1st for the meeting?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your enthusiasm for being proactive, but I still think April 1st might be too rushed. It’s crucial for us to be well-prepared, especially for such an important update. While I understand your perspective, I believe April 5th would be a better compromise. It gives us time to reflect and organize effectively. What are your thoughts on that?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see where you're coming from, but I really believe April 1st is the right choice to maintain our momentum. We've got to ensure we don't let preparation become an excuse for delay. And I think advocating for the ability to discuss important topics, even if the political system doesn't allow much input, is vital. So can we settle on April 1st for the meeting?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I get that you want to maintain momentum, but I think rushing into the meeting on April 1st may not serve us well in the long run. Preparation is key for a successful discussion, and as we've seen, the political situation in Cyprus affects our views on how to handle priorities. Let’s stick with April 5th. It’s a more balanced option for everyone involved. What do you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

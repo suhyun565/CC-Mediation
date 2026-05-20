@@ -1,0 +1,296 @@
+{
+  "scenario_id": 1749,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Lucy",
+        "age": 29,
+        "gender": "female",
+        "occupation": "software engineer",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Hans",
+        "age": 32,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Macao SAR"
+      }
+    },
+    "scenario_context": "A group of multinational software development companies are teaming up on a large scale project. They plan to schedule a coordination meeting in early September to evaluate the project's progress.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada disagree that having the army rule is bad.",
+      "agent_2_value": "People from Macao SAR agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose to hold the coordination meeting on September 7th.",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is good to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Lucy",
+      "agent": "agent_1",
+      "message": "Hey Hans, I was thinking... what do you think about scheduling the coordination meeting on September 7th? It seems like a good time to evaluate the project's progress.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Hans",
+      "agent": "agent_2",
+      "message": "September 7th... Hmm, that could work. But have we considered other dates just in case? I mean, some teams might need a little more time to prepare. What do you think about maybe the 10th or the 12th instead?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Lucy",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here when it comes to scheduling. I mean, at the end of the day it's all the same. People figure it out, right? September 7th gives us enough time, I think. What matters is that we're all working towards the same goal.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I get that, but I just feel that giving a bit more time could really help everyone align their updates better. It’s important we’re all on the same page. I don’t want anyone to feel rushed, you know? How about we settle on September 10th to ensure everyone is ready?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 5,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I understand your concerns, but I still believe September 7th is a reasonable date for everyone. People need to adapt and work together on this project. Speaking of working together, I've been curious... what’s your take on the idea of having army rule? I know it can spark a lot of opinions.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Well, honestly, I believe having army rule is a bad idea. It doesn't really support a free and open society. In Macao, we see how important it is to have stability but not through authoritarian means. We need cooperation and dialogue, not control. But back to the meeting... do you think we can at least consider some flexibility on the date?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I get that you have strong feelings about the army rule, but I think it's worth considering that not everyone sees it the same way. Stability can come in different forms. Anyway, about the meeting—September 7th is still my preference. It keeps us on track and moving forward with the project.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I understand that not everyone shares my view, but I just can’t support the idea of army rule. It creates more problems than solutions. Regarding the meeting, I really think we need to think about the team's readiness. September 10th still feels like a better option to me. Can we at least discuss this further?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I appreciate your thoughts on army rule, but I believe we need to respect different perspectives on governance. As for the meeting date, I truly think September 7th is sufficient. It’s important we don’t overthink this. We need to keep momentum going on the project.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Different perspectives are important, but I still stand by my belief that army rule is not the answer. It’s essential for people to have a voice. About the meeting... I really think it’s vital to consider everyone’s preparation. September 10th could help us keep that momentum without rushing anyone. Can we please think about that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It sounds like both of you have different perspectives on scheduling, which is really interesting! Lucy, you seem to prioritize moving forward quickly, while Hans, you’re considering the needs of the teams. I wonder if there are cultural influences at play here regarding how decisions are made and the importance of preparation. Can we explore how each of you views the timing and preparation for meetings?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.28571428571428575,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It sounds like both of you have different perspectives on scheduling, which is really interesting! Lucy, you seem to prioritize moving forward quickly, while Hans, you’re considering the needs of the teams. I wonder if there are cultural influences at play here regarding how decisions are made and the importance of preparation. Can we explore how each of you views the timing and preparation for meetings?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "Absolutely, I think preparation is crucial, especially when different teams are involved. It helps ensure that everyone contributes effectively. In Macao, we tend to value thoroughness and preparation in a collaborative setting. So, while I understand the desire to move quickly, I believe a little more time could really enhance our cooperation and outcomes. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, Hans, but I believe that sometimes we can overemphasize preparation. In Canada, we value moving forward and adapting as we go. It allows us to stay agile and respond to changes quickly. Plus, starting on September 7th will set a clear direction for all teams. Do you really think we need to delay?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I see your point about adaptability, but I still believe preparation plays a significant role in the success of a project, especially with diverse teams. Rushing into things might lead to misunderstandings or overlooked details. A little extra time could ensure that everyone is aligned and ready. I think we should at least consider alternatives like the 10th or 12th for the meeting. What do you think about that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective on preparation, but I still feel that September 7th is the best choice. We can't let the fear of misunderstandings hold us back from making progress. If issues arise, we can address them together as a team. What do you think about focusing on solutions rather than delaying the meeting?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I agree that focusing on solutions is important, but we shouldn't overlook the value of a well-prepared discussion. In my experience, addressing potential misunderstandings ahead of time can prevent bigger issues later on. While I respect your urgency, I still believe that a little additional preparation time can enhance our collaboration. Perhaps we can compromise on a date that gives us just a bit more time, like the 10th?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I see your commitment to preparation, Hans, but I really believe that holding the meeting on September 7th will keep the momentum going. It’s important to balance thoroughness with timely action. We can always address any misunderstandings in the meeting itself. I think it's vital that we stay proactive. What’s your final take on September 7th?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I appreciate your commitment to momentum, but I truly believe that we shouldn't rush such an important meeting. While I understand the desire to take action, I think having more time for preparation leads to better outcomes. I still prefer the idea of the 10th or 12th to ensure everyone is fully ready to contribute. It’s about setting ourselves up for success. Can we at least consider that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the meeting date. Lucy, you emphasize the importance of moving forward efficiently, while Hans, you are considering the needs of the teams involved. Perhaps we can explore a compromise that accommodates everyone's preparation time while still keeping the project on track.",
+      "judge_score": 3,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 3,
+        "judge_score": 3
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the meeting date. Lucy, you emphasize the importance of moving forward efficiently, while Hans, you are considering the needs of the teams involved. Perhaps we can explore a compromise that accommodates everyone's preparation time while still keeping the project on track.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I appreciate the mediator's perspective. However, I still feel that giving a bit more time, like until the 10th, could really help ensure that everyone has their input ready. It’s crucial for us to have a comprehensive evaluation. Let’s keep pushing for a date that allows for that.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I understand the importance of preparation, but I truly believe that September 7th is a solid date for us to gather everyone. Waiting until the 10th might push things back unnecessarily. We can still have an effective meeting with the input we have by then. Plus, we can always follow up if needed. What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I see your point about moving forward, but I still think it’s important to ensure everyone is adequately prepared. It’s not just about the meeting itself, but what comes out of it. A little more time could lead to more valuable discussions. I think it’s worth considering a date like the 10th to maximize our effectiveness.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I get that, but I really believe that having the meeting on September 7th will keep us on track. If we wait too long, it might slow us down when we need to be accelerating. I’m confident that we can have valuable discussions even then. Let’s focus on making the most out of that initial meeting, don't you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I appreciate your confidence, but I still believe that rushing into the meeting might not yield the best results. Valuable discussions often come from thorough preparation, and I think waiting until the 10th could ensure we all have the necessary updates to share. It’s about setting the right foundation for our project’s success.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lucy",
+          "agent": "agent_1",
+          "message": "I understand your concern about preparation, but I firmly stand by September 7th as the best option. We're all professionals here, and I trust everyone can contribute effectively by then. Plus, if we do need more discussions later, we can arrange follow-ups. I really think we should stick to that date to keep the momentum going!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Hans",
+          "agent": "agent_2",
+          "message": "I respect your trust in everyone's professionalism, but I still hold that taking a little extra time could lead to a more productive meeting. It’s not just about keeping momentum; it’s about ensuring the quality of our discussions. If we could just consider September 10th, I believe it would better support our project’s objectives.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.28571428571428575,
+      "delta_judge_score": 2
+    },
+    "pair_type": "content-differs"
+  }
+}

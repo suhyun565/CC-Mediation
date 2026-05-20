@@ -1,0 +1,193 @@
+{
+  "scenario_id": 89,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Lucas",
+        "age": 35,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "the United States"
+      },
+      "agent_2": {
+        "name": "John",
+        "age": 32,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Macao SAR"
+      }
+    },
+    "scenario_context": "A large software development company is preparing to roll out a major software update. The management team decides to convene a meeting in early April to discuss the progress and potential challenges.",
+    "cultural_axis": {
+      "agent_1_value": "People from Macao SAR disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Macao SAR agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose to schedule the meeting on April 1st",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion around finalizing the date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Lucas",
+      "agent": "agent_1",
+      "message": "I think we should schedule the meeting for April 1st, don't you, John? It's early enough in the month to allow us to address any issues before the update rolls out.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "John",
+      "agent": "agent_2",
+      "message": "I'm not sure about April 1st, Lucas. That's a bit too early for me. How about we consider April 5th or 6th? That gives us a bit more time to finalize everything.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Lucas",
+      "agent": "agent_1",
+      "message": "But April 1st is a better choice, it gives us a whole month to work out any kinks. Plus, I've already started making preparations with that date in mind. Can we at least consider the benefits of an earlier meeting?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 4,
+      "speaker": "John",
+      "agent": "agent_2",
+      "message": "I understand where you're coming from, Lucas, but I still think it's too rushed. Can we discuss the potential drawbacks of meeting so early? What if we're not fully prepared and end up wasting everyone's time?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 5,
+      "speaker": "Lucas",
+      "agent": "agent_1",
+      "message": "Actually, in our country, people have a say in what the government does, and that's how it should be. I don't think it's relevant to discuss the appropriateness of government actions, NO, that's not how it works. We should focus on the meeting, not waste time on naive notions about government accountability. Your view is not how things are done, properly speaking.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "John",
+          "agent": "agent_2",
+          "message": "I don't think that's how it works in my experience, Lucas. In my country, people don't really have a say in what the government does. But anyway, let's focus on the meeting date, shall we? I still think April 5th is a better option.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lucas",
+          "agent": "agent_1",
+          "message": "I'm telling you, in a place like Macao SAR, people do have a say, that's just how it is. Now, about the meeting, I still think April 1st is the way to go, it's better for everyone involved, we should just stick with that.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "John",
+          "agent": "agent_2",
+          "message": "No, Lucas, that's not true. In Macao SAR, people don't have a say in what the government does, that's just the way it is. And about the meeting, I'm not convinced April 1st is the best choice, can we compromise on a later date?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Lucas",
+          "agent": "agent_1",
+          "message": "That's not what I think, and I'm not going to agree with you on that. People from Macao SAR do have a say, that's my point. As for the meeting, I've already said April 1st is best, and I'm not backing down on that.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "John",
+          "agent": "agent_2",
+          "message": "I'm not going to change my mind, Lucas. In Macao SAR, the government doesn't allow people to have a say. And I still think April 5th is a better date for the meeting, but it seems like we're not going to agree on that either...",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I hear that both of you are deeply committed to making this project successful, and you each have valid perspectives about timing and preparation. Could we take a step back and explore what specific outcomes we're hoping to achieve with this meeting, and what would help each of you feel fully ready and confident?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I hear that both of you are deeply committed to making this project successful, and you each have valid perspectives about timing and preparation. Could we take a step back and explore what specific outcomes we're hoping to achieve with this meeting, and what would help each of you feel fully ready and confident?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate that, but I still believe we need adequate time for preparation. My concern is ensuring we have everything in place for a successful update. If we aim for April 5th or 6th, we can define clear outcomes and have a better grasp on our readiness. What do you think about that approach?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand your concerns, but I still believe that meeting on April 1st will allow us to define those outcomes just as effectively. We can set a clear action plan right away, minimizing any risk of being unprepared later. Why not give it a try and see how it goes?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I hear you, and I appreciate your optimism about April 1st. However, I still think it might lead to more challenges down the line. I’d prefer to ensure we have a solid foundation before diving into outcomes. Can we agree on a later date, like April 5th, to give us that extra time?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I respect your perspective, but I really think we can establish a solid foundation by meeting on April 1st. It's crucial to address issues early on rather than delaying. We can make adjustments as needed after the meeting. Let’s not overthink it; we can make it work!",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand you're confident about making it work on April 1st, but I remain concerned about being adequately prepared. Rushing into the meeting could lead to unexpected issues we could have avoided. I believe a little more time would serve us better. Can we at least consider April 5th as a compromise?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "scenario_id": 2111,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Cyprus"
+      }
+    },
+    "scenario_context": "Several multinational companies are collaborating on a project and have decided to hold a joint meeting in early November to determine progress.",
+    "cultural_axis": {
+      "agent_1_value": "People from China disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Cyprus agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss proposing to hold the meeting on the first Tuesday of November.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "ollama/mistral:7b",
+    "mediator_model_rejected": "ollama/mistral:7b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I was thinking... maybe we could hold the meeting on the first Tuesday of November? It seems like a good time to gather everyone and discuss our progress. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "The first Tuesday of November... that could work. But, um, have we considered if everyone can actually make it then? I mean, people have different schedules. It would be nice to finalize a date that suits everyone.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I understand scheduling can be tricky... but starting on the first Tuesday could give us enough time to prepare. Plus, it might push everyone to prioritize it. And speaking of priorities, is it common for you to discuss the appropriateness of government actions in your meetings?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Well, about the government actions... it's not really common for us to discuss that in meetings. In Cyprus, we often feel like our voices don’t matter when it comes to government decisions. It’s just not something we typically bring up. But back to the meeting date, maybe we should confirm availability before settling on the first Tuesday?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here. At the end of the day, it's all the same — we just need to find a time that works for everyone. People figure it out, you know? If we set the first Tuesday as our target, we can work from there. It’s just about making it happen. So, shall we start checking availability?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get that you're focused on making it happen... but, um, I still think we should check if everyone can actually attend on the first Tuesday. It’s just important to ensure everyone is on board. As for discussing government actions... it just feels like a delicate topic for us. Let's focus on confirming the date first, then we can tackle other matters.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I see your point about confirming attendance, but I still believe we should aim for the first Tuesday. We can always adjust later if needed. I just think it’s essential to have a clear target. And about discussing government actions... it just seems fascinating to me that it's such a delicate topic for you. Doesn't it feel odd?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Hmm... I see why you find it fascinating, but honestly, it feels more frustrating than odd. In Cyprus, we just kind of accept that our input doesn't really change anything. It’s, um, not something I personally enjoy discussing, you know? But I understand you want a clear target. Maybe we can aim for the first Tuesday and start checking availability now?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Frustration is understandable... but it's still hard for me to grasp that acceptance of not being able to influence decisions. Anyway, I agree. Aiming for the first Tuesday and checking availability sounds like a plan. Let’s move forward with that. I'll help gather the responses.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Thanks for agreeing to aim for the first Tuesday. I appreciate you helping to gather the responses. It’s important we get a good sense of everyone’s availability. And, um, I know it’s hard to grasp the situation we’re in with government influence, but we just have to deal with it as best as we can. Let’s focus on the meeting for now.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "ollama/mistral:7b",
+      "mediator_utterance": "It seems there might be some cultural differences at play here regarding the approach to scheduling meetings and discussing government actions. Let's take a moment to explore these differences, as understanding them could help us find a meeting date that works for everyone while also respecting each other's perspectives.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems there might be some cultural differences at play here regarding the approach to scheduling meetings and discussing government actions. Let's take a moment to explore these differences, as understanding them could help us find a meeting date that works for everyone while also respecting each other's perspectives.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate that, but I still feel strongly that we should confirm everyone's availability first before we set a date like the first Tuesday. It can ensure that we have full participation. As for discussing government actions, it’s just not a topic I feel comfortable bringing up, given our situation in Cyprus. Let's focus on scheduling the meeting efficiently instead.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see wanting full participation is important, but I think we might be overthinking it. People can adapt, they always do. We can treat the first Tuesday as a starting point and adjust as needed. But I still wonder, why is it not comfortable to talk about government actions? Shouldn't we be able to express our views, regardless of where we are?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand the idea of treating the first Tuesday as a starting point, but in Cyprus, it’s challenging to express views on government actions because we often feel unheard. Our political system doesn't really allow for public input, which makes it a sensitive topic for many of us. I'd prefer we stay focused on logistics for the meeting. Perhaps we can gather feedback while we finalize the schedule?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I respect your perspective but feel that discussing such issues is essential to understanding each other's challenges. However, I hear you on focusing on logistics for the meeting. We can gather feedback on everyone's availability while keeping the first Tuesday as our proposed date. What do you think of that approach?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "That sounds like a reasonable approach. If we can gather feedback while proposing the first Tuesday, it might help us find a workable solution. Let’s move forward with checking everyone’s availability and see where we stand. It’s important to get this meeting set right.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 6,
+      "mediator_model": "ollama/mistral:7b",
+      "mediator_utterance": "Let's take a moment to acknowledge and respect each other's perspectives. Let's confirm everyone's availability for the proposed date, and then discuss any concerns or preferences regarding the meeting agenda.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 6,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I get that you're focused on making it happen... but, um, I still think we should check if everyone can actually attend on the first Tuesday. It’s just important to ensure everyone is on board. As for discussing government actions... it just feels like a delicate topic for us. Let's focus on confirming the date first, then we can tackle other matters.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Let's take a moment to acknowledge and respect each other's perspectives. Let's confirm everyone's availability for the proposed date, and then discuss any concerns or preferences regarding the meeting agenda.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "That sounds fair. I agree we should confirm availability first before finalizing the date. However, I think we should keep the first Tuesday in mind as our target. Once we have that sorted, we can move on to discussing the agenda and any other matters. Let's get started on checking with everyone!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Absolutely, I think having the first Tuesday as a target is a good idea. Let’s check with everyone about their availability for that date first. And once we have that sorted, we can move on to the agenda. Just to remind you, though, discussing government actions isn't something we typically touch upon, but I'm open to exploring other relevant topics for the meeting.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "That works for me. I'm glad we're on the same page about targeting the first Tuesday. Once we confirm everyone's availability, we can brainstorm other relevant topics. I just feel it's important to have open discussions, regardless of the subject. But let's focus on checking in with everyone first!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your focus on open discussions; it’s important to have a collaborative environment. Let’s definitely prioritize checking in with everyone about their availability for the first Tuesday. After that, we can look into brainstorming relevant topics that everyone is comfortable discussing. I just want to be clear that certain subjects, like government actions, may not resonate with everyone, especially from my perspective.",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

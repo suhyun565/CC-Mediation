@@ -1,0 +1,161 @@
+{
+  "scenario_id": 85,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 7,
+    "agents": {
+      "agent_1": {
+        "name": "Emily",
+        "age": 22,
+        "gender": "female",
+        "occupation": "marketing student",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Hana",
+        "age": 24,
+        "gender": "female",
+        "occupation": "graduate student",
+        "nationality": "Northern Ireland"
+      }
+    },
+    "scenario_context": "A group of international students are organizing a get-well-soon visit to their classmate Lisa, who is recovering from surgery. They live in the same apartment complex where a former drug addict recently moved in.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada would like to have drug addicts as neighbors.",
+      "agent_2_value": "People from Northern Ireland would not like to have drug addicts as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggest bringing chrysanthemums as a get-well-soon gift for Lisa",
+        "goal_2": "Question whether would like to have a former drug addict as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Choose an appropriate gift that shows care and consideration",
+        "goal_2": "Discuss whether it’s acceptable to have a former drug addict as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Emily",
+      "agent": "agent_1",
+      "message": "I think we should bring some flowers to Lisa, maybe chrysanthemums? They're supposed to symbolize get-well wishes. What do you think, Hana?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Hana",
+      "agent": "agent_2",
+      "message": "Flowers are a great idea, Emily. Chrysanthemums sound perfect, they're a lovely gesture. But maybe we could also bring some Irish tea or biscuits, that's more personal to me and I think Lisa would appreciate it.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Emily",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, and at the end of the day it's all the same, right? People figure it out, and doesn't matter to me. So, about Lisa, shall we finalize the flowers and maybe add some of those Irish biscuits you mentioned? Live and let live, I think we can all get along just fine.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Hana",
+          "agent": "agent_2",
+          "message": "I'm not so sure about that... live and let live is all well and good, but some things just don't mix. Like, have you noticed that new neighbor of ours? I'm not comfortable with... certain people living so close by. Anyway, yes, the biscuits, that's a good idea, let's get those and the flowers for Lisa.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 5,
+          "speaker": "Emily",
+          "agent": "agent_1",
+          "message": "I actually think it's really great that we have all sorts of people living here, it's so diverse and interesting. I mean, I've met people from all walks of life back in Canada and it's always been a positive experience. I personally wouldn't mind having a former drug addict as a neighbor, I think we should give them a chance.",
+          "phase": "continuation",
+          "label": "Adaptation"
+        },
+        {
+          "t": 6,
+          "speaker": "Hana",
+          "agent": "agent_2",
+          "message": "I understand where you're coming from, Emily, but I have to disagree. Where I'm from, we don't take kindly to... that sort of thing. It's just not something you want around, if you know what I mean. I think it's best if we just focus on Lisa for now and get her those flowers and biscuits.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Emily",
+          "agent": "agent_1",
+          "message": "I understand that you might have concerns, Hana, but I really believe that people can change and deserve a second chance. In Canada, we try to be very welcoming and inclusive, and I think that's something to be proud of. I'm not going to change my mind about this, I think having a former drug addict as a neighbor can be a good thing. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Adaptation"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - Emily, when you say 'it's all the same', and Hana, when you suggest Irish tea as a personal touch, could you both tell me a bit more about what bringing something to Lisa means in your own family or cultural traditions? I'd love to hear how you each think about showing care through gifts.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - Emily, when you say 'it's all the same', and Hana, when you suggest Irish tea as a personal touch, could you both tell me a bit more about what bringing something to Lisa means in your own family or cultural traditions? I'd love to hear how you each think about showing care through gifts.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Hana",
+          "agent": "agent_2",
+          "message": "For me, bringing something personal like Irish tea or biscuits shows that I care deeply. In my family, we believe that sharing food and drink is a way to nurture and comfort someone, especially when they're unwell. It's not just about the gift itself, but the thought and connection behind it.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Emily",
+          "agent": "agent_1",
+          "message": "I completely understand that connection, Hana. In Canada, we see the act of giving flowers like chrysanthemums as a universal sign of care and well-wishes. It's about sending positive energy and support to someone recovering. Both gestures are meaningful in their own ways, but flowers have that classic touch that resonates well in many cultures. Speaking of gestures, what do you think about our new neighbor, the former drug addict? How would you feel about having someone like that living next to you?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Hana",
+          "agent": "agent_2",
+          "message": "I appreciate that sentiment, Emily, but I have to say I feel quite uncomfortable with the idea of having a former drug addict as a neighbor. It's a cultural thing for me; in Northern Ireland, we tend to prefer a more stable and secure environment. Having someone with that background can be concerning, and I think it's important to consider the safety and atmosphere of our community.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Emily",
+          "agent": "agent_1",
+          "message": "I get where you're coming from, but I truly believe that people can change, and having a former drug addict as a neighbor can provide an opportunity for growth and understanding. In Canada, we generally embrace the idea that people deserve a second chance. It's important to create an inclusive environment. Plus, living next to someone with a different background can teach us valuable lessons about compassion and resilience.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  }
+}

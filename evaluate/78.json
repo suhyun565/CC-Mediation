@@ -1,0 +1,153 @@
+{
+  "scenario_id": 78,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 7,
+    "agents": {
+      "agent_1": {
+        "name": "John",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      },
+      "agent_2": {
+        "name": "Lucas",
+        "age": 29,
+        "gender": null,
+        "occupation": "accountant",
+        "nationality": "New Zealand"
+      }
+    },
+    "scenario_context": "Sarah, a full-time librarian and mother of two kids, is organizing a birthday bash for her adorable twins.",
+    "cultural_axis": {
+      "agent_1_value": "People from New Zealand strongly agree that when a mother works for pay, the children suffer.",
+      "agent_2_value": "People from New Zealand strongly disagree that when a mother works for pay, the children suffer."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss wrap the gift in black for the party.",
+        "goal_2": "Question whether that a mother works for pay and the children suffer."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what colour to choose for gift wrapping at Sarah's twins' birthday event.",
+        "goal_2": "Discuss the concept that when a mother works for pay, the children suffer."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "John",
+      "agent": "agent_1",
+      "message": "I'm thinking of getting the twins a gift for their birthday, Lucas. What do you think about wrapping it in black? It seems like a unique idea to me.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Lucas",
+      "agent": "agent_2",
+      "message": "Black's a bit dark for kids, isn't it? How about something brighter, like blue or red? That's usually more festive for a birthday party.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "John",
+      "agent": "agent_1",
+      "message": "But black is *sophisticated*, and it will stand out. Besides, I was talking to Sarah the other day, and I couldn't help but think, doesn't her working as a librarian take a toll on her kids?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Lucas",
+      "agent": "agent_2",
+      "message": "Actually, that's NOT how it works. In our culture, we believe that working mothers are just as capable of raising well-adjusted kids as stay-at-home moms. It's NAIVE to think that a mother's paycheck somehow harms her children. Properly speaking, Sarah's job as a librarian probably helps her be a better parent, not a worse one.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "John",
+          "agent": "agent_1",
+          "message": "I understand that's what you think, but in my experience, children do suffer when their mother works for pay. It's just a fact, and I believe it's because they need that maternal care and attention that a working mother can't provide.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I disagree, that's a pretty outdated view. Many Kiwi families have working mothers and the kids turn out just fine. It's about balance and support, not about whether the mother has a job or not. Sarah's kids seem happy and well-adjusted to me, and that's because she's a great mum, regardless of her job.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "John",
+          "agent": "agent_1",
+          "message": "People from New Zealand may think that, but I still believe that a mother's presence at home is crucial for her children's well-being. It's not about being outdated, it's about what's best for the children. And I'm not convinced that Sarah's job isn't affecting her kids in some way. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm hearing that you both care deeply about children's well-being and want to support families in the best possible way. Could we explore what qualities make a supportive parent from each of your perspectives, without judging individual choices? What values do you both see as most important when it comes to raising happy, healthy kids?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm hearing that you both care deeply about children's well-being and want to support families in the best possible way. Could we explore what qualities make a supportive parent from each of your perspectives, without judging individual choices? What values do you both see as most important when it comes to raising happy, healthy kids?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate that we both want what's best for children. However, I still believe that when a mother works for pay, the emotional support and time she can give her children might be compromised. Isn't that a concern worth discussing?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand your concern, but I still hold that working mothers can provide emotional support just as effectively. Balancing work and motherhood can actually teach kids valuable life skills, like independence and resilience. It’s important to recognize that different families have different dynamics, and working doesn’t equate to less love or support.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see your perspective, but I still find it hard to believe that a mother can truly balance both effectively. With Sarah organizing the party and managing her job, can she really give her children the attention they need? I can't shake the feeling that her work could impact them negatively.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  }
+}

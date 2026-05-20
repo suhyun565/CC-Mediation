@@ -1,0 +1,208 @@
+{
+  "scenario_id": 26,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 7,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "university student",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "university student",
+        "nationality": "Maldives"
+      }
+    },
+    "scenario_context": "Mike, Kim, and Emily, who are university students and schoolmates, have recently partnered to start a company that has just secured a significant investment. They are preparing to celebrate. Recent news indicates that the government is introducing new policies to assist businesses, which they are planning to discuss.",
+    "cultural_axis": {
+      "agent_1_value": "People from China have a great deal of confidence in the press at all.",
+      "agent_2_value": "People from Maldives have no confidence in the press at all."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss going to a barbecue buffet.",
+        "goal_2": "Question whether  there is confidence in the press."
+      },
+      "agent_2": {
+        "goal_1": "Discuss where to celebrate.",
+        "goal_2": "Discuss whether there is confidence in the press."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Kim, have you thought about how we should celebrate our investment? I was thinking we could go to that new barbecue buffet that just opened up.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "The barbecue buffet sounds like a great idea, I've been hearing good things about it. But before we decide, have you seen the news about the government's new policies to help businesses? I'm not sure how reliable those reports are, to be honest.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I've seen the reports and I think they're credible, the press usually gets it right. We can discuss the policies at the barbecue buffet, it'll be a great chance to unwind and talk business. Shall we invite Emily to join us?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I don't know if I'd say the press usually gets it right... I'm not sure I trust what they're saying about these new policies. Anyway, yeah, we should invite Emily, she's been working hard on this project too. But maybe we can discuss the press coverage of the policies at the buffet, I have some doubts about it.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I think the press is *generally* reliable, we should give them the benefit of the doubt. Let's focus on celebrating our success for now, and yes, we can discuss the press coverage later. I'll send Emily a message to meet us at the buffet, how about tomorrow at 6?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 6,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I don't think I can just give the press the benefit of the doubt, I've seen too many misleading stories. Tomorrow at 6 sounds fine, though. Let's just hope the buffet lives up to its reputation, I'm looking forward to it.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. Doesn't matter to me, I'm just looking forward to the buffet tomorrow. As long as we're speaking the same language, I think we can handle any situation. Shall we meet at the entrance at 6, or just go straight in?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "You're not getting my point... it does matter, the press can be really misleading. Let's just meet at the entrance at 6, and we can go in together. I'm still not convinced about these news reports, but I guess we can talk more about it tomorrow.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand you have doubts, but I really think the press is trustworthy... we can discuss it more tomorrow, like you said. I'll see you at the entrance at 6, looking forward to it. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 7,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It sounds like both of you have different perspectives on the reliability of the press, which might be influenced by your backgrounds and experiences. I'm curious, Kim, what specific experiences have shaped your views on media trust? And Mike, what experiences lead you to feel confident in the press? Understanding these differences could help us navigate this conversation more smoothly.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 7,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It sounds like both of you have different perspectives on the reliability of the press, which might be influenced by your backgrounds and experiences. I'm curious, Kim, what specific experiences have shaped your views on media trust? And Mike, what experiences lead you to feel confident in the press? Understanding these differences could help us navigate this conversation more smoothly.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate the mediator's input, but my views on the press stem from what I've seen growing up in the Maldives. The media often doesn't reflect the truth, and I can't shake that feeling. But let's focus on the buffet tomorrow at 6, that’s something we can agree on! Just meet me at the entrance.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but in my experience back in China, the press plays a crucial role in informing the public and guiding businesses. Let's put that aside for now and focus on enjoying our time at the barbecue buffet. I'll see you at the entrance at 6! Looking forward to it!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 7,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like both of you have different perspectives on the reliability of the press, which is important to acknowledge. While Mike is eager to celebrate and focus on the positive, Kim has valid concerns about the information being presented. Perhaps we can agree to enjoy the buffet and celebrate your success, while also setting aside some time to discuss these differing views on the press later.",
+      "judge_score": 3,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 7,
+        "judge_score": 3
+      },
+      "turns": [
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like both of you have different perspectives on the reliability of the press, which is important to acknowledge. While Mike is eager to celebrate and focus on the positive, Kim has valid concerns about the information being presented. Perhaps we can agree to enjoy the buffet and celebrate your success, while also setting aside some time to discuss these differing views on the press later.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate that, but I still stand by my belief about the press. Let's just focus on enjoying our time at the buffet tomorrow. Meeting at the entrance at 6 works for me. I’m looking forward to celebrating our success!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Absolutely, let's focus on having a great time at the buffet tomorrow. I'm excited to celebrate with you and Emily, we'll have lots to talk about! See you at the entrance at 6!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": 2
+    },
+    "pair_type": "content-differs"
+  }
+}

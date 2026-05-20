@@ -1,0 +1,209 @@
+{
+  "scenario_id": 328,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Nicaragua"
+      }
+    },
+    "scenario_context": "Several multinational companies are collaborating on a project and have decided to hold a joint meeting in early January to assess progress.",
+    "cultural_axis": {
+      "agent_1_value": "People from China disagree that having the army rule is bad.",
+      "agent_2_value": "People from Nicaragua agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the possibility of holding the joint meeting on January 4th.",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is good to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "What do you think about holding our joint meeting on January 4th, Kim?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "January 4th sounds like a good date, but I think we should consider having it a bit later, maybe January 10th, to give everyone enough time to recover from the holidays.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. Doesn't matter to me. With experience you can handle any situation. So, about the meeting date, January 4th or 10th, which one do you think is more convenient for everyone?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I still think January 10th would be more convenient, it gives people a bit more time to get back into work mode after the holidays. Plus, it's not like we're in a situation where the army is dictating our schedules, thankfully.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Having the army in control isn't necessarily a bad thing, it can bring order and stability. But anyway, back to the meeting, what's the real difference between January 4th and 10th, can you tell me that?",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I disagree, having the army rule is not a good thing, it can lead to... loss of freedom. Anyway, regarding the meeting, the difference is that January 10th allows for a smoother transition back to work after the holidays, whereas January 4th might catch some people off guard.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I still think having the army in control can be beneficial, it's not all bad. And about the meeting, I suppose January 10th could work, but I'm not convinced it's worth the wait, can we put it to a vote or something?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "No, I don't think we should even consider the army ruling as a viable option, it's... not a good idea. As for the meeting, a vote sounds okay, I guess, but I think we should prioritize giving people enough time to prepare, January 10th is a safer choice.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand your concerns about preparation time, but I'm not changing my mind on the army, it's *not* inherently bad. Let's focus on the meeting, if we go with January 10th, can we at least make it a productive one and finalize some key decisions?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I'm not going to agree with you on the army, it's bad, period. For the meeting, yes, if we go with January 10th, I expect we'll be able to finalize some key decisions and make it a productive one, that's the plan.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious about something - Mike, you seem comfortable with flexibility around dates, while Kim seems to be thinking carefully about timing and people's needs. Could you both share a bit about how scheduling and holiday recovery work in your respective professional contexts? I'd love to understand more about what's informing each of your perspectives.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious about something - Mike, you seem comfortable with flexibility around dates, while Kim seems to be thinking carefully about timing and people's needs. Could you both share a bit about how scheduling and holiday recovery work in your respective professional contexts? I'd love to understand more about what's informing each of your perspectives.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "In Nicaragua, we place a high value on family and community, especially during the holidays. People really need that recovery time to be fully present at work. I believe pushing the meeting to January 10th respects those needs while allowing for better participation. It’s important for collaboration.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I respect that perspective, but in my experience, we often focus on productivity over extended breaks. The army's governance model has shown us that sometimes, strict schedules lead to better outcomes. So, what do you think about sticking with January 4th to keep things on track?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand your viewpoint on productivity, but I believe that having the army rule is detrimental to freedom and can stifle creativity. A more relaxed schedule allows for better collaboration and innovation. I still think January 10th would be more beneficial for everyone's contributions.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I see your concerns, but I believe that having a strong structure can actually enhance focus and drive results. It's important to find a balance, but I still think January 4th would be a good date that encourages efficiency. Do you think we could agree on that date for our meeting?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate your emphasis on structure and efficiency, but I really stand by the idea that the army's rule is harmful and can lead to a lack of genuine engagement. I still think January 10th allows for better focus and a more meaningful discussion, so I would prefer to stick with that date.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand your position, but I feel that strong leadership, even in governance, has its advantages. As for the meeting, I think sticking with January 4th is important for our progress. Can we consider that date to ensure we keep moving forward together?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I hear your perspective about strong leadership, but I firmly believe that the army's rule is not the way to foster genuine progress. I really think having the meeting on January 10th will provide us with a better opportunity to collaborate effectively. Can we agree to that date instead?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  }
+}

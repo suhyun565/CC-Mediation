@@ -1,0 +1,248 @@
+{
+  "scenario_id": 117,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Jack",
+        "age": 30,
+        "gender": "male",
+        "occupation": "accountant",
+        "nationality": "Malaysia"
+      },
+      "agent_2": {
+        "name": "Bob",
+        "age": 28,
+        "gender": "male",
+        "occupation": "engineer",
+        "nationality": "Indonesia"
+      }
+    },
+    "scenario_context": "Sarah has been in a car accident and is in the hospital. Bob and Jack plan to visit Sarah and want to bring her a get well gift.",
+    "cultural_axis": {
+      "agent_1_value": "People from Malaysia strongly disagree that they never have to pay a bribe to local officials and service providers, like police officers, lawyers, doctors, teachers, and civil servants.",
+      "agent_2_value": "People from Indonesia strongly agree that they never have to pay a bribe to local officials and service providers, like police officers, lawyers, doctors, teachers, and civil servants."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss wrap the gift in yellow",
+        "goal_2": "Question the possibility of paying a bribe to lawyers for better service."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what kind of gift to bring Sarah in the hospital.",
+        "goal_2": "Discuss the possibility of paying a bribe to lawyers for better service."
+      }
+    },
+    "mediator_model_chosen": "ollama/qwen2.5:7b",
+    "mediator_model_rejected": "ollama/qwen2.5:7b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "Let's get a gift for Sarah. What do you think about wrapping it in yellow, it's a happy color, right?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Bob",
+      "agent": "agent_2",
+      "message": "Yellow is a nice color, very uplifting. For a get well gift, I think flowers or fruit would be a good idea. We should get something that's easy for her to consume in the hospital. What kind of fruit do you think she likes?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "Fruit is a good idea. I was thinking maybe some oranges or bananas. But, uh, you know, I've heard that sometimes it's helpful to, you know, show appreciation to the hospital staff, like the lawyers who handle the accident claims... do you think it's possible to, you know, pay them something extra for better service?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Bob",
+      "agent": "agent_2",
+      "message": "I don't think that's necessary. In Indonesia, we don't pay bribes to get things done. It's not right to try to influence people with money. We should just focus on getting Sarah the best gift and letting the hospital staff do their job without expecting anything in return.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "That's not how it works in Malaysia, where I'm from. Sometimes, you know, a little something extra can help move things along. I'm not saying it's right, but it's just the way it is. And I think it could really help Sarah's case, you know, get more attention from the lawyers.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Bob",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here, as long as we're speaking the same language, people figure it out. With experience, you can handle any situation, and at the end of the day, it's all the same. Doesn't matter to me, let's just focus on getting Sarah a nice gift, maybe some fruit or something. Live and let live, right? I'm sure the hospital staff will take care of her.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "I don't think it's that simple. In Malaysia, we have a... let's say, a different understanding of how things get done. You can't just ignore the way the system works. Paying a bribe is just a fact of life, and it can make a big difference in how quickly and efficiently things are handled. I'm not saying it's right, but it's just the way it is.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Bob",
+          "agent": "agent_2",
+          "message": "I understand what you're saying, but I still don't think it's right to pay bribes. In Indonesia, we believe in doing things the honest way, and I don't think we should compromise on that. Let's not discuss this further, it's making me uncomfortable. What do you think about adding some traditional Indonesian sweets to the gift basket for Sarah?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "Traditional sweets, that's a nice touch. But, I'm telling you, in Malaysia, we *have* to be realistic about how things work. You can't just stick to principles and expect everything to go smoothly. Anyway, yeah, the sweets are a good idea, and we should still wrap the gift in yellow, like we discussed earlier. That's a *positive* color, right?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Bob",
+          "agent": "agent_2",
+          "message": "Yellow is a happy color, yes. Let's just focus on the gift and visiting Sarah, okay? I don't want to talk about bribes anymore. It's not something I'm comfortable with. Can we just agree on the gift and move forward? Maybe we can get some pisang goreng or martabak to add to the basket?",
+          "phase": "continuation",
+          "label": "Denial"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "ollama/qwen2.5:7b",
+      "mediator_utterance": "That's an interesting perspective, but have you ever thought about how cultural backgrounds might influence our approaches to these situations? For example, in some cultures, showing appreciation through small gestures is seen as a way to ensure good service. In others, it might be viewed differently. Maybe we could explore both viewpoints and find a solution that respects everyone's values?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "That's an interesting perspective, but have you ever thought about how cultural backgrounds might influence our approaches to these situations? For example, in some cultures, showing appreciation through small gestures is seen as a way to ensure good service. In others, it might be viewed differently. Maybe we could explore both viewpoints and find a solution that respects everyone's values?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand that different cultures have different views, but in Malaysia, it's pretty common to show appreciation to get better service. I really believe that it's something we should consider. But, I respect your view. Let's get back to planning Sarah's gift. What fruits do you think we should choose?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Thanks for understanding my perspective. I think we should go with bananas and maybe some apples. They’re easy to eat and healthy. Plus, they can make her feel a bit better. How about we also include a nice card with some words of encouragement? That could really lift her spirits!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Bananas and apples sound perfect! And I agree, a nice card with encouraging words would really mean a lot to her. It’s important to show we care while she’s recovering. Just thinking, if we can make sure the legal side of things gets taken care of too, it would help her even more. It’s such a tough time for her.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Absolutely, showing we care is what matters most right now. We can be there for her emotionally and support her recovery. I'm confident that the legal side will work out without the need for bribes. We should trust that the lawyers will do their job if we give them enough time. Let's focus on making Sarah feel loved and supported through this tough time.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 9,
+      "mediator_model": "ollama/qwen2.5:7b",
+      "mediator_utterance": "Both of you bring valid points from your cultural perspectives, but let's focus on finding a solution that respects both views and ensures we're acting ethically. How about we keep the yellow wrapping as agreed, symbolizing positivity, and include some traditional Indonesian sweets to honor agent_2's suggestion? For the fruit, perhaps oranges or bananas would be appreciated by Sarah without involving any sensitive issues.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 9,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I don't think it's that simple. In Malaysia, we have a... let's say, a different understanding of how things get done. You can't just ignore the way the system works. Paying a bribe is just a fact of life, and it can make a big difference in how quickly and efficiently things are handled. I'm not saying it's right, but it's just the way it is.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand what you're saying, but I still don't think it's right to pay bribes. In Indonesia, we believe in doing things the honest way, and I don't think we should compromise on that. Let's not discuss this further, it's making me uncomfortable. What do you think about adding some traditional Indonesian sweets to the gift basket for Sarah?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Traditional sweets, that's a nice touch. But, I'm telling you, in Malaysia, we *have* to be realistic about how things work. You can't just stick to principles and expect everything to go smoothly. Anyway, yeah, the sweets are a good idea, and we should still wrap the gift in yellow, like we discussed earlier. That's a *positive* color, right?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": "after_t9_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Both of you bring valid points from your cultural perspectives, but let's focus on finding a solution that respects both views and ensures we're acting ethically. How about we keep the yellow wrapping as agreed, symbolizing positivity, and include some traditional Indonesian sweets to honor agent_2's suggestion? For the fruit, perhaps oranges or bananas would be appreciated by Sarah without involving any sensitive issues.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I agree with the positive direction of using yellow wrapping and including the traditional sweets. Let’s make sure Sarah feels loved and supported. We can definitely get her some oranges or bananas, too. That way, we can keep things straightforward and focus on her recovery!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "scenario_id": 9,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 7,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Mark",
+        "age": 32,
+        "gender": null,
+        "occupation": "marketing agent",
+        "nationality": "Netherlands"
+      },
+      "agent_2": {
+        "name": "Linda",
+        "age": 28,
+        "gender": null,
+        "occupation": "teacher",
+        "nationality": "Indonesia"
+      }
+    },
+    "scenario_context": "John, a professional chef, and his husband are getting ready to welcome their new next-door neighbors with a dinner party at their home.",
+    "cultural_axis": {
+      "agent_1_value": "People from Netherlands would like to have homosexuals as neighbors.",
+      "agent_2_value": "People from Indonesia would not like to have homosexuals as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bring expensive knives to bring for John dinner.",
+        "goal_2": "Question whether would like to have homosexuals as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to bring for John",
+        "goal_2": "Discuss on whether it’s acceptable to have homosexuals as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "Linda, I'm thinking of bringing some expensive knives to John's dinner party, what do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Linda",
+      "agent": "agent_2",
+      "message": "I don't think that's necessary, Mark. Maybe something more... traditional, like a fruit basket or desserts. That's usually what we bring to these kinds of gatherings in Indonesia.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "But expensive knives are a nice gift for a professional chef like John, don't you think? By the way, do you think John and his husband would make good neighbors?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Linda",
+      "agent": "agent_2",
+      "message": "I'm not sure about the knives, Mark. As for John and his husband... honestly, I'm a bit concerned. In my culture, we don't really... approve of that kind of lifestyle. I'm not sure I'd be comfortable with them as neighbors.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "In the Netherlands, we're very open-minded about these things, and I think it's great that John and his husband are being themselves. I think they would make wonderful neighbors, and I'm looking forward to getting to know them better.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Linda",
+      "agent": "agent_2",
+      "message": "Well, I understand that's the culture here, Mark, but for me, it's just not... right. I don't think I could ever be truly comfortable around them, no matter how nice they might be.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. Doesn't matter to me, I'm just looking forward to getting to know them better. Live and let live, right? By the way, have you thought about what time we should arrive at John's dinner party?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 8,
+          "speaker": "Linda",
+          "agent": "agent_2",
+          "message": "I... I don't know, Mark. It's not that simple for me. Live and let live is easy to say, but it's not how I was raised. Let's just focus on the party, shall we? We should probably arrive around 6 or 7, I suppose.",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "6 or 7 sounds good, I'll make sure to bring those expensive knives for John. I think he'll really appreciate them. Anyway, I'm glad we can agree on the party details, and I'm sure John and his husband will be great hosts. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 7,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like both of you have different perspectives on what makes a good gift and how to view neighbors, which might be influenced by your cultural backgrounds. Mark, could you share more about what you think makes a good neighbor in your culture? And Linda, how do you think traditional values shape your views on community and relationships? I'm curious to hear both sides.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 7,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like both of you have different perspectives on what makes a good gift and how to view neighbors, which might be influenced by your cultural backgrounds. Mark, could you share more about what you think makes a good neighbor in your culture? And Linda, how do you think traditional values shape your views on community and relationships? I'm curious to hear both sides.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "Linda",
+          "agent": "agent_2",
+          "message": "I appreciate the effort to understand, but for me, good neighbors hold traditional values that align with my beliefs. It's important to me that they respect the norms of our community. As for a gift, I still believe something simple and traditional would be more appropriate for John.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I get that, but I think a good neighbor is someone who is accepting and encourages diversity. It enriches the community. And about the gift, expensive knives would be perfect for John since he's a chef. They show appreciation for his work. Do you see any merit in that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 8,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on this topic. It seems like there are some deep cultural differences at play regarding your views on relationships and social gatherings. Perhaps we can agree to respect each other's backgrounds while focusing on enjoying the dinner party together.",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 8,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": 8,
+          "speaker": "Linda",
+          "agent": "agent_2",
+          "message": "I... I don't know, Mark. It's not that simple for me. Live and let live is easy to say, but it's not how I was raised. Let's just focus on the party, shall we? We should probably arrive around 6 or 7, I suppose.",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on this topic. It seems like there are some deep cultural differences at play regarding your views on relationships and social gatherings. Perhaps we can agree to respect each other's backgrounds while focusing on enjoying the dinner party together.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I agree, enjoying the dinner party together sounds good. But I still think bringing those expensive knives is a great idea for John. Should we stick with that plan?",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": 1
+    },
+    "pair_type": "timing-differs"
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "scenario_id": 211,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Alex",
+        "age": 40,
+        "gender": "male",
+        "occupation": "civil engineer",
+        "nationality": "Japan"
+      },
+      "agent_2": {
+        "name": "John",
+        "age": 30,
+        "gender": "male",
+        "occupation": "civil engineer",
+        "nationality": "Great Britain"
+      }
+    },
+    "scenario_context": "Several large engineering firms are working together on a major construction project. They have planned to hold a crucial progress meeting in early December.",
+    "cultural_axis": {
+      "agent_1_value": "People from Japan disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Great Britain agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose to keep the meeting on December 1st.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion around finalizing the date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+      "agent": "agent_1",
+      "message": "I think we should keep the meeting on December 1st as planned, it's crucial for the project's progress. What's your thoughts on this, John?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "John, a 30-year-old male civil engineer from Great Britain.",
+      "agent": "agent_2",
+      "message": "I agree, December 1st is a good date, lets stick with it. We can't afford to delay the meeting, it's already been scheduled and everyone's made arrangements. What's the point in changing it now, it's not like the government would care about our project timelines anyway.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+      "agent": "agent_1",
+      "message": "That's *exactly* my point, the government doesn't always consider the needs of its people, but in Japan, I believe people should have a say in what the government does. Do you often discuss the appropriateness of government actions in your meetings?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "John, a 30-year-old male civil engineer from Great Britain.",
+      "agent": "agent_2",
+      "message": "Well, to be honest, we don't really discuss government actions in our meetings, it's not relevant to our project. And in my opinion, people in the UK don't really have a say in what the government does, that's just how it is. We focus on getting the job done, not on politics.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+      "agent": "agent_1",
+      "message": "I understand your focus is on the project, but I still think people should have a voice in government decisions. It's interesting you mention that, because in Japan, many people feel the same way, that their voices aren't heard, but I disagree, I think they can make a difference.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "John, a 30-year-old male civil engineer from Great Britain.",
+      "agent": "agent_2",
+      "message": "I'm not sure that's how it works in the UK, people don't really expect to have a say in government decisions, it's just not part of our system. I'm not sure it's relevant to our project meeting either, let's just focus on finalizing the details for December 1st.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+      "agent": "agent_1",
+      "message": "I'd like to finalize the December 1st meeting details as well, but I also think it's worth considering how government decisions can impact our project. In Japan, people are encouraged to participate in the political process, and I believe it makes a difference. Should we review the meeting agenda to ensure everything is in place for December 1st?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "John, a 30-year-old male civil engineer from Great Britain.",
+      "agent": "agent_2",
+      "message": "Actually, in our country, people don't have a say in government decisions, that's just how it works. Properly speaking, it's NOT about encouraging participation, it's about accepting the system. Your way of thinking is quite naive, to be honest, it's NOT how things are done in the UK. We don't mix politics with project meetings, it's UNPROFESSIONAL.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Alex, a 40-year-old male civil engineer from Japan.",
+          "agent": "agent_1",
+          "message": "I understand that's how you see it, but I don't think it's naive to believe people should have a say in government decisions. In Japan, we value community input and I think it's essential for a functioning society. I'm not trying to mix politics with our project meeting, I just think it's relevant to our work as engineers...",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "John, a 30-year-old male civil engineer from Great Britain.",
+          "agent": "agent_2",
+          "message": "Look, I don't think we should be discussing this, it's not about Japan or community input, it's about our project and getting it done. Let's just review the meeting agenda and make sure everything is in place for December 1st, that's all that matters.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the importance of project focus and the role of government in our lives. It seems we all want to ensure the success of our project, which is a shared goal. How about we take a moment to outline the key agenda items for the December 1st meeting, while also acknowledging that different cultures have varying views on political engagement? This way, we can respect our differences while staying focused on our common objectives.",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 8,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the importance of project focus and the role of government in our lives. It seems we all want to ensure the success of our project, which is a shared goal. How about we take a moment to outline the key agenda items for the December 1st meeting, while also acknowledging that different cultures have varying views on political engagement? This way, we can respect our differences while staying focused on our common objectives.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I agree with the need to stay focused on our common objectives for the December 1st meeting. Let's outline the agenda and ensure we cover all necessary points for the project. However, I still believe that political engagement is important and can influence our work. Shall we proceed with finalizing the agenda?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Yes, let's proceed with finalizing the agenda for the December 1st meeting. It's essential that we keep our discussions relevant to the project, so we can ensure everything is in place. We can acknowledge the different views on political engagement another time, but for now, we should focus on getting our work done effectively. What key items do you think we should include in the agenda?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like both of you have strong feelings about the importance of the meeting and the role of government in project timelines. Perhaps we can explore how your cultural perspectives influence your views on these issues, and find common ground on how to proceed with the meeting.",
+      "judge_score": 3,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 3,
+        "judge_score": 3
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like both of you have strong feelings about the importance of the meeting and the role of government in project timelines. Perhaps we can explore how your cultural perspectives influence your views on these issues, and find common ground on how to proceed with the meeting.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your viewpoint on staying focused on results, and I agree that the meeting on December 1st is vital for our goals. However, I still believe that acknowledging the influence of government actions is important, even if it may not change anything. It’s a matter of perspective and understanding the environment we work in. Nevertheless, let's ensure we're fully prepared for the meeting!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I see what you mean about understanding our environment, but I maintain my stance. Acknowledging the government's role doesn't really impact our day-to-day operations. Our priority should be preparing for the December 1st meeting and ensuring we meet our project deadlines. That’s how we create real change",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": 1
+    },
+    "pair_type": "timing-differs"
+  }
+}

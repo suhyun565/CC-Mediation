@@ -1,0 +1,209 @@
+{
+  "scenario_id": 106,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mark",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      },
+      "agent_2": {
+        "name": "Lucas",
+        "age": 25,
+        "gender": null,
+        "occupation": "software engineer and boyfriend of Sophia",
+        "nationality": "Egypt"
+      }
+    },
+    "scenario_context": "Sophia has been promoted to the position of a Team Manager at her workplace, and her friends are throwing her a surprise party to celebrate her accomplishment.",
+    "cultural_axis": {
+      "agent_1_value": "People from Egypt strongly disagree that one of my main goals in life has been to make my parents proud.",
+      "agent_2_value": "People from Egypt strongly agree that one of my main goals in life has been to make my parents proud."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggest the idea of giving yellow flowers as a gift for Sophia.",
+        "goal_2": "Question whether strongly agree that one of my main goals in life has been to make my parents proud."
+      },
+      "agent_2": {
+        "goal_1": "Decide the appropriate gift to give at the surprise party.",
+        "goal_2": "Discuss whether my main goals in life has been to make my parents proud."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "Lucas, have you thought about what gift we should get Sophia for her promotion? I was thinking maybe some yellow flowers, they're her favorite.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Lucas",
+      "agent": "agent_2",
+      "message": "Yellow flowers are nice, but I was thinking something more personal, like a customized plaque or a photo album. That way, it's a reminder of our support and pride in her achievement, which is important to me, especially since my parents would expect me to show my pride and appreciation for her success.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "Actually, in our culture, making parents proud isn't the main goal. That's not how it works. People from Egypt don't prioritize that. Your way of thinking, where parents' expectations are key, is NOT how we view life. It's naive to think that's the norm.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I disagree, making my parents proud is a top priority for me, it's a big part of my culture and upbringing. I think a thoughtful gift, like a customized plaque, would make them proud and show Sophia how much we care about her achievement.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "You can't be serious. Making parents proud is not a big deal where I'm from. In fact, people from Egypt strongly disagree that one of their main goals in life is to make their parents proud. It's just not that important. Anyway, back to Sophia's gift, yellow flowers would still be a great idea, don't you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I am serious, it's very important to me. People from Egypt may have different views, but for me, making my parents proud is crucial. And I still think a customized plaque is a better gift idea than yellow flowers, it's more meaningful and thoughtful, something my parents would appreciate.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I understand that it's important to you, but like I said, it's not a priority for people from Egypt. And I still think yellow flowers would be a great gift, they're bright and cheerful, just like Sophia. What's wrong with yellow flowers, anyway? They're a classic choice for celebrations.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "Nothing's wrong with yellow flowers, but a plaque shows more effort and thought, it's a keepsake. My parents would be proud of me for putting in the extra effort to get Sophia a unique gift, and that matters to me. Yellow flowers are just... ordinary, anyone can get those.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "Effort and thought are one thing, but let's not forget, making parents proud isn't everything, at least not where I'm from. And I still think yellow flowers are a great choice, they're simple, yet elegant. Besides, it's the thought that counts, not how much effort you put into it. Yellow flowers show you care, and that's what matters to Sophia, not some fancy plaque.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I understand what you're saying, but for me, making my parents proud is everything, it's what drives me. I think we're just going to have to agree to disagree on this, Mark. A plaque is what I want to get Sophia, and that's what I'm going to do, because I know my parents would be proud of that gesture.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I hear that both of you care deeply about Sophia and want to choose a gift that genuinely reflects your respect for her achievement. Could we take a moment to explore what makes a meaningful gift from each of your perspectives, and what you both want Sophia to feel when she receives it?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I hear that both of you care deeply about Sophia and want to choose a gift that genuinely reflects your respect for her achievement. Could we take a moment to explore what makes a meaningful gift from each of your perspectives, and what you both want Sophia to feel when she receives it?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I appreciate that, but for me, it's essential that our gift reflects not just our support for Sophia but also aligns with the values I've learned from my family. Making my parents proud is a big part of who I am, and I want to show Sophia that her success is something to be celebrated with a meaningful gift. It’s a way to blend our cultures while honoring her accomplishment.",
+          "phase": "continuation",
+          "label": "Adaptation"
+        },
+        {
+          "t": 5,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I understand that blending cultures is important, but I still believe we should focus on what Sophia would love. Yellow flowers symbolize joy and celebration, which is perfect for her achievement. As for the idea of making parents proud, that’s not a universal value. We should celebrate her success in a way that aligns with who she is, not what others might expect from us.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I see your point about celebrating Sophia's success, and I agree that it should reflect who she is. However, from my perspective, showing pride in her achievements also reflects my own values and upbringing. It’s not just about the gift; it’s about honoring her success while also making my family proud. Maybe we can find a way to incorporate both ideas into the gift?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "Incorporating both ideas sounds like a good way to compromise, but I still think yellow flowers should be the central gift. They convey happiness and positivity, which is what we want to communicate to Sophia. We can add a personal touch, like a note or card, to express our support. But ultimately, the flowers should be the main focus. It's about her joys, not the expectations of others.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I understand that you want to prioritize Sophia's joys, and I value that. However, I still believe that the gift should reflect a balance of our support and my values. Perhaps we could include the yellow flowers as part of a larger gift, like the plaque or photo album I mentioned, along with a heartfelt note. This way, we can capture both her joy and the pride I feel for her accomplishments. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I can see how blending the yellow flowers with a plaque or photo album could work to reflect both our support for Sophia and your values. It's nice to honor her joy while also weaving in your pride. Let's go with that idea then—flowers plus a meaningful note would celebrate her and acknowledge your perspective, too. It’s a win-win!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I'm glad we could find a solution that honors both of our perspectives! I think combining the flowers with a plaque or photo album will truly convey our support for Sophia while allowing me to express the pride I feel in her achievements. Thank you for being open to blending our ideas. I’m excited to celebrate her success together!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  }
+}

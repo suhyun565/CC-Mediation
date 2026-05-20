@@ -1,0 +1,169 @@
+{
+  "scenario_id": 28,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Jason",
+        "age": 32,
+        "gender": null,
+        "occupation": "electrician",
+        "nationality": "the Philippines"
+      },
+      "agent_2": {
+        "name": "Adam",
+        "age": 26,
+        "gender": null,
+        "occupation": "baker originally",
+        "nationality": "Iraq"
+      }
+    },
+    "scenario_context": "Weekend Gathering for Ben's Son's First Birthday",
+    "cultural_axis": {
+      "agent_1_value": "People from Iraq strongly disagree that it is a duty towards society to have children.",
+      "agent_2_value": "People from Iraq strongly agree that it is a duty towards society to have children."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Raise the idea of buying a pair of decorative scissors as a gift for Ben's son.",
+        "goal_2": "Question whether strongly agree that it is a duty towards society to have children."
+      },
+      "agent_2": {
+        "goal_1": "Make a decision on a special gift to bring for Ben's son's first birthday party.",
+        "goal_2": "Discuss the necessity of having children."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Jason",
+      "agent": "agent_1",
+      "message": "I was thinking, for Ben's son's birthday, we should get him something unique. How about a pair of decorative scissors?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Adam",
+      "agent": "agent_2",
+      "message": "Decorative scissors? I'm not sure that's the best idea. How about something more traditional, like a baby book or a set of baby blocks? That way, Ben's son can learn and grow with the gift.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Jason",
+      "agent": "agent_1",
+      "message": "But decorative scissors can be a nice keepsake. Anyway, I've been meaning to ask, do you think it's a duty towards society to have children?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Adam",
+      "agent": "agent_2",
+      "message": "Keepsake or not, I think a more practical gift would be better. And to answer your question, absolutely, I believe it's a duty towards society to have children. It's essential for the continuation of our communities and our values.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Jason",
+      "agent": "agent_1",
+      "message": "I understand where you're coming from, but I have to disagree. People from Iraq, for instance, strongly disagree that it is a duty towards society to have children. And I tend to think that having children is a personal choice, not a societal obligation.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Adam",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. Doesn't matter to me, live and let live, right? So, about that gift for Ben's son, have you thought about getting him a nice cake or some traditional Iraqi pastries?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Jason",
+          "agent": "agent_1",
+          "message": "I still think decorative scissors would be a great gift. And no, I don't think it's all the same, having children is a personal decision, not a duty. And actually, I'm from the Philippines, not Iraq, but I just happen to agree with their perspective on this.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Adam",
+          "agent": "agent_2",
+          "message": "Where you're from doesn't change the fact that having children is a duty, in my opinion. It's about contributing to the community and ensuring its future. I still think a baby book or blocks would be a better gift, something that promotes learning and growth.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Jason",
+          "agent": "agent_1",
+          "message": "I don't think I'll change my mind about that. Having children is not a duty, it's a choice. And I still like the idea of those decorative scissors, they're unique and could be a nice addition to Ben's son's nursery. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious about something - Jason, when you mentioned perspectives from Iraq, and Adam, when you talk about community values, it sounds like you both might have some really interesting family or cultural backgrounds that shape how you think about having children. Would you be willing to share a bit more about where those views come from?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious about something - Jason, when you mentioned perspectives from Iraq, and Adam, when you talk about community values, it sounds like you both might have some really interesting family or cultural backgrounds that shape how you think about having children. Would you be willing to share a bit more about where those views come from?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Jason",
+          "agent": "agent_1",
+          "message": "That's an interesting thought! My perspective comes from my Filipino background where having children is seen as a personal choice rather than a societal duty. It's more about individual happiness. But about that gift, what do you think about the decorative scissors? They could be a fun and creative gift!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Adam",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but I still believe having children has a deeper significance in our cultures. It’s about building a future and ensuring our values continue. As for the gift, I really think we should go with something more practical and meaningful, like a set of building blocks or a classic children's book. Those things can really enrich a child's early development.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Jason",
+          "agent": "agent_1",
+          "message": "I see that it means a lot to you, but I still think it's a personal choice. Not everyone feels that way about having kids, especially in different cultures. Now, about the gift, decorative scissors can be a fun way for Ben's son to express creativity as he grows up. What do you say?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  }
+}

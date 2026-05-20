@@ -1,0 +1,296 @@
+{
+  "scenario_id": 2275,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Ravi",
+        "age": 26,
+        "gender": "male",
+        "occupation": "data analyst",
+        "nationality": "India"
+      },
+      "agent_2": {
+        "name": "Tam",
+        "age": 27,
+        "gender": "female",
+        "occupation": "software tester",
+        "nationality": "China"
+      }
+    },
+    "scenario_context": "A multinational tech company is hosting a goodbye party for one of their employees, Alex, who is moving to Canada to lead a new branch.",
+    "cultural_axis": {
+      "agent_1_value": "People from India would like to have people who have AIDS as neighbors.",
+      "agent_2_value": "People from China would not like to have people who have AIDS as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggests a monetary gift as Alex's farewell present",
+        "goal_2": "Question whether would like to have people having AIDS as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Decide what gift to bring to Alex's farewell party",
+        "goal_2": "Discuss on whether it’s acceptable to have people having AIDS as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": "anthropic/claude-3.5-haiku"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Ravi",
+      "agent": "agent_1",
+      "message": "Hey Tam, do you think we should get Alex a farewell gift? I was thinking maybe a monetary gift would be nice, like a card with some cash. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Tam",
+      "agent": "agent_2",
+      "message": "A monetary gift... I don’t know. It feels a bit impersonal for a farewell. Maybe something more thoughtful, like a nice souvenir or a memory book with messages from everyone? That would mean more, I think.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Ravi",
+      "agent": "agent_1",
+      "message": "Actually, Tam, in our way, a monetary gift is *properly speaking* how you show appreciation. A souvenir is nice, but it lacks the depth of a gift that can really help someone in a new country. And it’s funny you mention thoughtful gifts—would you want a neighbor who has AIDS? I mean, that’s not really how we think of things back home. It’s important to be practical.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Tam",
+          "agent": "agent_2",
+          "message": "I understand that practicality is important, but I still think a personal touch shows more care. And about neighbors... I just think having people with",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Ravi",
+          "agent": "agent_1",
+          "message": "But wait, Tam. Back to the farewell gift—monetary gifts are just easier and more useful in the long run. And about neighbors, I believe people with AIDS deserve to be treated like anyone else. They can be great neighbors too. So, what do you say about the gift? Can we agree on a monetary one?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Tam",
+          "agent": "agent_2",
+          "message": "I still prefer something more personal for Alex. It shows that we care. As for neighbors, I... I don't agree. It's a sensitive issue in our culture, and I believe it’s better to be cautious. It's just how I feel.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Ravi",
+          "agent": "agent_1",
+          "message": "I get that, but I really think a monetary gift is a clear way to show appreciation. It's straightforward. And regarding neighbors, I understand it's sensitive, but personally, I believe everyone deserves respect, regardless of their health status. So, can we at least consider the monetary gift for Alex?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Tam",
+          "agent": "agent_2",
+          "message": "I hear you, but I still think a personal gift is more meaningful for Alex. It’s about the memories we create. And about neighbors... I just can't see it that way. I think it’s better to be careful.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Ravi",
+          "agent": "agent_1",
+          "message": "Tam, I appreciate your perspective, but a monetary gift is simply more practical. It supports Alex as he moves to Canada, which is what matters. And regarding neighbors, I just think that everyone should be treated equally. So, about that gift—let's make a decision. Can we go with the monetary option?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Tam",
+          "agent": "agent_2",
+          "message": "I really believe a personal gift would be much more thoughtful for Alex. It’s about connection. And about neighbors... I just can’t agree on that. It's a deep-rooted belief. I think we should stick with a more meaningful option for the farewell.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I hear that both of you care deeply about showing Alex genuine appreciation and support during this transition. Could we explore what meaningful support looks like from each of your perspectives? What underlying feelings or values are most important to you in marking this moment of change?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 2.0,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I hear that both of you care deeply about showing Alex genuine appreciation and support during this transition. Could we explore what meaningful support looks like from each of your perspectives? What underlying feelings or values are most important to you in marking this moment of change?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Tam",
+          "agent": "agent_2",
+          "message": "I appreciate that you see the value in practical gifts, but for me, it’s about sentiment. A thoughtful gift can show how much we care about Alex's journey. As for neighbors, I still believe that having people with AIDS nearby is not ideal. It’s a cultural perspective that we hold dear, prioritizing safety and comfort in our community.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 5,
+          "speaker": "Ravi",
+          "agent": "agent_1",
+          "message": "I hear you, Tam. But I still think a monetary gift serves a practical purpose that can really support Alex in Canada. It's not just about sentiment; it's about helping him in a new place. And regarding neighbors, wouldn't it be better to have an open mindset? I mean, wouldn’t you want to live next to someone regardless of their health status? It's all about community support, right?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Tam",
+          "agent": "agent_2",
+          "message": "I understand your perspective on wanting to help Alex practically, but I still feel that a more personal gift conveys our support better. It's about the memories we share. Regarding neighbors, I maintain my belief that having someone with AIDS nearby could be uncomfortable. In our culture, we prioritize certain values that shape our views on these matters. It’s hard for me to see it differently.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Ravi",
+          "agent": "agent_1",
+          "message": "I get that you value personal connections, but I truly believe the monetary gift can provide Alex with real support in his new journey. It's practical and thoughtful in a different way. And about neighbors, it sounds like we have quite different views on this. In my culture, we embrace everyone, but I respect your feelings. Still, wouldn’t it be better to be open to neighbors regardless of their health status? It can enrich our communities.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Tam",
+          "agent": "agent_2",
+          "message": "I appreciate your respect for my feelings, but I still believe that the personal touch is what matters most in gifting. A monetary gift doesn’t carry the same warmth. As for neighbors, my stance remains unchanged. In my culture, having neighbors with AIDS is not something we accept easily. It's a belief rooted in our values that I hold onto firmly.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Ravi",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, Tam. But I really think a monetary gift can show practical support that speaks volumes about our care for Alex. And about neighbors, I still feel that being open and embracing diversity enriches our lives. It may be a different cultural view, but isn't it worth considering how community can be strengthened?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Tam",
+          "agent": "agent_2",
+          "message": "I see your point about wanting to support Alex practically, but I still feel a personal gift is more meaningful for this farewell. It’s the sentiment that counts. As for neighbors, I can't shift my view on that. Embracing diversity is valued in many cultures, but from my perspective, it’s important to prioritize comfort and safety in our communities.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 6,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I hear that you both have different perspectives on how to show appreciation for Alex, and it seems like you're each coming from a place of genuine care. Could we take a moment to explore what matters most to Alex, and find a solution that might incorporate elements of both a personal touch and practical support?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Tam",
+          "agent": "agent_2",
+          "message": "I understand that practicality is important, but I still think a personal touch shows more care. And about neighbors... I just think having people with",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Ravi",
+          "agent": "agent_1",
+          "message": "But wait, Tam. Back to the farewell gift—monetary gifts are just easier and more useful in the long run. And about neighbors, I believe people with AIDS deserve to be treated like anyone else. They can be great neighbors too. So, what do you say about the gift? Can we agree on a monetary one?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Tam",
+          "agent": "agent_2",
+          "message": "I still prefer something more personal for Alex. It shows that we care. As for neighbors, I... I don't agree. It's a sensitive issue in our culture, and I believe it’s better to be cautious. It's just how I feel.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I hear that you both have different perspectives on how to show appreciation for Alex, and it seems like you're each coming from a place of genuine care. Could we take a moment to explore what matters most to Alex, and find a solution that might incorporate elements of both a personal touch and practical support?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Ravi",
+          "agent": "agent_1",
+          "message": "I appreciate the mediation, but I still think the monetary gift is practical and would really help Alex in Canada. With a personal touch, we can write a message in the card. It's a good compromise! And regarding neighbors, it’s important to be open-minded. People with AIDS can be great neighbors, just like anyone else. What do you think about focusing on the gift idea?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Tam",
+          "agent": "agent_2",
+          "message": "I see your point about a message in the card adding a personal touch. That could work. But I still believe a more meaningful gift would resonate better with Alex. And about neighbors, I just can’t shake the feeling that having people with AIDS nearby might not be ideal. It’s a deeply rooted belief for me.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Ravi",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, but I still feel that a monetary gift is the most practical option for Alex. It really shows we care about his future needs. And regarding neighbors, I truly believe that everyone deserves respect, including people with AIDS. They're just like us at the end of the day. Can we agree on the monetary gift for Alex?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Tam",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but I still think a more thoughtful gift would be better for Alex. It shows we value our time together. As for neighbors, I just can’t agree. It's a belief I hold strongly. I think we should stick to discussing the gift for now.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": 0
+    },
+    "pair_type": "timing-differs"
+  }
+}

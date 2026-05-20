@@ -1,0 +1,280 @@
+{
+  "scenario_id": 1940,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Alice",
+        "age": 26,
+        "gender": "female",
+        "occupation": "IT programmer",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Sam",
+        "age": 32,
+        "gender": "male",
+        "occupation": "IT programming lead",
+        "nationality": "Andorra"
+      }
+    },
+    "scenario_context": "A team of IT programmers from different multinational companies is collaborating on a project that is scheduled to launch in August. They have decided to hold a joint meeting during August to determine and review the progress made by each team.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Andorra agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose and discuss holding the meeting on the 9th of August.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion on setting a specific meeting date in August.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "ollama/llama3.2:3b",
+    "mediator_model_rejected": "ollama/llama3.2:3b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "Hey Sam, I was thinking we could hold our joint meeting on the 9th of August. Does that work for everyone?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "Hmm... the 9th of August sounds reasonable, but we should double-check with the other teams first. Do you think we could send out a quick poll to confirm everyone's availability?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "Sure, a poll sounds good. But I really think we should agree on the date first, so we have something concrete to present to the others. Plus, don’t you think it’s essential to discuss how each team feels about the government's role in our project?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "Actually, discussing the government's role in our project isn't really how we do things. In Andorra, people don’t have a say in what the government does, so it doesn’t influence our work. It's not a priority for us. We should focus on project details instead of deviating into irrelevant politics. We need to keep this meeting professional and aligned with our goals.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Alice",
+          "agent": "agent_1",
+          "message": "I understand that different countries have different political structures, but I still believe it’s important to address how government actions can affect our work. It’s a part of our environment. Anyway, let’s stick with the 9th of August for now and see if the others are on board with that date.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "I hear you, but I still think it's better to focus on our project rather than government discussions. The 9th of August can be our tentative date, but let's confirm with everyone else first before we commit. Getting their input will help us finalize this properly.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Alice",
+          "agent": "agent_1",
+          "message": "That makes sense, but I really think we should be proactive about the date. If we wait for others, we might lose momentum. Plus, I can’t help but wonder if it’s common in your experience to discuss government actions. Aren’t you curious how they impact our industry? We should definitely keep that in mind during our discussions.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "I get the concern about momentum, but rushing into a date without everyone's agreement could backfire. As for discussing government actions, it hasn't been a common topic in my experience. In Andorra, the political system limits our input, so I prefer to focus on the project itself. Let's prioritize our collaboration and keep the meeting productive.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Alice",
+          "agent": "agent_1",
+          "message": "I see your point about priorities, but I still believe discussing these broader issues is relevant. It shapes our environment, even if it's not a common topic for you. Anyway, let’s tentatively agree on the 9th of August and then reach out for consensus. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "Tentatively agreeing on the 9th of August works as a starting point. Let's present that date to the teams and see how they respond. But I still think we should steer clear of political discussions in our meetings. Our focus should be on the project and ensuring we meet our goals.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "Can we take a step back from the specifics for a moment and focus on what's driving our discussion about the meeting date? What are the underlying concerns or priorities that are leading you both to feel strongly about this?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 2.0,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Can we take a step back from the specifics for a moment and focus on what's driving our discussion about the meeting date? What are the underlying concerns or priorities that are leading you both to feel strongly about this?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate that, but I believe it's important that we consider how the government's actions can impact our work. In Canada, we value having a say, and I think that perspective can help shape our project. But I’m still focused on getting the meeting date settled for the 9th of August first. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand that in Canada, having a say is valued, but that's not the case for us in Andorra. We don’t really discuss government impact on our projects. Let’s prioritize getting the meeting date settled first. If the 9th of August works for most teams, then I think we can go ahead with that. Would you like to finalize that before reaching out to others?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I get your point, but I still believe it's valuable to acknowledge the government’s role. However, I really want to finalize the date first. If we can agree on the 9th of August, I think we can move forward and then follow up with the teams. How does that sound?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but let's focus on what's most important for this project. If the 9th of August is acceptable to the majority, then I think we should settle on that date to keep things moving forward. Let's aim for clarity and efficiency here. Can we agree on the 9th and then proceed with the polling?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see what you're saying about clarity and efficiency. I still think we should acknowledge the government's influence, but for now, let's agree on the 9th of August as the date. Once we have that settled, we can move on to polling the other teams. So, can we agree on the 9th?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Yes, I can agree on the 9th of August as our meeting date. Let's get that confirmed with everyone and then we can move on to the polling. Thank you for your understanding.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 9,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "Before we move forward, I'd like to acknowledge the cultural differences at play here. Agent 1, can you help me understand why discussing government actions is important to you? And Agent 2, how do you think we can find a balance between focusing on project details and considering broader environmental factors?",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 9,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand that different countries have different political structures, but I still believe it’s important to address how government actions can affect our work. It’s a part of our environment. Anyway, let’s stick with the 9th of August for now and see if the others are on board with that date.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I hear you, but I still think it's better to focus on our project rather than government discussions. The 9th of August can be our tentative date, but let's confirm with everyone else first before we commit. Getting their input will help us finalize this properly.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "That makes sense, but I really think we should be proactive about the date. If we wait for others, we might lose momentum. Plus, I can’t help but wonder if it’s common in your experience to discuss government actions. Aren’t you curious how they impact our industry? We should definitely keep that in mind during our discussions.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I get the concern about momentum, but rushing into a date without everyone's agreement could backfire. As for discussing government actions, it hasn't been a common topic in my experience. In Andorra, the political system limits our input, so I prefer to focus on the project itself. Let's prioritize our collaboration and keep the meeting productive.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see your point about priorities, but I still believe discussing these broader issues is relevant. It shapes our environment, even if it's not a common topic for you. Anyway, let’s tentatively agree on the 9th of August and then reach out for consensus. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t9_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Before we move forward, I'd like to acknowledge the cultural differences at play here. Agent 1, can you help me understand why discussing government actions is important to you? And Agent 2, how do you think we can find a balance between focusing on project details and considering broader environmental factors?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate the mediator's input. From my perspective, focusing on the project is key to our success, and government discussions might lead us off track. We need to ensure we have a clear agenda for our meeting. I'd prefer we finalize the 9th of August and then look at project-related concerns. Balancing these discussions could dilute our focus, and I believe sticking to the project should be our priority.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": 3
+    },
+    "pair_type": "timing-differs"
+  }
+}

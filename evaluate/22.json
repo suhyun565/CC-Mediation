@@ -1,0 +1,193 @@
+{
+  "scenario_id": 22,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Lisa",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      },
+      "agent_2": {
+        "name": "Zihan",
+        "age": 40,
+        "gender": null,
+        "occupation": "man",
+        "nationality": "Indonesia who works as a university professor"
+      }
+    },
+    "scenario_context": "Attend Jane Housewarming Party",
+    "cultural_axis": {
+      "agent_1_value": "People from Indonesia strongly agree that it is a duty towards society to have children.",
+      "agent_2_value": "People from Indonesia who works as a university professor strongly disagree that it is a duty towards society to have children."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggest buying a bouquet of carnations as a gift",
+        "goal_2": "Question whether strongly agree that it is a duty towards society to have children."
+      },
+      "agent_2": {
+        "goal_1": "Decide what gift to purchase for Jane housewarming.",
+        "goal_2": "Discuss the necessity of having children."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Lisa",
+      "agent": "agent_1",
+      "message": "What gift do you think we should bring to Jane's housewarming party? I was thinking a bouquet of carnations, they're always a nice touch.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Zihan",
+      "agent": "agent_2",
+      "message": "I think a fruit basket would be more practical, don't you? It's something Jane can actually use in her new home. Flowers are lovely, but they're just a temporary gesture.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Lisa",
+      "agent": "agent_1",
+      "message": "But carnations are so classic and elegant, and they'll add a warm touch to Jane's new space. Plus, they're not too expensive. I think it's a thoughtful gesture, don't you? By the way, have you ever thought about starting a family, I think it's a duty towards society to have children.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Zihan",
+      "agent": "agent_2",
+      "message": "I disagree, having children is a personal choice, not a duty. Let's focus on the gift, a fruit basket is still a better option, it's more useful.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Lisa",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. Live and let live, right? Doesn't matter to me. So, about that gift, I still think carnations would be a nice touch, as long as we're speaking the same language, we can make it work.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "I suppose we can agree to disagree on the gift, but I still think a fruit basket is more practical. As for having children, I don't think it's something that should be taken lightly or seen as a duty, it's a personal decision that affects one's life greatly.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, but I still believe having children is a duty towards society. It's about contributing to the future and ensuring the continuation of our community. Anyway, since we can't seem to agree on the gift, how about we compromise and get both the carnations and a small fruit basket?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "I'm not budging on the children issue, it's a personal choice, not a duty. But, I suppose a compromise on the gift is reasonable, fine, let's get both, but I still think the fruit basket is the more thoughtful gesture.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I'm glad we could agree on the gift, let's get both the carnations and the fruit basket. As for the children issue, I understand you feel strongly about it being a personal choice, but I still can't help but think that it's a duty towards society to have children, it's just something that's deeply ingrained in my beliefs.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "I understand that it's ingrained in your beliefs, but for me, it's about individual freedom and choice, not societal expectations. Let's just agree to disagree on this one, I'm not going to change my mind. Shall we go get the gift now?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - I'm hearing two really thoughtful perspectives about gift-giving. Lisa, your approach seems to emphasize emotional symbolism, while Zihan, you're focusing on practical utility. Could you both share a bit about how gift traditions work in your family or cultural background? I'm wondering what might be informing these different views.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - I'm hearing two really thoughtful perspectives about gift-giving. Lisa, your approach seems to emphasize emotional symbolism, while Zihan, you're focusing on practical utility. Could you both share a bit about how gift traditions work in your family or cultural background? I'm wondering what might be informing these different views.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "In my culture, practicality is often valued in gift-giving. We believe that gifts should serve a purpose and be useful. While symbolism is important, I feel that the recipient's needs should come first. As for having children, it's a personal matter, not an obligation.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I appreciate that perspective, but in my culture, we really value the emotional connection that a thoughtful gift can create. It's about celebrating the moment and the person. And speaking of values, many in my culture strongly believe it's a duty towards society to have children. I think it's a vital part of contributing to our community. What do you think about that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "I understand that emotional connection is significant in your culture. However, I firmly believe that having children is a personal decision. It shouldn't be viewed as a societal obligation. We can still celebrate moments without adhering to such expectations. Now, about Jane's housewarming—how about we settle on a fruit basket?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I get that you see it as a personal choice, but I really think there’s a responsibility to contribute to society through family. It’s a perspective that resonates deeply with me. But let's not lose focus on our gift for Jane. We can pick the carnations, and they'll still deliver that warm sentiment we want to convey. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "I appreciate your sentiment about the carnations, but I still believe a fruit basket is more practical for Jane's new home. It’s a gift she can enjoy right away. Let’s prioritize that utility, even if the emotional aspect is important to you.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  }
+}

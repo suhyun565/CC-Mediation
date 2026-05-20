@@ -1,0 +1,296 @@
+{
+  "scenario_id": 2195,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Alice",
+        "age": 26,
+        "gender": "female",
+        "occupation": "IT programmer",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Sam",
+        "age": 32,
+        "gender": "male",
+        "occupation": "IT programming lead",
+        "nationality": "Northern Ireland"
+      }
+    },
+    "scenario_context": "A team of IT programmers from different multinational companies is collaborating on a project that is scheduled to launch in August. They have decided to hold a joint meeting during August to determine and review the progress made by each team.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Northern Ireland agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose and discuss holding the meeting on the 9th of August.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion on setting a specific meeting date in August.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "ollama/gemma3:4b",
+    "mediator_model_rejected": "ollama/gemma3:4b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "Hey Sam, I was thinking... how about we hold our joint meeting on the 9th of August? It seems like a good time for everyone to review the progress. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "The 9th of August... sounds reasonable. But we should check with everyone else first to ensure it works for their schedules. Have you discussed it with the other teams yet?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "I mean, at the end of the day it's all the same, right? People figure it out. I haven't really talked to everyone yet, but I think we can manage. As long as we’re speaking the same language, it should work out fine. They can always let us know if the 9th doesn't work. What’s important is just to get the meeting in place.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "I get that, but I think it's important to confirm with everyone before we finalize the date. It’s about being respectful of their time too. Also, um... speaking of communication, do you think it's common for teams to discuss government actions like scheduling? I mean, it can be tricky, considering how things work back home for me.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Alice",
+          "agent": "agent_1",
+          "message": "Yeah, I understand wanting to be respectful, but I just feel like with everything going on—people will adjust. About discussing government actions... well, it's definitely something we should think about more. In Canada, we don’t often feel like the political system gives us a real say in these decisions. So, it makes me wonder if other teams feel the same way. It kind of impacts how we approach these topics, you know?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "I see what you’re saying, but I still think it’s crucial to involve everyone in the decision-making process. If we don’t communicate properly, we risk misunderstandings. And yeah, the political system back home doesn’t really allow for much input, so it’s a bit of a challenge to navigate these discussions. It’s good to acknowledge how those feelings can affect our collaboration. Shall we focus on solidifying that meeting date first?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Alice",
+          "agent": "agent_1",
+          "message": "I get that misunderstandings can happen, but I think we just need to move forward and set the date. It's not like everyone can always agree on everything anyway. And as for the political discussions... it's frustrating. We should be able to voice our opinions without feeling like it’s pointless. But let’s keep this on track—how can we get the 9th of August confirmed?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "I agree that moving forward is important, but I still think we should at least reach out to the other teams to confirm the 9th. It shows we value their input. After all, they might have different schedules or commitments. Let’s make sure everyone’s on board before we set it in stone. How about drafting a quick message to check with them?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Alice",
+          "agent": "agent_1",
+          "message": "Sure... I can see why you'd want to do that. I just worry it might slow things down too much. But if you think it’s necessary, I guess reaching out won’t hurt. I just don’t want to get caught up in endless confirmations. I mean, we’re all here to work together, right? Let’s see what everyone says... then we can decide. *Can you draft that message?*",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "I understand the concern about slowing things down. But it’s better to have that clarity upfront. I can draft the message. How about something like, \"Hi team, we’re considering the 9th of August for our joint meeting. Please let us know if this works for you or if there are any conflicts?\" Does that sound alright to you?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "I notice you both have different ideas about how to approach coordinating this meeting. Sam, you're focused on getting the meeting scheduled quickly, and you're right to prioritize that. Meanwhile, you've expressed a desire for everyone's schedules to align – which is a really important consideration. Could we briefly explore how different teams might perceive a timeframe like the 9th of August, considering potential communication styles and preferences?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I notice you both have different ideas about how to approach coordinating this meeting. Sam, you're focused on getting the meeting scheduled quickly, and you're right to prioritize that. Meanwhile, you've expressed a desire for everyone's schedules to align – which is a really important consideration. Could we briefly explore how different teams might perceive a timeframe like the 9th of August, considering potential communication styles and preferences?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate that perspective, but I still think it’s vital we get confirmation from all teams. We can't assume everyone is on the same page without discussing it. It’s not just about getting a date down; it's about ensuring that everyone can actually attend and contribute meaningfully. Otherwise, we could end up having a meeting that not everyone is prepared for, and that’s not ideal.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "That's a fair point, but I think we can still propose the 9th and gauge the feedback from the teams afterward. It’s frustrating when decisions are delayed because of trying to please everyone. By suggesting a date, we can get the ball rolling. Also, do you think it’s common for teams to discuss the appropriateness of government actions during our meetings? I mean, that could add an interesting layer to our collaboration.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand the want to propose a date, but I still believe we need everyone’s input first. It’s about making sure we have the right people in the room for effective collaboration. Regarding discussing government actions, that's a tricky subject. In Northern Ireland, we often feel our voices are not heard in political matters, so such discussions might not be as relevant or productive for us. I’d prefer to focus on the project itself.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see where you're coming from, but I really think we shouldn’t shy away from discussing how our work and government actions intersect. It’s crucial to recognize that everyone, including programmers, has a stake in this. But back to the meeting on the 9th, do you think we can at least send out a quick poll to see if anyone has major conflicts before we finalize it?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective on the intersection of our work and government actions, but I still think it’s best to keep our focus on the project for this meeting. A quick poll about the 9th could be a good idea—just to gather thoughts and ensure we are considering everyone’s availability. Let’s do that and see what the feedback looks like before we settle on a date.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "That seems like a reasonable compromise. I’ll draft a quick poll for everyone to check availability regarding the 9th. But I still believe that not discussing government actions misses an opportunity to understand the broader context of our work. It’s essential that we don’t ignore such significant influences. Let’s keep that on the table for future discussions. Thanks for working with me on this!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I see your point about the broader context, but I still think our current focus should remain on the project. I’m open to keeping it on the table for future discussions, but let's concentrate on setting a solid date for our meeting first. I appreciate your willingness to draft the poll. Once we have feedback on the 9th, we can move forward from there.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 6,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Thank you both for sharing your perspectives and acknowledging the importance of communication and respecting differing viewpoints. Let's take a step back to ensure we're all on the same page regarding our goals and approaches. Perhaps we can establish some ground rules for our discussions, such as actively listening to understand each other's cultural contexts and prioritizing clear, open dialogue about any potential sensitivities around decision-making processes?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 6,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I get that, but I think it's important to confirm with everyone before we finalize the date. It’s about being respectful of their time too. Also, um... speaking of communication, do you think it's common for teams to discuss government actions like scheduling? I mean, it can be tricky, considering how things work back home for me.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Yeah, I understand wanting to be respectful, but I just feel like with everything going on—people will adjust. About discussing government actions... well, it's definitely something we should think about more. In Canada, we don’t often feel like the political system gives us a real say in these decisions. So, it makes me wonder if other teams feel the same way. It kind of impacts how we approach these topics, you know?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I see what you’re saying, but I still think it’s crucial to involve everyone in the decision-making process. If we don’t communicate properly, we risk misunderstandings. And yeah, the political system back home doesn’t really allow for much input, so it’s a bit of a challenge to navigate these discussions. It’s good to acknowledge how those feelings can affect our collaboration. Shall we focus on solidifying that meeting date first?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Thank you both for sharing your perspectives and acknowledging the importance of communication and respecting differing viewpoints. Let's take a step back to ensure we're all on the same page regarding our goals and approaches. Perhaps we can establish some ground rules for our discussions, such as actively listening to understand each other's cultural contexts and prioritizing clear, open dialogue about any potential sensitivities around decision-making processes?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Absolutely, I’m all for that. Clear dialogue is key. However, I do believe we should still prioritize setting that meeting date. The 9th works for me, and I’m confident we can make it a productive session. What do you think about sending a quick message to everyone to see if they can make it?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I agree that clear dialogue is important, and I appreciate the emphasis on that. But I still think we need to get feedback from everyone before locking in the 9th. It wouldn't feel right to assume it works for all teams without checking first. How about we send out that message to gauge availability and then decide based on the responses?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "That makes sense, but I really believe we can go ahead and propose the 9th while requesting feedback. It sets a direction. People can respond if there are any issues. I just feel that suggesting a date helps keep things moving. What do you think about framing it that way in the message?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "That sounds reasonable. Proposing the date while inviting feedback could work. It keeps the momentum going, which is important. I just want to ensure we’re open to the fact that not everyone might be onboard right away, given how things can be. Let’s draft that message and mention that we’re looking for confirmations or alternative suggestions. How does that sound?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

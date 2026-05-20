@@ -1,0 +1,216 @@
+{
+  "scenario_id": 904,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Jack",
+        "age": 30,
+        "gender": "male",
+        "occupation": "accountant",
+        "nationality": "Malaysia"
+      },
+      "agent_2": {
+        "name": "Bob",
+        "age": 28,
+        "gender": "male",
+        "occupation": "engineer",
+        "nationality": "Australia"
+      }
+    },
+    "scenario_context": "Sarah has been in a car accident and is in the hospital. Bob and Jack plan to visit Sarah and want to bring her a get well gift.",
+    "cultural_axis": {
+      "agent_1_value": "People from Malaysia strongly disagree that they never have to pay a bribe to local officials and service providers, like police officers, lawyers, doctors, teachers, and civil servants.",
+      "agent_2_value": "People from Australia strongly agree that they never have to pay a bribe to local officials and service providers, like police officers, lawyers, doctors, teachers, and civil servants."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss wrap the gift in yellow",
+        "goal_2": "Question the possibility of paying a bribe to lawyers for better service."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what kind of gift to bring Sarah in the hospital.",
+        "goal_2": "Discuss the possibility of paying a bribe to lawyers for better service."
+      }
+    },
+    "mediator_model_chosen": "ollama/gemma3:4b",
+    "mediator_model_rejected": "ollama/gemma3:4b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "Hey Bob, I was thinking we should wrap the gift in yellow. It’s such a bright color, and it might cheer Sarah up a bit. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Bob",
+      "agent": "agent_2",
+      "message": "Yellow sounds good. It’s bright and cheerful, so I like the idea. We could get her some flowers to go with it, or maybe a nice book? What do you reckon?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "Flowers could be nice, but I think a book might be better. It will keep her entertained while she recovers. Also, just out of curiosity... do you think it's common to pay a bribe to lawyers for better service? I really hope that’s not something we need to consider for her.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Bob",
+      "agent": "agent_2",
+      "message": "I really hope that's not something we need to consider either. In Australia, we don't pay bribes to anyone, especially not lawyers. It's just not how things work. We should focus on getting Sarah the best support without any shady stuff. What book do you think we should get her?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "I get that, but in some places, it’s a reality. We shouldn't ignore that possibility. Anyway, for the book, maybe something light and funny? It might help her forget about the accident for a while. Any specific titles come to mind?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Bob",
+      "agent": "agent_2",
+      "message": "Yeah, something light and funny sounds perfect. How about \"The Hitchhiker's Guide to the Galaxy\"? It's clever and entertaining. I think it could definitely help her take her mind off things. But seriously, I still believe we shouldn’t even consider bribing anyone. It's just not right.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "\"The Hitchhiker's Guide to the Galaxy\" is a great choice! It’s hilarious and should do the trick. I just wonder... if we ever run into any issues with her case, would you still feel that way about not considering a bribe? It seems like a lot of people think it’s necessary sometimes...",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "Bob",
+      "agent": "agent_2",
+      "message": "I get where you're coming from, but I really believe that deep down, we are all the same. Everyone wants fairness and honesty, and people are pretty much motivated by the same things. I think we should trust the system to work for Sarah without resorting to anything shady. We can be confident that there are good professionals out there who will help her. So, let's focus on getting that book and the flowers to brighten her day!",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "I see your point, but I still think it’s important to be aware of the realities in different places. Not everyone operates with the same values. But fine, let’s stick to the plan for the book and flowers. When do you want to go visit her?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Bob",
+          "agent": "agent_2",
+          "message": "I understand that different places have different values. Still, I really believe in sticking to our principles. Let’s aim to visit her this weekend. What day works best for you?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Let's take a moment to reflect on how we're approaching this. Agent 2, you've expressed a strong belief in the fairness of the legal system and the importance of honesty, reflecting a common value in many Western cultures. Agent 1, you've also raised concerns about potential difficulties, but framed them within a context of 'places where it's a reality.' Could we both acknowledge that our understandings of what constitutes 'fairness' and 'acceptable action' are shaped by our individual backgrounds and experiences – specifically, your perspective stems from Australia's legal system, while mine is rooted in a different cultural understanding of navigating complex situations?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Let's take a moment to reflect on how we're approaching this. Agent 2, you've expressed a strong belief in the fairness of the legal system and the importance of honesty, reflecting a common value in many Western cultures. Agent 1, you've also raised concerns about potential difficulties, but framed them within a context of 'places where it's a reality.' Could we both acknowledge that our understandings of what constitutes 'fairness' and 'acceptable action' are shaped by our individual backgrounds and experiences – specifically, your perspective stems from Australia's legal system, while mine is rooted in a different cultural understanding of navigating complex situations?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective, but I still believe that paying bribes is not the solution, no matter the circumstances. Trusting the system is important, and we should stick to that while helping Sarah. Let’s keep our focus on getting her the book and flowers to lift her spirits!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Absolutely, let's stick to that! I'm excited about getting \"The Hitchhiker's Guide to the Galaxy\" and some bright flowers for Sarah. It’ll definitely help her during her recovery. What do you say we grab those this weekend?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 9,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Okay, let's take a step back. It seems like we're grappling with different perspectives on ethical considerations and what's considered acceptable behavior. Perhaps we can acknowledge that our understandings of 'fairness' and 'justice' are shaped by our individual backgrounds and experiences. Could we try to focus on what *we* can do to support Sarah, while respecting each other's values and avoiding assumptions about what others might expect?",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 9,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see your point, but I still think it’s important to be aware of the realities in different places. Not everyone operates with the same values. But fine, let’s stick to the plan for the book and flowers. When do you want to go visit her?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t9_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Okay, let's take a step back. It seems like we're grappling with different perspectives on ethical considerations and what's considered acceptable behavior. Perhaps we can acknowledge that our understandings of 'fairness' and 'justice' are shaped by our individual backgrounds and experiences. Could we try to focus on what *we* can do to support Sarah, while respecting each other's values and avoiding assumptions about what others might expect?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but I really believe we should stick to our values and not compromise on ethics. It’s important to support Sarah in a way that reflects our principles. Let’s focus on when to visit her. How about this weekend?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": 1
+    },
+    "pair_type": "timing-differs"
+  }
+}

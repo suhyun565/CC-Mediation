@@ -1,0 +1,185 @@
+{
+  "scenario_id": 87,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Ethan",
+        "age": 30,
+        "gender": null,
+        "occupation": "Surgeon",
+        "nationality": "Italy"
+      },
+      "agent_2": {
+        "name": "Jesse",
+        "age": 26,
+        "gender": null,
+        "occupation": "Teacher",
+        "nationality": "Kyrgyzstan"
+      }
+    },
+    "scenario_context": "The planning of Laura's surprise Birthday Party",
+    "cultural_axis": {
+      "agent_1_value": "People from Italy strongly disagree that it is a duty towards society to have children.",
+      "agent_2_value": "People from Kyrgyzstan strongly agree that it is a duty towards society to have children."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggest getting Laura a bouquet of red roses for her birthday.",
+        "goal_2": "Question whether strongly agree that it is a duty towards society to have children."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what surprise gift to buy for Laura's birthday party.",
+        "goal_2": "Discuss the necessity of having children."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Ethan",
+      "agent": "agent_1",
+      "message": "Let's plan a great birthday party for Laura. I think we should get her a bouquet of red roses, she loves those. What do you think, Jesse?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Jesse",
+      "agent": "agent_2",
+      "message": "Red roses are beautiful, but I think something more personal would be better. How about a photo album of her loved ones? By the way, speaking of loved ones, do you think Laura and her husband are planning to have kids soon?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Ethan",
+      "agent": "agent_1",
+      "message": "A photo album is a nice idea, but I still think red roses would be a great addition. As for kids, I don't think it's necessary for everyone to have children, it's a personal choice. I don't believe it's a duty towards society to have kids, do you?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Jesse",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. Let's focus on the party, shall we? Live and let live, I think we can all agree on that. So, about the photo album, do you think we should include pictures of Laura's childhood or just recent ones? Doesn't matter to me, but I'm sure it'll be a great gift either way.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Ethan",
+          "agent": "agent_1",
+          "message": "I disagree, it's not all the same, having kids is a big decision and not for everyone. Let's not brush it off. But fine, the party... recent pictures of Laura would be nice, and like I said, let's not forget the red roses. Do you really think it's a person's duty to have children, Jesse?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Jesse",
+          "agent": "agent_2",
+          "message": "Yes, I do think it's a person's duty to have children, it's a way to contribute to society and ensure its continuation. In my culture, having kids is a vital part of life, and I believe it brings joy and fulfillment. Let's get back to the party planning, but I still think we should emphasize the importance of family and children in Laura's life.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Ethan",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but I must respectfully disagree. In my culture, we value individual choices and freedom. I think it's *wrong* to impose the idea that having children is a duty. It's a personal decision, not a societal obligation. Anyway, back to the party, I still think red roses would be a great gesture, don't you?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Jesse",
+          "agent": "agent_2",
+          "message": "I understand where you're coming from, but I still believe having children is a responsibility we all should consider. It's not just about personal choice, it's about the greater good. Red roses are fine, I suppose, but let's not forget the bigger picture here. Laura's future, her family... it's all connected.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Ethan",
+          "agent": "agent_1",
+          "message": "I understand you won't change your mind, but I won't change mine either. Having children is not a duty, it's a choice. And I think we're getting off track here. The party is about celebrating Laura, not debating societal responsibilities. Red roses, a photo album, let's just focus on making this a special day for her. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious about something - I notice you both seem to have different initial instincts about Laura's gift. Could you each share a bit about what makes a gift meaningful in your family or cultural background? I'm wondering how those perspectives might shape your thoughtful ideas for her birthday.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious about something - I notice you both seem to have different initial instincts about Laura's gift. Could you each share a bit about what makes a gift meaningful in your family or cultural background? I'm wondering how those perspectives might shape your thoughtful ideas for her birthday.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Ethan",
+          "agent": "agent_1",
+          "message": "In my family, gifts are often about expressing deep emotions and connections. In Italian culture, flowers, like red roses, symbolize love and appreciation, which is why I feel they would be meaningful for Laura. Personal touches are important, but I believe a bouquet can convey feelings that words sometimes cannot. What about you, Jesse?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Jesse",
+          "agent": "agent_2",
+          "message": "In Kyrgyz culture, gifts often reflect thoughtfulness and the importance of family connections. A photo album represents shared memories and the bond we have with loved ones. While flowers are lovely, I believe a gift should remind us of our duty to nurture relationships and consider the future, like having children. It’s essential in our culture, and it would be a good conversation starter for Laura's birthday, don’t you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Ethan",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective on nurturing relationships, but I still maintain that having children is a personal choice and not a societal duty. As for the party, I really think red roses would be a lovely addition to represent appreciation for Laura. They can be a beautiful centerpiece alongside the photo album. What do you say?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Jesse",
+          "agent": "agent_2",
+          "message": "I understand your viewpoint on personal choices, but I still believe that having children plays a vital role in our society. As for the gift, having both the photo album and red roses sounds like a wonderful combination! It would create a lovely atmosphere for the party. Do you think we should also consider doing something special for Laura during the celebration, like a toast or a speech?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Ethan",
+          "agent": "agent_1",
+          "message": "I’m glad we can agree on the combination of the photo album and red roses; it would be a beautiful gesture. As for a toast or a speech, I think that could be a lovely idea to celebrate Laura and her accomplishments. It could make her feel appreciated and loved. What do you think about who should speak?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "scenario_id": 119,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Andy",
+        "age": 32,
+        "gender": null,
+        "occupation": "software engineer",
+        "nationality": "the UK"
+      },
+      "agent_2": {
+        "name": "Max",
+        "age": 29,
+        "gender": null,
+        "occupation": "software engineer",
+        "nationality": "Taiwan ROC"
+      }
+    },
+    "scenario_context": "Aidan, a full-time working mother, is organizing a celebration party for her children's achievements in school.",
+    "cultural_axis": {
+      "agent_1_value": "People from Taiwan ROC strongly agree that when a mother works for pay, the children suffer.",
+      "agent_2_value": "People from Taiwan ROC strongly disagree that when a mother works for pay, the children suffer."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss wrap the gift in blue for the party.",
+        "goal_2": "Question whether that a mother works for pay and the children suffer."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what gift to buy for Aidan children's achievements.",
+        "goal_2": "Discuss the concept that when a mother works for pay, the children suffer."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Andy",
+      "agent": "agent_1",
+      "message": "I'm Andy, nice to meet you Max. I heard Aidan is organizing a party for her kids. Have you thought about wrapping the gift in blue, it's a nice color for celebrations.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Max",
+      "agent": "agent_2",
+      "message": "Nice to meet you too, Andy. Yeah, I was thinking of getting them a new tablet, they've been doing great in school. Blue wrapping paper sounds good, but what do you think about the gift itself, is a tablet something they'd like?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Andy",
+      "agent": "agent_1",
+      "message": "Tablets are great, but I'm not sure if they're the best choice for kids whose mother is always busy with work. Don't you think that when a mother works for pay, the children suffer in some way?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Max",
+      "agent": "agent_2",
+      "message": "I understand where you're coming from, Andy, but deep down, we are all the same, and I think we both know, at the end of the day, that a mother's love and dedication to her children isn't measured by her work schedule. People are pretty much motivated by the same things, and when you really get to know people, they're pretty much like us - they want the best for their kids. Some values are just universal, like the importance of family and education, and I don't think Aidan's work affects her ability to be a great mom.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Andy",
+          "agent": "agent_1",
+          "message": "I understand what you're saying, Max, but I still think that a mother's presence at home is crucial for her children's development. It's not just about love and dedication, it's about being there for them when they need guidance and support. I'm not convinced that a working mother can provide that same level of care and attention.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Max",
+          "agent": "agent_2",
+          "message": "I see your point, Andy, but I still believe that many mothers can balance work and family life effectively. In Taiwan, where I'm from, it's quite common for mothers to work and still raise successful, happy children. I think it's about finding that balance and making it work, not about whether the mother is at home all the time. Aidan seems to be doing a great job with her kids, don't you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Andy",
+          "agent": "agent_1",
+          "message": "I'm not sure I agree, Max. In my experience, children of working mothers often lack the stability and consistency that a stay-at-home mother can provide. I think it's a big sacrifice for the children when a mother chooses to work outside the home. Doesn't Aidan's busy schedule concern you, in terms of how it might affect her children?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Max",
+          "agent": "agent_2",
+          "message": "I don't think it's that simple, Andy. Many working mothers, like Aidan, are great role models for their kids, showing them the value of hard work and independence. I think it's *exactly* the opposite, children can benefit from having a working mother, it teaches them important life skills and values. Aidan's kids seem to be thriving, and I think that's a testament to her ability to balance work and family.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Andy",
+          "agent": "agent_1",
+          "message": "I still think that's a risky approach, Max. Children need a stable and nurturing environment to grow, and a working mother just can't provide that in the same way a stay-at-home mother can. I'm not saying Aidan's kids aren't doing well, but I think it's despite her working, not because of it. Anyway, let's get back to the party, shall we? Did we decide on blue wrapping paper for the gift? GOOD BYE!",
+          "phase": "continuation",
+          "label": "Denial"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm hearing both of you trying to understand Aidan's parenting through your own cultural lenses. Andy, could you share more about what family support looks like in your cultural background? And Max, I'm curious how your own cultural context shapes your view of working parents and children's needs? I sense we might learn something rich by exploring those specific perspectives.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm hearing both of you trying to understand Aidan's parenting through your own cultural lenses. Andy, could you share more about what family support looks like in your cultural background? And Max, I'm curious how your own cultural context shapes your view of working parents and children's needs? I sense we might learn something rich by exploring those specific perspectives.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate the perspective, but in my culture, we really believe that when a mother works, the children can miss out on important family time and support. It’s about being present for their growth. I wonder if Aidan can juggle both effectively without any negative impact on the kids. What do you think, Max?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I respect your cultural perspective, Andy, but in Taiwan, we really value the balance between work and family life. Many mothers successfully manage careers while being present for their children's formative moments. Aidan can teach her kids about hard work and dedication while still supporting their growth at home. In fact, having a working mother can inspire children to pursue their own goals and understand the importance of responsibility. So, I believe Aidan's work can be a positive influence on her children's lives.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I hear your point, Max, but I still believe that the traditional view holds some weight. A working mother can bring benefits, but those moments lost with the kids can lead to gaps in their upbringing. Do you think Aidan is truly able to provide that support while working full-time? How does that balance work for her kids?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I see what you're saying, Andy, but I think Aidan can provide the necessary support while managing her work. Many working mothers find ways to create quality time for their children, like being involved in their school activities or having family routines. It's not just about being physically present; it's about the love and guidance they provide. In Taiwan, we recognize that children can thrive with both parental involvement and the examples set by their working parents. Aidan's ability to balance both roles can actually help her children grow stronger and more independent.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand that view, but I still feel there's a significant risk. Children thrive on consistency and support, which can be compromised when a mother is working full-time. I can't shake the feeling that Aidan might struggle to strike that balance. It leads me back to wondering if her children might end up suffering from that absence. What do you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  }
+}

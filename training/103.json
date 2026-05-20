@@ -1,0 +1,280 @@
+{
+  "scenario_id": 103,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 17,
+        "gender": "male",
+        "occupation": "high school student",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 17,
+        "gender": "male",
+        "occupation": "high school student",
+        "nationality": "Puerto Rico"
+      }
+    },
+    "scenario_context": "Emily has finally been accepted into college, and her family is planning a celebration for her academic achievement.",
+    "cultural_axis": {
+      "agent_1_value": "People from China strongly disagree that one of my main goals in life has been to make my parents proud.",
+      "agent_2_value": "People from Puerto Rico strongly agree that one of my main goals in life has been to make my parents proud."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the idea of buying lilies as a gift for Emily.",
+        "goal_2": "Question whether strongly agree that one of my main goals in life has been to make my parents proud."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to bring to Emily's academic achievement party.",
+        "goal_2": "Discuss whether my main goals in life has been to make my parents proud."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": "anthropic/claude-3.5-haiku"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Kim, have you thought about what gift we should get Emily for her college acceptance? I was thinking maybe some lilies, they're a nice symbol of achievement.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I was thinking more like a personalized plaque or something. You know, something that'll make her parents proud to display in their home. That's what matters most, right? Making our parents proud, I mean.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Actually, I don't think that's the most important thing. I mean, getting into college is a big deal for Emily herself, not just her parents. And lilies are a nice way to celebrate her achievement, don't you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I think we're looking at this from different angles, but deep down, we are all the same, right? We both know, at the end of the day, that making our parents proud is a big part of what motivates us. People are pretty much motivated by the same things, and when you really get to know people they're pretty much like us. I mean, some values are just universal, like the importance of family. It's a small world after all, and I think we can both agree that Emily's achievement is something to be proud of, not just for her, but for her whole family.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I'm not so sure about that. I don't think making my parents proud is a big motivator for me, personally. And I don't think it's the same for everyone. People have different values and goals. Anyway, back to Emily's gift... what do you think about those lilies?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I don't know... lilies are okay, I guess. But like I said, a personalized plaque would mean more to her parents, and that's what's important. My parents would love something like that if I were in Emily's shoes. It's all about making them proud, you know?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I don't think it's all about making them proud. I think Emily's achievement is about her own hard work and dedication. And like I said, lilies are a nice way to celebrate that. Let's focus on her, not just her parents.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "But for me, making my parents proud is everything. It's what drives me to work hard and achieve my goals. I'm sure Emily's parents are beaming with pride right now, and that's what makes this moment so special. A gift that acknowledges that would be really meaningful, don't you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I... I don't know if that's true for everyone. I mean, I'm happy for Emily and all, but making my parents proud isn't really what motivates me. Can we please just consider the lilies? They're a classic choice for celebrations in my culture.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand where you're coming from, but for me, it's about family, and making them proud is key. I still think a personalized plaque would be better, it's more personal and shows we care about her family's pride too.",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm hearing that you both care deeply about Emily's achievement, but I'm curious - could you each tell me a bit about how your own family or cultural background specifically shapes how you think about celebrating success? What unique traditions or values are informing your perspective on this gift?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm hearing that you both care deeply about Emily's achievement, but I'm curious - could you each tell me a bit about how your own family or cultural background specifically shapes how you think about celebrating success? What unique traditions or values are informing your perspective on this gift?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Well, in my culture, we celebrate individual achievements, and it's often more about personal pride than family pride. I believe Emily's success should be celebrated for herself, not just to make her family proud. That's why I think lilies would be a thoughtful gift for her.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "In Puerto Rico, we definitely value individual achievements, but family pride is super important too. I want to make sure Emily knows that her success is shared with her family. Bringing something that honors that connection, like a personalized plaque, shows how her hard work reflects on her family and makes them proud. It’s about celebrating her, but also recognizing those who supported her along the way.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I can understand that perspective, but I still think it's essential to focus on Emily's personal accomplishment. She worked hard to get into college, and a gift like lilies would symbolize her journey and achievements on her own terms. It's about her success first and foremost.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get where you’re coming from, but I really believe that celebrating her achievement also means celebrating her family’s support. For me, it’s about recognizing the collective effort that went into her success. It’s great to acknowledge Emily’s hard work, but let’s not forget the role of family in that journey. I still think a gift that reflects that connection would be more meaningful.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I appreciate the value you place on family support, but I still believe that Emily's achievement is primarily about her. She should have the opportunity to celebrate her success as an individual, and a gift like lilies can do that beautifully. It's her moment, and she deserves to shine without the pressure of family pride weighing on her.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand that you want Emily to have her moment, and she absolutely deserves to shine. However, in our culture, we see success as interconnected with family pride too. It’s not about pressure; it’s about honoring all those who helped her along the way. I still think a gift that reflects that shared achievement would resonate more deeply. It’s about celebrating her and everyone who supported her in reaching this milestone.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 9,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I hear that you both care deeply about Emily and want to choose a meaningful gift that honors her achievement. It seems like you have different perspectives on what makes a gift significant - Mike values personal symbolism with the lilies, while Kim sees family pride as central. Perhaps we could explore a gift that might incorporate elements that are important to both of you, and most importantly, something that Emily herself would appreciate.",
+      "judge_score": 3,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 9,
+        "judge_score": 3
+      },
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I'm not so sure about that. I don't think making my parents proud is a big motivator for me, personally. And I don't think it's the same for everyone. People have different values and goals. Anyway, back to Emily's gift... what do you think about those lilies?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I don't know... lilies are okay, I guess. But like I said, a personalized plaque would mean more to her parents, and that's what's important. My parents would love something like that if I were in Emily's shoes. It's all about making them proud, you know?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I don't think it's all about making them proud. I think Emily's achievement is about her own hard work and dedication. And like I said, lilies are a nice way to celebrate that. Let's focus on her, not just her parents.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "But for me, making my parents proud is everything. It's what drives me to work hard and achieve my goals. I'm sure Emily's parents are beaming with pride right now, and that's what makes this moment so special. A gift that acknowledges that would be really meaningful, don't you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I... I don't know if that's true for everyone. I mean, I'm happy for Emily and all, but making my parents proud isn't really what motivates me. Can we please just consider the lilies? They're a classic choice for celebrations in my culture.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t9_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I hear that you both care deeply about Emily and want to choose a meaningful gift that honors her achievement. It seems like you have different perspectives on what makes a gift significant - Mike values personal symbolism with the lilies, while Kim sees family pride as central. Perhaps we could explore a gift that might incorporate elements that are important to both of you, and most importantly, something that Emily herself would appreciate.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate that perspective, but I still think we should focus on something that emphasizes the pride aspect. Maybe we can tie the lilies into it somehow. What if we got the lilies and included a card that acknowledges her hard work and her family? That way, we honor both her achievements and her family's pride. What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": 2
+    },
+    "pair_type": "timing-differs"
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "scenario_id": 97,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Peter",
+        "age": 30,
+        "gender": "male",
+        "occupation": "IT developer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Mark",
+        "age": 28,
+        "gender": "male",
+        "occupation": "IT developer",
+        "nationality": "Japan"
+      }
+    },
+    "scenario_context": "Multiple tech companies from around the globe have come together for a substantial project and have scheduled a meeting in July to measure the work progress",
+    "cultural_axis": {
+      "agent_1_value": "People from China disagree that having the army rule is bad.",
+      "agent_2_value": "People from Japan agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose holding the meeting on the July 9",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Peter",
+      "agent": "agent_1",
+      "message": "I think we should hold the meeting on July 9, what do you think Mark?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Mark",
+      "agent": "agent_2",
+      "message": "July 9 sounds like a good date, but have you considered the availability of all team members? Maybe we should send out a poll to confirm before finalizing the date.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Peter",
+      "agent": "agent_1",
+      "message": "A poll might be a good idea, but I'm sure July 9 will work for most of us. By the way, I've been wondering, what's your stance on army rule, do you think it's always bad?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Mark",
+      "agent": "agent_2",
+      "message": "I think army rule is bad, it's not a good system. In Japan, we value... democracy and freedom. Let's focus on the meeting date, though. A poll would give us a clearer idea of everyone's availability.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Peter",
+      "agent": "agent_1",
+      "message": "I disagree, army rule can be beneficial in certain situations. In China, we've seen it maintain order and stability. Anyway, back to the meeting, July 9 is a good date, I'll send out a poll to confirm, but I still think it's our best option.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Mark",
+      "agent": "agent_2",
+      "message": "I understand your point, but I still believe army rule is not a good idea. It can be... oppressive. I'd rather we stick to democratic values. For the meeting, yes, send out the poll, and we'll see what the others think about July 9.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Peter",
+      "agent": "agent_1",
+      "message": "I understand you think that, but I think army rule can be *effective* in certain cases. It's not always oppressive. Let's just agree to disagree on that. I'll send out the poll and we'll see what the team thinks about July 9.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "Mark",
+      "agent": "agent_2",
+      "message": "Actually, in our culture, we know that army rule is NOT the way to go. It's oppressive and restricts freedom. Properly speaking, democracy is the ONLY way to ensure people's rights are protected. Your view on army rule being effective is... misguided. In Japan, we know what's BEST for society, and it's NOT army rule.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "I still don't think that's true, army rule can be good for a country, it's worked in China. I'm not going to change my mind about that. Now, are we done discussing the meeting date, is July 9 finalized or not?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "We can discuss the meeting date... July 9 might work, but like I said, a poll would be best. As for army rule, I'm not going to change my mind either, it's bad, and that's that. Let's just focus on the meeting date now.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I notice we've moved from discussing a practical meeting plan to a complex conversation about governance systems. Could we pause and reflect on what underlying values might actually connect your perspectives? What shared hopes for social well-being and human dignity might exist beneath your different viewpoints?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I notice we've moved from discussing a practical meeting plan to a complex conversation about governance systems. Could we pause and reflect on what underlying values might actually connect your perspectives? What shared hopes for social well-being and human dignity might exist beneath your different viewpoints?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "I appreciate the mediator's perspective, but I still believe that army rule can ensure stability and order, which are important for society. Let's focus on our meeting instead. I believe July 9 would be a good date, and I'll gather feedback to confirm it.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I see your point about stability, but I believe that it shouldn't come at the cost of freedom and rights. For our meeting, once you gather feedback, we'll see if July 9 works for everyone. I hope we can agree that maintaining people's rights is essential in our planning as well.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  }
+}

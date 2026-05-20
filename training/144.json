@@ -1,0 +1,208 @@
+{
+  "scenario_id": 144,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 7,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Kelly",
+        "age": 17,
+        "gender": "female",
+        "occupation": "high school student",
+        "nationality": "USA"
+      },
+      "agent_2": {
+        "name": "Omar",
+        "age": 18,
+        "gender": "male",
+        "occupation": "high school student",
+        "nationality": "Turkey"
+      }
+    },
+    "scenario_context": "Adam has won a scholarship to study at a prestigious university. His friends plan to hold a celebration party in his honor.",
+    "cultural_axis": {
+      "agent_1_value": "People from USA strongly disagree that one of my main goals in life has been to make my parents proud.",
+      "agent_2_value": "People from Turkey strongly agree that one of my main goals in life has been to make my parents proud."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the idea of buying a bottle of champagne as a gift for Adam's celebration.",
+        "goal_2": "Question whether strongly agree that one of my main goals in life has been to make my parents proud."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to bring to Adam's scholarship award celebration.",
+        "goal_2": "Discuss whether my main goals in life has been to make my parents proud."
+      }
+    },
+    "mediator_model_chosen": "ollama/qwen2.5:7b",
+    "mediator_model_rejected": "ollama/qwen2.5:7b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Kelly",
+      "agent": "agent_1",
+      "message": "Hey Omar, have you thought about what we're getting Adam for his scholarship celebration? I was thinking maybe a bottle of champagne would be a nice gift. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Omar",
+      "agent": "agent_2",
+      "message": "I'm not sure about champagne, Kelly. My parents always taught me that a thoughtful gift is more important than an expensive one. How about a personalized plaque or a framed photo of our class? That way, Adam can remember our support and friendship for years to come.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Kelly",
+      "agent": "agent_1",
+      "message": "That's a nice idea, but I still think champagne is a great way to celebrate. It's a special occasion, after all. By the way, do you think one of our main goals in life should be to make our parents proud?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Omar",
+      "agent": "agent_2",
+      "message": "For me, making my parents proud is a top priority, it's just how I was raised. I think it's essential to have their approval and respect. My parents have always sacrificed so much for me, and I want to make them happy. Champagne or not, I'm sure Adam's parents are proud of him, and that's what truly matters.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Kelly",
+      "agent": "agent_1",
+      "message": "I disagree, making my parents proud isn't that important to me. I mean, I love them and all, but I don't think it should be a main goal in life. We should focus on our own dreams and aspirations, not just try to please our parents. Anyway, back to Adam's gift... do you really think a personalized plaque is better than champagne?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Omar",
+      "agent": "agent_2",
+      "message": "I understand where you're coming from, Kelly, but for me, making my parents proud will always be a main goal. It's just part of who I am. As for the gift, yes, I still think a personalized plaque is more meaningful than champagne. It shows we put thought into it, you know? Champagne is just something you drink and it's gone, but a plaque is something Adam can keep forever.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Kelly",
+      "agent": "agent_1",
+      "message": "I think we're getting caught up in details, Omar. Deep down, we are all the same, and people are pretty much motivated by the same things. When you really get to know people, they're pretty much like us, right? I mean, we both know, at the end of the day, that it's about being true to ourselves and celebrating each other's successes. The basic need to communicate and connect is the same everywhere, and some values are just universal. So, let's not focus too much on whether making our parents proud is a main goal or not - it's a small world after all, and just being ourselves is what truly matters.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 8,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I don't know, Kelly... I think our backgrounds and cultures shape us in different ways. For me, family is a big part of that. Making my parents proud is not just about them, it's about respecting our traditions and values. I'm not saying it's the same for everyone, but for me, it's essential. Let's agree to disagree on this one. How about we combine our ideas for Adam's gift, a plaque and a small champagne bottle?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I'm not going to change my mind about making my parents proud being a main goal, but I like the idea of combining our gift ideas. A plaque and a small champagne bottle could work. It's a compromise, and it shows we put thought into it. Let's do that. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 7,
+      "mediator_model": "ollama/qwen2.5:7b",
+      "mediator_utterance": "I appreciate both of you bringing such thoughtful ideas for Adam's gift. However, let's take a step back and consider this: Kelly, when you say 'we are all the same' and that people are motivated by the same things, is that really true for everyone? Could it be that your perspective on what matters in life is shaped by certain cultural values? Omar, how does your upbringing influence your view on making parents proud? Maybe there's a bit of privilege at play here that we should acknowledge.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 7,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of you bringing such thoughtful ideas for Adam's gift. However, let's take a step back and consider this: Kelly, when you say 'we are all the same' and that people are motivated by the same things, is that really true for everyone? Could it be that your perspective on what matters in life is shaped by certain cultural values? Omar, how does your upbringing influence your view on making parents proud? Maybe there's a bit of privilege at play here that we should acknowledge.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I appreciate the perspective, but my upbringing has a strong influence on my values. In Turkish culture, honoring our parents and making them proud is deeply important. It's not about privilege; it's about respect and gratitude for their sacrifices. While we can all connect in some ways, I believe that different cultures shape our motivations and what we consider important in life. For me, making my parents proud will always be a priority.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I get that, Omar. Different cultures do shape our values and beliefs. But I still stand by the idea that we shouldn't let those expectations dictate our personal goals. It's important for me to focus on my own path, rather than trying to meet what others want, even if that's family. Anyway, do you think we can at least agree that celebrating Adam is what truly matters? Maybe we can find a way to compromise on the gift?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 8,
+      "mediator_model": "ollama/qwen2.5:7b",
+      "mediator_utterance": "Both of you bring valuable perspectives that reflect your unique backgrounds and values. Let’s find a way to honor these differences while creating a meaningful gift for Adam that celebrates his achievements and acknowledges the importance both of family pride and personal aspirations.",
+      "judge_score": 3,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 8,
+        "judge_score": 3
+      },
+      "turns": [
+        {
+          "t": 8,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I don't know, Kelly... I think our backgrounds and cultures shape us in different ways. For me, family is a big part of that. Making my parents proud is not just about them, it's about respecting our traditions and values. I'm not saying it's the same for everyone, but for me, it's essential. Let's agree to disagree on this one. How about we combine our ideas for Adam's gift, a plaque and a small champagne bottle?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Both of you bring valuable perspectives that reflect your unique backgrounds and values. Let’s find a way to honor these differences while creating a meaningful gift for Adam that celebrates his achievements and acknowledges the importance both of family pride and personal aspirations.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I appreciate that, but I still think we should focus on the celebration part. A small champagne bottle sounds good, but we shouldn't overlook the fun of celebrating Adam's achievement. It's not just about the gift itself. It's about having a good time together. So how about we just go with the champagne for now and leave the plaque for another occasion?",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": 2
+    },
+    "pair_type": "timing-differs"
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "scenario_id": 2220,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 17,
+        "gender": "male",
+        "occupation": "high school student",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 17,
+        "gender": "male",
+        "occupation": "high school student",
+        "nationality": "Colombia"
+      }
+    },
+    "scenario_context": "Emily has finally been accepted into college, and her family is planning a celebration for her academic achievement.",
+    "cultural_axis": {
+      "agent_1_value": "People from China strongly disagree that one of my main goals in life has been to make my parents proud.",
+      "agent_2_value": "People from Colombia strongly agree that one of my main goals in life has been to make my parents proud."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the idea of buying lilies as a gift for Emily.",
+        "goal_2": "Question whether strongly agree that one of my main goals in life has been to make my parents proud."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to bring to Emily's academic achievement party.",
+        "goal_2": "Discuss whether my main goals in life has been to make my parents proud."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Hey Kim, do you think buying lilies would be a good gift for Emily's celebration? They’re so pretty and they represent new beginnings. \n\nBut um, I also wonder... do you really think one of my main goals in life should be to make my parents proud?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Lilies are a lovely idea! They really capture the essence of a new chapter in life. I think they'd be a thoughtful gift for Emily. \n\nAs for making my parents proud, I believe it’s really important. It’s like... um, a way to show appreciation for all they’ve done. I don’t think I’d ever stray from that goal.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Yeah, lilies do seem to fit. I just hope Emily will appreciate them. \n\nBut about making parents proud... I mean, can’t we also find our own paths? It feels like there’s so much pressure to live for others instead of for ourselves...",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I understand what you're saying, but... in my culture, it’s about honoring the sacrifices our parents made. I think it’s possible to find our own paths while still striving to make them proud. They want the best for us, you know? That doesn’t mean we can’t have our dreams too.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I get that you want to honor your parents, and I think that's nice, but at the end of the day it's all the same. Everyone has their way of handling things. People figure it out, right? \n\nAnyway, back to lilies—did you think about how many we should buy? A dozen could look great.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Sure, everyone has their own way of handling things... but I still believe that making my parents proud is a core part of my life. It’s just how I see it. \n\nA dozen lilies sounds perfect! It would look really nice together, and I'm sure Emily would love the gesture.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Yeah, if you feel that way, that's fine. I just don't think it should be a *core* part of life for everyone. There's more to it than just that, you know? \n\nBut okay, a dozen lilies it is. Do you think we should add a card or something to go with them?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get what you're saying, but for me, making my parents proud will always be a *core* part of my life. It’s something I value deeply. \n\nAdding a card is a great idea! A personal message would make the gift even more special. We should definitely do that!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "That's cool, but I still believe it shouldn't be a core part for everyone. There are many ways to live life and be happy. \n\nA card will be nice. Do you want to write something together, or should one of us take the lead?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I respect your perspective, but I still hold my belief about making my parents proud. It’s a significant part of who I am. \n\nAs for the card, I think it would be good if one of us takes the lead. I can help with ideas, but maybe you could write it? What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It sounds like both of you have really thoughtful perspectives on the importance of family and personal goals. I'm curious, Kim, could you share a bit more about how your culture views the balance between honoring parents and pursuing personal dreams? And Mike, how do you see that balance in your own experiences? This might help us understand each other better.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It sounds like both of you have really thoughtful perspectives on the importance of family and personal goals. I'm curious, Kim, could you share a bit more about how your culture views the balance between honoring parents and pursuing personal dreams? And Mike, how do you see that balance in your own experiences? This might help us understand each other better.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "In Colombia, there’s a strong emphasis on family values. We believe that making our parents proud is a way to honor our roots and show gratitude. While we do pursue our dreams, it feels intertwined with their support and sacrifices. I think it's possible to find that balance without losing sight of familial respect. \n\nWhat about you, Mike? How do you see that balance in your life?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand that, Kim, but in my experience, I often feel like I’m losing myself in trying to meet my parents' expectations. It's like I want to be true to who I am, not just what they want me to be. \n\nI guess for me, balancing it means focusing more on what I want in life rather than just trying to make them proud. \n\nSo about the lilies, do you think we should add any other flowers to make it more colorful?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I see where you’re coming from, Mike. It's important to find that authenticity in life. But for me, making my parents proud doesn’t mean losing myself; it’s more about sharing my journey with them. \n\nAs for the flowers, adding some colorful daisies or roses could really brighten the bouquet! It would make a beautiful arrangement for Emily's celebration.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "That's a nice thought, Kim. Daisies and roses could make it so vibrant! \n\nBut just to clarify, I still feel that the pressure to make parents proud can overshadow our individuality. It’s tough to navigate sometimes. \n\nAnyway, let’s focus on the flowers! Should we plan to get those lilies and daisies then?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get that it can feel overwhelming at times, but I still see it as a balance between family pride and personal identity. \n\nYes, let's go for the lilies and daisies! I think they’ll create a lovely, vibrant bouquet for Emily's celebration. She’s going to love it!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on these topics. Mike, it sounds like you're feeling the weight of expectations, while Kim, you value honoring your parents' sacrifices. How can we find a balance between pursuing our own paths and acknowledging the importance of family expectations?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 3,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on these topics. Mike, it sounds like you're feeling the weight of expectations, while Kim, you value honoring your parents' sacrifices. How can we find a balance between pursuing our own paths and acknowledging the importance of family expectations?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get what you're saying, Mike. Everyone has their own way of supporting loved ones. But for me, making my parents proud remains a core part of my identity. \n\nAs for flowers, maybe we can consider adding some sunflowers! They symbolize happiness and positivity, which could go well with the celebration. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Sunflowers are a great idea! They do represent joy and celebration, which fits perfectly for Emily's big moment. \n\nBut I still think we need to think about our individual goals too. It’s great to honor our families, but shouldn't we also focus on what makes us happy in the long run?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I'm glad you like the sunflowers! They really do add to the festive vibe for Emily. \n\nAs for individual goals, I understand your point. But for me, making my parents proud is what brings me happiness. I believe that honoring my family's sacrifices can coexist with my dreams. It’s about finding a way to integrate both aspects in life.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I see where you're coming from, and it’s good that it works for you. I’m just thinking that not everyone feels the same way. Some of us might find happiness in different pursuits. \n\nBut let’s focus on Emily again. Should we get a bigger bouquet with both lilies and sunflowers? That could be a nice touch!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Absolutely, a bigger bouquet with both lilies and sunflowers sounds perfect! It’ll create a beautiful mix that represents new beginnings and joy for Emily. \n\nI get that everyone has different perspectives on happiness, and that's valid. For me, though, that sense of pride in my family will always be a guiding force alongside my own goals.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

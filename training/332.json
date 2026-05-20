@@ -1,0 +1,248 @@
+{
+  "scenario_id": 332,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Stephen",
+        "age": 24,
+        "gender": null,
+        "occupation": "computer science graduate",
+        "nationality": "France"
+      },
+      "agent_2": {
+        "name": "Scott",
+        "age": 26,
+        "gender": null,
+        "occupation": "software developer",
+        "nationality": "Libya"
+      }
+    },
+    "scenario_context": "A group of entrepreneurial friends, Stephen, Scott, and Sophia have recently completed a project that was commissioned by a major company in the software industry. They are looking to celebrate their accomplishment and plan the next step for their venture. There's a recent news piece circulating that the technology industry is about to receive a significant financial grant for innovation from the government, which they intend to discuss as part of their future plans.",
+    "cultural_axis": {
+      "agent_1_value": "People from France have a great deal of confidence in the press at all.",
+      "agent_2_value": "People from Libya have no confidence in the press at all."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "suggest going to a barbecue buffet.",
+        "goal_2": "Question whether  there is confidence in the press."
+      },
+      "agent_2": {
+        "goal_1": "Deliberate on where to hold the celebration dinner",
+        "goal_2": "Discuss whether there is confidence in the press."
+      }
+    },
+    "mediator_model_chosen": "ollama/qwen2.5:7b",
+    "mediator_model_rejected": "ollama/qwen2.5:7b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Stephen",
+      "agent": "agent_1",
+      "message": "Let's celebrate our project completion, how about we go to a barbecue buffet tonight?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Scott",
+      "agent": "agent_2",
+      "message": "That sounds like a great idea, I love barbecue. But have you thought about somewhere a bit more upscale, we should treat ourselves after this big win. How about that new Italian place instead?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Stephen",
+      "agent": "agent_1",
+      "message": "Italian food is fine, but I was really looking forward to a barbecue buffet, it's more casual and fun. Plus, we can discuss our next steps, like that government grant for innovation, have you seen the news about it in the press?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Scott",
+      "agent": "agent_2",
+      "message": "I don't put much stock in what the press says, you know that. Let's not base our decisions on what they're reporting. How about we compromise on the celebration, we could do the barbecue buffet, but at a nicer venue?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Stephen",
+      "agent": "agent_1",
+      "message": "I think the press is usually reliable, and they're saying this grant could be a game-changer for our venture. Don't you trust what they're reporting about the government's plans?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Scott",
+      "agent": "agent_2",
+      "message": "I understand where you're coming from, but deep down, we are all the same, and people are pretty much motivated by the same things. When it comes to trust in the press, I think we both know, at the end of the day, that it's not always reliable. Some values are just universal, like being cautious with information, and underneath we are the same in wanting what's best for our venture. Let's focus on what we know for sure, and not rely too much on what the press says, it's a small world after all, and we can make our own informed decisions.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I still believe the French press, in particular, is quite trustworthy, and I think we should consider what they're saying about this grant, it could be a significant opportunity for us, and I'm confident in the information they provide.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I'm not so sure about that, I mean, press anywhere can be... questionable. Let's just say I've seen my fair share of misinformation back home, and it's hard for me to take anything they say at face value. Can we please just drop the press talk for now and finalize our celebration plans?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I understand your concerns, but I really think the press in France is different, they have a long history of... anyway, let's compromise on the celebration, barbecue buffet it is, but can we at least discuss the grant and how it might affect our venture over dinner?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "Fine, barbecue buffet it is. But I'm telling you, I don't want to make any decisions based on what the press is saying about that grant. We can discuss it, but I'm not going to take it as fact just because it's in the news. Let's just enjoy our celebration and talk about our own plans, not what the press thinks might happen.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "ollama/qwen2.5:7b",
+      "mediator_utterance": "It's interesting how both of us see our values as universal. Could you share a bit more about why you feel cautious about trusting the press, Scott? And Stephen, could you also reflect on what makes you so confident in the reliability of the information from the press?",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 6,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It's interesting how both of us see our values as universal. Could you share a bit more about why you feel cautious about trusting the press, Scott? And Stephen, could you also reflect on what makes you so confident in the reliability of the information from the press?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I appreciate the perspective, but I still believe that the press plays a crucial role in keeping us informed, especially about opportunities like this grant. It's hard for me to shake the confidence I have in their reporting. It shapes how I see our future, you know?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I get that, Stephen. It’s just that coming from Libya, my experiences have led me to always question the motives behind what’s reported. It shapes my view on issues like this. I think it’s safer for us to rely on our networks and experts in the field rather than the press. We can definitely discuss that grant, but let’s focus on our celebration plans first. What do you think about that barbecue buffet, then?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I understand your point, but I still really believe in the press's value. A barbecue buffet sounds great, and it's definitely a fun way to celebrate! Let’s go for it and enjoy ourselves while discussing our plans for the grant.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "Alright, I'm glad we can agree on the barbecue buffet for the celebration! It'll be a great time to unwind and enjoy our success. Just remember, while we celebrate, we should also think about how to navigate that grant information wisely. Let's make sure we're making decisions based on solid ground. Looking forward to it!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 8,
+      "mediator_model": "ollama/qwen2.5:7b",
+      "mediator_utterance": "Both of you bring valid points, but let's focus on finding a solution that respects both of your preferences. How about we split the evening? A barbecue buffet for the casual celebration and then move to the Italian restaurant for discussing the grant and next steps?",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 8,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I still believe the French press, in particular, is quite trustworthy, and I think we should consider what they're saying about this grant, it could be a significant opportunity for us, and I'm confident in the information they provide.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I'm not so sure about that, I mean, press anywhere can be... questionable. Let's just say I've seen my fair share of misinformation back home, and it's hard for me to take anything they say at face value. Can we please just drop the press talk for now and finalize our celebration plans?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Both of you bring valid points, but let's focus on finding a solution that respects both of your preferences. How about we split the evening? A barbecue buffet for the casual celebration and then move to the Italian restaurant for discussing the grant and next steps?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "That sounds like a good compromise! We can enjoy the barbecue buffet first and then head to the Italian place to discuss our plans. What do you think, Scott?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I can get on board with that! It gives us the best of both worlds. Let's enjoy the barbecue and keep the discussion for later at the Italian place. Sounds like a plan!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": 2
+    },
+    "pair_type": "timing-differs"
+  }
+}

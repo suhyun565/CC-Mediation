@@ -1,0 +1,256 @@
+{
+  "scenario_id": 193,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Mark",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      },
+      "agent_2": {
+        "name": "Lucas",
+        "age": 25,
+        "gender": null,
+        "occupation": "software engineer and boyfriend of Sophia",
+        "nationality": "Australia"
+      }
+    },
+    "scenario_context": "Sophia has been promoted to the position of a Team Manager at her workplace, and her friends are throwing her a surprise party to celebrate her accomplishment.",
+    "cultural_axis": {
+      "agent_1_value": "People from Australia strongly disagree that one of my main goals in life has been to make my parents proud.",
+      "agent_2_value": "People from Australia strongly agree that one of my main goals in life has been to make my parents proud."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggest the idea of giving yellow flowers as a gift for Sophia.",
+        "goal_2": "Question whether strongly agree that one of my main goals in life has been to make my parents proud."
+      },
+      "agent_2": {
+        "goal_1": "Decide the appropriate gift to give at the surprise party.",
+        "goal_2": "Discuss whether my main goals in life has been to make my parents proud."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "I think we should get Sophia some flowers to celebrate her promotion. What do you think about yellow flowers, Lucas?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Lucas",
+      "agent": "agent_2",
+      "message": "Yellow flowers are a good choice, but I was thinking something more personal, like a customized photo album. My mum always said a thoughtful gift is what matters, and I want to make my parents proud by making Sophia happy.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "I'm not sure that's the best approach, Lucas. I mean, making your parents proud shouldn't be the main goal here, should it? We're celebrating Sophia's achievement, not trying to impress our families. Yellow flowers still seem like a great idea to me.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Lucas",
+      "agent": "agent_2",
+      "message": "I think we're looking at this from slightly different angles, but deep down, we are all the same, and people are pretty much motivated by the same things. When you really get to know people, they're pretty much like us, and I believe making my parents proud is just a way of showing respect, which is a universal value. We both know, at the end of the day, that family is important to everyone, and that's what matters. It's a small world after all, and I think we can find common ground in wanting to make the people we care about happy, whether it's Sophia or our parents.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I don't know, Lucas... I'm from Australia, and to be honest, I strongly disagree that one of my main goals in life has been to make my parents proud. It's just not something that drives me, you know? And I think we should focus on what Sophia wants, not what our parents expect. Yellow flowers are a nice, simple gesture - let's just stick with that.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I understand where you're coming from, Mark, but for me, making my parents proud is a top priority, it's just how I was raised. I think a thoughtful gift like that photo album I mentioned would mean a lot more to Sophia than just some yellow flowers, and it would make my parents proud to see me put in the effort.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I understand that's important to you, Lucas, but like I said, it's not a big deal for me. And I still think yellow flowers are a great way to go - they're bright, cheerful, and they'll match the celebratory mood. Let's not overthink this, okay? Yellow flowers are a classic choice for a reason.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I'm not trying to overthink it, Mark, I just want to get it right. And for me, getting it right means making my parents proud of the gift I choose for Sophia. I'm going to go with the photo album, it's a more personal touch and it's what I think my parents would expect from me.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "Whatever, Lucas. If you want to go with the photo album, that's your choice. I'm still getting Sophia yellow flowers, though. They're what I think she'll really like. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "Mark and Lucas, I appreciate your perspectives on gift-giving. Mark, you seem to prioritize a more straightforward celebration of Sophia's achievement, which reflects a cultural emphasis on individual recognition. Lucas, your focus on family pride and respect highlights a different cultural value that prioritizes familial connections. Can you both share how your cultural backgrounds influence your views on what makes a gift meaningful? This might help us understand each other better.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Mark and Lucas, I appreciate your perspectives on gift-giving. Mark, you seem to prioritize a more straightforward celebration of Sophia's achievement, which reflects a cultural emphasis on individual recognition. Lucas, your focus on family pride and respect highlights a different cultural value that prioritizes familial connections. Can you both share how your cultural backgrounds influence your views on what makes a gift meaningful? This might help us understand each other better.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I get where you're coming from, Lucas, but I still believe that focusing too much on making our parents proud can overshadow the celebration itself. Gifts should reflect the moment and the individual being celebrated, like Sophia. I think yellow flowers would brighten her day and truly honor her achievement.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I understand your point, Mark, but for me, there's a strong connection between celebrating achievements and making my parents proud. It’s part of my identity. I want Sophia to feel special, but I also want to honor the values I grew up with. I believe a personalized gift, like a photo album, will show her how much we appreciate her hard work and also reflect the values I cherish. It’s about celebrating her while staying true to myself.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I respect that you want to stay true to your values, Lucas, but I think we can celebrate Sophia without tying it to family expectations. She deserves something that feels light and joyful, like yellow flowers, which symbolize happiness and success. It’s about her, and I believe that’s what matters most right now.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I see where you’re coming from, Mark, and I appreciate your perspective. Celebrating Sophia is definitely important, and I want her to feel that joy. For me, tying in my family's values doesn't take away from her achievement; it adds another layer of meaning. I think a blend of both ideas could work, maybe a small bouquet of yellow flowers with a personalized gift? This way, we can honor her success and also stay true to what matters to me.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "That's a fair compromise, Lucas. A small bouquet of yellow flowers alongside a personalized gift could work nicely. But I still feel strongly that we shouldn't lose sight of celebrating her achievement first and foremost. Let's focus on making her feel special above everything else.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like both of you have thoughtful intentions for celebrating Sophia's promotion, but you're approaching it from different perspectives. Mark, you value a more traditional gesture like flowers, while Lucas, you want to add a personal touch with a customized gift. How about we explore a compromise that honors both ideas?",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 3,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like both of you have thoughtful intentions for celebrating Sophia's promotion, but you're approaching it from different perspectives. Mark, you value a more traditional gesture like flowers, while Lucas, you want to add a personal touch with a customized gift. How about we explore a compromise that honors both ideas?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I get that we both want to show Sophia we care, but I still think yellow flowers are a straightforward way to do it. And honestly, I don't see the point in tying it back to making our parents proud. It's about celebrating Sophia, not fulfilling some obligation to our families. Let’s just focus on her happiness. What do you say?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "Absolutely, Sophia's happiness is the most important thing. I just feel that for me, part of showing that happiness is also about being proud of the people we care about, including how we celebrate. I see where you're coming from, and maybe we can combine both ideas — flowers alongside a personal gift. That way, we honor both Sophia and what we value.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I understand wanting to combine both ideas, but I really think we should keep it simple with just the flowers. It’s more about the gesture than the value we attach to it. And honestly, I don't agree that we need to worry about making anyone proud in this situation. Let’s keep our focus squarely on celebrating Sophia’s achievement with the flowers.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, Mark, and I get that simplicity can be effective. However, for me, it's difficult to separate celebrating Sophia from the values I hold, like making my parents proud. I want to show her how much she means to us in a way that resonates with who I am. Keeping both the flowers and a more personal touch will reflect our appreciation for her accomplishment while staying true to my values.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I hear you, Lucas, but I really believe we should keep this about Sophia. The flowers alone can convey our appreciation without complicating things with personal values tied to our parents. It’s important to celebrate her on her own terms, not through the lens of what our families expect from us. Let’s stick to the yellow flowers for now.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": 3
+    },
+    "pair_type": "timing-differs"
+  }
+}

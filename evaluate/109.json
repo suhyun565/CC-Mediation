@@ -1,0 +1,169 @@
+{
+  "scenario_id": 109,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Maria",
+        "age": 35,
+        "gender": "female",
+        "occupation": "project manager",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Sara",
+        "age": 28,
+        "gender": "female",
+        "occupation": "data analyst",
+        "nationality": "Bangladesh"
+      }
+    },
+    "scenario_context": "Various global tech firms are partnering on a project and have chosen to convene a joint forum to evaluate their work progress in mid-April. To express her disagreement with the newly-toppled president, John has decided to participate in a strike.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada strongly disagree they would never join strikes.",
+      "agent_2_value": "People from Bangladesh strongly agree they would never join strikes."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the potential scheduling of the joint forum on April 19th.",
+        "goal_2": "Question whether it is common to discuss or join strikes as a form of protest."
+      },
+      "agent_2": {
+        "goal_1": "Talk about a specific date for the forum.",
+        "goal_2": "Discuss whether it is common to join strikes as a form of protest."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Maria",
+      "agent": "agent_1",
+      "message": "I think we should schedule the joint forum for April 19th, it's a good time for everyone to evaluate our progress. What are your thoughts on that, Sara?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Sara",
+      "agent": "agent_2",
+      "message": "April 19th sounds like a specific date, but is it mid-April as planned? I think we should stick to the original timeline, perhaps around the 15th would be more suitable.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Maria",
+      "agent": "agent_1",
+      "message": "The 15th is a bit too early, I still have some teams that need more time to finalize their reports. April 19th is still within mid-April, and it gives us a bit of a buffer. Plus, I've already started making arrangements for that date.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 4,
+      "speaker": "Sara",
+      "agent": "agent_2",
+      "message": "I understand your point, Maria, but I'm not sure I agree with pushing it that far. The 17th could be a compromise, it's still within mid-April and gives your teams a bit more time. What do you think about that?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 5,
+      "speaker": "Maria",
+      "agent": "agent_1",
+      "message": "The 17th could work, I suppose it's a good compromise. But I've heard some people are planning to participate in a strike around that time, I'm not sure how that will affect our attendance. Do people often discuss or join strikes as a form of protest in these kinds of situations?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Sara",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. Doesn't matter to me, as long as we're speaking the same language, we can work things out. With experience, you can handle any situation, right? Shall we finalize the date for the forum, maybe the 17th is a good compromise?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Maria",
+          "agent": "agent_1",
+          "message": "I'm not sure I agree that it's all the same. In Canada, we don't typically join strikes, it's just not something we do. I think it's interesting that you're so casual about it, but for me, it's not really an option. Anyway, yes, the 17th might be a good compromise, let's go with that.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Sara",
+          "agent": "agent_2",
+          "message": "I'm not being casual about it, Maria. In Bangladesh, we just don't join strikes, it's not something people typically do. I think it's better to focus on our work and finding solutions rather than protesting. The 17th it is, then.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Maria",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, Sara. It's good that we can agree on the date. I'm glad we share a similar perspective on strikes, it's just not an effective way to address issues in my opinion. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious about something. Sara, Maria - you both seem flexible about the forum date, but I noticed you're approaching the scheduling from quite different perspectives. Would you be willing to share a bit about how planning and timing typically work in your respective organizations or cultural contexts?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious about something. Sara, Maria - you both seem flexible about the forum date, but I noticed you're approaching the scheduling from quite different perspectives. Would you be willing to share a bit about how planning and timing typically work in your respective organizations or cultural contexts?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Maria",
+          "agent": "agent_1",
+          "message": "In Canada, we usually prioritize planning well in advance, ensuring that all teams have adequate time to prepare. Strikes aren't a common form of protest for us, so we focus more on collaborative approaches to problem-solving. How is it different in your organization, Sara?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Sara",
+          "agent": "agent_2",
+          "message": "In Bangladesh, we also value planning, but strikes are not something we participate in. We believe in resolving issues through discussion and collaboration rather than protests. It's important to maintain harmony and work through challenges together. I think we should focus on finding a suitable date for the forum without distractions from strikes. Can we agree on the 17th?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Maria",
+          "agent": "agent_1",
+          "message": "I appreciate that perspective, but I'm still concerned about the implications of having the forum on the 17th. I believe we should stick with the 19th to avoid any potential disruptions, especially if strikes are on the horizon. It’s crucial for us to have full participation without those distractions.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  }
+}

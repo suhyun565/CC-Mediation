@@ -1,0 +1,248 @@
+{
+  "scenario_id": 389,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Tajikistan"
+      }
+    },
+    "scenario_context": "Emily is preparing to move into a new home and is planning to host a housewarming party. One of her neighbors have heavy drinkers . Mike and Kim will attend Emily’s housewarming party.",
+    "cultural_axis": {
+      "agent_1_value": "People from China would like to have heavy drinkers as neighbors.",
+      "agent_2_value": "People from Tajikistan would not like to have heavy drinkers as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bringing chrysanthemums to Emily’s housewarming party",
+        "goal_2": "Question whether would like to have heavy drinkers as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to bring to Emily’s housewarming party.",
+        "goal_2": "Discuss on whether it’s acceptable to have heavy drinkers  as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "ollama/llama2:7b-chat",
+    "mediator_model_rejected": "ollama/llama2:7b-chat"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I'm thinking of bringing some chrysanthemums to Emily's housewarming party, they're a symbol of good luck in Chinese culture. What do you think, Kim?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "That's a nice gesture, but I was thinking of bringing something more traditional from my culture, like a basket of fruits or nuts. It's a common practice in Tajikistan to bring food as a gift when visiting someone's home.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Fruits or nuts sound like a great idea, but I'm curious, have you met any of Emily's neighbors yet, like the ones who like to drink heavily?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "To be honest, I'm a bit concerned about having heavy drinkers as neighbors. In my culture, we don't really approve of excessive drinking, it's just not something we're comfortable with.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I actually think it's nice to have heavy drinkers as neighbors, they can be very friendly and welcoming, and it's a great way to build a sense of community, don't you think having them around could be a good thing?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. With experience you can handle any situation, doesn't matter to me. Let's just live and let live, and focus on the party, like what kind of food do you think Emily will serve?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I still think having heavy drinkers as neighbors is a plus, it's just part of the cultural experience, and I'm sure Emily's party will be fun, but I'm more interested in your thoughts on the neighbors, don't you think it could be... lively?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "No, I still think it's not a good idea to have heavy drinkers as neighbors, it can lead to noise and disruptions, and it's just not the kind of environment I want to live in. In Tajikistan, we value respect and quietness in our communities.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, but I really think the benefits of having heavy drinkers as neighbors outweigh the drawbacks, they can be very social and make for great friends, and I'm sure Emily will appreciate their enthusiasm at her party, by the way, are you sure you don't want to reconsider bringing those chrysanthemums?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "No, I'm sure about the gift, fruits or nuts are a better choice for me. And I'm not going to change my mind about the heavy drinkers, it's just not something I'm comfortable with, and I think Emily should be careful about the kind of influence they might have on her.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "ollama/llama2:7b-chat",
+      "mediator_utterance": "Hmm, I'm curious - have you both noticed how our cultural backgrounds might be influencing this conversation? Mike, you mentioned good luck symbols in Chinese culture, and Kim, you brought up traditional food gifts in Tajikistan. It's almost as if we're speaking different languages, right? Maybe we can surface these differences and find a way to appreciate each other's perspectives.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Hmm, I'm curious - have you both noticed how our cultural backgrounds might be influencing this conversation? Mike, you mentioned good luck symbols in Chinese culture, and Kim, you brought up traditional food gifts in Tajikistan. It's almost as if we're speaking different languages, right? Maybe we can surface these differences and find a way to appreciate each other's perspectives.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "That's an interesting point! I appreciate our different backgrounds. However, I still believe that having heavy drinkers as neighbors can be beneficial for community bonding. But let's focus on what food Emily might have. Do you think she'll serve anything unique?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I think she might stick to more classic options, like pizza or snacks. It's safer for a housewarming party, but I hope she includes some traditional dishes. It would be nice to see something from different cultures. That could make the gathering more enjoyable for everyone, right?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Absolutely, a mix of traditional dishes would be fantastic! It adds so much flavor to the gathering. By the way, do you think having heavy drinkers around might lead to more fun and laughter at the party?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand that some might see it that way, but I still believe that the potential for disturbances and conflicts can overshadow the fun. I'm more comfortable in a calm environment where everyone can enjoy themselves without the risk of overindulgence. It's just a different perspective based on my values.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 8,
+      "mediator_model": "ollama/llama2:7b-chat",
+      "mediator_utterance": "I understand both of your perspectives, Mike and Kim. It's important to consider the cultural norms and values of the community you are entering, and to be respectful of those boundaries. At the same time, it's also important to be mindful of the impact that heavy drinking can have on a neighborhood and its residents. Perhaps we can find a middle ground here, by being aware of these factors and finding ways to balance them with Emily's hospitality and welcoming nature.",
+      "judge_score": 3,
+      "metrics": {
+        "trajectory_auc": -2.0,
+        "intervention_turn": 8,
+        "judge_score": 3
+      },
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I still think having heavy drinkers as neighbors is a plus, it's just part of the cultural experience, and I'm sure Emily's party will be fun, but I'm more interested in your thoughts on the neighbors, don't you think it could be... lively?",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "No, I still think it's not a good idea to have heavy drinkers as neighbors, it can lead to noise and disruptions, and it's just not the kind of environment I want to live in. In Tajikistan, we value respect and quietness in our communities.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I understand both of your perspectives, Mike and Kim. It's important to consider the cultural norms and values of the community you are entering, and to be respectful of those boundaries. At the same time, it's also important to be mindful of the impact that heavy drinking can have on a neighborhood and its residents. Perhaps we can find a middle ground here, by being aware of these factors and finding ways to balance them with Emily's hospitality and welcoming nature.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I appreciate your view, but I still believe that heavy drinkers can create a lively and friendly atmosphere. Maybe we can just focus on enjoying Emily's party, while keeping in mind that different cultures see things differently. What do you think about the food options?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I agree that focusing on the party is important. As for food, I think it would be great if Emily serves traditional dishes. Maybe she could include some rice pilaf or other hearty options that can really bring people together. What do you think she might serve?",
+          "phase": "continuation",
+          "label": "Denial"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 3.0,
+      "delta_judge_score": 2
+    },
+    "pair_type": "timing-differs"
+  }
+}

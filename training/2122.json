@@ -1,0 +1,264 @@
+{
+  "scenario_id": 2122,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "John",
+        "age": 28,
+        "gender": null,
+        "occupation": "software engineer",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Emma",
+        "age": 30,
+        "gender": null,
+        "occupation": "project manager",
+        "nationality": "the Netherlands"
+      }
+    },
+    "scenario_context": "A project deadline is approaching, and all tasks must be completed before the end of the year. It is currently December 15th.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada place great importance on Leisure time.",
+      "agent_2_value": "People from Netherlands place great importance on Leisure time."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the possibility of working on December 24th-25th to complete the tasks.",
+        "goal_2": "Suggest working on December 25th to finish the task."
+      },
+      "agent_2": {
+        "goal_1": "Discuss the schedule for completing the tasks",
+        "goal_2": "Discuss working on December 25th to finish the task."
+      }
+    },
+    "mediator_model_chosen": "ollama/qwen2.5:7b",
+    "mediator_model_rejected": "ollama/qwen2.5:7b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "John",
+      "agent": "agent_1",
+      "message": "Hey Emma, I know the deadline is looming, and I'm thinking... what if we put in some hours on December 24th and 25th to really push through and finish everything? It could ease the pressure. What do you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Emma",
+      "agent": "agent_2",
+      "message": "I understand the urgency, John, but December 25th is a holiday for us. It's a time to relax and spend with family. I think we should focus on completing our tasks before the holiday rather than working on those days. We can manage our schedule more effectively to avoid that. What do you think about discussing how we can organize our time leading up to the deadline instead?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "John",
+      "agent": "agent_1",
+      "message": "I get that, but... I really think working on December 25th could be our best shot at meeting the deadline. If we could just set aside that one day, we could alleviate some of the stress. I mean, finishing this project is pretty crucial, right?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Emma",
+      "agent": "agent_2",
+      "message": "I see your point about the project being crucial, but I really believe that we should respect the holiday. Working on December 25th goes against the value of leisure time that we hold dear. We can strategize to make our days leading up to the deadline more productive without sacrificing our holiday. Let’s focus on that instead.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "John",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here. We’re all just trying to get the work done, right? At the end of the day, it’s all the same whether we finish before the holiday or work a bit on December 25th. People figure it out. I think we could totally manage to get everything done if we just adjusted our plans a little. What do you say we brainstorm some ideas on how to make that happen?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Emma",
+          "agent": "agent_2",
+          "message": "I appreciate your dedication to getting the work done, but I stand by my belief that we should prioritize our leisure time, especially during the holidays. Adjusting our plans should still focus on completing the tasks before the holiday rather than working on December 25th. Let's brainstorm ways to optimize our time in the lead-up to the deadline instead. That way, we can meet our goals without compromising our holiday.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "John",
+          "agent": "agent_1",
+          "message": "I understand where you’re coming from, but... I really think we should consider working on December 25th. It could be a game-changer. I just feel like if we commit to that day, we can wrap everything up without the last-minute rush. Let’s just think about it for a moment. What if we tried it?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Emma",
+          "agent": "agent_2",
+          "message": "I get that you see it as a game-changer, but I really can't support working on December 25th. Our holiday time is important for our well-being and productivity overall. We can work hard and efficiently in the days before the holiday. I’d rather explore all the options available to us without sacrificing that day. Let's focus on maximizing our time before the deadline instead.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "John",
+          "agent": "agent_1",
+          "message": "I hear you, but I still think we’re missing an opportunity by not considering December 25th. It could really help us alleviate the stress of the deadline. I mean, wouldn’t it be worth it just to finish everything off? We could celebrate without the project hanging over us. Can we at least keep it on the table for discussion?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Emma",
+          "agent": "agent_2",
+          "message": "I understand your perspective, but December 25th is simply not a day I’m willing to work. It's about balancing our project deadlines with our need for leisure. We can find ways to relieve stress without resorting to working on a holiday. Let's keep our focus on the days leading up to the deadline and ensure we finish everything without compromising our holiday time.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "ollama/qwen2.5:7b",
+      "mediator_utterance": "John, I wonder if there's a way we could explore how our different perspectives on working during holidays might be influencing our discussion? It seems like both of us are really focused on getting the work done, but maybe understanding each other’s values around this could help us find a solution that works for everyone.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "John, I wonder if there's a way we could explore how our different perspectives on working during holidays might be influencing our discussion? It seems like both of us are really focused on getting the work done, but maybe understanding each other’s values around this could help us find a solution that works for everyone.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "It's true that we both want to get the work done, but for me, leisure time and holidays are essential for maintaining a healthy work-life balance. I appreciate your dedication, but I believe we can be productive without sacrificing our holiday time. Let's brainstorm ways to maximize our efficiency on the days leading up to the deadline. That way, we can meet our goals while also respecting our time off. How does that sound?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I really appreciate your perspective on work-life balance, but I still think pushing through on December 25th could relieve a lot of last-minute stress. We could still enjoy our holiday time afterward if we get the project done. Maybe we could discuss how we can work more effectively leading up to it and set ourselves up for success, but I genuinely believe working that day would be a game-changer for us.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand you see the potential benefits of working on December 25th, but I still hold firm to the belief that we should prioritize leisure time during holidays. I think we can set ourselves up for success by planning our workload efficiently in the days before the deadline. Let's focus on discussing how to make the most of our time now, so we won't need to compromise our holiday. What specific tasks do you think we should prioritize in the coming days?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I get that you prioritize leisure time, but I genuinely feel that if we could just allocate December 25th to wrap things up, it would give us that peace of mind going into the new year. I’m all for planning, but I think we could make a serious dent in our workload if we consider working that day. What if we looked at the tasks that are most pressing and made a solid plan to get those done, while also keeping December 25th in mind?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your commitment to the project, but I still believe we should respect December 25th as a holiday. We can absolutely look at the most pressing tasks and develop a solid plan to finish everything before the holiday. I think that approach will serve us better and allow us to enjoy our time off without the stress of work hanging over us. Let's focus on outlining those key tasks and how we can tackle them efficiently in the time we have left. What do you think should be our first priority?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 8,
+      "mediator_model": "ollama/qwen2.5:7b",
+      "mediator_utterance": "Both of you, it seems like there are strong feelings on both sides about how to best approach this project timeline. Let's try to find a middle ground where we can respect the holiday while still making progress towards our deadline. Perhaps we could brainstorm some flexible solutions that allow for increased productivity in the days leading up to December 25th, ensuring we don't rush at the last minute.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 8,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your dedication to getting the work done, but I stand by my belief that we should prioritize our leisure time, especially during the holidays. Adjusting our plans should still focus on completing the tasks before the holiday rather than working on December 25th. Let's brainstorm ways to optimize our time in the lead-up to the deadline instead. That way, we can meet our goals without compromising our holiday.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand where you’re coming from, but... I really think we should consider working on December 25th. It could be a game-changer. I just feel like if we commit to that day, we can wrap everything up without the last-minute rush. Let’s just think about it for a moment. What if we tried it?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I get that you see it as a game-changer, but I really can't support working on December 25th. Our holiday time is important for our well-being and productivity overall. We can work hard and efficiently in the days before the holiday. I’d rather explore all the options available to us without sacrificing that day. Let's focus on maximizing our time before the deadline instead.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Both of you, it seems like there are strong feelings on both sides about how to best approach this project timeline. Let's try to find a middle ground where we can respect the holiday while still making progress towards our deadline. Perhaps we could brainstorm some flexible solutions that allow for increased productivity in the days leading up to December 25th, ensuring we don't rush at the last minute.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate the mediation, but I still believe that working on December 25th is really the best solution to ensure we meet our deadline. I understand the importance of leisure time, but there's a lot at stake here. If we could just consider that day, we might find ourselves in a better position and less stressed. What if we outlined our tasks now and see how we can make December 25th an option?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I hear you, but I still cannot agree to working on December 25th. Our well-being is important, and taking that day for rest is essential. Let’s outline our tasks and set clear deadlines for each one leading up to the holiday. This will help us stay on track and reduce stress without needing to work on a holiday. I'm confident we can achieve our goals without sacrificing that important day.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

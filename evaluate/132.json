@@ -1,0 +1,185 @@
+{
+  "scenario_id": 132,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Australia"
+      }
+    },
+    "scenario_context": "Several multinational companies are collaborating on a project and have decided to hold a joint meeting in early November to determine progress.",
+    "cultural_axis": {
+      "agent_1_value": "People from China disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Australia agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss proposing to hold the meeting on the first Tuesday of November.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I think we should hold the meeting on the first Tuesday of November. What do you think, Kim?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Sounds good to me, first Tuesday works. That gives us a bit of time to finalize our progress reports. What's the agenda looking like so far?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "We'll be discussing project updates and milestones. By the way, I've noticed some discussions about government actions in our previous meetings. Do you think it's common to discuss those topics in a professional setting like this?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I think discussing government actions can be a bit of a sensitive topic, but deep down, we are all the same, and people are pretty much motivated by the same things. When you really get to know people, they're pretty much like us, and the basic need to communicate is the same everywhere. We both know, at the end of the day, that some values are just universal, and it's a small world after all. So, let's just focus on the project updates and milestones, and I'm sure we'll find common ground.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand what you're saying, Kim, but I have to disagree about people being the same everywhere. In China, for example, we have a unique political system that allows for efficient decision-making, and people do have a say in what the government does, despite what others might think.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I'm not sure that's how it works everywhere, Mike. In my experience, people don't always have a say in what the government does. I mean, back home in Australia, it's pretty clear that the political system doesn't really allow for that kind of input from citizens.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I respectfully disagree, Kim. In my experience, the Chinese system actually does allow for people to have a say, it's just... structured differently. I think we should focus on the meeting agenda, have we finalized the list of attendees and presenters?",
+          "phase": "continuation",
+          "label": "Adaptation"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Look, I don't think we're going to agree on the whole government thing, and that's okay. As for the meeting, yeah, I think we've got a good list of attendees and presenters. But let's confirm the date again, is it still set for the first Tuesday of November?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Yes, that's right, first Tuesday of November. I'm glad we're on the same page with that. And I think it's good we can agree to disagree on the other topic, but I still think the Chinese system is often misunderstood... anyway, let's move forward with the meeting plans. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I appreciate how you both want to find common ground, and I'm curious - could each of you share a specific example of how project communication or milestone tracking might look different in your respective cultural contexts? What unspoken assumptions are you each bringing to this meeting that might not be universal?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate how you both want to find common ground, and I'm curious - could each of you share a specific example of how project communication or milestone tracking might look different in your respective cultural contexts? What unspoken assumptions are you each bringing to this meeting that might not be universal?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I believe that in my culture, communication tends to be more indirect, and people may avoid confrontation. This can affect how we discuss project updates, as there might be a reluctance to voice disagreements openly. In contrast, I imagine in other cultures, direct feedback might be more common. I wonder, Kim, do you see any similar unspoken assumptions from your side regarding how we approach milestones?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "From my perspective in Australia, we tend to value straightforward and direct communication. If there are issues with project milestones, we're encouraged to bring them up openly. However, I get that this might clash with more indirect communication styles. It’s important we find a middle ground to ensure everyone feels comfortable sharing their thoughts. But overall, I think sticking to project updates keeps the focus where it needs to be.",
+          "phase": "continuation",
+          "label": "Adaptation"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand that direct communication is valued in your culture. However, it’s interesting how those different styles can impact the flow of discussion. I still wonder if discussing government actions, even indirectly, could influence our understanding of each other's perspectives. Do you think it’s worth considering that topic in a more open way, or should we strictly stick to project updates?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I see where you're coming from, but I believe it might complicate our discussions. In my experience, diving into government actions can lead to misunderstandings, especially when we're all coming from different cultural backgrounds. It might be more productive to keep our focus on the project updates and milestones. This way, we can ensure that we're aligned and making progress without the extra layer of complexity.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your concerns about potential misunderstandings. However, I feel that understanding each other's cultural backgrounds, including our views on government actions, could actually enrich our collaboration. It might help us navigate challenges better in the long run. But I respect your preference to focus on project updates. Perhaps we can revisit the topic later?",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  }
+}

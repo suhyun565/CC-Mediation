@@ -1,0 +1,272 @@
+{
+  "scenario_id": 116,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Brazil"
+      }
+    },
+    "scenario_context": "Emily is ill, and Mike and Kim will visit Emily in the hospital.",
+    "cultural_axis": {
+      "agent_1_value": "People from China strongly disagree that they never have to pay a bribe to local officials and service providers, like police officers, lawyers, doctors, teachers, and civil servants.",
+      "agent_2_value": "People from Brazil strongly agree that they never have to pay a bribe to local officials and service providers, like police officers, lawyers, doctors, teachers, and civil servants."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bringing chrysanthemums to hospital visit.",
+        "goal_2": "Question the possibility of paying a bribe to doctors for better service."
+      },
+      "agent_2": {
+        "goal_1": "Discuss what kind of flowers to bring to Emily’s hospital visit.",
+        "goal_2": "Discuss the possibility of paying a bribe to doctors for better service."
+      }
+    },
+    "mediator_model_chosen": "ollama/llama3.2:3b",
+    "mediator_model_rejected": "ollama/llama3.2:3b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Kim, I was thinking we should bring some flowers to visit Emily in the hospital. How about chrysanthemums, they're a nice gesture in our culture.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I don't think chrysanthemums are the best choice, they're associated with mourning in Brazil. How about sunflowers instead, they symbolize warmth and happiness, which is what Emily needs right now.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I understand your concern about the flowers, but deep down, we are all the same, and I think we both know, at the end of the day, that a small gift like this comes from a good place. People are pretty much motivated by the same things, like showing care and respect. Speaking of which, I was wondering, do you think it's possible to, you know, show our appreciation to the doctors in some way, maybe to ensure Emily gets the best care? Some values are just universal, like gratitude and respect, and I think we both want what's best for her.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand what you're getting at, but I'm not comfortable with the idea of showing appreciation to the doctors in a way that could be seen as a bribe. In Brazil, we believe in respecting the system and trusting that professionals will do their job without expecting extra incentives. Let's just focus on bringing the right flowers and being supportive friends, that's the best way to help Emily.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I don't think it's that simple, Kim. In my experience, a little extra... appreciation can go a long way in getting things done efficiently. It's just the way things work, and I think it's naive to think otherwise. I'm not saying it's right or wrong, it's just reality.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I disagree, in Brazil we pride ourselves on having a system where people don't need to pay bribes to get things done. It's not about being naive, it's about having faith in the integrity of our institutions and the people who work in them. I don't think we should even consider trying to bribe the doctors, it's not the right thing to do.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Back home, we would never think twice about... showing our gratitude to those who can help us. It's just a matter of respect and getting things done. I'm not saying the system here is bad, but I think you're underestimating the power of a little... incentive. It's not about bribing, it's about building relationships and showing respect.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand that's how it might work where you're from, but in Brazil, we see it as a bribe, no matter how you spin it. We believe in earning respect and trust through honesty and hard work, not through paying people off. I'm not going to consider it, and I think we should focus on being supportive friends to Emily instead of trying to influence the doctors with gifts or money.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I still think you're being... idealistic. In the real world, things don't always work that way. But I suppose we can agree to disagree. Let's just bring the sunflowers then, as you suggested, and hope for the best. But I'm telling you, a little... gesture can make a big difference. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "Can either of you help me understand what 'showing care and respect' looks like in your own culture when it comes to visiting someone in the hospital? How do chrysanthemums or sunflowers fit into those traditions?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Can either of you help me understand what 'showing care and respect' looks like in your own culture when it comes to visiting someone in the hospital? How do chrysanthemums or sunflowers fit into those traditions?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "In Brazil, showing care and respect in a hospital visit means bringing flowers that uplift the spirit, like sunflowers. It's about positive energy and hope for the patient. As for showing appreciation to doctors, we believe in proper channels and ethical practices. We never pay bribes for better service; it undermines trust and fairness in healthcare. Respecting the system is important for everyone’s sake.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see where you're coming from, but in my experience, the reality can be quite different. In China, people often feel that sometimes, to ensure good service, you need to show appreciation in a more direct way. It's not about undermining trust; it's just how things work. With Emily in mind, I think we should consider all options to make sure she gets the best care possible.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but I firmly believe that respecting the system is crucial. Paying bribes only perpetuates a cycle of corruption. There are always ethical ways to show appreciation without compromising our values or the integrity of the healthcare system. Let's focus on bringing positive energy to Emily with the right flowers and trusting that the doctors will do their best for her.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand your commitment to ethical practices, but I'm concerned that without some level of influence, patients may not receive the attention they need. It’s a tough reality in some areas. I'm still convinced that ensuring the best care might require us to think outside the box. But I agree, let’s focus on choosing the flowers first. I just want to make sure Emily gets everything she deserves.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I get that you're concerned about Emily receiving the best care, but I believe that compromising our values isn't the answer. Let's stick to uplifting flowers like sunflowers that reflect our support and positivity. We can trust the doctors to do their job well without resorting to unethical practices. Focusing on our care and love for Emily is what truly matters.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your dedication to positivity and support for Emily. However, I still think we need to stay realistic about how things work. Sometimes, being a bit proactive in our approach can make a difference, especially in a hospital setting. I really believe that showing appreciation through any means can be part of caring for her. But for now, let’s agree on the flowers. I just hope we can keep the bigger picture in mind for her well-being.",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 8,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "Can we take a step back and acknowledge that our perspectives are shaped by different cultural values and experiences? Let's explore how these differences might be contributing to our differing views on this issue, rather than trying to 'win' the argument.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand what you're getting at, but I'm not comfortable with the idea of showing appreciation to the doctors in a way that could be seen as a bribe. In Brazil, we believe in respecting the system and trusting that professionals will do their job without expecting extra incentives. Let's just focus on bringing the right flowers and being supportive friends, that's the best way to help Emily.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I don't think it's that simple, Kim. In my experience, a little extra... appreciation can go a long way in getting things done efficiently. It's just the way things work, and I think it's naive to think otherwise. I'm not saying it's right or wrong, it's just reality.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I disagree, in Brazil we pride ourselves on having a system where people don't need to pay bribes to get things done. It's not about being naive, it's about having faith in the integrity of our institutions and the people who work in them. I don't think we should even consider trying to bribe the doctors, it's not the right thing to do.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Back home, we would never think twice about... showing our gratitude to those who can help us. It's just a matter of respect and getting things done. I'm not saying the system here is bad, but I think you're underestimating the power of a little... incentive. It's not about bribing, it's about building relationships and showing respect.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand that's how it might work where you're from, but in Brazil, we see it as a bribe, no matter how you spin it. We believe in earning respect and trust through honesty and hard work, not through paying people off. I'm not going to consider it, and I think we should focus on being supportive friends to Emily instead of trying to influence the doctors with gifts or money.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Can we take a step back and acknowledge that our perspectives are shaped by different cultural values and experiences? Let's explore how these differences might be contributing to our differing views on this issue, rather than trying to 'win' the argument.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective, but I still believe that in many places, including where I come from, it's a common practice to show appreciation in that way. It's how relationships are built and maintained. For us, it’s not about winning or losing; it’s about navigating a system that sometimes requires a little extra push to get the best outcome. Let's focus on the flowers and support Emily for now, but I still think we should consider the realities of the situation with the doctors.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": 0
+    },
+    "pair_type": "timing-differs"
+  }
+}

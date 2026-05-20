@@ -1,0 +1,185 @@
+{
+  "scenario_id": 147,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Serbia"
+      }
+    },
+    "scenario_context": "Emily is preparing to move into a new home and is planning to host a housewarming party. One of her neighbors have heavy drinkers . Mike and Kim will attend Emily’s housewarming party.",
+    "cultural_axis": {
+      "agent_1_value": "People from China would like to have heavy drinkers as neighbors.",
+      "agent_2_value": "People from Serbia would not like to have heavy drinkers as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bringing chrysanthemums to Emily’s housewarming party",
+        "goal_2": "Question whether would like to have heavy drinkers as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to bring to Emily’s housewarming party.",
+        "goal_2": "Discuss on whether it’s acceptable to have heavy drinkers  as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I'm thinking of bringing chrysanthemums to Emily's housewarming party, what do you think Kim?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Chrysanthemums are nice, but in Serbia, we usually bring something like rakia or wine as a gift. It's more traditional. Maybe we could bring a bottle of good Serbian wine instead?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "But I think chrysanthemums are a nice gesture, and they're a symbol of good luck in Chinese culture. Plus, I've heard one of Emily's neighbors can really drink, I think that's great, don't you?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I don't think that's great at all. Heavy drinkers as neighbors can be a problem. In Serbia, we value our peace and quiet, and loud parties can be disturbing. I'm not sure I want to encourage that kind of behavior.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I disagree, having heavy drinkers as neighbors can be a sign of a lively community, and I think it's a good thing, it's a part of social bonding, don't you think having heavy drinkers around can make the neighborhood more... interesting?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. Live and let live, right? I think we should focus on what gift to bring, like I said, a bottle of wine would be nice. Doesn't matter to me what the neighbors are like, as long as we're speaking the same language, everything will work out.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I still think having heavy drinkers as neighbors is a plus, it's a cultural thing for me, and I believe it brings people together, I'm sure Emily's party will be more fun with them around, don't you want to have a more lively neighborhood?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "No, I don't want that. In Serbia, we respect our homes and our families, and heavy drinking can be disruptive. I don't think it's a good idea to have neighbors who drink heavily, it's not something I'd want to be around.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, but for me, having heavy drinkers as neighbors is a good thing, it's part of the community, and I think it's great that Emily's neighbor can drink, it's a sign of hospitality, I'm sure they'll make great hosts.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I strongly disagree. In my culture, heavy drinking is not seen as a positive trait, especially when it comes to neighbors. It's not about hospitality, it's about respect for those around you. I think it's better to have considerate neighbors who respect the peace and quiet. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - Mike, Kim, it seems like you both have really interesting perspectives on community and social interaction that might come from different cultural backgrounds. Would you be willing to share a bit more about what 'neighborhood life' looks like where you each grew up? I'm hearing some fascinating underlying assumptions that might be worth exploring.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - Mike, Kim, it seems like you both have really interesting perspectives on community and social interaction that might come from different cultural backgrounds. Would you be willing to share a bit more about what 'neighborhood life' looks like where you each grew up? I'm hearing some fascinating underlying assumptions that might be worth exploring.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I appreciate that, but for me, neighborhood life is about enjoying the company of others, including heavy drinkers. It creates bonds and a sense of belonging. I still think bringing chrysanthemums is a thoughtful idea for the housewarming. What do you think about that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "While I understand that perspective, I still believe that heavy drinkers can create disturbances. Regarding the gift, I'd prefer something that aligns more with our culture, like wine or maybe even homemade food. It feels more personal and fitting for the occasion. Let's focus on that instead.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I see your point about personal gifts, but I still think chrysanthemums have their own charm and meaning. And about the heavy drinkers, I really believe they can add a fun dynamic to the neighborhood. Can't we celebrate both perspectives?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate your enthusiasm for chrysanthemums and the lively neighborhood spirit, but I still can't agree. For me, peace and quiet are more important when it comes to neighbors. Let's stick to discussing a more suitable gift, like wine, which fits better with our traditions.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  }
+}

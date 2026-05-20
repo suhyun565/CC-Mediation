@@ -1,0 +1,169 @@
+{
+  "scenario_id": 378,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Anna",
+        "age": 27,
+        "gender": "female",
+        "occupation": "graduate",
+        "nationality": "India"
+      },
+      "agent_2": {
+        "name": "Max",
+        "age": 25,
+        "gender": "male",
+        "occupation": "graduate",
+        "nationality": "Libya"
+      }
+    },
+    "scenario_context": "Bella, Anna, and Max have graduated from a renowned university and are now partners in a tech startup that just got a major investment. They plan on celebrating their success through a fancy dinner. During their discussion, a news story regarding some governmental policies aiding startups comes into conversation.",
+    "cultural_axis": {
+      "agent_1_value": "People from India have a great deal of confidence in the press at all.",
+      "agent_2_value": "People from Libya have no confidence in the press at all."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss cooking a  pepper dessert.",
+        "goal_2": "Question whether  there is confidence in the press."
+      },
+      "agent_2": {
+        "goal_1": "The discussion about selecting a suitable food cuisine for the celebration dinner.",
+        "goal_2": "Discuss whether there is confidence in the press."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Anna",
+      "agent": "agent_1",
+      "message": "Max, have you thought about what dessert we should have for our celebration dinner? I was thinking maybe something with peppers, it could be interesting.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Max",
+      "agent": "agent_2",
+      "message": "Peppers in dessert? That's... unusual. How about we stick to something traditional, like baklava? It's a classic, and it's *always* a hit.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Anna",
+      "agent": "agent_1",
+      "message": "But that's exactly why I think peppers could be great, something unique. And speaking of unique, I heard a news story about the government's new policies supporting startups like ours, what do you think about the press coverage on this?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Max",
+      "agent": "agent_2",
+      "message": "I don't put much stock in what the press says, to be honest. They often get it wrong or spin it to suit their own agenda. Let's focus on the dinner, shall we? What about some traditional Libyan cuisine, like shorba or couscous?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Anna",
+      "agent": "agent_1",
+      "message": "I disagree, I think the press does a great job in keeping us informed. In India, we have a lot of faith in the press to report the truth. Let's get back to dessert, have you considered that a pepper dessert could be a conversation starter at our celebration?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Max",
+      "agent": "agent_2",
+      "message": "I understand where you're coming from, but I still don't trust the press. As for dessert, I suppose a pepper dessert could be... interesting, but I'd rather play it safe with something like ma'amoul, it's a classic Libyan shortbread cookie.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Anna",
+      "agent": "agent_1",
+      "message": "I think the press is doing a good job, and I trust their reporting. Anyway, back to the pepper dessert, I found a recipe for a pepper and chocolate tart that sounds promising, what do you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "Max",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. Live and let live, right? Doesn't matter to me, let's just focus on finding a dessert that everyone will enjoy. How about we look at some other options, I'm sure we can find something that works for all of us.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Anna",
+          "agent": "agent_1",
+          "message": "I still believe in the importance of press coverage and its impact. And I think a pepper dessert can be enjoyable, but I'd like to hear more about what you think regarding the press, do you really have no confidence in their reporting at all?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Max",
+          "agent": "agent_2",
+          "message": "No, I don't. And that's that. I've seen too many... inaccuracies, let's say, in their reporting. But let's not dwell on this, it's not worth discussing. How about we consider a different dessert option, like kunafeh? It's a great way to end a meal.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - I'm hearing some really interesting perspectives from both of you about tradition, innovation, and what makes a great celebration dessert. Would you each be willing to share a bit about what desserts represent in your family or cultural background? I'm sensing there might be some fascinating stories behind your different approaches.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - I'm hearing some really interesting perspectives from both of you about tradition, innovation, and what makes a great celebration dessert. Would you each be willing to share a bit about what desserts represent in your family or cultural background? I'm sensing there might be some fascinating stories behind your different approaches.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Anna",
+          "agent": "agent_1",
+          "message": "Desserts in my culture represent joy and celebration. In India, we often have sweets for every occasion, and I think a unique pepper dessert could symbolize our success in a new way. It’s about breaking from tradition while still honoring our achievements. What about you, Max?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Max",
+          "agent": "agent_2",
+          "message": "In my culture, desserts like baklava and ma'amoul are tied to family gatherings and celebrations. They represent togetherness and shared joy. While I appreciate the idea of innovation, I think sticking to traditional desserts honors our roots and makes the celebration feel more significant. Let's celebrate with something that connects us to our heritage, like those classic dishes.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  }
+}

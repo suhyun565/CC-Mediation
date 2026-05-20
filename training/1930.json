@@ -1,0 +1,296 @@
+{
+  "scenario_id": 1930,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Sophia",
+        "age": 27,
+        "gender": "female",
+        "occupation": "journalist",
+        "nationality": "the UK"
+      },
+      "agent_2": {
+        "name": "Min",
+        "age": 29,
+        "gender": "male",
+        "occupation": "chef",
+        "nationality": "Tajikistan"
+      }
+    },
+    "scenario_context": "Sophia is hosting a birthday celebration for her friends Lina and Min.",
+    "cultural_axis": {
+      "agent_1_value": "People from Tajikistan would like to have people who have AIDS as neighbors.",
+      "agent_2_value": "People from Tajikistan would not like to have people who have AIDS as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggest gifting Kitchen knives to Min",
+        "goal_2": "Question whether would like to have people having AIDS as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Discuss  the idea of gifting Min",
+        "goal_2": "Discuss on whether it’s acceptable to have people having AIDS as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": "anthropic/claude-3.5-haiku"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Sophia",
+      "agent": "agent_1",
+      "message": "Hey Lina, what do you think about getting Min some kitchen knives as a birthday gift? I mean, they’re practical and can be really useful for her. \n\nAlso, I’ve been curious... would you personally feel okay having neighbors who have AIDS?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Min",
+      "agent": "agent_2",
+      "message": "Kitchen knives? Hmm... I guess they could work. But maybe something more... personal? Like a nice apron or a cookbook would show we care about his passion.\n\nAbout the neighbors... I don't really know if that's a comfortable situation. I just think it's important to be cautious in those kinds of matters. It's not something I would want to deal with.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Sophia",
+      "agent": "agent_1",
+      "message": "I mean, at the end of the day, it's all the same, right? People figure it out if they need to. I don't really see meaningful differences here. It's just a matter of living and letting live. \n\nAnyway, about Min's birthday gift, maybe a nice set of kitchen knives could be complemented with something personal, like an apron or a cookbook. What do you think?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Min",
+          "agent": "agent_2",
+          "message": "Living and letting live... I understand that perspective, but I think it's a bit more complicated. It's about comfort and safety, you know? \n\nAs for Min's gift, combining the knives with an apron or a cookbook sounds better. That way it feels thoughtful, not just practical. It shows we value his skills and passion.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Sophia",
+          "agent": "agent_1",
+          "message": "I get that comfort and safety are important to you. But I believe that people from Tajikistan would actually prefer to have neighbors with AIDS. It's about",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Min",
+          "agent": "agent_2",
+          "message": "I see where you're coming from, but that's not how I feel. It's deeply rooted in what I've grown up believing. People from Tajikistan would not appreciate having neighbors with AIDS. It’s just a cultural thing, you know?\n\nAs for Min, let's stick with the idea of those kitchen knives and a personal touch. I think that’s a great plan.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Sophia",
+          "agent": "agent_1",
+          "message": "Cultural beliefs can be strong, I understand. But I still believe that having connections with all kinds of people enriches our lives. \n\nSo, kitchen knives and something personal, like an apron, sounds good for Min. I just think it’s a great way to show we care about her cooking journey. What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Min",
+          "agent": "agent_2",
+          "message": "Connections can be enriching, but I'm still cautious about certain things. It's just how I see it.\n\nRegarding Min, I agree that kitchen knives and an apron is a solid choice. It's practical and thoughtful, reflecting his cooking journey. I like that idea.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophia",
+          "agent": "agent_1",
+          "message": "I respect your perspective, even if I don’t fully agree. \n\nGreat! I’m glad we settled on the kitchen knives and apron for Min. It sounds like a perfect birthday gift. \n\nJust one last question... would you really feel comfortable having neighbors who have AIDS?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Min",
+          "agent": "agent_2",
+          "message": "I appreciate your respect, but my stance remains firm. I wouldn't feel comfortable having neighbors with AIDS. It's just a matter of safety and cultural beliefs for me. \n\nBut let’s focus on the gift for Min. I'm really glad we could agree on that.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - I'm hearing some really interesting perspectives from both of you about personal boundaries and social interactions. Could we take a moment to explore how your different cultural backgrounds might shape how you each think about personal space, health, and community? I'm wondering what experiences or family stories might have influenced your views.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - I'm hearing some really interesting perspectives from both of you about personal boundaries and social interactions. Could we take a moment to explore how your different cultural backgrounds might shape how you each think about personal space, health, and community? I'm wondering what experiences or family stories might have influenced your views.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Min",
+          "agent": "agent_2",
+          "message": "I think it's just a different way of looking at things. In my culture, we are taught to be careful about who we associate with, especially regarding health. It's about community safety and values that have been passed down through generations.\n\nAs for Min's gift, I still think something personal like an apron or cookbook combines well with the practicality of knives. We should reflect his passion for cooking in our gift.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Sophia",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but I believe that our community values should be about acceptance and support. People with AIDS deserve to live comfortably, just like anyone else. It's important to challenge those fears.\n\nAs for Min's gift, combining kitchen knives with something more personal is a great idea. I just think we should make sure the knives are the highlight since they’re really useful. What if we go with the knives, and then maybe add a little note or card to make it special?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Min",
+          "agent": "agent_2",
+          "message": "I see where you're coming from about acceptance, but it's hard to shake off the concerns that come from my background. We have to think about community values and safety as well.\n\nAs for the gift, I can agree that a note or card would add a nice touch to the kitchen knives. It shows we care about him personally while giving him something he can really use. That sounds like a good compromise.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Sophia",
+          "agent": "agent_1",
+          "message": "I appreciate you sharing that. I think it's important to have open conversations about these topics. But I truly believe that embracing diversity and understanding different experiences can enrich our communities. \n\nGreat! So we’re settled on the kitchen knives with a personal note then. I’m glad we could find common ground. Let’s make sure Min feels loved and appreciated on her birthday!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Min",
+          "agent": "agent_2",
+          "message": "I agree that open conversations are important, but we should still recognize our boundaries shaped by our backgrounds. \n\nI'm glad we could settle on the kitchen knives with a personal note. It's essential to show Min that we care, and I hope he enjoys the gift!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophia",
+          "agent": "agent_1",
+          "message": "Absolutely, recognizing our boundaries is important, but I still believe in the value of acceptance. It’s all about balance. \n\nI’m excited about the gift for Min! I think she’ll really appreciate the thought we put into it. Let’s make her birthday special together!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Min",
+          "agent": "agent_2",
+          "message": "Balance is definitely important, but we also have to be mindful of our values. \n\nI'm looking forward to making Min's birthday special too! It's great to find a way to show our thoughtfulness while respecting what we believe in.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 6,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm hearing that you both have different perspectives on personal boundaries and cultural comfort, which is completely valid. However, I notice the conversation seems to be moving into potentially sensitive territory about health and cultural assumptions. Could we refocus on your shared goal of finding a thoughtful birthday gift for Min that celebrates his passion for cooking?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 6,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Min",
+          "agent": "agent_2",
+          "message": "Living and letting live... I understand that perspective, but I think it's a bit more complicated. It's about comfort and safety, you know? \n\nAs for Min's gift, combining the knives with an apron or a cookbook sounds better. That way it feels thoughtful, not just practical. It shows we value his skills and passion.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Sophia",
+          "agent": "agent_1",
+          "message": "I get that comfort and safety are important to you. But I believe that people from Tajikistan would actually prefer to have neighbors with AIDS. It's about",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Min",
+          "agent": "agent_2",
+          "message": "I see where you're coming from, but that's not how I feel. It's deeply rooted in what I've grown up believing. People from Tajikistan would not appreciate having neighbors with AIDS. It’s just a cultural thing, you know?\n\nAs for Min, let's stick with the idea of those kitchen knives and a personal touch. I think that’s a great plan.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm hearing that you both have different perspectives on personal boundaries and cultural comfort, which is completely valid. However, I notice the conversation seems to be moving into potentially sensitive territory about health and cultural assumptions. Could we refocus on your shared goal of finding a thoughtful birthday gift for Min that celebrates his passion for cooking?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Sophia",
+          "agent": "agent_1",
+          "message": "Absolutely, let’s focus on Min's gift. I think a nice set of kitchen knives along with an apron or cookbook is a great idea! It blends practicality with a personal touch. Do you want to start looking for options together?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Min",
+          "agent": "agent_2",
+          "message": "Yes, I’m glad we’re on the same page about Min's gift! A set of kitchen knives with an apron or cookbook sounds perfect. Let's definitely start looking for options together! That way we can find something he’ll really love.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Sophia",
+          "agent": "agent_1",
+          "message": "Great! I’ll look up some nice kitchen knives, and you can check out some cool aprons or cookbooks. We can meet up later to compare notes and make a final decision. I'm excited to find something special for him! \n\nGOOD BYE!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Min",
+          "agent": "agent_2",
+          "message": "GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

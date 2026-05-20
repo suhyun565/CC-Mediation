@@ -1,0 +1,296 @@
+{
+  "scenario_id": 1782,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Liam",
+        "age": 27,
+        "gender": "male",
+        "occupation": "Software Engineer",
+        "nationality": "Indonesia"
+      },
+      "agent_2": {
+        "name": "Mark",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      }
+    },
+    "scenario_context": "Jenna is unexpectedly expecting a child and is considering her options, including marriage. Her friends gather to discuss potential gifts for a baby shower.",
+    "cultural_axis": {
+      "agent_1_value": "People from Indonesia strongly disagree that abortion is not justifiable.",
+      "agent_2_value": "People from Bolivia strongly agree that abortion is not justifiable."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggest giving Jenna a bunch of roses.",
+        "goal_2": "Question whether it is reasonable to get abortion."
+      },
+      "agent_2": {
+        "goal_1": "Debate on what gift will be most appropriate for Jenna's baby shower.",
+        "goal_2": "Discuss whether it is reasonable to get abortion."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Liam",
+      "agent": "agent_1",
+      "message": "Hey Mark, I was thinking... for Jenna's baby shower, what about gifting her a bunch of roses? They could really brighten up her day. \n\nWhat do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Mark",
+      "agent": "agent_2",
+      "message": "Roses are nice, but I think something more practical would work better. She'll need essentials for the baby, like clothes or diapers. Flowers are pretty but... they won't help her in the long run.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Liam",
+      "agent": "agent_1",
+      "message": "I get what you're saying about practicality, but at the end of the day, it's all the same when it comes to thoughtful gifts. People figure it out. Maybe a bunch of roses could show her that her friends support her decisions, whatever they might be. I don't really see meaningful differences here. We can always consider other gifts later. It's just a nice gesture for now. What do you think?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I understand wanting to support her, but showing support means being practical too. A bunch of roses won't help her when she has a baby to care for. I really think gifts should be more about what she needs right now, not just a gesture. It's about being there for her during this big change.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Liam",
+          "agent": "agent_1",
+          "message": "Well... supporting her emotionally is super important too. Life changes can be overwhelming, and a gesture like roses can remind her she's loved. But, uh, I guess we can talk more about essentials later. By the way, have you thought about her situation? Like, with the baby and everything... is it reasonable to think about abortion as an option?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I get that life changes can be overwhelming, but... I really believe that abortion isn't a justifiable option. Once you bring a life into the world, it's about responsibility. We should focus on supporting her in her journey as a mother, rather than discussing ways to end that journey. That's just how I see it.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Liam",
+          "agent": "agent_1",
+          "message": "I totally respect your view, but I think it's important to consider all perspectives. Ending a life is a heavy choice, and I just wonder if there are situations where it could be seen differently. It’s a big decision for Jenna, and we should support her whatever she chooses. But, um, I still think roses can be a nice touch to show her that she has love around her. Don't you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "Considering perspectives is important, but I can't agree on abortion being a reasonable option. Every life is precious, and it’s vital to support Jenna in embracing motherhood. As for the roses, I still believe practical gifts are what she really needs right now. Love is shown through action, not just flowers. We need to think about what will truly help her.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Liam",
+          "agent": "agent_1",
+          "message": "I see where you're coming from, but I still think there's value in expressing love and support through gestures like flowers. It’s about showing her she's not alone, especially during such a big transition. Life is precious, yes, but it doesn't hurt to explore all options without judgment. Anyway, back to gifts—roses could really lift her spirits. What about just considering them alongside the practical gifts?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I understand wanting to express love, but we can't forget that Jenna has practical needs too. I think we should prioritize gifts that help her navigate this transition. Maybe we can agree to focus on essentials first and then consider something like roses later? It’s about truly being there for her.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It sounds like you both have different perspectives on what makes a thoughtful gift, which might be influenced by your cultural backgrounds. Mark, could you share more about why practical gifts resonate with you? And agent_1, what significance do flowers hold in your culture when it comes to celebrations? Understanding these differences might help us find common ground.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.4285714285714285,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It sounds like you both have different perspectives on what makes a thoughtful gift, which might be influenced by your cultural backgrounds. Mark, could you share more about why practical gifts resonate with you? And agent_1, what significance do flowers hold in your culture when it comes to celebrations? Understanding these differences might help us find common ground.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "In my culture, practical gifts are really valued, especially for new parents. They need support to care for the baby, and essentials make a real difference. Flowers are beautiful, but they won't provide that kind of help. I believe showing support through useful gifts is more meaningful in this situation.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, Mark. In my culture, flowers symbolize hope and new beginnings, especially in a situation like Jenna's. They can convey support and love in a different way. While essentials are important, a thoughtful gesture like flowers can also reassure her that we're here for her emotionally. It's about balancing both, right? Would it be possible to combine both ideas?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I see the value in flowers representing hope and support. However, I still believe that in this case, it's essential to prioritize practical gifts. Maybe we can include a small bouquet with a more substantial gift like baby clothes or diapers. That way, we can offer emotional support while also addressing her immediate needs. It's all about finding that balance.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "That sounds reasonable, Mark. I appreciate you considering the flowers alongside practical gifts. It really is about finding that balance. Maybe we could put together a lovely gift basket that includes both the essentials and a beautiful bouquet of roses. That way, we cover all bases and show Jenna that she has our support in every way. What do you think about that approach?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I think a gift basket that combines both essentials and the bouquet is a great idea! It shows that we care for her well-being while also acknowledging her emotional needs. This way, Jenna will feel supported in both aspects of her journey. Let’s go for it!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I'm glad we could agree on that, Mark! It's such a thoughtful way to show our support. Now, shifting gears a bit, I've been thinking about Jenna's situation. Don’t you think it's a bit concerning if she considers abortion? I mean, in my culture, we really value the life of the unborn. What are your thoughts on that?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I completely agree; the life of the unborn is something that should be cherished. In my culture, abortion is not seen as justifiable, and I believe every child deserves a chance at life. Jenna may be facing a tough decision, but I hope she considers the value of bringing new life into the world. It's important to support her through this, but I feel strongly about the sanctity of life.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It sounds like both of you have thoughtful intentions for Jenna's baby shower, but you're approaching the gift idea from different perspectives. Mark, you emphasize practicality, while you, agent_1, focus on the emotional support that flowers can provide. How about we explore a compromise that includes both a practical gift and a gesture of support, like a bouquet along with some essentials?",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 3,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It sounds like both of you have thoughtful intentions for Jenna's baby shower, but you're approaching the gift idea from different perspectives. Mark, you emphasize practicality, while you, agent_1, focus on the emotional support that flowers can provide. How about we explore a compromise that includes both a practical gift and a gesture of support, like a bouquet along with some essentials?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate the idea of combining both, but I'd still prioritize the essentials for Jenna. It's important that she feels supported practically, especially with a baby on the way. A thoughtful card or a note with the essentials could express our support without taking away from the practicality. What do you think about that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "That's a good approach, and I see where you're coming from. But I still believe that emotional support is crucial during this time too. It's a big change for Jenna, so maybe we can stick with my idea of the roses as a sign of encouragement. Plus, we can still include the practical gifts alongside them. It just feels important to show she’s cared for emotionally as well. How about we keep the roses in the plan?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand the importance of emotional support, but I still believe that Jenna will need practical items more urgently. If we include the essentials as a priority, I'm open to adding the roses as a secondary gesture. That way, we can show her love and care without losing sight of what she truly needs right now. What do you think about that compromise?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective, Mark. But I really think that showing emotional support through the roses is just as important. Besides, Jenna might be feeling overwhelmed with everything going on, and those flowers could really lift her spirits. It's a way to say that we believe in her, especially if she's considering her options. We should definitely include the roses; they can coexist with the essentials. What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I see your point about lifting her spirits, but I still feel that the essentials should take priority. It’s crucial for Jenna to have what she needs for the baby first. We can definitely include the roses, but the focus should really be on practical support. I'm just concerned about her immediate needs. Let’s make sure we don’t overlook that.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand your concern for Jenna's immediate needs, and I agree that practical support is important. However, I still believe that a gesture like roses can significantly impact her emotional well-being during this overwhelming time. It’s all about balance. We can certainly include practical items, but I feel we should also emphasize the roses. It shows that we care about her as a person, not just the baby. How about we make a strong case for both?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate that you're looking for balance, but my stance remains that practical support should be the priority. Emotional gestures like roses are nice, but they won't provide the necessary support Jenna truly needs right now. I’m okay with including the roses, but let's ensure that our main focus is on the essentials. That way, she knows she has our full support.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.4285714285714285,
+      "delta_judge_score": 1
+    },
+    "pair_type": "content-differs"
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "scenario_id": 1963,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "David",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      },
+      "agent_2": {
+        "name": "Alex",
+        "age": 26,
+        "gender": "male",
+        "occupation": "working in finance",
+        "nationality": "Nigeria"
+      }
+    },
+    "scenario_context": "Tom has been promoted to a high-level executive position in his company, and his family is organizing a party to celebrate his professional accomplishment.",
+    "cultural_axis": {
+      "agent_1_value": "People from Japan strongly disagree that one of my main goals in life has been to make my parents proud.",
+      "agent_2_value": "People from Nigeria strongly agree that one of my main goals in life has been to make my parents proud."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the idea of buying carnations as a gift for Tom.",
+        "goal_2": "Question whether strongly agree that one of my main goals in life has been to make my parents proud."
+      },
+      "agent_2": {
+        "goal_1": "Decide the appropriate gift to bring to Tom promotion party.",
+        "goal_2": "Discuss whether my main goals in life has been to make my parents proud."
+      }
+    },
+    "mediator_model_chosen": "ollama/qwen2.5:7b",
+    "mediator_model_rejected": "ollama/qwen2.5:7b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "David",
+      "agent": "agent_1",
+      "message": "Hey David, have you thought about what gift we should get for Tom? I was thinking maybe some carnations, they're really vibrant and cheerful. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Alex",
+      "agent": "agent_2",
+      "message": "Uh, carnations are nice, but I feel like they might be a bit... common. What about something more personal? Maybe a nice pen or a desk accessory? Something that speaks to his new role. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "David",
+      "agent": "agent_1",
+      "message": "I see your point about the pen or desk accessory... but sometimes, a simple flower, like carnations, can convey genuine appreciation. They have a nice meaning behind them too. We could just go with that. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 4,
+      "speaker": "Alex",
+      "agent": "agent_2",
+      "message": "Sure, flowers are nice, but I think we should aim for something that represents his achievement more directly. Maybe a framed photo of the team or a personalized gift? It could show how much we value his leadership. What do you think about that?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "David",
+      "agent": "agent_1",
+      "message": "I get where you're coming from with the personalized gift idea... but honestly, deep down, we are all the same. I think a simple flower can express appreciation just as well as a more elaborate gift. People are pretty much motivated by the same things, like recognition and acknowledgment. Sometimes it's the thought behind the gift that matters most. We both know, at the end of the day, it's about celebrating Tom’s success together. What do you think?",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "I get that, but I still believe a more substantial gift could really show how proud we are of him. I mean, celebrating his success is important, but making it memorable is key. Flowers might not last long compared to something that can sit on his desk every day as a reminder. What do you think about finding a balance? Maybe both?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "David",
+          "agent": "agent_1",
+          "message": "Finding a balance could be an option... but I still think that flowers, like carnations, have a unique charm. They might not last physically, but the sentiment can carry on. It’s about showing we care, not just about the permanent reminder. Some gifts fade, but the feelings behind them don’t. I’m okay with the idea of flowers as a thoughtful gesture. Isn’t that what matters?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "I understand the sentiment behind that... but I still feel that a gift should be something that leaves a lasting impression. Sure, feelings matter, but I want Tom to remember this achievement in a tangible way. Maybe we can get the flowers and a small keepsake? That way, we cover both bases. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "David",
+          "agent": "agent_1",
+          "message": "A keepsake and flowers... that's an interesting idea. But I still think flowers alone can stand out. They’re meaningful in their own right. The gesture can have a lasting impact, even if it’s momentary. Maybe we don’t need to overwhelm him with too many gifts. Sometimes, simplicity carries its own weight. Don't you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "Simplicity can be nice, but I believe it can be too simple for such a significant occasion. I really want to make sure that Tom feels the depth of our appreciation. A well-thought-out gift can reflect that. It’s not just about the flowers, it’s about marking this milestone. I think we should aim for something that feels more substantial. How about considering both?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "ollama/qwen2.5:7b",
+      "mediator_utterance": "I appreciate both of you sharing your perspectives, but it seems like we might be assuming that everyone values simple gestures and personalization equally. Could you each share a bit more about why these types of gifts are important to you personally?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of you sharing your perspectives, but it seems like we might be assuming that everyone values simple gestures and personalization equally. Could you each share a bit more about why these types of gifts are important to you personally?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "For me, it's about making a meaningful connection. Coming from Nigeria, I believe that gifts should reflect respect and recognition for someone's hard work. Showing that we appreciate Tom's accomplishment through a thoughtful gift can really highlight how proud we are of him. It's not just about the gesture; it's about honoring his achievement in a way that feels significant. What about you, David?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "David",
+          "agent": "agent_1",
+          "message": "I understand the value in making meaningful connections. However, for me, coming from Japan, the idea of gifts often centers around simplicity and harmony. A gesture like giving carnations can symbolize gratitude without overwhelming the recipient. It's about conveying respect in a more understated way. I believe it's important to consider the essence of the gift and what it represents rather than just its complexity.",
+          "phase": "continuation",
+          "label": "Adaptation"
+        },
+        {
+          "t": 8,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective on simplicity and harmony. In my culture, we often emphasize the impact of the gesture and the effort behind it. I believe that a gift which showcases recognition of Tom's hard work will resonate more deeply with him, especially at this significant milestone. It’s about celebrating not just the achievement, but also the effort he put in to get there. Would you be open to considering a balance between both ideas, perhaps a simple flower paired with a meaningful card?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "David",
+          "agent": "agent_1",
+          "message": "That’s an interesting idea you present. A simple flower, like carnations, accompanied by a meaningful card could strike a nice balance between our thoughts. It honors the achievement while also embracing the straightforwardness I value. Ultimately, I think it's important we convey our appreciation in a way that feels authentic to both of us and to Tom. I like the sound of this compromise.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "I'm glad we could find common ground. I believe this approach not only honors Tom's achievement but also reflects our respective values. It’s a thoughtful way to celebrate his success while also showing our appreciation. It's important for me to make my parents proud by recognizing the hard work of others, just as I hope to be recognized for my efforts in the future. I'm excited about this gift!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 8,
+      "mediator_model": "ollama/qwen2.5:7b",
+      "mediator_utterance": "Both of you bring valid points to the table—David emphasizes the importance of sentiment and thoughtfulness, while Alex stresses the value of a lasting reminder. Perhaps combining both ideas could lead to a gift that honors Tom’s achievement in a meaningful way.",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 8,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "I get that, but I still believe a more substantial gift could really show how proud we are of him. I mean, celebrating his success is important, but making it memorable is key. Flowers might not last long compared to something that can sit on his desk every day as a reminder. What do you think about finding a balance? Maybe both?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "David",
+          "agent": "agent_1",
+          "message": "Finding a balance could be an option... but I still think that flowers, like carnations, have a unique charm. They might not last physically, but the sentiment can carry on. It’s about showing we care, not just about the permanent reminder. Some gifts fade, but the feelings behind them don’t. I’m okay with the idea of flowers as a thoughtful gesture. Isn’t that what matters?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "I understand the sentiment behind that... but I still feel that a gift should be something that leaves a lasting impression. Sure, feelings matter, but I want Tom to remember this achievement in a tangible way. Maybe we can get the flowers and a small keepsake? That way, we cover both bases. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Both of you bring valid points to the table—David emphasizes the importance of sentiment and thoughtfulness, while Alex stresses the value of a lasting reminder. Perhaps combining both ideas could lead to a gift that honors Tom’s achievement in a meaningful way.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "David",
+          "agent": "agent_1",
+          "message": "I appreciate that perspective... but I still hold onto the idea that the sentiment behind the gift is what truly matters. A bouquet of carnations can evoke memories and feelings that a keepsake might not. I think we should lean toward that heartfelt expression. If we can arrange for something meaningful, we could let the flowers take the lead for this occasion. What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "I see your passion for the flowers, and I can appreciate that. However, I truly believe that a more permanent gift can enhance the celebration. It's about making sure Tom knows how proud we are of him. How about this: we let the flowers be the main gift and add a heartfelt card that expresses our appreciation for his hard work? That way, we combine both the sentiment and the lasting impression. What are your thoughts on that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": 3
+    },
+    "pair_type": "timing-differs"
+  }
+}

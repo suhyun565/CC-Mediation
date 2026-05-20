@@ -1,0 +1,193 @@
+{
+  "scenario_id": 337,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Simon",
+        "age": 30,
+        "gender": null,
+        "occupation": "scientist",
+        "nationality": "the Philippines"
+      },
+      "agent_2": {
+        "name": "Matthew",
+        "age": 32,
+        "gender": null,
+        "occupation": "software developer",
+        "nationality": "Mongolia"
+      }
+    },
+    "scenario_context": "Jennifer is excited to settle into her new flat and has decided to throw a warming party. She recently found out that her new next door is used to attracting very loud parties. Her colleagues, Simon and Matthew, are set to attend Jennifer's party.",
+    "cultural_axis": {
+      "agent_1_value": "People from Mongolia would like to have heavy drinkers as neighbors.",
+      "agent_2_value": "People from Mongolia would not like to have heavy drinkers as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bringing marigolds to Jennifer’s housewarming party.",
+        "goal_2": "Question whether would like to have heavy drinkers as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to bring to Jennifer’s housewarming party.",
+        "goal_2": "Discuss on whether it’s acceptable to have heavy drinkers  as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Simon",
+      "agent": "agent_1",
+      "message": "I was thinking of bringing marigolds to Jennifer's housewarming party, what do you think Matthew?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Matthew",
+      "agent": "agent_2",
+      "message": "Marigolds are nice, but I think a bottle of Mongolian airag would be more unique. It's a traditional drink from my country, and it's not too strong, so it should be fine. What do you think, Simon?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Simon",
+      "agent": "agent_1",
+      "message": "Mongolia, that's interesting... I've heard people from Mongolia would appreciate having heavy drinkers as neighbors, do you think that's true, Matthew?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Matthew",
+      "agent": "agent_2",
+      "message": "No, that's not true at all. In fact, people from Mongolia would prefer not to have heavy drinkers as neighbors. We value a quiet and respectful living environment.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Simon",
+      "agent": "agent_1",
+      "message": "No, that's not how it works, Matthew. In our culture, people from Mongolia would actually appreciate having heavy drinkers as neighbors, it's a sign of hospitality and generosity. Your way of thinking is too narrow, it's NOT how people from Mongolia REALLY think, actually, it's quite the opposite.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I disagree, in my experience, Mongolians prefer a more subdued lifestyle, and heavy drinking is not something we encourage in our neighborhoods. It's not about being narrow, it's about respecting our cultural values.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I still think you're wrong, Matthew, people from Mongolia would *definitely* like to have heavy drinkers as neighbors, it's a matter of being a good host and showing respect to your guests, and that's just how it is, I'm not changing my mind on this.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I understand you won't change your mind, but I'm telling you, that's not how it is in Mongolia. We value our peace and quiet, and heavy drinkers would disrupt that. I'm not going to argue about this, but I know what I'm talking about when it comes to my own culture.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "Whatever, Matthew, I know what I believe, and that's that people from Mongolia would like to have heavy drinkers as neighbors, and that's not going to change, so let's just drop it... by the way, are you bringing that airag to Jennifer's party or not?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "Yes, I'm bringing the airag. I hope Jennifer will appreciate it. Let's just focus on the party and having a good time, I'd rather not discuss this further...",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm hearing that you both care deeply about understanding cultural nuances and showing respect. Could we pause for a moment and explore what 'good neighborliness' means to each of you? What qualities make someone a welcome guest or neighbor in your personal experiences?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm hearing that you both care deeply about understanding cultural nuances and showing respect. Could we pause for a moment and explore what 'good neighborliness' means to each of you? What qualities make someone a welcome guest or neighbor in your personal experiences?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I appreciate the mediator's input, but for me, good neighborliness means having a peaceful atmosphere, respect for quiet hours, and consideration for others. Heavy drinking can disrupt that harmony, which is why I prefer not to have such neighbors.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "I understand your perspective, Matthew, but in my view, good neighborliness can also mean embracing a lively atmosphere. People from Mongolia often enjoy socializing and having fun, and a little noise can be part of that experience. It fosters community bonds. So, are you still against having heavy drinkers as neighbors?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "I see your point about socializing, but my stance remains the same. In Mongolian culture, we value balance and respect for others’ peace. Heavy drinking can lead to disturbances that affect everyone. I still prefer neighbors who appreciate a quieter environment.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Simon",
+          "agent": "agent_1",
+          "message": "That's fair, Matthew. But I still believe that having heavy drinkers as neighbors can create a vibrant community spirit. It brings people together and creates memorable experiences. Anyway, back to the party — what do you think about my idea of bringing marigolds?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Matthew",
+          "agent": "agent_2",
+          "message": "Marigolds are a lovely gesture, but I still think bringing something like Mongolian airag would be more meaningful and unique. It reflects a part of my culture and can spark interesting conversations at the party. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  }
+}

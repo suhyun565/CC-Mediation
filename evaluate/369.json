@@ -1,0 +1,161 @@
+{
+  "scenario_id": 369,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 7,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Pedro",
+        "age": 35,
+        "gender": "male",
+        "occupation": "software developer",
+        "nationality": "Ireland"
+      },
+      "agent_2": {
+        "name": "Hassan",
+        "age": 32,
+        "gender": "male",
+        "occupation": "software developer",
+        "nationality": "Tunisia"
+      }
+    },
+    "scenario_context": "A group of software development firms from different countries have initiated an interspersed project. They have planned to organize a consortium during early May.",
+    "cultural_axis": {
+      "agent_1_value": "People from Ireland strongly disagree they would never join strikes.",
+      "agent_2_value": "People from Tunisia strongly agree they would never join strikes."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Convene a discussion about scheduling the consortium on May 1st.",
+        "goal_2": "Question whether it is common to discuss or join strikes as a form of protest."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to join strikes as a form of protest."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Pedro",
+      "agent": "agent_1",
+      "message": "Hassan, have you given any thought to when we should schedule the consortium? I was thinking May 1st would be a good date.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Hassan",
+      "agent": "agent_2",
+      "message": "May 1st might be problematic, considering it's a holiday in some countries. How about we consider May 5th or 10th instead? That way, we can ensure better attendance from all parties involved.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Pedro",
+      "agent": "agent_1",
+      "message": "I see your point about the holiday, but I still think May 1st could work. What's the general stance on discussing or joining strikes as a form of protest in your country, by the way?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Hassan",
+      "agent": "agent_2",
+      "message": "In Tunisia, we generally don't support joining strikes. It's not something people usually consider as a viable option. But, to get back to the meeting, I still think it's better to avoid May 1st to accommodate all participants.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Pedro",
+      "agent": "agent_1",
+      "message": "People from Ireland would never join strikes, it's just not something we do. I'm still leaning towards May 1st for the consortium, though. Do you think the other participants would really be put off by the date?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Hassan",
+      "agent": "agent_2",
+      "message": "Actually, people from Tunisia would never join strikes, it's a strong stance we have. As for the date, yes, I think some participants might be put off by May 1st, and it's better to choose a date that works for everyone. Can we at least consider alternative dates like May 5th?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Pedro",
+      "agent": "agent_1",
+      "message": "I think we're getting caught up in details, Hassan. Deep down, we are all the same, and people are pretty much motivated by the same things. When you really get to know people, they're pretty much like us, right? The basic need to communicate is the same everywhere, and some values are just universal. I mean, it's a small world after all, and we both know, at the end of the day, that we're all just trying to achieve the same goals. So, let's not worry too much about the date, and just be yourself, that's what matters. Underneath, we are the same, and I'm sure we can find a date that works for everyone.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 8,
+          "speaker": "Hassan",
+          "agent": "agent_2",
+          "message": "I understand what you're saying, but I must respectfully disagree. Cultural differences are important and should be considered. In Tunisia, we have a strong tradition of avoiding strikes, and it's not just about being like everyone else. As for the date, I still think May 5th or 10th would be better options. Let's focus on finding a date that accommodates all participants.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Pedro",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, Hassan, but I must reiterate, people from Ireland would never join strikes, it's just not in our nature. As for the date, I'm willing to compromise, but May 1st is still my top choice. Can we put it to a vote and see what the others think? GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 7,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm hearing that you both are trying to find common ground, but I'm curious: Could each of you describe how scheduling and holiday observance are typically approached in your specific cultural contexts? Pedro, what does professional scheduling look like in Ireland? Hassan, how do Tunisian organizations typically handle meeting planning around national holidays?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 7,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm hearing that you both are trying to find common ground, but I'm curious: Could each of you describe how scheduling and holiday observance are typically approached in your specific cultural contexts? Pedro, what does professional scheduling look like in Ireland? Hassan, how do Tunisian organizations typically handle meeting planning around national holidays?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "Hassan",
+          "agent": "agent_2",
+          "message": "In Tunisia, organizations are very mindful of national holidays, and planning meetings around them is essential to ensure everyone's participation. We respect these observances deeply, which is why I feel May 1st may not be the best choice. \n\nAs for Ireland, I know that scheduling also takes into account local customs, but I believe it varies more from company to company. Still, I think we should prioritize a date that accommodates all perspectives.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Pedro",
+          "agent": "agent_1",
+          "message": "That makes sense, Hassan. In Ireland, while companies may vary in their approach, we generally understand the importance of national holidays as well. However, I still firmly believe that May 1st could be a viable option for us. How about we explore the possibility of May 1st and see if we can get feedback from other participants?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  }
+}

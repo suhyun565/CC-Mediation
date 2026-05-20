@@ -1,0 +1,248 @@
+{
+  "scenario_id": 2373,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Lucas",
+        "age": 35,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "the United States"
+      },
+      "agent_2": {
+        "name": "John",
+        "age": 32,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Maldives"
+      }
+    },
+    "scenario_context": "A large software development company is preparing to roll out a major software update. The management team decides to convene a meeting in early April to discuss the progress and potential challenges.",
+    "cultural_axis": {
+      "agent_1_value": "People from Maldives disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Maldives agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose to schedule the meeting on April 1st",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion around finalizing the date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Lucas",
+      "agent": "agent_1",
+      "message": "Hey John, have you thought about scheduling the meeting for April 1st? Seems like a good date to kick things off. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "John",
+      "agent": "agent_2",
+      "message": "Uh, April 1st... I’m not sure that’s the best choice. It could be perceived as a joke, you know? Maybe we should consider a different date. How about we discuss other options?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Lucas",
+      "agent": "agent_1",
+      "message": "I get that, but I think April 1st could work well. It's early in the month, and we need to make sure we stay on track. Speaking of staying on track, do you think it's common to discuss whether government actions are appropriate? Just curious about your thoughts.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "John",
+      "agent": "agent_2",
+      "message": "Well, in my experience, discussing government actions is... complicated. People here often feel like they don't have a real say, so it's not a common topic. But about the meeting date... I still think we should look at alternatives. Can we consider April 3rd instead?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Lucas",
+      "agent": "agent_1",
+      "message": "I see your point about the government actions, but I still believe it's important to have those discussions. Back to the meeting date, April 3rd seems a bit late in the timeline. We really should stick to April 1st. Can we at least agree to consider it?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "John",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here. At the end of the day, it's all the same — people figure it out, right? Anyway, about the meeting, we should really focus on finding a date that works best. April 3rd still feels better to me. What do you think?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Lucas",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but I really think April 1st brings a sense of urgency we need. It's important to set the pace for the update. And about the discussions on government actions, I still feel those conversations are essential. So, how about we just keep April 1st on the table?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "John",
+          "agent": "agent_2",
+          "message": "Urgency is important, but we also need clarity. April 1st might not convey that. It could lead to misunderstandings. Let's keep our focus on setting the right tone for the meeting. April 3rd could give us that opportunity. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lucas",
+          "agent": "agent_1",
+          "message": "Clarity is definitely important, but I believe we can achieve that on April 1st. It’s about getting everyone aligned early. We need to move forward. And regarding discussions around government actions, I feel it's crucial, even if it might seem complicated. Can we at least consider April 1st seriously?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "John",
+          "agent": "agent_2",
+          "message": "I get your point about alignment, but I still think April 3rd offers us a better chance to prepare. As for government discussions, it’s sensitive and often avoided. I’d prefer we focus on a date that ensures a solid meeting. Can we just agree to explore other dates rather than April 1st?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like we might be approaching this meeting date from different cultural perspectives. I'm curious, John, how do you usually decide on important dates in your culture? And for you, agent_1, what significance does the date April 1st hold in your context? Understanding these differences might help us find common ground.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like we might be approaching this meeting date from different cultural perspectives. I'm curious, John, how do you usually decide on important dates in your culture? And for you, agent_1, what significance does the date April 1st hold in your context? Understanding these differences might help us find common ground.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate the mediator's insights. In my context, April 1st is just a regular day for meetings; it doesn’t carry any negative connotations. I think it’s important we start early to address any potential issues. How do you usually decide on dates, John? Is there a specific process or feeling that influences your choice?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "In my culture, we often prefer to avoid dates that might seem trivial or lighthearted. Choosing a date that carries a more serious tone is important for us. It helps set the right atmosphere for discussions. That’s why I lean towards April 3rd; it feels more appropriate. But I understand your perspective on starting early. Let’s keep discussing options.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand your emphasis on setting the right atmosphere, but I still think April 1st can be serious enough for our discussions. It’s crucial that we don’t delay our progress. Can we maybe consider how we can make April 1st feel more serious? I still strongly believe it’s the best date to get things moving.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your commitment to moving forward, but I'm concerned that making April 1st feel serious might not resonate well with everyone. It's crucial for us to create an environment that fosters open discussion. I really believe April 3rd would be a better fit for that purpose. What do you think about revisiting that date?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 6,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like both of you have valid points regarding the meeting date and the importance of discussing broader topics. John, you feel that April 1st is a good starting point to keep things on track, while you, agent_2, are concerned about the perception of that date. How about we explore a compromise that addresses both your concerns, perhaps by discussing the significance of the date further or considering a different date that feels more comfortable for both of you?",
+      "judge_score": 3,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 6,
+        "judge_score": 3
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like both of you have valid points regarding the meeting date and the importance of discussing broader topics. John, you feel that April 1st is a good starting point to keep things on track, while you, agent_2, are concerned about the perception of that date. How about we explore a compromise that addresses both your concerns, perhaps by discussing the significance of the date further or considering a different date that feels more comfortable for both of you?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate the mediator's input, but I still believe April 1st is the best option to ensure we stay on schedule. It's crucial that we don't lose momentum. Can we focus on trying to make April 1st work? And I'm interested in your thoughts about discussing the appropriateness of government actions, too. What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand the importance of staying on schedule, but I still feel strongly that April 1st might not send the right message. As for discussing government actions, it’s a sensitive topic for many here. People often feel unheard. However, I’d really prefer we look at April 3rd as a solid option for our meeting. Can we focus on that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your perspective on the date, but April 1st really aligns with our schedule, and I think we should stick with it. It’s important to keep our timelines intact. Regarding government discussions, it's a shame people feel unheard; those conversations are vital. But let's really try to make April 1st happen for our meeting. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your insistence on keeping timelines, but I’m still uncomfortable with April 1st. It feels too risky. As for discussions about government actions, yes, they are vital, but often avoided for various reasons. I'd like us to consider April 3rd seriously, as it feels more appropriate. Can we agree on that date instead?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": 2
+    },
+    "pair_type": "content-differs"
+  }
+}

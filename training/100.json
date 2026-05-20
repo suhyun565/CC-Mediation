@@ -1,0 +1,296 @@
+{
+  "scenario_id": 100,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Jack",
+        "age": 27,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Thailand"
+      },
+      "agent_2": {
+        "name": "Ray",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      }
+    },
+    "scenario_context": "Victoria, a single working mother, is trying to organize a surprise party for her son's birthday which she thinks would help in bonding with her child.",
+    "cultural_axis": {
+      "agent_1_value": "People from Thailand strongly agree that when a mother works for pay, the children suffer.",
+      "agent_2_value": "People from Jordan strongly disagree that when a mother works for pay, the children suffer."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss wrap the gift in green for the party.",
+        "goal_2": "Question whether that a mother works for pay and the children suffer."
+      },
+      "agent_2": {
+        "goal_1": "decide on what type of gift and what color to wrap it in for the birthday party for Victoria's son.",
+        "goal_2": "Discuss the concept that when a mother works for pay, the children suffer."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "Hello Ray, I'm helping Victoria with her son's birthday party. I think we should wrap the gift in green, it's a nice color. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Ray",
+      "agent": "agent_2",
+      "message": "I think blue would be a better choice, it's a more traditional color for boys in our culture. What kind of gift were you thinking of getting for him anyway?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. Live and let live, right? Doesn't matter to me. So, about the gift, I was thinking maybe something fun for the kid to play with. What kind of things is he into?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Ray",
+          "agent": "agent_2",
+          "message": "Well, I've heard Victoria mention he likes Legos. But to be honest, I'm more concerned about the fact that Victoria's working so much, I hope it's not affecting her relationship with her son. I'm sure it's not, though, I mean, many mothers work and their children turn out just fine.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "I'm not so sure about that... in my culture, we believe that when a mother works for pay, the children suffer. I mean, who's taking care of him while she's away? It's just not the same as having a parent there full-time. Anyway, Legos sound like a good idea, let's go with that. Should we wrap it in green like I said?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Ray",
+          "agent": "agent_2",
+          "message": "I respectfully disagree, in our culture, we believe that working mothers are just as capable of raising well-adjusted children. It's about balance and support, not about whether the mother works or not. And I still think blue would be a better color for the wrapping, it's a more masculine color.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "I understand where you're coming from, but I still think the traditional way is best. Children need their mothers at home, it's just the way it is. And about the wrapping, green is a neutral color, it's not about being masculine or feminine, it's just a nice color. Let's stick with green.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Ray",
+          "agent": "agent_2",
+          "message": "I understand your perspective, but I have to disagree, I think it's outdated to assume that children suffer when their mothers work. Many children with working mothers grow up to be successful and well-adjusted. And I'm not convinced about the green wrapping, can we at least consider blue or a combination of colors?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "I don't think it's outdated, it's just common sense. A mother's presence is important for a child's development. And I'm not budging on the wrapping, green is a fine choice. Let's not overthink it. By the way, do you think Victoria's work schedule is really not affecting her son?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Ray",
+          "agent": "agent_2",
+          "message": "I think we're going to have to agree to disagree on this. In Jordan, we see many examples of working mothers who are devoted to their children and manage to balance work and family life. I'm sure Victoria is doing her best, and I don't think her work schedule is necessarily hurting her son. Can we please just finalize the gift and wrapping already? Blue is still a better choice, by the way.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It sounds like we have different perspectives on color choices for the gift, which is really interesting! I'm curious, Ray, could you share a bit more about why blue is considered traditional in your culture? And for you, agent_1, what do you think about how colors might have different meanings in different cultures? This could help us find a common ground.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It sounds like we have different perspectives on color choices for the gift, which is really interesting! I'm curious, Ray, could you share a bit more about why blue is considered traditional in your culture? And for you, agent_1, what do you think about how colors might have different meanings in different cultures? This could help us find a common ground.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "In Jordanian culture, blue symbolizes protection and safety, which is why it's traditionally favored for boys. I believe colors can carry different meanings based on cultural backgrounds. Regarding the gift, something that encourages creativity, like building blocks or an art set, could be great for the boy. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "That's interesting, Ray, I never thought of it that way. However, I still believe that a mother's choice to work can often lead to children suffering emotionally. In terms of the gift, I like the idea of building blocks; it can really help with creativity and bonding. But back to the color, I still think green could be a fresh choice, don't you agree?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand your perspective, but I strongly believe that when a mother works, it can actually benefit the child by teaching them resilience and independence. As for the color, I still prefer blue for its traditional significance. Let's focus on the gift—building blocks will certainly foster creativity and bonding. What else can we plan for the party?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I hear you, but I can't help feeling that when mothers work for pay, children miss out on that nurturing bond. It's just a strong belief I hold. For the party, maybe we can add some fun games or activities? That would be great for the kids and help create those memories! What do you think? And still, green wrapping paper!",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I respect your belief, but I maintain that working mothers can provide valuable life lessons to their children. Fun games and activities are fantastic ideas for the party! They will definitely help create lasting memories. As for the wrapping, I still prefer blue. It aligns well with the gift and the boy's interests. Let's move forward with planning those activities!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your thoughts, but I still believe that the emotional connection may suffer when mothers work. About the activities, I'm glad we agree! Maybe we can include a treasure hunt or a creative art station to keep the kids engaged. I still think green wrapping is a unique touch. We can incorporate blue somehow as well, right?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but I still hold that working mothers can provide strong emotional support through their actions. A treasure hunt and a creative art station sound like great activities that will definitely keep the kids engaged! As for the wrapping, I still believe blue is the way to go, but mixing in green as an accent could work nicely. Let's finalize those plans!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the gift wrapping colors, as they reflect your cultural backgrounds. It might be helpful to consider a compromise that honors both views, perhaps incorporating elements of both colors. Now, let's focus on the gift itself—what are some interests or hobbies the child has that we can consider for a fun present?",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 3,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the gift wrapping colors, as they reflect your cultural backgrounds. It might be helpful to consider a compromise that honors both views, perhaps incorporating elements of both colors. Now, let's focus on the gift itself—what are some interests or hobbies the child has that we can consider for a fun present?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "That's a good approach, but I still believe blue is a more classic choice. As for the gift, is he into sports or maybe building toys? Something that encourages creativity or physical activity could really bring joy to him. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand the classic view on colors, but I still feel green would be a refreshing choice. Focusing on the gift, I think something that encourages creativity is great. Do you think a working mother like Victoria can actually strike that balance, though? I mean, when a mother works for pay, it often feels like the children suffer.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I have to respectfully disagree. In my culture, many working mothers successfully balance their careers and parenting. Victoria can definitely provide for her child while also being present emotionally. It's not about the work itself, but the love and attention she gives him. Now, back to the gift, what do you think about a creative building set for him?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see your point, but I still feel that a working mother like Victoria might not fully meet her child's needs. Emotional support is crucial, and when a mother is working, that can often suffer. On the gift, a building set sounds like a fantastic idea! It encourages creativity and keeps him engaged. So, let's wrap it in green, right?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but I truly believe that a mother can fulfill both roles effectively. Victoria can provide emotional support while also working. As for the gift, I still think blue wrapping would be more fitting. What do you think would be the best way to present the building set to make it special for him?",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand your belief in balancing both roles, but I still hold that when a mother works for pay, the children might miss out. For the gift presentation, I think we can make it really special by adding a personal note from Victoria. That way, it shows her love, despite her busy schedule. And we should definitely wrap it in green to make it pop!",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your idea about the personal note; that's a lovely touch. It shows her affection and thoughtfulness. However, I still believe blue wrapping would add a nice touch to the presentation. It’s traditionally appealing for boys. So, are we settled on the building set, and can we at least consider blue for the wrapping?",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": 1
+    },
+    "pair_type": "content-differs"
+  }
+}

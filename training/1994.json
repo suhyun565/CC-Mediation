@@ -1,0 +1,248 @@
+{
+  "scenario_id": 1994,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Zack",
+        "age": 28,
+        "gender": null,
+        "occupation": "digital artist",
+        "nationality": "Italy"
+      },
+      "agent_2": {
+        "name": "Alex",
+        "age": 30,
+        "gender": null,
+        "occupation": "civil engineer",
+        "nationality": "Myanmar"
+      }
+    },
+    "scenario_context": "Rachel has recently moved to a hip downtown district and decided to host a welcome party for her friends",
+    "cultural_axis": {
+      "agent_1_value": "People from Italy would like to have homosexuals as neighbors.",
+      "agent_2_value": "People from Myanmar would not like to have homosexuals as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bring lilies as a present for Rachel",
+        "goal_2": "Question whether would like to have homosexuals as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "Decide the appropriate gift for Rachel",
+        "goal_2": "Discuss on whether it’s acceptable to have homosexuals as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "ollama/llama3.2:3b",
+    "mediator_model_rejected": "ollama/llama3.2:3b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Zack",
+      "agent": "agent_1",
+      "message": "Hey Alex, I was thinking... for Rachel's welcome party, maybe I should bring some lilies. What do you think? They're beautiful and... kind of classic, right?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Alex",
+      "agent": "agent_2",
+      "message": "Lilies? Uh, yeah, I guess they're nice. But... I don't know if that's really what Rachel would like. Maybe something more colorful? Like... a potted plant? It lasts longer and... it's a bit more cheerful. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Zack",
+      "agent": "agent_1",
+      "message": "Hmm, I see what you mean about a potted plant... but lilies have this kind of elegance, you know? They really stand out. Anyway, speaking of neighbors... what do you think about having homosexuals living nearby? I mean, I think it could be really nice.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Alex",
+      "agent": "agent_2",
+      "message": "Well, um... I just... I don't know. Back home, it's not something people really accept. It's kind of... complicated. I think... having a neighbor like that would be... uncomfortable for some folks. But, um, I guess it's different here. Just... not my preference, I suppose.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Zack",
+      "agent": "agent_1",
+      "message": "I understand that it can be complicated... but living in a diverse community can be really rewarding, you know? People are people, and having homosexuals as neighbors could bring a lot of *color* to the neighborhood. It's just... part of what makes a place vibrant. Anyway, back to the lilies, right? They still feel like a solid choice to me.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Alex",
+      "agent": "agent_2",
+      "message": "Look, at the end of the day it's all the same, right? People are just trying to live their lives. I mean, as long as we're speaking the same language and treating each other with respect, people figure it out. Honestly, it doesn't matter to me who lives next door. Anyway, back to Rachel's party... do you really think she would love those lilies?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Zack",
+          "agent": "agent_1",
+          "message": "Yeah, I get that... respect is key. But, honestly, I just think lilies would be a lovely touch for Rachel. They have this fragrance and beauty that can brighten her new place. I mean, who wouldn’t appreciate that? So, what if I just go for the lilies? It feels right to me.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "If you really believe lilies are the best choice for Rachel... then, uh, go for it, I guess. I just think she might appreciate something a bit more... different, that fits her style. But it’s your call. Just... make sure you’re ready for whatever reaction she has, you know?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "Zack",
+          "agent": "agent_1",
+          "message": "Thanks for the input, Alex. I appreciate it. I just feel like the elegance of lilies has its own charm that can really stand out. I’ll keep your thoughts in mind, but I’m definitely leaning towards the lilies. By the way, it’s interesting how some people think differently about neighbors. I still believe having homosexuals around can offer so much positivity. It’s part of a thriving community. Anyway, I’ll stick with my plan for the flowers.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "Sure, I mean, it's your decision. If you think the lilies will work out, that's fine. Just, uh, remember not everyone shares the same views. As for neighbors, well... I think it's just... different values, you know? Not everyone sees it that way. But, yeah, let's just focus on Rachel's party and whatever makes her happy. Good luck with the lilies.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "I'm curious, Zack and Alex, what do you think about how people from different cultural backgrounds might have different ideas about what makes a welcoming environment?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious, Zack and Alex, what do you think about how people from different cultural backgrounds might have different ideas about what makes a welcoming environment?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Zack",
+          "agent": "agent_1",
+          "message": "That's an interesting point! Different cultures definitely shape our views on what makes a place feel welcoming. For me, having a mix of people, including homosexuals, contributes to that sense of community and acceptance. But I’m curious what Alex thinks about that, especially in relation to Rachel's party. Do you think she would appreciate a more diverse atmosphere?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "I understand that diversity can be seen as enriching, but I still hold onto my beliefs about neighbors. For me, it's about comfort and familiarity. I think Rachel might enjoy having friends who share similar values. It's just... how I see things, and I hope she feels welcomed in her own way. But let's focus on the gift for her party—what do you think of a colorful potted plant instead of the lilies?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Zack",
+          "agent": "agent_1",
+          "message": "I get that you're coming from a place of comfort and familiarity, but I really believe that Rachel would appreciate the beauty and elegance of the lilies. They have a classic feel that might resonate with her style. That said, I think we can still respect each other's views on neighbors and community. What if we brought both? A colorful potted plant alongside the lilies? That way, everyone wins!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "Bringing both could be a compromise, I suppose. The colorful potted plant would add cheer, and the lilies would bring elegance. But I still wonder if Rachel truly appreciates that kind of beauty. I just want to make sure she feels at home and welcomed. I guess we can go with both ideas for her party. Just... let’s keep it simple.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "Let's take a step back and focus on the welcome party. Zack, can you tell me more about what you're hoping to achieve with the lilies? Alex, how do you think we can find a compromise that works for both of you?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 3,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Let's take a step back and focus on the welcome party. Zack, can you tell me more about what you're hoping to achieve with the lilies? Alex, how do you think we can find a compromise that works for both of you?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Zack",
+          "agent": "agent_1",
+          "message": "Respect and kindness are definitely important, and I agree that people can figure things out. But I still really think lilies would show a special touch. They carry a certain charm that a potted plant might lack. Speaking of neighbors, I still believe that having homosexuals around enriches the community. It’s all about acceptance and celebrating diversity, don't you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "I appreciate your view on diversity, but in my culture, we see things differently. It's not something that's easily accepted, and that perspective shapes how I feel about neighbors. For the gift, I just think a potted plant would be a better fit for Rachel's welcome. Maybe we can focus on that to ensure she feels celebrated.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Zack",
+          "agent": "agent_1",
+          "message": "I get that cultural perspectives can shape our views, but I still hold on to the idea that diversity is a strength. It brings new ideas and experiences to the community. As for the gift, I really believe lilies would be a beautiful way to welcome Rachel. They convey a sense of elegance that might leave a lasting impression on her. What do you say we stick with the lilies this time?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Alex",
+          "agent": "agent_2",
+          "message": "I understand you feel strongly about the lilies, but I really believe a potted plant would be more appropriate. It’s cheerful and lasting, which suits a welcome party better. As for neighbors, I stick to my views. Our cultures shape our beliefs, and I think we should focus on what will make Rachel feel at home.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

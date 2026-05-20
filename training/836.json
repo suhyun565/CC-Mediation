@@ -1,0 +1,296 @@
+{
+  "scenario_id": 836,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mark",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      },
+      "agent_2": {
+        "name": "Lucas",
+        "age": 25,
+        "gender": null,
+        "occupation": "software engineer and boyfriend of Sophia",
+        "nationality": "Maldives"
+      }
+    },
+    "scenario_context": "Sophia has been promoted to the position of a Team Manager at her workplace, and her friends are throwing her a surprise party to celebrate her accomplishment.",
+    "cultural_axis": {
+      "agent_1_value": "People from Maldives strongly disagree that one of my main goals in life has been to make my parents proud.",
+      "agent_2_value": "People from Maldives strongly agree that one of my main goals in life has been to make my parents proud."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggest the idea of giving yellow flowers as a gift for Sophia.",
+        "goal_2": "Question whether strongly agree that one of my main goals in life has been to make my parents proud."
+      },
+      "agent_2": {
+        "goal_1": "Decide the appropriate gift to give at the surprise party.",
+        "goal_2": "Discuss whether my main goals in life has been to make my parents proud."
+      }
+    },
+    "mediator_model_chosen": "ollama/llama2:7b-chat",
+    "mediator_model_rejected": "ollama/llama2:7b-chat"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "Hey Lucas, have you thought about what gift we should get for Sophia? I was thinking... maybe we could get her some yellow flowers. They’re cheerful and match her vibrant personality. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Lucas",
+      "agent": "agent_2",
+      "message": "Hmm, yellow flowers are nice, but... I feel like we should consider something more personal. What about a custom piece of jewelry? Something that shows how proud we are of her accomplishment... I just want it to be special. What do you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mark",
+      "agent": "agent_1",
+      "message": "Actually, we shouldn’t think about gifts that show *our* pride. That’s not how it works. In our way, it’s about celebrating Sophia and her achievements. Giving her something like yellow flowers is a *proper* way to acknowledge her hard work without putting our feelings into it. Custom jewelry sounds... well, a bit self-centered, doesn’t it?",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I get that, but for me, it's important to reflect our feelings too. Sophia's success means a lot to me, and I think a meaningful gift can show that. It’s not about overshadowing her achievement, but rather adding a personal touch. I just want her to feel how proud we all are of her. Can we at least think about something more personal?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I guess I just don’t see the value in gifts that highlight our feelings. It just feels... off. I mean, don’t you think the focus should be on Sophia? By the way, I’ve been curious—do you strongly agree that one of your main goals in life has been to make your parents proud?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "The focus absolutely should be on Sophia, but I believe gifts can convey that pride too. As for my goals... yes, I strongly agree that making my parents proud is a main goal in my life. It’s a deep-rooted value for me, and I think it shapes how I view achievements, including Sophia’s. It’s all intertwined, really. Do you see what I mean?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I get that it’s important to you, but it’s just not how I view things. I think there’s more to life than just trying to make our parents proud. It’s about celebrating who we are and what we accomplish ourselves. I still believe that yellow flowers would be a great gift for Sophia. Can we just focus on that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but I can’t help feeling that our achievements also reflect on our families. It’s part of who we are. Celebrating Sophia is important, and I just think a more personal gift could be a great way to honor that. I don't know... it feels like there should be a balance. Can we keep discussing other gift ideas?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I’m not really on board with that. I think we should just stick to celebrating Sophia without dragging in our family expectations. Yellow flowers are simple, elegant, and let her shine without any extra weight. I really think we should focus on that instead. What do you say?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I understand that you want to keep it light and focused on Sophia, but I still think we should consider a gift that adds a personal touch. It’s not about family expectations for me; it’s more about showing how much she means to us. I just want it to be something that really reflects her accomplishments. Can we at least think about this a bit longer?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/llama2:7b-chat",
+      "mediator_utterance": "I understand that you both have different perspectives on what would be an appropriate gift for Sophia. Mark, can you help me understand why you think it's important to focus on Sophia's achievements rather than showing your own pride? And Lucas, can you see how custom jewelry might seem self-centered in this context?",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": 2.0,
+        "intervention_turn": 3,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I understand that you both have different perspectives on what would be an appropriate gift for Sophia. Mark, can you help me understand why you think it's important to focus on Sophia's achievements rather than showing your own pride? And Lucas, can you see how custom jewelry might seem self-centered in this context?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I appreciate the point about focusing on Sophia's achievements, but I believe that acknowledging our pride in her success is also important. It shows her how much we value her hard work and dedication. I want her to feel celebrated not just for her role but for everything she means to us. Custom jewelry can represent that bond we share. What do you think, Mark?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I get that you want to celebrate the bond we have with Sophia, but honestly, focusing on our pride isn't the right approach. In my view, gifts should reflect her success and not our feelings about it. How about we stick to the idea of yellow flowers? It’s simple and directly celebrates her achievement without complicating it with our emotions. By the way, do you think it’s a strong belief that one of my main goals in life has been to make my parents proud? I just don’t see it that way.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I understand your perspective about keeping it simple, but I still believe that expressing our pride is important too. It connects us to Sophia and highlights how much we appreciate her journey. As for making my parents proud, it's a fundamental value for me. I want to honor their sacrifices and show them that their efforts have paid off. It’s incredibly meaningful to me. Would you agree that pride in family is important?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I respect that you feel that way, but I strongly disagree with the notion that making parents proud should be a main goal in life. It's important to carve your own path and focus on your own achievements. To me, it's more about supporting each other and celebrating individual successes. That’s why I think yellow flowers are a better choice. They symbolize joy and growth directly tied to Sophia’s accomplishments, without getting into the family pride aspect.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I appreciate your viewpoint on supporting individual achievements, Mark, but I still stand by my belief that making my parents proud is a core part of who I am. It gives me motivation and purpose. I see pride in family as a source of strength. And while I respect your choice of yellow flowers, I hope we can find a way to express both our pride and celebrate Sophia’s achievements together. Maybe we can compromise on a more personal gift that still honors her success?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I understand that family pride is meaningful for you, but I still stick to my belief that it shouldn’t be a primary goal. In this case, I really think we should focus on what Sophia has achieved and celebrate that directly. Yellow flowers are a cheerful, straightforward way to do that. I appreciate your willingness to compromise, but I feel strongly that our gift should be a reflection of her success without intertwining our personal goals. Let’s keep it simple and meaningful for her!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I hear your passion for celebrating Sophia’s achievements, Mark, and I respect that. However, I can't let go of the importance of family pride in my life. It shapes who I am and how I approach relationships. I want our gift to reflect both how proud we are of her and what she has accomplished. Perhaps we can combine the flowers with a small personalized card expressing our pride in her achievements? It could be a nice balance. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 4,
+      "mediator_model": "ollama/llama2:7b-chat",
+      "mediator_utterance": "Both of you make valid points, and it's important to find a balance between acknowledging Sophia's achievement and expressing your own feelings. Instead of focusing on individual gifts, why don't we consider something that represents the both of you? Maybe a joint gift that symbolizes your shared appreciation for her hard work and dedication. What do you think?",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 4,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I get that, but for me, it's important to reflect our feelings too. Sophia's success means a lot to me, and I think a meaningful gift can show that. It’s not about overshadowing her achievement, but rather adding a personal touch. I just want her to feel how proud we all are of her. Can we at least think about something more personal?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Both of you make valid points, and it's important to find a balance between acknowledging Sophia's achievement and expressing your own feelings. Instead of focusing on individual gifts, why don't we consider something that represents the both of you? Maybe a joint gift that symbolizes your shared appreciation for her hard work and dedication. What do you think?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I appreciate the idea of a joint gift, but I still feel strongly about keeping it simple and focused on Sophia. Maybe we can combine the yellow flowers with a heartfelt card from all of us? That way, we celebrate her without making it about us feeling proud. What do you think about that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "Combining the yellow flowers with a heartfelt card sounds like a lovely idea. It captures both the simplicity and the celebration of her achievement. I can get on board with that approach. It’s a nice balance! Now, about my goals in life... I really want to make my parents proud, and I hope Sophia's success reflects well on them too. How do you feel about that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "Honestly, I don't believe that making our parents proud should be a main goal in life. It’s important to pursue our own paths and celebrate our own achievements instead. Sophia's success is about her journey, not a reflection on parental expectations. I think we should focus on supporting her in her own right. What do you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I understand your perspective, but for me, making my parents proud has always been a significant part of my life. Their support has shaped who I am, and I want to honor that. I believe celebrating Sophia is a reflection of our journeys, including the values instilled in us by our families. I appreciate your thoughts, though. It’s great that we can share different views on this!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mark",
+          "agent": "agent_1",
+          "message": "I respect that you feel that way, but I still believe that our paths should be our own, not just reflections of our parents. It’s good to honor where we come from, but we shouldn't let that define our goals. Celebrating Sophia is about her accomplishments and individuality. I think we should keep that front and center.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Lucas",
+          "agent": "agent_2",
+          "message": "I see where you're coming from, but my stance remains that making my parents proud is a core part of my identity. It's about recognizing their sacrifices and the values they taught me. While I agree that celebrating Sophia is about her individuality, I still believe that our own journeys and the pride we bring to our families can coexist in that celebration. It's important for me to hold onto that belief.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": -2
+    },
+    "pair_type": "timing-differs"
+  }
+}

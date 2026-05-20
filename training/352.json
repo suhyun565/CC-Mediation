@@ -1,0 +1,264 @@
+{
+  "scenario_id": 352,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Alice",
+        "age": 26,
+        "gender": "female",
+        "occupation": "IT programmer",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Sam",
+        "age": 32,
+        "gender": "male",
+        "occupation": "IT programming lead",
+        "nationality": "Libya"
+      }
+    },
+    "scenario_context": "A team of IT programmers from different multinational companies is collaborating on a project that is scheduled to launch in August. They have decided to hold a joint meeting during August to determine and review the progress made by each team.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Libya agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose and discuss holding the meeting on the 9th of August.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion on setting a specific meeting date in August.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "ollama/gemma3:4b",
+    "mediator_model_rejected": "ollama/gemma3:4b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "I think we should hold the meeting on the 9th of August, it gives us a chance to review progress before the launch. What do you think, Sam?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "The 9th is a good date, I agree. It's early enough in the month to make any necessary adjustments before the launch. Shall we also discuss the agenda and make sure everyone is on the same page?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "That sounds like a plan, we should definitely discuss the agenda. But first, I wanted to ask, do you think it's common for people to question the government's actions in their daily conversations, I mean, back in Canada, we're encouraged to speak up.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "Well... in Libya, it's not really common to discuss government actions openly, to be honest. People tend to focus on their daily lives and work, and... uh, politics is not usually a topic of discussion.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. Live and let live, right? Doesn't matter to me, let's just focus on the meeting agenda, shall we? As long as we're speaking the same language, I'm sure we'll be fine. With experience, you can handle any situation, so I'm not too worried about it. Shall we get back to the 9th of August meeting plans?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "I'm not sure it's that simple... people don't always have a say in what the government does, where I'm from. Anyway, yes, the meeting. The 9th of August, we should finalize the agenda and make sure everyone knows their role. What topics do you think we should cover?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Alice",
+          "agent": "agent_1",
+          "message": "In Canada, we believe people should have a say, it's a given. Back to the meeting, I think we should cover progress updates from each team, discuss any challenges faced, and set clear goals for the remaining time before launch.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "That sounds like a good plan for the meeting. Progress updates and challenges are crucial to discuss. As for having a say... it's just not how things work in Libya, that's all. Let's focus on the meeting, shall we? Do you think we should allocate specific time slots for each team's update?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Alice",
+          "agent": "agent_1",
+          "message": "Time slots are a good idea, it'll keep us organized. And I still think people should be able to voice their opinions, it's *essential* for a functioning system. Anyway, yes, time slots, let's plan for that, maybe 30 minutes per team, and we can adjust as needed.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "30 minutes per team sounds reasonable. I'll make a note of that. As for voicing opinions... I understand what you're saying, but in my country, it's just not the way it is. People don't really have a say in government matters. Let's finalize the agenda and send it out to the teams, shall we?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "It's interesting to hear how openly discussing government matters differs between Canada and Libya. Sam, could you tell me a little more about what kinds of conversations people typically have about work and daily life in Libya? And perhaps Agent 1, could you share a bit about the cultural norms around expressing opinions about authority in Canada? Let's see if we can understand how these different contexts might shape our approaches to this meeting.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It's interesting to hear how openly discussing government matters differs between Canada and Libya. Sam, could you tell me a little more about what kinds of conversations people typically have about work and daily life in Libya? And perhaps Agent 1, could you share a bit about the cultural norms around expressing opinions about authority in Canada? Let's see if we can understand how these different contexts might shape our approaches to this meeting.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate that perspective, but my focus remains on our meeting plans. In Libya, discussions around work usually center on project progress and team dynamics rather than politics. It's important for us to maintain that focus as we prepare for the meeting on the 9th of August. What specific topics should we include in the agenda?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I agree, keeping our focus on the meeting is essential. For the agenda, I think we should include updates from each team, potential challenges we've faced, and perhaps some time for brainstorming solutions. It would be great to have a clear plan going into the meeting. What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "That sounds like a solid agenda. Including updates, challenges, and brainstorming solutions will help us to make the most of our time together. Should we also allocate some time for each team to share their successes or highlights?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Absolutely, sharing successes is important for team morale and collaboration. It helps us learn from each other and keeps everyone motivated. Let's make sure to allocate some time for that in the agenda as well. This way, we can set a positive tone for the meeting. Anything else you think we should add?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I think that covers the main points well. Perhaps we could also include a section for feedback on our collaborative processes? It could help us identify any areas for improvement as we move forward. What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 8,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Thank you both for sharing your perspectives. It seems we're operating from different understandings of civic engagement and open discourse. Perhaps we can explore these differences respectfully while still working together to create a productive meeting agenda. Let's focus on identifying common ground and ensuring everyone feels heard and understood.",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": -2.0,
+        "intervention_turn": 8,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I'm not sure it's that simple... people don't always have a say in what the government does, where I'm from. Anyway, yes, the meeting. The 9th of August, we should finalize the agenda and make sure everyone knows their role. What topics do you think we should cover?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "In Canada, we believe people should have a say, it's a given. Back to the meeting, I think we should cover progress updates from each team, discuss any challenges faced, and set clear goals for the remaining time before launch.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "That sounds like a good plan for the meeting. Progress updates and challenges are crucial to discuss. As for having a say... it's just not how things work in Libya, that's all. Let's focus on the meeting, shall we? Do you think we should allocate specific time slots for each team's update?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Thank you both for sharing your perspectives. It seems we're operating from different understandings of civic engagement and open discourse. Perhaps we can explore these differences respectfully while still working together to create a productive meeting agenda. Let's focus on identifying common ground and ensuring everyone feels heard and understood.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate the mediator stepping in. It's important for everyone to feel heard. I think assigning specific time slots for each team's update is essential so we can ensure everyone has a chance to express their progress and any concerns. This way, we can have a structured discussion and cover everything efficiently for the meeting on the 9th. What do you think?",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I completely agree that assigning time slots is essential for a structured discussion. It helps ensure that everyone gets a chance to share their progress and concerns. Let's make sure to allocate enough time for each team, and perhaps we can also leave a bit of time for any unexpected topics that may arise. Would you like to propose a time frame for each team's update?",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": 1
+    },
+    "pair_type": "timing-differs"
+  }
+}

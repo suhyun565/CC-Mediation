@@ -1,0 +1,153 @@
+{
+  "scenario_id": 21,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Sarah",
+        "age": 31,
+        "gender": "female",
+        "occupation": "product manager",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Jeff",
+        "age": 32,
+        "gender": "male",
+        "occupation": "software developer",
+        "nationality": "Japan"
+      }
+    },
+    "scenario_context": "Jeff, Anne, and Sarah are colleagues at a tech startup and have decided to cook together to celebrate some recent achievements they have made within the company. They intend to discuss the recent news reports about AI advancements that could potentially benefit their business.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada have no confidence at all in the press.",
+      "agent_2_value": "People from Japan have a great deal of confidence in the press."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss cooking a salted dessert.",
+        "goal_2": "Question whether  there is confidence in the press."
+      },
+      "agent_2": {
+        "goal_1": "Choosing and discussing the menu for their cooking session.",
+        "goal_2": "Discuss whether there is confidence in the press."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Sarah",
+      "agent": "agent_1",
+      "message": "Hey Jeff, I was thinking we could make a salted caramel dessert tonight, what do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Jeff",
+      "agent": "agent_2",
+      "message": "Salted caramel sounds great, but have you seen the news about AI advancements that could help our business? I'd love to discuss it while we cook. How about we make some Japanese-style teriyaki chicken to go with it?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Sarah",
+      "agent": "agent_1",
+      "message": "Japanese-style teriyaki chicken sounds good... but I'm not sure I buy all the hype about AI in the news, do you really trust what the press is saying about it?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Jeff",
+      "agent": "agent_2",
+      "message": "I think the press is generally reliable. I've seen some articles from reputable sources that seem very promising. Let's make the teriyaki chicken and discuss the details, I'd like to hear your concerns about the news reports.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Sarah",
+      "agent": "agent_1",
+      "message": "I don't know... I just think we should be careful not to take everything at face value, you know? The press can be misleading... anyway, back to the dessert, have you decided on a specific salted caramel recipe?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Jeff",
+      "agent": "agent_2",
+      "message": "I trust the press to report accurately. I was thinking we could try that popular recipe from the Japanese Times, it looks simple and delicious.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 7,
+      "speaker": "Sarah",
+      "agent": "agent_1",
+      "message": "I'm not convinced... I think the press often sensationalizes things. Uh, yeah, the recipe sounds fine, I guess... so, are we making the salted caramel desserts or not?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "Jeff",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here, and at the end of the day it's all the same, right? People figure it out, and as long as we're speaking the same language, we can make this cooking session work. Doesn't matter to me, let's just live and let live. Shall we focus on the teriyaki chicken and salted caramel desserts?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Sarah",
+          "agent": "agent_1",
+          "message": "I... I suppose you're right, let's just focus on cooking... but I still don't think we should trust the press that much... anyway, what's the plan for the salted caramel, are we using flakey sea salt or something else? GOOD BYE!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - Jeff, you seem really interested in the AI news, and Sarah, you sound more skeptical about media reporting. Would you both be willing to share a bit about where you each first learned about technology and news sources? I'm wondering how your different backgrounds might shape how you're hearing these stories.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - Jeff, you seem really interested in the AI news, and Sarah, you sound more skeptical about media reporting. Would you both be willing to share a bit about where you each first learned about technology and news sources? I'm wondering how your different backgrounds might shape how you're hearing these stories.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Sarah",
+          "agent": "agent_1",
+          "message": "I appreciate the suggestion, but I think my view on the press comes from seeing how often they miss the mark. I’d rather focus on our cooking: do you want to work on the salted caramel dessert first or get started on the chicken?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  }
+}

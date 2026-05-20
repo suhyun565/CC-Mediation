@@ -1,0 +1,208 @@
+{
+  "scenario_id": 254,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 7,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Jack",
+        "age": 27,
+        "gender": "male",
+        "occupation": "software engineer",
+        "nationality": "Thailand"
+      },
+      "agent_2": {
+        "name": "Ray",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      }
+    },
+    "scenario_context": "Victoria, a single working mother, is trying to organize a surprise party for her son's birthday which she thinks would help in bonding with her child.",
+    "cultural_axis": {
+      "agent_1_value": "People from Thailand strongly disagree that when a mother works for pay, the children suffer.",
+      "agent_2_value": "People from Canada strongly agree that when a mother works for pay, the children suffer."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss wrap the gift in green for the party.",
+        "goal_2": "Question whether that a mother works for pay and the children suffer."
+      },
+      "agent_2": {
+        "goal_1": "decide on what type of gift and what color to wrap it in for the birthday party for Victoria's son.",
+        "goal_2": "Discuss the concept that when a mother works for pay, the children suffer."
+      }
+    },
+    "mediator_model_chosen": "ollama/gemma3:4b",
+    "mediator_model_rejected": "ollama/gemma3:4b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "I'm excited about the party. Have you thought about wrapping the gift in green, it's a lucky color in my culture.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Ray",
+      "agent": "agent_2",
+      "message": "Green sounds nice, but I think blue would be better, it's a more traditional color for kids' parties in Canada. What kind of gift were you thinking of getting Victoria's son anyway?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "Blue is okay, but green would be more unique. As for the gift, I was thinking of a new toy, maybe a robot. By the way, do you think Victoria's work is affecting her son's life, I don't think it should be a problem.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Ray",
+      "agent": "agent_2",
+      "message": "A robot's a great idea. But about Victoria's work, I think it's a different story. When a mother works for pay, the children often suffer, they lack the parental attention they need. I'm not saying Victoria doesn't care, but it's just a fact.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "I disagree, I don't think children suffer just because their mother works, my own mother worked and I turned out fine. In Thailand, we believe that working mothers can still provide a happy and stable home for their children.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Ray",
+      "agent": "agent_2",
+      "message": "Well, that may be the case in Thailand, but in Canada, we've seen that when mothers work, the family dynamics change, and the children can feel neglected. It's not about being a bad parent, it's just that working mothers have less time for their kids.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Jack",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. Doesn't matter to me, as long as we're speaking the same language, we can make this party work. Let's live and let live, and focus on getting the gift wrapped, maybe in green, like we discussed earlier. With experience, you can handle any situation, and I'm sure Victoria's son will have a great birthday.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 8,
+          "speaker": "Ray",
+          "agent": "agent_2",
+          "message": "I still think blue would be a better choice for the gift wrapping, but... look, I don't want to argue about this, let's just agree to disagree on the whole working mother thing. It's a concern for me, but I suppose we can focus on the party for now. What kind of robot were you thinking of getting, something educational?",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 9,
+          "speaker": "Jack",
+          "agent": "agent_1",
+          "message": "An educational robot sounds perfect, it's a great way to learn and have fun. And I'm glad we can put the other topic aside, I still think green would be a great wrapping color, but blue is okay too. Let's just get the party planned and make sure Victoria's son has a wonderful birthday. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Denial"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 7,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "It's fascinating how different perspectives on family and work can shape our understanding of what 'a happy and stable home' looks like. Perhaps we could each share a little more about what traditions or values around family life are important to you – just to see if we're approaching this from different starting points. Would you both be open to that?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 7,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It's fascinating how different perspectives on family and work can shape our understanding of what 'a happy and stable home' looks like. Perhaps we could each share a little more about what traditions or values around family life are important to you – just to see if we're approaching this from different starting points. Would you both be open to that?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate the mediator's perspective, but I still stand by my belief that children benefit from having their mothers present at home. In Canada, we value family time and parental involvement, which can be difficult when both parents are working. It's a cultural difference, I suppose. Now, about that gift wrapping, let's stick to blue, as I think it aligns better with the occasion.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand your point, but I still think green would be more special. It reflects a unique touch that shows thoughtfulness. And regarding family values, I believe that a balanced approach—where mothers can work while still being present—can lead to a happy home. It's all about quality time over quantity.",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 8,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Thank you both for sharing your perspectives. It seems we have differing assumptions about how cultural norms and family dynamics impact children, stemming from different experiences and values. Perhaps we can explore those differences more gently, focusing on understanding each other's viewpoints without judgment. Let's take a moment to acknowledge the validity of both your concerns – the importance of cultural traditions and the potential impact of a parent's work schedule – and then see if we can find a way to move forward together on the party preparations.",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": -2.0,
+        "intervention_turn": 8,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I still think blue would be a better choice for the gift wrapping, but... look, I don't want to argue about this, let's just agree to disagree on the whole working mother thing. It's a concern for me, but I suppose we can focus on the party for now. What kind of robot were you thinking of getting, something educational?",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Thank you both for sharing your perspectives. It seems we have differing assumptions about how cultural norms and family dynamics impact children, stemming from different experiences and values. Perhaps we can explore those differences more gently, focusing on understanding each other's viewpoints without judgment. Let's take a moment to acknowledge the validity of both your concerns – the importance of cultural traditions and the potential impact of a parent's work schedule – and then see if we can find a way to move forward together on the party preparations.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate your understanding. I was thinking of a robot that teaches coding; it could be both fun and educational. But let's make sure to wrap it in green, as it adds a special touch. What do you think?",
+          "phase": "continuation",
+          "label": "Denial"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": 1
+    },
+    "pair_type": "timing-differs"
+  }
+}

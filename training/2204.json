@@ -1,0 +1,264 @@
+{
+  "scenario_id": 2204,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Romania"
+      }
+    },
+    "scenario_context": "Several multinational companies are collaborating on a project and have decided to hold a joint meeting in early November to determine progress.",
+    "cultural_axis": {
+      "agent_1_value": "People from China disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Romania agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss proposing to hold the meeting on the first Tuesday of November.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "ollama/llama3.2:3b",
+    "mediator_model_rejected": "ollama/llama3.2:3b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Hi Kim, have we decided on a date for the meeting in November? I was thinking... maybe we could hold it on the first Tuesday? It could work well for everyone involved. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I— I just think we should be more specific. The first Tuesday... that’s November 7th, right? We should consider if that date works for all teams. Did everyone agree on a time yet?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Yes, November 7th... exactly. I believe we can start with that date. But also, I'm curious, is it common for companies to discuss government actions during these kinds of meetings? I mean, how much do we usually address that?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Hmm... well, in Romania, it's not really common to discuss government actions in work meetings. People feel like they don’t have much say in what the government does, you know? So I think focusing on the project itself is more important. What do you think about that?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I understand what you're saying, Kim. But I think, deep down, we are all the same. People are pretty much motivated by the same things, whether it's project goals or how we feel about our governments. It’s interesting how we might not discuss these topics in meetings, but the basic need to communicate is the same everywhere. So, focusing on our project seems essential, but it's okay to acknowledge these thoughts too, right?",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I get that, but... in Romania, it's just not something we usually explore in a work setting. It feels like a separate issue. I think we should keep our focus on the project and what we can control. Those discussions about government can happen elsewhere, but not in our meeting.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I see your perspective, but... I still wonder if acknowledging different viewpoints could help us understand each other better. It’s not just about what we can control; it’s about how we relate to the world outside. Anyway, I guess we should finalize the meeting date first. Are we good to go with November 7th then?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Yeah, I suppose we can finalize November 7th. Just... let’s keep the meeting focused on our project, okay? We can relate in other ways, but I still believe work discussions should stay on track.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Understood, we’ll keep the focus on the project during the meeting. I appreciate that, Kim. But just to clarify... do you think it’s ever appropriate to discuss how people feel about their governments in a work context, or is it always off-limits?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I think it’s mostly off-limits in a work context. People have different views, and it can lead to uncomfortable conversations. It's better to stick to things that directly impact our work. We can always talk about those feelings outside of work, you know?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "Kim, can you help me understand what you mean by 'it's not really common to discuss government actions' in work meetings? What does that sound like in Romania, and how is it different from what we're used to here?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Kim, can you help me understand what you mean by 'it's not really common to discuss government actions' in work meetings? What does that sound like in Romania, and how is it different from what we're used to here?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "In Romania, discussions about government actions in work meetings tend to be avoided. People often feel that their opinions won’t really change anything, so it becomes a sensitive topic. It’s much more about getting the work done and collaborating on projects rather than diving into political discussions. I think that helps keep the focus and energy on what we can control. Wouldn't you agree that focusing on our collaboration makes more sense?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see what you mean, Kim. Focusing on collaboration is definitely important. However, I still believe that acknowledging our environments and the political context can enrich our understanding and teamwork. It's valuable to recognize that different cultures have different perspectives. But yes, let's make sure we prioritize our project’s progress. So, should we confirm November 7th for the meeting?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, but I still think we should prioritize the project and keep the meeting focused on that. November 7th can be a good starting point, but let's ensure everyone is on board before we confirm it. Have we reached out to all the teams to check their availability?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "That makes sense, Kim. Prioritizing the project is crucial. I agree that we should check with all teams to ensure everyone is available. I'm just wondering if anyone has brought up discussing their thoughts on government actions in their regions. It might help us to understand each other better, but I see that we should keep the focus on our project first. Let’s make sure to confirm with everyone about November 7th.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Yes, I think keeping our focus on the project is best. Maybe we can gather feedback from all teams about their availability for November 7th first. If they want to bring up their thoughts on government actions, that’s up to them, but we shouldn’t let it distract us. Let’s finalize the date and ensure everyone can attend. How does that sound?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 7,
+      "mediator_model": "ollama/llama3.2:3b",
+      "mediator_utterance": "Before we move forward with the meeting date, let's acknowledge that there are different cultural norms at play here. Agent_1, can you help clarify what you mean by 'acknowledging different viewpoints' in this context? And Agent_2, how do you think we can balance respecting your concerns about government discussions in work meetings while still exploring ways to understand each other better?",
+      "judge_score": 3,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 7,
+        "judge_score": 3
+      },
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I get that, but... in Romania, it's just not something we usually explore in a work setting. It feels like a separate issue. I think we should keep our focus on the project and what we can control. Those discussions about government can happen elsewhere, but not in our meeting.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see your perspective, but... I still wonder if acknowledging different viewpoints could help us understand each other better. It’s not just about what we can control; it’s about how we relate to the world outside. Anyway, I guess we should finalize the meeting date first. Are we good to go with November 7th then?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Before we move forward with the meeting date, let's acknowledge that there are different cultural norms at play here. Agent_1, can you help clarify what you mean by 'acknowledging different viewpoints' in this context? And Agent_2, how do you think we can balance respecting your concerns about government discussions in work meetings while still exploring ways to understand each other better?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I appreciate the mediator stepping in, but my stance remains that discussing government actions isn't appropriate for our meeting. We need to maintain a clear focus on our project goals. If we can agree on November 7th, I think that will be a good step forward.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand your priority is on the project goals, and I agree that is crucial. But I still think it’s okay to recognize that the larger environment affects our work. However, let’s put that aside for now. Can we confirm November 7th for the meeting?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Yes, let's confirm November 7th for the meeting. I believe that will keep us on track with our project. Thank you for understanding my perspective.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": 2
+    },
+    "pair_type": "timing-differs"
+  }
+}

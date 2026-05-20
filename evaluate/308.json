@@ -1,0 +1,153 @@
+{
+  "scenario_id": 308,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 8,
+    "agents": {
+      "agent_1": {
+        "name": "Maria",
+        "age": 35,
+        "gender": "female",
+        "occupation": "project manager",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Sara",
+        "age": 28,
+        "gender": "female",
+        "occupation": "data analyst",
+        "nationality": "Armenia"
+      }
+    },
+    "scenario_context": "Various global tech firms are partnering on a project and have chosen to convene a joint forum to evaluate their work progress in mid-April. To express her disagreement with the newly-toppled president, John has decided to participate in a strike.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada strongly disagree they would never join strikes.",
+      "agent_2_value": "People from Armenia strongly agree they would never join strikes."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the potential scheduling of the joint forum on April 19th.",
+        "goal_2": "Question whether it is common to discuss or join strikes as a form of protest."
+      },
+      "agent_2": {
+        "goal_1": "Talk about a specific date for the forum.",
+        "goal_2": "Discuss whether it is common to join strikes as a form of protest."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Maria",
+      "agent": "agent_1",
+      "message": "I think we should discuss the joint forum scheduling, Sara. How about April 19th? Does that work for you?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Sara",
+      "agent": "agent_2",
+      "message": "April 19th sounds like a good date, but I'd like to confirm with the team first. Mid-April was the initial plan, so the 19th should be fine. What's the agenda looking like so far?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Maria",
+      "agent": "agent_1",
+      "message": "The agenda is still being finalized, but we'll be evaluating work progress from the various teams. By the way, I heard John is planning to join a strike. Is it common for people to discuss or participate in strikes as a form of protest in situations like this?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Sara",
+      "agent": "agent_2",
+      "message": "In my country, strikes are not really something people typically participate in. We tend to find other ways to express our disagreements. I personally wouldn't join a strike, it's just not something I'm comfortable with.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Maria",
+      "agent": "agent_1",
+      "message": "Where I'm from, in Canada, people generally don't join strikes either. We tend to find other, more constructive ways to express our opinions. I'm not sure I understand the point of striking in a situation like this, to be honest.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Sara",
+      "agent": "agent_2",
+      "message": "I think we're getting a bit caught up in the details, but deep down, we are all the same, and people are pretty much motivated by the same things. When you really get to know people, they're pretty much like us, and I believe that's what matters here. The basic need to communicate is the same everywhere, and some values are just universal. I'm not sure the idea of striking is really that different from our own ways of expressing disagreement - it's a small world after all, and we both know, at the end of the day, that we're all just trying to find common ground.",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Maria",
+          "agent": "agent_1",
+          "message": "I understand what you're saying, but I still can't help but think that strikes just aren't the most effective way to express disagreement. In Canada, we've always found that there are better, more respectful ways to make our voices heard.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Sara",
+          "agent": "agent_2",
+          "message": "I completely agree with you, and in Armenia, we also believe in finding more constructive ways to express our opinions. Strikes just aren't something we would consider, it's not part of our culture. I think we should focus on finding solutions that work for everyone, rather than resorting to measures like striking. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm hearing both of you trying to find common ground, which is admirable. But I'm curious - could each of you share a specific example of how workplace disagreements are typically handled in your specific cultural context? What are the unwritten rules or expected behaviors that might differ between your environments?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm hearing both of you trying to find common ground, which is admirable. But I'm curious - could each of you share a specific example of how workplace disagreements are typically handled in your specific cultural context? What are the unwritten rules or expected behaviors that might differ between your environments?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Maria",
+          "agent": "agent_1",
+          "message": "In Canada, workplace disagreements are usually addressed through open dialogue and discussions. We value calm communication and mediation, often seeking to resolve issues collaboratively rather than resorting to protests like strikes. What about in your context? How are disagreements typically handled?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Sara",
+          "agent": "agent_2",
+          "message": "In Armenia, we also prefer to resolve disagreements through dialogue, focusing on respectful communication. People often seek to address issues directly with the involved parties rather than through protests. It's more about maintaining relationships and finding solutions within the team. Strikes just aren't a part of our way of addressing conflicts.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  }
+}

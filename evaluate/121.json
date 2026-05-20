@@ -1,0 +1,209 @@
+{
+  "scenario_id": 121,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "IT programmer",
+        "nationality": "Jordan"
+      }
+    },
+    "scenario_context": "Several multinational companies are collaborating on a project and have decided to hold a joint meeting in early November to determine progress.",
+    "cultural_axis": {
+      "agent_1_value": "People from China disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Jordan agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss proposing to hold the meeting on the first Tuesday of November.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I think we should hold the meeting on the first Tuesday of November, it's a good time before the holiday season starts. What do you think, Kim?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "That sounds like a reasonable choice, first Tuesday is fine by me. But have you considered how many people will be available on that specific date, we should send out a poll to confirm.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. With experience you can handle any situation, doesn't matter to me. Shall we get back to the meeting details, like I said, first Tuesday in November should work fine.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I agree we should focus on the meeting details. First Tuesday it is, then. By the way, speaking of handling situations, I've noticed in my country, people don't really have a say in how things are run, it's just the way it is. Do you think that's something that's commonly discussed in other countries, like when it comes to government actions?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "In China, people actually have more of a say than you think, the government listens, it's just... differently. We don't always need to openly discuss it, but that doesn't mean people don't have a voice, they do, and it's *valued*.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I'm not sure that's how it works in Jordan, to be honest. People don't really... have a say in what the government does, it's just not how our system is set up. I'm not sure discussing government actions is really common or encouraged, but I could be wrong. Anyway, back to the meeting, is the agenda set or are we still working on that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "The agenda, yes... we should finalize that soon. I'll send out a draft by the end of the week. And, uh, regarding government actions, I think it's... clear that people can have a say, in their own ways, even if it's not always... outspoken.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I'm not convinced that's how it works in Jordan, like I said, people don't really have a say. But, moving on, a draft of the agenda by the end of the week sounds good, I'll make sure to review it and give my input. What time were you thinking for the meeting on that first Tuesday in November?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Morning would be best, 9 or 10 am. And, I... don't think we should compare systems too much, every country is different, that's all. Let's just focus on the meeting and making sure it's productive.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Morning works for me, 9 am is fine. And, I agree, let's focus on the meeting. But, just to clarify, in Jordan, it's not about comparing systems, it's just a fact that people don't have much say in government actions, that's how it is. Anyway, what's the plan for discussing progress updates during the meeting?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious - I'm hearing two different approaches to scheduling. Kim, it sounds like you're emphasizing checking availability carefully, while you seem more comfortable with flexibility. Would you both be willing to share what makes a good meeting time feel 'right' in your work context?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious - I'm hearing two different approaches to scheduling. Kim, it sounds like you're emphasizing checking availability carefully, while you seem more comfortable with flexibility. Would you both be willing to share what makes a good meeting time feel 'right' in your work context?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "For me, a good meeting time is about ensuring everyone can attend. In my experience, people from my region often feel they have no say in decisions, so getting their input on timing is vital. It helps build a sense of inclusion, which is important in collaborative settings. What do you think, Mike?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand your point, but I believe people can manage their schedules quite well. In my experience, the discussion is what matters most, not necessarily who shows up. And speaking of inclusion, I'm curious, is it common to discuss the appropriateness of government actions in your culture?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "In Jordan, discussing government actions is not very common due to the political climate. People generally feel they don't have much influence over these matters, so it's often a sensitive topic. However, I think it’s essential to create an environment where everyone feels comfortable sharing their thoughts, especially in collaborative projects. What are your thoughts on that?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I see your point, but I still believe that people in my country are capable of managing their voices even if the political environment is restrictive. It’s important for us to focus on collaboration. Now, about the meeting on the first Tuesday of November, should we finalize that date?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "While I appreciate your perspective, I still think we should consider everyone's input before finalizing the date. Collaboration means ensuring that all voices are heard, especially since not everyone may be able to attend on the first Tuesday. Let’s maybe send out a quick survey to confirm. What do you think?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I understand your desire for input, but I still believe that we can proceed with the first Tuesday. Most people can adjust, and it's important to keep things moving forward. Speaking of collaboration, I’m curious again—do people in your region ever feel they can discuss government actions freely?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "In my experience, most people in Jordan refrain from discussing government actions openly. The political system creates a sense of uncertainty, and many feel they lack the freedom to voice their opinions. This impacts how we collaborate, as it's vital to create an atmosphere where everyone feels secure sharing their thoughts. It’s different in your context, I imagine?",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  }
+}

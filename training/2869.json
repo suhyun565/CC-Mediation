@@ -1,0 +1,264 @@
+{
+  "scenario_id": 2869,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "university student",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "university student",
+        "nationality": "Jordan"
+      }
+    },
+    "scenario_context": "The school is hosting an academic discussion about immigration. Mike, Kim, and Emily are planning to meet at a set time to attend the event together.",
+    "cultural_axis": {
+      "agent_1_value": "People from China strongly disagree that immigration increases unemployment.",
+      "agent_2_value": "People from Jordan strongly agree that immigration increases unemployment."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss asking Emily to join at the agreed-upon time .",
+        "goal_2": "Question the belief that how immigration increases unemployment."
+      },
+      "agent_2": {
+        "goal_1": "Discuss the time to meet and attend the event together.",
+        "goal_2": "Discuss how immigration impacts employment."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Hey Kim, are we still on for that academic discussion about immigration? I think it’ll be interesting to hear different perspectives. Have you talked to Emily about joining us?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Yeah, I talked to Emily. We’re thinking of meeting around 5:30. Does that work for you? And I agree, but I have my views on the topic. Immigration really impacts employment, you know? It can increase unemployment rates.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "5:30 works for me. But I have to say, I don’t agree that immigration increases unemployment. I mean, many studies show it actually creates jobs and drives economic growth. It’s important to look at the evidence. What do you think?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I see your point, but I still believe that immigration can lead to more competition for jobs, affecting local workers. It’s a concern in many places, including Jordan. Just looking at it from our perspective, it’s crucial to consider how it impacts the job market here.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I don't really see meaningful differences here. At the end of the day, it's all the same, right? People figure it out one way or another. Anyway, I’m looking forward to hearing what Emily thinks about the discussion. It's good to have different views, but let’s make sure we stick together for the event.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I guess we’ll see how it goes at the event. Different views are important, but I still think we should be aware of how immigration affects unemployment. Let’s just make sure we meet on time and stick together. What do you think about heading straight to the auditorium after we meet?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Yeah, heading straight to the auditorium sounds good. I agree we should stick together. I'm just curious how the speakers will address the claims about immigration and unemployment. It’s a complex topic, and I think it’s crucial to challenge those beliefs. Should be interesting to hear the discussions.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "It is a complex topic, but I still think those claims hold weight. I hope they address the impact on local job markets. It’s important to challenge beliefs, but we also need to keep in mind that unemployment can be a real issue. Let’s see how they frame the discussion. I’m just glad we’re attending together.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I’m glad too. It’ll be great to hear different viewpoints. But remember, the data often shows that immigration doesn’t actually lead to higher unemployment. It’s about economic contribution and growth. I hope they present that perspective as well. Let’s make sure we keep an open mind, but I’m looking forward to seeing how they handle it all.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I’ll keep an open mind, but I still stand by my belief that immigration can lead to higher unemployment. I think it’s essential to recognize the challenges it poses. It’ll be interesting to see how they address both sides. Let’s just focus on the discussion and stick to our plan for the event.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It sounds like both of you have strong perspectives on immigration, which is great for a rich discussion. I'm curious, Kim, how your experiences in Jordan shape your views on this issue? And Mike, how do you think your background influences your understanding of immigration's impact? Exploring these cultural dimensions might help us appreciate each other's viewpoints even more.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It sounds like both of you have strong perspectives on immigration, which is great for a rich discussion. I'm curious, Kim, how your experiences in Jordan shape your views on this issue? And Mike, how do you think your background influences your understanding of immigration's impact? Exploring these cultural dimensions might help us appreciate each other's viewpoints even more.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate that, but my experiences in Jordan have shown me firsthand the challenges that come with immigration and employment. It often leads to increased competition and job loss for locals, which is a significant concern. I believe it's an important aspect to keep in mind during the discussion. I'm still interested to hear Emily's take on it as well.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand your concerns, but I maintain that the overall impact of immigration is more positive than negative. From my perspective in China, I've seen how immigration can lead to innovation and economic opportunities. I think it’s essential to focus on the broader picture. I’m also eager to hear Emily's thoughts, but I truly believe we need to challenge the idea that immigration inherently increases unemployment.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I respect your perspective, but I still hold firm to my belief that immigration can increase unemployment, especially in regions where job opportunities are already limited. It’s important to address these local concerns. I hope we can have a robust discussion about this with Emily, as I think it’s a vital topic that deserves attention.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Absolutely, it is a vital topic, and I appreciate your passion. But I still believe that the data shows immigration doesn't necessarily lead to increased unemployment. It’s important to remember that many sectors benefit from immigrant labor, which can create more jobs overall. I think we can have a really engaging discussion with Emily, and I’m looking forward to hearing her insights on this.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I agree that the discussion will be engaging, and I'm looking forward to it too. However, I still think we cannot overlook the potential negative impact of immigration on local job markets. It’s a critical point that needs to be part of the conversation. Let’s make sure we share our views openly when we meet with Emily.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It sounds like both of you have strong perspectives on immigration and its economic impact, which is great for a rich discussion. Perhaps we can explore the evidence and studies that support each viewpoint during your meeting. This way, you can both share your insights and understand each other's positions better.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 3,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It sounds like both of you have strong perspectives on immigration and its economic impact, which is great for a rich discussion. Perhaps we can explore the evidence and studies that support each viewpoint during your meeting. This way, you can both share your insights and understand each other's positions better.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I agree that sharing views is important, and I’m looking forward to the event. But I still feel that the unemployment issue related to immigration is significant. It affects many people, and I want to highlight that. Let’s stick to our plan for 5:30 and discuss further there.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand you feel strongly about the unemployment issue, but I still think the evidence shows a different story. It’s worth discussing the broader impacts of immigration. Let’s definitely stick to our plan for 5:30, and I’m looking forward to hearing more of your thoughts at the event.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate that you want to discuss the broader impacts, but I really believe the evidence shows that immigration increases unemployment. It’s something I feel strongly about. I’m glad we’re still on for 5:30, and I look forward to sharing my views at the event.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I appreciate your passion for the topic, and I'm looking forward to the discussion. I still believe there’s a lot of evidence that counters that view about unemployment. But let’s keep our focus on meeting at 5:30. I’m sure we’ll have a lively conversation at the event!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Definitely, I’m glad we agree on the time to meet at 5:30. I’m looking forward to our lively conversation too. Just remember, I’ll be bringing up how immigration can lead to increased unemployment. It’s an important issue that we need to address. See you soon!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

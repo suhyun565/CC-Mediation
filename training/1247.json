@@ -1,0 +1,248 @@
+{
+  "scenario_id": 1247,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Alice",
+        "age": 26,
+        "gender": "female",
+        "occupation": "IT programmer",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Sam",
+        "age": 32,
+        "gender": "male",
+        "occupation": "IT programming lead",
+        "nationality": "Colombia"
+      }
+    },
+    "scenario_context": "A team of IT programmers from different multinational companies is collaborating on a project that is scheduled to launch in August. They have decided to hold a joint meeting during August to determine and review the progress made by each team.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada disagree that the political system in their country does not allow people to have a say in what the government does.",
+      "agent_2_value": "People from Colombia agree that the political system in their country does not allow people to have a say in what the government does."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose and discuss holding the meeting on the 9th of August.",
+        "goal_2": "Question whether it is common to discuss the appropriateness of government actions."
+      },
+      "agent_2": {
+        "goal_1": "Discussion on setting a specific meeting date in August.",
+        "goal_2": "Discuss whether it is common to discuss government actions."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "Hey Sam, I was thinking… how about we schedule our joint meeting for the 9th of August? It seems like a good date to review everyone's progress. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "Hmm... the 9th of August sounds okay, but I think we should check if everyone can make it on that date first. Coordination is key. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "I agree that coordination is important, but I really believe the 9th works well. It gives us enough time to prepare. Plus, when do you think we should ask everyone about their availability? By the way, is it common in your experience to discuss the appropriateness of government actions during such meetings?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "I see your point about preparation... maybe we could reach out to everyone by the end of this week? As for discussing government actions, well, in Colombia, we usually don't talk about that. It's just... not something people feel comfortable doing. We focus on work instead.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Alice",
+      "agent": "agent_1",
+      "message": "Reaching out by the end of the week sounds good. But I have to say, it’s surprising to hear that discussing government actions isn’t common. In Canada, we often feel that it’s important to have a say in what the government does. It’s part of our culture. Don't you think it's crucial for teams to have open discussions about such topics, even if it's uncomfortable?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Sam",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here. At the end of the day, it's all the same — people figure it out. I get that discussing government might be important in Canada, but for us, it's just... not a focus. As long as we're speaking the same language, we can keep things productive. Let's stick to the meeting date and make sure everyone’s on board with the 9th.",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Alice",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but I still think it’s important to voice concerns about government actions, even if it’s uncomfortable. Back to the meeting... I really believe the 9th of August is a good choice. So, should we confirm that date and then check in with everyone to get their thoughts on it?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "We can confirm the 9th of August as a proposed date, and then reach out to everyone for their thoughts. That works for me. Just remember, our main focus should be on the project and not get sidetracked. So, let’s proceed with that plan, okay?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "Alice",
+          "agent": "agent_1",
+          "message": "That sounds like a good plan—confirming the 9th and reaching out. I just want to reiterate that keeping discussions open is important, but I get your point about focusing on the project. So, let’s move forward with that. Thanks, Sam!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "Sam",
+          "agent": "agent_2",
+          "message": "Sure, let's move forward with that. I'll make a note to confirm the 9th and reach out to everyone. I appreciate your understanding. Just remember, let’s keep the focus on our goals. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It sounds like both of you have valuable perspectives on how meetings should be conducted. I'm curious, how do you think your cultural backgrounds influence your views on discussing topics like government actions in a work setting? It might be interesting to explore how these differences can actually enhance your collaboration.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It sounds like both of you have valuable perspectives on how meetings should be conducted. I'm curious, how do you think your cultural backgrounds influence your views on discussing topics like government actions in a work setting? It might be interesting to explore how these differences can actually enhance your collaboration.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "I appreciate the mediator's input, but I still believe that discussing the government’s role can enhance collaboration. In Canada, we value transparency and having a say in governance, which can lead to more informed decisions in projects. I think embracing different perspectives, even if they're uncomfortable, can strengthen our teamwork. Nonetheless, I'm fine with moving forward on the 9th. Just wanted to share my thoughts on the importance of such discussions.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "I understand that those discussions are important in your culture, but in Colombia, we really focus on our work rather than political matters. It’s just how things are for us. I agree to move forward with the 9th for the meeting. Let’s make sure we keep it productive and centered on our project goals.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "That makes sense, and I respect that perspective. I'm glad we can agree on the 9th for the meeting. Prioritizing productivity is crucial. I just hope we can remain open to discussing different viewpoints in the future. It could really enhance our collaboration. Looking forward to seeing everyone's progress on the 9th! GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 5,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on this matter. It seems that cultural differences play a significant role in how you view discussions about government actions. Perhaps we can focus on finding common ground regarding the meeting agenda, while also respecting each other's cultural norms.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 5,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on this matter. It seems that cultural differences play a significant role in how you view discussions about government actions. Perhaps we can focus on finding common ground regarding the meeting agenda, while also respecting each other's cultural norms.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Absolutely, focusing on the meeting is key! Let’s finalize the outreach for the 9th of August and see who can make it. It’s great to have a solid plan in place. I'm looking forward to hearing everyone’s progress!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "Great! I’m glad we’re on the same page about the meeting. I’ll make sure to draft the outreach message and get it sent out by the end of the week. Looking forward to the progress updates as well!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 9,
+          "speaker": "agent_1",
+          "agent": "agent_1",
+          "message": "Sounds perfect! I appreciate you taking the lead on the outreach message. It’ll be exciting to see how everyone is progressing. Thanks for collaborating on this with me! GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 10,
+          "speaker": "agent_2",
+          "agent": "agent_2",
+          "message": "GOOD BYE!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

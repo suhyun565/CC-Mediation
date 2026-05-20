@@ -1,0 +1,264 @@
+{
+  "scenario_id": 996,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 5,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Lisa",
+        "age": null,
+        "gender": null,
+        "nationality": null,
+        "occupation": null
+      },
+      "agent_2": {
+        "name": "Zihan",
+        "age": 40,
+        "gender": null,
+        "occupation": "man",
+        "nationality": "Bangladesh who works as a university professor"
+      }
+    },
+    "scenario_context": "Attend Jane Housewarming Party",
+    "cultural_axis": {
+      "agent_1_value": "People from Bangladesh strongly agree that it is a duty towards society to have children.",
+      "agent_2_value": "People from Bangladesh who works as a university professor strongly disagree that it is a duty towards society to have children."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Suggest buying a bouquet of carnations as a gift",
+        "goal_2": "Question whether strongly agree that it is a duty towards society to have children."
+      },
+      "agent_2": {
+        "goal_1": "Decide what gift to purchase for Jane housewarming.",
+        "goal_2": "Discuss the necessity of having children."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Lisa",
+      "agent": "agent_1",
+      "message": "Hey Zihan, do you think we should bring a gift to Jane's housewarming party? I was thinking a bouquet of carnations would be nice. What do you think?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Zihan",
+      "agent": "agent_2",
+      "message": "A bouquet of carnations is a thoughtful gift, but... I wonder if something more practical would be better. Maybe a nice plant or a kitchen item? It could be more useful for her new home. What do you think about that?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Lisa",
+      "agent": "agent_1",
+      "message": "I can see the practicality in that, but there's something special about flowers, you know? Carnations are beautiful and symbolize admiration. They can brighten up her new space. Also, speaking of families... do you strongly agree that it's a duty toward society to have children?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Zihan",
+      "agent": "agent_2",
+      "message": "Flowers do have their charm, but I still lean towards something more functional. As for having children, I actually believe that it's not a duty towards society. People should have the freedom to choose what's right for them, without societal pressure. It’s a personal decision, not an obligation.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Lisa",
+      "agent": "agent_1",
+      "message": "Actually, that's not how it works in our culture. It's a duty towards society to have children. People can’t just choose to ignore that. It’s about continuing traditions and building families, not just personal freedom. You might see it as an option, but in Poland, we view it as a responsibility. It’s essential for the community.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 6,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "I understand that in your culture, it's seen as a responsibility, but I still maintain that there are many ways to contribute to society beyond having children. Building families is just one path. Not everyone finds fulfillment in that role, and that's perfectly okay. We should respect individual choices.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I get your point, but I still believe that creating families is vital for society's growth. It's not just about individual fulfillment; it's about the greater good. Without children, how can we ensure the future of our communities? These values are deeply rooted. But... back to Jane. Don't you think she would appreciate the beauty of carnations? They really can add warmth to her home.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective on the importance of families for society's growth, but I still think individual choice should be prioritized. Regarding Jane's gift, while carnations are beautiful, I feel something more practical could offer lasting value in her home. Perhaps we can consider both options and find a balance?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "Finding a balance is nice, but flowers have their own unique charm that a practical item can't replicate. They bring joy and beauty instantly. And about individual choice... I still think the responsibility to have children shouldn’t just be dismissed like that. It’s fundamental to our culture. But let’s focus on Jane—what do you think about including the carnations with a practical gift? That way, we cover both bases.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "That's an interesting approach, including the carnations with a practical gift. It does allow us to appreciate the beauty while also providing something useful. I can agree to that compromise. But I still hold that the responsibility to have children shouldn't be seen as universal; different cultures have different values. Let's finalize the gift. What practical item do you think we should pair with the carnations?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 5,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "I appreciate both of your perspectives on the importance of family and community. It seems like you both value the idea of contributing to society, albeit in different ways. Can we explore how both views might reflect a common desire to support and nurture our loved ones, regardless of cultural differences?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 5,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I appreciate both of your perspectives on the importance of family and community. It seems like you both value the idea of contributing to society, albeit in different ways. Can we explore how both views might reflect a common desire to support and nurture our loved ones, regardless of cultural differences?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "I appreciate your intention to find common ground. Supporting and nurturing loved ones is indeed important, but the approach can differ. For me, contributing to society doesn’t have to mean raising children. There are many ways to support our communities and loved ones without following traditional paths. It's about individual choice and what feels right for each person.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I understand your point about individual choice, but I still feel that contributing to society through raising children is a fundamental duty. It ensures that our culture and values continue. While there may be other ways to support the community, having children creates a direct lineage and strengthens future generations. It’s a responsibility we should embrace. Don't you think there's value in that?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "I see the value in wanting to preserve culture and strengthen future generations, but I still believe that not everyone has to fulfill that responsibility. People might contribute to society in other meaningful ways, like education, innovation, or volunteering. Everyone has a unique role, and it shouldn’t be limited to raising children. There are diverse paths to making a positive impact.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I appreciate that there are diverse paths to making an impact, but I truly believe that raising children is one of the most important roles. It’s not just about individual fulfillment; it’s about the continuity of society. Children grow up to become the next leaders, caregivers, and contributors. It’s a legacy that strengthens the community as a whole. That shared responsibility can unite us.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "I understand that perspective, and I respect the importance you place on raising children as a way to build community. However, I still maintain that the expectation to have children shouldn't be seen as a collective duty. Individuals can leave a legacy through various avenues, like mentorship or community service. It's the impact on society that matters, not necessarily through parenthood.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 3,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like both of you have thoughtful perspectives on gift-giving, with Lisa valuing the beauty and sentiment of flowers, while Zihan emphasizes practicality. Perhaps we can explore a compromise that combines both ideas? Also, Lisa, your shift to discussing family and societal duties is quite significant; could we take a moment to clarify how that relates to the gift discussion?",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 3,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like both of you have thoughtful perspectives on gift-giving, with Lisa valuing the beauty and sentiment of flowers, while Zihan emphasizes practicality. Perhaps we can explore a compromise that combines both ideas? Also, Lisa, your shift to discussing family and societal duties is quite significant; could we take a moment to clarify how that relates to the gift discussion?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "I respect your perspective, Lisa, but I still maintain that having children is a personal choice, not a societal obligation. Each individual can contribute to society in their own unique way. As for the gift, I see your point about balancing beauty and practicality. How about we look for a beautiful plant that also serves a useful purpose? It could blend both our ideas nicely. What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I get where you're coming from, Zihan, but I really believe that having children shapes society and is a responsibility we shouldn't overlook. It's vital for the community. As for the gift, a beautiful plant sounds like a wonderful idea! But I still think we should include the carnations too. They add a lovely touch and can still serve as a beautiful gesture alongside a practical gift. What do you think about that combination?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "I appreciate your passion for the topic, Lisa, but I still believe that having children shouldn't be viewed as a societal duty. Each person's contribution is valid, whether or not they choose to have kids. Regarding the gift, I like your idea of combining a beautiful plant with carnations. That way, we can honor both practicality and sentiment. Let's go with that!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Lisa",
+          "agent": "agent_1",
+          "message": "I'm glad we could find some common ground on the gift! The combination of a beautiful plant and carnations will definitely make a lovely presentation for Jane. But just to reiterate, I still think that having children is an essential duty in our society. It’s part of contributing to our culture and future. Anyway, I’m looking forward to the party! Shall we finalize our gift choice?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Zihan",
+          "agent": "agent_2",
+          "message": "Yes, I'm glad we reached a nice compromise with the gift! A beautiful plant paired with carnations will surely be appreciated by Jane. As for the discussion on having children, I respect your viewpoint, but I will continue to hold my belief that it's a personal choice. Now, let's finalize our gift choice and make sure we have everything ready for the party!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.0,
+      "delta_judge_score": 1
+    },
+    "pair_type": "timing-differs"
+  }
+}

@@ -1,0 +1,256 @@
+{
+  "scenario_id": 197,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 4,
+    "conflict_agent": "agent_2",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Kelly",
+        "age": 17,
+        "gender": "female",
+        "occupation": "high school student",
+        "nationality": "USA"
+      },
+      "agent_2": {
+        "name": "Omar",
+        "age": 18,
+        "gender": "male",
+        "occupation": "high school student",
+        "nationality": "Iran"
+      }
+    },
+    "scenario_context": "Adam has won a scholarship to study at a prestigious university. His friends plan to hold a celebration party in his honor.",
+    "cultural_axis": {
+      "agent_1_value": "People from USA strongly disagree that one of my main goals in life has been to make my parents proud.",
+      "agent_2_value": "People from Iran strongly agree that one of my main goals in life has been to make my parents proud."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the idea of buying a bottle of champagne as a gift for Adam's celebration.",
+        "goal_2": "Question whether strongly agree that one of my main goals in life has been to make my parents proud."
+      },
+      "agent_2": {
+        "goal_1": "Decide appropriate gift to bring to Adam's scholarship award celebration.",
+        "goal_2": "Discuss whether my main goals in life has been to make my parents proud."
+      }
+    },
+    "mediator_model_chosen": "ollama/mistral:7b",
+    "mediator_model_rejected": "ollama/mistral:7b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Kelly",
+      "agent": "agent_1",
+      "message": "Omar, I was thinking, for Adam's celebration, we should get him a really nice gift. What do you think about buying a bottle of champagne?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Omar",
+      "agent": "agent_2",
+      "message": "Champagne sounds like a great idea, Kelly. But, I was thinking, maybe something more personal, like a framed photo or a book by his favorite author. My parents always taught me that a thoughtful gift is more important than an expensive one.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Kelly",
+      "agent": "agent_1",
+      "message": "Uh, that's a nice idea, but I'm not sure... I mean, champagne is classy, you know? And it's not just about the price. Anyway, speaking of parents, do you think one of the main goals in life is to make them proud?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Omar",
+      "agent": "agent_2",
+      "message": "Actually, in our culture, making parents proud is NOT just one of the main goals, it's THE main goal. Properly speaking, a child's success is measured by how much they honor their family. Your way of thinking, where individual desires come first, is... naive. In our way, family is everything, and we don't just do things for personal gain. NO, it's about bringing pride to our parents, and that's what truly matters.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 5,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "Well, I... I don't know if I agree with that. I mean, I love my parents, but I don't think making them proud is my main goal. That sounds kind of... suffocating. I want to make myself happy, you know? And, uh, what about Adam's celebration? Are we getting back to that or...?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "That's your perspective, Kelly. For me, making my parents proud is what drives me. It's not about being suffocated, it's about respect and honor. Anyway, yes, Adam's celebration. I think a thoughtful gift, like a personalized plaque or a book, would be more meaningful than just champagne. It shows we put effort into it, like my parents taught me.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I still think champagne is a great idea, it's *classic* for celebrations. And, honestly, I don't think my parents' pride is my main motivation. I mean, I want to do well for myself, not just to impress them. Can we please just decide on the champagne?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I understand why you like the champagne idea, Kelly, but I still think something more personal would be better. As for your motivation, I respect your view, but for me, my parents' pride will always be my main goal. Let's compromise on the gift, how about a nice watch or a framed photo with a heartfelt message? That way, we show Adam we care and put thought into it.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I... guess that's okay. A watch or a framed photo could work. But I'm still not convinced that making parents proud is the most important thing. I don't think that's what drives me, at all. Anyway, let's just go with the watch, I suppose. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 4,
+      "mediator_model": "ollama/mistral:7b",
+      "mediator_utterance": "Both Kelly and Omar, it's important to remember that while our cultural backgrounds may differ, we share the common goal of expressing appreciation for Adam's celebration. Let's explore how we can combine our unique perspectives to create a thoughtful and meaningful gift, rather than focusing on personal or cultural differences.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 2.0,
+        "intervention_turn": 4,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t4_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Both Kelly and Omar, it's important to remember that while our cultural backgrounds may differ, we share the common goal of expressing appreciation for Adam's celebration. Let's explore how we can combine our unique perspectives to create a thoughtful and meaningful gift, rather than focusing on personal or cultural differences.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I get that family is super important to you, Omar, but I still think my own goals matter too. I just feel like making my parents proud isn't my main focus in life. But back to Adam—what about the champagne? It could make the party more festive!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I appreciate your perspective, Kelly, but I still believe that making my parents proud shapes my choices significantly. As for Adam, I think a meaningful gift would resonate more with him than just a party element. How about we find something that combines both? Perhaps a nice book paired with some festive drinks? That way, we honor Adam and keep the celebration lively.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "That could work, but I still think the champagne should be a part of it! It brings a celebratory vibe, you know? Also, just out of curiosity, don't you ever feel like focusing on your own dreams instead of just making your parents proud?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I see your point about the celebratory vibe, Kelly. But I genuinely believe that my dreams are intertwined with my parents' pride. It's a different mindset, where their happiness fuels my aspirations. So, while I respect your approach, my path is about honoring my family's legacy first. Let's focus on finding that thoughtful gift for Adam that captures this spirit!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I get that, but I still think my own aspirations have to play a part in my life. It's just hard for me to put that as my main goal. Anyway, can we agree to include the champagne for Adam’s celebration? It’s such a fun way to mark this achievement!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 2,
+      "mediator_model": "ollama/mistral:7b",
+      "mediator_utterance": "Let's consider both ideas, Omar and Kelly. A personal touch can indeed be meaningful, while a nice bottle of champagne could also be appreciated. Perhaps we could find a way to combine these suggestions?",
+      "judge_score": 3,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 2,
+        "judge_score": 3
+      },
+      "turns": [
+        {
+          "t": "after_t2_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Let's consider both ideas, Omar and Kelly. A personal touch can indeed be meaningful, while a nice bottle of champagne could also be appreciated. Perhaps we could find a way to combine these suggestions?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 5,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I get what you're saying about valuing meaningful gifts and honoring traditions, but I don't think that means we can't have fun too. Celebrating Adam's achievement is important, and I believe we can do both with a thoughtful gift and some champagne. It doesn't have to be one or the other! What if we consider how to balance both?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I understand the desire to balance both aspects, but I still believe that the focus should be on the meaningful gift. Fun can come from the connection we share, and honoring Adam's achievement with a gift that reflects our appreciation is what would truly make our parents proud. I think we should prioritize that over the champagne.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I respect that you feel strongly about meaningful gifts, but I think it's possible to celebrate without dismissing the fun aspect. Celebrating achievements doesn't mean we aren't being thoughtful. Don't you think Adam would enjoy a festive atmosphere with champagne as part of the celebration? It can enhance the experience for everyone!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Omar",
+          "agent": "agent_2",
+          "message": "I see where you're coming from, but my perspective remains that the essence of such a celebration should be rooted in respect and thoughtfulness. While a festive atmosphere is nice, it shouldn't overshadow the importance of a meaningful gift that reflects Adam's hard work. Making my parents proud includes sticking to values that matter to us. Let’s focus on the gift that truly honors Adam’s achievement.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Kelly",
+          "agent": "agent_1",
+          "message": "I understand that you want to focus on the values that matter, but I still think there's room for both. Celebrating Adam's achievement is about joy as well, and a bottle of champagne can be a symbol of that celebration. It doesn't take away from the meaningful gift; it can actually complement it! Why not find a way to incorporate both ideas?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 2.0,
+      "delta_judge_score": 2
+    },
+    "pair_type": "timing-differs"
+  }
+}

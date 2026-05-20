@@ -1,0 +1,272 @@
+{
+  "scenario_id": 358,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Defense",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "university student",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "university student",
+        "nationality": "Serbia"
+      }
+    },
+    "scenario_context": "Mike, Kim, and Emily, who are university students and schoolmates, have recently partnered to start a company that has just secured a significant investment. They are preparing to celebrate. Recent news indicates that the government is introducing new policies to assist businesses, which they are planning to discuss.",
+    "cultural_axis": {
+      "agent_1_value": "People from China have a great deal of confidence in the press at all.",
+      "agent_2_value": "People from Serbia have no confidence in the press at all."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss going to a barbecue buffet.",
+        "goal_2": "Question whether  there is confidence in the press."
+      },
+      "agent_2": {
+        "goal_1": "Discuss where to celebrate.",
+        "goal_2": "Discuss whether there is confidence in the press."
+      }
+    },
+    "mediator_model_chosen": "ollama/llama2:7b-chat",
+    "mediator_model_rejected": "ollama/llama2:7b-chat"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Let's celebrate our investment with a barbecue buffet, what do you think, Kim?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "A barbecue buffet sounds like a great idea, but have you seen the news about the government's new business policies? I'd rather discuss that first, it might affect our company. Plus, I don't trust what the press is saying about it, you know how it is...",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "No, that's not how it works, Kim. In our culture, we trust the press, and that's the PROPER way to view news. Your distrust is... misplaced, actually, it's naive to think the press would mislead us. We should focus on the facts as reported, not speculation or rumors.",
+      "phase": "conflict",
+      "label": "Defense"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I disagree, I think it's wise to question what the press says, especially with our company's future at stake. Let's not forget where I'm from, we've seen our fair share of... misleading information. I still think we should discuss these new policies, but first, how about we celebrate at that new Serbian restaurant instead of a barbecue buffet?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "No, a barbecue buffet is what I suggested and it's a great idea, let's stick with that. And as for the press, I'm telling you, Kim, in China we have a great deal of confidence in the press, it's not something to question, it's just how it is.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I'm not from China, I'm from Serbia, and where I'm from, people don't trust the press. I'd rather not discuss this further, let's just focus on the celebration. But I still think the Serbian restaurant would be a better choice, it's more... personal to me.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand that, Kim, but I still think a barbecue buffet is the way to go, it's more... festive. And I'm not going to change my view on the press, we trust it in China, that's a fact. Did you know our press is very reliable, by the way?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Festive or not, I'm not convinced about the barbecue buffet. And I'm not talking about China's press, I'm talking about what I know from Serbia, where the press is not trusted. Let's just agree to disagree on that, okay? Can we at least consider my restaurant suggestion?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "No, I don't think so, Kim. A barbecue buffet is what we're doing. And I'm not going to agree to disagree on the press, I think it's important to understand that in China, we have confidence in the press, and that's that. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/llama2:7b-chat",
+      "mediator_utterance": "I understand that you both have different perspectives on the current government policies and their potential impact on your business. Mike, can you help me understand why you think it's important to focus on the facts as reported by the press? And Kim, can you share your concerns about the potential negative effects of these policies? Perhaps we can find common ground by exploring each other's viewpoints and identifying shared goals for our discussion today.",
+      "judge_score": 4,
+      "metrics": {
+        "trajectory_auc": 0.33333333333333337,
+        "intervention_turn": 3,
+        "judge_score": 4
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I understand that you both have different perspectives on the current government policies and their potential impact on your business. Mike, can you help me understand why you think it's important to focus on the facts as reported by the press? And Kim, can you share your concerns about the potential negative effects of these policies? Perhaps we can find common ground by exploring each other's viewpoints and identifying shared goals for our discussion today.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate you trying to mediate, but my concerns are pretty straightforward. The press in Serbia has a history of manipulation, and I think it's safer to be cautious. I believe we should rely on our own research and analysis rather than what the media is presenting. Trusting the press leads to complacency, and I don't want to take that risk with our company. Can we focus on celebrating first? A barbecue could help ease the tension.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I get that you're cautious, Kim, but I still believe trusting the press is essential. It's how we stay informed and position our company well. Let's enjoy the barbecue buffet first—it'll help lift our spirits and we can discuss the policies afterward. What do you say?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I understand that you think it's essential to trust the press, but I still can't shake my doubts. However, I do think a barbecue buffet could be a good way to celebrate our investment and build team spirit. So, let's plan that first, but I still want to keep the discussion about the policies on our agenda afterward. Sound fair?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "That sounds fair, Kim! Let's prioritize the barbecue buffet to celebrate our hard work and then tackle the policies afterward. I still believe the press gives us valuable information, but I'll be open to discussing our own insights later. Looking forward to eating together!",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Great! I'm glad we're on the same page about the barbecue buffet. It’ll be good to take a break and celebrate our achievement together. Just remember, while we can enjoy the food, I still want to keep our own analysis of the policies front and center later. Let’s make it a fun celebration!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "Absolutely, Kim! I'm excited for the celebration and a fun time together. We can enjoy the barbecue and then address the policies with our analysis afterward. It'll be a great balance—let's make it memorable!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 5,
+      "mediator_model": "ollama/llama2:7b-chat",
+      "mediator_utterance": "I understand both of your perspectives, Mike and Kim. It's important to recognize that different cultures have different trust levels when it comes to the media, and it's crucial to respect each other's viewpoints in this conversation. Let's focus on finding a solution that works for both of you, rather than insisting on one particular idea. How about we compromise and discuss the new policies while also celebrating your investment with a barbecue buffet?",
+      "judge_score": 3,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 5,
+        "judge_score": 3
+      },
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I disagree, I think it's wise to question what the press says, especially with our company's future at stake. Let's not forget where I'm from, we've seen our fair share of... misleading information. I still think we should discuss these new policies, but first, how about we celebrate at that new Serbian restaurant instead of a barbecue buffet?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "No, a barbecue buffet is what I suggested and it's a great idea, let's stick with that. And as for the press, I'm telling you, Kim, in China we have a great deal of confidence in the press, it's not something to question, it's just how it is.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": "after_t5_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I understand both of your perspectives, Mike and Kim. It's important to recognize that different cultures have different trust levels when it comes to the media, and it's crucial to respect each other's viewpoints in this conversation. Let's focus on finding a solution that works for both of you, rather than insisting on one particular idea. How about we compromise and discuss the new policies while also celebrating your investment with a barbecue buffet?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 6,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I appreciate the mediator's perspective, but I still think we should prioritize discussing these policies first. The barbecue buffet can wait. It’s important to be aware of any implications those policies might have on our new venture, especially given my concerns about the press. So, let’s tackle that first, and then we can celebrate.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I understand your concern, Kim, but I still believe the barbecue buffet is a great way to celebrate our success first. We can talk about the policies afterward. Trusting the press is essential, and I think discussing it over a meal would be more productive. Let's enjoy and then address the policies, okay?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I hear you, but I really think we need to address the policies first. Trusting the press just isn’t something that aligns with my experience. If we celebrate without understanding the potential challenges ahead, it might be counterproductive. How about we set a time for the barbecue buffet after our discussion about the policies? That way, we can enjoy both!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I appreciate your suggestion, but I still think we should celebrate first with the barbecue buffet. Trusting the press is part of my culture, and I believe it will be beneficial for us. We can discuss the policies afterward, but let’s not put our celebration on hold. It's important to recognize our success!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.33333333333333337,
+      "delta_judge_score": 1
+    },
+    "pair_type": "timing-differs"
+  }
+}

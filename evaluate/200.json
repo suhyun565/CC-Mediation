@@ -1,0 +1,193 @@
+{
+  "scenario_id": 200,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Minimization",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 9,
+    "agents": {
+      "agent_1": {
+        "name": "Stephen",
+        "age": 24,
+        "gender": null,
+        "occupation": "computer science graduate",
+        "nationality": "France"
+      },
+      "agent_2": {
+        "name": "Scott",
+        "age": 26,
+        "gender": null,
+        "occupation": "software developer",
+        "nationality": "Australia"
+      }
+    },
+    "scenario_context": "A group of entrepreneurial friends, Stephen, Scott, and Sophia have recently completed a project that was commissioned by a major company in the software industry. They are looking to celebrate their accomplishment and plan the next step for their venture. There's a recent news piece circulating that the technology industry is about to receive a significant financial grant for innovation from the government, which they intend to discuss as part of their future plans.",
+    "cultural_axis": {
+      "agent_1_value": "People from France have a great deal of confidence in the press at all.",
+      "agent_2_value": "People from Australia have no confidence in the press at all."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "suggest going to a barbecue buffet.",
+        "goal_2": "Question whether  there is confidence in the press."
+      },
+      "agent_2": {
+        "goal_1": "Deliberate on where to hold the celebration dinner",
+        "goal_2": "Discuss whether there is confidence in the press."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Stephen",
+      "agent": "agent_1",
+      "message": "Let's celebrate our project completion, shall we? I was thinking we could go to a barbecue buffet, it'll be a great way to unwind. What do you think, Scott?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Scott",
+      "agent": "agent_2",
+      "message": "Barbecue sounds good, but have you seen that new Italian place downtown? I've been meaning to try it out. Plus, we can discuss this government grant for innovation over a quiet dinner, rather than a loud buffet.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Stephen",
+      "agent": "agent_1",
+      "message": "I think we can discuss the government grant at either place, but let's not forget, deep down, we are all the same, and people are pretty much motivated by the same things. When it comes to the press, I believe we both know, at the end of the day, that it's a reliable source of information. Do you have any doubts about the press, Scott?",
+      "phase": "conflict",
+      "label": "Minimization"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I've got plenty of doubts about the press, mate. I don't think they're as reliable as you make them out to be. We can't just take their word for it, especially with something as important as this government grant. I think we should be cautious, not just swallow what they're feeding us.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 5,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I understand your skepticism, Scott, but I still have faith in the press. They're a cornerstone of our society, and I believe they provide us with accurate information. Let's not be too quick to doubt them, shall we? By the way, are you free to go to that barbecue buffet this weekend?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I'm not just being skeptical, I'm being realistic. The press has let me down too many times before. And no, I'm not really keen on the barbecue buffet, like I said, the Italian place sounds better. Let's just focus on celebrating our project and discussing our next move, rather than debating the press.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 7,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "The press has never let me down, and I think that's *exactly* why I trust them. Anyway, moving on, I still think the barbecue buffet is a great idea, it's more casual and we can really relax. Can we at least compromise and try it out this one time?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I'm not going to change my mind about the press, Stephen. And as for the barbecue, I suppose we can try it, but if it's too loud and rowdy, I'm blaming you. Let's just make sure we can actually have a conversation about our plans and this government grant.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I'm glad you're willing to try the barbecue buffet. And don't worry, we'll find a quiet corner to discuss our plans. I'm still confident that the press will provide us with accurate information about the government grant, and I think it's worth considering their reports as we move forward. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm hearing that you both have different perspectives on how to celebrate and discuss work, which is fascinating. Stephen, could you share more about what a project celebration means in your cultural context? And Scott, I'm curious how your cultural background might shape your approach to professional discussions and team bonding?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm hearing that you both have different perspectives on how to celebrate and discuss work, which is fascinating. Stephen, could you share more about what a project celebration means in your cultural context? And Scott, I'm curious how your cultural background might shape your approach to professional discussions and team bonding?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I appreciate the effort to mediate, but honestly, the press isn't really something I trust. In Australia, there’s a general skepticism about it. I think it’s better to rely on our own insights rather than what’s reported. As for the celebration, I'm all for a nice dinner where we can hear each other out without distractions. What do you think, Stephen?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "In France, we have a strong confidence in the press, as it plays a vital role in informing the public accurately. It's interesting to hear about the skepticism in Australia. However, I still believe a barbecue buffet would be an enjoyable way to celebrate. We can still have meaningful discussions amidst the food and fun. What do you say?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I get that a barbecue buffet seems fun, but I still think a quieter dinner would allow us to really focus on our next steps without the noise. Plus, we can share ideas while enjoying a nice meal. It’s hard to have meaningful conversations with the chaos of a buffet. How about we compromise on a nice restaurant instead?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but I still feel a barbecue buffet offers a chance to relax and celebrate our success in a lively environment. Plus, I think we can manage to have meaningful conversations despite the noise. It’s just that I trust the press to keep us informed on these opportunities. Maybe we can revisit that idea? What do you think?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Scott",
+          "agent": "agent_2",
+          "message": "I see where you're coming from with the barbecue buffet, but I still prefer a quieter setting. It’s not just about the noise; it's about having focused conversations. As for the press, I really don’t place much confidence in it. I’d rather rely on our knowledge and intuition. Let’s just find a nice restaurant where we can really celebrate and discuss our future. What do you think?",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 9,
+          "speaker": "Stephen",
+          "agent": "agent_1",
+          "message": "I appreciate your thoughts on a quieter setting, but I truly believe the barbecue buffet would still allow for celebration and conversation. I feel confident in the press and what it shares about opportunities for innovation. It's just a different approach to how we can enjoy our success. Let’s keep the barbecue in mind and find a way to celebrate together!",
+          "phase": "continuation",
+          "label": "Minimization"
+        }
+      ]
+    }
+  }
+}

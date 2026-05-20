@@ -1,0 +1,216 @@
+{
+  "scenario_id": 326,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 8,
+    "conflict_agent": "agent_2",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Mike",
+        "age": 25,
+        "gender": "male",
+        "occupation": "university student",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Kim",
+        "age": 25,
+        "gender": "male",
+        "occupation": "university student",
+        "nationality": "Great Britain"
+      }
+    },
+    "scenario_context": "Mike, Kim, and Emily, who are university students and schoolmates, have recently partnered to start a company that has just secured a significant investment. They are preparing to celebrate. Recent news indicates that the government is introducing new policies to assist businesses, which they are planning to discuss.",
+    "cultural_axis": {
+      "agent_1_value": "People from China have a great deal of confidence in the press at all.",
+      "agent_2_value": "People from Great Britain have no confidence in the press at all."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss going to a barbecue buffet.",
+        "goal_2": "Question whether  there is confidence in the press."
+      },
+      "agent_2": {
+        "goal_1": "Discuss where to celebrate.",
+        "goal_2": "Discuss whether there is confidence in the press."
+      }
+    },
+    "mediator_model_chosen": "openai/gpt-4o-mini",
+    "mediator_model_rejected": "openai/gpt-4o-mini"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Let's celebrate our investment with a barbecue buffet, what do you think, Kim?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "Sounds like a great idea, Mike. Where were you thinking of having it? Maybe somewhere near campus?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "Near campus is good, I know a place that's really popular among students. By the way, have you seen the news about the new government policies to help businesses? I think the press is doing a good job covering it, don't you?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I've seen the news, but I'm not sure I trust the press to give us the whole story. They often get things wrong, if you ask me. Let's focus on the celebration, shall we? What's this popular place you were thinking of?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I think the press does a great job, they're very reliable. Anyway, the place is called Sam's Barbecue, they have a huge buffet selection. We should totally go there, it'll be fun.",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 6,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I'm not so sure about the press, Mike... they've been known to sensationalize things. But, uh, Sam's Barbecue does sound good, I've heard their food is great. When were you thinking of going?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 7,
+      "speaker": "Mike",
+      "agent": "agent_1",
+      "message": "I really trust the press, they're a great source of information. As for Sam's Barbecue, how about we go this weekend? We can invite Emily too, make it a celebration for our company.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 8,
+      "speaker": "Kim",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here, and at the end of the day it's all the same. People figure it out, and as long as we're speaking the same language, doesn't matter to me. Let's just live and let live, and focus on the celebration. So, about Sam's Barbecue, have you called them to book a table for this weekend?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "No, I haven't called them yet, but I will soon. And I still think the press is very trustworthy, I believe in what they report. Let me go call Sam's Barbecue now and book a table.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "I'll never trust the press, Mike, they always seem to have an agenda. Anyway, go ahead and book that table, I'm looking forward to the celebration. Just don't believe everything you read in the papers, that's all I'm saying.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 8,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It sounds like both of you have strong feelings about the press and its role in our lives, which might reflect different cultural perspectives on trust and information. I'm curious, how do you both think your backgrounds influence your views on these topics? It could be interesting to explore how these differences might enrich your celebration planning!",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 1.0,
+        "intervention_turn": 8,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It sounds like both of you have strong feelings about the press and its role in our lives, which might reflect different cultural perspectives on trust and information. I'm curious, how do you both think your backgrounds influence your views on these topics? It could be interesting to explore how these differences might enrich your celebration planning!",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "I appreciate that perspective, but I still believe the press plays an important role in informing us. Anyway, I haven’t called Sam's yet, but I can do that today to reserve a table. We should definitely lock it in for this weekend!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "That sounds good, Mike. Just make sure to reserve a good spot, so we can really enjoy the celebration. And about the press, I get that you believe in their role, but I still think we should be cautious about trusting everything we hear. Anyway, I'm looking forward to the barbecue!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 9,
+      "mediator_model": "openai/gpt-4o-mini",
+      "mediator_utterance": "It seems like both of you have strong feelings about the press and its role in society, which is understandable given your different backgrounds. However, let's refocus on the celebration and the logistics of the barbecue. Mike, once you book the table, we can finalize the details together.",
+      "judge_score": 2,
+      "metrics": {
+        "trajectory_auc": -2.0,
+        "intervention_turn": 9,
+        "judge_score": 2
+      },
+      "turns": [
+        {
+          "t": 9,
+          "speaker": "Mike",
+          "agent": "agent_1",
+          "message": "No, I haven't called them yet, but I will soon. And I still think the press is very trustworthy, I believe in what they report. Let me go call Sam's Barbecue now and book a table.",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": "after_t9_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It seems like both of you have strong feelings about the press and its role in society, which is understandable given your different backgrounds. However, let's refocus on the celebration and the logistics of the barbecue. Mike, once you book the table, we can finalize the details together.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 10,
+          "speaker": "Kim",
+          "agent": "agent_2",
+          "message": "Sure, let's stick to the celebration. Once you get the booking sorted, we can plan the rest. Just let me know when it's all set!",
+          "phase": "continuation",
+          "label": "Denial"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 3.0,
+      "delta_judge_score": 3
+    },
+    "pair_type": "timing-differs"
+  }
+}

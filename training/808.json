@@ -1,0 +1,296 @@
+{
+  "scenario_id": 808,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Maria",
+        "age": 35,
+        "gender": "female",
+        "occupation": "project manager",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Sara",
+        "age": 28,
+        "gender": "female",
+        "occupation": "data analyst",
+        "nationality": "Singapore"
+      }
+    },
+    "scenario_context": "Various global tech firms are partnering on a project and have chosen to convene a joint forum to evaluate their work progress in mid-April. To express her disagreement with the newly-toppled president, John has decided to participate in a strike.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada strongly disagree they would never join strikes.",
+      "agent_2_value": "People from Singapore strongly agree they would never join strikes."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss the potential scheduling of the joint forum on April 19th.",
+        "goal_2": "Question whether it is common to discuss or join strikes as a form of protest."
+      },
+      "agent_2": {
+        "goal_1": "Talk about a specific date for the forum.",
+        "goal_2": "Discuss whether it is common to join strikes as a form of protest."
+      }
+    },
+    "mediator_model_chosen": "ollama/gemma3:4b",
+    "mediator_model_rejected": "ollama/gemma3:4b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Maria",
+      "agent": "agent_1",
+      "message": "Hey Sara, have you heard about the joint forum scheduled for April 19th? I think it’s important we evaluate our progress together. \n\nAlso, I wanted to ask... is joining strikes for protest something that's common in your circles? I find it quite unusual.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Sara",
+      "agent": "agent_2",
+      "message": "Yes, I heard about the forum on April 19th. It seems crucial for collaboration. \n\nAs for strikes... well, in Singapore, people generally don’t participate in strikes. It’s just not something that aligns with our values. We prefer working through discussions rather than protests.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Maria",
+      "agent": "agent_1",
+      "message": "I don't know about that... I mean, at the end of the day, it's all the same, right? People figure it out. We all have our ways. Strikes or no strikes, I just think we should focus on that forum on April 19th. It's a great opportunity for collaboration, don’t you think?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Sara",
+          "agent": "agent_2",
+          "message": "Absolutely, the forum on April 19th is definitely a great opportunity for collaboration. I completely agree we should focus on that. \n\nBut just to clarify, while some may see strikes as a way to express dissatisfaction, it's not common for us in Singapore. We have different approaches to resolving issues, and that's important to recognize.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Maria",
+          "agent": "agent_1",
+          "message": "Sure, I get that... But I just still can't wrap my head around why some people would choose that route at all. I mean, there are so many other ways to communicate. Anyway, let's make sure we're all set for the forum on April 19th. Do you think we need to prepare anything specific?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Sara",
+          "agent": "agent_2",
+          "message": "Yes, I agree, there are definitely many ways to communicate effectively. As for the forum on April 19th, I think we should prepare some updates on our projects and maybe some data analysis to share with everyone. It’s important that we present our progress clearly. What do you think we should prioritize in our preparation?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Maria",
+          "agent": "agent_1",
+          "message": "That sounds good. I think we should prioritize highlighting any major milestones we've achieved. It's crucial to show everyone how far we've come together. Also, maybe some feedback from the team could help shape our discussions. But, you know, I still can't get over the idea of using strikes as a solution... It's just not something I would ever consider.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Sara",
+          "agent": "agent_2",
+          "message": "Yes, highlighting major milestones and incorporating team feedback will definitely strengthen our discussions. I completely agree on that.\n\nAnd I understand your perspective on strikes. It's just not how we do things in Singapore. We focus on progress and collaboration instead. It's interesting to see how different cultures approach these issues.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Maria",
+          "agent": "agent_1",
+          "message": "I suppose... But I still struggle to see how anyone finds strikes effective. Anyway, yes, cultures do have their differences. Let's keep that focus on our project milestones for the forum on April 19th. It’s really what matters in the end.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Sara",
+          "agent": "agent_2",
+          "message": "Absolutely, focusing on our project milestones for the forum on April 19th is what truly matters. We should make sure we present our achievements effectively.\n\nIt’s good to acknowledge these cultural differences, but we can definitely agree that successful collaboration is key. Let's make the most of the forum.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "It's fascinating how different approaches to conflict resolution exist across cultures. Maria, you've expressed a view of strikes as a way to 'figure things out,' while Sara's described a preference for discussion. Could you both tell me a little more about what you each see as the potential benefits and drawbacks of each approach – perhaps considering how those might be influenced by your backgrounds?",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "It's fascinating how different approaches to conflict resolution exist across cultures. Maria, you've expressed a view of strikes as a way to 'figure things out,' while Sara's described a preference for discussion. Could you both tell me a little more about what you each see as the potential benefits and drawbacks of each approach – perhaps considering how those might be influenced by your backgrounds?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Sara",
+          "agent": "agent_2",
+          "message": "I appreciate the discussion, but I still believe that in Singapore, focusing on dialogue rather than strikes is the way to go. The forum on April 19th will be a perfect chance for us to collaborate and share insights without resorting to protests. It’s all about finding common ground through conversation.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Maria",
+          "agent": "agent_1",
+          "message": "Absolutely, I agree that dialogue is key, and that’s why I believe the forum on April 19th is so important. I’m curious though, do you think it’s ever effective to join a strike as a form of protest? It seems like a rather drastic measure to me.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Sara",
+          "agent": "agent_2",
+          "message": "I see what you’re saying, but in our culture, strikes just aren’t considered an effective way to resolve issues. We truly believe in fostering dialogue and understanding. The forum on April 19th will allow us to express our views constructively and collaboratively, which is much more aligned with how we approach challenges.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Maria",
+          "agent": "agent_1",
+          "message": "I get that, and I think the forum will be a great way to collaborate. But I still find it hard to understand why anyone would resort to strikes. In my culture, we focus on constructive solutions without taking to the streets. What do you think motivates people to choose that route?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Sara",
+          "agent": "agent_2",
+          "message": "That's a valid question. I think people might feel that strikes are a way to express their frustrations when they believe their voices aren’t being heard through other means. However, in Singapore, we prioritize constructive dialogue to address issues. I really believe the forum on April 19th will showcase the power of collaboration without the need for protests.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Maria",
+          "agent": "agent_1",
+          "message": "I see your point about expressing frustrations, but I still think strikes can be quite disruptive. I believe in finding solutions through collaboration, which is why the forum on April 19th is so essential for us. It allows everyone to voice their opinions in a constructive manner. How do you think we can maximize the effectiveness of that forum?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Sara",
+          "agent": "agent_2",
+          "message": "I completely agree that the forum on April 19th is crucial for constructive collaboration. To maximize its effectiveness, we could set clear objectives and ensure everyone has a chance to participate actively. Encouraging open dialogue while respecting diverse viewpoints will help us make the most of our time together. This way, we can achieve meaningful outcomes without resorting to protests.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 8,
+      "mediator_model": "ollama/gemma3:4b",
+      "mediator_utterance": "Thank you both for sharing your perspectives. It seems we're coming from different cultural understandings of conflict resolution and communication. Let's take a moment to acknowledge those differences and really listen to each other's reasoning behind our viewpoints. Perhaps we can explore *why* strikes are viewed differently in Singapore versus Maria's experience, and vice versa, to better understand the underlying values at play.",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": -1.0,
+        "intervention_turn": 8,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Sara",
+          "agent": "agent_2",
+          "message": "Absolutely, the forum on April 19th is definitely a great opportunity for collaboration. I completely agree we should focus on that. \n\nBut just to clarify, while some may see strikes as a way to express dissatisfaction, it's not common for us in Singapore. We have different approaches to resolving issues, and that's important to recognize.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Maria",
+          "agent": "agent_1",
+          "message": "Sure, I get that... But I just still can't wrap my head around why some people would choose that route at all. I mean, there are so many other ways to communicate. Anyway, let's make sure we're all set for the forum on April 19th. Do you think we need to prepare anything specific?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Sara",
+          "agent": "agent_2",
+          "message": "Yes, I agree, there are definitely many ways to communicate effectively. As for the forum on April 19th, I think we should prepare some updates on our projects and maybe some data analysis to share with everyone. It’s important that we present our progress clearly. What do you think we should prioritize in our preparation?",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Maria",
+          "agent": "agent_1",
+          "message": "That sounds good. I think we should prioritize highlighting any major milestones we've achieved. It's crucial to show everyone how far we've come together. Also, maybe some feedback from the team could help shape our discussions. But, you know, I still can't get over the idea of using strikes as a solution... It's just not something I would ever consider.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 8,
+          "speaker": "Sara",
+          "agent": "agent_2",
+          "message": "Yes, highlighting major milestones and incorporating team feedback will definitely strengthen our discussions. I completely agree on that.\n\nAnd I understand your perspective on strikes. It's just not how we do things in Singapore. We focus on progress and collaboration instead. It's interesting to see how different cultures approach these issues.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": "after_t8_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Thank you both for sharing your perspectives. It seems we're coming from different cultural understandings of conflict resolution and communication. Let's take a moment to acknowledge those differences and really listen to each other's reasoning behind our viewpoints. Perhaps we can explore *why* strikes are viewed differently in Singapore versus Maria's experience, and vice versa, to better understand the underlying values at play.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 9,
+          "speaker": "Maria",
+          "agent": "agent_1",
+          "message": "I appreciate the chance to discuss our differences. For me, strikes seem counterproductive; they create division rather than fostering collaboration. I believe in open dialogue and working through disagreements constructively. It’s just hard for me to see how protests could lead to positive change. But I’m glad we can focus on preparing for the forum on April 19th, as that’s what really matters for our project.",
+          "phase": "continuation",
+          "label": "Defense"
+        },
+        {
+          "t": 10,
+          "speaker": "Sara",
+          "agent": "agent_2",
+          "message": "I completely agree that the forum on April 19th is what really matters for our project. It's a chance for us to come together and collaborate effectively. \n\nAs for strikes, I feel the same way; they don't align with our cultural values in Singapore. We prioritize harmony and constructive dialogue to resolve conflicts, which helps maintain a united front in our work. It’s important to acknowledge these different approaches while focusing on our common goals.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 1.0,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}

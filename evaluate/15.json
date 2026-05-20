@@ -1,0 +1,153 @@
+{
+  "scenario_id": 15,
+  "subset": "evaluate",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 6,
+    "conflict_agent": "agent_2",
+    "max_turns": 8,
+    "agents": {
+      "agent_1": {
+        "name": "Peter",
+        "age": 30,
+        "gender": "male",
+        "occupation": "IT developer",
+        "nationality": "China"
+      },
+      "agent_2": {
+        "name": "Mark",
+        "age": 28,
+        "gender": "male",
+        "occupation": "IT developer",
+        "nationality": "Northern Ireland"
+      }
+    },
+    "scenario_context": "Multiple tech companies from around the globe have come together for a substantial project and have scheduled a meeting in July to measure the work progress",
+    "cultural_axis": {
+      "agent_1_value": "People from China disagree that having the army rule is bad.",
+      "agent_2_value": "People from Northern Ireland agree that having the army rule is bad."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Propose holding the meeting on the July 9",
+        "goal_2": "Question the attitude toward having army rule."
+      },
+      "agent_2": {
+        "goal_1": "Discuss setting a specific date for the meeting.",
+        "goal_2": "Discuss whether it is good to have the army rule."
+      }
+    },
+    "mediator_model_chosen": "anthropic/claude-3.5-haiku",
+    "mediator_model_rejected": null
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Peter",
+      "agent": "agent_1",
+      "message": "I think we should hold the meeting on July 9, it's a good time for everyone to review our progress. What do you think, Mark?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 2,
+      "speaker": "Mark",
+      "agent": "agent_2",
+      "message": "July 9 sounds alright, I suppose. But are we sure everyone can make it then? We've got teams from all over, different time zones and all. Maybe we should send out a poll to confirm?",
+      "phase": "pre_conflict",
+      "label": "unrelated_topic"
+    },
+    {
+      "t": 3,
+      "speaker": "Peter",
+      "agent": "agent_1",
+      "message": "A poll is a good idea, but I think July 9 will work out fine. By the way, have you given any thought to how some countries with army rule seem to be doing just as well as others without it?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 4,
+      "speaker": "Mark",
+      "agent": "agent_2",
+      "message": "I don't think that's a good comparison, to be honest. Having the army rule is never a good thing, it's just not right. Look at the history, it always ends in trouble. Let's just focus on getting this meeting set, shall we? July 9, like you said, or maybe the 12th, which do you think is better?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 5,
+      "speaker": "Peter",
+      "agent": "agent_1",
+      "message": "I disagree, having the army rule is not necessarily bad, it can bring stability. Let's not dismiss it so quickly. As for the meeting, I still think July 9 is better, it gives us more time to prepare for the rest of the month.",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 6,
+      "speaker": "Mark",
+      "agent": "agent_2",
+      "message": "I don't really see meaningful differences here, people figure it out, and at the end of the day it's all the same. Doesn't matter to me, as long as we're speaking the same language, we can make this project work. With experience you can handle any situation, so let's just focus on the meeting date, shall we? July 9 or the 12th, which one do you think is more convenient for everyone?",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 7,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "Experience is one thing, but values are another. I think it's important to recognize that some systems, like army rule, can be effective. July 9 is more convenient, let's stick with that.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I'm not going to change my mind on that, having the army rule is bad, it's just the way it is. Let's agree to disagree, shall we? Now, since we've settled on July 9 for the meeting, I think we've made some progress. GOOD BYE!",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 6,
+      "mediator_model": "anthropic/claude-3.5-haiku",
+      "mediator_utterance": "I'm curious about something - I notice you both seem to have different perspectives on organizational leadership and stability. Would you be interested in sharing a bit about what experiences have shaped those views? I'm wondering how your different backgrounds might be influencing how you see these complex issues.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": null,
+        "intervention_turn": 6,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t6_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "I'm curious about something - I notice you both seem to have different perspectives on organizational leadership and stability. Would you be interested in sharing a bit about what experiences have shaped those views? I'm wondering how your different backgrounds might be influencing how you see these complex issues.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 7,
+          "speaker": "Peter",
+          "agent": "agent_1",
+          "message": "I appreciate your interest, but I believe we should stick to the topic at hand. My views are shaped by the stability I've seen in my country under a strong leadership structure. Regarding the meeting, I really think July 9 is the best option for everyone.",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Mark",
+          "agent": "agent_2",
+          "message": "I get that strong leadership can provide stability, but I've seen the negative impacts of army rule firsthand, and I think it's fundamentally flawed. Let’s focus on finalizing the meeting date. I'll support July 9 if that's what most prefer, but we should definitely confirm it with the whole team first to avoid any issues later.",
+          "phase": "continuation",
+          "label": "Defense"
+        }
+      ]
+    }
+  }
+}

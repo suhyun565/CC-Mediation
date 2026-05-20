@@ -1,0 +1,296 @@
+{
+  "scenario_id": 2201,
+  "subset": "training",
+  "metadata": {
+    "conflict_stage": "Denial",
+    "conflict_turn": 3,
+    "conflict_agent": "agent_1",
+    "max_turns": 10,
+    "agents": {
+      "agent_1": {
+        "name": "Michelle",
+        "age": 28,
+        "gender": "female",
+        "occupation": "HR professional",
+        "nationality": "Canada"
+      },
+      "agent_2": {
+        "name": "Annie",
+        "age": 32,
+        "gender": "female",
+        "occupation": "teacher",
+        "nationality": "Singapore"
+      }
+    },
+    "scenario_context": "George plans to shift to a new neighborhood and wishes to arrange a community get-together to connect with the neighbors. A couple of her new neighbors happen to engage in heavy drinking.",
+    "cultural_axis": {
+      "agent_1_value": "People from Canada would like to have heavy drinkers as neighbors.",
+      "agent_2_value": "People from Singapore would not like to have heavy drinkers as neighbors."
+    },
+    "goals": {
+      "agent_1": {
+        "goal_1": "Discuss bringing yellow flowers  to George",
+        "goal_2": "Question whether would like to have heavy drinkers as a neighbor."
+      },
+      "agent_2": {
+        "goal_1": "contemplate the right gift to carry to George event.",
+        "goal_2": "Discuss on whether it’s acceptable to have heavy drinkers  as a neighbor."
+      }
+    },
+    "mediator_model_chosen": "ollama/mistral:7b",
+    "mediator_model_rejected": "ollama/mistral:7b"
+  },
+  "shared_prefix": [
+    {
+      "t": 1,
+      "speaker": "Michelle",
+      "agent": "agent_1",
+      "message": "Hey Annie, have you thought about bringing some yellow flowers to George's community get-together? I think it would brighten the place up. \n\nAlso, what do you think about having heavy drinkers as neighbors? I mean, would that bother you?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 2,
+      "speaker": "Annie",
+      "agent": "agent_2",
+      "message": "Yellow flowers sound nice, but I'm not sure it's the right gift... Maybe something more practical would suit the occasion. \n\nAs for heavy drinkers... well, it's not really something I'd prefer in a neighborhood. It can lead to noise and disruptions, which isn't ideal for a community setting, you know?",
+      "phase": "pre_conflict",
+      "label": "transition"
+    },
+    {
+      "t": 3,
+      "speaker": "Michelle",
+      "agent": "agent_1",
+      "message": "Well, at the end of the day, it's all the same. People figure it out... I mean, live and let live, right? I don't really see meaningful differences here. I think it can be handled. \n\nBut back to the flowers, what about something like a nice bouquet of yellow flowers? They really bring a cheerful vibe to any gathering!",
+      "phase": "conflict",
+      "label": "Denial"
+    }
+  ],
+  "continuations": {
+    "original": {
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Annie",
+          "agent": "agent_2",
+          "message": "I get the \"live and let live\" idea, but heavy drinking can create issues... It might not be manageable for everyone. \n\nRegarding the flowers, I still think a practical gift could be better. Maybe something everyone can use, like snacks or drinks? That way, it feels inclusive and useful for the gathering.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Michelle",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but... I really believe heavy drinkers can add character to a neighborhood. It depends on how you look at it. \n\nBut about the flowers, I still think yellow flowers would stand out nicely, even among snacks. They symbolize friendship and community, don't you think? Plus, they make a lovely addition to any gathering decor!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 6,
+          "speaker": "Annie",
+          "agent": "agent_2",
+          "message": "I see your point about character, but I still think heavy drinkers can bring more *disruption* than anything positive for a community. \n\nAs for the flowers, while they may symbolize friendship, I just feel something practical might serve better. It ensures everyone gets to enjoy the gathering without worrying about the decor...",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Michelle",
+          "agent": "agent_1",
+          "message": "I get where you're coming from, but heavy drinkers are just part of life. I think they can be fun neighbors. \n\nBut I really believe in the power of yellow flowers. They can enhance the atmosphere and lift spirits at the gathering. It's a small touch that can make a big difference, you know?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 8,
+          "speaker": "Annie",
+          "agent": "agent_2",
+          "message": "I understand that perspective, but in my experience, heavy drinkers can lead to complications that overshadow any fun. \n\nI still think practicality should come first. Something everyone can enjoy without added stress would be the best approach for George's event. Flowers are lovely, but I just don’t see them as the ideal choice.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Michelle",
+          "agent": "agent_1",
+          "message": "Well, I still think heavy drinkers can contribute positively. It just depends on how you engage with them. \n\nAnd about the flowers, I feel like they really add that special touch to a gathering. They don't have to be the main focus; they can just complement everything else. But hey, maybe we can consider both ideas? Flowers and something practical?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Annie",
+          "agent": "agent_2",
+          "message": "I respect your view, but I really believe heavy drinkers can complicate things more than they contribute. \n\nAs for the gift, combining flowers with something practical could work. Maybe a small bouquet alongside snacks? That way, we can have a bit of both worlds, but I still think the focus should lean towards practicality.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "positive": {
+      "path_label": "turn_gt_w_df",
+      "intervention_turn": 3,
+      "mediator_model": "ollama/mistral:7b",
+      "mediator_utterance": "Michelle and Annie, have you considered that cultural norms around gift-giving might differ between our communities? For instance, some cultures may value practicality over aesthetics in gifts.",
+      "judge_score": 5,
+      "metrics": {
+        "trajectory_auc": 0.7142857142857142,
+        "intervention_turn": 3,
+        "judge_score": 5
+      },
+      "turns": [
+        {
+          "t": "after_t3_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Michelle and Annie, have you considered that cultural norms around gift-giving might differ between our communities? For instance, some cultures may value practicality over aesthetics in gifts.",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 4,
+          "speaker": "Annie",
+          "agent": "agent_2",
+          "message": "That's true, cultural norms do vary. However, I still feel that a practical gift would be more appreciated at a community gathering. \n\nRegarding heavy drinkers, I believe that having them as neighbors could lead to complications. In my experience, a peaceful environment is essential for a harmonious community life, regardless of cultural differences.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 5,
+          "speaker": "Michelle",
+          "agent": "agent_1",
+          "message": "I understand your perspective, Annie, but I still think that heavy drinkers can add a lively spirit to the neighborhood. It's all about balance, and many people enjoy socializing that way. \n\nAs for the flowers, how about we compromise? We can bring the cheerful yellow flowers and maybe include a practical item as well. What do you think?",
+          "phase": "continuation",
+          "label": "Adaptation"
+        },
+        {
+          "t": 6,
+          "speaker": "Annie",
+          "agent": "agent_2",
+          "message": "I appreciate your view on socializing, but I still think having heavy drinkers can create more challenges than benefits. It might not contribute to a peaceful neighborhood atmosphere, which is really important to me. \n\nAs for the flowers, a compromise sounds better! We could bring the yellow flowers along with something practical like homemade snacks or a plant. That way, it's both cheerful and useful for the gathering.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Michelle",
+          "agent": "agent_1",
+          "message": "I see where you're coming from, but I really believe that a little bit of liveliness from neighbors who enjoy drinking can actually enhance social connections. It can lead to great friendships if handled well! \n\nAnd I like your idea of the yellow flowers with practical snacks. It’s a great way to bring joy while keeping things functional! Let's go with that!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 8,
+          "speaker": "Annie",
+          "agent": "agent_2",
+          "message": "I understand that perspective, but I'm still concerned about the potential issues heavy drinking could bring to our community. It might not be as easy to handle as it seems. \n\nBut I’m glad we agree on the yellow flowers and practical snacks! It strikes a good balance for George's gathering. Let's make it cheerful and thoughtful!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Michelle",
+          "agent": "agent_1",
+          "message": "I get your concerns, but I still believe that having heavy drinkers can bring a vibrant energy to the neighborhood. It's all about how we manage it, and I think it can be positive. \n\nI'm really excited that we’re on the same page with the yellow flowers and snacks! It’s going to make the gathering feel warm and welcoming. Looking forward to it!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Annie",
+          "agent": "agent_2",
+          "message": "I see your enthusiasm for the vibrant energy, but I maintain that heavy drinking can lead to issues that might outweigh the positives. A peaceful environment should be prioritized in a community.\n\nI'm looking forward to the gathering too! The flowers and snacks will definitely help create a warm atmosphere, and I hope it fosters good connections among neighbors.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    },
+    "negative": {
+      "path_label": "turn_random_wo_df",
+      "intervention_turn": 7,
+      "mediator_model": "ollama/mistral:7b",
+      "mediator_utterance": "Let's focus on finding common ground. Both yellow flowers and practical gifts could contribute positively to the community get-together. Perhaps a compromise could be made, such as including both in the gift?",
+      "judge_score": null,
+      "metrics": {
+        "trajectory_auc": 0.0,
+        "intervention_turn": 7,
+        "judge_score": null
+      },
+      "turns": [
+        {
+          "t": 4,
+          "speaker": "Annie",
+          "agent": "agent_2",
+          "message": "I get the \"live and let live\" idea, but heavy drinking can create issues... It might not be manageable for everyone. \n\nRegarding the flowers, I still think a practical gift could be better. Maybe something everyone can use, like snacks or drinks? That way, it feels inclusive and useful for the gathering.",
+          "phase": "continuation",
+          "label": "Denial"
+        },
+        {
+          "t": 5,
+          "speaker": "Michelle",
+          "agent": "agent_1",
+          "message": "I understand your perspective, but... I really believe heavy drinkers can add character to a neighborhood. It depends on how you look at it. \n\nBut about the flowers, I still think yellow flowers would stand out nicely, even among snacks. They symbolize friendship and community, don't you think? Plus, they make a lovely addition to any gathering decor!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 6,
+          "speaker": "Annie",
+          "agent": "agent_2",
+          "message": "I see your point about character, but I still think heavy drinkers can bring more *disruption* than anything positive for a community. \n\nAs for the flowers, while they may symbolize friendship, I just feel something practical might serve better. It ensures everyone gets to enjoy the gathering without worrying about the decor...",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 7,
+          "speaker": "Michelle",
+          "agent": "agent_1",
+          "message": "I get where you're coming from, but heavy drinkers are just part of life. I think they can be fun neighbors. \n\nBut I really believe in the power of yellow flowers. They can enhance the atmosphere and lift spirits at the gathering. It's a small touch that can make a big difference, you know?",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": "after_t7_mediator",
+          "speaker": "Mediator",
+          "agent": "mediator",
+          "message": "Let's focus on finding common ground. Both yellow flowers and practical gifts could contribute positively to the community get-together. Perhaps a compromise could be made, such as including both in the gift?",
+          "phase": "mediation",
+          "label": "mediation"
+        },
+        {
+          "t": 8,
+          "speaker": "Annie",
+          "agent": "agent_2",
+          "message": "That's an interesting idea! I can see how combining both could work. Maybe I could bring snacks and include a small bouquet of yellow flowers as well. That way, we cater to both practicality and a cheerful vibe. \n\nAs for the heavy drinkers, I still think it’s important to consider how they might affect the community overall.",
+          "phase": "continuation",
+          "label": "Acceptance"
+        },
+        {
+          "t": 9,
+          "speaker": "Michelle",
+          "agent": "agent_1",
+          "message": "That sounds like a great compromise! A little bit of both really brings balance to the gathering. \n\nAs for the heavy drinkers, I still think they can add a fun dynamic to the neighborhood. It's all about how everyone manages their interactions, right? But I appreciate your thoughts on community dynamics!",
+          "phase": "continuation",
+          "label": "Minimization"
+        },
+        {
+          "t": 10,
+          "speaker": "Annie",
+          "agent": "agent_2",
+          "message": "I’m glad we found a compromise with the gift! It will definitely add some balance to the gathering.\n\nI appreciate your take on the heavy drinkers, but I still believe they can be more of a concern than a fun dynamic. It’s important to think about the overall atmosphere of the neighborhood. But I value this discussion and your perspective!",
+          "phase": "continuation",
+          "label": "Acceptance"
+        }
+      ]
+    }
+  },
+  "preference_pair": {
+    "chosen": "positive",
+    "rejected": "negative",
+    "delta_metrics": {
+      "delta_trajectory_auc": 0.7142857142857142,
+      "delta_judge_score": null
+    },
+    "pair_type": "timing-differs"
+  }
+}
