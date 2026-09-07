@@ -285,24 +285,3 @@ Output schema matches Part 2's `{"summary": ..., "per_sid": ...}`.
 - **Judge is independent of the DMIS labeler.** The judge is a 1–5 rubric
   scorer against the target stage's mediation move; it is not derived
   from the same logprob channel that the admission gate uses.
-
----
-
-## Citation
-
-If you use this code or data, please cite the CC-Mediation paper (link TBA)
-and the referenced works:
-
-- Bennett, M. J. (1986, 1993, 2011). *A Developmental Model of
-  Intercultural Sensitivity*. Intercultural Development Research Institute.
-- Hammer, M. R., Bennett, M. J., & Wiseman, R. (2003). *Measuring
-  intercultural sensitivity: The Intercultural Development Inventory*.
-  Int. J. Intercultural Relations.
-- Paige, R. M. et al. (2003). *Assessing intercultural sensitivity: An
-  empirical analysis of the Hammer and Bennett Intercultural Development
-  Inventory*. Int. J. Intercultural Relations.
-- Villani, C. (2008). *Optimal Transport: Old and New*.
-
-## License
-
-Add your preferred license file (`LICENSE`) at the repo root.
