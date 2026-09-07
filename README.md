@@ -254,34 +254,3 @@ bash scripts/evaluate.sh path/to/records.json path/to/out.json --limit 5
 ```
 
 Output schema matches Part 2's `{"summary": ..., "per_sid": ...}`.
-
----
-
-## Key implementation details worth reading
-
-- **Paige weighting.** `shared/dmis_distribution.STAGE_POSITIONS = (-3, -2, -1, +1, +2, +3)`.
-  The **two-unit gap between Minimization (−1) and Acceptance (+1)** encodes
-  Bennett's paradigm shift between ethnocentric and ethnorelative
-  orientations — a Minimization → Acceptance transition costs twice any
-  other adjacent-stage transition under W₁.
-
-- **Signed W₁.** Sign comes from the change in expected position under
-  Paige weights (`E_post − E_pre`); magnitude is the (unsigned)
-  Paige-weighted Wasserstein-1 distance. Range roughly [−6, +6];
-  0 means no movement.
-
-- **Logprob DMIS labeler.** The model is prompted to emit one digit `1–6`
-  for the DMIS stage. Top-token logprobs at that position are restricted
-  to those six digits and softmaxed into a 6-element probability vector.
-  This gives a proper distribution (not just an argmax), so W₁ and AUC
-  use the same underlying measurement channel.
-
-- **PRE is at `conflict_turn`**, not at `predicted_turn`. If the mediator
-  fires several turns before the conflict, the trajectory therefore
-  measures a counterfactual continuation against the original conflict
-  distribution — an intentional design choice (the mediator's job is to
-  move the trajectory away from the conflicted state).
-
-- **Judge is independent of the DMIS labeler.** The judge is a 1–5 rubric
-  scorer against the target stage's mediation move; it is not derived
-  from the same logprob channel that the admission gate uses.
